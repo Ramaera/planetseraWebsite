@@ -41,7 +41,7 @@ const NavItem = ({ page }) => {
             page === "product" &&
             ` text-gray-600 w-28 justify-center mx-24  active-11 `
           }>
-          <Link href="/Product">Product</Link>
+          <Link href="/product">Product</Link>
         </li>
 
         <li

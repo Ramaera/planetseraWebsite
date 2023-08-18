@@ -3,10 +3,10 @@
   left: 70px;
 }
 
-/* @font-face {
+@font-face {
   font-family: myregular;
-  src: url(josefont.ttf);
-} */
+  src: url(/public/fonts/josefont.ttf);
+}
 
 .box1 {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
@@ -60,15 +60,7 @@
   transition: background 300ms ease-in-out;
 }
 
-/* .heading {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 49px;
-  line-height: 130px;
-  font-weight: 300;
-  text-align: center;
-} */
+
 
 .spices3 {
   right: -15%;

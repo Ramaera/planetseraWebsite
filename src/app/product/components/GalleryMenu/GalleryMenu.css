@@ -1,0 +1,65 @@
+@font-face {
+  font-family: myregular;
+  src: url(/public/fonts/josefont.ttf);
+}
+
+@font-face {
+  font-family: oriyafont;
+  src: url(/public/fonts/oriyafont.ttc);
+}
+
+.GalleryMenuHeading {
+  font-size: 52px;
+  font-family: "Montserrat";
+  background: -webkit-linear-gradient(#ff4f4f, #fe7171);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+@media screen and (max-width: 600px) {
+  .GalleryMenuHeading {
+    font-size: 1.8rem;
+    margin: 3rem 0 1rem 0;
+    transform: scale(95%);
+  }
+}
+
+.GalleryMenuText {
+  width: 76%;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 23px;
+  font-family: "Montserrat";
+  color: #1e1e1e;
+  padding: 0 10px;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 600px) {
+  .GalleryMenuText {
+    width: 96%;
+    font-size: 1rem;
+  }
+}
+
+button,
+[type="reset"],
+[type="submit"] {
+  /* background-image: none; */
+}
+
+.slider-indicators-dark .slider-indicators > *,
+.slider-indicators-dark.slider-indicators > * {
+  -webkit-filter: none;
+  filter: none;
+}
+
+@media screen and (max-width: 600px) {
+  .galleryContainer {
+    margin-top: 50px !important;
+    margin-bottom: 20px !important;
+  }
+}

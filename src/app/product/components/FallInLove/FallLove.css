@@ -1,0 +1,168 @@
+@font-face {
+  font-family: myregular;
+  src: url(/public/fonts/josefont.ttf);
+}
+
+@font-face {
+  font-family: oriyafont;
+  src: url(/public/fonts/oriyafont.ttc);
+}
+
+
+.sticksLine {
+  margin: 50px 0;
+}
+
+@media screen and (max-width: 600px) {
+  .sticksLine {
+    margin: 15px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .fallloveBackground {
+    margin-top: 20px !important;
+    margin-bottom: 50px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .fallloveBackground {
+    margin-top: 20px !important;
+  }
+}
+
+.myMenuImage {
+  max-width: -moz-fit-content;
+  /* max-width: fit-content;
+  height: 309px;
+  margin-bottom: -33px;
+  display: block;
+  max-width: 537px !important;
+  height: 403px; */
+  width: 100%;
+  max-width: fit-content;
+}
+
+/* @media screen and (max-width: 600px){
+  .myMenuImage{
+    width: 175px;
+    height: 150px;
+  }
+} */
+
+.lovePad {
+  padding: 0px 75px 0 115px;
+}
+
+@media screen and (max-width: 600px) {
+  .lovePad {
+    padding: 0 50px 50px 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .fallLoveConatinerImg {
+    justify-content: center !important;
+  }
+}
+
+.falllove-heading {
+  font-size: 45px;
+  font-family: "Montserrat";
+  text-align: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 80%;
+  margin: auto;
+  font-weight: 400;
+  letter-spacing: 5px;
+  line-height: 60px;
+}
+
+@media screen and (max-width: 600px) {
+  .falllove-heading {
+    width: 90%;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 40px;
+  }
+}
+
+.falllove-text {
+  font-family: myregular;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 56px;
+}
+
+.fallloveButton {
+  font-family: "Montserrat";
+  color: #ededed;
+  font-size: 18px;
+  text-align: center;
+  width: 160px;
+  height: 52px;
+  border-radius: 27px;
+  margin-top: 36px;
+  outline: 1px solid #ffff;
+  margin-top: 12px;
+  margin-left: 18rem;
+}
+
+@media screen and (max-width: 600px) {
+  .fallloveButton {
+    width: 120px;
+    height: 40px;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .fallloveButton {
+    margin-left: 23.5rem;
+  }
+}
+
+.fallloveButton:hover {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 600px) {
+  .fallloveButton:hover {
+    width: 90px;
+    height: 30px;
+    outline: 1px solid #ffff !important;
+    color: white !important;
+  }
+}
+
+.fallLoveLine {
+  width: 400px;
+  height: 5px;
+  position: absolute;
+  left: 245px;
+  margin-top: 135px;
+}
+
+@media screen and (max-width: 600px) {
+  .fallLoveLine {
+    display: none;
+  }
+}
+
+/* .btn2 {
+  box-shadow: inset 0 0 0 0 #ff4f4f;
+  transition: ease-out 0.4s;
+}
+.btn2:hover {
+  box-shadow: inset 400px 0 0 0 #ffffff;
+  color: #111010;
+} */
+
+/* .falllove-heading{
+    background-color:#ffff;
+    font-size: 13px;
+    background-attachment: f;
+} */

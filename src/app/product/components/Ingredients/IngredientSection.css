@@ -1,0 +1,118 @@
+.ingreIcon {
+  width: 80px;
+  /* use tailwind */
+}
+
+.ingredient-heading {
+  font-size: 32px; /* use tailwind */
+
+  line-height: 40px; /* use tailwind */
+
+  letter-spacing: 2px; /* use tailwind */
+}
+
+.ingredient-text {
+  font-family: "Josefin Sans";
+  font-weight: 300; /* use tailwind */
+
+  font-size: 18px; /* use tailwind */
+  color: rgba(30, 30, 30, 1);
+  line-height: 24px;
+}
+
+.ingredient-heading {
+  font-size: 32px; /* use tailwind */
+
+  font-family: "Montserrat", sans-serif;
+  background: -webkit-linear-gradient(#20932c, #a0fd90);
+  background-image: linear-gradient(to right, #20932c, #a0fd90);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* use tailwind */
+
+  font-weight: 300; /* use tailwind */
+}
+
+.delicious-heading {
+  font-size: 60px; /* use tailwind */
+
+  font-family: "Montserrat", sans-serif;
+  background: -webkit-linear-gradient(#20932c, #a0fd90);
+  background-image: linear-gradient(to right, #20932c, #a0fd90);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 300; /* use tailwind */
+
+  text-align: center; /* use tailwind */
+}
+
+.delicious-text {
+  font-size: 27px; /* use tailwind */
+  text-align: center;
+  font-family: "Montserrat";
+  font-weight: 300;
+  text-align: center;
+}
+
+.myImage-main {
+  margin: 0px -60px;
+  max-width: 132%;
+}
+
+.spices-line {
+  background-image: linear-gradient(to right, #20932c, #a0fd90);
+  width: 178px;
+  height: 2px;
+  position: absolute;
+  left: 143px;
+  top: 83px;
+}
+
+.ingredWid {
+  width: 41.66%;
+}
+
+@media screen and (max-width: 600px) {
+  .spices-line {
+    display: none;
+  }
+
+  .ingredWid {
+    width: 100%;
+  }
+  .myImage-main {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .delicious-heading {
+    font-size: 38px;
+    font-family: "Montserrat", sans-serif;
+    background: -webkit-linear-gradient(#20932c, #a0fd90);
+    background-image: linear-gradient(to right, #20932c, #a0fd90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 300;
+    text-align: center;
+    line-height: 42px;
+  }
+  .ingredient-heading {
+    font-size: 18px; /* use tailwind */
+
+    font-family: "Montserrat", sans-serif;
+    background: -webkit-linear-gradient(#20932c, #a0fd90);
+    background-image: linear-gradient(to right, #20932c, #a0fd90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* use tailwind */
+
+    font-weight: 300; /* use tailwind */
+  }
+
+.delicious-text {
+  font-size: 20px; 
+  margin: 10px 0;
+  }
+}

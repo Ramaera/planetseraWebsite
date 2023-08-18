@@ -1,0 +1,368 @@
+@font-face {
+  font-family: myregular;
+  src: url(/public/fonts/josefont.ttf);
+}
+
+@font-face {
+  font-family: oriyafont;
+  src: url(/public/fonts/oriyafont.ttc);
+}
+
+
+@media screen and (max-width: 600px) {
+  .ordinaryConatiner {
+    margin-top: 20px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ordinaryConatiner {
+    margin-top: 20px !important;
+  }
+}
+
+.imgHeight2 {
+  height: 400px;
+  width: 100%;
+}
+
+.ordinarycontent {
+  position: relative;
+  width: 100%;
+  /* max-width: 400px; */
+  margin: auto;
+  overflow: hidden;
+}
+
+.ordinarycontent .content-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 98%;
+  width: 97%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  /* padding: 9px; */
+  margin: 0px 0px 4px 5px;
+  border-radius: 10px;
+}
+
+.ordinarycontent .content-overlay1 {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 98%;
+  width: 97%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  /* padding: 9px; */
+  margin: 0px 0px 4px 3px;
+  border-radius: 10px;
+}
+
+.ordinarycontent .content-overlay2 {
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  height: 99%;
+  width: 98%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+  /* padding: 9px; */
+  margin: 0px 0px 4px 3px;
+  border-radius: 10px;
+}
+
+.ordinarycontent:hover .content-overlay {
+  opacity: 1;
+}
+
+.ordinarycontent:hover .content-overlay1 {
+  opacity: 1;
+}
+
+.ordinarycontent:hover .content-overlay2 {
+  opacity: 1;
+}
+
+/* .content-image {
+  width: 100%;
+} */
+
+.content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.ordinarycontent:hover .content-details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+
+.ordinarycontent h3 {
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-family: oriyafont;
+  color: #fe7171;
+  text-align: left;
+}
+
+.ordinarycontent p {
+  color: #1e1e1e;
+  font-size: 14px;
+  font-family: myregular;
+  text-align: left;
+}
+
+.fadeIn-bottom {
+  top: 80%;
+}
+
+.ordinaryhover-box {
+  /* width: 300px;
+  height: 143px; */
+  font-family: myregular;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  font-size: 24px;
+  cursor: default;
+}
+.ordinaryhoverBoxButton {
+  font-family: "myregular";
+  color: #ededed;
+  text-align: center;
+  background-image: linear-gradient(#ff4f4f 0%, #fe7171 100%) !important;
+  box-shadow: 0px 0px 2px #ff5151;
+  width: 134px;
+  height: 41px;
+  padding: 10px;
+  border-radius: 27px;
+  margin: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.ordinaryhoverBoxButton:hover {
+  font-family: "myregular";
+  color: #000000;
+  text-align: center;
+  background-image: linear-gradient(#ffffff 0%, #ffffff 100%) !important;
+  box-shadow: 0px 0px 2px #ff5151;
+  width: 134px;
+  height: 41px;
+  padding: 10px;
+  border-radius: 27px;
+  margin: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  box-shadow: none;
+  border: 1px solid #ff5151;
+}
+
+.ordinary-img {
+  width: 702px;
+  height: 670px;
+}
+
+.ordinary-img2 {
+  width: 7202x;
+  height: 432px;
+}
+
+.ordinary-12 {
+  margin-bottom: 25px;
+  display: flex;
+  /* background-image: url("@assets/images/ordinary-4.webp"); */
+}
+/* 
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 430px;
+  height: 250px;
+  margin: 2vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background-image: url("@assets/images/ordinary-1.webp");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 5px solid rgb(183, 185, 186);
+}
+.image span {
+  position: relative;
+  z-index: 1;
+}
+
+.zoom-in::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  background-size: cover;
+  transform-origin: center;
+  transition: transform 0.4s ease-in-out;
+}
+
+.zoom-in:focus::after,
+.zoom-in:hover::after {
+  transform: scale(1.35);
+} */
+
+.ordinary-second {
+  /* width: 102%; */
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* .ordinary-img3 {
+  width: 713px;
+  height: 430px;
+} */
+
+.ordinary-three {
+  /* width: 102%; */
+  display: flex;
+}
+
+/* .ordinary-img4 {
+  width: 713px;
+  height: 670px;
+} */
+
+.ordinary-alignment {
+  position: absolute;
+  display: flex;
+  top: 45%;
+  left: 10%;
+  width: 37%;
+}
+
+@media screen and (max-width: 600px) {
+  .ordinary-alignment {
+    top: 40%;
+    width: 80%;
+  }
+}
+
+.ordinary-alignment2 {
+  position: absolute;
+  display: flex;
+  top: 160px;
+  left: 52px;
+  width: 58%;
+}
+
+@media screen and (max-width: 600px) {
+  .ordinary-alignment2 {
+    top: 30%;
+    left: unset;
+    width: 80%;
+  }
+}
+
+.ordinary-text {
+  font-size: 35px;
+  color: white;
+  font-family: "Montserrat";
+  font-size: 58px;
+  line-height: 75px;
+  /* width: 319px; */
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1200px) {
+  .ordinary-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ordinary-text {
+    font-size: 1.3rem;
+    line-height: 22px;
+  }
+}
+
+.ordinary-alignment4 {
+  position: absolute;
+  display: flex;
+  top: 283px;
+  left: 52px;
+  width: 60%;
+}
+
+@media screen and (max-width: 600px) {
+  .ordinary-alignment4 {
+    top: 30%;
+    left: unset;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ordinary-alignment4 {
+    top: 30%;
+    left: unset;
+    width: 80%;
+  }
+}
+
+.photo {
+  /* width: 400px;
+  height: 350px; */
+  overflow: hidden;
+  margin: 10px !important;
+}
+
+@media screen and (max-width: 600px) {
+  .photo {
+    margin: 3px !important;
+  }
+}
+
+img {
+  transition: transform 0.6s;
+}
+
+.photo:hover img {
+  transform: scale(1.2);
+}

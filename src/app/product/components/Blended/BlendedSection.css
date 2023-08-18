@@ -1,0 +1,147 @@
+@font-face {
+  font-family: myregular;
+  src: url(/public/fonts/josefont.ttf);
+}
+
+@font-face {
+  font-family: oriyafont;
+  src: url(/public/fonts/oriyafont.ttc);
+}
+
+.blended-text {
+  font-size: 24px;
+  font-family: "Montserrat";
+  font-weight: 300;
+  text-align: center;
+  line-height: 48px;
+  letter-spacing: 2px;
+  margin: 50px 40px;
+  color: #1e1e1e;
+}
+
+@media screen and (max-width: 600px) {
+  .blended-text {
+    margin: 10px 10px 30px 10px;
+    font-size: 24px;
+    line-height: 25px;
+  }
+}
+
+.blended-text2 {
+  font-size: 24px;
+  font-family: "Montserrat";
+  line-height: 40px;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #0d0d0d;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .blended-text2 {
+    font-size: 15px;
+    line-height: 50px;
+    margin-top: unset;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .delight-text2 {
+    font-size: 15px;
+    line-height: 50px;
+    margin-top: unset;
+  }
+}
+
+.blended-text3 {
+  text-align: center;
+  font-family: "Montserrat";
+  line-height: 0px;
+  letter-spacing: 2px;
+  /* margin-top: 1px; */
+  margin-bottom: 28px;
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: 15px;
+  color: #0d0d0d;
+}
+
+@media screen and (max-width: 600px) {
+  .blended-text3 {
+    font-size: 13px;
+    line-height: unset;
+    margin-bottom: 2px;
+    margin-top: -12px;
+  }
+}
+
+.blended-text4 {
+  font-size: 22px;
+  text-align: center;
+  font-family: "Montserrat";
+  line-height: 0px;
+  letter-spacing: 2px;
+  color: #0d0d0d;
+}
+
+@media screen and (max-width: 600px) {
+  .blended-text4 {
+    font-size: 13px;
+    line-height: unset;
+  }
+}
+
+.blendedImg {
+  height: 403px;
+}
+
+.blendedMenuImg {
+  position: absolute;
+  right: 0;
+  /* bottom: -100px; */
+}
+
+.blendedbg {
+  margin-top: 10rem;
+}
+
+@media screen and (max-width: 600px) {
+  .blendedbg {
+    margin: 30px 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blendedMenuImg {
+    width: 200px;
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .spaceBlendedImg {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blended {
+    padding: 0 1rem;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blendedImgBox {
+    width: 150px !important;
+    margin-top: unset !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blendedImg {
+    height: 150px;
+  }
+}
