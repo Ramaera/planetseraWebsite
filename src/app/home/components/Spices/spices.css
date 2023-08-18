@@ -1,0 +1,135 @@
+.small-box {
+  border-radius: 30px;
+  left: 70px;
+}
+
+/* @font-face {
+  font-family: myregular;
+  src: url(josefont.ttf);
+} */
+
+.box1 {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/images/backgrounds/spices1.webp");
+    
+  top: 20px;
+  border-radius: 30px;
+  transition: 0.6s all linear;
+}
+
+.box1:hover {
+  transform: scale(1.1);
+}
+.box2:hover {
+  transform: scale(1.1);
+}
+.box2 {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/images/backgrounds/spices2.webp");
+  top: 18%;
+  left: 20%;
+  border-radius: 30px;
+  transition: all 0.5s;
+  background-size: 103% 104%;
+  background-repeat: no-repeat;
+  transition: 1s all linear;
+}
+
+.small-box2 {
+  top: 75%;
+  border-radius: 30px;
+  left: 24%;
+}
+
+.button-5 {
+  width: 200px;
+  border-radius: 5px;
+  background-color: #f4f200;
+  background-image: #f4f200;
+  background-image: -moz-linear-gradient(top, #fff 0%, #f4f200 100%);
+  background-image: -webkit-linear-gradient(top, #fff 0%, #f4f200 100%);
+  background-image: linear-gradient(to bottom, #fff 0%, #f4f200 100%);
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.button-5:hover {
+  background-position: -200%;
+  transition: background 300ms ease-in-out;
+}
+
+/* .heading {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 49px;
+  line-height: 130px;
+  font-weight: 300;
+  text-align: center;
+} */
+
+.spices3 {
+  right: -15%;
+  top: -23%;
+}
+
+.best_line {
+  /* background: linear-gradient(102.83deg, #ffffff 48.97%, #ff4f4f 100%); */
+  transform: rotate(180deg);
+  width: 229px;
+  height: 1px;
+  position: absolute;
+  left: 61px;
+  top: 100px;
+}
+
+@media screen and (max-width: 600px) {
+  .spices-container {
+    width: 100%;
+    flex-direction: column;
+    height: 1000px;
+  }
+  .box-container {
+    width: 95%;
+    margin: 0px auto;
+  }
+  .small-box {
+    width: 150px;
+    height: 30px;
+    left: 55px;
+    top: 7px;
+  }
+  .box1 {
+    width: 200px;
+    height: 300px;
+    left: 13%;
+  }
+  .box2 {
+    /* display: none; */
+    width: 200px;
+    height: 300px;
+    margin-bottom: 50px;
+    top: 10%;
+    left: 30%;
+  }
+  .small-box2 {
+    width: 150px;
+    height: 30px;
+    top: 38.3%;
+    left: 32%;
+  }
+  .spices-info {
+    margin-top: 0;
+  }
+
+  .btn-container {
+    width: 95%;
+    margin: 0px auto;
+  }
+
+  .best_line {
+    display: none;
+  }
+}

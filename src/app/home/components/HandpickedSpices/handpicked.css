@@ -1,0 +1,93 @@
+.mix-spices {
+  width: 100%;
+  height: 140vh;
+}
+.mix-spices-img img {
+  width: 856px;
+  height: 738px;
+}
+
+.uncompromiseButton {
+  background-color: transparent !important;
+  border: 1px solid white;
+}
+
+.uncompromiseButton:hover {
+  border: 1px solid white;
+}
+
+.handpicked {
+  width: 100%;
+  height: 500px;
+  background-attachment: fixed;
+}
+
+.hand-desc {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.hand-btn {
+  width: 196px;
+  height: 60px;
+}
+
+.han-button {
+  height: 65px;
+  width: 172px !important;
+  /* align-items: center; */
+  font-family: "Montserrat";
+  font-size: 18px;
+  /* box-shadow: 2px 4px 7px -2px #a0fd90; */
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 50.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 100px;
+  margin-top: 33px;
+}
+@media screen and (max-width: 600px) {
+  .mix-spices {
+    height: 80vh;
+    width: 100%;
+  }
+  .mix-spices-img img {
+    width: 350px;
+    height: 300px;
+    margin-bottom: 60px;
+  }
+  .handpicked {
+    width: 100%;
+    height: 400px;
+  }
+  .para-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hand-para {
+    width: 95%;
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0px auto;
+  }
+  .hand-btn {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-container {
+    width: 84%;
+    display: flex;
+    justify-content: center;
+  }
+}

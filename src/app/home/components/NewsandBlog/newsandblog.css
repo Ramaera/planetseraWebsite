@@ -1,0 +1,54 @@
+.img-div {
+  width: 309px;
+  height: 370px;
+  border-radius: 42.649px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.cards {
+  width: 20vw;
+}
+
+.product-font {
+  font-family: "Montserrat";
+}
+
+.blog_line {
+  /* background: linear-gradient(102.83deg, #ffffff 48.97%, #ff4f4f 100%); */
+  transform: rotate(180deg);
+  width: 272px;
+  height: 1px;
+  position: absolute;
+  left: 295px;
+  bottom: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .newsandblog {
+    width: 100%;
+  }
+  .spoon {
+    display: none;
+  }
+  .cards-container {
+    flex-direction: column;
+  }
+
+  .cards {
+    width: 100vw;
+    margin: 2px auto;
+    justify-content: center;
+  }
+  .product-name {
+    font-size: 30px;
+  }
+  .product-desc {
+    font-size: 18px;
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .blog_line {
+    display: none;
+  }
+}

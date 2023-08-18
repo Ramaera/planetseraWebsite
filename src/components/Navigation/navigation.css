@@ -1,0 +1,218 @@
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@font-face {
+  font-family: myregular;
+  src: url(/public/fonts/josefont.ttf);
+}
+
+@font-face {
+  font-family: oriyafont;
+  src: url(/public/fonts/oriyafont.ttc);
+}
+
+#navigation li {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+#navigation li a {
+  font-size: 18px;
+  font-family: Montserrat ;
+}
+.menu {
+  display: flex;
+  height: 85px;
+  align-items: center;
+  justify-content: right;
+}
+.SecondPageHeading {
+  font-family: "oriyafont";
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 68px;
+  line-height: 78px;
+}
+
+@media screen and (max-width: 600px) {
+  .SecondPageHeading {
+    font-size: 40px;
+    line-height: 45px;
+    margin-top: 20px;
+  }
+}
+
+.SecondPageHeading-text {
+  font-family: "myregular";
+  color: #ededed;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.SecondPageButton {
+  font-family: "myregular";
+  color: #ededed;
+  font-size: 18px;
+  text-align: center;
+  background-image: linear-gradient(#ff4f4f 0%, #fe7171 100%) !important;
+  width: 165px;
+  height: 56px;
+  /* padding: 22PX; */
+  border-radius: 27px;
+  margin-top: 36px;
+  border: 1px solid #ffff;
+}
+
+.StarIcon i {
+  font-size: 18px;
+  color: #fe7171;
+  padding-right: 4px;
+}
+
+.btn-1 {
+  padding: 18px 10px;
+  margin-top: -1px;
+  font-size: 18px;
+}
+
+.active-11 {
+  background-color: #fff;
+  padding: 0;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 1px 2px 2px 0px rgb(100 40 21 / 35%);
+  font-weight: 800;
+  font-size: 18px;
+  font-family: myregular;
+}
+
+.active-2 {
+  background-color: #ffff;
+}
+
+.text-alignment {
+  display: flex;
+  flex-direction: column;
+  height: 632px;
+  justify-content: center;
+  width: 100%;
+}
+
+.hero-Image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1095px;
+  width: 100%;
+  background-position: center center;
+}
+
+@media screen and (max-width: 600px) {
+  .hero-Image {
+    height: 755px;
+  }
+}
+
+.image-box {
+  position: relative;
+}
+
+.image-box__background,
+.image-box__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.image-box__overlay {
+  background: rgba(0, 0, 0, 0.5);
+
+  z-index: 2;
+}
+
+.box-alignment {
+  position: relative;
+  top: 72px;
+  left: 10px;
+}
+
+.chilli-img {
+  position: absolute;
+  left: 412px;
+  z-index: 200;
+}
+
+.termeric-4-img {
+  position: absolute;
+  left: 770px;
+  top: 192px;
+  z-index: 6;
+}
+.termeric-3-img {
+  position: absolute;
+  left: 628px;
+  top: 140px;
+  z-index: 99;
+}
+.termeric-1-img {
+  position: absolute;
+  top: 196px;
+  left: 278px;
+  z-index: 2;
+}
+
+.termeric-2-img {
+  position: absolute;
+  top: 143px;
+  z-index: 99;
+  left: 311px;
+}
+
+.pouchAlignment {
+  /* width: 710px; */
+  display: block;
+  position: absolute;
+  /* left: -11px; */
+  top: -16px;
+}
+
+@media screen and (max-width: 600px) {
+  .pouchAlignment {
+    max-width: 125% !important;
+    left: -40px;
+    top: -45px;
+  }
+}
+
+.btn2 {
+  box-shadow: inset 0 0 0 0 #ff4f4f;
+  transition: ease-out 0.4s;
+}
+.btn2:hover {
+  box-shadow: inset 400px 0 0 0 #ffffff;
+  color: #111010;
+}
+
+.navMobile {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .navMobile {
+    display: flex;
+    position: absolute;
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .detailContainer {
+    display: none !important;
+  }
+}

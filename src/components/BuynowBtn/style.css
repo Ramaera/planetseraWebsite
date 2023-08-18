@@ -1,0 +1,23 @@
+.buynow-button {
+  display: flex;
+  border-radius: 30.5px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: "Montserrat";
+  /* width: 148px;
+  height: 48px; */
+  border: 1px solid white;
+  /* font-size: 18px; */
+  padding: 22px;
+}
+
+@media (max-width: 768px) {
+  .responsiveBtn .buynow-button {
+    width: 105px !important;
+    height: 38px !important;
+    font-size: 13px !important;
+    padding: 13px 6px !important;
+  }
+}
