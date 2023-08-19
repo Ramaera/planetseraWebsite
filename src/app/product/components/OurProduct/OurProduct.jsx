@@ -37,7 +37,7 @@ const OurProduct = () => {
               <h2 className="grounded-text5">{items.masalaName}</h2>
 
               <BuynowBtn
-                link={`/ProductDetailsInfo/${items.id}`}
+                link={`/productDetailsInfo/${items.id}`}
                 text={"Buy Now"}
                 sectionClass="responsiveBtn"
               />

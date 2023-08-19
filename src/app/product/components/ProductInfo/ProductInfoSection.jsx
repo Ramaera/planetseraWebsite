@@ -34,7 +34,7 @@ const ProductInfoSection = () => {
               </h3>
 
               <Link
-                href={`/ProductDetailsInfo/2`}
+                href={`/productDetailsInfo/2`}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                 <button className="buttonZoomView scale-105 mt-4 ">View</button>
               </Link>
@@ -75,7 +75,7 @@ const ProductInfoSection = () => {
               </h3>
 
               <Link
-                href={`/ProductDetailsInfo/7`}
+                href={`/productDetailsInfo/7`}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                 <button className="buttonZoomView scale-105 mt-4 ">View</button>
               </Link>
@@ -115,7 +115,7 @@ const ProductInfoSection = () => {
               </h3>
 
               <Link
-                href={`/ProductDetailsInfo/1`}
+                href={`/productDetailsInfo/1`}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                 <button className="buttonZoomView scale-105 mt-4 ">View</button>
               </Link>
@@ -155,7 +155,7 @@ const ProductInfoSection = () => {
               </h3>
 
               <Link
-                href={`/ProductDetailsInfo/6`}
+                href={`/productDetailsInfo/6`}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                 <button className="buttonZoomView scale-105 mt-4 ">View</button>
               </Link>

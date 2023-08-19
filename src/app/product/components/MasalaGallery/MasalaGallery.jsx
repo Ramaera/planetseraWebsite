@@ -26,7 +26,7 @@ const MasalaGallery = () => {
               className=" mx-auto h-1/2"
             />
             <h3 className="text-center invention-text">Sabji Masala</h3>
-            <BuynowBtn link={`/ProductDetailsInfo/2`} text={"Buy Now"} />
+            <BuynowBtn link={`/productDetailsInfo/2`} text={"Buy Now"} />
           </div>
           <div>
             <img
@@ -37,7 +37,7 @@ const MasalaGallery = () => {
             />
             <h3 className="text-center invention-text">Chat Masala</h3>
 
-            <BuynowBtn link={`/ProductDetailsInfo/3`} text={"Buy Now"} />
+            <BuynowBtn link={`/productDetailsInfo/3`} text={"Buy Now"} />
           </div>
           <div>
             <img
@@ -47,7 +47,7 @@ const MasalaGallery = () => {
               className=" mx-auto h-1/2"
             />
             <h3 className="text-center invention-text">Amchur Masala</h3>
-            <BuynowBtn link={`/ProductDetailsInfo/9`} text={"Buy Now"} />
+            <BuynowBtn link={`/productDetailsInfo/9`} text={"Buy Now"} />
           </div>
           <div>
             <img
@@ -58,7 +58,7 @@ const MasalaGallery = () => {
             />
             <h3 className="text-center invention-text">Garam Masala</h3>
 
-            <BuynowBtn link={`/ProductDetailsInfo/7`} text={"Buy Now"} />
+            <BuynowBtn link={`/productDetailsInfo/7`} text={"Buy Now"} />
           </div>
         </Slider>
       </div>
@@ -67,23 +67,23 @@ const MasalaGallery = () => {
           <img alt="masala" loading="lazy" src={masala1} width={"360px"} />
           <h3 className="text-center invention-text">Sabji Masala</h3>
 
-          <BuynowBtn link={`/ProductDetailsInfo/2`} text={"Buy Now"} />
+          <BuynowBtn link={`/productDetailsInfo/2`} text={"Buy Now"} />
         </div>
         <div>
           <img alt="masala" loading="lazy" src={masala2} width={"360px"} />
           <h3 className="text-center invention-text">Chat Masala</h3>
 
-          <BuynowBtn link={`/ProductDetailsInfo/3`} text={"Buy Now"} />
+          <BuynowBtn link={`/productDetailsInfo/3`} text={"Buy Now"} />
         </div>
         <div>
           <img alt="masala" loading="lazy" width={"360px"} src={masala3} />
           <h3 className="text-center invention-text">Amchur Masala</h3>
-          <BuynowBtn link={`/ProductDetailsInfo/9`} text={"Buy Now"} />
+          <BuynowBtn link={`/productDetailsInfo/9`} text={"Buy Now"} />
         </div>
         <div>
           <img alt="masala" loading="lazy" src={masala4} width={"360px"} />
           <h3 className="text-center invention-text">Garam Masala</h3>
-          <BuynowBtn link={`/ProductDetailsInfo/7`} text={"Buy Now"} />
+          <BuynowBtn link={`/productDetailsInfo/7`} text={"Buy Now"} />
         </div>
       </div>
     </>

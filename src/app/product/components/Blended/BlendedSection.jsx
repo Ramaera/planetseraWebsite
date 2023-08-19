@@ -36,7 +36,7 @@ const BlendedSection = () => {
 
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
-            link={`/ProductDetailsInfo/7`}
+            link={`/productDetailsInfo/7`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />
@@ -85,7 +85,7 @@ const BlendedSection = () => {
 
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
-            link={`/ProductDetailsInfo/5`}
+            link={`/productDetailsInfo/5`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />
@@ -102,7 +102,7 @@ const BlendedSection = () => {
 
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
-            link={`/ProductDetailsInfo/3`}
+            link={`/productDetailsInfo/3`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />
@@ -119,7 +119,7 @@ const BlendedSection = () => {
 
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
-            link={`/ProductDetailsInfo/2`}
+            link={`/productDetailsInfo/2`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />

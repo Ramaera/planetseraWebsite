@@ -66,7 +66,7 @@ const BestSelling = () => {
                 </h1>
                 {/* <BuyIcons flipkart={item.flipkart} amazon={item.amazon} /> */}
                 <BuynowBtn
-                  link={`/ProductDetailsInfo/${item.id}`}
+                  link={`/productDetailsInfo/${item.id}`}
                   text={"Buy Now"}
                 />
               </div>
