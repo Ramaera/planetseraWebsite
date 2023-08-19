@@ -1,0 +1,30 @@
+@font-face {
+    font-family: myoriginal;
+    src: url(/public/fonts/original.ttf);
+  }
+  
+  @font-face {
+    font-family: oriyFont;
+    src: url(/public/fonts/oriya.ttc);
+  }
+  
+  .shop-heading {
+    font-size: 55px;
+    font-family: "Oriya MN";
+    background-clip: text;
+    font-weight: 400;
+    line-height: 66px;
+    color: #FFFFFF;
+  }
+
+  
+  
+  @media screen and (max-width: 600px) {
+    .shop-heading {
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 40px;
+     ;
+    }
+  }
+  
