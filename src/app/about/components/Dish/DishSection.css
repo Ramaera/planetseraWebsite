@@ -1,0 +1,125 @@
+.dish-button {
+  top: 68%;
+  left: 21%;
+  font-size: 24px;
+  font-family: "Montserrat";
+  line-height: 32px;
+  position: absolute;
+  font-weight: 500;
+  background: -webkit-linear-gradient(#20932c, #a0fd90);
+  background-image: linear-gradient(to right, #20932c, #a0fd90);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shop-line {
+  left: 245px;
+  width: 86px;
+  height: 2px;
+  background-color: red;
+  position: absolute;
+  top: 261px;
+  top: 79%;
+  left: 23%;
+  font-size: 24px;
+  font-family: "Montserrat";
+  line-height: 32px;
+  position: absolute;
+  font-weight: 500;
+  background: -webkit-linear-gradient(#20932c, #a0fd90);
+  background-image: linear-gradient(to right, #20932c, #a0fd90);
+}
+
+.dish-button2 {
+  top: 68%;
+  left: 40%;
+  font-size: 24px;
+  font-family: "Montserrat";
+  line-height: 32px;
+  position: absolute;
+  font-weight: 500;
+  background: -webkit-linear-gradient(#20932c, #a0fd90);
+  background-image: linear-gradient(to right, #20932c, #a0fd90);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shop-line2 {
+  left: 245px;
+  width: 86px;
+  height: 2px;
+  background-color: red;
+  top: 261px;
+  top: 79%;
+  left: 43%;
+  font-size: 24px;
+  font-family: "Montserrat";
+  line-height: 32px;
+  position: absolute;
+  font-weight: 500;
+  background: -webkit-linear-gradient(#20932c, #a0fd90);
+  background-image: linear-gradient(to right, #20932c, #a0fd90);
+}
+
+.mydisAlignment {
+  height: 396px;
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 600px) {
+  .mydisAlignment {
+    height: auto;
+    margin-top: 33px;
+    margin-bottom: 33px;
+  }
+  .dish-button {
+    top: 35%;
+    left: 34%;
+    font-size: 24px;
+    font-family: "Montserrat";
+    line-height: 32px;
+    position: absolute;
+    font-weight: 500;
+    background: -webkit-linear-gradient(#20932c, #a0fd90);
+    background-image: linear-gradient(to right, #20932c, #a0fd90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .shop-line {
+    left: 0px;
+    width: 86px;
+    height: 2px;
+    background-color: red;
+    top: 261px;
+    top: 43%;
+    left: 39%;
+    font-size: 24px;
+    font-family: "Montserrat";
+    line-height: 32px;
+    position: absolute;
+    font-weight: 500;
+    background: -webkit-linear-gradient(#20932c, #a0fd90);
+    background-image: linear-gradient(to right, #20932c, #a0fd90);
+  }
+
+  .shop-line2 {
+    left: 245px;
+    width: 86px;
+    height: 2px;
+    background-color: red;
+    top: 261px;
+    top: 83%;
+    left: 43%;
+    font-size: 24px;
+    font-family: "Montserrat";
+    line-height: 32px;
+    position: absolute;
+    font-weight: 500;
+    background: -webkit-linear-gradient(#20932c, #a0fd90);
+    background-image: linear-gradient(to right, #20932c, #a0fd90);
+  }
+}

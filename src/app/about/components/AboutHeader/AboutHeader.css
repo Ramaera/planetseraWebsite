@@ -1,0 +1,59 @@
+@font-face {
+  font-family: myoriginal;
+  src: url(/public/fonts/original.ttf);
+}
+
+@font-face {
+  font-family: oriyFont;
+  src: url(/public/fonts/oriya.ttc);
+}
+
+.aboutH-heading {
+  font-size: 67px;
+  font-family: "Oriya MN";
+  background-clip: text;
+  font-weight: bold;
+  line-height: 80px;
+}
+
+.aboutT-text {
+  font-family: "Montserrat";
+  color: #1e1e1e;
+  font-weight: 300;
+  font-size: 23px;
+  line-height: 38px;
+  letter-spacing: 0.02rem;
+}
+/* font-size: 27px; */
+
+.more-button {
+display: flex;
+border-radius: 30.5px;
+text-align: center;
+align-items: center;
+justify-content: center;
+color: #ffffff;
+font-family: "Montserrat";
+width: 165px;
+height: 56px;
+border: 1px solid white;
+font-size: 18px;
+padding: 22px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .aboutH-heading {
+    font-size: 54px;
+    font-family: oriyFont;
+    background: -webkit-linear-gradient(#20932c, #a0fd90);
+    background-image: linear-gradient(to right, #20932c, #a0fd90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    line-height: 80px;
+    text-shadow: 0px 4px 4px rgba(22, 158, 10, 0.25);
+  }
+}

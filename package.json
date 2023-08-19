@@ -24,6 +24,7 @@
     "react-icons": "^4.10.1",
     "react-redux": "^8.1.2",
     "redux": "^4.2.1",
+    "swiffy-slider": "^1.6.0",
     "tailwindcss": "3.3.3"
   }
 }

@@ -1,0 +1,142 @@
+.technologyPeople-img {
+  top: 200px;
+  left: -100px;
+}
+
+.technology-heading {
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: rgba(30, 30, 30, 1);
+  text-align: center;
+  line-height: 30px;
+}
+
+.technology-text1 {
+  font-size: 18px;
+  line-height: 36px;
+  margin-bottom: 33px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.technology-line {
+  background-image: linear-gradient(to right, #20932c, #a0fd90);
+  width: 121px;
+  height: 2px;
+  position: absolute;
+  right: 394px;
+  top: 61px;
+  display: none;
+}
+
+.founderAlig {
+  margin-top: -122px;
+}
+
+.execute-text {
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: 300;
+  font-family: "Montserrat";
+  text-align: center;
+}
+
+.tasAlign {
+  margin-top: 5rem;
+}
+
+.technOne {
+  margin-top: 200px;
+}
+
+.founalign {
+  margin-top: 0px;
+}
+
+.rectLine {
+  width: 100%;
+  background-color: #d9d9d9;
+  margin-top: 50px;
+  height: 1px;
+}
+
+@media screen and (max-width: 400px) {
+  .pressAlign {
+    margin-top: -25rem;
+    display: block !important;
+  }
+  .founalign {
+    margin-top: 25rem !important;
+  }
+  .rectLine {
+    width: 100%;
+    background-color: #d9d9d9;
+    margin-top: 380px !important;
+    height: 1px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .technOne {
+    margin-top: -96px;
+  }
+  .technology-heading {
+    font-size: 18px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: rgba(30, 30, 30, 1);
+    text-align: center;
+    line-height: 30px;
+    margin-top: 100px;
+  }
+  .technology-text1 {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 33px;
+    font-family: "Montserrat", sans-serif;
+  }
+  /* .technOne {
+    margin-top: 700px;
+  } */
+
+  .technologyPeople-img {
+    top: 200px;
+    left: 47px;
+    max-width: 80%;
+  }
+
+  .technologyPeople-img-1 {
+    max-width: 80%;
+  }
+  /* .mag {
+    margin-top: 82rem;
+  } */
+  .technology-line {
+    display: none;
+  }
+  .founderAlig {
+    display: none;
+  }
+  .tasAlign {
+    margin-top: 1rem;
+  }
+
+  .founalign {
+    margin-top: 22rem;
+  }
+  .execute-text {
+    font-size: 18px;
+    line-height: 33px;
+    font-weight: 300;
+    font-family: "Montserrat";
+    text-align: left;
+  }
+  .rectLine {
+    width: 100%;
+    background-color: #d9d9d9;
+    margin-top: 330px;
+    height: 1px;
+  }
+}
