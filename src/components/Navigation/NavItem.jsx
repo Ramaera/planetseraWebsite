@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import "./navigation.css";
@@ -16,19 +17,17 @@ const NavItem = ({ page }) => {
         "absolute  w-10/12	 left-0 z-30 justify-between md:flex hidden"
       }>
       <Link className="scale-[0.8]" href="/" onClick={() => changeColor()}>
-        <img className="" src="images/logo/logo.webp" alt="logoS" />
+        <img className="" src="images/logo/logo.webp" alt="logo" />
       </Link>
       <ul
         style={{
-          color: page === "about" && "black",
+          color: (page === "shop" || page === "about") && "black",
         }}
         id="navigation"
-        className={`hidden md:flex space-x-6 text-white lg:float-right ${
-          page === "shop" && "text-black"
-        } rounded-3xl pb-6 `}>
+        className={`hidden md:flex space-x-6 text-white lg:float-right rounded-3xl pb-6 `}>
         <li
           className={
-            page === "home" &&
+            page === "/" &&
             ` text-gray-600 w-28  justify-center  mx-24 active-11 `
           }>
           <Link href="/" onClick={() => changeColor()}>
@@ -63,7 +62,7 @@ const NavItem = ({ page }) => {
           style={{
             backgroundColor: page === "about" && colorMe,
           }}>
-          <Link href="/About">About</Link>
+          <Link href="/about">About</Link>
         </li>
         <li
           className={
