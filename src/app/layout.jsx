@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <ApolloProvider client={client}>
-          <Provider store={store}>{children}/</Provider>
+          <Provider store={store}>{children}</Provider>
         </ApolloProvider>
       </body>
     </html>
