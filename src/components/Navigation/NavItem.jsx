@@ -70,7 +70,7 @@ const NavItem = ({ page }) => {
             page === "contactUs" &&
             ` text-gray-600 w-28 mx-24  justify-center  active-11 `
           }>
-          <Link href="/ContactUs" className="mr-1">
+          <Link href="/contactUs" className="mr-1">
             Contact Us
           </Link>
         </li>

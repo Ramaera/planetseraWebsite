@@ -1,6 +1,6 @@
 import React from "react";
 
-const FooterEnd = () => {
+const AboutFooterEnd = () => {
   return (
     <div className="flex footer-end justify-around">
       <div className="lg:basis-9/12 lg:h-36 social-container bg-[#0D0D0D] flex justify-around">
@@ -9,7 +9,7 @@ const FooterEnd = () => {
             <div className="logo my-auto">
               <img
                 src="images/backgrounds/footerlogo.webp"
-                alt="footer"
+                alt="masala"
                 className="lg:w-40"
               />
             </div>
@@ -20,7 +20,6 @@ const FooterEnd = () => {
                 <li className="px-8">
                   <a href={"product"}>Best Spices</a>
                 </li>
-
                 <li className="px-8">
                   <a href={"about"}>Made in India</a>
                 </li>
@@ -34,4 +33,4 @@ const FooterEnd = () => {
   );
 };
 
-export default FooterEnd;
+export default AboutFooterEnd;

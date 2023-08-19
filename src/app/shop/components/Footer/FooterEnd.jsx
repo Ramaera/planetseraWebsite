@@ -18,11 +18,11 @@ const FooterEnd = () => {
             <div className="menu lg:my-auto">
               <ul className="flex menu-links text-white lg:justify-between lg:items-center my-auto">
                 <li className="px-8">
-                  <a href={"Product"}>Best Spices</a>
+                  <a href={"product"}>Best Spices</a>
                 </li>
 
                 <li className="px-8">
-                  <a href={"About"}>Made in India</a>
+                  <a href={"about"}>Made in India</a>
                 </li>
               </ul>
             </div>
