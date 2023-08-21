@@ -28,7 +28,7 @@ const HeaderTwo = () => {
                 PlanetsEra premium spices
               </h1>
 
-              <p className="SecondPageHeading-Text mt-5 md:mx-64 tracking-[1px] 2xl:m-0 2xl:justify-center 2xl:flex 2xl:w-full">
+              <p className="font-Montserrat flex text-center	font-light leading-[38px] text-[#ededed] m-auto w-full  text-[20px] md:text-[32px]	 mt-5 tracking-[1px] 2xl:m-0 2xl:justify-center md:justify-center 2xl:flex 2xl:w-full">
                 Unlock the secrets of ancient spice blends and bring <br />
                 the timeless flavors of history into your kitchen
               </p>

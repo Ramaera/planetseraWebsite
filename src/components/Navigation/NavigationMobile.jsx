@@ -3,6 +3,10 @@ import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
+import "../../styles/mediaQuery.css";
+import "./navigation.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const NavigationMobile = ({ page }) => {
   const router = useRouter();
@@ -40,14 +44,14 @@ const NavigationMobile = ({ page }) => {
           />
         </div>
         <div className="basis-9/12 flex justify-end pr-3 absolute right-0 z-30">
-          <i
-            class="fa fa-bars self-center icon-design text-white"
-            aria-hidden="true"
+          <FontAwesomeIcon
+            icon={faBars}
             onClick={toggleClick}
-            // style={{
-            //   color: page === "about" && colorMe,
-            // }}
-            style={{ color: page === ("about" || "shop") && colorMe }}></i>
+            aria-hidden="true"
+            className="self-center icon-design text-white"
+            style={{ color: page === ("about" || "shop") && colorMe }}
+          />
+          {/* <i class="fa fa-bars self-center icon-design text-white"></i> */}
         </div>
       </div>
       {showMenu && (

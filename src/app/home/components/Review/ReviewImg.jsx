@@ -29,7 +29,7 @@ const ReviewImg = () => {
           className="spices6 hover:scale-110 duration-700 ease-linear	transition-all"></div>
       </div>
       <div
-        className="order absolute z-50 bg-gray-50 rounded-3xl border rotating-border rotating-border--google mt-20"
+        className="w-[300px] md:w-[434px] h-[100%] md:h-auto md:left-[-25%] absolute z-50 bg-gray-50 rounded-3xl border rotating-border rotating-border--google md:mt-20"
         style={{
           "--color": colorMe,
         }}>

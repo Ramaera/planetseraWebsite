@@ -30,7 +30,7 @@ const ReviewInfo = () => {
           <img
             src={checkbg(colorMe)}
             alt="bg"
-            className="lg:mr-2 h-[60px] w-[60px] quotes"
+            className="lg:mr-2 h-[60px] w-[60px] quotes w-none "
           />
         </div>
         <p className="font-[#1e1e1e] text-[18px] md:text-[21px] font-light	w-[95%] md:w-[80%] m-auto md:m-0 text-left leading-[40px] md:tracking-[0.055em] ">

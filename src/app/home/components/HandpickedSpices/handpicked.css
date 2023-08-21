@@ -50,6 +50,12 @@
   align-items: center;
   margin-left: 100px;
   margin-top: 33px;
+  display: flex;
+}
+@media screen and (max-width: 600px){
+  .han-button{
+    display: none;
+  }
 }
 @media screen and (max-width: 600px) {
   .mix-spices {
@@ -89,5 +95,6 @@
     width: 84%;
     display: flex;
     justify-content: center;
+    margin: 0px auto;
   }
 }

@@ -93,12 +93,6 @@ function Header() {
               <div
                 className="basis-12/12 flex absolute image-top w-full"
                 style={{ top: "100%" }}>
-                <img
-                  alt="masala"
-                  loading="lazy"
-                  src={masalabg}
-                  className="redChilli"
-                />
                 <div className="basis-4/12 flex"></div>
 
                 <div className="basis-8/12 flex justify-end relative top-[-40px] items-center">

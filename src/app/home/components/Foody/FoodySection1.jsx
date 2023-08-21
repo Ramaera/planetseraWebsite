@@ -5,8 +5,11 @@ const FoodySection1 = () => {
 
   return (
     <div className="basis-5/12 p-14">
-      <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-        <h3 className="mt-28 mb-7 text-white text-[40px] font-medium	leading-[45px] md:leading-[56px] tracking-[0.07em]">
+      <div
+        data-aos="fade-up"
+        className="mb-7"
+        data-aos-anchor-placement="top-bottom">
+        <h3 className="mt-28 text-white text-[40px] font-medium	leading-[45px] md:leading-[56px] tracking-[0.07em]">
           Spices - that are true to their taste
         </h3>
         <div className="taste_line"></div>

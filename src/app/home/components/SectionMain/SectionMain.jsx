@@ -23,7 +23,7 @@ function SectionMain() {
       <div className="basis-12/12 flex px-5">
         <div className="basis-12/12 w-full">
           <div data-aos="slide-right">
-            <p class="font-[#1e1e1e] text-[18px]  md:px-16 md:mb-16 text-left	md:text-center leading-[30px] md:leading-[42px] font-light tracking-wider">
+            <p class="font-[#1e1e1e] text-[18px] md:px-16 md:mb-16 text-left	md:text-center leading-[30px] md:leading-[42px] font-thin tracking-wider">
               Spices have an inseparable bond with our Indian culture. Each and
               every flavor of different spices in our country reflect the taste
               of the region and carry the story of the richness of our country.

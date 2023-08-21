@@ -1,6 +1,4 @@
 "use client";
-import "../../../../../src/styles/globals.css";
-
 import { useSelector } from "react-redux";
 
 function SolutionSection() {
@@ -22,7 +20,7 @@ function SolutionSection() {
     }
   };
   return (
-    <div className="container mt-[500px] md:mt-72">
+    <div className=" mt-[500px] md:mt-72  w-full">
       <div className="basis-12/12 bussiness-Flex">
         <div className="basis-7/12 solution-background" data-aos="slide-right">
           <img
