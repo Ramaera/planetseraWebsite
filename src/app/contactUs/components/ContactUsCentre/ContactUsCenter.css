@@ -86,7 +86,7 @@ button[type="submit"] {
 }
 
 .contact_background {
-  background-image: url("/src/assets/rectangle.webp");
+  background-image: url("/images/background/rectangle.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0px 20px;
