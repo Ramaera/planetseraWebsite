@@ -37,7 +37,7 @@ const Index = ({
             `linear-gradient(72.44deg, ${colorMe} 0%, ${colorMe + "85"} 100%)`,
           cursor: disabled ? "not-allowed" : "pointer",
           zIndex: "19",
-          fontWeight: "bold",
+          fontWeight: 400,
           fontSize: size || "18px",
           width: width || " 148px",
           height: height || "48px",
