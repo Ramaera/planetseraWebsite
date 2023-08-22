@@ -30,7 +30,7 @@ function MasalaGrid() {
                   className="masImg hover:scale-110 cursor-pointer"
                 />
 
-                <h2 className="text-[24px] font-normal tracking-wide font-[Montserrat]">
+                <h2 className="text-[24px] font-normal tracking-wide font-Montserrat">
                   {items.productText}
                 </h2>
 

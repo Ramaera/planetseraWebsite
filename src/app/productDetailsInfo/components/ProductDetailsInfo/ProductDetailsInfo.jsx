@@ -124,10 +124,10 @@ const ProductDetailsInfo = () => {
                       ? specificProduct.colored
                       : specificProduct.colored2,
                 }}
-                className={`md:text-center text-2xl  tracking-widest font-light mb-4 font-[Montserrat] text-center`}>
+                className={`md:text-center text-2xl  tracking-widest font-light mb-4 font-Montserrat text-center`}>
                 Specifications
               </h2>
-              <div className=" flex justify-evenly border-[1px] rounded-[10px]  text-[#787878] md:text-[1.1rem] text-[0.5rem]	font-[Montserrat] font-black	md:font-thin">
+              <div className=" flex justify-evenly border-[1px] rounded-[10px]  text-[#787878] md:text-[1.1rem] text-[0.5rem]	font-Montserrat font-black	md:font-light">
                 <div className="md:p-2 p-0 md:py-auto py-4 md:w-auto  w-[5rem] flex items-center justify-center">
                   <span>Weight: &nbsp; </span>
                   <span>
@@ -162,7 +162,7 @@ const ProductDetailsInfo = () => {
                       ? specificProduct.colored
                       : specificProduct.colored2,
                 }}
-                className={`md:text-[3.3rem] text-[2rem] tracking-widest font-[400] font-[Montserrat] md:mt-auto mt-8`}>
+                className={`md:text-[3.3rem] text-[2rem] tracking-widest font-[500] font-Montserrat md:mt-auto mt-8`}>
                 {specificProduct.ProductName}
               </h1>
               <div
@@ -173,7 +173,7 @@ const ProductDetailsInfo = () => {
                       : specificProduct.colored2,
                 }}
                 className={`absolute  w-36 h-[2px] ml-1 mt-[-2px]`}></div>
-              <ul className="pl-1 pt-4 text-[#787878] text-[1.7rem] font-[100] font-[Montserrat]  z-30 md:block  hidden">
+              <ul className="pl-1 pt-4 text-[#787878] text-[1.7rem] font-[400] font-Montserrat  z-30 md:block  hidden">
                 <li className="my-8 ">
                   <span className="pr-4">&bull;</span>100% Pure Natural Product
                 </li>
@@ -193,7 +193,7 @@ const ProductDetailsInfo = () => {
                 </li>
               </ul>
               <br />
-              <h3 className="text-[#ABABAB] md:text-[1.7rem] text-[1.2rem] font-[100]">
+              <h3 className="text-[#ABABAB] md:text-[1.7rem] text-[1.2rem] font-[300] font-Montserrat">
                 Select weight:
               </h3>
               <div className="flex my-5">
@@ -289,7 +289,7 @@ const ProductDetailsInfo = () => {
                           ? specificProduct.colored
                           : specificProduct.colored2,
                     }}
-                    className={` text-[2.1rem] font-thin `}>
+                    className={` text-[2.1rem] font-light font-Montserrat`}>
                     Description
                   </h2>
 
@@ -301,7 +301,7 @@ const ProductDetailsInfo = () => {
                           : specificProduct.colored2,
                     }}
                     className={`absolute  w-20 h-[2px] ml-1 mt-[-2px]`}></div>
-                  <p className="leading-[2.6rem] text-[#787878] text-[1.28rem] font-[400] my-4 font-[Montserrat]">
+                  <p className="leading-[2.6rem] text-[#787878] text-[1.28rem] font-[400] my-4 font-Montserrat">
                     {specificProduct.ProductDescription}
                   </p>
                 </div>
@@ -316,7 +316,7 @@ const ProductDetailsInfo = () => {
                       ? specificProduct.colored
                       : specificProduct.colored2,
                 }}
-                className={` text-4xl font-light font-[Montserrat]`}>
+                className={` text-4xl font-light font-Montserrat`}>
                 Ingredients:-
               </h2>
               <div
@@ -327,7 +327,7 @@ const ProductDetailsInfo = () => {
                       : specificProduct.colored2,
                 }}
                 className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-1`}></div>
-              <p className="leading-[2.6rem] text-[#787878] text-[1.28rem] font-[100] my-4 font-[Montserrat]">
+              <p className="leading-[2.6rem] text-[#787878] text-[1.28rem] font-[400] my-4 font-Montserrat">
                 {specificProduct.ProductIngredients}
               </p>
             </div>
@@ -341,11 +341,11 @@ const ProductDetailsInfo = () => {
                   ? specificProduct.colored
                   : specificProduct.colored2,
             }}
-            className={`md:text-center  text-2xl tracking-widest font-light mb-4 font-[Montserrat]`}
+            className={`md:text-center  text-2xl tracking-widest font-light mb-4 font-Montserrat`}
           >
             Specifications
           </h2>
-          <div className=" flex md:justify-evenly border-[1px] rounded-[10px]  text-[#787878] md:text-[1.2rem] text-[0.8rem]	font-[Montserrat]">
+          <div className=" flex md:justify-evenly border-[1px] rounded-[10px]  text-[#787878] md:text-[1.2rem] text-[0.8rem]	font-Montserrat">
             <div className="md:p-4 p-2 md:w-auto  w-[5rem] flex items-center justify-center">
               <span>{selectedButton === "50gram" ? "50 g" : "100 g"}</span>
             </div>
@@ -360,7 +360,7 @@ const ProductDetailsInfo = () => {
           </div>
         </div> */}
         {specificProduct.ProductHealth ? (
-          <div className="md:my-28 my-5 font-[Montserrat] md:ml-6 md:flex">
+          <div className="md:my-28 my-5 font-Montserrat md:ml-6 md:flex">
             <div
               style={{
                 color:
@@ -368,7 +368,7 @@ const ProductDetailsInfo = () => {
                     ? specificProduct.colored
                     : specificProduct.colored2,
               }}
-              className={` text-2xl font-extralight leading-[2.5rem] `}>
+              className={` text-2xl font-light font-Montserrat leading-[2.5rem] `}>
               Health benefits of : &nbsp;
             </div>
             <div className=" text-[#787878] text-[1.3rem] leading-[2.5rem] md:ml-4 md:w-[80%]">
@@ -386,7 +386,7 @@ const ProductDetailsInfo = () => {
                 ? specificProduct.colored
                 : specificProduct.colored2,
           }}
-          className={` text-3xl font-extralight leading-[2.5rem] font-[Montserrat] md:mt-4`}>
+          className={` text-3xl font-light leading-[2.5rem] font-Montserrat md:mt-4`}>
           Related Products
         </div>
         <div

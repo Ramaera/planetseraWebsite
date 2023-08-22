@@ -31,7 +31,7 @@ const HandPicked = () => {
             </p>
           </div>
           <div data-aos="fade-left">
-            <p className="text-center p-2 md:px-[7.2rem] space-y-4 text-xs lg:text-2xl font-thin 2xl:px-48 font-[Montserrat] tracking-wider  ">
+            <p className="text-center p-2 md:px-[7.2rem] space-y-4 text-xs lg:text-2xl font-thin 2xl:px-48 font-Montserrat tracking-wider  ">
               PlanetsEra spices give you unmatched taste and tempting aroma. Get
               your desired flavor of spices blessed with the benefits of Nature
               and heavenly delicacy.
