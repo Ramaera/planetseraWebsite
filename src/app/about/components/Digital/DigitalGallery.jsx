@@ -1,5 +1,6 @@
 "use client";
 import { swiffyslider } from "swiffy-slider";
+import "swiffy-slider/css";
 import "./DigitalGallery.css";
 window.swiffyslider = swiffyslider;
 import { useSelector } from "react-redux";

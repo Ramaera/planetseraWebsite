@@ -1,4 +1,5 @@
 import { swiffyslider } from "swiffy-slider";
+import "swiffy-slider/css";
 import "./CompanySection.css";
 
 window.swiffyslider = swiffyslider;
@@ -40,7 +41,8 @@ const CompanySection = () => {
         </div>
       </div>
       <div
-        class="swiffy-slider slider-item-ratio slider-item-ratio-16x9 slider-nav-animation slider-nav-animation-fadein slider-item-first-visible flex justify-center"
+        class="swiffy-slider slider-item-ratio slider-item-ratio-16x9 slider-nav-animation slider-nav-animation-fadein slider-item-first-visible "
+        style={{ display: "flex", justifyContent: "center" }}
         id="swiffy-animation">
         <ul class="slider-container mycontain" id="container1">
           <li id="slide1" class="slide-visible">
