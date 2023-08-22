@@ -8,7 +8,7 @@ const OurProduct = () => {
       className="container relative mt-10 md:mt-32 containerBorder"
       id="groundSpices">
       <div className="basis-12/12 absolute ourbg"></div>
-      <div className="basis-12/12 groundbg">
+      <div className=" groundbg">
         <img src="images/backgrounds/GroundSpicesBg.webp" className="w-full" />
       </div>
       <div className="basis-12/12 flex">

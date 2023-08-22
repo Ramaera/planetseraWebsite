@@ -9,10 +9,10 @@
 }
 
 
-@media screen and (max-width: 600px) {
-  .ordinaryConatiner {
-    margin-top: 20px !important;
-  }
+.ordinaryConatiner {
+  margin-top: 15rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 @media screen and (max-width: 600px) {

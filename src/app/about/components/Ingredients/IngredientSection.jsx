@@ -248,7 +248,7 @@ const IngredientSection = () => {
       <div className="container">
         <img
           alt="masala"
-          src="images/backgrounds/ingredientAB.webp"
+          src="/images/backgrounds/ingredientAB.webp"
           className="mt-10 2xl:w-full"
         />
       </div>

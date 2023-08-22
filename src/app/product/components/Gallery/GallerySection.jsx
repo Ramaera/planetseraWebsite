@@ -12,12 +12,12 @@ const GallerySection = () => {
       </div>
       <div className="basis-12/12 flex justify-center w-full ">
         <div className="">
-          <div class="content md:mx-4 md:my-2">
+          <div class="content ">
             <a>
               <GalleryImageTwo />
             </a>
           </div>
-          <div class="content md:mx-4 md:my-2">
+          <div class="content ">
             <a>
               <GalleryImageThree />
             </a>
@@ -25,13 +25,13 @@ const GallerySection = () => {
         </div>
 
         <div className="">
-          <div class="content md:mx-4 md:my-2">
+          <div class="content ">
             <a>
               <GalleryImageFive />
             </a>
           </div>
 
-          <div class="content md:mx-4 md:my-2">
+          <div class="content ">
             <a>
               <GalleryImageSix />
             </a>

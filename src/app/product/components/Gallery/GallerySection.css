@@ -15,6 +15,7 @@
   margin: auto;
   overflow: hidden;
   /* margin-bottom: 20px; */
+  margin:0.5rem 1rem;
 }
 
 .content .content-overlay {

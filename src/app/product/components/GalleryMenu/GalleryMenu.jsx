@@ -9,11 +9,13 @@ const GalleryMenu = () => {
   const yellowLine = "/images/backgrounds/yellowLine.webp";
 
   return (
-    <div id="exploreSection" className="container mt-56 mb-20 galleryContainer">
+    <div
+      id="exploreSection"
+      className="w-full max-w-full box-border m-auto h-auto mt-56 mb-20 galleryContainer">
       <div className="basis-12/12 flex text-center justify-center">
         <div>
           <h1
-            className="GalleryMenuHeading my-8 tracking-[3px]"
+            className="GalleryMenuHeading"
             style={{
               webkitTextFillColor: "transparent",
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${

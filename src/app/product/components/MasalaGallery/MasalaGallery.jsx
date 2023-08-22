@@ -12,7 +12,7 @@ const MasalaGallery = () => {
   const masala1 = "/images/backgrounds/ourproduct-1.webp";
   const masala2 = "/images/backgrounds/ourproduct-2.webp";
   const masala3 = "/images/backgrounds/ourproduct-3.webp";
-  const masala4 = "/images/backgrounds/ourproduct-3.webp";
+  const masala4 = "/images/backgrounds/ourproduct-4.webp";
 
   return (
     <>
