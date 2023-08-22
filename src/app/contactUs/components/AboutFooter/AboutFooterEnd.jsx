@@ -8,7 +8,7 @@ const AboutFooterEnd = () => {
           <div className="basis-4/12 flex justify-center">
             <div className="logo my-auto">
               <img
-                src="images/backgrounds/footerlogo.webp"
+                src="/images/backgrounds/footerlogo.webp"
                 alt="masala"
                 className="lg:w-40"
               />

@@ -13,7 +13,7 @@ import BlendedSection from "./components/Blended/BlendedSection";
 import OurProduct from "./components/OurProduct/OurProduct";
 import GallerySection from "./components/Gallery/GallerySection";
 import InstagramRecipe from "./components/InstagramRecipe/InstagramRecipe";
-import Footer from "./components/Footer/Footer";
+import Footer from "@/components/Footer/Footer";
 
 const Products = () => {
   return (

@@ -13,7 +13,7 @@ import StorySection from "./components/Story/StorySection";
 import QualitySection from "./components/QualityManagement/QualitySection";
 import TechnologyPeopleSection from "./components/TechnologyPeople/TechnologyPeopleSection";
 import CompanySection from "./components/CompanyGallery/CompanySection";
-import Footer from "./components/Footer/Footer";
+import Footer from "@/components/Footer/Footer";
 
 const About = () => {
   return (

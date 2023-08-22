@@ -163,9 +163,9 @@
   .menu-links {
     justify-content: flex-end;
   }
-  .social-container {
+  /* .social-container {
     display: none;
-  }
+  } */
   .logo {
     display: block;
   }

@@ -11,7 +11,7 @@ import HandPicked from "./home/components/HandpickedSpices/HandPicked";
 import NewsandBlog from "./home/components/NewsandBlog/NewsandBlog";
 import Spices from "./home/components/Spices/Spices";
 import Review from "./home/components/Review/Review";
-import Footer from "./home/components/Footer/Footer";
+import Footer from "@/components/Footer/Footer";
 
 const Home = () => {
   return (
