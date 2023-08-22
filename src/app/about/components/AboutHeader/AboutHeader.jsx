@@ -53,7 +53,7 @@ const AboutHeader = () => {
                   } 100%)`,
                   cursor: "pointer",
                   zIndex: "19",
-                  fontWeight: "bold",
+                  fontWeight: "400",
                 }}>
                 Explore More
               </a>

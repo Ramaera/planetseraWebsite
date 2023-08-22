@@ -10,7 +10,7 @@ const BestSelling = () => {
     <>
       <div className="flex flex-col	md:flex-row mt-10 md:mt-0 ">
         <div className="md:w-2/12 sm:text-left md:pl-4 flex flex-col	justify-center items-center md:items-start	">
-          <h1 className="text-[#1E1E1E] text-2xl md:pl-10 font-['Montserrat'] font-black">
+          <h1 className="text-[#1E1E1E] text-2xl md:pl-10 font-['Montserrat'] font-normal	font-black">
             Best Selling Spices
           </h1>
 
@@ -29,7 +29,7 @@ const BestSelling = () => {
                 } 100%)`,
                 cursor: "pointer",
                 zIndex: "19",
-                fontWeight: "bold",
+                fontWeight: "400",
               }}>
               See all
             </a>
@@ -82,7 +82,7 @@ const BestSelling = () => {
               } 100%)`,
               cursor: "pointer",
               zIndex: "19",
-              fontWeight: "bold",
+              fontWeight: "400",
             }}>
             See all
           </a>
