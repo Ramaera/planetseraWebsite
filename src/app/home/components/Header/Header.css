@@ -45,7 +45,7 @@
   margin-top: -1px;
   color: #ff4f4f;
   font-size: 18px;
-  font-family: myregular;
+  
 }
 
 .active-2 {
@@ -83,7 +83,7 @@
 #search::placeholder {
   color: #ff4f4f;
   color: white;
-  font-family: myregular;
+   
   font-size: 18px;
   margin-right: 22px;
 }

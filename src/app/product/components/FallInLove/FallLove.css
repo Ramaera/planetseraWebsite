@@ -1,5 +1,5 @@
 @font-face {
-  font-family: myregular;
+   
   src: url(/public/fonts/josefont.ttf);
 }
 
@@ -90,7 +90,7 @@
 }
 
 .falllove-text {
-  font-family: myregular;
+   
   color: white;
   font-size: 18px;
   font-weight: 400;

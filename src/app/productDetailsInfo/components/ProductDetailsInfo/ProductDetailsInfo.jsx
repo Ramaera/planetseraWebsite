@@ -162,7 +162,7 @@ const ProductDetailsInfo = () => {
                       ? specificProduct.colored
                       : specificProduct.colored2,
                 }}
-                className={`md:text-[3.3rem] text-[2rem] tracking-widest font-[600] font-[Montserrat] md:mt-auto mt-8`}>
+                className={`md:text-[3.3rem] text-[2rem] tracking-widest font-[400] font-[Montserrat] md:mt-auto mt-8`}>
                 {specificProduct.ProductName}
               </h1>
               <div
@@ -173,7 +173,7 @@ const ProductDetailsInfo = () => {
                       : specificProduct.colored2,
                 }}
                 className={`absolute  w-36 h-[2px] ml-1 mt-[-2px]`}></div>
-              <ul className="pl-1 pt-4 text-[#787878] text-[1.7rem] font-[400] font-[Montserrat]  z-30 md:block  hidden">
+              <ul className="pl-1 pt-4 text-[#787878] text-[1.7rem] font-[100] font-[Montserrat]  z-30 md:block  hidden">
                 <li className="my-8 ">
                   <span className="pr-4">&bull;</span>100% Pure Natural Product
                 </li>
@@ -193,7 +193,7 @@ const ProductDetailsInfo = () => {
                 </li>
               </ul>
               <br />
-              <h3 className="text-[#ABABAB] md:text-[1.7rem] text-[1.2rem] font-[100] font-[Montserrat]">
+              <h3 className="text-[#ABABAB] md:text-[1.7rem] text-[1.2rem] font-[100]">
                 Select weight:
               </h3>
               <div className="flex my-5">
@@ -289,7 +289,7 @@ const ProductDetailsInfo = () => {
                           ? specificProduct.colored
                           : specificProduct.colored2,
                     }}
-                    className={` text-[2.1rem] font-thin font-[Montserrat]`}>
+                    className={` text-[2.1rem] font-thin `}>
                     Description
                   </h2>
 

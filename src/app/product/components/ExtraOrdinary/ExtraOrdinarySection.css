@@ -1,5 +1,5 @@
 @font-face {
-  font-family: myregular;
+   
   src: url(/public/fonts/josefont.ttf);
 }
 
@@ -134,7 +134,7 @@
 .ordinarycontent p {
   color: #1e1e1e;
   font-size: 14px;
-  font-family: myregular;
+   
   text-align: left;
 }
 
@@ -145,7 +145,7 @@
 .ordinaryhover-box {
   /* width: 300px;
   height: 143px; */
-  font-family: myregular;
+   
   background-color: white;
   padding: 20px;
   border: 1px solid white;

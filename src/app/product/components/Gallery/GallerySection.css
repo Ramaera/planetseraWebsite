@@ -1,5 +1,5 @@
 @font-face {
-  font-family: myregular;
+   
   src: url(/public/fonts/josefont.ttf);
 }
 
@@ -121,7 +121,7 @@
 .content-details p {
   color: #fff;
   font-size: 21px;
-  font-family: myregular;
+   
 }
 
 /* .fadeIn-bottom {
@@ -135,7 +135,7 @@
 .hover-box {
   width: 616px;
   /* height: 143px; */
-  font-family: myregular;
+   
   /* background-color: #0000008c; */
   padding: 33px;
   /* border: 1px solid white; */

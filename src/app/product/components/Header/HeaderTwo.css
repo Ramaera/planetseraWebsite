@@ -5,7 +5,7 @@
 }
 
 @font-face {
-  font-family: myregular;
+   
   src: url(/public/fonts/josefont.ttf);
 }
 
@@ -21,7 +21,7 @@
 }
 #navigation li a {
   font-size: 18px;
-  font-family: myregular;
+   
   text-align: center;
 }
 .menu {

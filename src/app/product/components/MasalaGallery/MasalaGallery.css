@@ -1,5 +1,5 @@
 @font-face {
-  font-family: myregular;
+   
   src: url(/public/fonts/josefont.ttf);
 }
 
@@ -25,7 +25,7 @@
 .galleryinfo {
   color: #fff;
   font-size: 18px;
-  font-family: myregular;
+   
 }
 
 .mygalleryhead-1 {
@@ -38,7 +38,7 @@
   font-family: oriyafont;
 }
 .myHover-box-1 {
-  font-family: myregular;
+   
   padding: 15px;
   border: 1px solid white;
   border-radius: 10px;
