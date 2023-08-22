@@ -21,7 +21,7 @@ const BestSelling = () => {
           <div className="mt-8 flex flex-wrap gap-4 text-center md:pl-10 order-2 md:order-1">
             <a
               href="#shop"
-              className="more-button hidden md:block py-4   hover:scale-105 "
+              className="more-button-2"
               style={{
                 boxShadow: `2px 4px 7px -2px ${colorMe}`,
                 background: `linear-gradient(72.44deg, ${colorMe} 0%, ${
@@ -74,7 +74,7 @@ const BestSelling = () => {
           })}
           <a
             href="#shop"
-            className="more-button mt-6 md:hidden py-4   hover:scale-105 "
+            className="more-button-3"
             style={{
               boxShadow: `2px 4px 7px -2px ${colorMe}`,
               background: `linear-gradient(72.44deg, ${colorMe} 0%, ${

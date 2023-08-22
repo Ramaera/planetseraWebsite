@@ -9,6 +9,59 @@
     flex-wrap: wrap;
   }
 
+  .more-button-2 {
+    display: flex;
+    border-radius: 30.5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-family: "Montserrat";
+    width: 165px;
+    height: 56px;
+    border: 1px solid white;
+    font-size: 18px;
+    padding: 22px;
+    /* padding-top: 2rem; 
+    padding-bottom: 2rem;  */
+    }
+  
+  .more-button-2 :hover{
+      transform: scale(1.05);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .more-button-2 {
+      display: none;
+    }
+  }
+
+  .more-button-3 {
+    display: none;
+    display: flex;
+    border-radius: 30.5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-family: "Montserrat";
+    width: 165px;
+    height: 56px;
+    border: 1px solid white;
+    font-size: 18px;
+    padding: 22px;
+    }
+  
+  .more-button-3 :hover{
+      transform: scale(1.05);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .more-button-3 {
+      display: flex;
+      margin-top: 1.5rem;
+    }
+  }
 
 @media screen and (max-width: 600px){
     .boxZoom{
