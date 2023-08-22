@@ -20,7 +20,7 @@ const ReviewImg = () => {
     }
   };
   return (
-    <div className="review-img w-[47%] flex flex-col justify-center mt-5">
+    <div className=" w-[47%] flex flex-col justify-center mt-5">
       <div style={{ backgroundColor: colorMe }} className="small-box1"></div>
       <div className="spices5"></div>
       <div className="overflow-hidden">
@@ -29,7 +29,7 @@ const ReviewImg = () => {
           className="spices6 hover:scale-110 duration-700 ease-linear	transition-all"></div>
       </div>
       <div
-        className="w-[300px] md:w-[434px] h-[100%] md:h-auto md:left-[-25%] absolute z-50 bg-gray-50 rounded-3xl border rotating-border rotating-border--google md:mt-20"
+        className="top-[-50%] md:top-0 w-[300px] md:w-[434px] h-auto left-[-30%] md:left-[-25%] absolute z-50 bg-gray-50 rounded-3xl border rotating-border rotating-border--google mt-20"
         style={{
           "--color": colorMe,
         }}>

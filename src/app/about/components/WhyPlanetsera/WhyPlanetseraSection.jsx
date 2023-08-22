@@ -4,7 +4,7 @@ import WhyPlanetserasection1 from "./WhyPlanetserasection1";
 const WhyPlanetseraSection = () => {
   return (
     <>
-      <div className="container px-6">
+      <div className="w-full max-w-full box-border m-auto h-auto px-6">
         <WhyPlanetserasection1 />
       </div>
     </>

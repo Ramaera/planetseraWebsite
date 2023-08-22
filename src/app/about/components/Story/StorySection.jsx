@@ -7,7 +7,7 @@ const StorySection = () => {
 
   return (
     <>
-      <div className="container px-6 mt-10 md:mt-16">
+      <div className="w-full max-w-full box-border m-auto h-auto px-6 mt-10 md:mt-16">
         <div className="basis-12/12 relative">
           <h1
             className="story-heading mb-5"
@@ -15,8 +15,7 @@ const StorySection = () => {
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
                 colorMe + "80"
               })`,
-            }}
-          >
+            }}>
             OUR STORY
           </h1>
           <div
@@ -25,8 +24,7 @@ const StorySection = () => {
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
                 colorMe + "80"
               })`,
-            }}
-          ></div>
+            }}></div>
           <p className="story-text md:px-16 z-10">
             Welcome to PlanetsEra Spices, where every spice is a reflection of
             the richness of Indian culture and carries a unique story of its

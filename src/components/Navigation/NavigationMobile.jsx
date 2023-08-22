@@ -2,15 +2,17 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import "../../styles/mediaQuery.css";
 import "./navigation.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-
+usePathname;
 const NavigationMobile = ({ page }) => {
   const router = useRouter();
-  // const currentRoute = router.pathname;
+  const currentRoute = usePathname();
+  // console.log("router--", currentRoute);
+
   const colorMe = useSelector((state) => state.colorUs.color);
 
   const dispatch = useDispatch();
@@ -63,7 +65,7 @@ const NavigationMobile = ({ page }) => {
                 passHref
                 onClick={() => changeColor()}
                 className={
-                  router === "/" ? "bg-black	 py-4 px-5  rounded-2xl" : ""
+                  currentRoute === "/" ? "bg-black	 py-4 px-5  rounded-2xl" : ""
                 }>
                 Home
               </Link>
@@ -73,7 +75,9 @@ const NavigationMobile = ({ page }) => {
                 href="/product"
                 passHref
                 className={
-                  router === "/product" ? "bg-black	 py-4 px-5  rounded-2xl" : ""
+                  currentRoute === "/product"
+                    ? "bg-black	 py-4 px-5  rounded-2xl"
+                    : ""
                 }>
                 Product
               </Link>
@@ -84,7 +88,9 @@ const NavigationMobile = ({ page }) => {
                 href="/shop"
                 passHref
                 className={
-                  router === "/shop" ? "bg-black	 py-4 px-5 rounded-2xl" : ""
+                  currentRoute === "/shop"
+                    ? "bg-black	 py-4 px-5 rounded-2xl"
+                    : ""
                 }>
                 Shop
               </Link>
@@ -95,7 +101,9 @@ const NavigationMobile = ({ page }) => {
                 href="/about"
                 passHref
                 className={
-                  router === "/about" ? "bg-black	 py-4 px-5 rounded-2xl" : ""
+                  currentRoute === "/about"
+                    ? "bg-black	 py-4 px-5 rounded-2xl"
+                    : ""
                 }>
                 About
               </Link>
@@ -106,7 +114,7 @@ const NavigationMobile = ({ page }) => {
                 href="/contactUs"
                 passHref
                 className={
-                  router === "/contactUs"
+                  currentRoute === "/contactUs"
                     ? "bg-black	 py-4 px-5  rounded-2xl"
                     : ""
                 }>

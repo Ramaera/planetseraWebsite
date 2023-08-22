@@ -3,7 +3,7 @@ import "./QualitySection.css";
 const QualitySection = () => {
   return (
     <>
-      <div className="container quality-container px-6 mt-20 md:px-16">
+      <div className="w-full max-w-full box-border m-auto h-auto quality-container px-6 mt-20 md:px-16">
         <img
           alt="bg"
           src="images/backgrounds/founderAb.webp"

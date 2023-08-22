@@ -6,7 +6,7 @@ const ProcessSection = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
   return (
     <>
-      <div className="container px-6 mt-20 md:mt-32 2xl:px-16">
+      <div className="w-full max-w-full box-border m-auto h-auto px-6 mt-20 md:mt-32 2xl:px-16">
         <div className="basis-12/12 flex flex-col relative">
           <h1
             className="processHeading mb-5"

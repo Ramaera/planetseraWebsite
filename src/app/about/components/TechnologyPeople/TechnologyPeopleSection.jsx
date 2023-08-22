@@ -4,7 +4,7 @@ const TechnologyPeopleSection = () => {
   return (
     <>
       <div className="container rectLine"></div>
-      <div className="container quality-container px-6 flex flex-col md:px-16">
+      <div className="w-full max-w-full box-border m-auto h-auto quality-container px-6 flex flex-col md:px-16">
         <img
           alt="masala"
           src="images/backgrounds/founderAb2.webp"
@@ -66,7 +66,7 @@ const TechnologyPeopleSection = () => {
           </div>
         </div>
       </div>
-      <div className="container flex tasAlign px-6 md:px-16">
+      <div className="w-full max-w-full box-border m-auto h-auto flex tasAlign px-6 md:px-16">
         <div className="basis-12/12 flex ">
           <div className="basis-12/12 flex">
             <p className="execute-text">
