@@ -34,7 +34,7 @@ const ReviewImg = () => {
           "--color": colorMe,
         }}>
         <div className="w-[85%] mx-auto my-3">
-          <p className="text-[#1e1e1e] text-[21px] leading-[33px] tracking-[0.03em] font-extralight mt-6">
+          <p className="text-[#1e1e1e] text-[21px] leading-[33px] tracking-[0.03em] font-light mt-6">
             Discover new flavours and elevate your dishes with PlanetsEra Spices
             - order now to start cooking with the best
           </p>

@@ -7,6 +7,7 @@ import "../../styles/mediaQuery.css";
 import "./navigation.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+
 usePathname;
 const NavigationMobile = ({ page }) => {
   const router = useRouter();
@@ -24,14 +25,14 @@ const NavigationMobile = ({ page }) => {
   const toggleClick = () => {
     setShowMenu(true);
     // document.getElementById("navDropdown").style.display = "none";
-    var x = document.getElementById("navDropdown");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-      // x.style.marginBottom = "500px";
-      // x.style.transition = "all 3s";
-    } else {
-      x.style.display = "none";
-    }
+    // var x = document.getElementById("navDropdown");
+    // if (x.style.display === "none") {
+    //   x.style.display = "block";
+    //   // x.style.marginBottom = "500px";
+    //   // x.style.transition = "all 3s";
+    // } else {
+    //   x.style.display = "none";
+    // }
   };
 
   return (

@@ -24,8 +24,8 @@
   transform: scale(1.1);
 }
 .box2 {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("/images/backgrounds/spices2.webp");
+  /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/images/backgrounds/spices2.webp"); */
   top: 18%;
   left: 20%;
   border-radius: 30px;

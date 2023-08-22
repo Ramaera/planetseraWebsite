@@ -4,6 +4,8 @@ import PouchSection from "./PouchSection";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import NavItem from "@/components/Navigation/NavItem";
 import { useSelector } from "react-redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaStar, faStar } from "@fortawesome/free-solid-svg-icons";
 
 const HeaderTwo = () => {
   const bg = "/images/backgrounds/HeroSlider.webp";
@@ -58,11 +60,31 @@ const HeaderTwo = () => {
           <div className="basis-12/12 flex w-full justify-around mt-5 ">
             <div className="basis-5/12"></div>
             <div className="basis-2/12 Star-Icon flex justify-center tracking-[6px] pl-2">
+              <FontAwesomeIcon
+                icon={faStar}
+                style={{ color: colorMe, margin: "1px 2px" }}
+              />
+              <FontAwesomeIcon
+                icon={faStar}
+                style={{ color: colorMe, margin: "1px 2px" }}
+              />
+              <FontAwesomeIcon
+                icon={faStar}
+                style={{ color: colorMe, margin: "1px 2px" }}
+              />
+              <FontAwesomeIcon
+                icon={faStar}
+                style={{ color: colorMe, margin: "1px 2px" }}
+              />
+              <FontAwesomeIcon
+                icon={faStar}
+                style={{ color: colorMe, margin: "1px 2px" }}
+              />
+              {/* <i className="fa fa-star " style={{ color: colorMe }}></i>
               <i className="fa fa-star " style={{ color: colorMe }}></i>
               <i className="fa fa-star " style={{ color: colorMe }}></i>
               <i className="fa fa-star " style={{ color: colorMe }}></i>
-              <i className="fa fa-star " style={{ color: colorMe }}></i>
-              <i className="fa fa-star " style={{ color: colorMe }}></i>
+              <i className="fa fa-star " style={{ color: colorMe }}></i> */}
             </div>
             <div className="basis-5/12"></div>
           </div>
