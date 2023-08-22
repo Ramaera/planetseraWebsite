@@ -18,7 +18,7 @@ const AboutBannerSection = () => {
             </h1>
             <div>
               <img
-                src="images/backgrounds/rect.webp"
+                src="/images/backgrounds/rect.webp"
                 className="spiceRect"
                 alt="masala"
               />

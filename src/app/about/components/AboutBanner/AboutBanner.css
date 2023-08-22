@@ -1,6 +1,6 @@
 .aboutbanner {
   /* height: 715px; */
-  background-image: url("/src/assets/images/aboutbanner.webp");
+  background-image: url("/images/backgrounds/aboutbanner.webp");
   background-repeat: no-repeat;
   background-size: contain;
   height: 610px;
@@ -32,7 +32,7 @@
 @media screen and (max-width: 600px) {
   .aboutbanner {
     /* height: 715px; */
-    background-image: url("/src/assets/images/aboutbanner.webp");
+    background-image: url("/images/backgrounds/aboutbanner.webp");
     background-repeat: no-repeat;
     background-size: contain;
     height: 200px !important;

@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 const ProcessSection = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
-
   return (
     <>
       <div className="container px-6 mt-20 md:mt-32 2xl:px-16">
@@ -19,7 +18,7 @@ const ProcessSection = () => {
             MANUFACTURING PROCESSES
           </h1>
           <div
-            className="manufacturing-line 2xl:hidden"
+            className="md:w-[190px] md:h-[2px] md:relative md:left-[290px] md:top-[-20px] 2xl:hidden"
             style={{
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
                 colorMe + "80"
