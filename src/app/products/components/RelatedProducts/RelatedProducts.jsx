@@ -9,7 +9,7 @@ const RelatedProducts = () => {
           return (
             <div className="w-1/4 p-1 md:p-4" key={pro.id}>
               <Link
-                href={`/productDetailsInfo/${pro.id}`}
+                href={`/products/${pro.id}`}
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
                 <img alt="masala" src={pro.RelatedPtoductImg} />
               </Link>

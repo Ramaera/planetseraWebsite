@@ -38,7 +38,7 @@ const BlendedSection = () => {
 
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
-            link={`/productDetailsInfo/7`}
+            link={`/products/garam-masala`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />
@@ -87,7 +87,7 @@ const BlendedSection = () => {
 
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
-            link={`/productDetailsInfo/5`}
+            link={`/products/meat-masala`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />
@@ -104,7 +104,7 @@ const BlendedSection = () => {
 
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
-            link={`/productDetailsInfo/3`}
+            link={`/products/chat-masala`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />
@@ -121,7 +121,7 @@ const BlendedSection = () => {
 
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
-            link={`/productDetailsInfo/2`}
+            link={`/products/sabji-masala`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />

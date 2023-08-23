@@ -1,6 +1,6 @@
 const Our = [
   {
-    id: 1,
+    id: "red-chilli-powder",
     masalaImg: "images/backgrounds/ourproduct-12.webp",
     masalaName: "Red Chilli Powder",
     masalaGaram: "(50gm , 100gm)",
@@ -8,13 +8,13 @@ const Our = [
       "https://www.flipkart.com/planetsera-red-chilli-powder/p/itm301769743d0e6?pid=SCMGQ9KNZZZFGDHV",
   },
   {
-    id: "9",
+    id: "amchur-powder",
     masalaImg: "images/backgrounds/ourproduct-3.webp",
     masalaName: "Amchur Powder",
     masalaGaram: "(50gm)",
   },
   {
-    id: 4,
+    id: "turmeric-powder",
     masalaImg: "images/backgrounds/ourproduct-10.webp",
     masalaName: "Turmeric Powder",
     masalaGaram: "(50gm , 100gm)",
@@ -22,21 +22,21 @@ const Our = [
       "https://www.flipkart.com/planetsera-turmeric-powder/p/itm0c52e9d424d91?pid=SCMGQCZ8F3X6E6EY",
   },
   {
-    id: "10",
+    id: "black-pepper-powder",
     masalaImg: "images/backgrounds/ourproduct-5.webp",
     masalaName: "Black Pepper Powder",
     masalaGaram: "(50gm)",
   },
 
   {
-    id: 6,
+    id: "cumin-powder",
     masalaImg: "images/backgrounds/ourproduct-7.webp",
     masalaName: "Cumin Powder",
     masalaGaram: "(50gm)",
   },
 
   {
-    id: 8,
+    id: "coriander-powder",
     masalaImg: "images/backgrounds/ourproduct-13.webp",
     masalaName: "Coriander Powder",
     masalaGaram: "(50gm)",

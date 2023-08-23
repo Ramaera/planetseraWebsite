@@ -1,6 +1,6 @@
 const RelatedPtoductData = [
   {
-    id: "1",
+    id: "red-chilli-powder",
     ProductName: "Red Chilli Powder",
     RelatedPtoductImg: "/images/productDetailsImg/RedChilli.webp",
     ProductMasala: "/images/productDetailsImg/RedChilli.webp",
@@ -35,7 +35,7 @@ const RelatedPtoductData = [
   },
 
   {
-    id: "2",
+    id: "sabji-masala",
     ProductName: "Sabji Masala",
     RelatedPtoductImg: "/images/productDetailsImg/SabjiMasala.webp",
     ProductMasala: "/images/productDetailsImg/SabjiMasala.webp",
@@ -69,7 +69,7 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-sabji-masala/p/itma9772eaa0b140?pid=SCMGQEXY83ZPYPZN",
   },
   {
-    id: "3",
+    id: "chat-masala",
     ProductName: "Chat Masala",
     RelatedPtoductImg: "/images/productDetailsImg/ProductMasala.webp",
     ProductMasala: "/images/productDetailsImg/ProductMasala.webp",
@@ -103,7 +103,7 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-chat-masala/p/itmfe8b6cf21eb08?pid=SCMGQMY9QN6TVHPF",
   },
   {
-    id: "4",
+    id: "turmeric-powder",
     ProductName: "Turmeric Powder",
     RelatedPtoductImg: "/images/productDetailsImg/TurmericPowder.webp",
     ProductMasala: "/images/productDetailsImg/TurmericPowder.webp",
@@ -137,7 +137,7 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-turmeric-powder/p/itm0c52e9d424d91?pid=SCMGQ39T5DFSWMHF",
   },
   {
-    id: "5",
+    id: "meat-masala",
     ProductName: "Meat Masala",
     RelatedPtoductImg: "/images/productDetailsImg/MeatMasala.webp",
     ProductMasala: "/images/productDetailsImg/MeatMasala.webp",
@@ -172,7 +172,7 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-meat-masala/p/itmaddb650cbfb76?pid=SCMGQKPS3YAQGKZH",
   },
   {
-    id: "6",
+    id: "cumin-powder",
     ProductName: "Cumin Powder",
     RelatedPtoductImg: "/images/productDetailsImg/CuminPowder.webp",
     ProductMasala: "/images/productDetailsImg/CuminPowder.webp",
@@ -204,7 +204,7 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-cumin-powder/p/itmac8a4eb79d181?pid=SCMGQEF68DGSE4DW",
   },
   {
-    id: "7",
+    id: "garam-masala",
     ProductName: "Garam Masala",
     RelatedPtoductImg: "/images/productDetailsImg/GaramMasala.webp",
     ProductMasala: "/images/productDetailsImg/GaramMasala.webp",
@@ -240,7 +240,7 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-garam-masala/p/itm9af1cb20a0cd3?pid=SCMGQJHCP3X6ZWAF",
   },
   {
-    id: "8",
+    id: "coriander-powder",
     ProductName: "Coriander Powder",
     RelatedPtoductImg: "/images/productDetailsImg/CorianderPowder.webp",
     ProductMasala: "/images/productDetailsImg/CorianderPowder.webp",
@@ -275,7 +275,7 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-coriander-powder/p/itme906e235fc3d4?pid=SCMGQDY2NXGDAV5F",
   },
   {
-    id: "9",
+    id: "amchur-powder",
     ProductName: "Amchur Powder",
     RelatedPtoductImg: "/images/productDetailsImg/AmchurPowder.webp",
     ProductMasala: "/images/productDetailsImg/AmchurPowder.webp",
@@ -303,7 +303,7 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-dry-mango-powder/p/itm0ad77cccb292f?pid=SCMGQDYQEMFGUFEQ",
   },
   {
-    id: "10",
+    id: "black-pepper-powder",
     ProductName: "Black Pepper Powder",
     RelatedPtoductImg: "/images/productDetailsImg/BlackPepper.webp",
     ProductMasala: "/images/productDetailsImg/BlackPepper.webp",

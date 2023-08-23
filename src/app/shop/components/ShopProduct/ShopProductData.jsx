@@ -1,6 +1,6 @@
 const ShopProductData = [
   {
-    id: 10,
+    id: "black-pepper-powder",
     masalaImg: "images/productImg/blackPepper.webp",
     masalaName: "Black Pepper Powder",
     masalaGram: "(50g)",
@@ -10,7 +10,7 @@ const ShopProductData = [
       "https://www.flipkart.com/planetsera-black-pepper-powder/p/itm55970223613f4?pid=SCMGQDZA7DF4SGXS",
   },
   {
-    id: 3,
+    id: "chat-masala",
     masalaImg: "images/productImg/chatMasala.webp",
     masalaName: "Chat Masala",
     masalaGram: "(50g,100g)",
@@ -21,7 +21,7 @@ const ShopProductData = [
   },
 
   {
-    id: 8,
+    id: "coriander-powder",
     masalaImg: "images/productImg/coriander.webp",
     masalaName: "Coriander Powder",
     masalaGram: "(50g,100g)",
@@ -32,7 +32,7 @@ const ShopProductData = [
       "https://www.flipkart.com/planetsera-coriander-powder/p/itme906e235fc3d4?pid=SCMGQDY2FQBHVTFS",
   },
   {
-    id: 7,
+    id: "garam-masala",
     masalaImg: "images/productImg/gramMasala.webp",
     masalaName: "Garam Masala",
     masalaGram: "(50g,100g)",
@@ -43,7 +43,7 @@ const ShopProductData = [
       "https://www.flipkart.com/planetsera-garam-masala/p/itm9af1cb20a0cd3?pid=SCMGQ9W67E5MYTH8",
   },
   {
-    id: 5,
+    id: "meat-masala",
     masalaImg: "images/productImg/meatMasala.webp",
     masalaName: "Meat Masala",
     masalaGram: "(50g,100g)",
@@ -52,7 +52,7 @@ const ShopProductData = [
       "https://www.flipkart.com/planetsera-meat-masala/p/itmaddb650cbfb76?pid=SCMGQ9H23UGGZSPS",
   },
   {
-    id: 1,
+    id: "red-chilli-powder",
     masalaImg: "images/productImg/redChilli.webp",
     masalaName: "Red Chilli Powder",
     masalaGram: "(50g,100g)",
@@ -63,7 +63,7 @@ const ShopProductData = [
       "https://www.flipkart.com/planetsera-red-chilli-powder/p/itm301769743d0e6?pid=SCMGQ9KNZZZFGDHV",
   },
   {
-    id: 2,
+    id: "sabji-masala",
     masalaImg: "images/productImg/sabjiMasala.webp",
     masalaName: "Sabji Masala",
     masalaGram: "(50g,100g)",
@@ -73,7 +73,7 @@ const ShopProductData = [
   },
 
   {
-    id: 4,
+    id: "turmeric-powder",
     masalaImg: "images/productImg/turmeric.webp",
     masalaName: "Turmeric Powder",
     masalaGram: "(50g,100g)",
@@ -83,14 +83,14 @@ const ShopProductData = [
   },
   // ddd
   {
-    id: 13,
+    id: "chicken-masala",
     masalaImg: "images/productImg/ChickenMasala.webp",
     masalaName: "Chicken Masala",
     masalaGram: "(50g)",
     masalaPouch: "Zipper Pouch",
   },
   {
-    id: 6,
+    id: "cumin-powder",
     masalaImg: "images/productImg/cuminPowder.webp",
     masalaName: "Cumin Powder",
     masalaGram: "(50g)",
@@ -100,14 +100,14 @@ const ShopProductData = [
   },
   // ddd
   {
-    id: 17,
+    id: "kitchen-king-masala",
     masalaImg: "images/productImg/KitchenKingMasala.webp",
     masalaName: "Kitchen King Masala",
     masalaGram: "(50g)",
     masalaPouch: "Zipper Pouch",
   },
   {
-    id: 9,
+    id: "amchur-powder",
     masalaImg: "images/productImg/AmchurPowder.webp",
     masalaName: "Amchur Powder",
     masalaGram: "(50g)",

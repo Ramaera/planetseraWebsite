@@ -1,6 +1,6 @@
 const BestSellingData = [
   {
-    id: 2,
+    id: "sabji-masala",
     masalaImg: "images/productImg/sabjiMasala.webp",
     masalaName: "Sabji Masala ",
     colored: "#E9F1E6",
@@ -11,7 +11,7 @@ const BestSellingData = [
   },
 
   {
-    id: 1,
+    id: "red-chilli-powder",
     masalaImg: "images/productImg/redChilli.webp",
     masalaName: "Red chilli powder",
     colored: "#F1E6E6",
@@ -24,7 +24,7 @@ const BestSellingData = [
   },
 
   {
-    id: 7,
+    id: "garam-masala",
     masalaImg: "images/productImg/gramMasala.webp",
     masalaName: "Garam Masala",
     colored: "#F1E7E6",

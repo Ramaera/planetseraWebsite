@@ -56,7 +56,7 @@ const ShopProduct = () => {
                     />
                   ) : (
                     <BuynowBtn
-                      link={`/productDetailsInfo/${item.id}`}
+                      link={`/products/${item.id}`}
                       text={"Buy Now"}
                       sectionClass="responsiveBtn"
                     />

@@ -65,10 +65,7 @@ const BestSelling = () => {
                   {item.masalaDetail}
                 </h1>
                 {/* <BuyIcons flipkart={item.flipkart} amazon={item.amazon} /> */}
-                <BuynowBtn
-                  link={`/productDetailsInfo/${item.id}`}
-                  text={"Buy Now"}
-                />
+                <BuynowBtn link={`/products/${item.id}`} text={"Buy Now"} />
               </div>
             );
           })}

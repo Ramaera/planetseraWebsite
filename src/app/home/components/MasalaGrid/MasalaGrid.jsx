@@ -35,10 +35,7 @@ function MasalaGrid() {
                 </h2>
 
                 <div style={{ marginTop: "10px" }}></div>
-                <BuynowBtn
-                  link={`/productDetailsInfo/${items.id}`}
-                  text={"Buy Now"}
-                />
+                <BuynowBtn link={`/products/${items.id}`} text={"Buy Now"} />
               </div>
             );
           })}

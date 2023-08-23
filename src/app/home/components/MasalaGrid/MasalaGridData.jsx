@@ -1,6 +1,6 @@
 export const MasalaGridData = [
   {
-    id: "1",
+    id: "red-chilli-powder",
     ourproductImage: "images/backgrounds/ourproduct-12.webp",
     productText: "Red Chilli Powder",
     productGaram: "(50g , 100g)",
@@ -9,14 +9,14 @@ export const MasalaGridData = [
   },
 
   {
-    id: "9",
+    id: "amchur-powder",
     ourproductImage: "images/backgrounds/ourproduct-3.webp",
     productText: "Amchur Powder",
     productGaram: "(50g)",
   },
 
   {
-    id: "4",
+    id: "turmeric-powder",
     ourproductImage: "images/backgrounds/ourproduct-10.webp",
     productText: "Turmeric Powder",
     productGaram: "(50g , 100g)",
@@ -25,14 +25,14 @@ export const MasalaGridData = [
   },
 
   {
-    id: "10",
+    id: "black-pepper-powder",
     ourproductImage: "images/backgrounds/ourproduct-5.webp",
     productText: "Black Pepper Powder",
     productGaram: "(50g)",
   },
 
   {
-    id: "5",
+    id: "meat-masala",
     ourproductImage: "images/backgrounds/ourproduct-8.webp",
     productText: "Meat Masala",
     productGaram: "(50g)",
@@ -41,7 +41,7 @@ export const MasalaGridData = [
   },
 
   {
-    id: "6",
+    id: "cumin-powder",
     ourproductImage: "images/backgrounds/ourproduct-7.webp",
     productText: "Cumin Powder",
     productGaram: "(50g)",
