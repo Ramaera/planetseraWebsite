@@ -6,7 +6,7 @@ import GalleryImageSix from "./GalleryImageSix";
 
 const GallerySection = () => {
   return (
-    <div className="container  px-6">
+    <div className="w-full max-w-full box-border m-auto h-auto px-6">
       <div className="recycleImg">
         <img alt="recycle" src="images/backgrounds/recycleInfo.webp" />
       </div>

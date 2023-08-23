@@ -84,6 +84,12 @@
   font-weight: 500;
 }
 
+@media screen and (max-width: 600px) {
+  .SecondPage-Button {
+    font-size: 15px;
+  }
+}
+
 .Star-Icon i {
   font-size: 18px;
   color: #fe7171;

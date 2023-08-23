@@ -5,7 +5,7 @@ import BuynowBtn from "../../../../components/BuynowBtn";
 const OurProduct = () => {
   return (
     <div
-      className="container relative mt-10 md:mt-32 containerBorder"
+      className="w-full max-w-full box-border m-auto h-auto relative mt-10 md:mt-32 containerBorder"
       id="groundSpices">
       <div className="basis-12/12 absolute ourbg"></div>
       <div className=" groundbg">

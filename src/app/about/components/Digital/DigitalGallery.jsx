@@ -123,14 +123,14 @@ const DigitalGallery = () => {
 
           <button
             type="button"
-            className="slider-nav md:left-[85%]"
+            className="slider-nav slider-nav-left"
             aria-label="Go left"
             style={{
               "--color": colorMe,
             }}></button>
           <button
             type="button"
-            className="slider-nav slider-nav-next md:pr-[60px]"
+            className="slider-nav slider-nav-next slider-nav-right"
             aria-label="Go left"
             style={{
               "--color": colorMe,

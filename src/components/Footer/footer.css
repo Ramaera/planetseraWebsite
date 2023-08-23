@@ -124,6 +124,7 @@
   }
   .icons {
     margin: 0px auto;
+    margin-top: 0.5rem;
   }
   .join {
     justify-content: space-between;

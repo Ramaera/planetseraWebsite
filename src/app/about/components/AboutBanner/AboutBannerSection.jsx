@@ -3,7 +3,7 @@ import "./AboutBanner.css";
 const AboutBannerSection = () => {
   return (
     <>
-      <div className="container relative lg:flex md:flex sm:block mt-20 md:mt-0">
+      <div className="w-full max-w-full box-border m-auto h-auto relative lg:flex md:flex sm:block mt-20 md:mt-0">
         <img
           alt="masala"
           src="images/backgrounds/aboutBannerAbsolute.webp"

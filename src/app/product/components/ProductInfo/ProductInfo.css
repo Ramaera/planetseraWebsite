@@ -219,7 +219,7 @@ background: linear-gradient(to right, #CDB1B1, #C59F9F);
   font-family: "Montserrat";
  margin: 50px 0 10px 0;
  font-size: 30px;
- font-weight: 800;
+ font-weight: 400;
  text-align: center;
  padding: 0;
  color: white;
@@ -233,8 +233,7 @@ background: linear-gradient(to right, #CDB1B1, #C59F9F);
 
 .containerZoom .cardZoom .slide.slide2 .contentZoom .titleZoom {
   font-family: "Montserrat";
- 
- font-weight: 200;
+ font-weight: 300;
  text-align: left;
  padding: 0;
  font-size: 18px;
@@ -251,6 +250,7 @@ background: linear-gradient(to right, #CDB1B1, #C59F9F);
   display: flex;
   font-family: Montserrat;
   font-weight: 400;
+  margin-top: 1rem; 
 }
 
 .masala-details{

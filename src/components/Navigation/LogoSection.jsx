@@ -6,7 +6,7 @@ const LogoSection = () => {
 
   return (
     <div className="basis-4/12 pl-5 myPos mt-14">
-      <div className="basis-4/12 mt-12   text-alignment">
+      <div className="basis-4/12  text-alignment">
         <h1
           style={{
             webkitTextFillColor: "transparent",

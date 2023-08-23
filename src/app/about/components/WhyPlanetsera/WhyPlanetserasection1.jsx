@@ -12,7 +12,7 @@ const WhyPlanetserasection1 = () => {
 
   return (
     <>
-      <div className="container mt-20 2xl:">
+      <div className="w-full max-w-full box-border m-auto h-auto mt-20 2xl:">
         <div className="basis-12/12 lg:flex md:flex sm:block mb-20">
           <div className="basis-1/12"></div>
 

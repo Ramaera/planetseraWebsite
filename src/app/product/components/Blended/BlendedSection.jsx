@@ -3,8 +3,10 @@ import BuynowBtn from "../../../../components/BuynowBtn";
 
 const BlendedSection = () => {
   return (
-    <div className="container relative mt-10 md:mt-32" id="blendedSpices">
-      <div className="basis-12/12 md:m-16 m-2 blendedbg">
+    <div
+      className="w-full max-w-full box-border m-auto h-auto relative mt-10 md:mt-32"
+      id="blendedSpices">
+      <div className="basis-12/12 md:m-16 m-2">
         <img
           src="images/backgrounds/BlendedSpicesBg.webp"
           className="w-full"

@@ -46,7 +46,7 @@ padding: 22px;
 @media screen and (max-width: 600px) {
   .aboutH-heading {
     font-size: 54px;
-    font-family: oriyFont;
+    /* font-family: oriyFont; */
     background: -webkit-linear-gradient(#20932c, #a0fd90);
     background-image: linear-gradient(to right, #20932c, #a0fd90);
     -webkit-background-clip: text;

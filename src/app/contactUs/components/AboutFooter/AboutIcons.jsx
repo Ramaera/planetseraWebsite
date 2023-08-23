@@ -3,7 +3,7 @@ import { Facebook, Instagram, Twitter } from "@mui/icons-material";
 
 const AboutIcons = () => {
   return (
-    <div className="icons flex w-40 text-center justify-evenly items-start mt-2">
+    <div className="icons flex w-40 text-center justify-evenly items-start">
       <a href="https://www.instagram.com/planetseraspices/" target="_blank">
         <Instagram style={{ color: "white" }} />
       </a>

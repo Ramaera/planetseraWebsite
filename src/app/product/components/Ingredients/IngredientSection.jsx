@@ -29,7 +29,7 @@ const IngredientSection = () => {
 
   return (
     <>
-      <div className="container mt-20">
+      <div className="w-full max-w-full box-border m-auto h-auto mt-20">
         <div className="basis-12/12 relative">
           <h1
             className="delicious-heading"

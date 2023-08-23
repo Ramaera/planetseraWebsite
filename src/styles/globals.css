@@ -672,7 +672,7 @@
   }
   .manuAb {
     position: absolute;
-    top: 866px !important;
+    top: 820px !important;
     max-width: 100% !important;
   }
 
@@ -692,11 +692,11 @@
     margin-top: 5rem !important;
   }
 
-  /* .foodyBackground {
+  .foodyBackground {
     height: 1093px;
     background-size: cover;
   }
- */
+
   .pl-141 {
     padding-left: 1.5rem;
   }

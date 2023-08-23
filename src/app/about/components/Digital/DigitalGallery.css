@@ -141,6 +141,14 @@ button,
   background-color: var(--color)
 } 
 
+.slider-nav-left{
+left: 85%;
+}
+
+.slider-nav-right{
+padding-right: 60px;
+}
+
 .quality1-line {
   width: 190px;
   height: 2px;
@@ -172,5 +180,10 @@ button,
   .mySlider-container {
     display: none !important;
   }
-
+ .slider-nav-left{
+  left: unset;
+ }
+ .slider-nav-right{
+  padding-right: unset;
+  }
 }

@@ -1,5 +1,5 @@
 .FontText {
-  font-family: "Josefin Sans";
+  font-family: "Montserrat" ;
   border: 1px solid #afafaf;
   border-radius: 20px;
 }
@@ -69,7 +69,7 @@ button[type="submit"] {
 
 .contact_heading {
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 40px;
   line-height: 52px;
   letter-spacing: 0.3em;
@@ -94,7 +94,7 @@ button[type="submit"] {
 
 .care_text {
   /* font-family: "Josefin Sans"; */
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 25px;
 }
@@ -137,7 +137,7 @@ button[type="submit"] {
   }
   .contact_heading {
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 36px;
     line-height: 52px;
     letter-spacing: normal;

@@ -7,6 +7,7 @@
 }
 .cards {
   width: 20vw;
+  margin-bottom: 4rem;
 }
 
 .product-font {
@@ -38,6 +39,7 @@
     width: 100vw;
     margin: 2px auto;
     justify-content: center;
+    margin-bottom: -40px;
   }
   .product-name {
     font-size: 30px;
