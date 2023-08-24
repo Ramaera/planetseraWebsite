@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import BuyIcons from "../../../../components/BuyIcons";
 import RelatedPtoductData from "../RelatedProducts/RelatedProductData";
+// import MetaDataproducts from "../MetaDataproducts/MetaDataproducts";
 
 const ProductDetailsInfo = () => {
   const { id } = useParams();
@@ -35,6 +36,7 @@ const ProductDetailsInfo = () => {
   console.log("specificProduct", specificProduct);
   return (
     <>
+      {/* <MetaDataproducts /> */}
       <div
         // style={{ backgroundColor: specificProduct.colored }}
         className="absolute h-2/5 min-h-[300px] top-0 w-full md:hidden"></div>
