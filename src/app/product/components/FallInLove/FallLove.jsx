@@ -19,7 +19,7 @@ const FallLove = () => {
       />
 
       <div className="basis-4/12 flex flex-col justify-center m-auto">
-        <h1
+        <h2
           className="falllove-heading"
           style={{
             webkitTextFillColor: "transparent",
@@ -29,7 +29,7 @@ const FallLove = () => {
           }}>
           Get fit with flavor - PlanetsEra spices bring a healthy kick to your
           meals.
-        </h1>
+        </h2>
 
         <div className="fallLoveLine 2xl:hidden">
           <img

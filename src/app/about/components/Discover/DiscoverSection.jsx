@@ -14,7 +14,7 @@ const DiscoverSection = () => {
           className="discover-alignment"
         />
         <div className="basis-12/12 disTile relative">
-          <h1
+          <h2
             className="discover-heading"
             style={{
               webkitTextFillColor: "transparent",
@@ -23,7 +23,7 @@ const DiscoverSection = () => {
               })`,
             }}>
             Discover more about PlanetsEra
-          </h1>
+          </h2>
           <div
             className="discover-line 2xl:hidden"
             style={{
@@ -45,7 +45,7 @@ const DiscoverSection = () => {
               "--hover-colored": colorMe + "80",
               "--hover-opacity": 0.5,
             }}>
-            <h1>Exotic Spices</h1>
+            <h2 className="text-3xl">Exotic Spices</h2>
           </div>
           <div
             class="basis-3/12 flex items-center quality-alignment1"
@@ -57,7 +57,7 @@ const DiscoverSection = () => {
               "--hover-colored": colorMe + "80",
               "--hover-opacity": 0.5,
             }}>
-            <h1>Savoury Taste</h1>
+            <h2 className="text-3xl">Savoury Taste</h2>
           </div>
           <div
             style={{
@@ -69,7 +69,7 @@ const DiscoverSection = () => {
               "--hover-opacity": 0.5,
             }}
             class="basis-3/12 flex items-center quality-alignment1">
-            <h1>Premium Ingredients</h1>
+            <h2 className="text-3xl">Premium Ingredients</h2>
           </div>
 
           <div
@@ -82,7 +82,7 @@ const DiscoverSection = () => {
               "--hover-colored": colorMe + "80",
               "--hover-opacity": 0.5,
             }}>
-            <h1>Superior Quality</h1>
+            <h2 className="text-3xl">Superior Quality</h2>
           </div>
         </div>
       </div>

@@ -9,7 +9,7 @@ const StorySection = () => {
     <>
       <div className="w-full max-w-full box-border m-auto h-auto px-6 mt-10 md:mt-16">
         <div className="basis-12/12 relative">
-          <h1
+          <h2
             className="story-heading mb-5"
             style={{
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -17,7 +17,7 @@ const StorySection = () => {
               })`,
             }}>
             OUR STORY
-          </h1>
+          </h2>
           <div
             className="how-line 2xl:hidden"
             style={{

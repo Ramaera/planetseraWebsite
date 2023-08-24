@@ -8,7 +8,7 @@ const ProcessSection = () => {
     <>
       <div className="w-full max-w-full box-border m-auto h-auto px-6 mt-20 md:mt-32 2xl:px-16">
         <div className="basis-12/12 flex flex-col relative">
-          <h1
+          <h2
             className="processHeading mb-5"
             style={{
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -16,7 +16,7 @@ const ProcessSection = () => {
               })`,
             }}>
             MANUFACTURING PROCESSES
-          </h1>
+          </h2>
           <div
             className="md:w-[190px] md:h-[2px] md:relative md:left-[290px] md:top-[-20px] 2xl:hidden"
             style={{

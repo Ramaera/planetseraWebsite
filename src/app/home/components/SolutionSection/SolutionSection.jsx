@@ -32,11 +32,11 @@ function SolutionSection() {
         <div className="basis-1/12"></div>
         <div className="basis-5/12 self-center px-5 md:pr-5 md:pl-0">
           <div data-aos="fade-up">
-            <h1
+            <h2
               style={{ color: colorMe }}
               class=" text-[#ff4f4f] text-[30px] md:text-[45px] font-normal md:flex md:items-center md:tracking-[0.17em] md:leading-snug  my-10 md:my-3">
               Get the Desired Flavour and Aroma with PlanetsEra Spices
-            </h1>
+            </h2>
             <div className="planetsera_line"></div>
             <div className="desireLine"></div>
           </div>

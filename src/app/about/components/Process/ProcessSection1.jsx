@@ -32,7 +32,7 @@ const ProcessSection1 = () => {
         <div className="container md:mt-40">
           <div className="basis-12/12 md:px-8">
             <div className="w-full md:mb-6 md:mt-6 relative ">
-              <h1
+              <h2
                 className="planetseraHeading"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -40,7 +40,7 @@ const ProcessSection1 = () => {
                   })`,
                 }}>
                 Organic sourcing:
-              </h1>
+              </h2>
               <div
                 className="organic-line"
                 style={{
@@ -55,7 +55,7 @@ const ProcessSection1 = () => {
               </p>
             </div>
             <div className="w-full md:mb-6 relative">
-              <h1
+              <h2
                 className="planetseraHeading"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -63,7 +63,7 @@ const ProcessSection1 = () => {
                   })`,
                 }}>
                 Expert blending:
-              </h1>
+              </h2>
               <div
                 className="expert-line"
                 style={{
@@ -77,7 +77,7 @@ const ProcessSection1 = () => {
               </p>
             </div>
             <div className="w-full md:mb-6 relative">
-              <h1
+              <h2
                 className="planetseraHeading"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -85,7 +85,7 @@ const ProcessSection1 = () => {
                   })`,
                 }}>
                 Airtight packaging:
-              </h1>
+              </h2>
               <div
                 className="airtight-line"
                 style={{

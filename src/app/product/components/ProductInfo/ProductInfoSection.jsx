@@ -26,7 +26,7 @@ const ProductInfoSection = () => {
               background: "linear-gradient(to right, #CED8CF, #C9D2B3)",
             }}>
             <div className="contentZoom">
-              <h1 className="headingZoom">Sabji Masala</h1>
+              <h2 className="headingZoom">Sabji Masala</h2>
               <h3 className="titleZoom ">
                 PlanetsEra’s Sabji Masala is an evergreen everyday Indian spice
                 added to Indian food. A blend of spices for day-to-day
@@ -67,7 +67,7 @@ const ProductInfoSection = () => {
               zIndex: "1",
             }}>
             <div className="contentZoom">
-              <h1 className="headingZoom">Garam Masala</h1>
+              <h2 className="headingZoom">Garam Masala</h2>
               <h3 className="titleZoom ">
                 PlanetsEra’s Garam Masala is an evergreen everyday Indian spice
                 added to Indian food. A blend of spices for day-to-day
@@ -107,7 +107,7 @@ const ProductInfoSection = () => {
               zIndex: "1",
             }}>
             <div className="contentZoom">
-              <h1 className="headingZoom">Red Chilli Powder</h1>
+              <h2 className="headingZoom">Red Chilli Powder</h2>
               <h3 className="titleZoom ">
                 PlanetsEra’s Red Chilli Powder is an evergreen everyday Indian
                 spice added to Indian food. A blend of spices for day-to-day
@@ -147,7 +147,7 @@ const ProductInfoSection = () => {
               background: "linear-gradient(to right, #E4B980, #E2B87F)",
             }}>
             <div className="contentZoom">
-              <h1 className="headingZoom">Cumin Powder</h1>
+              <h2 className="headingZoom">Cumin Powder</h2>
               <h3 className="titleZoom ">
                 PlanetsEra’s Cumin Powder is an evergreen everyday Indian spice
                 added to Indian food. A blend of spices for day-to-day

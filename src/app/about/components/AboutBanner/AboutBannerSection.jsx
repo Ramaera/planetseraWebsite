@@ -12,10 +12,10 @@ const AboutBannerSection = () => {
         <div className="basis-1/12"></div>
         <div className="container aboutbanner flex justify-center items-center maOne relative 2xl:h-[80vh]">
           <div className="basis-12/12">
-            <h1 className="aboutbanner-text">
+            <h2 className="aboutbanner-text">
               Know the journey behind
               <br /> the establishment of PlanetsEra Spices
-            </h1>
+            </h2>
             <div>
               <img
                 src="/images/backgrounds/rect.webp"

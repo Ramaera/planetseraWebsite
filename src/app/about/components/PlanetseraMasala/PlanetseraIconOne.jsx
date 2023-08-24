@@ -26,7 +26,7 @@ const PlanetseraIconOne = () => {
               src="images/backgrounds/one1.webp"
               style={{ width: "100px" }}
             />
-            <h1 className="tootip-text">Rich and Exotic</h1>
+            <h2 className="tootip-text">Rich and Exotic</h2>
           </div>
         </div>
       </div>

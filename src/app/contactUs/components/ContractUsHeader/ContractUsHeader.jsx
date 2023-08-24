@@ -16,9 +16,9 @@ const ContactUsHeader = () => {
         }}>
         <div className="basis-12/12 flex justify-end ml-auto items-baseline detailContainer "></div>
 
-        <div className="text-white text-center pt-16 md:py-[20vh]  md:mx-4 mx-4 contactText text-2xl md:text-6xl ">
+        <h1 className="text-white text-center pt-16 md:py-[20vh]  md:mx-4 mx-4 contactText text-2xl md:text-6xl ">
           Spice up your life - contact us with any inquiries or requests.
-        </div>
+        </h1>
         <div className="">
           <img
             src="images/backgrounds/Frame.webp"

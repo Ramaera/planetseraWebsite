@@ -86,7 +86,7 @@ const SuccessSection = () => {
                           </div>
                           <div className="borderLine"></div>
                           <div className="md:basis-6/12 mt-56 md:mt-0">
-                            <h1
+                            <h2
                               className="success-heading"
                               style={{
                                 webkitTextFillColor: "transparent",
@@ -95,7 +95,7 @@ const SuccessSection = () => {
                                 })`,
                               }}>
                               {slide.heading}
-                            </h1>
+                            </h2>
                             <div className="hidden md:block mx-2 md:mt-[-1vh] md:mx-2 2xl:hidden">
                               <img
                                 alt="bg"

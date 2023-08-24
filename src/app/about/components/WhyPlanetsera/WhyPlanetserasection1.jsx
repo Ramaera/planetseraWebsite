@@ -17,7 +17,7 @@ const WhyPlanetserasection1 = () => {
           <div className="basis-1/12"></div>
 
           <div className="basis-4/12 self-center relative">
-            <h1
+            <h2
               className="planetseraHeading"
               style={{
                 backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -25,7 +25,7 @@ const WhyPlanetserasection1 = () => {
                 })`,
               }}>
               Precision milling
-            </h1>
+            </h2>
             <div
               className="precision-line"
               style={{
@@ -71,7 +71,7 @@ const WhyPlanetserasection1 = () => {
           </div>
           <div className="basis-1/12"></div>
           <div className="basis-4/12 self-center relative mysecond">
-            <h1
+            <h2
               className="planetseraHeading"
               style={{
                 backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -79,7 +79,7 @@ const WhyPlanetserasection1 = () => {
                 })`,
               }}>
               Lab Testing
-            </h1>
+            </h2>
             <div
               className="lab-line"
               style={{

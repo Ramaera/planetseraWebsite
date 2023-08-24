@@ -22,7 +22,7 @@ const CompanySection = () => {
     <>
       <div className="container mag relative">
         <div class="basis-12/12 relative">
-          <h1
+          <h2
             class="digital-heading mb-5"
             style={{
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -30,7 +30,7 @@ const CompanySection = () => {
               })`,
             }}>
             Digital Gallery
-          </h1>
+          </h2>
           <div
             class="digital-line 2xl:hidden"
             style={{

@@ -26,7 +26,7 @@ const PlanetseraIconThree = () => {
               src="images/backgrounds/four4.webp"
               style={{ width: "100px" }}
             />
-            <h1 className="tootip-text">Intense and Aromatic</h1>
+            <h2 className="tootip-text">Intense and Aromatic</h2>
           </div>
         </div>
       </div>

@@ -26,11 +26,11 @@ const TechnologySection2 = () => {
         className="basis-6/12 self-center pl-141"
         data-aos="fade-right"
         data-aos-duration="1000">
-        <h1
+        <h2
           style={{ color: colorMe }}
           className="text-[#ff4f4f] text-[26px] md:text-[41px] font-normal tracking-[0.17em]	my-3">
           Quality Preservation Using Latest Technology
-        </h1>
+        </h2>
         <div className="quality_line"></div>
         <div className="technologyLine"></div>
 

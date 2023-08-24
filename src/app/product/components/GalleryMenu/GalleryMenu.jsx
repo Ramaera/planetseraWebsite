@@ -14,7 +14,7 @@ const GalleryMenu = () => {
       className="w-full max-w-full box-border m-auto h-auto mt-56 mb-20 galleryContainer">
       <div className="basis-12/12 flex text-center justify-center">
         <div>
-          <h1
+          <h2
             className="GalleryMenuHeading"
             style={{
               webkitTextFillColor: "transparent",
@@ -23,7 +23,7 @@ const GalleryMenu = () => {
               })`,
             }}>
             Choose hand selected premium spices
-          </h1>
+          </h2>
           <div className="hidden md:block mx-2 md:mt-[-5vh] md:mx-44 2xl:hidden">
             <img
               alt="bg"

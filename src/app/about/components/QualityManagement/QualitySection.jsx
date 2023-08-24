@@ -51,10 +51,10 @@ const QualitySection = () => {
         <div className="basis-12/12 lg:flex md:flex sm:block w-full flex relative pressAlign">
           <div className="basis-2/12"></div>
           <div className="basis-4/12 relative">
-            <h1 className="management-heading mb-5 md:mt-[-20px]  2xl:mt-16 2xl:w-9/12 ">
+            <h2 className="management-heading mb-5 md:mt-[-20px]  2xl:mt-16 2xl:w-9/12 ">
               Our Founder, Mr. Devender Mishra addressing the press at the
               launch of PlanetsEra Spices
-            </h1>
+            </h2>
             <div className="quality-line"></div>
           </div>
           <div className="basis-6/12"></div>

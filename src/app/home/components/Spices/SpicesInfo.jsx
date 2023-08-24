@@ -5,11 +5,11 @@ const SpicesInfo = () => {
 
   return (
     <div className="spices-info lg:mt-[28%] lg:mr-20 relative">
-      <h1
+      <h2
         style={{ color: colorMe }}
         className="text-[32px] md:text-[49px] font-light text-center md:text-left leading-[40px] md:leading-[130px]">
         Why We are best ?
-      </h1>
+      </h2>
       <div className="best_line"></div>
       <p className="w-[90%] mt-5 md:mt-2 lg:w-[95%] text-[18px] m-auto  md:m-0 text-left md:text-[22px] font-light	leding-[30px] md:leading-[36px]">
         PlanetsEra Spices are enriched with the most authentic taste and

@@ -10,9 +10,9 @@ const BestSelling = () => {
     <>
       <div className="flex flex-col	md:flex-row mt-10 md:mt-0 ">
         <div className="md:w-2/12 sm:text-left md:pl-4 flex flex-col	justify-center items-center md:items-start	">
-          <h1 className="text-[#1E1E1E] text-2xl md:pl-10 font-['Montserrat'] font-normal	font-black">
+          <h2 className="text-[#1E1E1E] text-2xl md:pl-10 font-['Montserrat'] font-normal	font-black">
             Best Selling Spices
-          </h1>
+          </h2>
 
           <p className="text-grey text-center	 md:text-left md:pl-10 font-['Poppins'] text-[#8B8B8B] text-lg">
             Easiest way to healthy life by buying your favorite Spices
@@ -61,9 +61,9 @@ const BestSelling = () => {
                 <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-2xl mt-4">
                   {item.masalaName}
                 </h3>
-                <h1 className="text-center font-['Montserrat'] text-[#8B8B8B] text-sm">
+                <h2 className="text-center font-['Montserrat'] text-[#8B8B8B] text-sm">
                   {item.masalaDetail}
-                </h1>
+                </h2>
                 {/* <BuyIcons flipkart={item.flipkart} amazon={item.amazon} /> */}
                 <BuynowBtn link={`/products/${item.id}`} text={"Buy Now"} />
               </div>

@@ -29,7 +29,7 @@ const IngredientSection = () => {
     <>
       <div className="w-full max-w-full box-border m-auto h-auto mt-20">
         <div className="basis-12/12 relative">
-          <h1
+          <h2
             className="delicious-heading"
             style={{
               webkitTextFillColor: "transparent",
@@ -38,7 +38,7 @@ const IngredientSection = () => {
               })`,
             }}>
             Spices like no other - PlanetsEra Spices
-          </h1>
+          </h2>
           <div
             className="spices-line 2xl:hidden"
             style={{
@@ -68,7 +68,7 @@ const IngredientSection = () => {
             </div>
 
             <div className="w-full basis-10/12 flex flex-col">
-              <h1
+              <h2
                 className="ingredient-heading mb-2"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -76,7 +76,7 @@ const IngredientSection = () => {
                   })`,
                 }}>
                 Premium ingredients
-              </h1>
+              </h2>
               <p className="ingredient-text">
                 PlanetsEra spices are a perfect blend of handpicked and premium
                 ingredients.
@@ -98,7 +98,7 @@ const IngredientSection = () => {
             </div>
 
             <div className="w-full basis-10/12 flex flex-col">
-              <h1
+              <h2
                 className="ingredient-heading mb-2"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -106,7 +106,7 @@ const IngredientSection = () => {
                   })`,
                 }}>
                 Superior quality
-              </h1>
+              </h2>
               <p className="ingredient-text">
                 Spices with excellent quality and taste.
               </p>
@@ -127,7 +127,7 @@ const IngredientSection = () => {
             </div>
 
             <div className="w-full basis-10/12 flex flex-col">
-              <h1
+              <h2
                 className="ingredient-heading mb-2"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -135,7 +135,7 @@ const IngredientSection = () => {
                   })`,
                 }}>
                 Expertly blended
-              </h1>
+              </h2>
               <p className="ingredient-text">
                 PlanetsEra Spices are finely ground and blended with the use of
                 efficiently advanced technology.
@@ -168,7 +168,7 @@ const IngredientSection = () => {
             </div>
 
             <div className="w-full basis-10/12 flex flex-col">
-              <h1
+              <h2
                 className="ingredient-heading mb-2"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -176,7 +176,7 @@ const IngredientSection = () => {
                   })`,
                 }}>
                 Organically Grown
-              </h1>
+              </h2>
               <p className="ingredient-text">
                 PlanetsEra spices are grown organically and handpicked to ensure
                 hygiene and quality
@@ -198,7 +198,7 @@ const IngredientSection = () => {
             </div>
 
             <div className="w-full basis-10/12 flex flex-col">
-              <h1
+              <h2
                 className="ingredient-heading mb-2"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -206,7 +206,7 @@ const IngredientSection = () => {
                   })`,
                 }}>
                 Distinctive aroma
-              </h1>
+              </h2>
               <p className="ingredient-text">
                 PlanetsEra Spices have enchanting aroma that brings out the true
                 flavor.
@@ -228,7 +228,7 @@ const IngredientSection = () => {
             </div>
 
             <div className="w-full basis-10/12 flex flex-col">
-              <h1
+              <h2
                 className="ingredient-heading mb-2"
                 style={{
                   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -236,7 +236,7 @@ const IngredientSection = () => {
                   })`,
                 }}>
                 Authentic flavours
-              </h1>
+              </h2>
               <p className="ingredient-text">
                 PlanetsEra spices reflect the taste of India that relish the
                 tastebuds.

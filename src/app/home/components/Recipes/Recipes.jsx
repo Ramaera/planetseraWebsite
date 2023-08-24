@@ -10,12 +10,12 @@ const Recipes = () => {
   return (
     <div className="recipes lg:w-[95%] mx-auto mt-4 md:mt-20">
       <div className="flex justify-center relative">
-        <h1
+        <h2
           style={{ color: colorMe }}
           className="text-[32px] md:text-[49px] font-light text-center	leading-[40px] md:leading-[130px]"
           data-aos="fade-up">
           Check out the yummiest recipes{" "}
-        </h1>
+        </h2>
         <div className="recipe_line"></div>
       </div>
       <div className="video-cards flex w-[100%] justify-around mx-auto items-center instRecipeContainer ">

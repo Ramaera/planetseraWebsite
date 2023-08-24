@@ -16,11 +16,11 @@ const NewsInfo = () => {
         <div className="basis-1/12"></div>
         <div className="basis-10/12">
           <div data-aos="fade-right" data-aos-duration="1000">
-            <h1
+            <h2
               style={{ color: colorMe }}
               className="text-[32px] md:text-[49px] font-light text-center leading-[40px] md:leading-[130px] tracking-widest relative">
               Latest News and Blog
-            </h1>
+            </h2>
             <div className="blog_line"></div>
           </div>
           <div data-aos="fade-left" data-aos-duration="1000">

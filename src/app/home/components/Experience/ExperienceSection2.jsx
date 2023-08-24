@@ -10,11 +10,11 @@ export default function ExperienceSection2() {
         className="basis-6/12 self-center p-1 md:p-14 2xl:p-0 2xl:pl-10"
         data-aos="slide-left">
         <div>
-          <h1
+          <h2
             style={{ color: colorMe }}
             className=" txet-[#ff4f4f] text-[30px] md:text-[41px] font-normal leading-[40px] md:leading-[58px] tracking-wide mb-3">
             Extra-ordinary taste with Experience
-          </h1>
+          </h2>
           <div className="with_line"></div>
           <div className="ordinaryLine"></div>
         </div>

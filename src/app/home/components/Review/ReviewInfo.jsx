@@ -21,11 +21,11 @@ const ReviewInfo = () => {
   return (
     <>
       <div className="review-info">
-        <h1
+        <h2
           style={{ color: colorMe }}
           className="text-[32px] md:text-[49px] font-light text-center md:leading-[130px] leading-normal">
           Customer Review
-        </h1>
+        </h2>
         <div className="flex lg:ml-2 mt-6">
           <img
             src={checkbg(colorMe)}

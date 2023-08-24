@@ -9,11 +9,11 @@ const SpiceandHealth = () => {
 
   return (
     <div className="spicesandHealth relative mt-2 md:mt-0">
-      <h1
+      <h2
         style={{ color: colorMe }}
         className="text-[32px] md:text-[49px] font-light text-center leading-[40px] md:leading-[130px] space-x-1 md:mt-20 tracking-widest">
         Spices and Health
-      </h1>
+      </h2>
       <div className="health_line"></div>
       <div className="spciesLine"></div>
       <div className="spicesandHealth-container flex lg:justify-between">

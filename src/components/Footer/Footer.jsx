@@ -33,9 +33,9 @@ const Footer = ({ page }) => {
             <div className="basis-12/12 flex">
               <div className="basis-1/12"></div>
               <div className="basis-10/12">
-                <h1 className="diverse-text text-center p-8 md:p-2s ">
+                <h2 className="diverse-text text-center p-8 md:p-2s ">
                   {checktext(page)}
-                </h1>
+                </h2>
               </div>
               <div className="basis-1/12"></div>
             </div>

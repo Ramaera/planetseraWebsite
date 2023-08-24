@@ -8,7 +8,7 @@ const ShopBuy = () => {
   return (
     <>
       <div className="basis-4/12 flex flex-col justify-center m-auto my-10">
-        <h1
+        <h2
           className="shopBuy-heading"
           style={{
             webkitTextFillColor: "transparent",
@@ -18,7 +18,7 @@ const ShopBuy = () => {
           }}>
           "Get fit with flavor - PlanetsEra spices bring a healthy kick to your
           meals."
-        </h1>
+        </h2>
       </div>
       <div className="mt-10 md:px-6">
         <div className="flex m-auto justify-center	">

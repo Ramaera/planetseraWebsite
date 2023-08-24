@@ -26,7 +26,7 @@ const PlanetseraIconTwo = () => {
               src="images/backgrounds/two2.webp"
               style={{ width: "100px" }}
             />
-            <h1 className="tootip-text">Smoky and Spicy</h1>
+            <h2 className="tootip-text">Smoky and Spicy</h2>
           </div>
         </div>
       </div>

@@ -58,10 +58,10 @@ const TechnologyPeopleSection = () => {
         <div className="basis-12/12 w-full lg:flex md:flex sm:block relative founalign">
           <div className="basis-7/12"></div>
           <div className="basis-4/12">
-            <h1 className="technology-heading mb-5 md:pr-10 2xl:pr-0 md:mt-[-20px] 2xl:mt-16 2xl:w-11/12">
+            <h2 className="technology-heading mb-5 md:pr-10 2xl:pr-0 md:mt-[-20px] 2xl:mt-16 2xl:w-11/12">
               Our Founder,Mr.Devender Mishra and members at the launch of
               Planetsera Spices
-            </h1>
+            </h2>
             <div class="technology-line"></div>
           </div>
         </div>
