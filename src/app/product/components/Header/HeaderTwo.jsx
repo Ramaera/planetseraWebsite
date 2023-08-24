@@ -22,7 +22,7 @@ const HeaderTwo = () => {
         <div className="basis-2/12 flex justify-start detailContainer mt-14"></div>
         <div className="basis-12/12 flex justify-end ml-auto items-baseline detailContainer"></div>
 
-        <div className="container flex flex-wrap w-full mt-40">
+        <div className="w-full max-w-full box-border m-auto h-auto flex flex-wrap mt-40">
           <div className="basis-12/12 w-full flex">
             <div className="md:basis-12/12">
               <h1 className="text-center tracking-[5px] SecondPage-Heading">
