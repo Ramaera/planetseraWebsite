@@ -6,10 +6,10 @@ const index = ({ link, home }) => {
       rel="noopener noreferrer"
       className={`${
         link && "hover:scale-105 transition-transform"
-      } relative rounded-3xl `}>
+      } relative  border-[#1178d0] border-2 p-1 rounded-[50px]`}>
       <img
         src="/images/backgrounds/flipkart.webp"
-        className={` ${!link && "hover:opacity-10"} z-20 ${
+        className={` ${!link && "hover:opacity-10"} z-20  ${
           !link && "grayscale blur-[1px]"
         }`}
         width={120}

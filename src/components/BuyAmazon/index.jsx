@@ -4,7 +4,9 @@ const index = ({ link, home }) => {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className={`link && "hover:scale-105 transition-transform" relative rounded-3xl `}>
+      className={`${
+        link && "hover:scale-105 transition-transform"
+      } relative  border-[#000000] border-2 p-1 rounded-[50px] `}>
       <img
         src="/images/backgrounds/amazon.webp"
         className={` ${!link && "hover:opacity-10"} z-20 ${
