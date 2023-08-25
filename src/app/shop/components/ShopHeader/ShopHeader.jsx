@@ -11,12 +11,12 @@ const ShopHeader = () => {
     <>
       <NavItem page={"shop"} />
       <section
-        className="relative  bg-center bg-no-repeat md:top-20 md:mb-10 xl:mb-1 xl:top-1"
+        className="relative bg-center bg-no-repeat md:mb-2"
         style={{
           backgroundImage: `url(${bg1})`,
         }}>
         <NavigationMobile page={"shop"} />
-        <div className="relative mx-auto px-4 md:py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8 2xl:w-9/12">
+        <div className="relative mx-auto px-4 md:py-20  lg:flex  lg:items-center  2xl:w-9/12">
           <div className="text-center sm:text-left md:ml-28 md:w-4/12 pt-24 md:pt-0">
             <h1 className="shop-heading">Experience a burst of flavors</h1>
 
