@@ -25,14 +25,14 @@ const NavigationMobile = ({ page }) => {
   const toggleClick = () => {
     setShowMenu(true);
     // document.getElementById("navDropdown").style.display = "none";
-    // var x = document.getElementById("navDropdown");
-    // if (x.style.display === "none") {
-    //   x.style.display = "block";
-    //   // x.style.marginBottom = "500px";
-    //   // x.style.transition = "all 3s";
-    // } else {
-    //   x.style.display = "none";
-    // }
+    var x = document.getElementById("navDropdown");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      // x.style.marginBottom = "500px";
+      // x.style.transition = "all 3s";
+    } else {
+      x.style.display = "none";
+    }
   };
 
   return (
