@@ -7,7 +7,7 @@ const AboutSideBar = () => {
         <div className="basis-12/12 w-full">
           <img
             alt="masala"
-            src="images/backgrounds/contact_side.webp"
+            src="/images/backgrounds/contact_side.webp"
             className="h-96 block w-full mx-auto"
           />
         </div>

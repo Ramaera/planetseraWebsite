@@ -41,7 +41,7 @@ const NavigationMobile = ({ page }) => {
         <div className="basis-3/12 pl-2">
           <img
             loading="lazy"
-            src="images/logo/logo.webp"
+            src="/images/logo/logo.webp"
             alt="logo"
             className=" absolute w-16 mt-2"
           />
@@ -52,7 +52,9 @@ const NavigationMobile = ({ page }) => {
             onClick={toggleClick}
             aria-hidden="true"
             className="self-center icon-design text-white"
-            style={{ color: page === ("about" || "shop") && colorMe }}
+            style={{
+              color: (page === "about" || page === "products") && colorMe,
+            }}
           />
           {/* <i class="fa fa-bars self-center icon-design text-white"></i> */}
         </div>

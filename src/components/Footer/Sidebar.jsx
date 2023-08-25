@@ -7,7 +7,7 @@ const SideBar = () => {
         <div className="basis-12/12 w-full">
           <img
             alt="sidebar"
-            src="images/backgrounds/aboutSide.webp"
+            src="/images/backgrounds/aboutSide.webp"
             className="h-96 block w-full mx-auto"
           />
         </div>

@@ -13,18 +13,31 @@ const NavItem = ({ page }) => {
 
   return (
     <div
+      // className={"absolute  w-10/12	 left-0 z-30 justify-between md:flex hidden"}
       className={
-        "absolute  w-10/12	 left-0 z-30 justify-between md:flex hidden"
-      }>
-      <Link className="scale-[0.8]" href="/" onClick={() => changeColor()}>
-        <img className="" src="images/logo/logo.webp" alt="logo" />
+        page === "products"
+          ? `relative  w-[96%]  z-30 justify-between m-auto mt-6 rounded-3xl h-[90px] md:flex hidden`
+          : `absolute  w-10/12	 left-0 z-30 justify-between md:flex hidden`
+      }
+      style={{
+        background: page === "products" && colorMe,
+      }}>
+      <Link
+        className={page === "products" ? "scale-[0.5] mb-8" : "scale-[0.8]"}
+        href="/"
+        onClick={() => changeColor()}>
+        <img className="" src="/images/logo/logo.webp" alt="logo" />
       </Link>
       <ul
         style={{
           color: (page === "shop" || page === "about") && "black",
         }}
         id="navigation"
-        className={`hidden md:flex space-x-6 text-white lg:float-right rounded-3xl pb-6 `}>
+        className={
+          page === "products"
+            ? `hidden md:flex space-x-6 text-white lg:float-right rounded-3xl`
+            : `hidden md:flex space-x-6 text-white lg:float-right rounded-3xl pb-6`
+        }>
         <li
           className={
             page === "/" &&
