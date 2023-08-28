@@ -8,7 +8,7 @@ const InstagramHeading = () => {
   return (
     <div className="basis-12/12 flex">
       <div className="basis-1/12"></div>
-      <div className="basis-10/12 flex items-left flex-col  mt-10 ">
+      <div className="basis-10/12 flex items-center flex-col mt-10 ">
         <h2
           className="PlanteraHeading mb-2 2xl:text-center"
           style={{
@@ -18,15 +18,15 @@ const InstagramHeading = () => {
             })`,
           }}>
           Check out @PlanetsEra on Instagram
+          <div
+            className="hidden md:block absolute h-[2px] w-[220px] ml-[10px] "
+            style={{
+              webkitTextFillColor: "transparent",
+              background: `linear-gradient(to right, ${colorMe}, ${
+                colorMe + "80"
+              })`,
+            }}></div>
         </h2>
-        <div
-          className="instagramLine 2xl:hidden"
-          style={{
-            webkitTextFillColor: "transparent",
-            background: `linear-gradient(to right, ${colorMe}, ${
-              colorMe + "80"
-            })`,
-          }}></div>
       </div>
       <div className="basis-1/12"></div>
     </div>

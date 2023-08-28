@@ -9,7 +9,7 @@
 }
 
 .GalleryMenuHeading {
-  font-size: 52px;
+  font-size: 3.3rem;
   font-family: "Montserrat";
   background: -webkit-linear-gradient(#ff4f4f, #fe7171);
   -webkit-background-clip: text;
@@ -21,7 +21,11 @@
   margin-bottom: 2rem;
   letter-spacing: 3px;
 }
-
+@media screen and (max-width: 1200px) {
+  .GalleryMenuHeading {
+    font-size: 2.5rem;
+  }
+}
 @media screen and (max-width: 600px) {
   .GalleryMenuHeading {
     font-size: 1.8rem;
@@ -31,9 +35,8 @@
 }
 
 .GalleryMenuText {
-  width: 76%;
+  width: 88%;
   margin: auto;
-  margin-top: 10px;
   font-size: 23px;
   font-family: "Montserrat";
   color: #1e1e1e;
@@ -45,6 +48,7 @@
   .GalleryMenuText {
     width: 96%;
     font-size: 1rem;
+    margin-top: 10px;
   }
 }
 

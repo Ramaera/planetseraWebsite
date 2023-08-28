@@ -11,7 +11,7 @@
 
 @media screen and (max-width: 600px) {
   .PlanteraHeading {
-    font-size: 28px;
+    font-size: 26px;
     line-height: 30px;
   }
 }
@@ -90,7 +90,7 @@ iframe {
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1280px) {
   .instContainer {
     flex-wrap: nowrap;
     overflow-x: scroll;
@@ -98,16 +98,3 @@ iframe {
   }
 }
 
-.instagramLine {
-  width: 220px;
-  height: 2px;
-  position: absolute;
-  left: 135px;
-  top: 110px;
-}
-
-@media screen and (max-width: 600px) {
-  .instagramLine {
-    display: none;
-  }
-}

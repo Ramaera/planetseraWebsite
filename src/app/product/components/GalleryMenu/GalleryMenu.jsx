@@ -11,20 +11,18 @@ const GalleryMenu = () => {
   return (
     <div
       id="exploreSection"
-      className="w-full max-w-full box-border m-auto h-auto mt-56 mb-20 galleryContainer">
-      <div className="basis-12/12 flex text-center justify-center">
-        <div>
-          <h2
-            className="GalleryMenuHeading"
-            style={{
-              webkitTextFillColor: "transparent",
-              backgroundImage: `linear-gradient(to right, ${colorMe}, ${
-                colorMe + "80"
-              })`,
-            }}>
-            Choose hand selected premium spices
-          </h2>
-          <div className="hidden md:block mx-2 md:mt-[-5vh] md:mx-44 2xl:hidden">
+      className="w-full max-w-full box-border m-auto h-auto mt-40 mb-20 galleryContainer">
+      <div className="basis-12/12 relative flex justify-center  w-[98%] m-auto items-center flex-col">
+        <h2
+          className="GalleryMenuHeading"
+          style={{
+            webkitTextFillColor: "transparent",
+            backgroundImage: `linear-gradient(to right, ${colorMe}, ${
+              colorMe + "80"
+            })`,
+          }}>
+          Choose hand selected premium spices
+          <div className="hidden md:block">
             <img
               alt="bg"
               src={
@@ -36,12 +34,13 @@ const GalleryMenu = () => {
               }
             />
           </div>
-          <p className="GalleryMenuText">
-            PlanetsEra spices offers variety of the most desirable spices that
-            relish your the taste buds and display the true essence of Indian
-            cuisine.
-          </p>
-        </div>
+        </h2>
+
+        <p className="GalleryMenuText">
+          PlanetsEra spices offers variety of the most desirable spices that
+          relish your the taste buds and display the true essence of Indian
+          cuisine.
+        </p>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import InstagramButton from "./InstagramButton";
 
 const InstagramRecipe = () => {
   return (
-    <div className="container  instagram-background relative">
+    <div className="w-full max-w-full box-border m-auto h-auto instagram-background relative">
       <InstagramHeading />
       <div className="basis-12/12 flex justify-center mt-6 instContainer">
         {InstagramSocialIcon.map((item) => {

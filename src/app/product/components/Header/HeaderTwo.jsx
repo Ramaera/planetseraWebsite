@@ -94,7 +94,7 @@ const HeaderTwo = () => {
 
       <div
         style={{ backgroundImage: `url(${bg})` }}
-        className="container flex hero-Images"></div>
+        className="w-full max-w-full box-border m-auto h-auto flex hero-Images"></div>
     </>
   );
 };

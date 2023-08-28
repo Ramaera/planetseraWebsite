@@ -15,7 +15,7 @@
   color: #ffffff;
   text-align: center;
   line-height: 4.5rem;
-  width: 90%;
+  /* width: 90%; */
   text-align: left;
 }
 
@@ -46,13 +46,13 @@
   background-image: url("/images/backgrounds/productSection.webp");
   background-repeat: no-repeat;
   /* background-size: cover; */
-  height: 620px;
+  /* height: 620px; */
   /* background-attachment: fixed; */
 }
 
 @media screen and (max-width: 600px) {
   .ProductSectionImg {
-    height: 12.5rem;
+    /* height: 12.5rem; */
     background-attachment: unset;
   }
 }
@@ -78,7 +78,7 @@
 
 @media screen and (max-width: 600px) {
   .productSec {
-    height: unset;
+    height: 100%;
   }
 }
 
@@ -97,7 +97,6 @@
 .spi-alignment {
   position: absolute;
   top: -288px;
-  left: 524px;
   width: 500px;
 }
 
@@ -130,8 +129,8 @@
   width: 365px;
   height: 2px;
   position: absolute;
-  left: 90px;
-  top: 370px;
+  left: 250px;
+  top: 65%;
 }
 
 @media screen and (max-width: 600px) {

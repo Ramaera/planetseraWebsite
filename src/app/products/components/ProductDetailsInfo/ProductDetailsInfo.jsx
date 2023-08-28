@@ -362,7 +362,7 @@ const ProductDetailsInfo = () => {
           </div>
         </div> */}
         {specificProduct.ProductHealth ? (
-          <div className="md:my-28 my-5 font-Montserrat md:ml-6 md:flex">
+          <div className="md:my-10 my-5 font-Montserrat md:ml-2 md:flex">
             <div
               style={{
                 color:
@@ -373,7 +373,7 @@ const ProductDetailsInfo = () => {
               className={` text-2xl font-light font-Montserrat leading-[2.5rem] `}>
               Health benefits of : &nbsp;
             </div>
-            <div className=" text-[#787878] text-[1.3rem] leading-[2.5rem] md:ml-4 md:w-[80%]">
+            <div className=" text-[#787878] text-[1.3rem] leading-[2.5rem] md:w-[78%]">
               {specificProduct.ProductHealth}
             </div>
           </div>

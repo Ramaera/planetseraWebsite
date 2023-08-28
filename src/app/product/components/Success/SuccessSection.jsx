@@ -85,7 +85,7 @@ const SuccessSection = () => {
                             </div>
                           </div>
                           <div className="borderLine"></div>
-                          <div className="md:basis-6/12 mt-56 md:mt-0">
+                          <div className="md:basis-5/12  xl:basis-6/12 mt-56 md:mt-0">
                             <h2
                               className="success-heading"
                               style={{

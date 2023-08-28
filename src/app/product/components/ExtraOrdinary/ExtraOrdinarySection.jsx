@@ -6,7 +6,7 @@ const ExtraOrdinarySection = () => {
       <div className="basis-12/12 flex justify-center w-full">
         <div className="">
           <div className="basis-6/12 relative flex justify-center">
-            <div className="basis-12/12 photo">
+            <div className="basis-12/12 photo z-10">
               <img
                 alt="masala"
                 loading="lazy"
@@ -14,14 +14,15 @@ const ExtraOrdinarySection = () => {
                 className=""
               />
             </div>
-            <div className="basis-12/12 ordinary-alignment">
-              <h2 class="ordinary-text md:tracking-[6px] md:mt-[-3vh]">
-                Guaranteed Freshness
+
+            <div className="basis-12/12 absolute flex h-full items-center text-left w-full p-14 ">
+              <h2 class="ordinary-text md:tracking-[6px] w-full z-20">
+                Guaranteed <br /> Freshness
               </h2>
             </div>
           </div>
           <div className="basis-6/12 relative flex justify-center">
-            <div className="basis-12/12 photo">
+            <div className="basis-12/12 photo z-10">
               <img
                 alt="masala"
                 loading="lazy"
@@ -29,14 +30,18 @@ const ExtraOrdinarySection = () => {
                 className=""
               />
             </div>
-            <div className="basis-12/12 ordinary-alignment2">
-              <h2 class="ordinary-text md:tracking-[6px]">Premium Quality</h2>
+
+            <div className="basis-12/12 absolute flex h-full items-center text-left w-full p-14">
+              <h2 class="ordinary-text md:tracking-[6px] w-full z-20">
+                Premium <br />
+                Quality
+              </h2>
             </div>
           </div>
         </div>
         <div className="">
           <div className="basis-6/12 relative flex justify-center">
-            <div className="basis-12/12 ordinary-second photo">
+            <div className="basis-12/12 ordinary-second photo z-10">
               <img
                 alt="masala"
                 loading="lazy"
@@ -44,14 +49,14 @@ const ExtraOrdinarySection = () => {
                 className=""
               />
             </div>
-            <div className="basis-12/12 ordinary-alignment2 ">
-              <h2 class="ordinary-text md:tracking-[6px] md:mt-[-5vh]">
-                Hand Selected and Pure
+            <div className="basis-12/12 absolute flex h-full items-center text-left w-full p-14">
+              <h2 class="ordinary-text md:tracking-[6px] w-full z-20 ">
+                Hand <br /> Selected <br /> and Pure
               </h2>
             </div>
           </div>
           <div className="basis-6/12 relative flex justify-center">
-            <div className="basis-12/12 ordinary-three photo">
+            <div className="basis-12/12 ordinary-three photo z-10">
               <img
                 alt="masala"
                 loading="lazy"
@@ -59,9 +64,9 @@ const ExtraOrdinarySection = () => {
                 className="ordinary-img4"
               />
             </div>
-            <div className="basis-12/12 ordinary-alignment4">
-              <h2 class="ordinary-text md:tracking-[6px] md:mt-[-10vh]">
-                Organically and Handpicked
+            <div className="basis-12/12 absolute flex h-full items-center text-left w-full p-14">
+              <h2 class="ordinary-text md:tracking-[6px] w-full z-20">
+                Organically <br /> and <br /> Handpicked
               </h2>
             </div>
           </div>

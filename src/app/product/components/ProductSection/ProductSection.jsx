@@ -2,31 +2,31 @@ import "./ProductSection.css";
 
 const ProductSection = () => {
   return (
-    <>
-      <div className="container spi-container">
+    <div className="flex justify-center flex-col">
+      <div className="w-full max-w-full box-border mx-auto h-auto flex justify-center">
         <img
           alt="bg"
           loading="lazy"
           src="images/backgrounds/spi.webp"
-          className="spi-alignment 2xl:left-[650px]"
+          className=" "
         />
       </div>
-      <div className="container bg-contain  md:m-14 flex ProductSectionImg mt-10 flex-wrap relative 2xl:mx-90 2xl:h-[780px]">
-        <div className="basis-12/12 flex justify-center items-center w-full productSec 2xl:h-[780px]">
-          <h2 className="ProductSection-text tracking-[4px] md:tracking-[6px]">
+
+      <div className="w-full max-w-full box-border m-auto h-auto bg-contain flex  mt-[-40%] md:mt-[-14rem] flex-wrap relative justify-center">
+        <img src="/images/backgrounds/productSection.webp" />
+        <div className="basis-12/12 flex justify-center items-center w-full h-full absolute">
+          <h2 className="ProductSection-text tracking-[4px] md:tracking-[6px] z-10">
             Spices that aid gut health
             <br /> with incredible taste
-          </h2>
-          <div>
             <img
               alt="bg"
-              className="rectangleLine 2xl:hidden"
+              className="hidden md:block"
               src="images/backgrounds/RectangleLine.webp"
             />
-          </div>
+          </h2>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default ProductSection;

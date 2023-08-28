@@ -212,10 +212,6 @@
 }
 
 .gallery-heading {
-  position: absolute;
-  /* top: 50%; */
-  /* display: flex; */
-  /* z-index: 100; */
   font-family: "Montserrat";
   font-size: 50px;
   color: white;
@@ -233,28 +229,8 @@
   }
 }
 
-.gallery-contentfirst {
-  position: absolute;
-  top: 30%;
-  /* display: flex; */
-  /* left: 12%; */
-  /* z-index: 100; */
-  width: 100%;
-  font-family: myfont;
-}
-
-@media screen and (max-width: 600px){
-  .gallery-contentfirst {
-    top: 5%;
-    left: 0%;
-    padding: 1rem;
-    width: 100%;
-  }
-}
 
 .myPhoto {
-  /* width: 400px;
-  height: 350px; */
   overflow: hidden;
   margin-bottom: 20px;
 }
