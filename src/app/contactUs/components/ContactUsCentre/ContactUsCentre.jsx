@@ -58,14 +58,14 @@ const ContactUsCentre = () => {
       className="img_pad bg-cover bg-fixed mt-40 flex flex-col-reverse md:flex-row">
       <div className="contact_width">
         <div className="contact_height rounded-xl bg-white p-2 md:p-8 md:m-4 ">
-          <div className="md:text-4xl my-1 md:my-4 HeadText py-2 md:py-0 contact_heading">
+          <div className="md:text-4xl my-1 xl:my-4 HeadText py-2 md:py-0 contact_heading">
             {" "}
             Have a Question?
           </div>
           <form onSubmit={(e) => handleSubmit(e)}>
             <ToastContainer />
             <input
-              className="h-[68px]  md:h-14 pl-4 w-full md:w-[48%] md:my-4  my-2 p-2 md:mr-2 FontText"
+              className="h-14 pl-4 w-full xl:w-[48%] xl:my-4  my-2 p-2 FontText"
               type="text"
               placeholder="Name"
               onChange={(e) => {
@@ -74,7 +74,7 @@ const ContactUsCentre = () => {
               required
             />
             <input
-              className="h-[68px]  md:h-14  pl-4 w-full md:w-[48%] md:my-4 md:mx-2 my-2 p-2 m md:mr-2 FontText"
+              className="h-14 pl-4 w-full xl:w-[48%] xl:my-4 xl:mx-2 my-2 p-2 m  FontText"
               type="email"
               placeholder="Email"
               onChange={(e) => {
@@ -83,7 +83,7 @@ const ContactUsCentre = () => {
               required
             />
             <input
-              className="h-[68px]  md:h-14  pl-4 w-full md:w-[48%] md:my-4 my-2 p-2 md:mr-2 FontText"
+              className="h-14 pl-4 w-full xl:w-[48%] xl:my-4 my-2 p-2  FontText"
               type="text"
               placeholder="Subject"
               onChange={(e) => {
@@ -92,7 +92,7 @@ const ContactUsCentre = () => {
               required
             />
             <input
-              className="h-[68px]  md:h-14  pl-4  w-full md:w-[48%] md:my-4 md:mx-2 my-2 p-2 md:mr-2 FontText"
+              className="h-14 pl-4  w-full xl:w-[48%] xl:my-4 xl:mx-2 my-2 p-2  FontText"
               type="number"
               placeholder="Phone"
               onChange={(e) => {
@@ -101,7 +101,7 @@ const ContactUsCentre = () => {
               required
             />
             <textarea
-              className="w-full md:w-[98%] md:my-6  my-2 md:p-4 p-4 md:mr-2 md:h-36 h-[168px] FontText"
+              className="w-full xl:w-[98%] xl:my-6  my-2 xl:p-4 p-4  xl:h-36 h-[168px] FontText"
               type="text"
               placeholder="Message"
               onChange={(e) => {
@@ -119,7 +119,7 @@ const ContactUsCentre = () => {
                 boxShadow: `2px 4px 7px -2px ${colorMe}`,
               }}
               type="submit"
-              className=" md:w-36 w-[25vh] h-12 hover:scale-105 transition-all hover:text-white hover:bg-black bg-white FontText my-8">
+              className=" xl:w-36 w-[25vh] h-12 hover:scale-105 transition-all hover:text-white hover:bg-black bg-white FontText my-8">
               Send
             </button>
           </form>
