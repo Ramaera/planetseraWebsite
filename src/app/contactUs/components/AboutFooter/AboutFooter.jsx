@@ -6,7 +6,7 @@ import AboutSidebar from "./AboutSidebar";
 const AboutFooter = () => {
   return (
     <>
-      <div className="main-container lg:w-full mt-4 imaged1 bg-cover">
+      <div className="main-container w-full mt-4 imaged1 bg-cover">
         <div className="footer flex bg-center">
           <div className="basis-9/12 flex items-center">
             <div className="basis-12/12 flex">

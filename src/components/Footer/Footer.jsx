@@ -27,7 +27,7 @@ const Footer = ({ page }) => {
     <>
       <div
         style={{ backgroundImage: `url(${checkpage(page)})` }}
-        className="main-container lg:w-full mt-8 imaged bg-cover">
+        className="main-container mt-8 w-full bg-cover">
         <div className="footer flex bg-center bg-cover">
           <div className="basis-9/12 flex items-center">
             <div className="basis-12/12 flex">

@@ -2,16 +2,30 @@
 .main-container {
   font-family: "Josefin Sans", sans-serif;
 }
+
 .imaged1 {
   background-image: url(/images/backgrounds/footerAbout.webp);
   background-position-x: initial;
   background-position-y: 0%;
   width: 100%;
-  background-size: auto;
+  background-size: 100%;
   background-repeat: no-repeat;
   position: relative;
-  /* background-attachment: fixed; */
 }
+
+@media screen and (max-width: 1500px) {
+  .imaged1 {
+    background-image: url(/images/backgrounds/footerAbout.webp);
+    background-position-x: initial;
+    background-position-y: 0%;
+    width: 100%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    position: relative;
+    /* background-attachment: fixed; */
+  }
+}
+
 .subscibe {
   background: linear-gradient(107.77deg, #ff4f4f 15.95%, #fe7171 100%);
 }
