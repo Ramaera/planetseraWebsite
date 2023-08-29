@@ -7,7 +7,7 @@ import PlanetseraIconFour from "./PlanetseraIconFour";
 const PlanetseraSection = () => {
   return (
     <>
-      <div className="container mt-10 relative">
+      <div className="w-full max-w-full box-border m-auto h-auto mt-10 relative">
         <div className="basis-12/12">
           <img
             src="images/backgrounds/planetseraMasala.webp"

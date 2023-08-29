@@ -3,30 +3,32 @@ import "./AboutBanner.css";
 const AboutBannerSection = () => {
   return (
     <>
-      <div className="w-full max-w-full box-border m-auto h-auto relative lg:flex md:flex sm:block mt-20 md:mt-0">
-        <img
-          alt="masala"
-          src="images/backgrounds/aboutBannerAbsolute.webp"
-          className="imageAb 2xl:left-[36%]"
-        />
-        <div className="basis-1/12"></div>
-        <div className="container aboutbanner flex justify-center items-center maOne relative 2xl:h-[80vh]">
-          <div className="basis-12/12">
-            <h2 className="aboutbanner-text">
-              Know the journey behind
-              <br /> the establishment of PlanetsEra Spices
-            </h2>
-            <div>
-              <img
-                src="/images/backgrounds/rect.webp"
-                className="spiceRect"
-                alt="masala"
-              />
-            </div>
-          </div>
+      <div className="flex justify-center flex-col mt-14">
+        <div className="w-full max-w-full box-border mx-auto h-auto flex justify-center">
+          <img
+            alt="bg"
+            loading="lazy"
+            src="images/backgrounds/aboutBannerAbsolute.webp"
+            className=" "
+          />
         </div>
 
-        <div className="basis-1/12"></div>
+        <div className="w-full max-w-full box-border m-auto h-auto bg-contain flex  mt-[-14%] md:mt-[-4rem] flex-wrap relative justify-center">
+          <img src="/images/backgrounds/aboutbanner.webp" />
+
+          <div className="basis-12/12 flex justify-center items-center w-full h-full absolute">
+            <h2 className="text-base text-white	text-center tracking-[4px] md:tracking-[6px] md:text-6xl md:text-left  md:leading-relaxed	md:z-10">
+              Know the journey behind
+              <br /> the establishment of <br />
+              PlanetsEra Spices
+              <img
+                src="/images/backgrounds/rect.webp"
+                className="hidden md:block"
+                alt="masala"
+              />
+            </h2>
+          </div>
+        </div>
       </div>
     </>
   );

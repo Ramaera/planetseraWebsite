@@ -7,7 +7,9 @@ const DiscoverSection = () => {
 
   return (
     <>
-      <div id="discover" className="container disAlig relative">
+      <div
+        id="discover"
+        className="w-full max-w-full box-border m-auto h-auto disAlig relative">
         <img
           alt="masala"
           src="images/backgrounds/discoverAb.webp"

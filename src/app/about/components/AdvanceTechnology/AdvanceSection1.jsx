@@ -27,14 +27,15 @@ const AdvanceSection1 = () => {
               }}>
               Experience the Flavours of Precision: The Advanced Technology
               Behind PlanetsEra Spices
+              <div
+                className="plan-line 2xl:hidden"
+                style={{
+                  backgroundImage: `linear-gradient(to right, ${colorMe}, ${
+                    colorMe + "80"
+                  })`,
+                }}></div>
             </h3>
-            <div
-              className="plan-line 2xl:hidden"
-              style={{
-                backgroundImage: `linear-gradient(to right, ${colorMe}, ${
-                  colorMe + "80"
-                })`,
-              }}></div>
+
             <p class="advanceText">
               At PlanetsEra Spices, we utilise the most advanced technology for
               the manufacturing of our spices.We ensure complete precision in

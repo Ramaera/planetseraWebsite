@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;600&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 .ingreIcon {
   width: 80px;
   /* use tailwind */
@@ -16,6 +14,7 @@
 .ingredient-text {
   /* font-family: "Josefin Sans"; */
   font-weight: 300; /* use tailwind */
+
   font-size: 16px; /* use tailwind */
   color: rgba(30, 30, 30, 1);
   line-height: 24px;
@@ -35,8 +34,7 @@
 }
 
 .delicious-heading {
-  font-size: 60px; /* use tailwind */
-
+  font-size: 3rem; /* use tailwind */
   font-family: "Montserrat", sans-serif;
   background: -webkit-linear-gradient(#20932c, #a0fd90);
   background-image: linear-gradient(to right, #20932c, #a0fd90);
@@ -45,7 +43,8 @@
   background-clip: text;
   font-weight: 300; /* use tailwind */
 
-  text-align: center; /* use tailwind */
+  /* text-align: center;  */
+  /* use tailwind */
 }
 
 .delicious-text {
@@ -61,23 +60,21 @@
   max-width: 132%;
 }
 
-.spices-line {
+/* .spices-line {
   background-image: linear-gradient(to right, #20932c, #a0fd90);
   width: 178px;
   height: 2px;
   position: absolute;
-  left: 143px;
-  top: 83px;
-}
+} */
 
 .ingredWid {
   width: 41.66%;
 }
 
 @media screen and (max-width: 600px) {
-  .spices-line {
+  /* .spices-line {
     display: none;
-  }
+  } */
 
   .ingredWid {
     width: 100%;

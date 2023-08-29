@@ -27,8 +27,8 @@ const QualitySection = () => {
             </div>
           </div>
 
-          <div className="basis-2/12"></div>
-          <div className="basis-6/12 self-center relative qualityOne">
+          <div className="basis-2/12 sm:basis-3/12 xl:basis-2/12"></div>
+          <div className="basis-6/12 sm:basis-5/12 xl:basis-6/12 self-center relative qualityOne">
             <p className="management-text1">
               Our journey has been inspired by our motive to make a mark in the
               most popular industrial sectors, providing employment to thousands
@@ -51,7 +51,7 @@ const QualitySection = () => {
         <div className="basis-12/12 lg:flex md:flex sm:block w-full flex relative pressAlign">
           <div className="basis-2/12"></div>
           <div className="basis-4/12 relative">
-            <h2 className="management-heading mb-5 md:mt-[-20px]  2xl:mt-16 2xl:w-9/12 ">
+            <h2 className="management-heading mb-5 md:mt-[-12rem] md:w-12/12 md:ml-4 2xl:ml-[-1.5rem] md:w-full xl:mt-[-20px]  2xl:mt-16 2xl:w-11/12 ">
               Our Founder, Mr. Devender Mishra addressing the press at the
               launch of PlanetsEra Spices
             </h2>

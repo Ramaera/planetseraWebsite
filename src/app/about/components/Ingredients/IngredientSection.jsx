@@ -1,3 +1,5 @@
+"use client";
+import React from "react";
 import "./IngredientSection.css";
 import { useSelector } from "react-redux";
 
@@ -28,9 +30,9 @@ const IngredientSection = () => {
   return (
     <>
       <div className="w-full max-w-full box-border m-auto h-auto mt-20">
-        <div className="basis-12/12 relative">
+        <div className="basis-12/12 relative w-[90%] m-auto items-center flex flex-col">
           <h2
-            className="delicious-heading"
+            className="delicious-heading text-left"
             style={{
               webkitTextFillColor: "transparent",
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -38,20 +40,21 @@ const IngredientSection = () => {
               })`,
             }}>
             Spices like no other - PlanetsEra Spices
+            <div
+              className="w-[150px] h-[2px] mt-[-5px]  hidden md:block absolute"
+              style={{
+                backgroundImage: `linear-gradient(to right, ${colorMe}, ${
+                  colorMe + "80"
+                })`,
+              }}></div>
           </h2>
-          <div
-            className="spices-line 2xl:hidden"
-            style={{
-              backgroundImage: `linear-gradient(to right, ${colorMe}, ${
-                colorMe + "80"
-              })`,
-            }}></div>
+
           <p className="delicious-text  md:mb-20">
             Delicious and natural way to enhance your well-being.
           </p>
         </div>
       </div>
-      <div className="container lg:flex md:flex sm:block">
+      <div className="w-full max-w-full box-border m-auto h-auto lg:flex md:flex sm:block">
         <div className="basis-12/12 lg:flex md:flex sm:block flex-col ingredWid">
           <div className="basis-5/12 flex">
             <div className="w-full basis-2/12">
@@ -107,7 +110,7 @@ const IngredientSection = () => {
                 }}>
                 Superior quality
               </h2>
-              <p className="ingredient-text">
+              <p className="ingredient-text z-10">
                 Spices with excellent quality and taste.
               </p>
             </div>
@@ -247,8 +250,8 @@ const IngredientSection = () => {
       </div>
       <div className="container">
         <img
-          alt="masala"
-          src="/images/backgrounds/ingredientAB.webp"
+          alt="masalas"
+          src="images/backgrounds/ingredientAB.webp"
           className="mt-10 2xl:w-full"
         />
       </div>

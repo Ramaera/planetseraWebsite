@@ -29,7 +29,7 @@ const ProcessSection1 = () => {
           </div>
         </div>
 
-        <div className="container md:mt-40">
+        <div className="w-full max-w-full box-border m-auto h-auto xl:mt-40">
           <div className="basis-12/12 md:px-8">
             <div className="w-full md:mb-6 md:mt-6 relative ">
               <h2
