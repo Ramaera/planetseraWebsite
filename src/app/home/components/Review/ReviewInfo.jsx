@@ -23,7 +23,7 @@ const ReviewInfo = () => {
       <div className="review-info">
         <h2
           style={{ color: colorMe }}
-          className="text-[32px] md:text-[49px] font-light text-center md:leading-[130px] leading-normal">
+          className="text-[32px] md:text-[49px] font-light text-center md:text-left  md:leading-[130px] leading-normal">
           Customer Review
         </h2>
         <div className="flex lg:ml-2 mt-6">

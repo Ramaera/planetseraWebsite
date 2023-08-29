@@ -21,7 +21,7 @@ function FoodySection() {
     }
   };
   return (
-    <div class="container flex mt-10 md:mt-40">
+    <div class="w-full max-w-full box-border mx-auto h-auto flex mt-10 md:mt-20">
       <div
         className="basis-12/12 foodyBackground bussiness-Flex bg-no-repeat"
         style={{ backgroundImage: `url(${checkbg(colorMe)})` }}

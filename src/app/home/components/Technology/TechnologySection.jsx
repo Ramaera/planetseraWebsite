@@ -22,7 +22,7 @@ function TechnologySection() {
   };
   return (
     <>
-      <div className="container relative md:pt-16">
+      <div className="w-full max-w-full box-border mx-auto h-auto relative md:pt-12">
         <TechnologySection1 />
         <TechnologySection2 />
 

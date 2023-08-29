@@ -7,12 +7,12 @@ export default function ExperienceSection2() {
   return (
     <>
       <div
-        className="basis-6/12 self-center p-1 md:p-14 2xl:p-0 2xl:pl-10"
+        className="basis-6/12 self-center p-1 md:mt-[-6rem] xl:mt-[-13rem]"
         data-aos="slide-left">
         <div>
           <h2
             style={{ color: colorMe }}
-            className=" txet-[#ff4f4f] text-[30px] md:text-[41px] font-normal leading-[40px] md:leading-[58px] tracking-wide mb-3">
+            className=" txet-[#ff4f4f] text-[30px] md:text-[40px] font-normal leading-[40px] md:leading-[58px] tracking-wide mb-3">
             Extra-ordinary taste with Experience
           </h2>
           <div className="with_line"></div>
@@ -20,7 +20,7 @@ export default function ExperienceSection2() {
         </div>
 
         <p
-          class="font-[#1e1e1e] text-[18px] leading-[30px]
+          class="font-[#1e1e1e] text-[16px] leading-[30px]
           md:leading-[42px] font-light tracking-wider mb-1 md:mb-10"
           data-aos="fade-up">
           Families are created by love and warmth. Your love towards our spices

@@ -3,6 +3,7 @@
 .review-container {
   width: 95%;
   height: 100vh;
+  margin-bottom: 10%;
 }
 .review-info {
   width: 45%;
@@ -41,6 +42,12 @@
   background-size: cover;
   z-index: 6;
 }
+  @media screen and (max-width: 1200px){
+  .spices6{
+    width: 480px;
+    height: 300px;
+  }
+}
 .order {
   width: 434px;
   height: auto;
@@ -64,6 +71,7 @@
     height: 1000px;
     /* justify-content: center; */
     align-items: center;
+    margin-bottom: unset;
   }
   .review-info {
     width: 90%;

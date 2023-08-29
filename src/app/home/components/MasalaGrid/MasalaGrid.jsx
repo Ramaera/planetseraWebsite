@@ -8,7 +8,7 @@ function MasalaGrid() {
 
   return (
     <>
-      <div className="container px-6 mx-auto lg:pt-22 mt-24">
+      <div className="container px-6 mx-auto lg:pt-22 mt-16">
         <div className="basis-12/12">
           <div data-aos="slide-right" data-aos-duration="1000">
             <h2

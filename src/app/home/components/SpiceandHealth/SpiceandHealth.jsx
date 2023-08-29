@@ -11,7 +11,7 @@ const SpiceandHealth = () => {
     <div className="spicesandHealth relative mt-2 md:mt-0">
       <h2
         style={{ color: colorMe }}
-        className="text-[32px] md:text-[49px] font-light text-center leading-[40px] md:leading-[130px] space-x-1 md:mt-20 tracking-widest">
+        className="text-[32px] md:text-[49px] font-light text-center leading-[40px] md:leading-[130px] space-x-1 md:mt-10 tracking-widest">
         Spices and Health
       </h2>
       <div className="health_line"></div>

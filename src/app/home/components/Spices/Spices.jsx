@@ -9,7 +9,7 @@ const Spices = () => {
   const bg2 = "/images/backgrounds/spices2.webp";
 
   return (
-    <div className="spices-container lg:w-[100%] m-auto relative flex lg:ml-5 mt-20">
+    <div className="spices-container w-[100%] m-auto relative flex lg:ml-5 mt-12">
       <div className="basis-7/12 lg:ml-5 box-container">
         <div className="box">
           <div data-aos="fade-up" data-aos-anchor-placement="center-bottom">
@@ -30,7 +30,7 @@ const Spices = () => {
             className="lg:w-[282px] lg:h-[60px] small-box2 ml-5 absolute"></div>
         </div>
       </div>
-      <div className="basis-5/12">
+      <div className="basis-5/12 md:w-[35%] xl:basis-5/12">
         <SpicesInfo />
       </div>
     </div>

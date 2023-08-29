@@ -20,21 +20,21 @@ function SolutionSection() {
     }
   };
   return (
-    <div className=" mt-[500px] md:mt-72  w-full">
+    <div className=" mt-[450px] md:mt-72  w-full">
       <div className="basis-12/12 bussiness-Flex">
         <div className="basis-7/12 solution-background" data-aos="slide-right">
           <img
             alt="masala"
             src={checkbg(colorMe)}
-            className="solution-image w-max-full h-auto my-12 md:my-0"
+            className="solution-image w-max-full h-auto mt-12 md:mt-0"
           />
         </div>
-        <div className="basis-1/12"></div>
-        <div className="basis-5/12 self-center px-5 md:pr-5 md:pl-0">
+        <div className="basis-6/12 md:basis-2"></div>
+        <div className="basis-6/12 self-center px-5 md:pr-2 md:pl-0 md:mt-[-5rem]">
           <div data-aos="fade-up">
             <h2
               style={{ color: colorMe }}
-              class=" text-[#ff4f4f] text-[30px] md:text-[45px] font-normal md:flex md:items-center md:tracking-[0.17em] md:leading-snug  my-10 md:my-3">
+              class=" text-[#ff4f4f] text-[30px] md:text-2xl xl:text-3xl font-normal md:flex md:items-center md:tracking-[0.17em] md:leading-snug  my-2 md:my-3">
               Get the Desired Flavour and Aroma with PlanetsEra Spices
             </h2>
             <div className="planetsera_line"></div>
@@ -42,7 +42,7 @@ function SolutionSection() {
           </div>
           <div data-aos="fade-down">
             <p
-              className="font-[#1e1e1e] text-[18px] md:text-[21px] my-1 md:my-5 leading-[30px]
+              className="font-[#1e1e1e] text-[18px] md:text-xl my-1 md:my-5 leading-[30px]
             md:leading-[42px] font-light tracking-wider">
               Our premium, handcrafted blends will transport your taste buds to
               new heights. Discover the magic of our authentic, ethically

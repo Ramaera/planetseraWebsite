@@ -234,8 +234,8 @@
   .taste_line {
     background: linear-gradient(106.83deg, #ffffff 48.97%, #ffffff 100%);
     transform: rotate(0deg);
-    width: 155px;
-    height: 1px;
+    width: 105px;
+    height: 2px;
     /* position: absolute;
     left: 0px;
     top: 108px; */
@@ -560,7 +560,10 @@
     transform: translateY(calc(-300%));
     transition: transform 20s linear;
   }
-  
+  .pl-141 {
+    padding-left: 2rem;
+  }
+
 /*  -------Media Querry----------------- */
 
 @media only screen and (max-width: 600px) {
@@ -672,12 +675,12 @@
   }
   .manuAb {
     position: absolute;
-    top: 820px !important;
+    top: 680px !important;
     max-width: 100% !important;
   }
 
   .blogTab {
-    margin-top: 86px !important;
+    margin-top: 20px !important;
   }
 
   .taste {
@@ -693,12 +696,12 @@
   }
 
   .foodyBackground {
-    height: 1093px;
+    height: 1000px;
     background-size: cover;
   }
 
   .pl-141 {
-    padding-left: 1.5rem;
+    padding-left: 1rem;
   }
 
   .p-14 {

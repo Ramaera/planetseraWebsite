@@ -4,14 +4,14 @@ const SpicesInfo = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
 
   return (
-    <div className="spices-info lg:mt-[28%] lg:mr-20 relative">
+    <div className="spices-info lg:mt-[13%] md:mr-6 xl:mr-20 relative">
       <h2
         style={{ color: colorMe }}
-        className="text-[32px] md:text-[49px] font-light text-center md:text-left leading-[40px] md:leading-[130px]">
+        className="text-[32px] md:text-[40px] font-light text-center md:text-left leading-[40px] md:leading-[130px]">
         Why We are best ?
       </h2>
       <div className="best_line"></div>
-      <p className="w-[90%] mt-5 md:mt-2 lg:w-[95%] text-[18px] m-auto  md:m-0 text-left md:text-[22px] font-light	leding-[30px] md:leading-[36px]">
+      <p className="w-[90%] mt-5 md:mt-2 lg:w-[95%] text-[16px] m-auto  md:m-0 text-left font-light	leding-[30px]">
         PlanetsEra Spices are enriched with the most authentic taste and
         enchanting aroma. Each step in the manufacturing process is responsibly
         supervised from picking out from the farms to delivering it to the
