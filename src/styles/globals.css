@@ -1035,6 +1035,11 @@
   .whyLine {
     display: none;
   }
+  .cus_ab {
+    position: absolute;
+    bottom: -418px;
+    max-width: 24%;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -1044,6 +1049,66 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .myPos {
+    order: 1;
+  }
+  .slider-Image {
+    background-image: url("/public/images/backgrounds/background.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    order: 2;
+  }
+
+  .header-img {
+    /* max-width: fit-content; */
+    margin-top: 85px;
+  }
+  .header-display {
+    display: block;
+  }
+  .heading-textt {
+    font-family: "oriyafont";
+    background-clip: text;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 81px;
+    letter-spacing: 3px;
+  }
+  .nav-flex {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #mobile-pouch {
+    display: none;
+  }
+  #desktop-pouch {
+    display: block;
+  }
+
+  .explore {
+    display: flex;
+    border-radius: 30.5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-family: "Montserrat";
+    width: 165px;
+    height: 56px;
+    border: 1px solid white;
+    font-size: 16px;
+    font-weight: 400 !important;
+  }
+  .cus_ab {
+    position: absolute;
+    bottom: -55px;
+    max-width: 24%;
+  }
+  .mt-401 {
+    margin-top: 5rem !important;
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -1165,7 +1230,7 @@
   }
 
   .mt-401 {
-    margin-top: 22rem !important;
+    margin-top: 12rem !important;
   }
 
   .taste-cooking {
@@ -1366,6 +1431,13 @@
     width: 459px;
     height: 468px;
   }
+
+  .cus_ab {
+    position: absolute;
+    bottom: -220px;
+    max-width: 24%;
+  }
+
 }
 
 .manuAb {
@@ -1460,11 +1532,6 @@
   margin-top: 0px;
 }
 
-.cus_ab {
-  position: absolute;
-  bottom: -418px;
-  max-width: 24%;
-}
 
 .pouAli {
   margin-top: -20px;

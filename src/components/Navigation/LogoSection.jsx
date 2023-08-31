@@ -5,7 +5,7 @@ const LogoSection = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
 
   return (
-    <div className="basis-4/12 pl-5 myPos mt-14">
+    <div className="basis-4/12 pl-5 md:pl-2 xl:pl-5 myPos mt-14">
       <div className="basis-4/12  text-alignment">
         <h1
           style={{
@@ -15,18 +15,16 @@ const LogoSection = () => {
             })`,
             fontFamily: "Oriya MN",
           }}
-          className="heading-textt absolute top-32 scale-95 text-4xl mt-32 md:text-[5rem] md:leading-tight	 hidden md:block font-['Oriya MN']">
-          Diverse blend
+          className="heading-textt absolute top-32 scale-95 text-4xl mt-20 md:mt-12 xl:mt-20 md:text-5xl xl:text-6xl md:leading-tight	 hidden md:block font-['Oriya MN']">
+          Diverse blend of
           <br />
-          of culture and
-          <br />
-          taste
+          culture and taste
         </h1>
-        <p
+        {/* <p
           style={{ color: "white" }}
           className="heading-textt text-4xl mt-32 md:text-8xl text-white hidden md:block select-none	font-['Oriya MN']">
           Diverse blend of culture and taste
-        </p>
+        </p> */}
         <h1
           style={{
             color: colorMe,
@@ -35,7 +33,7 @@ const LogoSection = () => {
           Diverse blend of culture and taste
         </h1>
 
-        <p className="my-3 md:ml-4 text-[18px] text-[#797979] font-light pr-2 md:px-0 leading-[30px]">
+        <p className="my-3 md:ml-4 md:mt-2 xl:mt-32  text-[18px] text-[#797979] font-light pr-2 md:px-0 leading-[30px]">
           Uniting the diverse blend of our cultural richness and taste with
           PlanetsEra spices
         </p>

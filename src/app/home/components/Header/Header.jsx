@@ -47,10 +47,10 @@ function Header() {
       <header className="bg-white">
         <nav className="relative">
           <NavigationMobile />
-          <div className="container nav-flex">
+          <div className="w-full max-w-full box-border mx-auto h-auto nav-flex">
             <LogoSection />
             <div
-              className="basis-8/12 slider-Image w-[75vw] relative top-[-15px] md:top-0 ml-auto 2xl:ml-64  scale-125 md:scale-100"
+              className="basis-8/12 slider-Image w-[75vw] relative top-[-15px] md:top-0 ml-auto 2xl:ml-80  scale-125 md:scale-125 xl:scale-100"
               style={{
                 backgroundImage: `url(${bgcolor})`,
               }}>
@@ -95,7 +95,7 @@ function Header() {
                 style={{ top: "100%" }}>
                 <div className="basis-4/12 flex"></div>
 
-                <div className="basis-8/12 flex justify-end relative top-[-40px] items-center">
+                <div className="basis-8/12 flex justify-end relative top-[-40px] md:top-[-15rem] xl:top-[-40px] items-center">
                   {PouchData.map((item, index) => {
                     return (
                       <div className="hover:scale-110 transition-all">

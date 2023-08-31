@@ -18,8 +18,8 @@ const NavItem = ({ page }) => {
         page === "products"
           ? `relative  w-[96%]  z-30 justify-between m-auto mt-6 rounded-3xl h-[90px] md:flex hidden`
           : page === "shop"
-          ? `relative  w-10/12	left-0 z-30 justify-between md:flex hidden`
-          : `absolute  w-10/12 left-0 z-30 justify-between md:flex hidden`
+          ? `relative  w-11/12 xl:w-10/12	left-0 z-30 justify-between md:flex hidden`
+          : `absolute  w-11/12 xl:w-10/12 left-0 z-30 justify-between md:flex hidden`
       }
       style={{
         background: page === "products" && colorMe,
