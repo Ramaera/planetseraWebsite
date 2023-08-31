@@ -1,6 +1,6 @@
 import "./footer.css";
 
-const SideBar = () => {
+export const SideBar = () => {
   return (
     <>
       <div className="flex sidebar-container bg-black md:h-[250px]">
@@ -16,4 +16,3 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;

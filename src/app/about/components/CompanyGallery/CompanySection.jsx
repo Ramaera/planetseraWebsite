@@ -2,10 +2,14 @@ import { swiffyslider } from "swiffy-slider";
 import "swiffy-slider/css";
 import "./CompanySection.css";
 
-window.swiffyslider = swiffyslider;
-window.addEventListener("load", () => {
-  window.swiffyslider.init();
-});
+
+if (typeof window !== 'undefined') {
+  window.swiffyslider = swiffyslider;
+  window.addEventListener("load", () => {
+    window.swiffyslider.init();
+  });
+}
+
 
 import { useSelector } from "react-redux";
 

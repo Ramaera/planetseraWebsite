@@ -2,12 +2,16 @@
 import { swiffyslider } from "swiffy-slider";
 import "swiffy-slider/css";
 import "./DigitalGallery.css";
-window.swiffyslider = swiffyslider;
 import { useSelector } from "react-redux";
 
+if (typeof window !== 'undefined') {
+  window.swiffyslider = swiffyslider;
 window.addEventListener("load", () => {
   window.swiffyslider.init();
 });
+
+}
+
 
 const DigitalGallery = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
