@@ -62,7 +62,7 @@ const MasalaGallery = () => {
           </div>
         </Slider>
       </div>
-      <div className=" md:flex hidden  justify-evenly mb-32">
+      <div className="md:flex hidden  justify-evenly mb-32 md:mb-20">
         <div>
           <img alt="masala" loading="lazy" src={masala1} width={"360px"} />
           <h3 className="text-center invention-text">Sabji Masala</h3>

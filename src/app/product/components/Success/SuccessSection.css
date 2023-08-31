@@ -404,7 +404,7 @@ li .carousel__navigation-button:hover {
   z-index: 10;
   cursor: pointer;
   user-select: none;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .right-arrow :hover {
@@ -425,7 +425,7 @@ li .carousel__navigation-button:hover {
   z-index: 10;
   cursor: pointer;
   user-select: none;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .left-arrow :hover {
