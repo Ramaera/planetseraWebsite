@@ -155,7 +155,10 @@ const index = () => {
             required
           />
           <div>
-            <button type="submit" style={{ width: "100%" }} className="mt-4">
+            <button
+              type="submit"
+              style={{ width: "100%" }}
+              className="mt-4 w-[156px] h-[56px] border-solid border border-white rounded-3xl	">
               Complete your Registration
             </button>
           </div>
