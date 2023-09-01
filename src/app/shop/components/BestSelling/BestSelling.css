@@ -70,3 +70,22 @@
       justify-content: unset !important;
     }
   }
+
+  @media screen and (max-width: 600px){
+    .scrollShopBox{
+      overflow-x: scroll;
+      padding-bottom: 20px;
+      justify-content: unset !important;
+    }
+  }
+
+.seeAllBtn{
+  display: none;
+}
+  @media screen and (max-width: 600px){
+    .seeAllBtn{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+    }
+  }

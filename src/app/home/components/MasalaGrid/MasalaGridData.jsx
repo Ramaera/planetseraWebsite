@@ -9,9 +9,9 @@ export const MasalaGridData = [
   },
 
   {
-    id: "amchur-powder",
-    ourproductImage: "images/backgrounds/ourproduct-3.webp",
-    productText: "Amchur Powder",
+    id: "black-pepper-powder",
+    ourproductImage: "images/backgrounds/ourproduct-5.webp",
+    productText: "Black Pepper Powder",
     productGaram: "(50g)",
   },
 
@@ -25,9 +25,16 @@ export const MasalaGridData = [
   },
 
   {
-    id: "black-pepper-powder",
-    ourproductImage: "images/backgrounds/ourproduct-5.webp",
-    productText: "Black Pepper Powder",
+    id: "amchur-powder",
+    ourproductImage: "images/backgrounds/ourproduct-3.webp",
+    productText: "Amchur Powder",
+    productGaram: "(50g)",
+  },
+
+  {
+    id: "cumin-powder",
+    ourproductImage: "images/backgrounds/ourproduct-7.webp",
+    productText: "Cumin Powder",
     productGaram: "(50g)",
   },
 
@@ -38,13 +45,6 @@ export const MasalaGridData = [
     productGaram: "(50g)",
     flipkart:
       "https://www.flipkart.com/planetsera-meat-masala/p/itmaddb650cbfb76?pid=SCMGQCUTZFEDNUZJ",
-  },
-
-  {
-    id: "cumin-powder",
-    ourproductImage: "images/backgrounds/ourproduct-7.webp",
-    productText: "Cumin Powder",
-    productGaram: "(50g)",
   },
 ];
 export default MasalaGridData;

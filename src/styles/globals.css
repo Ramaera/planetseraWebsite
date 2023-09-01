@@ -234,11 +234,12 @@
   .taste_line {
     background: linear-gradient(106.83deg, #ffffff 48.97%, #ffffff 100%);
     transform: rotate(0deg);
-    width: 105px;
+    width: 75px;
     height: 2px;
     /* position: absolute;
-    left: 0px;
-    top: 108px; */
+    left: 0px;*/
+    top: -10px;
+    position: relative; 
   }
   
   .foodyPad {
@@ -582,6 +583,7 @@
   .masImg {
     width: 100%;
     height: auto;
+    /* min-height: 180px; */
   }
 
 

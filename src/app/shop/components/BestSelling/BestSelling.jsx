@@ -3,6 +3,7 @@ import "./BestSelling.css";
 import BestSellingData from "./BestSellingData";
 import { useSelector } from "react-redux";
 import BuynowBtn from "../../../../components/BuynowBtn";
+import Link from "next/link";
 
 const BestSelling = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
@@ -45,30 +46,37 @@ const BestSelling = () => {
           </div>
         </div>
 
-        <div className="flex  justify-evenly md:px-10 md:w-10/12 snap-center 	flex-wrap md:flex-nowrap">
+        <div className="scrollShopBox flex  flex-nowrap">
           {BestSellingData.map((item) => {
             return (
-              <div className="rounded-3xl items-center	m-auto w-46 mx-5 px-6 pt-6 pb-3 mt-10 md:mt-0 shadow-lg shadow-neutral-400">
-                <div style={{ background: item.colored, borderRadius: "23px" }}>
-                  <img
-                    className="mx-auto"
-                    loading="lazy"
-                    src={item.masalaImg}
-                    width={"360px"}
-                    alt="masala"
-                  />
+              <div className="flex  justify-evenly md:px-10 md:w-10/12 snap-center 	flex-wrap md:flex-nowrap">
+                <div className="rounded-3xl items-center	md:m-auto w-[70vw] md:w-full mx-5 px-6 pt-6 pb-3 mt-10 md:mt-0 shadow-lg shadow-neutral-400">
+                  <div
+                    style={{ background: item.colored, borderRadius: "23px" }}>
+                    <Link href={`/products/${item.id}`}>
+                      <img
+                        className="mx-auto"
+                        loading="lazy"
+                        src={item.masalaImg}
+                        width={"360px"}
+                        alt="masala"
+                      />
+                    </Link>
+                  </div>
+                  <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-2xl mt-4">
+                    {item.masalaName}
+                  </h3>
+                  <h2 className="text-center font-['Montserrat'] text-[#8B8B8B] text-sm">
+                    {item.masalaDetail}
+                  </h2>
+                  {/* <BuyIcons flipkart={item.flipkart} amazon={item.amazon} /> */}
+                  <BuynowBtn link={`/products/${item.id}`} text={"Buy Now"} />
                 </div>
-                <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-2xl mt-4">
-                  {item.masalaName}
-                </h3>
-                <h2 className="text-center font-['Montserrat'] text-[#8B8B8B] text-sm">
-                  {item.masalaDetail}
-                </h2>
-                {/* <BuyIcons flipkart={item.flipkart} amazon={item.amazon} /> */}
-                <BuynowBtn link={`/products/${item.id}`} text={"Buy Now"} />
               </div>
             );
           })}
+        </div>
+        <div className="seeAllBtn">
           <a
             href="#shop"
             className="more-button-3"

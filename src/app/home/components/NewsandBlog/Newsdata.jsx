@@ -15,15 +15,16 @@ export const NewsData = [
     productDesc: "The must-have PlanetsEra Spices for every kitchen",
   },
   {
-    productName: "Spice versatility",
-    productImg: "images/backgrounds/slider4.webp",
-    productDesc: "Using PlanetsEra Spices in a variety of dishes",
-  },
-  {
     productName: "Benefits of Grinding",
     productImg: "images/backgrounds/slider5.webp",
     productDesc: "Whole spices vs. pre-ground",
   },
+  {
+    productName: "Spice versatility",
+    productImg: "images/backgrounds/slider4.webp",
+    productDesc: "Using PlanetsEra Spices in a variety of dishes",
+  },
+
   {
     productName: "Spice pairings",
     productImg: "images/backgrounds/slider6.webp",

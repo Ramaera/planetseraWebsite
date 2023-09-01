@@ -13,7 +13,7 @@ const NewsandBlog = () => {
   return (
     <div className="newsandblog mx-auto relative">
       <NewsInfo />
-      <div className="flex justify-around flex-wrap mt-2 md:mt-12 mx-auto">
+      <div className="flex flex-row justify-around flex-wrap mt-2 md:mt-12 mx-auto">
         {newsCards}
       </div>
     </div>

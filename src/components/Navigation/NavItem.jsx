@@ -2,8 +2,12 @@
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import "./navigation.css";
+import { useParams } from "next/navigation";
+import RelatedPtoductData from "@/app/products/components/RelatedProducts/RelatedProductData";
 
 const NavItem = ({ page }) => {
+  const { id } = useParams();
+  const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const dispatch = useDispatch();
   // console.log(page);
   const colorMe = useSelector((state) => state.colorUs.color);
@@ -13,7 +17,6 @@ const NavItem = ({ page }) => {
 
   return (
     <div
-      // className={"absolute  w-10/12	 left-0 z-30 justify-between md:flex hidden"}
       className={
         page === "products"
           ? `relative  w-[96%]  z-30 justify-between m-auto mt-6 rounded-3xl h-[90px] md:flex hidden`
@@ -22,7 +25,7 @@ const NavItem = ({ page }) => {
           : `absolute  w-11/12 xl:w-10/12 left-0 z-30 justify-between md:flex hidden`
       }
       style={{
-        background: page === "products" && colorMe,
+        background: page === "products" && specificProduct.colored,
       }}>
       <Link
         className={page === "products" ? "scale-[0.5] mb-8" : "scale-[0.8]"}
@@ -37,8 +40,8 @@ const NavItem = ({ page }) => {
         id="navigation"
         className={
           page === "products"
-            ? `hidden md:flex space-x-6 text-white lg:float-right rounded-3xl`
-            : `hidden md:flex space-x-6 text-white lg:float-right rounded-3xl pb-6`
+            ? `hidden md:flex md:text-base xl:text-lg space-x-6 text-white lg:float-right rounded-3xl`
+            : `hidden md:flex  md:text-base xl:text-lg space-x-6 text-white lg:float-right rounded-3xl pb-6`
         }>
         <li
           className={

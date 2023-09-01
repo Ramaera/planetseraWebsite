@@ -21,10 +21,6 @@
   align-items: center;
   margin-right: 20px;
 }
-#navigation li a {
-  font-size: 18px;
-  font-family: Montserrat ;
-}
 .menu {
   display: flex;
   height: 85px;
@@ -89,7 +85,6 @@
   border-bottom-right-radius: 30px;
   box-shadow: 1px 2px 2px 0px rgb(100 40 21 / 35%);
   font-weight: 400;
-  font-size: 18px;
    
 }
 

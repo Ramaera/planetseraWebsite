@@ -1,6 +1,7 @@
 import "./OurProduct.css";
 import Our from "./OurProductData";
 import BuynowBtn from "../../../../components/BuynowBtn";
+import Link from "next/link";
 
 const OurProduct = () => {
   return (
@@ -24,18 +25,18 @@ const OurProduct = () => {
         {Our.map((items) => {
           return (
             <div className="basis-4/12 mb-20 groundedImg flex flex-col items-center">
-              <img
-                loading="lazy"
-                src={items.masalaImg}
-                style={{
-                  width: "fit-content",
-                  height: "fit-content",
-                  maxHeight: "450px",
-                }}
-              />
-
-              <h2 className="grounded-text5">{items.masalaName}</h2>
-
+              <Link href={`/products/${items.id}`}>
+                <img
+                  loading="lazy"
+                  src={items.masalaImg}
+                  style={{
+                    width: "fit-content",
+                    height: "fit-content",
+                    maxHeight: "450px",
+                  }}
+                />
+                <h2 className="grounded-text5">{items.masalaName}</h2>
+              </Link>
               <BuynowBtn
                 link={`/products/${items.id}`}
                 text={"Buy Now"}

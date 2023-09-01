@@ -30,19 +30,19 @@ function SolutionSection() {
           />
         </div>
         <div className="basis-6/12 md:basis-2"></div>
-        <div className="basis-6/12 self-center px-5 md:pr-2 md:pl-0 md:mt-[-5rem]">
+        <div className="basis-6/12 self-center px-5 md:pr-2 md:pl-0 md:mt-[-15rem]">
           <div data-aos="fade-up">
             <h2
               style={{ color: colorMe }}
-              class=" text-[#ff4f4f] text-[30px] md:text-2xl xl:text-3xl font-normal md:flex md:items-center md:tracking-[0.17em] md:leading-snug  my-2 md:my-3">
-              Get the Desired Flavour and Aroma with PlanetsEra Spices
+              class=" text-[#ff4f4f] text-[30px] md:text-[35px] font-normal md:flex md:items-center md:tracking-wide md:leading-tight  my-2 md:my-3">
+              Get the Desired Flavour and Aroma PlanetsEra Spices
             </h2>
             <div className="planetsera_line"></div>
             <div className="desireLine"></div>
           </div>
           <div data-aos="fade-down">
             <p
-              className="font-[#1e1e1e] text-[18px] md:text-xl my-1 md:my-5 leading-[30px]
+              className="font-[#1e1e1e] text-[16px] my-1 md:my-5 leading-[30px]
             md:leading-[42px] font-light tracking-wider">
               Our premium, handcrafted blends will transport your taste buds to
               new heights. Discover the magic of our authentic, ethically

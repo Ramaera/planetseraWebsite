@@ -9,10 +9,11 @@ const FoodySection1 = () => {
         data-aos="fade-up"
         className="mb-7"
         data-aos-anchor-placement="top-bottom">
-        <h3 className="md:mt-20 text-white text-[40px] font-normal	leading-[45px] md:leading-[56px] tracking-[0.07em] md:w-[80%] p-2 md:p-unset">
-          Spices - that are true to their taste
+        <h3 className="md:mt-16 text-white text-[35px] font-normal	leading-[45px] md:leading-[50px] tracking-wide md:w-[90%] xl:w-[80%] p-2 md:p-unset">
+          Spices - that are <br />
+          true to their taste
         </h3>
-        <div className="taste_line px-2"></div>
+        <div className="taste_line mx-2"></div>
       </div>
       <div data-aos="fade-down" data-aos-anchor-placement="top-bottom">
         <p className="text-white text-[16px] font-light leading-[30px] mb-3 p-2 md:p-unset">

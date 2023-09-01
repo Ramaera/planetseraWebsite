@@ -4,26 +4,12 @@
   display: table;
 }
 
-@font-face {
-   
-  src: url(/public/fonts/josefont.ttf);
-}
 
 @font-face {
   font-family: oriyafont;
   src: url(/public/fonts/oriyafont.ttc);
 }
 
-#navigation li {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
-}
-#navigation li a {
-  font-size: 18px;
-   
-  text-align: center;
-}
 .menu {
   display: flex;
   height: 85px;
@@ -112,15 +98,6 @@
   background-color: #ffff;
 }
 
-
-
-.text-alignment {
-  display: flex;
-  flex-direction: column;
-  height: 632px;
-  justify-content: center;
-  width: 100%;
-}
 
 .hero-Images {
   background-repeat: no-repeat;

@@ -19,10 +19,6 @@
   display: flex;
   align-items: center;
 }
-#navigation li a {
-  font-size: 18px;
-  font-family: "Montserrat" !important;
-}
 .menu {
   display: flex;
   height: 85px;
@@ -53,13 +49,6 @@
 }
 
 
-.text-alignment {
-  display: flex;
-  flex-direction: column;
-  height: 632px;
-  justify-content: center;
-  width: 100%;
-}
 
 .slider-Image {
   background-repeat: no-repeat;

@@ -5,7 +5,7 @@ const Cards = ({ item }) => {
   const colorMe = useSelector((state) => state.colorUs.color);
 
   return (
-    <div className="cards  scale-75 md:scale-100  product-font text-center ">
+    <div className="cards  scale-100 md:scale-100  product-font text-center ">
       <div
         className="box1 img-div card1 mx-auto mb-4"
         style={{

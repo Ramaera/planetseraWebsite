@@ -2,6 +2,7 @@
 import "./ShopProduct.css";
 import ShopProductData from "./ShopProductData";
 import BuynowBtn from "../../../../components/BuynowBtn";
+import Link from "next/link";
 
 const ShopProduct = () => {
   return (
@@ -31,19 +32,38 @@ const ShopProduct = () => {
                       className={`${
                         !item.flipkart && !item.amazon && " opacity-50"
                       } md:w-[360px] flex items-center justify-center `}>
-                      <img
-                        className="relative"
-                        loading="lazy"
-                        src={item.masalaImg}
-                        // width={"360px"}
-                        alt="..."
-                      />
+                      {!item.flipkart && !item.amazon ? (
+                        <img
+                          className="relative"
+                          loading="lazy"
+                          src={item.masalaImg}
+                          alt="..."
+                        />
+                      ) : (
+                        <Link href={`/products/${item.id}`}>
+                          <img
+                            className="relative"
+                            loading="lazy"
+                            src={item.masalaImg}
+                            // width={"360px"}
+                            alt="..."
+                          />
+                        </Link>
+                      )}
                     </div>
                   </div>
                   <div className="h-[45px] md:h-[50px]">
-                    <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-lg md:text-2xl">
-                      {item.masalaName}
-                    </h3>
+                    {!item.flipkart && !item.amazon ? (
+                      <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-lg md:text-2xl">
+                        {item.masalaName}
+                      </h3>
+                    ) : (
+                      <Link href={`/products/${item.id}`}>
+                        <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-lg md:text-2xl">
+                          {item.masalaName}
+                        </h3>
+                      </Link>
+                    )}
                   </div>
 
                   {!item.flipkart && !item.amazon ? (

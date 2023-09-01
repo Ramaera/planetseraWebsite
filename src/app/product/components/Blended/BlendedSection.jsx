@@ -1,5 +1,6 @@
 import "./BlendedSection.css";
 import BuynowBtn from "../../../../components/BuynowBtn";
+import Link from "next/link";
 
 const BlendedSection = () => {
   return (
@@ -28,14 +29,15 @@ const BlendedSection = () => {
 
       <div class="container grid grid-cols-3 gap-2 mx-auto blended">
         <div class="w-full rounded spaceBlendedImg blendedImgBox">
-          <img
-            alt="masala"
-            loading="lazy"
-            src="images/backgrounds/blended-1.webp"
-            className="mx-auto blendedImg"
-          />
-          <h2 className="blended-text2">Garam Masala</h2>
-
+          <Link href={`/products/garam-masala`}>
+            <img
+              alt="masala"
+              loading="lazy"
+              src="images/backgrounds/blended-1.webp"
+              className="mx-auto blendedImg"
+            />
+            <h2 className="blended-text2">Garam Masala</h2>
+          </Link>
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
             link={`/products/garam-masala`}
@@ -77,14 +79,15 @@ const BlendedSection = () => {
         </div>
 
         <div class="w-full rounded spaceBlendedImg blendedImgBox z-10">
-          <img
-            loading="lazy"
-            src="images/backgrounds/blended-3.webp"
-            className="mx-auto blendedImg"
-            alt="masala"
-          />
-          <h2 className="delight-text2">Meat Masala</h2>
-
+          <Link href={`/products/meat-masala`}>
+            <img
+              loading="lazy"
+              src="images/backgrounds/blended-3.webp"
+              className="mx-auto blendedImg"
+              alt="masala"
+            />
+            <h2 className="delight-text2">Meat Masala</h2>
+          </Link>
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
             link={`/products/meat-masala`}
@@ -94,14 +97,15 @@ const BlendedSection = () => {
         </div>
 
         <div class="w-full rounded mt-10 spaceBlendedImg blendedImgBox">
-          <img
-            alt="masala"
-            loading="lazy"
-            src="images/backgrounds/blended-4.webp"
-            className="mx-auto  blendedImg"
-          />
-          <h2 className="delight-text2">Chat Masala</h2>
-
+          <Link href={`/products/chat-masala`}>
+            <img
+              alt="masala"
+              loading="lazy"
+              src="images/backgrounds/blended-4.webp"
+              className="mx-auto  blendedImg"
+            />
+            <h2 className="delight-text2">Chat Masala</h2>
+          </Link>
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
             link={`/products/chat-masala`}
@@ -111,14 +115,15 @@ const BlendedSection = () => {
         </div>
 
         <div class="w-full rounded mt-10 blendedImgBox">
-          <img
-            alt="masala"
-            loading="lazy"
-            src="images/backgrounds/blended-5.webp"
-            className="mx-auto  blendedImg"
-          />
-          <h2 className="delight-text2">Sabji Masala</h2>
-
+          <Link href={`/products/sabji-masala`}>
+            <img
+              alt="masala"
+              loading="lazy"
+              src="images/backgrounds/blended-5.webp"
+              className="mx-auto  blendedImg"
+            />
+            <h2 className="delight-text2">Sabji Masala</h2>
+          </Link>
           <div className="mt-[-10px] md:mt-5"></div>
           <BuynowBtn
             link={`/products/sabji-masala`}
