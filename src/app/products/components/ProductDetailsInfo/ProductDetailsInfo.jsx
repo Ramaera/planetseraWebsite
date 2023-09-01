@@ -36,10 +36,7 @@ const ProductDetailsInfo = () => {
   console.log("specificProduct", specificProduct);
   return (
     <>
-      {/* <MetaDataproducts /> */}
-      <div
-        // style={{ backgroundColor: specificProduct.colored }}
-        className="absolute h-2/5 min-h-[300px] top-0 w-full md:hidden"></div>
+      {/* <div className="absolute h-2/5 min-h-[300px] top-0 w-full md:hidden"></div> */}
       <div className="md:m-8 m-4">
         <div className="w-full md:flex">
           <div className="md:w-2/4">
