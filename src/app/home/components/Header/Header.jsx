@@ -50,7 +50,7 @@ function Header() {
           <div className="w-full max-w-full box-border mx-auto h-auto nav-flex">
             <LogoSection />
             <div
-              className="slider-Image w-3/4 md:w-[65vw]  relative top-[-15px] md:top-0 ml-auto 2xl:ml-80  scale-125 md:scale-125 xl:scale-100"
+              className="slider-Image w-3/4 md:w-[65vw]  relative top-[-15px] md:top-0 ml-auto 2xl:ml-0  scale-125 md:scale-125 xl:scale-100"
               style={{
                 backgroundImage: `url(${bgcolor})`,
               }}>
@@ -71,7 +71,7 @@ function Header() {
             <div id="mobile-pouch">
               <div
                 className="basis-12/12 flex absolute image-top w-full"
-                style={{ right: "0%", top: "38%" }}>
+                style={{ right: "0%", top: "32%" }}>
                 <div className="basis-12/12 flex justify-between items-center relative scale-90 w-full ">
                   {PouchData.map((item, index) => {
                     return (
@@ -99,7 +99,7 @@ function Header() {
                 style={{ top: "100%" }}>
                 <div className="basis-4/12 flex"></div>
 
-                <div className="basis-8/12 flex justify-end relative top-[-40px] md:top-[-16rem] md:scale-75 xl:scale-100 xl:top-[-140px] items-center">
+                <div className="basis-8/12 flex justify-end relative top-[-40px] md:top-[-16rem] md:scale-75 xl:scale-100 xl:top-[-140px] 2xl:top-[-110px] items-center">
                   {PouchData.map((item, index) => {
                     return (
                       <div className="hover:scale-110 transition-all">

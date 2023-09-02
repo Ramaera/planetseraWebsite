@@ -22,15 +22,11 @@ function TechnologySection() {
   };
   return (
     <>
-      <div className="w-full max-w-full box-border mx-auto h-auto relative md:pt-12">
+      <div className="w-full max-w-full box-border mx-auto h-auto relative md:pt-2">
         <TechnologySection1 />
         <TechnologySection2 />
 
-        <img
-          alt="masala"
-          className=" manuAb  md:pt-16"
-          src={checkbg(colorMe)}
-        />
+        <img alt="masala" className=" manuAb " src={checkbg(colorMe)} />
       </div>
     </>
   );

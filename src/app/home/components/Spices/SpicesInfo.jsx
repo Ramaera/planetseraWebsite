@@ -7,7 +7,7 @@ const SpicesInfo = () => {
     <div className="spices-info lg:mt-[13%] md:mr-6 xl:mr-20 relative">
       <h2
         style={{ color: colorMe }}
-        className="text-[32px] md:text-[40px] font-light text-center md:text-left leading-[40px] md:leading-[130px]">
+        className="text-[32px] md:text-[40px] font-light md:font-medium text-center md:text-left leading-[40px] md:leading-[130px]">
         Why We are best ?
       </h2>
       <div className="best_line"></div>
@@ -17,7 +17,7 @@ const SpicesInfo = () => {
         supervised from picking out from the farms to delivering it to the
         stores, so that there is no compromise in the health of our consumers.
       </p>
-      <div className="flex w-full justify-center mt-10">
+      <div className="flex w-full justify-center md:justify-start mt-10">
         <div
           style={{
             border: `2px solid ${colorMe}`,
@@ -37,7 +37,7 @@ const SpicesInfo = () => {
           Grinded at lower temperatures{" "}
         </div>
       </div>
-      <div className="flex w-full justify-center mt-4">
+      <div className="flex w-full justify-center md:justify-start mt-4">
         <div
           style={{
             border: `2px solid ${colorMe}`,

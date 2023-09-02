@@ -20,9 +20,11 @@ function SolutionSection() {
     }
   };
   return (
-    <div className=" mt-[450px] md:mt-72  w-full">
+    <div className=" mt-[450px] md:mt-20 w-full">
       <div className="basis-12/12 bussiness-Flex">
-        <div className="basis-7/12 solution-background" data-aos="slide-right">
+        <div
+          className="basis-7/12 md:w-[50%] solution-background"
+          data-aos="slide-right">
           <img
             alt="masala"
             src={checkbg(colorMe)}
@@ -34,7 +36,7 @@ function SolutionSection() {
           <div data-aos="fade-up">
             <h2
               style={{ color: colorMe }}
-              class=" text-[#ff4f4f] text-[30px] md:text-[35px] font-normal md:flex md:items-center md:tracking-wide md:leading-tight  my-2 md:my-3">
+              class=" text-[#ff4f4f] text-[30px] md:text-[35px] font-normal md:font-medium md:flex md:items-center md:tracking-wide md:leading-tight  my-2 md:my-3">
               Get the Desired Flavour and Aroma PlanetsEra Spices
             </h2>
             <div className="planetsera_line"></div>
@@ -42,17 +44,23 @@ function SolutionSection() {
           </div>
           <div data-aos="fade-down">
             <p
-              className="font-[#1e1e1e] text-[16px] my-1 md:my-5 leading-[30px]
+              className="font-[#1e1e1e] text-[16px] my-1 md:my-5 md:pr-20 leading-[30px]
             md:leading-[42px] font-light tracking-wider">
-              Our premium, handcrafted blends will transport your taste buds to
-              new heights. Discover the magic of our authentic, ethically
-              sourced ingredients and elevate your culinary creations with
-              PlanetsEra spices.
+              With the fine spices from Planetsera, you can achieve your desired
+              flavor and scent. Our spices are painstakingly created to provide
+              a remarkable culinary experience, from the cozy embrace of Haldi
+              to the fiery allure of Mirch and the aromatic charm of Dhaniya.
+              Enhance your meals and taste Indian food's authentic flavor with
+              every sprinkle.
             </p>
           </div>
         </div>
       </div>
-      <img src={spicebg} className="w-full" alt="masala" />
+      <img
+        src={spicebg}
+        className="w-full md:mt-[-9rem] xl:md:mt-[-18rem] 2xl:mt-[-22rem]"
+        alt="masala"
+      />
     </div>
   );
 }

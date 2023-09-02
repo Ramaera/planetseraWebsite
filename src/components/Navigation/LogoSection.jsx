@@ -5,8 +5,8 @@ const LogoSection = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
 
   return (
-    <div className="basis-4/12 pl-5 md:pl-2 xl:pl-5 myPos mt-14 ">
-      <div className="basis-4/12 h-[450px] flex md:h-[660px] flex-col justify-center w-full">
+    <div className="basis-4/12 2xl:basis-6/12  md:pl-2 xl:pl-5 myPos mt-14 ">
+      <div className="basis-4/12 h-[450px] flex md:h-[660px] flex-col justify-center w-full px-5 md:px-0 ">
         <h1
           style={{
             webkitTextFillColor: "transparent",
@@ -25,13 +25,17 @@ const LogoSection = () => {
           style={{
             color: colorMe,
           }}
-          className="font-mont text-4xl mt-28 md:text-8xl text-white md:hidden font-['Oriya MN']">
+          className="font-medium text-4xl mt-44 md:text-8xl text-white md:hidden font-['Oriya MN']">
           Diverse blend of culture and taste
         </h1>
 
-        <p className="my-4 md:mx-4 md:my-8 text-[18px] w-full text-[#797979] font-light pr-2 md:px-0 leading-[30px]">
-          Uniting the diverse blend of our cultural richness and taste with
-          PlanetsEra spices
+        <p className="my-4 md:ml-4 md:my-8 text-[16px] md:mt-24 w-full text-[#5c5c5c] font-light md:pr-2 md:px-0 leading-[30px]">
+          We deliver the essence of authenticity to every kitchen as a leading
+          supplier of spices. Our extensive selection, which includes tasty
+          Mirch, zesty Dhaniya, and aromatic Haldi powders, is obtained from the
+          center of India. We take pride in providing quality and purity that
+          elevates culinary experiences and adds a touch of richness to every
+          meal.
         </p>
 
         <a

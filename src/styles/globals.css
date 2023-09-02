@@ -677,7 +677,8 @@
   }
   .manuAb {
     position: absolute;
-    top: 680px !important;
+    top: 780px !important;
+    height: unset !important;
     max-width: 100% !important;
   }
 
@@ -734,7 +735,7 @@
   }
 
   .mt-401 {
-    margin-top: 0rem !important;
+    margin-top: 7rem !important;
   }
 
   .taste-cooking {
@@ -1109,7 +1110,7 @@
     max-width: 24%;
   }
   .mt-401 {
-    margin-top: 5rem !important;
+    margin-top: 2rem !important;
   }
 }
 
@@ -1174,6 +1175,8 @@
   .solution-image {
     margin-top: -170px;
     margin-left: 0px;
+    height: 80%;
+ 
   }
 
   .bussiness-head-mobile {
@@ -1232,7 +1235,7 @@
   }
 
   .mt-401 {
-    margin-top: 12rem !important;
+    margin-top: 8rem !important;
   }
 
   .taste-cooking {
@@ -1430,8 +1433,8 @@
   }
 
   .masImg {
-    width: 459px;
-    height: 468px;
+    width: 400px;
+    height: 400px;
   }
 
   .cus_ab {
@@ -1444,8 +1447,10 @@
 
 .manuAb {
   position: absolute;
-  top: 500px;
-  width: 120vw !important;
+  top: 90%;
+  height: 150px;
+  width: 100vw !important;
+  z-index: -10;
 }
 
 .redChilli {

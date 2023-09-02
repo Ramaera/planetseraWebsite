@@ -24,7 +24,7 @@ const HealthySpices = () => {
 
   return (
     <div
-      className="lg:px-12 overflow-scroll scroll lg:h-[60vh] mt-10 "
+      className="lg:px-12 overflow-scroll scroll lg:h-[510px] mt-10 "
       style={{
         "--color": colorMe,
       }}>
@@ -44,7 +44,7 @@ const HealthySpices = () => {
           <div className="lg:w-96">
             <p
               style={{ color: colorMe }}
-              className="text-[18px] md:text-[20px] font-normal	 md:leading-[24px] md:tracking-[0.11em]">
+              className="text-[18px] md:text-[20px] font-medium	 md:leading-[24px] md:tracking-[0.11em]">
               Black Pepper
             </p>
             <p className="cardamom-para mt-2">
@@ -69,7 +69,7 @@ const HealthySpices = () => {
           <div className="w-96">
             <p
               style={{ color: colorMe }}
-              className="text-[18px] md:text-[20px] font-normal	 md:leading-[24px] md:tracking-[0.11em]">
+              className="text-[18px] md:text-[20px] font-medium	 md:leading-[24px] md:tracking-[0.11em]">
               Cardamom
             </p>
             <p className="cardamom-para mt-2">
@@ -93,7 +93,7 @@ const HealthySpices = () => {
           <div className="w-96">
             <p
               style={{ color: colorMe }}
-              className="text-[18px] md:text-[20px] font-normal	 md:leading-[24px] md:tracking-[0.11em]">
+              className="text-[18px] md:text-[20px] font-medium	 md:leading-[24px] md:tracking-[0.11em]">
               Cumin
             </p>
             <p className="cardamom-para mt-2">
@@ -118,7 +118,7 @@ const HealthySpices = () => {
           <div className="w-96">
             <p
               style={{ color: colorMe }}
-              className="text-[18px] md:text-[20px] font-normal	 md:leading-[24px] md:tracking-[0.11em]">
+              className="text-[18px] md:text-[20px] font-medium	 md:leading-[24px] md:tracking-[0.11em]">
               Fenugreek
             </p>
             <p className="cardamom-para mt-2">
@@ -143,7 +143,7 @@ const HealthySpices = () => {
           <div className="w-96">
             <p
               style={{ color: colorMe }}
-              className="text-[18px] md:text-[20px] font-normal	 md:leading-[24px] md:tracking-[0.11em]">
+              className="text-[18px] md:text-[20px] font-medium	 md:leading-[24px] md:tracking-[0.11em]">
               Mustard
             </p>
             <p className="cardamom-para mt-2">
@@ -169,7 +169,7 @@ const HealthySpices = () => {
           <div className="w-96">
             <p
               style={{ color: colorMe }}
-              className="text-[18px] md:text-[20px] font-normal	 md:leading-[24px] md:tracking-[0.11em]">
+              className="text-[18px] md:text-[20px] font-medium	 md:leading-[24px] md:tracking-[0.11em]">
               Star Anise
             </p>
             <p className="cardamom-para mt-2">
@@ -194,7 +194,7 @@ const HealthySpices = () => {
           <div className="w-96">
             <p
               style={{ color: colorMe }}
-              className="text-[18px] md:text-[20px] font-normal	 md:leading-[24px] md:tracking-[0.11em]">
+              className="text-[18px] md:text-[20px] font-medium	 md:leading-[24px] md:tracking-[0.11em]">
               Clove
             </p>
             <p className="cardamom-para mt-2">
@@ -220,7 +220,7 @@ const HealthySpices = () => {
           <div className="w-96">
             <p
               style={{ color: colorMe }}
-              className="text-[18px] md:text-[20px] font-normal	 md:leading-[24px] md:tracking-[0.11em]">
+              className="text-[18px] md:text-[20px] font-medium	 md:leading-[24px] md:tracking-[0.11em]">
               Cinnamon
             </p>
             <p className="cardamom-para mt-2">
@@ -246,7 +246,7 @@ const HealthySpices = () => {
           <div className="w-96">
             <p
               style={{ color: colorMe }}
-              className="text-[18px] md:text-[20px] font-normal	 md:leading-[24px] md:tracking-[0.11em]">
+              className="text-[18px] md:text-[20px] font-medium	 md:leading-[24px] md:tracking-[0.11em]">
               Nutmeg & Mace
             </p>
             <p className="cardamom-para mt-2">

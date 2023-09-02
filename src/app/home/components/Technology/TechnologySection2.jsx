@@ -28,7 +28,7 @@ const TechnologySection2 = () => {
         data-aos-duration="1000">
         <h2
           style={{ color: colorMe }}
-          className="text-[#ff4f4f] text-[1.3rem] md:text-[35px] font-normal tracking-[0.17em]	mb-3">
+          className="text-[#ff4f4f] text-[1.3rem] md:text-[35px] font-normal md:font-medium tracking-[0.17em]	mb-3">
           Quality Preservation Using Latest Technology
         </h2>
         <div className="quality_line"></div>
@@ -37,16 +37,13 @@ const TechnologySection2 = () => {
         <p
           className="mb-3 font-[#1e1e1e] text-[16px] leading-[30px]
           md:leading-[42px] font-light tracking-wider">
-          To maintain the quality and originality of the spices, we make sure
-          that the spices are stored and maintained at lower temperatures
-        </p>
-
-        <p
-          className="mb-3 font-[#1e1e1e] text-[16px] leading-[30px]
-          md:leading-[42px] font-light tracking-wider">
-          Contemporary spice industries, use hammer mills that enable the
-          temperature to rise upto 120°C , which causes the spices to lose their
-          pungency and flavors.
+          We are dedicated to maintaining quality with the latest in technology.
+          We use the latest technological advances, from product procurement to
+          packaging, to guarantee the integrity of our products. In order to
+          offer an unparalleled sensory experience that represents our
+          commitment to perfection, we preserve the richness of Haldi, the
+          pungency of Mirch, and the freshness of Dhaniya while keeping
+          innovation at the forefront of our efforts.
         </p>
       </div>
 

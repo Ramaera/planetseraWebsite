@@ -15,8 +15,13 @@ import GallerySection from "./components/Gallery/GallerySection";
 import InstagramRecipe from "./components/InstagramRecipe/InstagramRecipe";
 import Footer from "@/components/Footer/Footer";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const Products = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Head />

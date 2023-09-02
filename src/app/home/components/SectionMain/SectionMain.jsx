@@ -13,13 +13,8 @@ function SectionMain() {
             data-aos-anchor-placement="top-bottom"
             className="flex items-center basis-10/12  flex-col ">
             <h2
-              className="text-[25px] md:text-[35px] mb-2 text-center bg-clip-text tracking-wide "
-              style={{
-                webkitTextFillColor: "transparent",
-                backgroundImage: `linear-gradient(to right, ${colorMe}, ${
-                  colorMe + "80"
-                })`,
-              }}>
+              style={{ color: colorMe }}
+              className="text-[25px] md:font-medium md:text-[35px] mb-2 text-center bg-clip-text tracking-wide ">
               Producing the treasures of the Indian cuisines
               <div
                 className="hidden md:block absolute h-[2px] w-[180px] ml-[3px] "
@@ -36,13 +31,12 @@ function SectionMain() {
       <div className="basis-12/12 flex px-5">
         <div className="basis-12/12 w-full">
           <div data-aos="slide-right">
-            <p class="font-[#1e1e1e] text-[16px] md:px-16 md:mb-16 text-left	md:text-center leading-[30px] md:leading-[35px] font-light tracking-wider">
-              Spices have an inseparable bond with our Indian culture. Each and
-              every flavor of different spices in our country reflect the taste
-              of the region and carry the story of the richness of our country.
-              Relishing your taste buds with the best quality of spices to add
-              spice to your life and devouring delicacies, PlanetsEra spices is
-              a step ahead.
+            <p class="font-[#1e1e1e] text-[16px] md:px-16 md:mb-8 text-left	md:text-center leading-[30px] md:leading-[35px] font-light tracking-wider">
+              Our business takes pride in manufacturing a colorful variety of
+              spices that capture the spirit of India's rich and varied cuisine.
+              We are dedicated to revealing the culinary secrets of India. Our
+              spices add authenticity and taste to every dish, from Haldi's cozy
+              embrace to Mirch's fiery allure and the aromatic charm of Dhaniya.
             </p>
           </div>
         </div>

@@ -62,32 +62,33 @@ const ExperienceSection3 = () => {
   };
   return (
     <>
-      <div className="md:p-6 transition-transform flex">
+      <div className="md:basis-5/12 md:px-6 transition-transform flex ">
         <div>
           <img
             alt="masala"
-            className="md:scale-100 hover:scale-105 overflow-hidden p-2"
+            className=" md:hover:scale-105 overflow-hidden p-2"
             src={checkImg1(colorMe)}
           />
           <img
             alt="masala"
-            className="md:scale-100  hover:scale-105 overflow-hidden p-2"
+            className="  hover:scale-105 overflow-hidden p-2"
             src={checkImg3(colorMe)}
           />
         </div>
         <div>
           <img
             alt="masala"
-            className="md:scale-100  hover:scale-105 overflow-hidden p-2"
+            className="  hover:scale-105 overflow-hidden p-2"
             src={checkImg2(colorMe)}
           />
           <img
             alt="masala"
-            className="md:scale-100  hover:scale-105 overflow-hidden p-2"
+            className="  hover:scale-105 overflow-hidden p-2"
             src={checkImg4(colorMe)}
           />
         </div>
       </div>
+      <div className="md:basis-1/12"></div>
     </>
   );
 };

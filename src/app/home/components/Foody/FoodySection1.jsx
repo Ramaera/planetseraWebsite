@@ -9,7 +9,7 @@ const FoodySection1 = () => {
         data-aos="fade-up"
         className="mb-7"
         data-aos-anchor-placement="top-bottom">
-        <h3 className="md:mt-16 text-white text-[35px] font-normal	leading-[45px] md:leading-[50px] tracking-wide md:w-[90%] xl:w-[80%] p-2 md:p-unset">
+        <h3 className="md:mt-10 text-white text-[35px] font-semibold	leading-[45px] md:leading-[50px] tracking-wide md:w-[90%] xl:w-[80%] p-2 md:p-unset">
           Spices - that are <br />
           true to their taste
         </h3>
@@ -17,12 +17,13 @@ const FoodySection1 = () => {
       </div>
       <div data-aos="fade-down" data-aos-anchor-placement="top-bottom">
         <p className="text-white text-[16px] font-light leading-[30px] mb-3 p-2 md:p-unset">
-          With no artificial preservatives, we ensure that Planetsera spices are
-          produced with the essence of nature and are true to their taste.
-          Caring for your health and requirements, we utilize the most advanced
-          technologies for the production of these spices, so that we do not
-          keep you waiting to eat your favourite dishes served with the homely
-          touch of the finely ground spices.
+          Spices that are true to their original flavors are available for
+          indulgence. Our collection captures the very best in pure taste, from
+          the golden allure of Haldi to the powerful kick of Mirch and the
+          lovely perfume of Dhaniya. Our spices, which are painstakingly sourced
+          and prepared, add genuine goodness and purity to your culinary
+          experiences while preserving each spice's authentic flavor in every
+          serving.
         </p>
       </div>
       <div className="basis-4/12"></div>

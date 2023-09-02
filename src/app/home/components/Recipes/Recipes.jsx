@@ -8,11 +8,11 @@ const Recipes = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
 
   return (
-    <div className="recipes lg:w-[95%] mx-auto mt-4 md:mt-12">
+    <div className="recipes lg:w-[95%] mx-auto">
       <div className="flex justify-center relative">
         <h2
           style={{ color: colorMe }}
-          className="text-[32px] md:text-[49px] font-light text-center	leading-[40px] md:leading-[130px]"
+          className="text-[32px] md:text-[49px] md:font-medium font-light text-center	leading-[40px] md:leading-[40px]"
           data-aos="fade-up">
           Check out the yummiest recipes{" "}
         </h2>
