@@ -62,7 +62,7 @@ const ProductDetailsInfo = () => {
                 }
               />
 
-              <div className="absolute md:top-12 md:right-[51.5%] top-5 right-[8%] md:scale-100 scale-75">
+              <div className="absolute md:top-12 md:right-[51.5%] top-16 right-[8%] md:scale-100 scale-75">
                 <Icon
                   color={
                     selectedButton === "50gram"

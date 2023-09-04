@@ -3,8 +3,10 @@ import Link from "next/link";
 import { Facebook, Instagram, Twitter, LinkedIn } from "@mui/icons-material";
 import "./footer.css";
 import FooterTop from "./FooterTop";
+import { useSelector } from "react-redux";
 
-const Footer = ({ page }) => {
+const Footer = () => {
+  const colorMe = useSelector((state) => state.colorUs.color);
   return (
     <>
       {/* <FooterTop /> */}
@@ -31,31 +33,27 @@ const Footer = ({ page }) => {
                   Company
                 </h2>
 
-                <ul className="text-gray-500  font-medium">
+                <ul className="text-gray-500  font-medium ">
                   <li className="mb-2">
-                    <Link href="/about" className="hover:underline">
+                    <Link href="/about" className="md:hover:underline">
                       About us
                     </Link>
                   </li>
                   <li className="mb-2">
-                    <Link href="/contactUs" className="hover:underline">
+                    <Link href="/contactUs" className="md:hover:underline">
                       Contact us
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
-                      href={{
-                        pathname: "/product",
-                        query: {
-                          id: "prod",
-                        },
-                      }}
-                      className="hover:underline">
+                      href="product"
+                      className="md:hover:underline"
+                      onClick={() => window.scrollTo(0, 0)}>
                       Product
                     </Link>
                   </li>
                   <li className="mb-2">
-                    <Link href="/shop" className="hover:underline">
+                    <Link href="/shop" className="md:hover:underline">
                       Shop
                     </Link>
                   </li>
@@ -67,15 +65,19 @@ const Footer = ({ page }) => {
                 </h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-2">
-                    <a href="product#blendedSpices" className="hover:underline">
+                    <Link
+                      href="/product#blendedSpices"
+                      className="md:hover:underline">
                       Blended Spices
-                    </a>
+                    </Link>
                   </li>
 
                   <li className="mb-2">
-                    <a href="product#groundSpices" className="hover:underline">
+                    <Link
+                      href="/product#groundSpices"
+                      className="md:hover:underline">
                       Ground Spices
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -88,7 +90,7 @@ const Footer = ({ page }) => {
                     <a
                       href="https://www.facebook.com/planetseraspices/"
                       target="_blank"
-                      className="hover:underline ">
+                      className="md:hover:underline ">
                       Facebook
                     </a>
                   </li>
@@ -96,7 +98,7 @@ const Footer = ({ page }) => {
                     <a
                       href="https://www.instagram.com/planetseraspices/"
                       target="_blank"
-                      className="hover:underline ">
+                      className="md:hover:underline ">
                       Instagram
                     </a>
                   </li>
@@ -104,7 +106,7 @@ const Footer = ({ page }) => {
                     <a
                       href="https://www.linkedin.com/company/planetsera-spices/"
                       target="_blank"
-                      className="hover:underline ">
+                      className="md:hover:underline ">
                       Linkedin
                     </a>
                   </li>
@@ -112,7 +114,7 @@ const Footer = ({ page }) => {
                     <a
                       href="https://twitter.com/Planetseraspice/"
                       target="_blank"
-                      className="hover:underline ">
+                      className="md:hover:underline ">
                       Twitter
                     </a>
                   </li>
@@ -126,28 +128,28 @@ const Footer = ({ page }) => {
                   <li className="mb-2">
                     <Link
                       href={"/products/red-chilli-powder"}
-                      className="hover:underline">
+                      className="md:hover:underline">
                       Red chilli powder
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
                       href="/products/sabji-masala"
-                      className="hover:underline">
+                      className="md:hover:underline">
                       Sabji Masala
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
                       href="/products/garam-masala"
-                      className="hover:underline">
+                      className="md:hover:underline">
                       Garam Masala
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
                       href="/products/chat-masala"
-                      className="hover:underline">
+                      className="md:hover:underline">
                       Chat Masala
                     </Link>
                   </li>
@@ -159,10 +161,10 @@ const Footer = ({ page }) => {
                 </h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-2">
-                    <a className="hover:underline">Privacy Policy</a>
+                    <a className="md:hover:underline">Privacy Policy</a>
                   </li>
                   <li className="mb-2">
-                    <a className="hover:underline">Terms &amp; Conditions</a>
+                    <a className="md:hover:underline">Terms &amp; Conditions</a>
                   </li>
                 </ul>
               </div> */}
@@ -172,15 +174,15 @@ const Footer = ({ page }) => {
                 </h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-2">
-                    <a className="hover:underline">
+                    <a className="md:hover:underline">
                       H-150, Sector-63 Noida, Gautam Budh Nagar, 201301
                     </a>
                   </li>
                   <li className="mb-2">
-                    <a className="hover:underline">Care@ramaera.in</a>
+                    <a className="md:hover:underline">Care@ramaera.in</a>
                   </li>
                   <li className="mb-2">
-                    <a className="hover:underline">0120-4152818</a>
+                    <a className="md:hover:underline">0120-4152818</a>
                   </li>
                 </ul>
               </div>

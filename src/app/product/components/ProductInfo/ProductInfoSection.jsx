@@ -35,7 +35,8 @@ const ProductInfoSection = () => {
 
               <Link
                 href={`/products/sabji-masala`}
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
                 <button className="buttonZoomView scale-105">View</button>
               </Link>
             </div>
@@ -76,7 +77,8 @@ const ProductInfoSection = () => {
 
               <Link
                 href={`/products/garam-masala`}
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
                 <button className="buttonZoomView scale-105">View</button>
               </Link>
             </div>
@@ -116,7 +118,8 @@ const ProductInfoSection = () => {
 
               <Link
                 href={`/products/red-chilli-powder`}
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
                 <button className="buttonZoomView scale-105">View</button>
               </Link>
             </div>
@@ -156,7 +159,8 @@ const ProductInfoSection = () => {
 
               <Link
                 href={`/products/cumin-powder`}
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
                 <button className="buttonZoomView scale-105">View</button>
               </Link>
             </div>

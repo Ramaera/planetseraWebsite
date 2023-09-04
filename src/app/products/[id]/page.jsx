@@ -16,7 +16,7 @@ const ProductDetails = () => {
     <>
       <NavItem page={"products"} />
       <NavigationMobile page={"products"} />
-      <section className=" w-full max-w-full box-border m-auto h-auto mt-10  md:mt-0">
+      <section className=" w-full max-w-full box-border m-auto h-auto mt-16  md:mt-0">
         <ProductDetailsInfo />
         <RelatedProducts />
       </section>

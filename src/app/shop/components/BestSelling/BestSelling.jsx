@@ -11,7 +11,7 @@ const BestSelling = () => {
     <>
       <div className="flex flex-col	md:flex-row mt-10 md:mt-0 ">
         <div className="md:w-2/12 sm:text-left md:pl-4 flex flex-col	justify-center items-center md:items-start	">
-          <h2 className="text-[#1E1E1E] text-2xl md:pl-10 font-['Montserrat'] font-normal	font-black">
+          <h2 className="text-[#1E1E1E] text-2xl md:pl-10 font-['Montserrat'] font-normal">
             Best Selling Spices
           </h2>
 

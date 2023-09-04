@@ -88,7 +88,7 @@ const CompanySection = () => {
           <button aria-label="Go to slide"></button>
         </div>
       </div>
-      <div className="container mb-10">
+      <div className="container" style={{ marginBottom: "1rem" }}>
         <div className="basis-12/12 flex justify-around">
           <div className="basis-1/12"></div>
           <div className="basis">

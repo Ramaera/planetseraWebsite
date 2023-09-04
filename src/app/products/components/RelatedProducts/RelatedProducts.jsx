@@ -10,7 +10,8 @@ const RelatedProducts = () => {
             <div className="w-2/4 md:w-1/4 p-1 md:p-4" key={pro.id}>
               <Link
                 href={`/products/${pro.id}`}
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              >
                 <img alt="masala" src={pro.RelatedPtoductImg} />
                 <h2
                   className="text-center py-2 md:text-xl	text-slate-600"

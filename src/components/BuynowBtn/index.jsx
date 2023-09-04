@@ -16,9 +16,9 @@ const Index = ({
   const colorMe = useSelector((state) => state.colorUs.color);
 
   const handleClick = () => {
-    if (link && !disabled) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    // if (link && !disabled) {
+    //   window.scrollTo({ top: 0, behavior: "smooth" });
+    // }
   };
 
   return (
