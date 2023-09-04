@@ -10,7 +10,6 @@ const Register = () => {
       <NavItem />
       <NavigationMobile />
       <RegisterUser />
-      <Footer />
     </div>
   );
 };

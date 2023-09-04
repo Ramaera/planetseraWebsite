@@ -12,6 +12,7 @@ import "aos/dist/aos.css";
 const inter = Inter({ subsets: ["latin"] });
 import Head from "next/head";
 import Script from "next/script";
+import Footer from "@/components/Footer/Footer";
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -45,7 +46,10 @@ export default function RootLayout({ children }) {
 
       <body className={inter.className}>
         <ApolloProvider client={client}>
-          <Provider store={store}>{children}</Provider>
+          <Provider store={store}>
+            {children}
+            <Footer />
+          </Provider>
         </ApolloProvider>
       </body>
     </html>

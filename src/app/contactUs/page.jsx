@@ -3,8 +3,13 @@ import ContactUsHeader from "./components/ContractUsHeader/ContractUsHeader";
 import ContactUsCentre from "./components/ContactUsCentre/ContactUsCentre";
 import AboutFooter from "./components/AboutFooter/AboutFooter";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const ContactUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Head />
@@ -60,7 +65,6 @@ const ContactUs = () => {
       <meta name="twitter:image" content="banner image url" />
       <ContactUsHeader />
       <ContactUsCentre />
-      <AboutFooter />
     </>
   );
 };

@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import ShopHeader from "./components/ShopHeader/ShopHeader";
 import BestSelling from "./components/BestSelling/BestSelling";
 import ShopBuy from "./components/ShopBuy/ShopBuy";
@@ -8,6 +9,10 @@ import Footer from "@/components/Footer/Footer";
 import Head from "next/head";
 
 const Shop = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Head />
@@ -67,7 +72,6 @@ const Shop = () => {
       <ShopBuy />
       <BuyProduct />
       <ShopSpicesFooter />
-      <Footer />
     </>
   );
 };

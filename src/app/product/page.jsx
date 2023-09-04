@@ -16,11 +16,14 @@ import InstagramRecipe from "./components/InstagramRecipe/InstagramRecipe";
 import Footer from "@/components/Footer/Footer";
 import Head from "next/head";
 import { useEffect } from "react";
+import { useParams } from "next/navigation";
 
 const Products = () => {
+  let id = useParams();
   useEffect(() => {
+    console.log(id);
     window.scrollTo(0, 0);
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -93,7 +96,6 @@ const Products = () => {
       <OurProduct />
       <GallerySection />
       <InstagramRecipe />
-      <Footer page={"product"} />
     </>
   );
 };

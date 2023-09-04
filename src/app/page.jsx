@@ -80,7 +80,6 @@ const Home = () => {
       <NewsandBlog />
       <Spices />
       <Review />
-      <Footer page={"home"} />
     </>
   );
 };

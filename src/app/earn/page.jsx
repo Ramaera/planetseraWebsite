@@ -10,7 +10,6 @@ const Earn = () => {
       <NavItem page={"earn"} />
       <NavigationMobile />
       <EarnSection />
-      <Footer />
     </>
   );
 };

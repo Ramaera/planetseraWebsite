@@ -15,8 +15,13 @@ import TechnologyPeopleSection from "./components/TechnologyPeople/TechnologyPeo
 import CompanySection from "./components/CompanyGallery/CompanySection";
 import Footer from "@/components/Footer/Footer";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Head />
@@ -83,7 +88,6 @@ const About = () => {
       <QualitySection />
       <TechnologyPeopleSection />
       <CompanySection />
-      <Footer page="about" />
     </>
   );
 };
