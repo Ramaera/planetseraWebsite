@@ -7,7 +7,7 @@ export default function ExperienceSection2() {
   return (
     <>
       <div
-        className="basis-5/12 self-center p-1 md:top-0 md:h-[75vh]"
+        className="basis-5/12 self-center p-1 md:top-0 xl:h-[100vh] 2xl:h-[75vh]"
         data-aos="slide-left">
         <div>
           <h2

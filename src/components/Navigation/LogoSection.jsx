@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./navigation.css";
 import { useSelector } from "react-redux";
 
@@ -38,7 +39,7 @@ const LogoSection = () => {
           meal.
         </p>
 
-        <a
+        <Link
           href="#produce"
           className="explore btn1 py-4 md:mx-4 hover:scale-105 2xl:mb-16 font-Montserrat font-light"
           style={{
@@ -51,7 +52,7 @@ const LogoSection = () => {
             fontWeight: "bold",
           }}>
           Explore More
-        </a>
+        </Link>
       </div>
     </div>
   );

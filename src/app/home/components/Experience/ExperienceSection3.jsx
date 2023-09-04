@@ -62,7 +62,7 @@ const ExperienceSection3 = () => {
   };
   return (
     <>
-      <div className="md:basis-5/12 md:px-6 transition-transform flex ">
+      <div className="md:basis-5/12 2xl:basis-4/12 md:px-6 transition-transform flex ">
         <div>
           <img
             alt="masala"
