@@ -15,7 +15,7 @@ const Review = () => {
         />
       </div>
 
-      <div className="review-container relative justify-between flex mx-auto md:mt-10">
+      <div className="review-container relative justify-between flex mx-auto md:mt-10 md:mb-20 2xl:mb-1">
         <ReviewInfo />
         <ReviewImg />
       </div>

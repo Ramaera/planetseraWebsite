@@ -48,7 +48,10 @@ const Footer = () => {
                     <Link
                       href="product"
                       className="md:hover:underline"
-                      onClick={() => window.scrollTo(0, 0)}>
+                      // onClick={() => window.scrollTo(0, 0)}
+                      onClick={() =>
+                        window.scrollTo({ top: 0, behavior: "auto !important" })
+                      }>
                       Product
                     </Link>
                   </li>
@@ -77,6 +80,41 @@ const Footer = () => {
                       href="/product#groundSpices"
                       className="md:hover:underline">
                       Ground Spices
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                  Trending Spices
+                </h2>
+                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                  <li className="mb-2">
+                    <Link
+                      href={"/products/red-chilli-powder"}
+                      className="md:hover:underline">
+                      Red chilli powder
+                    </Link>
+                  </li>
+                  <li className="mb-2">
+                    <Link
+                      href="/products/sabji-masala"
+                      className="md:hover:underline">
+                      Sabji Masala
+                    </Link>
+                  </li>
+                  <li className="mb-2">
+                    <Link
+                      href="/products/garam-masala"
+                      className="md:hover:underline">
+                      Garam Masala
+                    </Link>
+                  </li>
+                  <li className="mb-2">
+                    <Link
+                      href="/products/chat-masala"
+                      className="md:hover:underline">
+                      Chat Masala
                     </Link>
                   </li>
                 </ul>
@@ -117,41 +155,6 @@ const Footer = () => {
                       className="md:hover:underline ">
                       Twitter
                     </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Trending Spices
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-2">
-                    <Link
-                      href={"/products/red-chilli-powder"}
-                      className="md:hover:underline">
-                      Red chilli powder
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link
-                      href="/products/sabji-masala"
-                      className="md:hover:underline">
-                      Sabji Masala
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link
-                      href="/products/garam-masala"
-                      className="md:hover:underline">
-                      Garam Masala
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link
-                      href="/products/chat-masala"
-                      className="md:hover:underline">
-                      Chat Masala
-                    </Link>
                   </li>
                 </ul>
               </div>

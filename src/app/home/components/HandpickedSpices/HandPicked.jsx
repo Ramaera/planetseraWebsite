@@ -40,6 +40,9 @@ const HandPicked = () => {
           </div>
           <Link
             href="/product"
+            onClick={() =>
+              window.scrollTo({ top: 0, behavior: "auto !important" })
+            }
             class="han-button hidden md:flex text-white shadow sm:w-auto hover:scale-105">
             Explore More
           </Link>
