@@ -60,6 +60,16 @@ const Footer = () => {
                       Shop
                     </Link>
                   </li>
+                  <li className="mb-2">
+                    <Link href="/register" className="md:hover:underline">
+                      Register
+                    </Link>
+                  </li>
+                  <li className="mb-2">
+                    <Link href="/earn" className="md:hover:underline">
+                      Earn Reward
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div>

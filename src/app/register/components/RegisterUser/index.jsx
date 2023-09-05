@@ -22,7 +22,7 @@ const index = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    console.log(userName, email, number, code, password);
+    // console.log(userName, email, number, code, password);
     {
       createPlanetseraReward({
         variables: {
@@ -61,7 +61,7 @@ const index = () => {
 
   return (
     <>
-      <div className=" bg-gray-400 flex py-48 itens-center justify-center p-4 ">
+      <div className=" bg-gray-400 flex py-48 itens-center justify-center p-4 flex-col md:flex-row items-center text-center ">
         <ToastContainer />
 
         {confetti && (
