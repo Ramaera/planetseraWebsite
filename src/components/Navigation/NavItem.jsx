@@ -25,7 +25,8 @@ const NavItem = ({ page }) => {
           : `absolute  w-11/12 xl:w-10/12 left-0 z-30 justify-between md:flex hidden`
       }
       style={{
-        background: page === "products" && specificProduct?.colored,
+        background:
+          page === "products" && (specificProduct?.colored || "black"),
       }}>
       <Link
         className={page === "products" ? "scale-[0.5] mb-8" : "scale-[0.8]"}
