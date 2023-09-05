@@ -1,7 +1,7 @@
 "use client";
 import "../styles/globals.css";
 import "../styles/mediaQuery.css";
-import { Inter } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import { Provider } from "react-redux";
 import { store } from "../state/store";
 import { client } from "@/apollo";
@@ -13,6 +13,12 @@ const inter = Inter({ subsets: ["latin"] });
 import Head from "next/head";
 import Script from "next/script";
 import Footer from "@/components/Footer/Footer";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--montserrat",
+  display: "swap",
+});
 
 export default function RootLayout({ children }) {
   useEffect(() => {
@@ -44,7 +50,8 @@ export default function RootLayout({ children }) {
         `}
       </Script>
 
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} ${montserrat.variable} font-Montserrat`}>
         <ApolloProvider client={client}>
           <Provider store={store}>
             {children}

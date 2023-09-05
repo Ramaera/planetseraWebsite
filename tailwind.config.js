@@ -13,7 +13,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        Montserrat: ["Montserrat", "sans-serif"],
+        Montserrat: ["var(--montserrat)", "sans-serif"],
         Inter: ["Inter", "sans-serif"],
         Oswald: ["Oswald", "sans-serif"],
       },
