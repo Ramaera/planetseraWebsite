@@ -1,6 +1,15 @@
 "use client";
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, LinkedIn } from "@mui/icons-material";
+import {
+  Facebook,
+  Instagram,
+  Twitter,
+  LinkedIn,
+  Home,
+  Email,
+  Call,
+} from "@mui/icons-material";
+
 import "./footer.css";
 import FooterTop from "./FooterTop";
 import { useSelector } from "react-redux";
@@ -13,7 +22,7 @@ const Footer = () => {
       <footer className="bg-white border-t-[0.1px] border-black bottom-0 ">
         <div className="mx-auto w-full  px-8 py-6 ">
           <div className="md:flex md:justify-between">
-            <div className="mb-6 md:mb-0 justify-center md:justify-start md:items-start md:w-[40%] flex">
+            <div className="mb-4 md:mb-0 justify-center md:justify-start md:items-start md:w-[30%] flex">
               <Link href="/" className="flex items-center">
                 <div className="logo my-auto">
                   <img
@@ -23,31 +32,36 @@ const Footer = () => {
                   />
                 </div>
               </Link>
-              {/* <p className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              {/* <p className="self-center text-2xl font-bold whitespace-nowrap">
                 Planetsera
               </p> */}
             </div>
-            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-5">
+            <div className="grid grid-cols-2 gap-8 sm:gap-2 sm:grid-cols-4 sm:mr-14">
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase">
                   Company
                 </h2>
 
-                <ul className="text-gray-500  font-medium ">
+                <ul className="text-[#1e1e1e]  font-medium ">
                   <li className="mb-2">
-                    <Link href="/about" className="md:hover:underline">
+                    <Link href="/about" className="underlineEffect">
                       About us
                     </Link>
                   </li>
                   <li className="mb-2">
-                    <Link href="/contact-us" className="md:hover:underline">
+                    <Link href="/contact-us" className="underlineEffect">
                       Contact us
                     </Link>
                   </li>
                   <li className="mb-2">
+                    <Link href="/earn" className="underlineEffect">
+                      Earn Reward
+                    </Link>
+                  </li>
+                  <li className="mb-2">
                     <Link
-                      href="product"
-                      className="md:hover:underline"
+                      href="/product"
+                      className="underlineEffect"
                       // onClick={() => window.scrollTo(0, 0)}
                       onClick={() =>
                         window.scrollTo({ top: 0, behavior: "auto !important" })
@@ -55,184 +69,224 @@ const Footer = () => {
                       Product
                     </Link>
                   </li>
-                  <li className="mb-2">
-                    <Link href="/shop" className="md:hover:underline">
-                      Shop
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href="/register" className="md:hover:underline">
-                      Register
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link href="/earn" className="md:hover:underline">
-                      Earn Reward
-                    </Link>
-                  </li>
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Products
+                <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase ">
+                  Blended Spices
                 </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <ul className="text-[#1e1e1e] font-medium">
                   <li className="mb-2">
                     <Link
-                      href="/product#blendedSpices"
-                      className="md:hover:underline">
-                      Blended Spices
-                    </Link>
-                  </li>
-
-                  <li className="mb-2">
-                    <Link
-                      href="/product#groundSpices"
-                      className="md:hover:underline">
-                      Ground Spices
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Trending Spices
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-2">
-                    <Link
-                      href={"/products/red-chilli-powder"}
-                      className="md:hover:underline">
-                      Red chilli powder
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link
-                      href="/products/sabji-masala"
-                      className="md:hover:underline">
-                      Sabji Masala
+                      href="/products/chat-masala"
+                      className="underlineEffect">
+                      Chat Masala
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
                       href="/products/garam-masala"
-                      className="md:hover:underline">
+                      className="underlineEffect">
                       Garam Masala
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
-                      href="/products/chat-masala"
-                      className="md:hover:underline">
-                      Chat Masala
+                      href="/products/meat-masala"
+                      className="underlineEffect">
+                      Meat Masala
+                    </Link>
+                  </li>
+                  <li className="mb-2">
+                    <Link
+                      href="/products/sabji-masala"
+                      className="underlineEffect">
+                      Sabji Masala
                     </Link>
                   </li>
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Follow us
+                <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase">
+                  Ground Spices
                 </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <ul className="text-[#1e1e1e] font-medium">
                   <li className="mb-2">
-                    <a
-                      href="https://www.facebook.com/planetseraspices/"
-                      target="_blank"
-                      className="md:hover:underline ">
-                      Facebook
-                    </a>
+                    <Link
+                      href="/products/amchur-powder"
+                      className="underlineEffect">
+                      Amchur Powder
+                    </Link>
                   </li>
                   <li className="mb-2">
-                    <a
-                      href="https://www.instagram.com/planetseraspices/"
-                      target="_blank"
-                      className="md:hover:underline ">
-                      Instagram
-                    </a>
+                    <Link
+                      href="/products/black-pepper-powder"
+                      className="underlineEffect">
+                      Black Pepper Powder
+                    </Link>
                   </li>
                   <li className="mb-2">
-                    <a
-                      href="https://www.linkedin.com/company/planetsera-spices/"
-                      target="_blank"
-                      className="md:hover:underline ">
-                      Linkedin
-                    </a>
+                    <Link
+                      href="/products/coriander-powder"
+                      className="underlineEffect">
+                      Coriander Powder
+                    </Link>
                   </li>
                   <li className="mb-2">
-                    <a
-                      href="https://twitter.com/Planetseraspice/"
-                      target="_blank"
-                      className="md:hover:underline ">
-                      Twitter
-                    </a>
+                    <Link
+                      href="/products/cumin-powder"
+                      className="underlineEffect">
+                      Cumin Powder
+                    </Link>
+                  </li>
+                  <li className="mb-2">
+                    <Link
+                      href={"/products/red-chilli-powder"}
+                      className="underlineEffect">
+                      Red chilli powder
+                    </Link>
+                  </li>
+                  <li className="mb-2">
+                    <Link
+                      href="/products/turmeric-powder"
+                      className="underlineEffect">
+                      Turmeric Powder
+                    </Link>
                   </li>
                 </ul>
               </div>
               {/* <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase">
                   Legal
                 </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <ul className="text-[#1e1e1e] font-medium">
                   <li className="mb-2">
-                    <a className="md:hover:underline">Privacy Policy</a>
+                    <a className="underlineEffect">Privacy Policy</a>
                   </li>
                   <li className="mb-2">
-                    <a className="md:hover:underline">Terms &amp; Conditions</a>
+                    <a className="underlineEffect">Terms &amp; Conditions</a>
                   </li>
                 </ul>
               </div> */}
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              <div className="sm:min-w-[280px] hidden sm:block">
+                <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase">
                   Address
                 </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-2">
-                    <a className="md:hover:underline">
-                      H-150, Sector-63 Noida, Gautam Budh Nagar, 201301
-                    </a>
+                <ul className="text-[#1e1e1e] font-medium">
+                  <li className="mb-2 flex-row flex ">
+                    <Home
+                      style={{
+                        color: "black",
+                        fontSize: "40px",
+                        marginRight: "4px",
+                        marginLeft: "-4px",
+                      }}
+                    />
+                    <h2>
+                      H-150, Sector-63 Noida,
+                      <br />
+                      Gautam Budh Nagar, 201301
+                    </h2>
                   </li>
-                  <li className="mb-2">
-                    <a className="md:hover:underline">Care@ramaera.in</a>
+                  <li className="mb-2 flex flex-row">
+                    <Email
+                      style={{
+                        color: "black",
+                        fontSize: "30px",
+                        marginRight: "8px",
+                      }}
+                    />
+                    <h2>Care@ramaera.in</h2>
                   </li>
-                  <li className="mb-2">
-                    <a className="md:hover:underline">0120-4152818</a>
+                  <li className="mb-2 flex flex-row">
+                    <Call
+                      style={{
+                        color: "black",
+                        fontSize: "30px",
+                        marginRight: "8px",
+                      }}
+                    />
+                    <h2>0120-4152818</h2>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <div className="block sm:hidden mt-6">
+            <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase">
+              Address
+            </h2>
+            <ul className="text-[#1e1e1e] font-medium">
+              <li className="mb-2 flex-row flex ">
+                <Home
+                  style={{
+                    color: "black",
+                    fontSize: "40px",
+                    marginRight: "4px",
+                    marginLeft: "-4px",
+                  }}
+                />
+                <h2>
+                  H-150, Sector-63 Noida,
+                  <br />
+                  Gautam Budh Nagar, 201301
+                </h2>
+              </li>
+              <li className="mb-2 flex flex-row">
+                <Email
+                  style={{
+                    color: "black",
+                    fontSize: "30px",
+                    marginRight: "8px",
+                  }}
+                />
+                <h2>Care@ramaera.in</h2>
+              </li>
+              <li className="mb-2 flex flex-row">
+                <Call
+                  style={{
+                    color: "black",
+                    fontSize: "30px",
+                    marginRight: "8px",
+                  }}
+                />
+                <h2>0120-4152818</h2>
+              </li>
+            </ul>
+          </div>
+
+          <hr className="my-6 border-gray-200 sm:mx-auto lg:my-4" />
           <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+            <span className="text-sm text-[#1e1e1e] sm:text-center font-medium ">
               © 2023 Planetsera . All Rights Reserved.
             </span>
             <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
               <a
                 target="_blank"
                 href="https://www.facebook.com/planetseraspices/"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                <Facebook style={{ color: "black" }} />
+                className="text-black">
+                <Facebook />
               </a>
 
               <a
                 target="_blank"
                 href="https://www.instagram.com/planetseraspices/"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                <Instagram style={{ color: "black" }} />
+                className="text-black">
+                <Instagram />
               </a>
 
               <a
                 target="_blank"
                 href="https://www.linkedin.com/company/planetsera-spices/"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                <LinkedIn style={{ color: "black" }} />
+                className="text-black ">
+                <LinkedIn />
               </a>
 
               <a
                 target="_blank"
                 href="https://twitter.com/Planetseraspice/"
-                className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                <Twitter style={{ color: "black" }} />
+                className="text-black">
+                <Twitter />
               </a>
             </div>
           </div>
