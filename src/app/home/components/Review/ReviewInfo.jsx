@@ -23,7 +23,7 @@ const ReviewInfo = () => {
       <div className="review-info">
         <h2
           style={{ color: colorMe }}
-          className="text-[32px] md:text-[49px] font-light md:font-medium text-center md:text-left  md:leading-[130px] leading-normal">
+          className="text-[32px] md:text-[49px] font-light md:font-medium text-center md:text-left  md:leading-[50px]  leading-normal">
           Customer Review
         </h2>
         <div className="flex lg:ml-2 mt-6">
@@ -33,7 +33,7 @@ const ReviewInfo = () => {
             className="lg:mr-2 h-[60px] w-[60px] quotes w-none "
           />
         </div>
-        <p className="font-[#1e1e1e] text-[18px] md:text-[21px] font-light	w-[95%] md:w-[80%] m-auto md:m-0 text-left leading-[40px] md:tracking-[0.055em] ">
+        <p className="font-[#1e1e1e] text-[18px] md:text-[20px] font-normal	w-[95%] md:w-[80%] m-auto md:m-0 text-left leading-[38px] md:tracking-[0.055em] ">
           "I'm blown away by the quality and depth of flavour in PlanetsEra
           Spices. The smoked paprika added a whole new level of complexity to my
           dishes. I'll definitely be ordering more!"

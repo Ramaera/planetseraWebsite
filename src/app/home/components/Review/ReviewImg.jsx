@@ -20,21 +20,21 @@ const ReviewImg = () => {
     }
   };
   return (
-    <div className=" w-[47%] flex flex-col justify-center mt-5">
-      <div style={{ backgroundColor: colorMe }} className="small-box1"></div>
-      <div className="spices5"></div>
-      <div className="overflow-hidden">
-        <div
-          style={{ backgroundImage: `url(${changeBg(colorMe)})` }}
-          className="spices6 hover:scale-110 duration-700 ease-linear	transition-all"></div>
-      </div>
+    <div className="md:w-[50%] flex flex-col justify-center mt-5">
+      {/* <div style={{ backgroundColor: colorMe }} className="small-box1"></div> */}
+
       <div
-        className="top-[-50%] md:top-0 w-[300px] md:w-[434px] h-auto left-[-30%] md:left-[-25%] absolute z-50 bg-gray-50 rounded-3xl border rotating-border rotating-border--google mt-20"
+        style={{ backgroundImage: `url(${changeBg(colorMe)})` }}
+        className="spices6 hover:scale-110 duration-700 ease-linear	transition-all overflow-hidden"></div>
+      <div className="spices5"></div>
+      {/* <div className="overflow-hidden"></div> */}
+      <div
+        className="2xl:top-[30%] mx-4 md:mx-0 mb-4 md:mb-0 md:w-[434px] h-auto top-0 md:left-[-15%] absolute z-50 bg-gray-50 rounded-3xl border rotating-border rotating-border--google mt-20"
         style={{
           "--color": colorMe,
         }}>
         <div className="w-[85%] mx-auto my-3">
-          <p className="text-[#1e1e1e] text-[21px] leading-[33px] tracking-[0.03em] font-light mt-6">
+          <p className="text-[#1e1e1e] text-[21px] leading-[33px] tracking-[0.03em] font-normal mt-6">
             Discover new flavours and elevate your dishes with PlanetsEra Spices
             - order now to start cooking with the best
           </p>

@@ -5,7 +5,7 @@ function SolutionSection() {
   const spice = "/images/backgrounds/spcies.webp";
   const spice2 = "/images/backgrounds/spcies2.webp";
   const spice3 = "/images/backgrounds/spcies3.webp";
-  const spicebg = "/images/backgrounds/desireAb.webp";
+  const spicebg = "/images/backgrounds/desireAb.png";
 
   const colorMe = useSelector((state) => state.colorUs.color);
   const checkbg = (colorMe) => {
@@ -20,7 +20,7 @@ function SolutionSection() {
     }
   };
   return (
-    <div className=" mt-[450px] md:mt-20 w-full">
+    <div className=" mt-[380px] md:mt-20 w-full">
       <div className="basis-12/12 bussiness-Flex">
         <div
           className="basis-7/12 md:w-[50%] solution-background"
@@ -45,7 +45,7 @@ function SolutionSection() {
           <div data-aos="fade-down">
             <p
               className="font-[#1e1e1e] text-[16px] my-1 md:my-5 md:pr-20 leading-[30px]
-            md:leading-[42px] font-light tracking-wider">
+            md:leading-[42px] font-normal tracking-wider">
               With the fine spices from Planetsera, you can achieve your desired
               flavor and scent. Our spices are painstakingly created to provide
               a remarkable culinary experience, from the cozy embrace of Haldi

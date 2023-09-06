@@ -21,7 +21,7 @@ export default function ExperienceSection2() {
 
         <p
           class="font-[#1e1e1e] text-[16px] leading-[30px]
-          md:leading-[42px] font-light tracking-wider mb-1 md:mb-10"
+          md:leading-[42px] font-normal tracking-wider mb-1 md:mb-10"
           data-aos="fade-up">
           Discover the unique flavor that makes us unique. We have perfected the
           art of flavor combining over the years of experience, providing a

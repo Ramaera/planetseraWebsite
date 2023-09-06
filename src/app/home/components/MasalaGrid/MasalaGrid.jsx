@@ -46,18 +46,13 @@ function MasalaGrid() {
             );
           })}
         </div>
-
-        {/* <div className="basis-12/12 flex my-10">
-          <div className="basis-5/12"></div>
-          <div className="basis-2/12 flex justify-center items-center"></div>
-          <div className="basis-5/12"></div>
-        </div> */}
       </div>
-      <img
+      <div className="border-[1px] border-[#F3F3F3] my-10"></div>
+      {/* <img
         alt="masala"
         src="images/backgrounds/masalaAbsolute.webp"
         className="w-full md:h-[230px]"
-      />
+      /> */}
     </>
   );
 }

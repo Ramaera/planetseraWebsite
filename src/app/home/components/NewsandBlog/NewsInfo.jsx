@@ -9,8 +9,8 @@ const NewsInfo = () => {
       <img
         alt="blog abs"
         loading="lazy"
-        src="images/backgrounds/blogabsolute.webp"
-        className="blogTab w-full md:h-[250px] md:mt-[-5rem]"
+        src="images/backgrounds/blogabsolute.png"
+        className="blogTab w-full  md:mt-[-5rem]"
       />
       <div className="basis-12/12 flex" id="Spices">
         <div className="basis-1/12"></div>
@@ -24,7 +24,7 @@ const NewsInfo = () => {
             <div className="blog_line"></div>
           </div>
           <div data-aos="fade-left" data-aos-duration="1000">
-            <p className="text-[#1e1e1e] text-[16px]  font-light md:leading-[39px] md:tracking-[0.07em] mt-4 md:mt-0 md:text-center">
+            <p className="text-[#1e1e1e] text-[16px]  font-normal md:leading-[39px] md:tracking-[0.07em] mt-4 md:mt-0 md:text-center">
               Get more information on the how our spices give desirable taste
               enriched with authenticity in flavor. PlanetsEra Spices are
               handpicked for quality to ensure that each product of ours is

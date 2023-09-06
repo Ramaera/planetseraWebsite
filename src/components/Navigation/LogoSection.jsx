@@ -30,7 +30,7 @@ const LogoSection = () => {
           Diverse blend of culture and taste
         </h1>
 
-        <p className="my-4 md:ml-4 md:my-8 text-[16px] md:mt-24 w-full text-[#1e1e1e] md:pr-2 md:px-0 leading-[30px]">
+        <p className="my-4 md:ml-4 md:my-8 text-[16px] md:mt-24 w-full text-[#1e1e1e] md:pr-2 md:px-0 leading-[30px] font-normal">
           We deliver the essence of authenticity to every kitchen as a leading
           supplier of spices. Our extensive selection, which includes tasty
           Mirch, zesty Dhaniya, and aromatic Haldi powders, is obtained from the

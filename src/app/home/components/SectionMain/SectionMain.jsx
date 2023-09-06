@@ -31,7 +31,7 @@ function SectionMain() {
       <div className="basis-12/12 flex px-5">
         <div className="basis-12/12 w-full">
           <div data-aos="slide-right">
-            <p class="font-[#1e1e1e] text-[16px] md:px-16 md:mb-8 text-left	md:text-center leading-[30px] md:leading-[35px] font-light tracking-wider">
+            <p class="font-[#1e1e1e] text-[16px] md:px-16 md:mb-8 text-left	md:text-center leading-[30px] md:leading-[35px] font-normal tracking-wider">
               Our business takes pride in manufacturing a colorful variety of
               spices that capture the spirit of India's rich and varied cuisine.
               We are dedicated to revealing the culinary secrets of India. Our

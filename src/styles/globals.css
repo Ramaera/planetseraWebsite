@@ -675,7 +675,7 @@
   }
   .manuAb {
     position: absolute;
-    top: 780px !important;
+    top: 750px !important;
     height: unset !important;
     max-width: 100% !important;
   }
@@ -1489,7 +1489,7 @@
 .manuAb {
   position: absolute;
   top: 90%;
-  height: 150px;
+  /* height: 150px; */
   width: 100vw !important;
   z-index: -10;
 }

@@ -4,9 +4,9 @@ import TechnologySection2 from "./TechnologySection2";
 import { useSelector } from "react-redux";
 
 function TechnologySection() {
-  const manuabsolute = "/images/backgrounds/manuabsolute.webp";
-  const manuabsolute2 = "/images/backgrounds/manuabsolute2.webp";
-  const manuabsolute3 = "/images/backgrounds/manuabsolute3.webp";
+  const manuabsolute = "/images/backgrounds/manuabsolute.png";
+  const manuabsolute2 = "/images/backgrounds/manuabsolute2.png";
+  const manuabsolute3 = "/images/backgrounds/manuabsolute3.png";
 
   const colorMe = useSelector((state) => state.colorUs.color);
   const checkbg = (colorMe) => {
@@ -26,7 +26,7 @@ function TechnologySection() {
         <TechnologySection1 />
         <TechnologySection2 />
 
-        <img alt="masala" className=" manuAb " src={checkbg(colorMe)} />
+        <img alt="masala" className="manuAb" src={checkbg(colorMe)} />
       </div>
     </>
   );

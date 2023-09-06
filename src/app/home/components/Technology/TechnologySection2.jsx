@@ -36,7 +36,7 @@ const TechnologySection2 = () => {
 
         <p
           className="mb-3 font-[#1e1e1e] text-[16px] leading-[30px]
-          md:leading-[42px] font-light tracking-wider">
+          md:leading-[42px] font-normal tracking-wider">
           We are dedicated to maintaining quality with the latest in technology.
           We use the latest technological advances, from product procurement to
           packaging, to guarantee the integrity of our products. In order to
