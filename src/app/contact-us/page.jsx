@@ -27,9 +27,9 @@ const ContactUs = () => {
       />
       <meta name="keywords" content="Page Keyword" />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://www.planetsera.com/ContactUsl" />
+      <link rel="canonical" href="https://www.planetsera.com/contact-us" />
 
-      <meta property="og:url" content="https://www.planetsera.com/ContactUs" />
+      <meta property="og:url" content="https://www.planetsera.com/contact-us" />
       <meta property="og:type" content="website" />
       <meta
         property="og:title"
@@ -52,7 +52,7 @@ const ContactUs = () => {
       <meta property="twitter:domain" content="planetsera.com" />
       <meta
         property="twitter:url"
-        content="https://www.planetsera.com/ContactUs"
+        content="https://www.planetsera.com/contact-us"
       />
       <meta
         name="twitter:title"

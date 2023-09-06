@@ -42,8 +42,8 @@ const About = () => {
         content="sabji masala , mix masala powder , sabji masala powder , sabzi masala , best sabji masala , vegetable masala powder , red chilli , red chilli powder , chili powder , lal mirch powder , mirch powder , garam masala , garam masala ingredients , whole garam masala , black pepper powder , pepper powder , kali mirch powder , black chilies , coriander powder , dhaniya powder , dhania powder , whole coriander , dried coriander , turmeric powder , haldi powder , turmeric uses , organic turmeric powder , turmeric powder benefits , haldi packet , chaat masala , masala spices , chaat masala ingredients , chaat masala powder , masala chat , spices online , amchur powder , masala powder , amchoor powder , mango powder , cumin powder , food spices , jeera powder , masala powder , jeera powder price , spice powder , food spices , meat masala , meat masala ingredients"
       />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://www.planetsera.com/About" />
-      <meta property="og:url" content="https://www.planetsera.com/About" />
+      <link rel="canonical" href="https://www.planetsera.com/about" />
+      <meta property="og:url" content="https://www.planetsera.com/about" />
       <meta property="og:type" content="website" />
       <meta
         property="og:title"
@@ -63,7 +63,7 @@ const About = () => {
       <meta property="og:image:height" content="627" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="planetsera.com" />
-      <meta property="twitter:url" content="https://www.planetsera.com/About" />
+      <meta property="twitter:url" content="https://www.planetsera.com/about" />
       <meta
         name="twitter:title"
         content="Know About Planetsera's Online Foods Spices Store | Planetsera"

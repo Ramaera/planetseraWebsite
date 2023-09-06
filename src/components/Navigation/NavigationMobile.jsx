@@ -114,10 +114,10 @@ const NavigationMobile = ({ page }) => {
 
             <li>
               <Link
-                href="/contactUs"
+                href="/contact-us"
                 passHref
                 className={
-                  currentRoute === "/contactUs"
+                  currentRoute === "/contact-us"
                     ? "bg-black	 py-4 px-5  rounded-2xl"
                     : ""
                 }>
