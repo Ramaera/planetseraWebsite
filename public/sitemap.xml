@@ -1,0 +1,95 @@
+<xml version="1.0" encoding="UTF-8">
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+     <url>
+       <loc>https://www.planetsera.com/</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>1.00</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/product</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>0.80</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/shop</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>0.80</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/about</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>0.80</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/contact-us</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>0.80</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/products/red-chilli-powder</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>0.80</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/products/amchur-powder</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>0.80</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/products/turmeric-powder</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>0.80</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/products/black-pepper-powder</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>0.80</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/products/meat-masala</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>0.80</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/products/cumin-powder</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>0.80</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/products/sabji-masala</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+       <priority>0.64</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/products/chat-masala</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+        <priority>0.64</priority>
+     </url>
+
+      <url>
+       <loc>https://www.planetsera.com/products/garam-masala</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+        <priority>0.64</priority>
+     </url>
+
+     <url>
+       <loc>https://www.planetsera.com/products/coriander-powder</loc>
+       <lastmod>2023-09-01T15:32:00+00:00</lastmod>
+        <priority>0.64</priority>
+     </url>
+     
+   </urlset>
+   </xml>
