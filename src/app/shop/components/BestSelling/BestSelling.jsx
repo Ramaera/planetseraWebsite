@@ -59,7 +59,8 @@ const BestSelling = () => {
                         loading="lazy"
                         src={item.masalaImg}
                         width={"360px"}
-                        alt="masala"
+                        alt="Best Selling Spices"
+                        title="Best Selling Planetsera Spices"
                       />
                     </Link>
                   </div>

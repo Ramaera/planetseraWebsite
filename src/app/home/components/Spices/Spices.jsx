@@ -5,8 +5,6 @@ import { useSelector } from "react-redux";
 
 const Spices = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
-  const bg1 = "/images/backgrounds/spices1.webp";
-  const bg2 = "/images/backgrounds/spices2.webp";
 
   return (
     <div className="spices-container w-[100%] m-auto relative flex lg:ml-5 mt-12">
@@ -17,14 +15,24 @@ const Spices = () => {
               style={{ backgroundColor: colorMe }}
               className="lg:w-[282px] lg:h-[60px] small-box ml-5 absolute z-10"></div>
           </div>
-          <div
-            style={{ backgroundImage: `url(${bg1})` }}
-            className="box1 z-20 lg:w-[424px] lg:h-[523px] absolute bg-center bg-cover border-white border shadow-lg hover:z-50"></div>
+          <div>
+            <img
+              src="/images/backgrounds/spices1.webp"
+              alt="best spices"
+              title="Why we are best"
+              className="box1 z-20 lg:w-[424px] lg:h-[523px] absolute bg-center bg-cover border-white border shadow-lg hover:z-50"
+            />
+          </div>
         </div>
         <div className="box">
-          <div
-            style={{ backgroundImage: `url(${bg2})` }}
-            className="box2 z-30 lg:w-[424px] lg:h-[499px] absolute bg-center border-white border shadow-md"></div>
+          <div>
+            <img
+              src="/images/backgrounds/spices2.webp"
+              alt="best spices"
+              title="Why we are best"
+              className="box2 z-30 lg:w-[424px] lg:h-[499px] absolute bg-center border-white border shadow-md"
+            />
+          </div>
           <div
             style={{ backgroundColor: colorMe }}
             className="lg:w-[282px] lg:h-[60px] small-box2 ml-5 absolute"></div>

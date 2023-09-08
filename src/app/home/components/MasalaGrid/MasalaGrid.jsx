@@ -27,7 +27,8 @@ function MasalaGrid() {
               <div className="w-[44%] md:3/4  md:h-full flex flex-col justify-between md:basis-4/12 mb-8 md:mb-4 text-center text-2xl font-extralight tracking-wider space-y-1 md:flex md:flex-col md:items-center ">
                 <Link href={`/products/${items.id}`}>
                   <img
-                    alt="masala"
+                    alt="Planetsera Spices"
+                    title="Perfect spicy twist for every occasion"
                     src={items.ourproductImage}
                     className="masImg md:hover:scale-110 cursor-pointer"
                   />

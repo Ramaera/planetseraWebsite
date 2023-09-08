@@ -65,24 +65,28 @@ const ExperienceSection3 = () => {
       <div className="md:basis-5/12 2xl:basis-4/12 md:px-6 transition-transform flex ">
         <div>
           <img
-            alt="masala"
+            alt="Extra ordinary taste"
+            title="Extra ordinary taste with Experience"
             className=" md:hover:scale-105 overflow-hidden p-2"
             src={checkImg1(colorMe)}
           />
           <img
-            alt="masala"
+            alt="Extra ordinary taste"
+            title="Extra ordinary taste with Experience"
             className="  hover:scale-105 overflow-hidden p-2"
             src={checkImg3(colorMe)}
           />
         </div>
         <div>
           <img
-            alt="masala"
+            alt="Extra ordinary taste"
+            title="Extra ordinary taste with Experience"
             className="  hover:scale-105 overflow-hidden p-2"
             src={checkImg2(colorMe)}
           />
           <img
-            alt="masala"
+            alt="Extra ordinary taste"
+            title="Extra ordinary taste with Experience"
             className="  hover:scale-105 overflow-hidden p-2"
             src={checkImg4(colorMe)}
           />

@@ -41,7 +41,8 @@ const WhyPlanetserasection1 = () => {
           <div className="basis-1/12"></div>
           <div className="basis-5/12 photo2">
             <img
-              alt="bg"
+              alt="Precision milling"
+              title="precisely milled to preserve their authenticity and pungency"
               src={
                 colorMe === "#2dc83c"
                   ? LabCircleGreenTop
@@ -59,7 +60,8 @@ const WhyPlanetserasection1 = () => {
 
           <div className="basis-5/12 myfirst photo2">
             <img
-              alt="bg"
+              alt="Lab Testing"
+              title="Our spices undergo rigorous lab testing"
               src={
                 colorMe === "#2dc83c"
                   ? LabCircleGreenBottom

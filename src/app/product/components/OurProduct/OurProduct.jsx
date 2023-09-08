@@ -10,7 +10,12 @@ const OurProduct = () => {
       id="groundSpices">
       <div className="basis-12/12 absolute ourbg"></div>
       <div className=" groundbg">
-        <img src="images/backgrounds/GroundSpicesBg.webp" className="w-full" />
+        <img
+          src="images/backgrounds/GroundSpicesBg.webp"
+          alt="Ground Spices"
+          title="PlanetsEra ground spices"
+          className="w-full"
+        />
       </div>
       <div className="basis-12/12 flex">
         <div className="basis-11/12 m-auto tracking-[5px]">
@@ -29,6 +34,8 @@ const OurProduct = () => {
                 <img
                   loading="lazy"
                   src={items.masalaImg}
+                  alt="Ground spices"
+                  title="PlanetsEra ground spices"
                   style={{
                     width: "fit-content",
                     height: "fit-content",

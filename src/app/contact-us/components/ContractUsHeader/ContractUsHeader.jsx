@@ -21,6 +21,7 @@ const ContactUsHeader = () => {
         </h1>
         <div className="">
           <img
+            alt="contact us bg"
             src="images/backgrounds/Frame.webp"
             className="bloc mx-auto contact_img"
           />

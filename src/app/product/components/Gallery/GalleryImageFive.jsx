@@ -3,9 +3,10 @@ const GalleryImageFive = () => {
     <div className="basis-12/12 relative myPhoto">
       <div class="content-overlay"></div>
       <img
-        alt="galary"
-        loading="lazy"
         src="images/backgrounds/gallery-3.webp"
+        loading="lazy"
+        alt="Nutmeg"
+        title="Nutmeg"
         className=""
       />
       <div class="gallery-content">

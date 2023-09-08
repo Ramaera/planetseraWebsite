@@ -6,7 +6,7 @@ import NavigationMobile from "@/components/Navigation/NavigationMobile";
 
 const ShopHeader = () => {
   const bg1 = "/images/backgrounds/ShopBg.webp";
-  const bg2 = "/images/backgrounds/ShopSpices1.webp";
+
   return (
     <>
       <NavItem page={"shop"} />
@@ -41,7 +41,11 @@ const ShopHeader = () => {
             </div>
           </div>
           <div className="md:w-7/12 relative  md:ml-[-80px] ">
-            <img alt="bg" src={bg2} />
+            <img
+              src="/images/backgrounds/ShopSpices1.webp"
+              alt="Shop spices"
+              title="Buy planetsera spices"
+            />
           </div>
         </div>
       </section>

@@ -10,7 +10,8 @@ const AdvanceSection1 = () => {
         <div class="basis-12/12 lg:flex md:flex sm:block 2xl:px-16">
           <div class="basis-5/12 photo">
             <img
-              alt="banner"
+              alt="Technology behind spices"
+              title="The Advanced Technology Behind PlanetsEra Spices"
               class="max-w-full rounded-lg shadow-lg 2xl:h-[750px] 2xl:w-[full]"
               src="images/backgrounds/Develop-1.webp"
             />
@@ -51,7 +52,8 @@ const AdvanceSection1 = () => {
                   <div className="basis-2/12 proWd">
                     <img
                       src="images/backgrounds/advance-1.gif"
-                      alt="masala collection"
+                      alt="Quality Spices"
+                      title="Exceptional Quality Spices"
                     />
                   </div>
                   <div className="basis-10/12 relative">
@@ -84,7 +86,8 @@ const AdvanceSection1 = () => {
                   <div className="basis-2/12 proWd">
                     <img
                       src="images/backgrounds/advance-2.gif"
-                      alt="masala collection 2"
+                      alt="Developed by Experts"
+                      title="Expertly crafted premium spices for elevated culinary experiences"
                     />
                   </div>
                   <div className="basis-10/12 relative">
@@ -117,7 +120,8 @@ const AdvanceSection1 = () => {
                   <div className="basis-2/12 proWd scale-75">
                     <img
                       src="images/backgrounds/advance-3.gif"
-                      alt="masala collfinection 3"
+                      alt="Pure and Balanced Organic"
+                      title="Our organic spice blends are crafted with care and sustainability"
                     />
                   </div>
                   <div className="basis-10/12 relative">

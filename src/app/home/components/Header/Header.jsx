@@ -62,6 +62,7 @@ function Header() {
                 <div className="">
                   <img
                     alt="masala"
+                    title="Diverse blend of culture and taste"
                     src={slider}
                     className="header-img md:scale-[0.95] xl:scale-100"
                   />
@@ -105,6 +106,7 @@ function Header() {
                       <div className="hover:scale-110 transition-all">
                         <img
                           alt={`masala` + index}
+                          title="spices"
                           loading="lazy"
                           src={item.masalaImg}
                           onClick={() => {

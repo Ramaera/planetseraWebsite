@@ -48,22 +48,22 @@ const CompanySection = () => {
         id="swiffy-animation">
         <ul class="slider-container mycontain" id="container1">
           <li id="slide1" class="slide-visible">
-            <img src={comOne} alt="masala" loading="lazy" />
+            <img src={comOne} alt="gallery image" loading="lazy" />
           </li>
           <li id="slide2" class="">
-            <img src={comTwo} alt="masala" loading="lazy" />
+            <img src={comTwo} alt="gallery image" loading="lazy" />
           </li>
           <li id="slide3">
-            <img src={comThree} alt="masala" loading="lazy" />
+            <img src={comThree} alt="gallery image" loading="lazy" />
           </li>
           <li id="slide4">
-            <img src={comFour} alt="masala" loading="lazy" />
+            <img src={comFour} alt="gallery image" loading="lazy" />
           </li>
           <li id="slide5">
-            <img src={comFive} alt="masala" loading="lazy" />
+            <img src={comFive} alt="gallery image" loading="lazy" />
           </li>
           <li id="slide5">
-            <img src={comSix} alt="masala" loading="lazy" />
+            <img src={comSix} alt="gallery image" loading="lazy" />
           </li>
         </ul>
         <div className="myArrow">
@@ -92,13 +92,18 @@ const CompanySection = () => {
         <div className="basis-12/12 flex justify-around">
           <div className="basis-1/12"></div>
           <div className="basis">
-            <img src={comOne} alt="masala" loading="lazy" className="sliHei" />
+            <img
+              src={comOne}
+              alt="gallery image"
+              loading="lazy"
+              className="sliHei"
+            />
           </div>
           <div className="basis">
-            <img src={comTwo} alt="masala" loading="lazy" />
+            <img src={comTwo} alt="gallery image" loading="lazy" />
           </div>
           <div className="basis">
-            <img src={comThree} alt="masala" loading="lazy" />
+            <img src={comThree} alt="gallery image" loading="lazy" />
           </div>
 
           <div className="basis-1/12"></div>
@@ -106,13 +111,13 @@ const CompanySection = () => {
         <div className="basis-12/12 mt-5 flex justify-around">
           <div className="basis-1/12"></div>
           <div className="basis">
-            <img src={comFour} alt="masala" loading="lazy" />
+            <img src={comFour} alt="gallery image" loading="lazy" />
           </div>
           <div className="basis">
-            <img src={comFive} alt="masala" loading="lazy" />
+            <img src={comFive} alt="gallery image" loading="lazy" />
           </div>
           <div className="basis">
-            <img src={comSix} alt="masala" loading="lazy" />
+            <img src={comSix} alt="gallery image" loading="lazy" />
           </div>
 
           <div className="basis-1/12"></div>

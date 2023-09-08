@@ -1,5 +1,5 @@
-import "./SpicySection.css"
-import SpicyData from "./SpicyData"
+import "./SpicySection.css";
+import SpicyData from "./SpicyData";
 
 const SpicySection = () => {
   return (
@@ -11,6 +11,7 @@ const SpicySection = () => {
               <div className="background">
                 <img
                   alt="masala"
+                  title="spices collection"
                   loading="lazy"
                   src={items.spicyImage}
                   className="w-full mt-12"
@@ -20,11 +21,11 @@ const SpicySection = () => {
                 <img alt="masala" loading="lazy" src={items.spicyImageBox} />
               </div>
             </div>
-          )
+          );
         })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SpicySection
+export default SpicySection;

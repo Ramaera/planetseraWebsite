@@ -54,7 +54,8 @@ const HandPicked = () => {
           data-aos="fade-up">
           <img
             src={checkImg1(colorMe)}
-            alt="hand picked"
+            alt="organically and handpicked spices"
+            title="Spices that are grown organically and handpicked"
             className=" scale-110 md:scale-90 md:w-[90%]"
           />
         </div>

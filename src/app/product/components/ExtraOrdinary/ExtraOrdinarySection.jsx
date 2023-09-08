@@ -9,6 +9,7 @@ const ExtraOrdinarySection = () => {
             <div className="basis-12/12 photo z-10">
               <img
                 alt="masala"
+                title="Guaranteed freshness spices"
                 loading="lazy"
                 src="images/backgrounds/ordinary-1.webp"
                 className=""
@@ -25,6 +26,7 @@ const ExtraOrdinarySection = () => {
             <div className="basis-12/12 photo z-10">
               <img
                 alt="masala"
+                title="Premium quality spices"
                 loading="lazy"
                 src="images/backgrounds/ordinary-2.webp"
                 className=""
@@ -44,6 +46,7 @@ const ExtraOrdinarySection = () => {
             <div className="basis-12/12 ordinary-second photo z-10">
               <img
                 alt="masala"
+                title="Hand selected and pure"
                 loading="lazy"
                 src="images/backgrounds/ordinary-3.webp"
                 className=""
@@ -59,6 +62,7 @@ const ExtraOrdinarySection = () => {
             <div className="basis-12/12 ordinary-three photo z-10">
               <img
                 alt="masala"
+                title="Organically and Handpicked"
                 loading="lazy"
                 src="images/backgrounds/ordinary-4.webp"
                 className="ordinary-img4"

@@ -76,7 +76,8 @@ const SuccessSection = () => {
                               <div className="basis-6/12"></div>
                               <div className="basis-6/12 success-alignment">
                                 <img
-                                  alt="bg"
+                                  alt="Spices Flavour"
+                                  title="Spices with authentic Enhanced Flavour"
                                   loading="lazy"
                                   src={slide.imageCircle}
                                   className="success-img hidden md:block"

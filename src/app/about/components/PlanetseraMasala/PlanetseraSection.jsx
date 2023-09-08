@@ -12,6 +12,8 @@ const PlanetseraSection = () => {
           <img
             src="images/backgrounds/planetseraMasala.webp"
             className="w-full"
+            alt="about spices"
+            title="About planetsera spices"
           />
           <PlanetseraIconOne />
           <PlanetseraIconTwo />

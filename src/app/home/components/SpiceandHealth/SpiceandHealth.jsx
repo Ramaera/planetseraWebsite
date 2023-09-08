@@ -24,6 +24,7 @@ const SpiceandHealth = () => {
         <div className="spice-image-container lg:p-12 lg:w-[47%]">
           <img
             alt="masala"
+            title="Spices and Health"
             src="images/backgrounds/spicws4.webp"
             className="spice-image"
           />

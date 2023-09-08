@@ -20,7 +20,8 @@ const QualitySection = () => {
             </div>
             <div className="basis-4/12 relative photo10">
               <img
-                alt="bg"
+                alt="Mr. Devender Mishra"
+                title="Our Founder, Mr. Devender Mishra addressing the press"
                 src="images/backgrounds/quality-2.webp"
                 className="absolute quality-img"
               />

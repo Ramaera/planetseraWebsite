@@ -21,7 +21,7 @@ const ShopProduct = () => {
                           loading="lazy"
                           src="images/backgrounds/comingsoon.webp"
                           // width={"360px"}
-                          alt="..."
+                          alt="cooming soon"
                         />
                       </div>
                     ) : (
@@ -46,7 +46,8 @@ const ShopProduct = () => {
                             loading="lazy"
                             src={item.masalaImg}
                             // width={"360px"}
-                            alt="..."
+                            alt={item.masalaName}
+                            title="Buy Affordable Spice Products and Masala Powder on your fingertip"
                           />
                         </Link>
                       )}

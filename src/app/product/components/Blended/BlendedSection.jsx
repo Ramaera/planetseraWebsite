@@ -11,7 +11,8 @@ const BlendedSection = () => {
         <img
           src="images/backgrounds/BlendedSpicesBg.webp"
           className="w-full"
-          alt="masala"
+          alt="Blended spices"
+          title="PlanetsEra blended spices"
         />
       </div>
       <div className="basis-12/12">
@@ -31,7 +32,8 @@ const BlendedSection = () => {
         <div class="w-full rounded spaceBlendedImg blendedImgBox">
           <Link href={`/products/garam-masala`}>
             <img
-              alt="masala"
+              alt="garam masala"
+              title="PlanetsEra blended garam masala"
               loading="lazy"
               src="images/backgrounds/blended-1.webp"
               className="mx-auto blendedImg"
@@ -61,7 +63,8 @@ const BlendedSection = () => {
                 loading="lazy"
                 src="images/backgrounds/blended-2.webp"
                 className="mx-auto blendedImg"
-                alt="masala"
+                alt="Jaljeera Masala"
+                title="PlanetsEra blended jaljeera masala"
               />
             </div>
           </div>
@@ -84,7 +87,8 @@ const BlendedSection = () => {
               loading="lazy"
               src="images/backgrounds/blended-3.webp"
               className="mx-auto blendedImg"
-              alt="masala"
+              alt="Meat masala"
+              title="PlanetsEra blended meat masala"
             />
             <h2 className="delight-text2">Meat Masala</h2>
           </Link>
@@ -99,9 +103,10 @@ const BlendedSection = () => {
         <div class="w-full rounded mt-10 spaceBlendedImg blendedImgBox">
           <Link href={`/products/chat-masala`}>
             <img
-              alt="masala"
-              loading="lazy"
               src="images/backgrounds/blended-4.webp"
+              alt="Chat masala"
+              title="PlanetsEra blended chat masala"
+              loading="lazy"
               className="mx-auto  blendedImg"
             />
             <h2 className="delight-text2">Chat Masala</h2>
@@ -117,9 +122,10 @@ const BlendedSection = () => {
         <div class="w-full rounded mt-10 blendedImgBox">
           <Link href={`/products/sabji-masala`}>
             <img
-              alt="masala"
-              loading="lazy"
               src="images/backgrounds/blended-5.webp"
+              alt="Sabji masala"
+              title="PlanetsEra blended sabji masala"
+              loading="lazy"
               className="mx-auto  blendedImg"
             />
             <h2 className="delight-text2">Sabji Masala</h2>

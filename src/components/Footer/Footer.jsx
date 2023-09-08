@@ -27,7 +27,8 @@ const Footer = () => {
                 <div className="logo my-auto">
                   <img
                     src="/images/backgrounds/footerlogo.webp"
-                    alt="footer"
+                    alt="Planetsera logo"
+                    title="Planetsera logo"
                     className="lg:w-40"
                   />
                 </div>

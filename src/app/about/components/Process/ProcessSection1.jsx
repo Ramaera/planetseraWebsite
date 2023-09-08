@@ -8,7 +8,11 @@ const ProcessSection1 = () => {
         <div className="basis-12/12 lg:flex md:flex sm:block justify-center">
           <div className="basis-5/12 photo1  ">
             <div className="2xl:flex justify-center">
-              <img src="images/backgrounds/process-2.webp" />
+              <img
+                src="images/backgrounds/process-2.webp"
+                alt="Packaging"
+                title="Packaging in Airtight zipper bags to retain the flavor of spices"
+              />
             </div>
 
             <div className="2xl:flex justify-center">
@@ -21,7 +25,12 @@ const ProcessSection1 = () => {
           <div className="basis-1/12"></div>
 
           <div className="basis-5/12 photo1">
-            <img src="images/backgrounds/process-1.webp" />
+            <img
+              src="images/backgrounds/process-1.webp"
+              alt="Lab testing"
+              title="Lab testing at PlanetsEra Laboratory to ensure the quality
+              standards"
+            />
             <figcaption className="fig-text 2xl:w-4/12">
               Lab testing at PlanetsEra Laboratory to ensure the quality
               standards

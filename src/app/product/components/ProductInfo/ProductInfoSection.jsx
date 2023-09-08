@@ -11,8 +11,9 @@ const ProductInfoSection = () => {
             <div className="contentZoom">
               <div className="iconZoom">
                 <img
-                  alt="bg"
                   src="images/backgrounds/Sabji Masala.webp"
+                  alt="Sabji Masala"
+                  title="PlanetsEra’s Sabji Masala is an evergreen everyday Indian spice added to Indian food."
                   className="fa fa-user-circle"
                 />
               </div>
@@ -52,8 +53,9 @@ const ProductInfoSection = () => {
             <div className="contentZoom">
               <div className="iconZoom">
                 <img
-                  alt="bg"
                   src="images/backgrounds/Garam Masala.webp"
+                  alt="Garam Masala"
+                  title="PlanetsEra’s Garam Masala is an evergreen everyday Indian spice added to Indian food."
                   className="fa fa-user-circle"
                 />
               </div>
@@ -93,8 +95,9 @@ const ProductInfoSection = () => {
             <div className="contentZoom">
               <div className="iconZoom">
                 <img
-                  alt="bg"
                   src="images/backgrounds/Red Chilli Powder.webp"
+                  alt="bRed Chillig"
+                  title="PlanetsEra’s Red Chilli is an evergreen everyday Indian spice added to Indian food."
                   className="fa fa-user-circle"
                 />
               </div>
@@ -135,8 +138,9 @@ const ProductInfoSection = () => {
             <div className="contentZoom">
               <div className="iconZoom">
                 <img
-                  alt="bg"
                   src="images/backgrounds/Jeera Powder.webp"
+                  alt="Cumin Powder"
+                  title="PlanetsEra’s Cumin Powder is an evergreen everyday Indian spice added to Indian food."
                   className="fa fa-user-circle"
                 />
               </div>

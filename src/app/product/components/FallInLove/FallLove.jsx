@@ -49,7 +49,8 @@ const FallLove = () => {
           <div>
             <div className="basis-4/12">
               <img
-                alt="masala"
+                alt="Blended spices"
+                title="Get fit with flavor - PlanetsEra spices bring a healthy kick to your meals"
                 loading="lazy"
                 src="images/backgrounds/falllove-1.webp"
                 className="myMenuImage"
@@ -77,7 +78,8 @@ const FallLove = () => {
           <div>
             <div className="basis-4/12 myMenuImage-2 ">
               <img
-                alt="masala"
+                alt="Ground spices"
+                title="Get fit with flavor - PlanetsEra spices bring a healthy kick to your meals"
                 loading="lazy"
                 src="images/backgrounds/falllove-2.webp"
                 className="myMenuImage"
@@ -96,7 +98,7 @@ const FallLove = () => {
                     textShadow: `0 4px 4px ${colorMe}`,
                     boxShadow: `2px 4px 7px -2px ${colorMe}`,
                   }}>
-                  Pure
+                  Ground
                 </button>
               </a>
             </div>

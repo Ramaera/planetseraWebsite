@@ -22,7 +22,8 @@ const MasalaGallery = () => {
           <div>
             <Link href={`/products/sabji-masala`}>
               <img
-                alt="masala"
+                alt="sabji masala"
+                title="selected premium spices"
                 loading="lazy"
                 src={masala1}
                 className=" mx-auto h-1/2"
@@ -34,7 +35,8 @@ const MasalaGallery = () => {
           <div>
             <Link href={`/products/chat-masala`}>
               <img
-                alt="masala"
+                alt="chat masala"
+                title="selected premium spices"
                 loading="lazy"
                 src={masala2}
                 className=" mx-auto h-1/2"
@@ -46,7 +48,8 @@ const MasalaGallery = () => {
           <div>
             <Link href={`/products/amchur-powder`}>
               <img
-                alt="masala"
+                alt="amchur powder"
+                title="selected premium spices"
                 loading="lazy"
                 src={masala3}
                 className=" mx-auto h-1/2"
@@ -58,7 +61,8 @@ const MasalaGallery = () => {
           <div>
             <Link href={`/products/garam-masala`}>
               <img
-                alt="masala"
+                alt="garam masala"
+                title="selected premium spices"
                 loading="lazy"
                 src={masala4}
                 className=" mx-auto h-1/2"
@@ -72,28 +76,52 @@ const MasalaGallery = () => {
       <div className="md:flex hidden  justify-evenly mb-32 md:mb-20">
         <div>
           <Link href={`/products/sabji-masala`}>
-            <img alt="masala" loading="lazy" src={masala1} width={"360px"} />
+            <img
+              alt="sabji masala"
+              title="selected premium spices"
+              loading="lazy"
+              src={masala1}
+              width={"360px"}
+            />
             <h3 className="text-center invention-text">Sabji Masala</h3>
           </Link>
           <BuynowBtn link={`/products/sabji-masala`} text={"Buy Now"} />
         </div>
         <div>
           <Link href={`/products/chat-masala`}>
-            <img alt="masala" loading="lazy" src={masala2} width={"360px"} />
+            <img
+              alt="chat masala"
+              title="selected premium spices"
+              loading="lazy"
+              src={masala2}
+              width={"360px"}
+            />
             <h3 className="text-center invention-text">Chat Masala</h3>
           </Link>
           <BuynowBtn link={`/products/chat-masala`} text={"Buy Now"} />
         </div>
         <div>
           <Link href={`/products/amchur-powder`}>
-            <img alt="masala" loading="lazy" width={"360px"} src={masala3} />
+            <img
+              alt="amchur powder"
+              title="selected premium spices"
+              loading="lazy"
+              width={"360px"}
+              src={masala3}
+            />
             <h3 className="text-center invention-text">Amchur Masala</h3>
           </Link>
           <BuynowBtn link={`/products/amchur-powder`} text={"Buy Now"} />
         </div>
         <div>
           <Link href={`/products/garam-masala`}>
-            <img alt="masala" loading="lazy" src={masala4} width={"360px"} />
+            <img
+              alt="garam masala"
+              title="selected premium spices"
+              loading="lazy"
+              src={masala4}
+              width={"360px"}
+            />
             <h3 className="text-center invention-text">Garam Masala</h3>
           </Link>
           <BuynowBtn link={`/products/garam-masala`} text={"Buy Now"} />

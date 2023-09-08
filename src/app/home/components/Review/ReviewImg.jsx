@@ -23,9 +23,14 @@ const ReviewImg = () => {
     <div className="md:w-[50%] flex flex-col justify-center mt-5">
       {/* <div style={{ backgroundColor: colorMe }} className="small-box1"></div> */}
 
-      <div
-        style={{ backgroundImage: `url(${changeBg(colorMe)})` }}
-        className="spices6 hover:scale-110 duration-700 ease-linear	transition-all overflow-hidden"></div>
+      <div>
+        <img
+          src={changeBg(colorMe)}
+          alt="customer review"
+          title="Customer review about spices"
+          className="spices6 hover:scale-110 duration-700 ease-linear	transition-all overflow-hidden"
+        />
+      </div>
       <div className="spices5"></div>
       {/* <div className="overflow-hidden"></div> */}
       <div

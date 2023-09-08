@@ -59,7 +59,8 @@ const IngredientSection = () => {
           <div className="basis-5/12 flex">
             <div className="w-full basis-2/12">
               <img
-                alt="masala"
+                alt="Premium ingredients"
+                title="PlanetsEra spices are a perfect blend of handpicked and premium ingredients."
                 src={
                   colorMe === "#ff4f4f"
                     ? redOne
@@ -89,7 +90,8 @@ const IngredientSection = () => {
           <div className="basis-5/12 flex">
             <div className="w-full basis-2/12">
               <img
-                alt="masala"
+                alt="Superior quality"
+                title="Spices with excellent quality and taste."
                 src={
                   colorMe === "#ff4f4f"
                     ? redTwo
@@ -118,7 +120,8 @@ const IngredientSection = () => {
           <div className="basis-5/12 flex">
             <div className="w-full basis-2/12">
               <img
-                alt="masala"
+                alt="Expertly blended"
+                title="PlanetsEra Spices are finely ground and blended with the use of efficiently advanced technology."
                 src={
                   colorMe === "#ff4f4f"
                     ? redThree
@@ -149,7 +152,8 @@ const IngredientSection = () => {
 
         <div className="basis-5/12">
           <img
-            alt="masala"
+            alt="Delicious and natural"
+            title="Delicious and natural way to enhance your well-being."
             src="images/backgrounds/ingredientsImg.webp"
             className="myImage-main 2xl:m-0"
           />
@@ -159,7 +163,8 @@ const IngredientSection = () => {
           <div className="basis-5/12 flex md:flex-row-reverse md:text-right">
             <div className="w-full basis-2/12">
               <img
-                alt="masala"
+                alt="Organically Grown"
+                title="PlanetsEra spices are grown organically and handpicked to ensure hygiene and quality"
                 src={
                   colorMe === "#ff4f4f"
                     ? redFour
@@ -189,7 +194,8 @@ const IngredientSection = () => {
           <div className="basis-5/12 flex  md:flex-row-reverse md:text-right ">
             <div className="w-full basis-2/12">
               <img
-                alt="masala"
+                alt="Distinctive aroma"
+                title="PlanetsEra Spices have enchanting aroma that brings out the true flavor."
                 src={
                   colorMe === "#ff4f4f"
                     ? redFive
@@ -219,7 +225,8 @@ const IngredientSection = () => {
           <div className="basis-5/12 flex  md:flex-row-reverse md:text-right ">
             <div className="w-full basis-2/12">
               <img
-                alt="masala"
+                alt="Authentic flavours"
+                title="PlanetsEra spices reflect the taste of India that relish the tastebuds."
                 src={
                   colorMe === "#ff4f4f"
                     ? redSix
