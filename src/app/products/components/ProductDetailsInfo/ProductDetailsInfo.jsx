@@ -5,12 +5,15 @@ import { useParams } from "next/navigation";
 import BuyIcons from "../../../../components/BuyIcons";
 import RelatedPtoductData from "../RelatedProducts/RelatedProductData";
 // import MetaDataproducts from "../MetaDataproducts/MetaDataproducts";
+import { notFound } from "next/navigation";
 
 const ProductDetailsInfo = () => {
   const { id } = useParams();
   const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const [selectedButton, setSelectedButton] = useState("50gram");
   const [defaultSelectedButton, setDefaultSelectedButton] = useState("50gram");
+
+  if (!specificProduct) return notFound();
 
   useEffect(() => {
     if (!specificProduct?.ProductMasala500g) {
