@@ -17,7 +17,7 @@ const Shop = () => {
     <>
       <Head />
       <title>
-        choose a wide range of Best Spices & Masala Online at affordable prices
+        Choose a wide range of Best Spices & Masala Online at affordable prices
       </title>
       <meta name="text" content="planetsera" />
       <meta
