@@ -12,7 +12,11 @@ const RelatedProducts = () => {
                 href={`/products/${pro.id}`}
                 // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
-                <img alt="masala" src={pro.RelatedPtoductImg} />
+                <img
+                  src={pro.RelatedPtoductImg}
+                  alt={pro.ProductName}
+                  title={`Buy Planetsera ${pro.ProductName}`}
+                />
                 <h2
                   className="text-center py-2 md:text-xl	text-slate-600"
                   // style={{

@@ -15,7 +15,8 @@ const index = ({ link, home }) => {
           "grayscale blur-[1px] border-[#000000] border-2 p-1 rounded-[50px]"
         }`}
         width={120}
-        alt="masala"
+        alt="amazon"
+        title="amazon buy button"
       />
       {!link && (
         <h4

@@ -63,6 +63,8 @@ const ProductDetailsInfo = () => {
                     ? specificProduct?.ProductMasala100g
                     : specificProduct?.ProductMasala500g
                 }
+                alt={specificProduct.ProductName}
+                title="PlanetsEra 100% Pure Natural Product"
               />
 
               <div className="absolute md:top-12 md:right-[51.5%] top-16 right-[8%] md:scale-100 scale-75">
@@ -87,6 +89,8 @@ const ProductDetailsInfo = () => {
                       ? specificProduct?.ProductBacks500g
                       : specificProduct?.ProductBacks
                   }
+                  alt="product back"
+                  title="product back"
                 />
                 {/* <img src={ProductBacks} /> */}
               </div>
@@ -113,6 +117,8 @@ const ProductDetailsInfo = () => {
                       ? specificProduct?.ProductBackInfo500g
                       : specificProduct?.ProductBackInfo
                   }
+                  alt="product info"
+                  title="product back side info"
                 />
                 {/* <img src={ProductBackInfo} /> */}
               </div>
@@ -276,9 +282,15 @@ const ProductDetailsInfo = () => {
               <img
                 className="w-[60%]"
                 src="/images/backgrounds/MadeIndia.webp"
+                alt="Made in India"
+                title="Made in India"
               />
               <div className="right-0 absolute md:top-[18rem] top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9]">
-                <img src={specificProduct?.ProductBg} />
+                <img
+                  src={specificProduct?.ProductBg}
+                  alt="product bg"
+                  title="product related bg"
+                />
               </div>
             </div>
             <div className="mt-8  z-10 relative">
