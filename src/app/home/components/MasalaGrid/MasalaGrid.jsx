@@ -48,7 +48,7 @@ function MasalaGrid() {
           })}
         </div>
       </div>
-      <div className="border-[1px] border-[#F3F3F3] my-10"></div>
+      <div className="border-[1px] border-[#F3F3F3] my-4 md:my-10"></div>
       {/* <img
         alt="masala"
         src="images/backgrounds/masalaAbsolute.webp"

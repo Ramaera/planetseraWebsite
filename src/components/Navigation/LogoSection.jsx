@@ -40,7 +40,8 @@ const LogoSection = () => {
         </p>
 
         <Link
-          href="#produce"
+          //  href="#produce"
+          href="/product/#explore"
           className="explore btn1 py-4 md:mx-4 hover:scale-105 2xl:mb-16 font-Montserrat font-light"
           style={{
             boxShadow: `2px 4px 7px -2px ${colorMe}`,

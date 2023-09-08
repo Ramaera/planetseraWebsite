@@ -960,7 +960,7 @@
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    font-family: "'Montserrat'";
+    /* font-family: "'Montserrat'"; */
     width: 165px;
     height: 56px;
     border: 1px solid white;
@@ -1095,7 +1095,7 @@
     align-items: center;
     justify-content: center;
     color: #ffffff;
-    font-family: "Montserrat";
+    /* font-family: "Montserrat"; */
     width: 165px;
     height: 56px;
     border: 1px solid white;
@@ -1114,9 +1114,9 @@
   .underlineEffect {
     background-image: linear-gradient(
       to right,
-      #000000,
-      #ac7a26 50%,
-      #1e1e1e 50%
+      #bdbdbd,
+      #cfcfcf 50%,
+      white 50%
     );
     background-size: 200% 100%;
     background-position: -100%;
@@ -1127,16 +1127,18 @@
     -webkit-text-fill-color: transparent;
     transition: all 0.2s ease-in-out;
   }
-  
+
+
+
   .underlineEffect:before {
     content: '';
     /* background: #4f4f4f; */
     background: linear-gradient(
       to left,
-      #000000,
-      #ffd000     
+      #4f4f4f,
+      #bdbdbd     
     );
-  
+    
     display: block;
     position: absolute;
     bottom: -3px;

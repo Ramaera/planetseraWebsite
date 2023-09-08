@@ -19,10 +19,10 @@ const Footer = () => {
   return (
     <>
       {/* <FooterTop /> */}
-      <footer className="bg-white border-t-[0.1px] border-black bottom-0 ">
-        <div className="mx-auto w-full  px-8 py-6 ">
+      <footer className="bg-black bottom-0 ">
+        <div className="mx-auto w-full px-8 py-6 pb-4 ">
           <div className="md:flex md:justify-between">
-            <div className="mb-4 md:mb-0 justify-center md:justify-start md:items-start md:w-[30%] flex">
+            <div className="mb-4 md:mb-0 justify-center md:justify-center md:items-start md:w-[30%] flex">
               <Link href="/" className="flex items-center">
                 <div className="logo my-auto">
                   <img
@@ -37,15 +37,16 @@ const Footer = () => {
                 Planetsera
               </p> */}
             </div>
-            <div className="grid grid-cols-2 gap-8 sm:gap-2 sm:grid-cols-4 sm:mr-14">
+            {/* <div className="grid grid-cols-2 gap-8 sm:gap-2 sm:grid-cols-4 sm:mr-14"> */}
+            <div className="grid grid-cols-2 gap-8 sm:flex sm:flex-cols sm:justify-between sm:w-full">
               <div>
-                <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase">
+                <h2 className="mb-4 text-sm font-bold text-gray-300 uppercase">
                   Company
                 </h2>
 
-                <ul className="text-[#1e1e1e]  font-medium ">
+                <ul className="text-white font-normal">
                   <li className="mb-2">
-                    <Link href="/about" className="underlineEffect">
+                    <Link href="/about" className="underlineEffect ">
                       About us
                     </Link>
                   </li>
@@ -73,10 +74,10 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase ">
+                <h2 className="mb-4 text-sm font-bold text-gray-300 uppercase ">
                   Blended Spices
                 </h2>
-                <ul className="text-[#1e1e1e] font-medium">
+                <ul className="text-white font-normal">
                   <li className="mb-2">
                     <Link
                       href="/products/chat-masala"
@@ -108,10 +109,10 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase">
+                <h2 className="mb-4 text-sm font-bold text-gray-300 uppercase">
                   Ground Spices
                 </h2>
-                <ul className="text-[#1e1e1e] font-medium">
+                <ul className="text-white font-normal">
                   <li className="mb-2">
                     <Link
                       href="/products/amchur-powder"
@@ -157,7 +158,7 @@ const Footer = () => {
                 </ul>
               </div>
               {/* <div>
-                <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase">
+                <h2 className="mb-4 text-sm font-bold text-gray-300 uppercase">
                   Legal
                 </h2>
                 <ul className="text-[#1e1e1e] font-medium">
@@ -170,14 +171,14 @@ const Footer = () => {
                 </ul>
               </div> */}
               <div className="sm:min-w-[280px] hidden sm:block">
-                <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase">
+                <h2 className="mb-4 text-sm font-bold text-gray-300 uppercase">
                   Address
                 </h2>
-                <ul className="text-[#1e1e1e] font-medium">
+                <ul className="text-white font-medium">
                   <li className="mb-2 flex-row flex ">
                     <Home
                       style={{
-                        color: "black",
+                        color: "white",
                         fontSize: "40px",
                         marginRight: "4px",
                         marginLeft: "-4px",
@@ -192,7 +193,7 @@ const Footer = () => {
                   <li className="mb-2 flex flex-row">
                     <Email
                       style={{
-                        color: "black",
+                        color: "white",
                         fontSize: "30px",
                         marginRight: "8px",
                       }}
@@ -202,7 +203,7 @@ const Footer = () => {
                   <li className="mb-2 flex flex-row">
                     <Call
                       style={{
-                        color: "black",
+                        color: "white",
                         fontSize: "30px",
                         marginRight: "8px",
                       }}
@@ -214,14 +215,14 @@ const Footer = () => {
             </div>
           </div>
           <div className="block sm:hidden mt-6">
-            <h2 className="mb-4 text-sm font-bold text-gray-900 uppercase">
+            <h2 className="mb-4 text-sm font-bold text-gray-300 uppercase">
               Address
             </h2>
-            <ul className="text-[#1e1e1e] font-medium">
+            <ul className="text-white font-medium">
               <li className="mb-2 flex-row flex ">
                 <Home
                   style={{
-                    color: "black",
+                    color: "white",
                     fontSize: "40px",
                     marginRight: "4px",
                     marginLeft: "-4px",
@@ -236,7 +237,7 @@ const Footer = () => {
               <li className="mb-2 flex flex-row">
                 <Email
                   style={{
-                    color: "black",
+                    color: "white",
                     fontSize: "30px",
                     marginRight: "8px",
                   }}
@@ -246,7 +247,7 @@ const Footer = () => {
               <li className="mb-2 flex flex-row">
                 <Call
                   style={{
-                    color: "black",
+                    color: "white",
                     fontSize: "30px",
                     marginRight: "8px",
                   }}
@@ -256,37 +257,37 @@ const Footer = () => {
             </ul>
           </div>
 
-          <hr className="my-6 border-gray-200 sm:mx-auto lg:my-4" />
+          <hr className="my-4 border-gray-200 sm:mx-auto lg:my-2" />
           <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-sm text-[#1e1e1e] sm:text-center font-medium ">
+            <span className="text-sm text-white sm:text-center font-medium ">
               © 2023 Planetsera . All Rights Reserved.
             </span>
             <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
               <a
                 target="_blank"
                 href="https://www.facebook.com/planetseraspices/"
-                className="text-black">
+                className="text-white">
                 <Facebook />
               </a>
 
               <a
                 target="_blank"
                 href="https://www.instagram.com/planetseraspices/"
-                className="text-black">
+                className="text-white">
                 <Instagram />
               </a>
 
               <a
                 target="_blank"
                 href="https://www.linkedin.com/company/planetsera-spices/"
-                className="text-black ">
+                className="text-white ">
                 <LinkedIn />
               </a>
 
               <a
                 target="_blank"
                 href="https://twitter.com/Planetseraspice/"
-                className="text-black">
+                className="text-white">
                 <Twitter />
               </a>
             </div>

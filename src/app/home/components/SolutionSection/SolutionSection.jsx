@@ -33,7 +33,7 @@ function SolutionSection() {
           />
         </div>
         <div className="basis-6/12 md:basis-2"></div>
-        <div className="basis-6/12 self-center px-5 md:pr-2 md:pl-0 md:mt-[-15rem]">
+        <div className="basis-6/12 self-center px-5 md:pr-2 md:pl-0 md:mt-[-6rem]  xl:mt-[-15rem]">
           <div data-aos="fade-up">
             <h2
               style={{ color: colorMe }}
