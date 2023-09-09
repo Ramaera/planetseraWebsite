@@ -89,8 +89,8 @@ const ProductDetailsInfo = () => {
                       ? specificProduct?.ProductBacks500g
                       : specificProduct?.ProductBacks
                   }
-                  alt="product back"
-                  title="product back"
+                  alt="product back side"
+                  // title="Product Back Side"
                 />
                 {/* <img src={ProductBacks} /> */}
               </div>
@@ -118,7 +118,7 @@ const ProductDetailsInfo = () => {
                       : specificProduct?.ProductBackInfo
                   }
                   alt="product info"
-                  title="product back side info"
+                  // title="Product Detailed"
                 />
                 {/* <img src={ProductBackInfo} /> */}
               </div>
@@ -289,7 +289,7 @@ const ProductDetailsInfo = () => {
                 <img
                   src={specificProduct?.ProductBg}
                   alt="product bg"
-                  title="product related bg"
+                  title="product bg"
                 />
               </div>
             </div>

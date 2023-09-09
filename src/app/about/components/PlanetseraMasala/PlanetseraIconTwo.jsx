@@ -18,6 +18,7 @@ const PlanetseraIconTwo = () => {
                 ? planetseraIdeal2
                 : planetseraIdeal3
             }
+            alt="Smoky and Spicy"
           />
         </span>
         <div class="tootip-2 group-hover:opacity-100 transition-opacity bg-white-800 px-1 text-sm text-gray-100 rounded-md absolute left-1/2 opacity-0 m-4 mx-auto">
@@ -25,6 +26,7 @@ const PlanetseraIconTwo = () => {
             <img
               src="images/backgrounds/two2.webp"
               style={{ width: "100px" }}
+              alt="Smoky and Spicy"
             />
             <h2 className="tootip-text">Smoky and Spicy</h2>
           </div>

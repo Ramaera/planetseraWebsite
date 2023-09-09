@@ -15,8 +15,8 @@ const index = ({ link, home }) => {
           "grayscale blur-[1px]  border-[#3e3e3e] border-2 p-1 rounded-[50px]"
         }`}
         width={120}
-        alt="flipkart"
-        title="flipkart buy button"
+        alt="buy on flipkart"
+        title="Buy on Flipkart"
       />
       {!link && (
         <h4

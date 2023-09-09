@@ -13,7 +13,7 @@ const OurProduct = () => {
         <img
           src="images/backgrounds/GroundSpicesBg.webp"
           alt="Ground Spices"
-          title="PlanetsEra ground spices"
+          title="PlanetsEra Ground Spices"
           className="w-full"
         />
       </div>
@@ -29,15 +29,13 @@ const OurProduct = () => {
       <div className="basis-12/12 flex flex-wrap ml-4 groundedContainer">
         {Our.map((items) => {
           return (
-            <div
-              className="basis-4/12 mb-20 groundedImg flex flex-col items-center"
-              id="explore">
+            <div className="basis-4/12 mb-20 groundedImg flex flex-col items-center">
               <Link href={`/products/${items.id}`}>
                 <img
                   loading="lazy"
                   src={items.masalaImg}
                   alt="Ground spices"
-                  title="PlanetsEra ground spices"
+                  title={`Buy Planetsera ${items.masalaName}`}
                   style={{
                     width: "fit-content",
                     height: "fit-content",

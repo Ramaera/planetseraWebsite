@@ -23,7 +23,7 @@ const MasalaGallery = () => {
             <Link href={`/products/sabji-masala`}>
               <img
                 alt="sabji masala"
-                title="selected premium spices"
+                title="Selected Premium Sabji Masala"
                 loading="lazy"
                 src={masala1}
                 className=" mx-auto h-1/2"
@@ -36,7 +36,7 @@ const MasalaGallery = () => {
             <Link href={`/products/chat-masala`}>
               <img
                 alt="chat masala"
-                title="selected premium spices"
+                title="Selected Premium Chat Masala"
                 loading="lazy"
                 src={masala2}
                 className=" mx-auto h-1/2"
@@ -49,7 +49,7 @@ const MasalaGallery = () => {
             <Link href={`/products/amchur-powder`}>
               <img
                 alt="amchur powder"
-                title="selected premium spices"
+                title="Selected Premium Amchur Powder"
                 loading="lazy"
                 src={masala3}
                 className=" mx-auto h-1/2"
@@ -62,7 +62,7 @@ const MasalaGallery = () => {
             <Link href={`/products/garam-masala`}>
               <img
                 alt="garam masala"
-                title="selected premium spices"
+                title="Selected Premium Garam Masala"
                 loading="lazy"
                 src={masala4}
                 className=" mx-auto h-1/2"
@@ -78,7 +78,7 @@ const MasalaGallery = () => {
           <Link href={`/products/sabji-masala`}>
             <img
               alt="sabji masala"
-              title="selected premium spices"
+              title="Selected Premium Sabji Masala"
               loading="lazy"
               src={masala1}
               width={"360px"}
@@ -91,7 +91,7 @@ const MasalaGallery = () => {
           <Link href={`/products/chat-masala`}>
             <img
               alt="chat masala"
-              title="selected premium spices"
+              title="Selected Premium Chat Masala"
               loading="lazy"
               src={masala2}
               width={"360px"}
@@ -104,7 +104,7 @@ const MasalaGallery = () => {
           <Link href={`/products/amchur-powder`}>
             <img
               alt="amchur powder"
-              title="selected premium spices"
+              title="Selected Premium Amchur Masala"
               loading="lazy"
               width={"360px"}
               src={masala3}
@@ -117,7 +117,7 @@ const MasalaGallery = () => {
           <Link href={`/products/garam-masala`}>
             <img
               alt="garam masala"
-              title="selected premium spices"
+              title="Selected Premium Garam Masala"
               loading="lazy"
               src={masala4}
               width={"360px"}

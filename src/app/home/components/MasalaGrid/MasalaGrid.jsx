@@ -14,6 +14,7 @@ function MasalaGrid() {
           <div data-aos="slide-right" data-aos-duration="1000">
             <h2
               style={{ color: colorMe }}
+              id="explore"
               className="text-[30px] md:text-[49px] md:font-medium text-center my-5 leading-[40px] md:leading-[80px] tracking-wider">
               Perfect spicy twist for every occasion
             </h2>
@@ -28,7 +29,7 @@ function MasalaGrid() {
                 <Link href={`/products/${items.id}`}>
                   <img
                     alt="Planetsera Spices"
-                    title="Perfect spicy twist for every occasion"
+                    title={`Buy Planetsera ${items.productText}`}
                     src={items.ourproductImage}
                     className="masImg md:hover:scale-110 cursor-pointer"
                   />

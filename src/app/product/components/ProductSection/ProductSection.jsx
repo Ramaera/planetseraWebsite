@@ -15,7 +15,7 @@ const ProductSection = () => {
       <div className="w-full max-w-full box-border m-auto h-auto bg-contain flex  mt-[-40%] md:mt-[-14rem] flex-wrap relative justify-center">
         <img
           src="/images/backgrounds/productSection.webp"
-          alt="Spices that aid gut health"
+          alt="Spices with incredible taste"
           title="Spices that aid gut health with incredible taste"
         />
         <div className="basis-12/12 flex justify-center items-center w-full h-full absolute">

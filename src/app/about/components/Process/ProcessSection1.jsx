@@ -11,7 +11,7 @@ const ProcessSection1 = () => {
               <img
                 src="images/backgrounds/process-2.webp"
                 alt="Packaging"
-                title="Packaging in Airtight zipper bags to retain the flavor of spices"
+                title="Packaging in Airtight zipper bag"
               />
             </div>
 
