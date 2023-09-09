@@ -7,7 +7,7 @@ const EarnSection = () => {
       <div className="bg-gray-500 w-full flex h-[100vh] items-center	flex-col md:flex-row justify-items-center	 justify-evenly p-12">
         <div className="flex flex-col items-center">
           <div className="text-4xl md:text-6xl font-Montserrat tracking-[5px] text-center">
-            Earn And Get Reward
+            <h1>Earn And Get Reward</h1>
           </div>
           <div className="w-[300px]">
             <img alt="masala" src={EarnReward} />

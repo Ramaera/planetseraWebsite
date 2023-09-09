@@ -111,9 +111,9 @@ const index = () => {
           onSubmit={(e) => rewardHandler(e)}
           className="flex flex-col p-8 m-4 w-full md:w-1/3 bg-gray-200 rounded-2xl">
           {" "}
-          <label className="text-center text-2xl mb-4 text-red-600">
+          <h1 className="text-center text-2xl mb-4 text-red-600">
             Register Here
-          </label>
+          </h1>
           <input
             className="h-12  md:h-14 pl-4 w-full  md:my-3  my-2 p-2 md:mr-2 FontText"
             type="text"

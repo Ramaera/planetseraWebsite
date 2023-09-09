@@ -47,7 +47,7 @@ const ShopProduct = () => {
                             src={item.masalaImg}
                             // width={"360px"}
                             alt={item.masalaName}
-                            title="Buy Affordable Spice Products and Masala Powder on your fingertip"
+                            title={`Buy Planetsera ${item.masalaName}`}
                           />
                         </Link>
                       )}
