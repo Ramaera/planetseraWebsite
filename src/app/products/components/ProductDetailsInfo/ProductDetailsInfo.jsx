@@ -296,7 +296,7 @@ const ProductDetailsInfo = () => {
             <div className="mt-8  z-10 relative">
               {specificProduct?.ProductDescription ? (
                 <div>
-                  <h2
+                  <h3
                     style={{
                       color:
                         selectedButton === "50gram"
@@ -305,7 +305,7 @@ const ProductDetailsInfo = () => {
                     }}
                     className={` text-[2.1rem] font-light font-Montserrat`}>
                     Description
-                  </h2>
+                  </h3>
 
                   <div
                     style={{
@@ -323,7 +323,7 @@ const ProductDetailsInfo = () => {
                 ""
               )}
 
-              <h2
+              <h3
                 style={{
                   color:
                     selectedButton === "50gram"
@@ -332,7 +332,7 @@ const ProductDetailsInfo = () => {
                 }}
                 className={` text-4xl font-light font-Montserrat`}>
                 Ingredients:-
-              </h2>
+              </h3>
               <div
                 style={{
                   backgroundColor:

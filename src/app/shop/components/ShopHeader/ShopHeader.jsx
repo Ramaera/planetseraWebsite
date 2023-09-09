@@ -26,7 +26,7 @@ const ShopHeader = () => {
                   display: "flex",
                   flexDirection: "column",
                 }}>
-                <h2 className="font-normal text-white text-2xl ">50+</h2>
+                <h3 className="font-normal text-white text-2xl ">50+</h3>
                 <h5 className="text-white">Plant Species</h5>
               </div>
               <div className="text-white border-r-2 mx-8"></div>
@@ -35,7 +35,7 @@ const ShopHeader = () => {
                   display: "flex",
                   flexDirection: "column",
                 }}>
-                <h2 className="font-normal text-white text-2xl">100+</h2>
+                <h3 className="font-normal text-white text-2xl">100+</h3>
                 <h5 className="text-white">Customers</h5>
               </div>
             </div>
