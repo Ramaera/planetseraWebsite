@@ -13,6 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 import Head from "next/head";
 import Script from "next/script";
 import Footer from "@/components/Footer/Footer";
+import ScrollToTopButton from "@/components/ScrollTop";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
         <ApolloProvider client={client}>
           <Provider store={store}>
             {children}
+            <ScrollToTopButton />
             <Footer />
           </Provider>
         </ApolloProvider>
