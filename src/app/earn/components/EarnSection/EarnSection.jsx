@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const EarnSection = () => {
-  const EarnReward = "/images/backgrounds/EarnReward.gif";
+  const EarnReward = "/images/backgrounds/EarnReward.avif";
   return (
     <>
       <div className="bg-gray-500 w-full flex h-[100vh] items-center	flex-col md:flex-row justify-items-center	 justify-evenly p-12">

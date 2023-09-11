@@ -1590,3 +1590,18 @@
 .fixed-position {
   position: fixed;
 }
+
+
+.scaleAnimate {
+  animation: scaleTo 1s;
+}
+
+@keyframes scaleTo {
+  0% {
+    scale:0;
+  }
+  100% {
+    scale:1;
+    
+  }
+}

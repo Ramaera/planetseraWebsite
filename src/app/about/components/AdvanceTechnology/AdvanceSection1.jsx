@@ -51,7 +51,7 @@ const AdvanceSection1 = () => {
                 <div className="basis-12/12 proFlex">
                   <div className="basis-2/12 proWd">
                     <img
-                      src="images/backgrounds/advance-1.gif"
+                      src="images/backgrounds/advance-1.avif"
                       alt="Quality Spices"
                       title="Exceptional Quality Spices"
                     />
@@ -85,7 +85,7 @@ const AdvanceSection1 = () => {
                 <div className="basis-12/12 proFlex">
                   <div className="basis-2/12 proWd">
                     <img
-                      src="images/backgrounds/advance-2.gif"
+                      src="images/backgrounds/advance-2.avif"
                       alt="Developed by Experts"
                       title="Expertly crafted premium spices for elevated culinary experiences"
                     />
@@ -119,7 +119,7 @@ const AdvanceSection1 = () => {
                 <div class="basis-12/12 proFlex">
                   <div className="basis-2/12 proWd scale-75">
                     <img
-                      src="images/backgrounds/advance-3.gif"
+                      src="images/backgrounds/advance-3.avif"
                       alt="Pure and Balanced Organic"
                       title="Our organic spice blends are crafted with care and sustainability"
                     />
