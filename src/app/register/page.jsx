@@ -7,8 +7,8 @@ import RegisterUser from "./components/RegisterUser";
 const Register = () => {
   return (
     <div>
-      <NavItem />
-      <NavigationMobile />
+      <NavItem page={"products"} />
+      <NavigationMobile page={"products"} />
       <RegisterUser />
     </div>
   );

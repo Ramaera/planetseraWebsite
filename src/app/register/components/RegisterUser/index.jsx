@@ -4,6 +4,8 @@ import Confetti from "react-confetti";
 import { CREATE_REWARD } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 import { ToastContainer, toast } from "react-toastify";
+import { useSelector } from "react-redux";
+import "react-toastify/dist/ReactToastify.css";
 
 const index = () => {
   const [createPlanetseraReward] = useMutation(CREATE_REWARD);
@@ -13,6 +15,7 @@ const index = () => {
   const [code, setCode] = useState("");
   const [password, setPassword] = useState("");
   const [confetti, setConfetti] = useState(false);
+  const colorMe = useSelector((state) => state.colorUs.color);
 
   const { width, height } = useWindowSize();
   const rewardHandler = (e) => {
@@ -61,15 +64,15 @@ const index = () => {
 
   return (
     <>
-      <div className=" bg-gray-400 flex py-48 itens-center justify-center p-4 flex-col md:flex-row items-center text-center ">
+      <div className=" bg-white flex py-20 itens-center justify-center p-4 flex-col md:flex-row items-center text-center ">
         <ToastContainer />
 
         {confetti && (
           <Confetti numberOfPieces={600} width={width} height={height} />
         )}
         {confetti && (
-          <div className=" absolute h-full w-full z-30 top-0 left-0 md:scale-100 scale-90">
-            <div className="z-40 absolute top-[50%] left-[50%] bg-red-500 rounded-3xl w-full md:w-2/3  translate-x-[-50%] translate-y-[-50%] flex justify-center items-center md:flex-row flex-col md:h-1/2 h-2/3">
+          <div className=" absolute h-full w-full z-30 m-auto justify-center items-center flex md:scale-100 scale-90">
+            <div className="z-40 absolute  bg-red-500 rounded-3xl w-full md:w-2/3  flex justify-center items-center md:flex-row flex-col md:h-1/2 sm:min-h-[550px] ">
               <h2 className="text-center md:text-5xl text-4xl text-white md:leading-[60px]	md:mx-auto  my-16">
                 Thanks for completing
                 <br />
@@ -82,12 +85,12 @@ const index = () => {
 
               <form
                 onSubmit={(e) => submitHandler(e)}
-                className="ml-auto bg-white h-full md:w-1/3 w-full rounded-3xl p-4 flex justify-center items-center  flex-col rounded-t-sm md:rounded-t-3xl">
+                className="ml-auto  bg-white h-full md:w-1/3 w-full rounded-3xl p-4 flex justify-center items-center  flex-col rounded-t-sm md:rounded-t-3xl border-red-500 border-2 	">
                 <label htmlFor="reward" className="text-xl my-2">
                   Please Enter Reward Code
                 </label>
                 <input
-                  className="h-12  md:h-14 pl-4 w-full md:my-3  my-2 p-2 md:mr-2 FontText"
+                  className="h-12  md:h-14 pl-4 w-full md:my-3  my-2 p-2 md:mr-2 FontText border-2 border-slate-600	 rounded-lg"
                   name="reward"
                   type="text"
                   placeholder="Reward Code"
@@ -99,8 +102,12 @@ const index = () => {
                 />
                 <button
                   type="submit"
-                  style={{ width: "100%" }}
-                  className="mt-4">
+                  style={{
+                    width: "100%",
+                    background: colorMe,
+                    color: "white",
+                  }}
+                  className="mt-4 p-4 rounded-lg">
                   Submit
                 </button>
               </form>
@@ -111,11 +118,12 @@ const index = () => {
           onSubmit={(e) => rewardHandler(e)}
           className="flex flex-col p-8 m-4 w-full md:w-1/3 bg-gray-200 rounded-2xl">
           {" "}
-          <h1 className="text-center text-2xl mb-4 text-red-600">
+          <h1
+            className={` text-[${colorMe}] text-center text-2xl mb-4  font-medium	`}>
             Register Here
           </h1>
           <input
-            className="h-12  md:h-14 pl-4 w-full  md:my-3  my-2 p-2 md:mr-2 FontText"
+            className="h-12  md:h-14 pl-4 w-full  md:my-3  my-2 p-2 md:mr-2 FontText rounded-lg"
             type="text"
             placeholder="Name"
             value={userName}
@@ -125,7 +133,7 @@ const index = () => {
             required
           />
           <input
-            className="h-12  md:h-14 pl-4 w-full  md:my-3  my-2 p-2 md:mr-2 FontText"
+            className="h-12  md:h-14 pl-4 w-full  md:my-3  my-2 p-2 md:mr-2 FontText rounded-lg"
             type="number"
             value={number}
             placeholder="Mobile Number"
@@ -135,7 +143,7 @@ const index = () => {
             required
           />
           <input
-            className="h-12  md:h-14 pl-4 w-full  md:my-3  my-2 p-2 md:mr-2 FontText"
+            className="h-12  md:h-14 pl-4 w-full  md:my-3  my-2 p-2 md:mr-2 FontText rounded-lg"
             type="email"
             value={email}
             placeholder="Email"
@@ -145,7 +153,7 @@ const index = () => {
             required
           />
           <input
-            className="h-12 placeholder:text-gray-300 md:h-14 pl-4 w-full md:my-3  my-2 p-2 md:mr-2 FontText"
+            className="h-12 placeholder:text-gray-300 md:h-14 pl-4 w-full md:my-3  my-2 p-2 md:mr-2 FontText rounded-lg"
             type="password"
             value={password}
             placeholder="Password"
@@ -156,9 +164,9 @@ const index = () => {
           />
           <div>
             <button
-              type="submit"
-              style={{ width: "100%" }}
-              className="mt-4 w-[156px] h-[56px] border-solid border border-white rounded-3xl	">
+              // type="submit"
+              style={{ background: colorMe, color: "white" }}
+              className="mt-4 p-4 h-[56px] border-solid border border-white rounded-3xl	">
               Complete your Registration
             </button>
           </div>

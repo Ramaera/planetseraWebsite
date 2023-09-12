@@ -7,8 +7,8 @@ import Footer from "@/components/Footer/Footer";
 const Earn = () => {
   return (
     <>
-      <NavItem page={"earn"} />
-      <NavigationMobile />
+      <NavItem page={"products"} />
+      <NavigationMobile page={"products"} />
       <EarnSection />
     </>
   );
