@@ -29,7 +29,7 @@ const TechnologyPeopleSection = () => {
               <img
                 alt="masala"
                 src="images/backgrounds/founderAb2.webp"
-                className="absolute z-[-10] mt-[-10vh] max-w-[200px] sm:max-w-[250px] xl:max-w-full"
+                className="absolute z-[-10] mt-[-10vh] max-w-[300px] sm:max-w-[250px] xl:max-w-full"
               />
             </div>
             <div className="basis-2/12"></div>

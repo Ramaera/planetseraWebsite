@@ -285,11 +285,12 @@ const ProductDetailsInfo = () => {
                 alt="Made in India"
                 title="Made in India"
               />
-              <div className="right-0 absolute md:top-[18rem] top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9]">
+              <div className="right-0 absolute md:top-[22rem] top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9]">
                 <img
                   src={specificProduct?.ProductBg}
                   alt="product bg"
                   title="product bg"
+                  className="max-w-[100px] sm:max-w-[180px] 2xl:max-w-full absolute right-0"
                 />
               </div>
             </div>

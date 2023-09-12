@@ -287,8 +287,17 @@ const Footer = () => {
               <a
                 target="_blank"
                 href="https://twitter.com/Planetseraspice/"
-                className="text-white">
-                <Twitter />
+                className="text-white flex items-center">
+                <img
+                  src="images/backgrounds/X-Logo.png"
+                  style={{
+                    width: "19px",
+                    background: "white",
+                    borderRadius: "2px",
+                    padding: "2px",
+                  }}
+                />
+                {/* <Twitter /> */}
               </a>
             </div>
           </div>

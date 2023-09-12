@@ -15,7 +15,7 @@ const BestSelling = () => {
             Best Selling Spices
           </h2>
 
-          <p className="text-grey text-center	 md:text-left md:pl-10 font-['Poppins'] text-[#8B8B8B] text-lg">
+          <p className="text-grey text-center	px-2 md:px-0 md:text-left md:pl-10 font-['Poppins'] text-[#8B8B8B] text-lg">
             Easiest way to healthy life by buying your favorite Spices
           </p>
 
