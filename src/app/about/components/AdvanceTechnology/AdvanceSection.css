@@ -120,4 +120,8 @@
 
     /* line-height: 29px; */
   }
+
+  .photo:hover img {
+    transform: unset;
+  }
 }

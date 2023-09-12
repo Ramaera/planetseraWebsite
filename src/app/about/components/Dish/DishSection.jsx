@@ -2,7 +2,7 @@ import "./DishSection.css";
 
 const DishSection = () => {
   return (
-    <div class="w-full max-w-full box-border m-auto h-auto relative mt-40">
+    <div class="w-full max-w-full box-border m-auto h-auto relative mt-44 sm:mt-40">
       <div className="basis-12/12 lg:flex md:flex sm:block">
         <div className="basis-6/12 2xl:basis-6/12 mb-8 md:mb-0 md:mr-4">
           <img

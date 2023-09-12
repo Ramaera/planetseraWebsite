@@ -23,7 +23,7 @@ const CompanySection = () => {
   return (
     <>
       <div className="container mag relative">
-        <div class="basis-12/12 relative">
+        <div class="basis-12/12 relative flex  flex-col items-center">
           <h2
             class="digital-heading mb-5"
             style={{
@@ -32,14 +32,14 @@ const CompanySection = () => {
               })`,
             }}>
             Digital Gallery
+            <div
+              class="digital-line"
+              style={{
+                backgroundImage: `linear-gradient(to right, ${colorMe}, ${
+                  colorMe + "80"
+                })`,
+              }}></div>
           </h2>
-          <div
-            class="digital-line 2xl:hidden"
-            style={{
-              backgroundImage: `linear-gradient(to right, ${colorMe}, ${
-                colorMe + "80"
-              })`,
-            }}></div>
         </div>
       </div>
       <div

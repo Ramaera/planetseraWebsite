@@ -259,7 +259,7 @@ const IngredientSection = () => {
         <img
           alt="masalas"
           src="images/backgrounds/ingredientAB.webp"
-          className="mt-10 2xl:w-full"
+          className=" 2xl:w-full"
         />
       </div>
     </>

@@ -136,7 +136,7 @@ const ProductDetailsInfo = () => {
                 Specifications
               </h2>
               <div className=" flex justify-evenly border-[1px] rounded-[10px]  text-[#787878] md:text-[1.1rem] text-[0.5rem]	font-Montserrat font-normal	md:font-light">
-                <div className="md:p-2 p-0 md:py-auto py-4 md:w-auto  w-[5rem] flex items-center justify-center">
+                <div className="md:py-2 p-0 md:py-auto py-4 md:w-auto  w-[5rem] flex items-center justify-center">
                   <span>Weight: &nbsp; </span>
                   <span>
                     {" "}
@@ -150,11 +150,11 @@ const ProductDetailsInfo = () => {
                   </span>
                 </div>
                 <div className="border-r-2"></div>
-                <div className="md:p-2 p-0 flex items-center justify-center">
+                <div className="md:py-2 p-0 flex items-center  justify-center">
                   Packaging type: &nbsp; Zipper Pouch
                 </div>
                 <div className="border-r-2"></div>
-                <div className="md:p-4 p-0 flex items-center justify-center">
+                <div className="md:py-2 p-0 flex items-center justify-center">
                   Country of origin: &nbsp; India
                 </div>
               </div>

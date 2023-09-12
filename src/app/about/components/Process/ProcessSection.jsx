@@ -6,8 +6,8 @@ const ProcessSection = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
   return (
     <>
-      <div className="w-full max-w-full box-border m-auto h-auto px-6 mt-20 md:mt-32 2xl:px-16">
-        <div className="basis-12/12 flex flex-col relative">
+      <div className="w-full max-w-full box-border m-auto h-auto px-6 mt-10 sm:mt-20 2xl:px-16">
+        <div className="basis-12/12 flex flex-col relative items-center">
           <h2
             className="processHeading mb-5"
             style={{
@@ -16,14 +16,15 @@ const ProcessSection = () => {
               })`,
             }}>
             MANUFACTURING PROCESSES
+            <div
+              className="md:w-[190px] md:h-[2px] md:relative"
+              style={{
+                backgroundImage: `linear-gradient(to right, ${colorMe}, ${
+                  colorMe + "80"
+                })`,
+              }}></div>
           </h2>
-          <div
-            className="md:w-[190px] md:h-[2px] md:relative md:left-[290px] md:top-[-20px] 2xl:hidden"
-            style={{
-              backgroundImage: `linear-gradient(to right, ${colorMe}, ${
-                colorMe + "80"
-              })`,
-            }}></div>
+
           <p className="processText">
             At PlanetsEra Spices, we use the most advanced manufacturing
             technology and adhere to strict quality standards to ensure that our

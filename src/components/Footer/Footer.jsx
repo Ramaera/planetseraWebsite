@@ -109,7 +109,7 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-4 text-sm font-bold text-gray-300 uppercase">
+                <h2 className="mt-4 md:mt-0 mb-4 text-sm font-bold text-gray-300 uppercase">
                   Ground Spices
                 </h2>
                 <ul className="text-white font-normal">

@@ -1,6 +1,6 @@
 .technologyPeople-img {
-  top: 200px;
-  left: -100px;
+  margin-top: 50px;
+  margin-left: -100px;
 }
 
 .technology-heading {
@@ -31,7 +31,7 @@
 }
 
 .founderAlig {
-  margin-top: -122px;
+  margin-top: 0px;
 }
 
 .execute-text {
@@ -46,9 +46,7 @@
   margin-top: 5rem;
 }
 
-.technOne {
-  margin-top: 200px;
-}
+
 
 .founalign {
   margin-top: 0px;
@@ -78,9 +76,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .technOne {
-    margin-top: -96px;
-  }
+  
   .technology-heading {
     font-size: 18px;
     font-family: "Montserrat", sans-serif;
@@ -95,15 +91,16 @@
     font-size: 18px;
     line-height: 30px;
     margin-bottom: 33px;
+    margin-top: 30px;
     font-family: "Montserrat", sans-serif;
   }
-  /* .technOne {
-    margin-top: 700px;
-  } */
+ 
 
   .technologyPeople-img {
-    top: 200px;
-    left: 47px;
+    position: relative;
+    top: 50px;
+    margin-top: 200px;
+    margin-left: 70px;
     max-width: 80%;
   }
 

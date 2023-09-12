@@ -13,7 +13,7 @@ const AboutBannerSection = () => {
           />
         </div>
 
-        <div className="w-full max-w-full box-border m-auto h-auto bg-contain flex  mt-[-14%] md:mt-[-4rem] flex-wrap relative justify-center">
+        <div className="w-full max-w-full box-border m-auto h-auto bg-contain flex  mt-[-14%] md:mt-[-8rem] flex-wrap relative justify-center">
           <img
             src="/images/backgrounds/aboutbanner.webp"
             alt="Establishment of PlanetsEra Spices"

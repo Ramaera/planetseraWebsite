@@ -28,15 +28,9 @@
 }
 
 .quality-img {
-  top: 200px;
-  left: 200px;
-}
-
-.quality-container {
-  height: 900px !important;
-  display: flex;
-  margin-top: 9rem;
-}
+    margin-top: 50px;
+    margin-left: 100px;
+  }
 
 .quality-line {
   background-image: linear-gradient(to right, #20932c, #a0fd90);
@@ -68,8 +62,9 @@
     max-width: 72%;
   }
   .quality-img {
-    top: 128px;
-    left: 62px;
+    position: relative;
+    top: 35px;
+    margin-left: 100px;
     max-width: 72%;
   }
   .qualityOne {
@@ -99,15 +94,17 @@
     margin-left: 0px;
   }
   .qualityEmg {
-    display: none;
+    /* position: absolute;
+    right: 0px; */
+    margin-top: -14vh;
+    max-width: 100%;
   }
   .pressAlign {
     margin-top: -23rem;
     display: block !important;
   }
-  .quality-container {
-    height: 900px !important;
-    display: flex;
-    margin-top: 9rem;
+ 
+  .photo10:hover img {
+    transform: unset;
   }
 }

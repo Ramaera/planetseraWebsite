@@ -6,7 +6,7 @@ const AdvanceSection1 = () => {
 
   return (
     <>
-      <section class="relative px-6 md:px-16 mt-20" id="QualityControl">
+      <section class="relative px-6 md:px-16 mt-10" id="QualityControl">
         <div class="basis-12/12 lg:flex md:flex sm:block 2xl:px-16">
           <div class="basis-5/12 photo">
             <img

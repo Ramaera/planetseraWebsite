@@ -22,9 +22,8 @@
 .how-line {
   width: 190px;
   height: 2px;
-  position: absolute;
-  left: 555px;
-  top: 70px;
+  margin-left: 5px;
+  margin-top: -5px;
 }
 
 @media screen and (max-width: 600px) {
