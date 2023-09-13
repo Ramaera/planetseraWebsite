@@ -6,8 +6,16 @@ import BuyIcons from "../../../../components/BuyIcons";
 import RelatedPtoductData from "../RelatedProducts/RelatedProductData";
 // import MetaDataproducts from "../MetaDataproducts/MetaDataproducts";
 import { notFound } from "next/navigation";
+import { Snackbar } from "@mui/material";
+import MuiAlert from "@mui/material/Alert";
 
 const ProductDetailsInfo = () => {
+  const [open, setOpen] = useState(false);
+  const handleClick = () => {
+    setOpen(true);
+    navigator.clipboard.writeText(window.location.toString());
+  };
+
   const { id } = useParams();
   const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const [selectedButton, setSelectedButton] = useState("50gram");
@@ -67,7 +75,9 @@ const ProductDetailsInfo = () => {
                 title="PlanetsEra 100% Pure Natural Product"
               />
 
-              <div className="absolute md:scale-100 scale-75  top-0 right-0 2xl:top-8 md:top-4 md:right-4 xl:right-6  ">
+              <div
+                onClick={handleClick}
+                className="absolute md:scale-100 scale-75  top-0 right-0 2xl:top-8 md:top-4 md:right-4 xl:right-6  ">
                 <Icon
                   color={
                     selectedButton === "50gram"
@@ -75,6 +85,22 @@ const ProductDetailsInfo = () => {
                       : specificProduct?.colored2
                   }
                 />
+                <Snackbar
+                  open={open}
+                  onClose={() => setOpen(false)}
+                  autoHideDuration={2000}
+                  // message="Link Copied"
+                  sx={{ width: "150px" }}>
+                  <MuiAlert
+                    severity="success"
+                    className="mb-[-10px] md:mb-[-20px]"
+                    sx={{
+                      width: "100%",
+                      marginLeft: "-100px",
+                    }}>
+                    Link Copied!
+                  </MuiAlert>
+                </Snackbar>
               </div>
             </div>
             <div className="relative flex justify-evenly 	mt-4">

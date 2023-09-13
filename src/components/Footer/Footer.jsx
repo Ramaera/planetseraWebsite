@@ -290,6 +290,7 @@ const Footer = () => {
                 className="text-white flex items-center">
                 <img
                   src="images/backgrounds/X-Logo.png"
+                  alt="X-logo"
                   style={{
                     width: "19px",
                     background: "white",
