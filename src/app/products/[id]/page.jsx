@@ -17,7 +17,7 @@ const ProductDetails = () => {
       <MetaDataproducts />
       <NavItem page={"products"} />
       <NavigationMobile page={"products"} />
-      <section className=" w-full max-w-full box-border m-auto h-auto mt-16  md:mt-0">
+      <section className=" w-full max-w-full box-border m-auto h-auto mt-16  md:mt-0 md:pt-20">
         <ProductDetailsInfo />
         <RelatedProducts />
       </section>

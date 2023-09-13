@@ -43,7 +43,7 @@ const ProductDetailsInfo = () => {
       <div className="md:m-8 m-4">
         <div className="w-full md:flex">
           <div className="md:w-2/4">
-            <div className="border-solid border-[2px] rounded-2xl flex items-center justify-center py-1 md:mx-0 mx-5">
+            <div className="relative border-solid border-[2px] rounded-2xl flex items-center justify-center py-1 md:mx-0 mx-5">
               <img
                 className="scale-90 border-solid border-2 rounded-3xl md:border-0"
                 style={
@@ -67,7 +67,7 @@ const ProductDetailsInfo = () => {
                 title="PlanetsEra 100% Pure Natural Product"
               />
 
-              <div className="absolute md:top-12 md:right-[51.5%] top-16 right-[8%] md:scale-100 scale-75">
+              <div className="absolute md:scale-100 scale-75  top-0 right-0 2xl:top-8 md:top-4 md:right-4 xl:right-6  ">
                 <Icon
                   color={
                     selectedButton === "50gram"

@@ -4,10 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import "./navigation.css";
 import { useParams } from "next/navigation";
 import RelatedPtoductData from "@/app/products/components/RelatedProducts/RelatedProductData";
+import { useEffect, useState } from "react";
 
 const NavItem = ({ page }) => {
   const { id } = useParams();
   const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
+  const [isVisible, setIsVisible] = useState(false);
   const dispatch = useDispatch();
   // console.log(page);
   const colorMe = useSelector((state) => state.colorUs.color);
@@ -15,79 +17,53 @@ const NavItem = ({ page }) => {
     dispatch(changeColor("#ff4f4f"));
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div
-      className={
-        page === "products"
-          ? `relative  w-[96%]  z-30 justify-between m-auto mt-6 rounded-3xl h-[90px] md:flex hidden`
-          : page === "shop"
-          ? `relative  w-11/12 xl:w-10/12	left-0 z-30 justify-between md:flex hidden`
-          : `absolute  w-11/12 xl:w-10/12 left-0 z-30 justify-between md:flex hidden`
-      }
-      style={{
-        background:
-          page === "products" && (specificProduct?.colored || "black"),
-      }}>
-      <Link
-        className={page === "products" ? "scale-[0.5] mb-8" : "scale-[0.8]"}
-        href="/"
-        onClick={() => changeColor()}>
+      className={`fixed  w-full  left-0 z-30 justify-between md:flex hidden h-[90px] ${
+        isVisible ? "	navHeader text-black" : "text-white"
+      }`}>
+      <Link className={"scale-[0.6] mb-8"} href="/">
         <img className="" src="/images/logo/logo.webp" alt="logo" />
       </Link>
       <ul
         style={{
-          color: (page === "shop" || page === "about") && "black",
+          color:
+            (page === "shop" || page === "about" || page === "products") &&
+            "black",
         }}
         id="navigation"
-        className={
-          page === "products"
-            ? `hidden md:flex md:text-base xl:text-lg space-x-6 text-white lg:float-right rounded-3xl`
-            : `hidden md:flex  md:text-base xl:text-lg space-x-6 text-white lg:float-right rounded-3xl pb-6`
-        }>
-        <li
-          className={
-            page === "/" &&
-            ` text-gray-600 w-28  justify-center  mx-24 active-11 `
-          }>
-          <Link href="/" onClick={() => changeColor()}>
-            Home
-          </Link>
+        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}>
+        <li>
+          <Link href="/">Home</Link>
         </li>
 
-        <li
-          className={
-            page === "product" &&
-            ` text-gray-600 w-28 justify-center mx-24  active-11 `
-          }>
+        <li>
           <Link href="/product">Product</Link>
         </li>
 
-        <li
-          className={
-            page === "shop" &&
-            ` text-white w-28  justify-center mx-24  active-11 `
-          }
-          style={{
-            backgroundColor: page === "shop" && colorMe,
-          }}>
+        <li>
           <Link href="/shop">Shop</Link>
         </li>
 
-        <li
-          className={
-            page === "about" &&
-            ` text-white w-28  justify-center mx-24  active-11 `
-          }
-          style={{
-            backgroundColor: page === "about" && colorMe,
-          }}>
+        <li>
           <Link href="/about">About</Link>
         </li>
-        <li
-          className={
-            page === "contactUs" &&
-            ` text-gray-600 w-28 mx-24  justify-center  active-11 `
-          }>
+        <li>
           <Link href="/contact-us" className="mr-1">
             Contact Us
           </Link>

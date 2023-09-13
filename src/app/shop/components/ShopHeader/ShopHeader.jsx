@@ -9,7 +9,8 @@ const ShopHeader = () => {
 
   return (
     <>
-      <NavItem page={"shop"} />
+      <NavItem page={"shop"} className="pb-40" />
+      <div className="h-20 hidden md:block"></div>
       <section
         className="relative bg-center bg-no-repeat sm:bg-contain md:mb-2"
         style={{
