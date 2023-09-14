@@ -3,25 +3,29 @@ import ShopData from "../ShopData/ShopData.jsx";
 import BuynowBtn from "../../../../components/BuynowBtn";
 import Link from "next/link";
 
-const BestSelling = () => {
-  const BestSellingData = ShopData.map((prod) => {
-    if (prod.category === "BestSelling") {
+const NonvegTadka = () => {
+  const NonvegTadkaData = ShopData.map((prod) => {
+    if (prod.category === "NonvegTadka") {
       return prod;
     }
   });
 
   return (
     <>
-      <div className="mt-10">
-        <div className=" sm:text-left  flex flex-col	justify-center items-center 	">
-          <h5 className="text-red-400">PRODUCTS</h5>
-          <h2 className="text-[#1E1E1E] text-2xl sm:text-4xl font-['Montserrat'] font-bold text-center">
-            Our Best Seller Products
-          </h2>
+      <div className="mt-4">
+        <div className="mx-4 sm:mx-16 relative flex items-center justify-center">
+          <img
+            src="/images/backgrounds/NonvegBg.webp"
+            alt="Non-veg Ka Tadka"
+            title="Non-veg Ka Tadka"
+          />
+          <h3 className="absolute text-white font-medium sm:text-5xl">
+            Non-veg Ka Tadka
+          </h3>
         </div>
         <div className="flex w-full" id="shop">
           <div className="flex  justify-evenly p-2 md:p-10 flex-wrap ">
-            {BestSellingData.map((item) => {
+            {NonvegTadkaData.map((item) => {
               if (!item) {
                 return;
               }
@@ -107,5 +111,4 @@ const BestSelling = () => {
     </>
   );
 };
-
-export default BestSelling;
+export default NonvegTadka;

@@ -12,25 +12,40 @@ const MetaDataproducts = () => {
       {currentRoute === "/products/black-pepper-powder" && (
         <>
           <title>
-            Buy Black Pepper Powder Online | Shop Kali Mirch Powder | Planetsera
+            Shop Kali Mirch Powder | Buy Black Pepper Powder Online | Planetsera
           </title>
           <meta name="text" content="planetsera" />
           <meta
             name="title"
             content="Shop Kali Mirch Powder | Buy Black Pepper Powder Online  | Planetsera"
           />
-          <meta name="description" content="Page description." />
-          <meta name="keywords" content="" />
+          <meta
+            name="description"
+            content=" Black Pepper Powder (Kali Mirch Powder) adds robust, aromatic flavour to your dishes. Our premium, finely ground black pepper powder elevates foods."
+          />
+          <meta
+            name="keywords"
+            content="black pepper powder,  pepper powder,  kali mirch powder,  use of black pepper,  black chilies,  kali miri,  pepper spices,  whole black pepper,  ground pepper,  ground black pepper,  black spices"
+          />
           <meta name="robots" content="index, follow" />
-          <link rel="canonical" href="Current Page Url" />
+          <link
+            rel="canonical"
+            href="https://www.planetsera.com/products/black-pepper-powderl"
+          />
 
-          <meta property="og:url" content="Current Page Url" />
+          <meta
+            property="og:url"
+            content="https://www.planetsera.com/products/black-pepper-powder"
+          />
           <meta property="og:type" content="website" />
           <meta
             property="og:title"
-            content="Buy Black Pepper Powder Online | Shop Kali Mirch Powder | Planetsera"
+            content="Shop Kali Mirch Powder | Buy Black Pepper Powder Online  | Planetsera"
           />
-          <meta property="og:description" content="Page description." />
+          <meta
+            property="og:description"
+            content=" Black Pepper Powder (Kali Mirch Powder) adds robust, aromatic flavour to your dishes. Our premium, finely ground black pepper powder elevates foods. "
+          />
           <meta
             name="og_site_name"
             property="og:site_name"
@@ -42,12 +57,18 @@ const MetaDataproducts = () => {
 
           <meta name="twitter:card" content="summary_large_image" />
           <meta property="twitter:domain" content="planetsera.com" />
-          <meta property="twitter:url" content="Current Page Urlt" />
+          <meta
+            property="twitter:url"
+            content="https://www.planetsera.com/products/black-pepper-powder"
+          />
           <meta
             name="twitter:title"
             content="Shop Kali Mirch Powder | Buy Black Pepper Powder Online  | Planetsera"
           />
-          <meta name="twitter:description" content="Page description." />
+          <meta
+            name="twitter:description"
+            content=" Black Pepper Powder (Kali Mirch Powder) adds robust, aromatic flavour to your dishes. Our premium, finely ground black pepper powder elevates foods."
+          />
           <meta name="twitter:image" content="banner image url" />
         </>
       )}

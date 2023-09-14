@@ -2,20 +2,21 @@
     font-size: 45px;
     font-family: "Montserrat";
     text-align: center;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
     width: 75%;
     margin: auto;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 5px;
     line-height: 60px;
+    color: black;
   }
 
   @media screen and (max-width: 600px) {
     .shopBuy-heading {
       width: 90%;
       font-size: 25px;
-      line-height: 40px;
+      line-height: 30px;
      ;
     }
   }

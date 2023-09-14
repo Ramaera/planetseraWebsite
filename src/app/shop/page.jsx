@@ -2,6 +2,10 @@
 import React, { useEffect } from "react";
 import ShopHeader from "./components/ShopHeader/ShopHeader";
 import BestSelling from "./components/BestSelling/BestSelling";
+import MouthWatering from "./components/MouthWatering/MouthWatering";
+import NonvegTadka from "./components/NonvegTadka/NonvegTadka";
+import KitchenSpices from "./components/KitchenSpices/KitchenSpices";
+import WeekandTadka from "./components/WeekandTadka/WeekandTadka";
 import ShopBuy from "./components/ShopBuy/ShopBuy";
 import BuyProduct from "./components/ShopProduct/ShopProduct";
 import ShopSpicesFooter from "./components/ShopSpicesFooter/ShopSpicesFooter";
@@ -69,9 +73,13 @@ const Shop = () => {
 
       <ShopHeader />
       <BestSelling />
+      <MouthWatering />
+      <NonvegTadka />
+      <KitchenSpices />
+      <WeekandTadka />
       <ShopBuy />
-      <BuyProduct />
-      <ShopSpicesFooter />
+      {/* <BuyProduct />
+      <ShopSpicesFooter /> */}
     </>
   );
 };

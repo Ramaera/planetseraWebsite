@@ -9,12 +9,11 @@
   }
   
   .shop-heading {
-    /* font-size: 55px; */
-    font-family: "Oriya MN";
+    font-size: 50px;
     background-clip: text;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 66px;
-    color: #FFFFFF;
+    color: black;
   }
 
   
