@@ -120,7 +120,7 @@ const MouthWateringData = [
   {
     id: "kitchen-king",
     category: "KitchenSpices",
-    masalaImg: "/images/productDetailsImg/MeatMasala.webp",
+    masalaImg: "/images/productDetailsImg/KitchenKingMasala.webp",
     masalaName: "kitchen king",
     colored: "#F1E6E6",
   },
@@ -160,7 +160,7 @@ const MouthWateringData = [
   {
     id: "chicken-masala",
     category: "WeekandTadka",
-    masalaImg: "/images/productDetailsImg/MeatMasala.webp",
+    masalaImg: "/images/productDetailsImg/ChickenMasala.webp",
     masalaName: "Chicken Masala",
     colored: "#F1E6E6",
   },
