@@ -1,5 +1,5 @@
 .shopBuy-heading {
-    font-size: 45px;
+    font-size: 2rem;
     font-family: "Montserrat";
     text-align: center;
     /* -webkit-background-clip: text;
@@ -8,15 +8,15 @@
     margin: auto;
     font-weight: 600;
     letter-spacing: 5px;
-    line-height: 60px;
+    line-height: 3rem;
     color: black;
   }
 
   @media screen and (max-width: 600px) {
     .shopBuy-heading {
       width: 90%;
-      font-size: 25px;
-      line-height: 30px;
+      font-size: 18px;
+      line-height: 22px;
      ;
     }
   }

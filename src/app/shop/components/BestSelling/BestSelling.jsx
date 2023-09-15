@@ -27,7 +27,7 @@ const BestSelling = () => {
               }
               return (
                 <>
-                  <div className="m-2 w-[45%] md:w-[22%] justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-3">
+                  <div className="m-2 w-[45%] md:w-[22%] justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
                     <div className="flex items-center	justify-center">
                       {!item?.flipkart && !item?.amazon ? (
                         <div className=" absolute z-10  m-2 justify-items-center flex items-center">
@@ -70,12 +70,12 @@ const BestSelling = () => {
                     </div>
                     <div className="mt-2 mb-[-10px]">
                       {!item?.flipkart && !item?.amazon ? (
-                        <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-lg">
+                        <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-[13.5px] sm:text-lg">
                           {item?.masalaName}
                         </h3>
                       ) : (
                         <Link href={`/products/${item.id}`}>
-                          <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-lg">
+                          <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-[13.5px] sm:text-lg">
                             {item?.masalaName}
                           </h3>
                         </Link>

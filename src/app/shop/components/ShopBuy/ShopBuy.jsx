@@ -7,7 +7,7 @@ const ShopBuy = () => {
 
   return (
     <>
-      <div className="basis-4/12 flex flex-col justify-center m-auto my-10">
+      <div className="basis-4/12 flex flex-col justify-center m-auto my-4 sm:my-10">
         <h2
           className="shopBuy-heading text-black"
           // style={{
@@ -21,38 +21,38 @@ const ShopBuy = () => {
           meals."
         </h2>
       </div>
-      <div className="mt-10 md:px-6 mb-10">
-        <div className="flex m-auto justify-center	">
-          <div className="px-2 flex justify-center">
+      <div className="my-4 sm:my-10 md:px-6 mx-16">
+        <div className="flex m-auto justify-evenly">
+          <div className="px-2 flex justify-center w-[300px]">
             <img
-              className="w-3/4"
+              className=""
               src="images/backgrounds/ShopBuyHaat-2.webp"
               alt="Hat Ramaera"
               title="Hat Ramaera"
             />
           </div>
-          <div className="px-2">
+          <div className="px-2 w-[300px] flex justify-center">
             <a
-              className="flex justify-center"
+              className=""
               href="https://www.amazon.in/s?k=Planetsera"
               target="_blank"
               rel="noopener noreferrer">
               <img
-                className="w-3/4"
+                className=""
                 alt="Amazon"
                 title="Available on amazon"
                 src="images/backgrounds/ShopBuyAmazon-2.webp"
               />
             </a>
           </div>
-          <div className="px-2">
+          <div className="px-2 w-[300px] flex justify-center">
             <a
-              className="flex justify-center "
+              className=""
               href="https://www.flipkart.com/search?q=Planetsera&otracker=search&otracker1=search&marketplace=FLIPKART"
               target="_blank"
               rel="noopener noreferrer">
               <img
-                className="w-3/4"
+                // className="w-2/4"
                 alt="Flipkart"
                 title="Available on flipkart"
                 src="images/backgrounds/ShopBuyFlipkart-2.webp"

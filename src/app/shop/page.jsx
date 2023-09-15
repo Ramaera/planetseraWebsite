@@ -74,12 +74,12 @@ const Shop = () => {
       <ShopHeader />
       <BestSelling />
       <MouthWatering />
-      <NonvegTadka />
+      {/* <NonvegTadka /> */}
       <KitchenSpices />
       <WeekandTadka />
       <ShopBuy />
-      {/* <BuyProduct />
-      <ShopSpicesFooter /> */}
+      {/* <BuyProduct /> */}
+      {/* <ShopSpicesFooter /> */}
     </>
   );
 };

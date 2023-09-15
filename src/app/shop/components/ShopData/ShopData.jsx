@@ -121,18 +121,18 @@ const MouthWateringData = [
     id: "kitchen-king",
     category: "KitchenSpices",
     masalaImg: "/images/productDetailsImg/MeatMasala.webp",
-    masalaName: "kitchen-king",
+    masalaName: "kitchen king",
     colored: "#F1E6E6",
   },
 
   {
-    id: "coriander-powder",
+    id: "cumin-powder",
     category: "KitchenSpices",
-    masalaImg: "/images/productDetailsImg/CorianderPowder.webp",
-    masalaName: "Coriander Powder",
+    masalaImg: "/images/productDetailsImg/CuminPowder.webp",
+    masalaName: "Cumin Powder",
     colored: "#F1E6E6",
     flipkart:
-      "https://www.flipkart.com/planetsera-coriander-powder/p/itme906e235fc3d4?pid=SCMGQDY2UGPNQZVZ",
+      "https://www.flipkart.com/planetsera-cumin-powder/p/itmac8a4eb79d181?pid=SCMGQEF6WFRVNGCB",
   },
 
   {
@@ -148,16 +148,6 @@ const MouthWateringData = [
   // --------------  WeekandTadka  -------------------------------------------------------------------
 
   {
-    id: "sabji-masala",
-    category: "WeekandTadka",
-    masalaImg: "/images/productDetailsImg/SabjiMasala.webp",
-    masalaName: "Sabji Masala",
-    colored: "#F1E6E6",
-    flipkart:
-      "https://www.flipkart.com/planetsera-sabji-masala/p/itma9772eaa0b140?pid=SCMGQCXBCQZWJG5M",
-  },
-
-  {
     id: "meat-masala",
     category: "WeekandTadka",
     masalaImg: "/images/productDetailsImg/MeatMasala.webp",
@@ -168,11 +158,21 @@ const MouthWateringData = [
   },
 
   {
-    id: "kitchen-king",
+    id: "chicken-masala",
     category: "WeekandTadka",
     masalaImg: "/images/productDetailsImg/MeatMasala.webp",
-    masalaName: "kitchen-king",
+    masalaName: "Chicken Masala",
     colored: "#F1E6E6",
+  },
+
+  {
+    id: "garam-masala",
+    category: "WeekandTadka",
+    masalaImg: "/images/productDetailsImg/GaramMasala.webp",
+    masalaName: "Garam Masala",
+    colored: "#F1E6E6",
+    flipkart:
+      "https://www.flipkart.com/planetsera-premium-quality-garam-masala/p/itm678c2e5f0d1a2?pid=SCMGQ387HKH64BVD",
   },
 
   {
