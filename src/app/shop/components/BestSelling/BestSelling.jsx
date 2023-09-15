@@ -12,6 +12,7 @@ const BestSelling = () => {
 
   return (
     <>
+      <div className="border-t mx-16 xl:mt-6 2xl:mt-10 2xl:mx-20"></div>
       <div className="mt-10">
         <div className=" sm:text-left  flex flex-col	justify-center items-center 	">
           <h5 className="text-red-400">PRODUCTS</h5>

@@ -34,10 +34,12 @@ const NavItem = ({ page }) => {
 
   return (
     <div
-      className={`fixed  w-full  left-0 z-30 justify-between md:flex hidden h-[90px] ${
-        isVisible ? "	navHeader text-black" : "text-white"
+      className={`fixed  w-full  left-0 z-30 justify-between md:flex hidden h-[78px] sm:pr-10 sm:pl-4 ${
+        isVisible
+          ? "	navHeader text-black border-[1px] border-slate-300	"
+          : "text-white"
       }`}>
-      <Link className={"scale-[0.6] mb-8"} href="/">
+      <Link className={"scale-[0.6] mb-8 sm:mt-[-0.6rem]"} href="/">
         <img className="" src="/images/logo/logo.webp" alt="logo" />
       </Link>
       <ul

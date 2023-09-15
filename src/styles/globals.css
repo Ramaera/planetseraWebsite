@@ -1607,9 +1607,10 @@
 }
 
 .navHeader{
-  box-shadow: inset 0 -1px 0 0 var(--accents-2);
+  background: white;
+  /* box-shadow: inset 0 -1px 0 0 var(--accents-2);
   transform: translateZ(0);
   -webkit-backdrop-filter: saturate(180%) blur(5px);
   backdrop-filter: saturate(180%) blur(5px);
-  background: hsla(0,0%,100%,.8);
+  background: hsla(0,0%,100%,.8); */
 }
