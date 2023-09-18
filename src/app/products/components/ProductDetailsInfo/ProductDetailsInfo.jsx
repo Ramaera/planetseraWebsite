@@ -412,7 +412,7 @@ const ProductDetailsInfo = () => {
               className={` text-2xl font-light font-Montserrat leading-[2.5rem] `}>
               Health benefits of : &nbsp;
             </div>
-            <div className=" text-[#787878] text-[1.3rem] leading-[2.5rem] md:w-[78%]">
+            <div className=" text-[#787878] text-[1.3rem] leading-[2.5rem] md:w-[85%]">
               {specificProduct.ProductHealth}
             </div>
           </div>
