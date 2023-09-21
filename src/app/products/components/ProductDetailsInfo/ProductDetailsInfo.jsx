@@ -162,165 +162,194 @@ const ProductDetailsInfo = () => {
                 Specifications
               </h2>
               <div className=" flex justify-evenly border-[1px] rounded-[10px]  text-[#787878] md:text-[1.1rem] text-[0.5rem]	font-Montserrat font-normal	md:font-light">
-                <div className="md:py-2 p-0 md:py-auto py-4 md:w-auto  w-[5rem] flex items-center justify-center">
-                  <span>Weight: &nbsp; </span>
-                  <span>
+                <div className="md:py-2 p-0 md:py-auto py-4 md:w-auto  w-[5rem] flex sm:flex-col xl:flex-row items-center justify-center">
+                  <p className="lg:mr-2">Weight : </p>
+                  <p>
                     {" "}
                     {selectedButton === "50gram"
-                      ? "50 g"
+                      ? "50g"
                       : selectedButton === "100gram"
-                      ? "100 g"
+                      ? "100g"
                       : selectedButton === "500gram"
-                      ? "500 g"
-                      : "50 g"}
-                  </span>
+                      ? "500g"
+                      : "50g"}
+                  </p>
                 </div>
                 <div className="border-r-2"></div>
-                <div className="md:py-2 p-0 flex items-center  justify-center">
-                  Packaging type: &nbsp; Zipper Pouch
+                <div className="md:py-2 p-0 flex sm:flex-col xl:flex-row items-center  justify-center">
+                  <p className="lg:mr-2">Packaging type : </p>
+                  <p>Zipper Pouch</p>
                 </div>
                 <div className="border-r-2"></div>
-                <div className="md:py-2 p-0 flex items-center justify-center">
-                  Country of origin: &nbsp; India
+                <div className="md:py-2 p-0 flex sm:flex-col xl:flex-row items-center justify-center">
+                  <p className="lg:mr-2"> Country of origin : </p>
+                  <p>India</p>
                 </div>
               </div>
             </div>
             {/* ////////////////// */}
           </div>
-          <div className="md:w-2/4">
-            <div className="md:pl-10">
-              <h1
-                style={{
-                  color:
-                    selectedButton === "50gram"
-                      ? specificProduct?.colored
-                      : specificProduct?.colored2,
-                }}
-                className={`md:text-[3.3rem] text-[2rem] tracking-widest font-[500] font-Montserrat md:mt-auto mt-8`}>
-                {specificProduct?.ProductName}
-              </h1>
-              <div
-                style={{
-                  backgroundColor:
-                    selectedButton === "50gram"
-                      ? specificProduct?.colored
-                      : specificProduct?.colored2,
-                }}
-                className={`absolute  w-36 h-[2px] ml-1 mt-[-2px]`}></div>
-              <ul className="pl-1 pt-4 text-[#787878] text-[1.7rem] font-[400] font-Montserrat  z-30 md:block  hidden">
-                <li className="my-8 ">
-                  <span className="pr-4">&bull;</span>100% Pure Natural Product
-                </li>
-                <li className="my-8">
-                  <span className="pr-4">&bull;</span>No Added Preservatives &
-                  Additives
-                </li>
-                <li className="my-8">
-                  <span className="pr-4">&bull;</span>No Artificial Color Added
-                </li>
-                <li className="my-8">
-                  <span className="pr-4">&bull;</span>Traditional Authentic
-                  Recipe
-                </li>
-                <li className="my-8">
-                  <span className="pr-4">&bull;</span>Made with Love in INDIA
-                </li>
-              </ul>
-              <br />
-              <h3 className="text-[#ABABAB] md:text-[1.7rem] text-[1.2rem] font-[300] font-Montserrat">
-                Select weight:
-              </h3>
-              <div className="flex my-5">
-                <div>
-                  <button
-                    style={
+          <div className="md:w-2/4 md:pl-10">
+            <div>
+              <div className="hidden sm:block">
+                <h1
+                  style={{
+                    color:
                       selectedButton === "50gram"
-                        ? {
-                            color: specificProduct?.colored,
-                            borderColor: specificProduct?.colored,
-                          }
-                        : {
-                            color: specificProduct?.inactiveBtn,
-                            borderColor: specificProduct?.inactiveBtn,
-                          }
-                    }
-                    onClick={() => handleSelectedButton("50gram")}
-                    className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]">
-                    50 g
-                  </button>
-                </div>
-
-                {specificProduct?.ProductMasala100g && (
-                  <button
-                    style={
-                      selectedButton === "100gram"
-                        ? {
-                            color: specificProduct?.colored2,
-                            borderColor: specificProduct?.colored2,
-                          }
-                        : {
-                            color: specificProduct?.inactiveBtn2,
-                            borderColor: specificProduct?.inactiveBtn2,
-                          }
-                    }
-                    onClick={() => handleSelectedButton("100gram")}
-                    className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]">
-                    100 g
-                  </button>
-                )}
-
-                {specificProduct?.ProductMasala500g && (
-                  <button
-                    style={
-                      selectedButton === "500gram"
-                        ? {
-                            color: specificProduct?.colored2,
-                            borderColor: specificProduct?.colored2,
-                          }
-                        : {
-                            color: specificProduct?.inactiveBtn2,
-                            borderColor: specificProduct?.inactiveBtn2,
-                          }
-                    }
-                    onClick={() => handleSelectedButton("500gram")}
-                    className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px]  md:text-[1.5rem] text-[1.1rem] z-100 ">
-                    500 g
-                  </button>
+                        ? specificProduct?.colored
+                        : specificProduct?.colored2,
+                  }}
+                  className={`md:text-[2.5rem] xl:text-[3.3rem] text-[2rem] tracking-widest font-[500] font-Montserrat md:mt-auto mt-8`}>
+                  {specificProduct?.ProductName}
+                </h1>
+                <div
+                  style={{
+                    backgroundColor:
+                      selectedButton === "50gram"
+                        ? specificProduct?.colored
+                        : specificProduct?.colored2,
+                  }}
+                  className={`absolute  w-36 h-[2px] ml-1 mt-[-2px]`}></div>
+                <p className="leading-[2rem] text-slate-600 text-lg font-Montserrat mt-1">
+                  {specificProduct?.ProductDescription}
+                </p>
+                {specificProduct?.ProductDescription2 && (
+                  <p className="leading-[2rem] text-slate-600 text-lg font-Montserrat mt-3">
+                    {specificProduct?.ProductDescription2}
+                  </p>
                 )}
               </div>
-              {selectedButton === "50gram" ? (
-                <BuyIcons
-                  flipkart={specificProduct?.flipkart50}
-                  amazon={specificProduct?.amazon50}
-                />
-              ) : selectedButton === "100gram" ? (
-                <BuyIcons
-                  flipkart={specificProduct?.flipkart100}
-                  amazon={specificProduct?.amazon100}
-                />
-              ) : (
-                <BuyIcons
-                  flipkart={specificProduct?.flipkart500}
-                  amazon={specificProduct?.amazon500}
-                />
-              )}
 
-              <img
-                className="w-[60%]"
-                src="/images/backgrounds/MadeIndia.webp"
-                alt="Made in India"
-                title="Made in India"
-              />
-              <div className="right-0 absolute md:top-[22rem] top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9]">
+              <br />
+              <div>
+                <h3 className="text-[#202020] md:text-[1.7rem] text-[1.2rem] font-[300] font-Montserrat">
+                  Select weight:
+                </h3>
+                <div className="flex my-5">
+                  <div>
+                    <button
+                      style={
+                        selectedButton === "50gram"
+                          ? {
+                              color: specificProduct?.colored,
+                              borderColor: specificProduct?.colored,
+                            }
+                          : {
+                              color: specificProduct?.inactiveBtn,
+                              borderColor: specificProduct?.inactiveBtn,
+                            }
+                      }
+                      onClick={() => handleSelectedButton("50gram")}
+                      className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]">
+                      50 g
+                    </button>
+                  </div>
+
+                  {specificProduct?.ProductMasala100g && (
+                    <button
+                      style={
+                        selectedButton === "100gram"
+                          ? {
+                              color: specificProduct?.colored2,
+                              borderColor: specificProduct?.colored2,
+                            }
+                          : {
+                              color: specificProduct?.inactiveBtn2,
+                              borderColor: specificProduct?.inactiveBtn2,
+                            }
+                      }
+                      onClick={() => handleSelectedButton("100gram")}
+                      className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]">
+                      100 g
+                    </button>
+                  )}
+
+                  {specificProduct?.ProductMasala500g && (
+                    <button
+                      style={
+                        selectedButton === "500gram"
+                          ? {
+                              color: specificProduct?.colored2,
+                              borderColor: specificProduct?.colored2,
+                            }
+                          : {
+                              color: specificProduct?.inactiveBtn2,
+                              borderColor: specificProduct?.inactiveBtn2,
+                            }
+                      }
+                      onClick={() => handleSelectedButton("500gram")}
+                      className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px]  md:text-[1.5rem] text-[1.1rem] z-100 ">
+                      500 g
+                    </button>
+                  )}
+                </div>
+                {selectedButton === "50gram" ? (
+                  <BuyIcons
+                    flipkart={specificProduct?.flipkart50}
+                    amazon={specificProduct?.amazon50}
+                  />
+                ) : selectedButton === "100gram" ? (
+                  <BuyIcons
+                    flipkart={specificProduct?.flipkart100}
+                    amazon={specificProduct?.amazon100}
+                  />
+                ) : (
+                  <BuyIcons
+                    flipkart={specificProduct?.flipkart500}
+                    amazon={specificProduct?.amazon500}
+                  />
+                )}
+
                 <img
-                  src={specificProduct?.ProductBg}
-                  alt="product bg"
-                  title="product bg"
-                  className="max-w-[100px] sm:max-w-[180px] 2xl:max-w-full absolute right-0"
+                  className="w-[60%]"
+                  src="/images/backgrounds/MadeIndia.webp"
+                  alt="Made in India"
+                  title="Made in India"
                 />
+                <div
+                  className={` right-0 absolute md:top-[32rem]  ${
+                    specificProduct?.id === "garam-masala"
+                      ? "2xl:top-[28rem]"
+                      : "2xl:top-[22rem]"
+                  } top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9] `}>
+                  <img
+                    src={specificProduct?.ProductBg}
+                    alt="product bg"
+                    title="product bg"
+                    className="max-w-[100px] sm:max-w-[180px] 2xl:max-w-full  max-h-96	 absolute right-0"
+                  />
+                </div>
+              </div>
+              <div className=" sm:hidden">
+                <h1
+                  style={{
+                    color:
+                      selectedButton === "50gram"
+                        ? specificProduct?.colored
+                        : specificProduct?.colored2,
+                  }}
+                  className={`md:text-[2.5rem] xl:text-[3.3rem] text-[2rem] tracking-widest font-[500] font-Montserrat md:mt-auto mt-8`}>
+                  {specificProduct?.ProductName}
+                </h1>
+                <div
+                  style={{
+                    backgroundColor:
+                      selectedButton === "50gram"
+                        ? specificProduct?.colored
+                        : specificProduct?.colored2,
+                  }}
+                  className={`absolute  w-36 h-[2px] ml-1 mt-[-2px]`}></div>
+                <p className="leading-[2rem] text-slate-600 text-lg font-Montserrat mt-1">
+                  {specificProduct?.ProductDescription}
+                </p>
+                {specificProduct?.ProductDescription2 && (
+                  <p className="leading-[2rem] text-slate-600 text-lg font-Montserrat mt-3">
+                    {specificProduct?.ProductDescription2}
+                  </p>
+                )}
               </div>
             </div>
-            <div className="mt-8  z-10 relative">
+            <div className="mt-2 sm:mt-8  z-10 relative">
               {specificProduct?.ProductDescription ? (
                 <div>
                   <h3
@@ -331,7 +360,7 @@ const ProductDetailsInfo = () => {
                           : specificProduct?.colored2,
                     }}
                     className={` text-[2.1rem] font-light font-Montserrat`}>
-                    Description
+                    Usage
                   </h3>
 
                   <div
@@ -341,9 +370,9 @@ const ProductDetailsInfo = () => {
                           ? specificProduct?.colored
                           : specificProduct?.colored2,
                     }}
-                    className={`absolute  w-20 h-[2px] ml-1 mt-[-2px]`}></div>
-                  <p className="leading-[2.6rem] text-[#787878] text-[1.28rem] font-[400] my-4 font-Montserrat">
-                    {specificProduct?.ProductDescription}
+                    className={`absolute  w-16 h-[2px] ml-1 mt-[-2px]`}></div>
+                  <p className="leading-[2.2rem] text-slate-600 text-lg  my-4 font-Montserrat">
+                    {specificProduct?.ProductUsage}
                   </p>
                 </div>
               ) : (
@@ -368,7 +397,7 @@ const ProductDetailsInfo = () => {
                       : specificProduct?.colored2,
                 }}
                 className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-1`}></div>
-              <p className="leading-[2.6rem] text-[#787878] text-[1.28rem] font-[400] my-4 font-Montserrat">
+              <p className="leading-[2.2rem] text-slate-600 text-lg  my-4 font-Montserrat">
                 {specificProduct?.ProductIngredients}
               </p>
             </div>
@@ -401,20 +430,31 @@ const ProductDetailsInfo = () => {
           </div>
         </div> */}
         {specificProduct?.ProductHealth ? (
-          <div className="md:my-10 my-5 font-Montserrat md:ml-2 md:flex">
-            <div
-              style={{
-                color:
-                  selectedButton === "50gram"
-                    ? specificProduct?.colored
-                    : specificProduct?.colored2,
-              }}
-              className={` text-2xl font-light font-Montserrat leading-[2.5rem] `}>
-              Health benefits of : &nbsp;
+          <div className="md:my-10 my-5 font-Montserrat  md:flex md:flex-row">
+            <div>
+              <h3
+                style={{
+                  color:
+                    selectedButton === "50gram"
+                      ? specificProduct?.colored
+                      : specificProduct?.colored2,
+                }}
+                className={` text-3xl font-light font-Montserrat`}>
+                Health benefits of :
+              </h3>
+              <div
+                style={{
+                  backgroundColor:
+                    selectedButton === "50gram"
+                      ? specificProduct?.colored
+                      : specificProduct?.colored2,
+                }}
+                className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-1`}></div>
             </div>
-            <div className=" text-[#787878] text-[1.3rem] leading-[2.5rem] md:w-[85%]">
+
+            <p className="leading-[2.2rem] text-slate-600 text-lg font-Montserrat sm:ml-2 md:w-[72%] xl:w-[78%]">
               {specificProduct.ProductHealth}
-            </div>
+            </p>
           </div>
         ) : (
           ""
