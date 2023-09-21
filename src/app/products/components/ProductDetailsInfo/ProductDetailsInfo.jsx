@@ -307,10 +307,10 @@ const ProductDetailsInfo = () => {
                   title="Made in India"
                 />
                 <div
-                  className={` right-0 absolute md:top-[32rem]  ${
+                  className={` right-0 absolute   ${
                     specificProduct?.id === "garam-masala"
-                      ? "2xl:top-[28rem]"
-                      : "2xl:top-[22rem]"
+                      ? " md:top-[38rem] 2xl:top-[28rem]"
+                      : " md:top-[32rem] 2xl:top-[22rem]"
                   } top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9] `}>
                   <img
                     src={specificProduct?.ProductBg}

@@ -19,7 +19,7 @@ const ShopHeader = () => {
         <NavigationMobile page={"shop"} />
         <div className="relative mx-auto px-4 py-10 sm:py-20  lg:flex  lg:items-center  ">
           <div className="text-center sm:text-left md:ml-28 2xl:ml-40  2xl:w-4/12 pt-10 md:pt-0">
-            <h1 className="shop-heading tracking-wider ">
+            <h1 className="shop-heading tracking-wider webColor">
               Experience a <br /> burst of flavors
             </h1>
 
