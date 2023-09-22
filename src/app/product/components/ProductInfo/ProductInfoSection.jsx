@@ -24,7 +24,7 @@ const ProductInfoSection = () => {
             className="slide slide2"
             id="slider-2-1"
             style={{
-              background: "linear-gradient(to right, #CED8CF, #C9D2B3)",
+              background: "linear-gradient(to right, #C9D2B3, #94a274)",
             }}>
             <div className="contentZoom">
               <h2 className="headingZoom">Sabji Masala</h2>

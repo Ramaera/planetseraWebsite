@@ -16,24 +16,24 @@
   align-items: center;
   justify-content: right;
 }
-.SecondPage-Heading {
-  font-family: "Oriya MN";
-  color: #ffffff;
-  font-weight: 550;
-  font-size: 50px;
+/* .SecondPage-Heading {
+   font-family: "Oriya MN";
+   color: #ffffff;
+   font-weight: 550;
+   font-size: 50px;
   line-height: 78px;
-  width: 86%;
+   width: 86%;
   margin: auto;
-}
+} */
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .SecondPage-Heading {
     font-size: 1.6rem;
     line-height: 45px;
     margin-top: 20px;
     width: 100%;
   }
-}
+} */
 
 /* .SecondPageHeading-Text {
   font-family: "Montserrat";
@@ -102,18 +102,18 @@
 .hero-Images {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 1280px;
+  height: 90vh;
   width: 100%;
   background-position: center center;
 }
 @media screen and (max-width: 1600px) {
 .hero-Images {
-  height: 1200px;
+  height: 90vh;
  }
 }
 @media screen and (max-width: 1300px) {
   .hero-Images {
-    height: 1100px;
+    height: 90vh;
    }
   }
 @media screen and (max-width: 600px) {
@@ -185,7 +185,7 @@
   display: block;
   position: absolute;
   /* left: -11px; */
-  top: 50px;
+  top: -100px;
   transform: scale(1.1);
 }
 
@@ -193,7 +193,7 @@
   .pouchAlignment {
     max-width: 125% !important;
     left: -40px;
-    top: -45px;
+    top: 20px;
   }
 }
 

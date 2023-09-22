@@ -43,7 +43,7 @@
   }
 
 #containerZoom1{
-  background: linear-gradient(to right, #CED8CF, #C9D2B3);  
+  background: linear-gradient(to right, #C9D2B3 ,#94a274);  
 }
 #containerZoom2{
   background: linear-gradient(to right, #B79891, #94716B) ;  
@@ -244,7 +244,7 @@ background: linear-gradient(to right, #CDB1B1, #C59F9F);
 
 .containerZoom .cardZoom .slide.slide2 .contentZoom .titleZoom {
   font-family: "Montserrat";
- font-weight: 300;
+ font-weight: 400;
  text-align: left;
  padding: 0;
  font-size: 18px;
@@ -254,13 +254,13 @@ background: linear-gradient(to right, #CDB1B1, #C59F9F);
 .buttonZoomView{
   border-radius: 50px;
   padding: 12px 55px;
-  border: 1px solid white;
+  border: 2px solid white;
   margin: auto;
   background-color: unset !important;
   color: white;
   display: flex;
   font-family: Montserrat;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 1rem; 
 }
 

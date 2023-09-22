@@ -1,5 +1,6 @@
 import "./SpicySection.css";
 import SpicyData from "./SpicyData";
+import Link from "next/link";
 
 const SpicySection = () => {
   return (
@@ -8,18 +9,20 @@ const SpicySection = () => {
         {SpicyData.map((items) => {
           return (
             <div className="basis-2/12 relative flex imgSpicy">
-              <div className="background">
-                <img
-                  alt="masala"
-                  title="spices collection"
-                  loading="lazy"
-                  src={items.spicyImage}
-                  className="w-full mt-12"
-                />
-              </div>
-              <div className="myImpor">
-                <img alt="masala" loading="lazy" src={items.spicyImageBox} />
-              </div>
+              <Link href={items.link}>
+                <div className="background">
+                  <img
+                    alt="masala"
+                    title="spices collection"
+                    loading="lazy"
+                    src={items.spicyImage}
+                    className="w-full mt-12"
+                  />
+                </div>
+                <div className="myImpor">
+                  <img alt="masala" loading="lazy" src={items.spicyImageBox} />
+                </div>
+              </Link>
             </div>
           );
         })}

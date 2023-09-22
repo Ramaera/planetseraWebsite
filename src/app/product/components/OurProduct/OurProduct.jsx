@@ -6,7 +6,7 @@ import Link from "next/link";
 const OurProduct = () => {
   return (
     <div
-      className="w-full max-w-full box-border m-auto h-auto relative mt-10 md:mt-32 containerBorder"
+      className="w-full max-w-full box-border m-auto h-auto relative mt-10 md:mt-20 containerBorder"
       id="groundSpices">
       <div className="basis-12/12 absolute ourbg"></div>
       <div className=" groundbg">

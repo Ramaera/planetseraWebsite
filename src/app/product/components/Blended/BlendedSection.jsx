@@ -5,7 +5,7 @@ import Link from "next/link";
 const BlendedSection = () => {
   return (
     <div
-      className="w-full max-w-full box-border m-auto h-auto relative mt-10 md:mt-32"
+      className="w-full max-w-full box-border m-auto h-auto relative mt-10 md:mt-10"
       id="blendedSpices">
       <div className="basis-12/12 md:m-16 m-2">
         <img

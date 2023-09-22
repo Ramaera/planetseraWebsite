@@ -13,8 +13,8 @@ const FallLove = () => {
       <img
         alt="masala"
         loading="lazy"
-        src="images/backgrounds/desireAb.webp"
-        style={{ margin: "50px 0" }}
+        src="images/backgrounds/desireAb.png"
+        style={{ margin: "20px 0" }}
         className="w-full"
       />
 
@@ -45,7 +45,7 @@ const FallLove = () => {
         </div>
       </div>
       <div className="container fallloveBackground mt-20 px-6">
-        <div className="basis-12/12 flex justify-between flex-col md:flex-row items-center">
+        <div className="basis-12/12 flex justify-between flex-col md:flex-row items-center p-4 sm:px-10 sm:py-6">
           <div>
             <div className="basis-4/12">
               <img
@@ -75,7 +75,7 @@ const FallLove = () => {
             </div>
           </div>
 
-          <div>
+          <div className="mt-8 sm:mt-0">
             <div className="basis-4/12 myMenuImage-2 ">
               <img
                 alt="Ground spices"
