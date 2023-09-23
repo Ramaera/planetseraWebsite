@@ -1,6 +1,6 @@
 const PouchSection = () => {
   return (
-    <div className="basis-12/12 flex w-[80%] box-alignment mx-auto sm:w-[65%]">
+    <div className="basis-12/12 flex w-[80%] box-alignment mx-auto sm:w-[55%] 2xl:w-[60%]">
       {/* <div className="basis-2/12"></div>
       <div className="basis-8/12 flex relative w-full"> */}
       <img

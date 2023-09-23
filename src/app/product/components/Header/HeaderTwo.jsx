@@ -25,12 +25,12 @@ const HeaderTwo = () => {
         <div className="w-full max-w-full box-border m-auto h-auto flex flex-wrap mt-20">
           <div className="basis-12/12 w-full flex">
             <div className="md:basis-12/12">
-              <h1 className="text-center text-white font-semibold leading-snug	sm:leading-tight text-2xl sm:text-4xl	tracking-[5px] w-full sm:w-[86%] m-auto ">
+              <h1 className="text-center text-white font-semibold leading-snug	sm:leading-tight text-2xl sm:text-3xl xl:text-4xl 	tracking-[5px] w-full sm:w-[86%] m-auto ">
                 Experience a burst of flavors with every sprinkle only with
                 PlanetsEra premium spices
               </h1>
 
-              <p className="font-Montserrat flex text-center	font-light leading-[38px] text-[#ededed] m-auto w-full  text-[20px] md:text-[25px]	 mt-5 tracking-[1px] 2xl:m-0 2xl:justify-center md:justify-center 2xl:flex 2xl:w-full">
+              <p className="font-Montserrat flex text-center	font-light leading-[38px] text-[#ededed] m-auto w-full  text-[20px] 2xl:text-3xl md:text-[25px]	 mt-5 sm:mt-2 tracking-[1px] 2xl:m-0 2xl:mt-5  2xl:justify-center md:justify-center 2xl:flex 2xl:w-full">
                 Unlock the secrets of ancient spice blends and bring <br />
                 the timeless flavors of history into your kitchen
               </p>

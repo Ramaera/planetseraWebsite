@@ -11,7 +11,7 @@ const GalleryMenu = () => {
   return (
     <div
       id="exploreSection"
-      className="w-full max-w-full box-border m-auto h-auto mt-52 mb-4 galleryContainer">
+      className="w-full max-w-full box-border m-auto h-auto mt-40 xl:mt-32 mb-4 galleryContainer">
       <div className="basis-12/12 relative flex justify-center  w-[98%] m-auto items-center flex-col">
         <h2
           className="GalleryMenuHeading"
