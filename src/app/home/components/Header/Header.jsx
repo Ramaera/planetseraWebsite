@@ -34,6 +34,7 @@ function Header() {
       setBgcolor(background1);
       setSlider(sliderImage1);
       dispatch(changeColor("#ffde39"));
+      // #ffc400
     }
     if (index === 2) {
       setBgcolor(background2);
