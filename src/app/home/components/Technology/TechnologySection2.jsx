@@ -28,7 +28,7 @@ const TechnologySection2 = () => {
         data-aos-duration="1000">
         <h2
           style={{ color: colorMe }}
-          className="text-[#ff4f4f] text-[1.3rem] md:text-[35px] font-normal md:font-medium tracking-[0.17em]	mb-3">
+          className="text-[#ff4f4f] text-[1.3rem] md:text-[35px] font-medium tracking-[0.17em]	mb-3">
           Quality Preservation Using Latest Technology
         </h2>
         <div className="quality_line"></div>

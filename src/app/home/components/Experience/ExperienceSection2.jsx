@@ -12,7 +12,7 @@ export default function ExperienceSection2() {
         <div>
           <h2
             style={{ color: colorMe }}
-            className=" txet-[#ff4f4f] text-[30px] md:text-[40px] font-normal md:font-medium leading-[40px] md:leading-[58px] tracking-wide mb-3">
+            className=" txet-[#ff4f4f] text-[1.5rem] md:text-[40px] font-medium  md:leading-[58px] tracking-[0.17em] md:tracking-wide mb-3">
             Extra-ordinary taste with Experience
           </h2>
           <div className="with_line"></div>
