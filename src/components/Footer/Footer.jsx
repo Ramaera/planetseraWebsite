@@ -115,20 +115,6 @@ const Footer = () => {
                 <ul className="text-white font-normal">
                   <li className="mb-2">
                     <Link
-                      href="/products/amchur-powder"
-                      className="underlineEffect">
-                      Amchur Powder
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link
-                      href="/products/black-pepper-powder"
-                      className="underlineEffect">
-                      Black Pepper Powder
-                    </Link>
-                  </li>
-                  <li className="mb-2">
-                    <Link
                       href="/products/coriander-powder"
                       className="underlineEffect">
                       Coriander Powder
