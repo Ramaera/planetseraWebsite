@@ -26,7 +26,7 @@ const LogoSection = () => {
           style={{
             color: colorMe,
           }}
-          className="font-medium text-4xl mt-44 md:text-8xl text-white md:hidden font-['Oriya MN']">
+          className="font-medium text-3xl tracking-widest mt-44 md:text-8xl text-white md:hidden font-['Oriya MN']">
           Diverse blend of culture and taste
         </h3>
 

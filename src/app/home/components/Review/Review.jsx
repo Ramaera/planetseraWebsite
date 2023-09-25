@@ -6,7 +6,7 @@ import ReviewInfo from "./ReviewInfo";
 const Review = () => {
   return (
     <>
-      <div className="w-full max-w-full box-border mx-auto h-auto relative md:mt-10 2xl:mt-20">
+      <div className="w-full max-w-full box-border mx-auto h-auto relative mt-[-3rem] md:mt-10 2xl:mt-20">
         <img
           alt="bg"
           loading="lazy"

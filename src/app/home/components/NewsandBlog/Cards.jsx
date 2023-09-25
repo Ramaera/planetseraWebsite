@@ -12,10 +12,10 @@ const Cards = ({ item }) => {
           backgroundImage: `url(${item.productImg})`,
         }}
       />
-      <h2 style={{ color: colorMe }} className="text-2xl mb-2 ">
+      <h2 style={{ color: colorMe }} className="sm:text-2xl mb-2 ">
         {item.productName}
       </h2>
-      <p className="text-xl text-[#1E1E1E]">{item.productDesc}</p>
+      <p className="sm:text-xl text-[#1E1E1E]">{item.productDesc}</p>
     </div>
   );
 };

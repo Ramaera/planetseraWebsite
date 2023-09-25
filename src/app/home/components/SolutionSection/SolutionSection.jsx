@@ -37,7 +37,7 @@ function SolutionSection() {
           <div data-aos="fade-up">
             <h2
               style={{ color: colorMe }}
-              class=" text-[#ff4f4f] text-[1.3rem] md:text-[35px] font-medium md:flex md:items-center tracking-[0.04em] md:tracking-wide md:leading-tight  my-2 md:my-3">
+              class=" text-[#ff4f4f] text-[1.3rem] md:text-[35px] font-medium md:flex md:items-center tracking-[0.06em] md:tracking-wide md:leading-tight  my-2 mt-[-30px] md:my-3">
               Get the Desired Flavour and Aroma PlanetsEra Spices
             </h2>
             <div className="planetsera_line"></div>

@@ -23,12 +23,12 @@ function FoodySection() {
   return (
     <div class="w-full max-w-full box-border mx-auto h-auto flex mt-10 md:mt-10">
       <div
-        className="basis-12/12 foodyBackground bussiness-Flex bg-no-repeat"
+        className="basis-12/12 foodyBackground bg-cover bussiness-Flex bg-no-repeat"
         style={{ backgroundImage: `url(${checkbg(colorMe)})` }}
         data-aos="slide-right"
         data-aos-duration="1000">
         <FoodySection1 />
-        <div class="col-1"></div>
+        <div class="col-1 "></div>
         <FoodySection2 />
       </div>
     </div>

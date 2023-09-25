@@ -697,12 +697,14 @@
   }
 
   .foodyBackground {
-    height: 1000px;
+    /* height: 1000px; */
+    padding-bottom: 30px;
     background-size: cover;
   }
 
   .pl-141 {
     padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .p-14 {

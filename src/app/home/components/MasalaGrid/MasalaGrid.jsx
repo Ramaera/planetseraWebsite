@@ -15,7 +15,7 @@ function MasalaGrid() {
             <h2
               style={{ color: colorMe }}
               id="explore"
-              className="text-[30px] md:text-[49px] md:font-medium text-center my-5 leading-[40px] md:leading-[80px] tracking-wider">
+              className="text-[1.7rem] px-3 sm:px-0 md:text-[49px] font-normal sm:font-medium text-center my-5 leading-[40px] md:leading-[80px] tracking-wider">
               Perfect spicy twist for every occasion
             </h2>
             <div className="spicy_line"></div>

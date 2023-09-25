@@ -48,19 +48,19 @@ const FoodySection2 = () => {
     }
   };
   return (
-    <div className="basis-6/12 self-center pr-5">
-      <div className="basis-12/12 pb-2.5 scale-95 hover:scale-100 transition-transform">
+    <div className="basis-6/12 self-center pr-5 2xl:flex 2xl:basis-7/12 2xl:h-full">
+      <div className="basis-12/12  pb-2.5 2xl:pb-0 scale-95 hover:scale-100 transition-transform">
         <img
           alt="spices taste"
           title="Spices that are
           true to their taste"
           loading="lazy"
           src={checkImg1(colorMe)}
-          class="mx-w-full height-auto"
+          class="mx-w-full h-auto 2xl:h-full"
         />
       </div>
       <div
-        className="basis-12/12 flex"
+        className="basis-12/12 2xl:basis-6/12 flex 2xl:flex-col"
         data-aos="fade-left"
         data-aos-duration="1000">
         <div className="basis-6/12 scale-95 hover:scale-100 transition-transform overflow-hidden">
@@ -70,7 +70,7 @@ const FoodySection2 = () => {
           true to their taste"
             loading="lazy"
             src={checkImg2(colorMe)}
-            class="mx-w-full height-auto"
+            class="mx-w-full height-auto h-full"
           />
         </div>
         <div className="basis-6/12 scale-95 hover:scale-100 transition-transform">
@@ -80,7 +80,7 @@ const FoodySection2 = () => {
           true to their taste"
             loading="lazy"
             src={checkImg3(colorMe)}
-            class="height-auto mx-w-full "
+            class="height-auto mx-w-full 2xl:h-full"
           />
         </div>
       </div>

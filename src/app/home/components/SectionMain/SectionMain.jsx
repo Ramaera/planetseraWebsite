@@ -14,7 +14,7 @@ function SectionMain() {
             className="flex items-center basis-10/12  flex-col ">
             <h2
               style={{ color: colorMe }}
-              className="text-[25px] font-medium md:text-[35px] mb-2 text-left md:text-center bg-clip-text tracking-wide px-5 md:px-0">
+              className="text-[1.3rem] font-medium md:text-[35px] mb-2 text-left md:text-center bg-clip-text tracking-[0.16em] md:tracking-wide px-5 md:px-0">
               Producing the treasures of the Indian cuisines
               <div
                 className="hidden md:block absolute h-[2px] w-[180px] ml-[3px] "

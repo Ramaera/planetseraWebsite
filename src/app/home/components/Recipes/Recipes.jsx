@@ -12,7 +12,7 @@ const Recipes = () => {
       <div className="flex justify-center relative">
         <h2
           style={{ color: colorMe }}
-          className="text-[32px] md:text-[49px] md:font-medium font-light text-center	leading-[40px] md:leading-[40px]"
+          className="text-[1.7rem] tracking-wider md:text-[49px] font-normal sm:font-medium  text-center	leading-[40px] md:leading-[40px]"
           data-aos="fade-up">
           Check out the yummiest recipes{" "}
         </h2>

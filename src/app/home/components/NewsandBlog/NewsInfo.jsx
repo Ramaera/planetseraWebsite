@@ -18,7 +18,7 @@ const NewsInfo = () => {
           <div data-aos="fade-right" data-aos-duration="1000">
             <h2
               style={{ color: colorMe }}
-              className="text-[32px]  md:text-[49px] font-light md:font-medium text-center leading-[40px] md:leading-[80px] tracking-widest relative">
+              className="text-[1.7rem]  md:text-[49px] font-normal sm:font-medium text-center leading-[40px] md:leading-[80px] tracking-widest relative">
               Latest News and Blog
             </h2>
             <div className="blog_line"></div>
