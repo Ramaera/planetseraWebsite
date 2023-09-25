@@ -3,6 +3,7 @@ import AboutHeader from "./components/AboutHeader/AboutHeader";
 import DiscoverSection from "./components/Discover/DiscoverSection";
 import DishSection from "./components/Dish/DishSection";
 import DigitalGallery from "./components/Digital/DigitalGallery";
+import ReasonsChoose from "./components/ReasonsChoose/ReasonsChoose";
 import PlanetseraSection from "./components/PlanetseraMasala/PlanetseraSection";
 import IngredientSection from "./components/Ingredients/IngredientSection";
 import AdvanceSection from "./components/AdvanceTechnology/AdvanceSection";
@@ -75,18 +76,20 @@ const About = () => {
       <meta name="twitter:image" content="banner image url" />
 
       <AboutHeader />
-      <DiscoverSection />
-      <DishSection />
-      <DigitalGallery />
-      <PlanetseraSection />
-      <IngredientSection />
-      <AdvanceSection />
-      <ProcessSection />
-      <WhyPlanetseraSection />
-      <AboutBannerSection />
       <StorySection />
       <QualitySection />
       <TechnologyPeopleSection />
+      {/* <DiscoverSection /> */}
+      {/* <DishSection /> */}
+
+      {/* <PlanetseraSection /> */}
+      <IngredientSection />
+      <AdvanceSection />
+      <ReasonsChoose />
+      {/* <DigitalGallery /> */}
+      <ProcessSection />
+      <WhyPlanetseraSection />
+      {/* <AboutBannerSection /> */}
       <CompanySection />
     </>
   );

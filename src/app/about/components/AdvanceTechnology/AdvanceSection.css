@@ -13,7 +13,7 @@
 }
 
 .advanceHeading {
-  font-size: 30px;
+  font-size: 28px;
   line-height: 42px;
   font-family: "Montserrat", sans-serif;
   background: -webkit-linear-gradient(#20932c, #a0fd90);
@@ -78,8 +78,8 @@
 
 @media screen and (max-width: 600px) {
   .advanceHeading {
-    font-size: 21px;
-    line-height: 37px;
+    font-size: 1.3rem;
+    line-height: 32px;
     font-family: "Montserrat", sans-serif;
     background: -webkit-linear-gradient(#20932c, #a0fd90);
     background-image: linear-gradient(to right, #20932c, #a0fd90);
@@ -111,7 +111,7 @@
     align-items: flex-start;
   }
   .advanceText {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 30px;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;

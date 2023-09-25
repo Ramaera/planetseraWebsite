@@ -8,19 +8,19 @@ const AdvanceSection1 = () => {
     <>
       <section class="relative px-6 md:px-16 mt-10" id="QualityControl">
         <div class="basis-12/12 lg:flex md:flex sm:block 2xl:px-16">
-          <div class="basis-5/12 photo">
+          <div class="photo w-full">
             <img
               alt="Technology behind spices"
               title="The Advanced Technology Behind PlanetsEra Spices"
-              class="max-w-full rounded-lg shadow-lg 2xl:h-[750px] 2xl:w-[full]"
+              class="max-w-full rounded-lg shadow-lg sm:h-[550px] 2xl:w-[full]"
               src="images/backgrounds/Develop-1.webp"
             />
           </div>
           <div className="basis-1/12"></div>
-          <div class="basis-6/12">
+          <div class="">
             {/* <div class="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300 mt-8"></div> */}
             <h3
-              className="advanceHeading mb-5"
+              className="advanceHeading mb-5 font-medium"
               style={{
                 backgroundImage: `linear-gradient(to right, ${colorMe}, ${
                   colorMe + "80"
@@ -46,17 +46,17 @@ const AdvanceSection1 = () => {
               in your spice collection. Shop our range of high-quality spices
               today.
             </p>
-            <ul className="list-none mt-6 advance-alignment">
+            <ul className="list-none ">
               <li class="py-2">
                 <div className="basis-12/12 proFlex">
-                  <div className="basis-2/12 proWd">
+                  <div className="w-[20%] sm:w-[10%] mt-4 sm:mt-0">
                     <img
                       src="images/backgrounds/advance-1.avif"
                       alt="Quality Spices"
                       title="Exceptional Quality Spices"
                     />
                   </div>
-                  <div className="basis-10/12 relative">
+                  <div className="w-full relative">
                     <h4
                       className="advanceHeading"
                       style={{
@@ -83,14 +83,14 @@ const AdvanceSection1 = () => {
               </li>
               <li className="py-2">
                 <div className="basis-12/12 proFlex">
-                  <div className="basis-2/12 proWd">
+                  <div className="w-[20%] sm:w-[10%] mt-4 sm:mt-0">
                     <img
                       src="images/backgrounds/advance-2.avif"
                       alt="Developed by Experts"
                       title="Expertly crafted premium spices for elevated culinary experiences"
                     />
                   </div>
-                  <div className="basis-10/12 relative">
+                  <div className="w-full relative">
                     <h4
                       className="advanceHeading"
                       style={{
@@ -117,14 +117,14 @@ const AdvanceSection1 = () => {
               </li>
               <li class="py-2">
                 <div class="basis-12/12 proFlex">
-                  <div className="basis-2/12 proWd scale-75">
+                  <div className="w-[20%] sm:w-[10%] mt-4 sm:mt-0scale-75">
                     <img
                       src="images/backgrounds/advance-3.avif"
                       alt="Pure and Balanced Organic"
                       title="Our organic spice blends are crafted with care and sustainability"
                     />
                   </div>
-                  <div className="basis-10/12 relative">
+                  <div className="w-full relative">
                     <h4
                       className="advanceHeading"
                       style={{
