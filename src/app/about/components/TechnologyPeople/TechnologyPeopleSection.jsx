@@ -6,7 +6,7 @@ const TechnologyPeopleSection = () => {
       <div>
         <div className="w-full max-w-full box-border m-auto h-auto flex mt-[9rem] sm:mt-4 px-6 md:px-16 2xl:px-60">
           <div className="basis-12/12 lg:flex md:flex sm:block">
-            <div className="basis-6/12 self-center h-auto sm:h-full">
+            <div className="basis-8/12 self-center h-auto sm:h-full">
               <p className="technology-text1">
                 At PlanetsEra Spices, we are dedicated to not only delivering
                 the best quality products at the most reasonable prices in the
@@ -29,17 +29,17 @@ const TechnologyPeopleSection = () => {
               <img
                 alt="masala"
                 src="images/backgrounds/founderAb2.webp"
-                className="absolute z-[-10] mt-[-10vh] max-w-[300px] sm:max-w-[250px] xl:max-w-full"
+                className="absolute z-[-10] mt-[-10vh] max-w-[300px] sm:max-w-[250px] 2xl:max-w-full"
               />
             </div>
-            <div className="basis-2/12"></div>
+            {/* <div className="basis-2/12"></div> */}
 
-            <div className="basis-4/12 ">
+            <div className="basis-4/12 sm:ml-4">
               <div className="basis-4/12  photo10">
                 <img
                   alt="masala"
                   src="images/backgrounds/technologyplanet-1.webp"
-                  className="absolute technologyPeople-img-1"
+                  className="absolute technologyPeople-img-1 sm:max-h-96 sm:ml-[100px]"
                 />
               </div>
               <div className="basis-4/12  photo10">
@@ -47,10 +47,10 @@ const TechnologyPeopleSection = () => {
                   alt="Mr.Devender Mishra"
                   title="Our Founder, Mr.Devender Mishra at the launch of Planetsera Spices"
                   src="images/backgrounds/technologyplanet-2.webp"
-                  className=" technologyPeople-img"
+                  className=" technologyPeople-img sm:max-h-96"
                 />
 
-                <h3 className="relative sm:ml-[-100px]  sm:mr-[100px] mt-16 sm:mt-[5px] text-center">
+                <h3 className="relative   sm:mr-[100px] mt-16 sm:mt-[5px] text-center">
                   Our Founder, Mr.Devender Mishra and members at the launch of
                   Planetsera Spices
                 </h3>
@@ -59,7 +59,7 @@ const TechnologyPeopleSection = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-full box-border m-auto h-auto flex tasAlign px-6 md:px-16">
+        <div className="w-full max-w-full box-border m-auto h-auto flex mt-1 sm:mt-20 xl:mt-6 2xl:mt-32 px-6 md:px-16 2xl:px-60 ">
           <div className="basis-12/12 flex ">
             <div className="basis-12/12 flex">
               <p className="execute-text">

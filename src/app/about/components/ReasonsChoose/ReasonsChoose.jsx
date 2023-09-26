@@ -58,14 +58,14 @@ const ReasonsChoose = () => {
                   <section class="carousel" aria-label="Gallery">
                     <li>
                       <div class="carousel__snapper">
-                        <div className="basis-12/12 flex flex-col sm:flex-row sm:mt-40">
-                          <div className="basis-6/12 flex items-center px-6 sm:px-10">
-                            <h3 className="text-xl sm:text-5xl">
+                        <div className="basis-12/12 flex flex-col sm:flex-row sm:mt-28">
+                          <div className="basis-5/12 flex items-center px-6 sm:px-10">
+                            <h3 className="text-2xl sm:text-5xl">
                               {slide.title}
                             </h3>
                           </div>
 
-                          <div className="md:basis-6/12  xl:basis-6/12 px-6 sm:px-0">
+                          <div className="md:basis-7/12  px-6 sm:px-0">
                             <h2
                               className="success-heading"
                               style={{
@@ -89,7 +89,7 @@ const ReasonsChoose = () => {
                                 className="w-2/3"
                               />
                             </div>
-                            <p className="success-text mt-4 md:mt-10 tracking-[2px]">
+                            <p className="success-text mt-4 md:mt-2 tracking-[2px]">
                               {slide.para}
                             </p>
                           </div>
@@ -105,7 +105,7 @@ const ReasonsChoose = () => {
         <img
           alt="masala"
           src="images/backgrounds/digitalAb.webp"
-          className="w-full md:mt-[-260px]"
+          className="w-full md:mt-[-300px]"
         />
       </div>
     </>

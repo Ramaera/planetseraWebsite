@@ -3,14 +3,14 @@ import "./QualitySection.css";
 const QualitySection = () => {
   return (
     <>
-      <div className="w-full max-w-full box-border m-auto h-auto flex mt-0 sm:mt-[4rem] px-6 md:px-16 2xl:px-60 mb-20">
+      <div className="w-full max-w-full box-border m-auto h-auto flex mt-0 sm:mt-2 px-6 md:px-16 2xl:px-60 mb-20">
         <div className="basis-12/12 lg:flex md:flex sm:block">
           <div className="basis-4/12 ">
             <div className="basis-4/12  photo10">
               <img
                 alt="bg"
                 src="images/backgrounds/quality-1.webp"
-                className="absolute quality-img-1"
+                className="absolute quality-img-1 sm:max-h-96	 "
               />
             </div>
             <div className="basis-4/12  photo10">
@@ -18,17 +18,17 @@ const QualitySection = () => {
                 alt="Mr. Devender Mishra"
                 title="Our Founder, Mr. Devender Mishra addressing the press"
                 src="images/backgrounds/quality-2.webp"
-                className="quality-img"
+                className="quality-img sm:max-h-96"
               />
-              <h3 className="relative sm:left-[100px] top-[5vh] sm:top-[2vh] text-center">
+              <h3 className="relative xl:w-10/12  top-[5vh] sm:top-[2vh] text-center">
                 Our Founder, Mr. Devender Mishra addressing the press at the
                 launch of PlanetsEra Spices
               </h3>
             </div>
           </div>
 
-          <div className="basis-2/12"></div>
-          <div className="basis-6/12  self-center h-full mt-16 sm:my-0">
+          {/* <div className="basis-2/12"></div> */}
+          <div className="basis-8/12  self-center h-full mt-16 sm:my-0 sm:ml-3 xl:ml-0">
             <p className="management-text1 ">
               Our journey has been inspired by our motive to make a mark in the
               most popular industrial sectors, providing employment to thousands

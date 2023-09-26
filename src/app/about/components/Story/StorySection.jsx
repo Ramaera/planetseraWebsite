@@ -7,10 +7,10 @@ const StorySection = () => {
 
   return (
     <>
-      <div className="w-full max-w-full box-border m-auto h-auto px-6 mt-10 md:mt-2">
+      <div className="w-full max-w-full box-border m-auto h-auto px-6 mt-2 sm:mt-10 md:mt-2">
         <div className="basis-12/12 relative  flex  flex-col items-center">
           <h2
-            className="story-heading mb-5"
+            className="story-heading mb-2 sm:mb-5"
             style={{
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
                 colorMe + "80"

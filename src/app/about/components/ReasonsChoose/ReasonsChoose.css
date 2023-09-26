@@ -11,9 +11,9 @@
   @media screen and (max-width: 600px) {
     .success-heading {
       padding-right: 0;
-      margin-top: 30px;
-      font-size: 35px;
-      line-height: 44px;
+      margin-top: 20px;
+      font-size: 25px;
+      line-height: 30px;
     }
   }
   
@@ -32,7 +32,7 @@
       padding-right: 0px;
       font-size: 18px;
       line-height: 32px;
-      margin-bottom: 30px;
+      margin-bottom: 2px;
     }
   }
   
@@ -313,7 +313,7 @@
   
   @media screen and (max-width: 600px) {
     .right-arrow {
-      margin-top: 80px;
+      margin-top: 50px;
     }
   }
   
@@ -334,10 +334,19 @@
   
   @media screen and (max-width: 600px) {
     .left-arrow {
-      margin-top: 80px;
+      margin-top: 50px;
     }
-    .choose-heading{
 
+    .right-arrow :hover{
+      color:unset;
+    }
+
+    .left-arrow :hover {
+      color:unset;
+    }
+
+    .carousel {
+      padding-top: 30%;
     }
   }
   
