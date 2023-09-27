@@ -274,9 +274,9 @@
   font-weight: 500;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1500px) {
   .ordinary-text {
-    font-size: 2rem;
+    font-size: 2.5rem;
     line-height: 50px;
   }
 }

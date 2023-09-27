@@ -16,11 +16,12 @@ const FallLove = () => {
         src="images/backgrounds/desireAb.png"
         style={{ margin: "20px 0" }}
         className="w-full"
+        id="know"
       />
 
       <div className="basis-4/12 flex flex-col justify-center m-auto">
         <h2
-          className="falllove-heading"
+          className="falllove-heading relative"
           style={{
             webkitTextFillColor: "transparent",
             backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -29,10 +30,8 @@ const FallLove = () => {
           }}>
           Get fit with flavor - PlanetsEra spices bring a healthy kick to your
           meals.
-        </h2>
-
-        <div className="fallLoveLine 2xl:hidden">
           <img
+            className="fallLoveLine 2xl:hidden"
             alt="masala"
             src={
               colorMe === "#ff4f4f"
@@ -42,19 +41,21 @@ const FallLove = () => {
                 : greenLine
             }
           />
-        </div>
+        </h2>
       </div>
       <div className="container fallloveBackground mt-20 px-6">
         <div className="basis-12/12 flex justify-between flex-col md:flex-row items-center p-4 sm:px-10 sm:py-6">
           <div>
             <div className="basis-4/12">
-              <img
-                alt="Blended spices"
-                title="Get fit with flavor - PlanetsEra spices bring a healthy kick to your meals"
-                loading="lazy"
-                src="images/backgrounds/falllove-1.webp"
-                className="myMenuImage"
-              />
+              <a href="#blendedSpices">
+                <img
+                  alt="Blended spices"
+                  title="PlanetsEra Blended Spices"
+                  loading="lazy"
+                  src="images/backgrounds/falllove-1.webp"
+                  className="myMenuImage"
+                />
+              </a>
             </div>
             <div className="basis-3/12">
               <a href="#blendedSpices">
@@ -77,13 +78,15 @@ const FallLove = () => {
 
           <div className="mt-8 sm:mt-0">
             <div className="basis-4/12 myMenuImage-2 ">
-              <img
-                alt="Ground spices"
-                title="Get fit with flavor - PlanetsEra spices bring a healthy kick to your meals"
-                loading="lazy"
-                src="images/backgrounds/falllove-2.webp"
-                className="myMenuImage"
-              />
+              <a href="#groundSpices">
+                <img
+                  alt="Ground spices"
+                  title="PlanetsEra Ground Spices"
+                  loading="lazy"
+                  src="images/backgrounds/falllove-2.webp"
+                  className="myMenuImage"
+                />
+              </a>
             </div>
             <div className="basis-3/12">
               <a href="#groundSpices">

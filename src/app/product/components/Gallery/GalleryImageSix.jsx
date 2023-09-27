@@ -7,7 +7,7 @@ const GalleryImageSix = () => {
         loading="lazy"
         alt="Coriander "
         title="Coriander"
-        className=""
+        className="2xl:w-[100vw]"
       />
       <div class="gallery-content">
         <h3 class="gallery-text tracking-[4px]">Coriander</h3>

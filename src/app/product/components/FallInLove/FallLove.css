@@ -68,7 +68,7 @@
 }
 
 .falllove-heading {
-  font-size: 45px;
+  font-size: 2.5rem;
   font-family: "Montserrat";
   text-align: center;
   -webkit-background-clip: text;
@@ -76,16 +76,17 @@
   width: 80%;
   margin: auto;
   font-weight: 400;
-  letter-spacing: 5px;
-  line-height: 60px;
+  letter-spacing: 4px;
+  line-height: 50px;
 }
 
 @media screen and (max-width: 600px) {
   .falllove-heading {
     width: 90%;
-    font-size: 1.5rem;
+    font-size: 20px;
     letter-spacing: 1px;
-    line-height: 40px;
+    line-height: 30px;
+    font-weight: 500;
   }
 }
 
@@ -142,10 +143,11 @@
 
 .fallLoveLine {
   width: 400px;
-  height: 5px;
+  height: 2px;
   position: absolute;
-  left: 245px;
-  margin-top: 135px;
+  top: 50%;
+  left: 3%;
+  /* margin-top: 135px; */
 }
 
 @media screen and (max-width: 600px) {

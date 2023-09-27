@@ -28,9 +28,10 @@
 }
 @media screen and (max-width: 600px) {
   .GalleryMenuHeading {
-    font-size: 1.8rem;
-    margin: 3rem 0 1rem 0;
+    font-size: 1.6rem;
+    margin: 3rem 0 0rem 0;
     transform: scale(95%);
+    line-height: 30px ;
   }
 }
 
@@ -68,6 +69,6 @@ button,
 @media screen and (max-width: 600px) {
   .galleryContainer {
     margin-top: 50px !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 10px !important;
   }
 }

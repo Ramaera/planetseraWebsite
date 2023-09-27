@@ -7,11 +7,13 @@ const GalleryImageTwo = () => {
         loading="lazy"
         alt="PlanetsEra spices for every dish"
         title="A blend of perfection PlanetsEra spices for every dish."
-        className=""
+        className="2xl:w-[100vw]"
       />
 
       <div class="absolute top-[0%] flex h-full items-center text-left w-full p-14">
-        <h3 class="gallery-heading tracking-[1px] md:tracking-[4px]   w-full "></h3>
+        <h3 class="gallery-heading tracking-[1px] md:tracking-[4px]   w-full ">
+          A blend of perfection
+        </h3>
       </div>
     </div>
   );

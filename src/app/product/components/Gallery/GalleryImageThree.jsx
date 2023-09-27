@@ -7,7 +7,7 @@ const GalleryImageThree = () => {
         loading="lazy"
         alt="Cardamom"
         title="Cardamom"
-        className=""
+        className="2xl:w-[100vw]"
       />
       <div class="gallery-content">
         <h3 class="gallery-text tracking-[4px]">Cardamom</h3>

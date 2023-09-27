@@ -32,7 +32,7 @@ const SuccessSection = () => {
 
   return (
     <>
-      <div className="mb-40 ">
+      <div className="sm:mt-32">
         <BsFillArrowLeftCircleFill
           className="left-arrow"
           style={{
@@ -58,35 +58,35 @@ const SuccessSection = () => {
                     alt="bg"
                     loading="lazy"
                     src={slide.image}
-                    className="absolute  left-0 pt-40 w-[340px] md:w-auto hidden md:block"
+                    className="absolute  left-0  w-[340px] md:w-auto hidden md:block"
                   />
 
                   <img
                     alt="bg"
                     loading="lazy"
                     src={slide.completeImg}
-                    className="absolute  left-0 pt-40 w-96 md:w-auto md:hidden"
+                    className="absolute  left-0 pt-20 sm:pt-40 w-96 md:w-auto md:hidden"
                   />
                   <section class="carousel" aria-label="Gallery">
                     <li>
                       <div class="carousel__snapper">
-                        <div className="basis-12/12 flex mt-40">
-                          <div className="basis-6/12">
-                            <div className="basis-12/12 flex">
-                              <div className="basis-6/12"></div>
-                              <div className="basis-6/12 success-alignment">
-                                <img
-                                  alt="Spices Flavour"
-                                  title="Spices with authentic Enhanced Flavour"
-                                  loading="lazy"
-                                  src={slide.imageCircle}
-                                  className="success-img hidden md:block"
-                                />
-                              </div>
+                        <div className="basis-12/12 flex">
+                          <div className="basis-5/12">
+                            {/* <div className="basis-12/12 flex"> */}
+                            {/* <div className="basis-6/12"></div> */}
+                            <div className="basis-12/12 success-alignment">
+                              <img
+                                alt="Spices Flavour"
+                                title="Spices with authentic Enhanced Flavour"
+                                loading="lazy"
+                                src={slide.imageCircle}
+                                className="success-img hidden md:block"
+                              />
                             </div>
+                            {/* </div> */}
                           </div>
-                          <div className="borderLine"></div>
-                          <div className="md:basis-5/12  xl:basis-6/12 mt-56 md:mt-0">
+                          {/* <div className="borderLine"></div> */}
+                          <div className="md:basis-7/12  xl:basis-7/12 sm:ml-44 xl:ml-20 mt-56 md:mt-0">
                             <h2
                               className="success-heading"
                               style={{
@@ -97,7 +97,7 @@ const SuccessSection = () => {
                               }}>
                               {slide.heading}
                             </h2>
-                            <div className="hidden md:block mx-2 md:mt-[-1vh] md:mx-2 2xl:hidden">
+                            {/* <div className="hidden md:block mx-2 md:mt-[-1vh] md:mx-2 sm:w-96 2xl:hidden">
                               <img
                                 alt="bg"
                                 src={
@@ -109,32 +109,34 @@ const SuccessSection = () => {
                                 }
                                 className="w-2/3"
                               />
-                            </div>
-                            <p className="success-text mt-4 md:mt-10 tracking-[2px]">
+                            </div> */}
+                            <p className="success-text mt-4 md:mt-2 tracking-[2px]">
                               {slide.para}
                             </p>
-                            <button
-                              style={{
-                                boxShadow: `2px 4px 7px -2px ${colorMe}`,
-                                background: `linear-gradient(72.44deg, ${colorMe} 0%, ${
-                                  colorMe + "95"
-                                } 100%)`,
-                                cursor: "pointer",
-                              }}
-                              className=" explore px-6  py-3 my-4 rounded-full transition-all hover:scale-105 text-white">
-                              Read more
-                            </button>
+                            <a href="#know">
+                              <button
+                                style={{
+                                  boxShadow: `2px 4px 7px -2px ${colorMe}`,
+                                  background: `linear-gradient(72.44deg, ${colorMe} 0%, ${
+                                    colorMe + "95"
+                                  } 100%)`,
+                                  cursor: "pointer",
+                                }}
+                                className=" explore px-6  py-3 my-4 rounded-full transition-all hover:scale-105 text-white">
+                                Know more
+                              </button>
+                            </a>
                           </div>
                         </div>
                       </div>
                     </li>
 
-                    <img
+                    {/* <img
                       alt="bg"
                       loading="lazy"
                       src={vegMixImg}
                       className="pizza-img 2xl:bottom-0"
-                    />
+                    /> */}
                   </section>
                 </div>
               )}

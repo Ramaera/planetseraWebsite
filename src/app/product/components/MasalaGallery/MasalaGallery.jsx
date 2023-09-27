@@ -14,7 +14,7 @@ const MasalaGallery = () => {
   return (
     <>
       {/*-------------- Mobile View -----------------------------*/}
-      <div className="md:hidden my-8 pl-2">
+      <div className="md:hidden my-2 pl-2">
         <Slider {...settings}>
           {MasalaGalleryData.map((items) => {
             return (

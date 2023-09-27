@@ -85,7 +85,7 @@
   }
 
   .delicious-heading {
-    font-size: 38px;
+    font-size: 30px;
     font-family: "Montserrat", sans-serif;
     background: -webkit-linear-gradient(#20932c, #a0fd90);
     background-image: linear-gradient(to right, #20932c, #a0fd90);
@@ -94,7 +94,7 @@
     background-clip: text;
     font-weight: 300;
     text-align: center;
-    line-height: 42px;
+    line-height: 35px;
   }
   .ingredient-heading {
     font-size: 18px; /* use tailwind */

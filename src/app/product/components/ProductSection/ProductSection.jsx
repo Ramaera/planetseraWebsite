@@ -12,7 +12,7 @@ const ProductSection = () => {
         />
       </div>
 
-      <div className="w-full max-w-full box-border m-auto h-auto bg-contain flex  mt-[-40%] md:mt-[-14rem] flex-wrap relative justify-center">
+      <div className="w-full max-w-full box-border m-auto h-auto bg-contain flex  mt-[-50%] md:mt-[-18rem] flex-wrap relative justify-center">
         <img
           src="/images/backgrounds/productSection.webp"
           alt="Spices with incredible taste"

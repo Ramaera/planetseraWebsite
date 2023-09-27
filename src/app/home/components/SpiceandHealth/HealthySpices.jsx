@@ -1,12 +1,3 @@
-// import masala1 from "../../assets/blackpepper.webp"
-// import masala2 from "../../assets/cardamom.webp"
-// import masala3 from "../../assets/cumin-1.webp"
-// import masala4 from "../../assets/Fenugreek.webp"
-// import masala5 from "../../assets/mustard-1.webp"
-// import masala6 from "../../assets/star.webp"
-// import masala7 from "../../assets/clove.webp"
-// import masala8 from "../../assets/cinamon.webp"
-// import masala9 from "../../assets/nut.webp"
 import { useSelector } from "react-redux";
 
 const HealthySpices = () => {
