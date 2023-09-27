@@ -12,7 +12,7 @@ function SolutionSection() {
     if (colorMe === "#ff4f4f") {
       return spice;
     }
-    if (colorMe === "#ffde39") {
+    if (colorMe === "#ffc400") {
       return spice2;
     }
     if (colorMe === "#2dc83c") {

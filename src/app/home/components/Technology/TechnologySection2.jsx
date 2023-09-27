@@ -12,7 +12,7 @@ const TechnologySection2 = () => {
     if (colorMe === "#ff4f4f") {
       return machines;
     }
-    if (colorMe === "#ffde39") {
+    if (colorMe === "#ffc400") {
       return machines2;
     }
     if (colorMe === "#2dc83c") {

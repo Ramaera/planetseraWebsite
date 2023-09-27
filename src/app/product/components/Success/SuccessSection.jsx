@@ -103,7 +103,7 @@ const SuccessSection = () => {
                                 src={
                                   colorMe === "#ff4f4f"
                                     ? redLine
-                                    : colorMe === "#ffde39"
+                                    : colorMe === "#ffc400"
                                     ? yellowLine
                                     : greenLine
                                 }

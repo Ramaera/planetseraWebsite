@@ -16,7 +16,7 @@ const AboutHeader = () => {
         className="relative bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url(${
-            colorMe === "#2dc83c" ? bg3 : colorMe === "#ffde39" ? bg2 : bg1
+            colorMe === "#2dc83c" ? bg3 : colorMe === "#ffc400" ? bg2 : bg1
           })`,
         }}>
         <NavItem page={"about"} />

@@ -31,7 +31,7 @@ const Index = ({
           disabled ? "disabled" : ""
         }`}
         style={{
-          boxShadow: `2px 4px 7px -2px ${colorMe}`,
+          boxShadow: `2px 4px 5px -2px ${colorMe}`,
           background:
             bg ||
             `linear-gradient(72.44deg, ${colorMe} 0%, ${colorMe + "85"} 100%)`,

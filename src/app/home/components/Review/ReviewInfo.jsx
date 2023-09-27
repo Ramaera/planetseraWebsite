@@ -11,7 +11,7 @@ const ReviewInfo = () => {
     if (colorMe === "#ff4f4f") {
       return Quotes;
     }
-    if (colorMe === "#ffde39") {
+    if (colorMe === "#ffc400") {
       return Quotes2;
     }
     if (colorMe === "#2dc83c") {

@@ -13,7 +13,7 @@ function TechnologySection() {
     if (colorMe === "#ff4f4f") {
       return manuabsolute;
     }
-    if (colorMe === "#ffde39") {
+    if (colorMe === "#ffc400") {
       return manuabsolute2;
     }
     if (colorMe === "#2dc83c") {

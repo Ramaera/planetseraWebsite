@@ -20,7 +20,7 @@ const ExperienceSection3 = () => {
     if (colorMe === "#ff4f4f") {
       return experienceRed;
     }
-    if (colorMe === "#ffde39") {
+    if (colorMe === "#ffc400") {
       return experienceYellow;
     }
     if (colorMe === "#2dc83c") {
@@ -31,7 +31,7 @@ const ExperienceSection3 = () => {
     if (colorMe === "#ff4f4f") {
       return experienceRed2;
     }
-    if (colorMe === "#ffde39") {
+    if (colorMe === "#ffc400") {
       return experienceYellow2;
     }
     if (colorMe === "#2dc83c") {
@@ -42,7 +42,7 @@ const ExperienceSection3 = () => {
     if (colorMe === "#ff4f4f") {
       return experienceRed3;
     }
-    if (colorMe === "#ffde39") {
+    if (colorMe === "#ffc400") {
       return experienceYellow3;
     }
     if (colorMe === "#2dc83c") {
@@ -53,7 +53,7 @@ const ExperienceSection3 = () => {
     if (colorMe === "#ff4f4f") {
       return experienceRed4;
     }
-    if (colorMe === "#ffde39") {
+    if (colorMe === "#ffc400") {
       return experienceYellow4;
     }
     if (colorMe === "#2dc83c") {

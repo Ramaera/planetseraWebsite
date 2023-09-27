@@ -33,7 +33,7 @@ function Header() {
     if (index === 1) {
       setBgcolor(background1);
       setSlider(sliderImage1);
-      dispatch(changeColor("#ffde39"));
+      dispatch(changeColor("#ffc400"));
       // #ffc400
     }
     if (index === 2) {

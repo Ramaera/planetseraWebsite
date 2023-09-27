@@ -64,7 +64,7 @@ const IngredientSection = () => {
                 src={
                   colorMe === "#ff4f4f"
                     ? redOne
-                    : colorMe === "#ffde39"
+                    : colorMe === "#ffc400"
                     ? yellowOne
                     : greenOne
                 }
@@ -95,7 +95,7 @@ const IngredientSection = () => {
                 src={
                   colorMe === "#ff4f4f"
                     ? redTwo
-                    : colorMe === "#ffde39"
+                    : colorMe === "#ffc400"
                     ? yellowTwo
                     : greenTwo
                 }
@@ -125,7 +125,7 @@ const IngredientSection = () => {
                 src={
                   colorMe === "#ff4f4f"
                     ? redThree
-                    : colorMe === "#ffde39"
+                    : colorMe === "#ffc400"
                     ? yellowThree
                     : greenThree
                 }
@@ -168,7 +168,7 @@ const IngredientSection = () => {
                 src={
                   colorMe === "#ff4f4f"
                     ? redFour
-                    : colorMe === "#ffde39"
+                    : colorMe === "#ffc400"
                     ? yellowFour
                     : greenFour
                 }
@@ -199,7 +199,7 @@ const IngredientSection = () => {
                 src={
                   colorMe === "#ff4f4f"
                     ? redFive
-                    : colorMe === "#ffde39"
+                    : colorMe === "#ffc400"
                     ? yellowFive
                     : greenFive
                 }
@@ -230,7 +230,7 @@ const IngredientSection = () => {
                 src={
                   colorMe === "#ff4f4f"
                     ? redSix
-                    : colorMe === "#ffde39"
+                    : colorMe === "#ffc400"
                     ? yellowSix
                     : greenSix
                 }

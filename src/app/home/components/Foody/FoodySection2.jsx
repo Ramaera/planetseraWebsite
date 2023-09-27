@@ -18,7 +18,7 @@ const FoodySection2 = () => {
     if (colorMe === "#ff4f4f") {
       return product7;
     }
-    if (colorMe === "#ffde39") {
+    if (colorMe === "#ffc400") {
       return product4;
     }
     if (colorMe === "#2dc83c") {
@@ -29,7 +29,7 @@ const FoodySection2 = () => {
     if (colorMe === "#ff4f4f") {
       return product8;
     }
-    if (colorMe === "#ffde39") {
+    if (colorMe === "#ffc400") {
       return product5;
     }
     if (colorMe === "#2dc83c") {
@@ -40,7 +40,7 @@ const FoodySection2 = () => {
     if (colorMe === "#ff4f4f") {
       return product9;
     }
-    if (colorMe === "#ffde39") {
+    if (colorMe === "#ffc400") {
       return product6;
     }
     if (colorMe === "#2dc83c") {

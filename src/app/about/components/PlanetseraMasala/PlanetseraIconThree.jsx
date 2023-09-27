@@ -14,7 +14,7 @@ const PlanetseraIconThree = () => {
             src={
               colorMe === "#ff4f4f"
                 ? planetseraIdeal
-                : colorMe === "#ffde39"
+                : colorMe === "#dbffc400b800"
                 ? planetseraIdeal2
                 : planetseraIdeal3
             }

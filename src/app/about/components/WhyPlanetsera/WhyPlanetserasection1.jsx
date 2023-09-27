@@ -46,7 +46,7 @@ const WhyPlanetserasection1 = () => {
               src={
                 colorMe === "#2dc83c"
                   ? LabCircleGreenTop
-                  : colorMe === "#ffde39"
+                  : colorMe === "#ffc400"
                   ? LabCircleYellowTop
                   : LabCircleRedTop
               }
@@ -65,7 +65,7 @@ const WhyPlanetserasection1 = () => {
               src={
                 colorMe === "#2dc83c"
                   ? LabCircleGreenBottom
-                  : colorMe === "#ffde39"
+                  : colorMe === "#ffc400"
                   ? LabCircleYellowBottom
                   : LabCircleRedBottom
               }

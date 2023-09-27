@@ -14,7 +14,7 @@ const PlanetseraIconOne = () => {
             src={
               colorMe === "#ff4f4f"
                 ? planetseraIdeal
-                : colorMe === "#ffde39"
+                : colorMe === "#ffc400"
                 ? planetseraIdeal2
                 : planetseraIdeal3
             }
