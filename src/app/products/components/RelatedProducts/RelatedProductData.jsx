@@ -25,7 +25,7 @@ const RelatedPtoductData = [
     //   "PlanetsEra Red Chilli Powder: Give your dishes a fiery kick with our finely ground Red Chilli Powder, perfect for adding that extra spice to your favorite recipes.",
     ProductIngredients: "Red Chilli",
     ProductHealth:
-      "Red chilli powder - may help reduce the risk of heart disease by improving blood circulation and reducing the buildup of cholesterol in the arteries.",
+      "Red chilli powder, which is also called chilli powder or lal mirch powder, has more to give than just a spicy taste. It helps you lose weight because it has capsaicin, speeds up your metabolism, and lowers inflammation. This spice has a lot of vitamins and antioxidants, which are good for the heart and make the defence system stronger. Its spicy kick can even ease pain and make you feel better. Red chilli powder is good for your health and a tasty addition to your diet.",
     colored: "#C59F9F",
     colored2: "#C59F9F",
     inactiveBtn: "#F1E4E4",
@@ -65,7 +65,7 @@ const RelatedPtoductData = [
     ProductIngredients:
       "Coriander, Cumin, Red Chili, Turmeric, Black Pepper, Cardamom Amomum, Dry Ginger, Bay Leaf, Salt, Clove, Nutmeg, Asafoetida, Dry Mango, Curry Leaves, Black Mustard, Green Cardamom, Black Salt",
     ProductHealth:
-      "Sabji Masala - may provide a range of nutrients, including fiber, vitamins, and minerals, which can support overall health and reduce the risk of chronic diseases.",
+      "Sabzi masala powder has many health benefits. Add this aromatic spice blend to vegetable recipes for flavour and nutrition. Sabzi masala helps digestion, metabolism, and delivers vitamins and minerals with its blend of healthy spices. Naturally healthy ingredients make it a tasty and nutritious addition to your cooking. Sabji masala is tasty and healthy.",
     colored: "#7F9F5E",
     colored2: "#ADD4B0",
     inactiveBtn: "rgb(127 159 94 / 38%)",
@@ -103,7 +103,7 @@ const RelatedPtoductData = [
     ProductIngredients:
       "Black Salt, Salt, Coriander, Dry Mango, Cumin, Rock Salt, Fennel Seed, Pomegranate Seed, Tamarind, Mint, Carom Seed, Black Pepper, Dry Ginger, Red Chili, Nutmeg, Clove, Asafoetida, Citric Acid",
     ProductHealth:
-      "Chat masala - may help reduce the risk of kidney stones, improve digestion, and reduce bloating and flatulence.",
+      "Chaat masala powder isn't just a flavorful spice blend; it also offers health benefits. Packed with a mix of spices like cumin, coriander, and asafoetida, it aids digestion and can alleviate indigestion and bloating. The best chaat masala can also provide a dash of antioxidants, helping to boost your overall well-being. Enjoy its tangy goodness while reaping these health perks.",
     colored: "#CDE1A2",
     colored2: "#CDE1A2",
     inactiveBtn: "rgb(205 225 162 / 38%)",
@@ -142,7 +142,7 @@ const RelatedPtoductData = [
     //   "PlanetsEra Haldi Powder: Add vibrant color and authentic flavor to your Indian dishes with our aromatic Haldi Powder, made from carefully selected turmeric roots.",
     ProductIngredients: "Turmeric",
     ProductHealth:
-      "Haldi (turmeric) powder - may improve skin health by reducing acne and eczema, and may have anticancer properties.",
+      "Organic turmeric powder, which is also called haldi powder, is a powerful superfood that has many health benefits. It has anti-inflammatory and antioxidant qualities because it is full of curcumin. When you consume haldi powder regularly, it helps your body digest food, boosts your immune system, and keeps your face healthy. Take advantage of the natural benefits of organic turmeric powder to improve your health overall.",
     colored: "#D0C7A2",
     colored2: "#E2C199",
     inactiveBtn: "rgb(208 199 162 / 38%)",
@@ -181,7 +181,7 @@ const RelatedPtoductData = [
     ProductIngredients:
       "Coriander, Cumin, Cinnamon, Mace, Clove, Green Cardamom, Nutmeg, Rai, Fennel, Seed, Kashmiri Red Chili, Turmeric, Garlic, Ginger, Black salt, Asafoetida, Bay Leaf, Black Pepper, Red Chili, Mustard, Fenugreek Leaves, Cardamom Amomum",
     ProductHealth:
-      "Meat masala - may help improve blood sugar control, reduce the risk of heart disease, and improve brain function.",
+      "Identify the best meat masala to enhance your dishes. Not only do our best-selling meat seasonings, commonly known as (meat ka masala bring a burst of flavour, but they also provide health benefits. This blend of aromatic spices not only enhances the taste of your food, but it can also facilitate digestion and provide essential nutrients. Enhance your meat dishes with our finest meat masala and savour every delicious morsel.",
     colored: "#D48259",
     colored2: "#D48259",
     inactiveBtn: "rgb(212 130 89 / 38%)",
@@ -218,7 +218,7 @@ const RelatedPtoductData = [
     //   "PlanetsEra Zeera Powder: Add a warm and earthy flavor to your cooking with our roasted and ground Zeera Powder, made from the finest cumin seeds for that authentic taste.",
     ProductIngredients: "Cumin Seed",
     ProductHealth:
-      "Zeera (cumin) powder - may have antibacterial properties, improve memory and concentration, and reduce stress and anxiety.",
+      "Cumin powder, also known as jeera powder, has numerous positive health effects. Cumin powder, which is abundant in antioxidants and essential nutrients, aids digestion, promotes weight loss, and may help control blood sugar. Additionally, it is anti-inflammatory and promotes respiratory health. Include this adaptable spice in your diet to benefit from its flavorful and health-enhancing qualities.",
     colored: "#8E5B24",
     colored2: "#8E5B24",
     inactiveBtn: "rgb(142 91 36 / 38%)",
@@ -258,7 +258,7 @@ const RelatedPtoductData = [
     ProductIngredients:
       "Coriander, Cumin, Black-Pepper, Cinnamon Stick, Clove, Cardamom Amomum, Star Anise, Bay Leaf, Dry Ginger, Nutmeg, Mace, Green Cardamom",
     ProductHealth:
-      "Garam masala - may help reduce the risk of colon cancer, improve insulin sensitivity, and reduce inflammation in the body.",
+      "Whole garam masala has health benefits in addition to its flavour. It aids digestion, boosts the calorie burn, and aides in weight management due to its aromatic spices. Antioxidant-rich, it promotes general health and may reduce inflammation. Incorporate Planetsera's high-quality garam masala compound into your culinary endeavours for a tasty way to improve your health.",
     colored: "#D1C2AC",
     colored2: "#E5C6BB",
     inactiveBtn: "rgb(209 194 172 / 38%)",
@@ -297,7 +297,7 @@ const RelatedPtoductData = [
     //   "PlanetsEra Dhaniya Powder: Our freshly ground Dhaniya Powder adds a fragrant and distinct flavor to your curries, rice dishes, and more.",
     ProductIngredients: "Coriander Seed",
     ProductHealth:
-      "Dhaniya (coriander) powder - may help reduce the risk of food poisoning, improve sleep quality, and reduce menstrual cramps.",
+      "The health benefits of coriander powder, also known as dhaniya Powder, are numerous. It helps digestion, lowers damage, and controls blood sugar levels. It supports heart health and the immune system due to its abundance of antioxidants. In addition to aiding in detoxification, coriander powder can mitigate IBS symptoms. Include this flavorful spice in your diet for a delicious method to improve your health.",
     colored: "#ABC59F",
     colored2: "#ABC59F",
     inactiveBtn: "rgb(171 197 159 / 38%)",
@@ -335,7 +335,7 @@ const RelatedPtoductData = [
     ProductIngredients: "Dry Mango",
 
     ProductHealth:
-      "Amchur (mango) powder - may help reduce the risk of anemia, improve vision, and boost the immune system.",
+      "Amchur powder, also known as dry mango powder or amchur masala, offers more than just a tangy flavor to your dishes. Packed with vitamins, antioxidants, and digestive properties, amchur powder aids in digestion, boosts immunity, and enhances skin health. Its high vitamin C content supports overall well-being and adds a zesty twist to your culinary creations. Embrace the goodness of amchur powder for a flavorful and health-conscious culinary experience.",
     colored: "#DCBF92",
     colored2: "#DCBF92",
     inactiveBtn: "rgb(253 235 208)",
@@ -364,7 +364,8 @@ const RelatedPtoductData = [
     ProductDescription:
       "Most often used as a dry spice, black pepper, also known as kali mirch powder, refers to the spice's dark colouring and hot flavour. It appears to be small and rounded black chillies. Black pepper powder is used to make the recipe hotter, just like chilli. Restaurants and hotels also leave it on the table by itself with salt. It's one of the most popular Indian spices. With its exceptional heat, PlanetsEra Black Pepper Powder adds a kick to soups and other meals. As a remedy, it eases inflammation and colds.",
     ProductIngredients: "Black Pepper",
-    ProductHealth: "",
+    ProductHealth:
+      "Black pepper powder, also known as kali mirch powder or kali mirch, is more than just a seasoning. This humble spice boasts numerous health benefits. Rich in antioxidants and anti-inflammatory properties, black pepper powder aids digestion, promotes weight loss, and enhances nutrient absorption. Its natural warmth helps relieve congestion and supports respiratory health. Incorporate black pepper powder into your diet for a flavorful way to boost your overall well-being.",
     colored: "#594E4E",
     colored2: "#594E4E",
     inactiveBtn: "rgb(197 197 197)",

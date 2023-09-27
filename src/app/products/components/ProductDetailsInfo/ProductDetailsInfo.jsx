@@ -387,7 +387,7 @@ const ProductDetailsInfo = () => {
                       : specificProduct?.colored2,
                 }}
                 className={` text-4xl font-light font-Montserrat`}>
-                Ingredients:-
+                Ingredients
               </h3>
               <div
                 style={{
@@ -430,7 +430,7 @@ const ProductDetailsInfo = () => {
           </div>
         </div> */}
         {specificProduct?.ProductHealth ? (
-          <div className="md:my-10 my-5 font-Montserrat  md:flex md:flex-row">
+          <div className="md:my-10 my-5 font-Montserrat  md:flex md:flex-col">
             <div>
               <h3
                 style={{
@@ -440,7 +440,7 @@ const ProductDetailsInfo = () => {
                       : specificProduct?.colored2,
                 }}
                 className={` text-3xl font-light font-Montserrat`}>
-                Health benefits of :
+                Health benefits
               </h3>
               <div
                 style={{
@@ -451,8 +451,7 @@ const ProductDetailsInfo = () => {
                 }}
                 className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-1`}></div>
             </div>
-
-            <p className="leading-[2.2rem] text-slate-600 text-lg font-Montserrat sm:ml-2 md:w-[72%] xl:w-[78%]">
+            <p className="leading-[2.2rem] text-slate-600 text-lg font-Montserrat sm:ml-2 md:w-[72%] xl:w-[100%]">
               {specificProduct.ProductHealth}
             </p>
           </div>
