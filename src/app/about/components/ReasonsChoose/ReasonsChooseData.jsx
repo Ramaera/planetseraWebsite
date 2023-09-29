@@ -11,7 +11,7 @@ const ReasonsChooseData = [
   },
   {
     title: "The Reasons to Choose PlanetsEra Spices",
-    heading: "Manufacturing Processes",
+    heading: "Techniques and Processes.",
     para: "We are committed to continuous improvement. We constantly innovate, research, and gather feedback to enhance our manufacturing techniques and processes. This helps us improve the quality and competitiveness of our spices, while adapting to changing market trends and customer needs. Our dedication to continuous improvement ensures that we provide our customers with the best possible products and service.",
   },
 ];

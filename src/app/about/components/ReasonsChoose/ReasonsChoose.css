@@ -60,12 +60,25 @@
     padding: 0;
   }
   
+
   .carousel {
     position: relative;
-    padding-top: 50%;
+    padding-top: 28%;
     /* filter: drop-shadow(0 0 10px #0003); */
     perspective: 100px;
   }
+
+  @media screen and (max-width: 1500px) {
+  .carousel {
+    padding-top: 40%;
+   }
+ }
+
+ @media screen and (max-width: 1200px) {
+  .carousel {
+    padding-top: 50%;
+   }
+ }
   
   .carousel__viewport {
     position: absolute;
@@ -335,6 +348,7 @@
   @media screen and (max-width: 600px) {
     .left-arrow {
       margin-top: 50px;
+      right: 100px;
     }
 
     .right-arrow :hover{
@@ -346,7 +360,7 @@
     }
 
     .carousel {
-      padding-top: 30%;
+      padding-top: 25%;
     }
   }
   

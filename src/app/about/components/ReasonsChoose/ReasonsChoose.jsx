@@ -59,10 +59,15 @@ const ReasonsChoose = () => {
                     <li>
                       <div class="carousel__snapper">
                         <div className="basis-12/12 flex flex-col sm:flex-row sm:mt-28">
-                          <div className="basis-5/12 flex items-center px-6 sm:px-10">
-                            <h3 className="text-2xl sm:text-5xl">
+                          <div className="basis-5/12 flex mt-4 px-6 sm:px-10  flex-col">
+                            <h3 className="text-[1.8rem] sm:text-3xl xl:text-4xl 2xl:text-5xl">
                               {slide.title}
                             </h3>
+                            <img
+                              alt="masala"
+                              src="images/backgrounds/reasonsSpices.webp"
+                              className="w-fit "
+                            />
                           </div>
 
                           <div className="md:basis-7/12  px-6 sm:px-0">
@@ -102,11 +107,11 @@ const ReasonsChoose = () => {
             </div>
           );
         })}
-        <img
+        {/* <img
           alt="masala"
           src="images/backgrounds/digitalAb.webp"
           className="w-full md:mt-[-300px]"
-        />
+        /> */}
       </div>
     </>
   );
