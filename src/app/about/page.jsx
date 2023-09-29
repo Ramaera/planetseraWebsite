@@ -14,6 +14,7 @@ import StorySection from "./components/Story/StorySection";
 import QualitySection from "./components/QualityManagement/QualitySection";
 import TechnologyPeopleSection from "./components/TechnologyPeople/TechnologyPeopleSection";
 import CompanySection from "./components/CompanyGallery/CompanySection";
+import Gallery from "./components/Gallery/Gallery";
 import Footer from "@/components/Footer/Footer";
 import Head from "next/head";
 import { useEffect } from "react";
@@ -90,7 +91,8 @@ const About = () => {
       <ProcessSection />
       <WhyPlanetseraSection />
       {/* <AboutBannerSection /> */}
-      <CompanySection />
+      {/* <CompanySection /> */}
+      <Gallery />
     </>
   );
 };
