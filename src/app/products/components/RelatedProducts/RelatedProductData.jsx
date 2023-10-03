@@ -38,6 +38,37 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-red-chilli-powder/p/itm301769743d0e6?pid=SCMGQ9KNZZZFGDHV",
     flipkart500:
       "https://www.flipkart.com/planetsera-red-chilli-powder/p/itm301769743d0e6?pid=SCMGQNF5PEHPS94Z",
+    faqs: [
+      {
+        question:
+          "1. What is Red Chilli Powder (Lal Mirch Powder), and how is it made?",
+        answer:
+          "Red Chilli Powder is a popular spice made from dried red chilli peppers. To make it, these peppers are ground up into a fine powder. Lal Mirch Powder is a staple in Indian cooking because it gives many foods a bright red colour and a spicy kick. It's prized for how hot and tasty it is.",
+      },
+      {
+        question:
+          "2. How do I store Red Chilli Powder to maintain its freshness?",
+        answer:
+          "To keep your red chilli powder (lal mirch powder) fresh, put it in a container that doesn't let air in and keep it away from heat and wetness. After each use, close the lid tightly to keep the flavour and colour. If you store your red chilli powder well, it will stay fresh and powerful for a long time.",
+      },
+      {
+        question:
+          "3. Can I adjust the spiciness of my dishes with Red Chilli Powder?",
+        answer:
+          "Yes, you can adjust the spiciness of your dishes by controlling the amount of Red Chilli Powder you use. Start with a small amount and gradually increase it to achieve the desired level of heat. Keep in mind that different brands and varieties of Red Chilli Powder may have varying levels of spiciness, so it's a good idea to taste-test as you go",
+      },
+      {
+        question:
+          "4. Are there any health benefits associated with Red Chilli Powder?",
+        answer:
+          "Red Chilli Powder (lal mirch powder) may be good for your health. It has capsaicin in it, which may help your metabolism and control your hunger. It might also be able to stop irritation from happening. But it's important to keep from overdoing it, since too much can make your stomach hurt. Use red chilli powder in your cooking carefully at all times.",
+      },
+      {
+        question: "5. What are some popular dishes that use Red Chilli Powder?",
+        answer:
+          "Red Chilli Powder is a key ingredient in many Indian dishes, including curries, masalas, and spice blends. Some popular dishes that prominently feature Lal mirch Powder include Chicken Tikka Masala, Rogan Josh, and Tandoori Chicken. It's also used in marinades, sauces, and even snacks like spicy roasted nuts.",
+      },
+    ],
   },
 
   {
@@ -77,6 +108,34 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-sabji-masala/p/itma9772eaa0b140?pid=SCMGQCXBCQZWJG5M",
     flipkart500:
       "https://www.flipkart.com/planetsera-sabji-masala/p/itma9772eaa0b140?pid=SCMGQEXY83ZPYPZN",
+    faqs: [
+      {
+        question: "1. What is Sabzi Masala Powder?",
+        answer:
+          "Sabzi Masala Powder is a blend of spices that gives vegetarian recipes more flavour. It blends cumin, coriander, turmeric, and other spices in just the right amounts to give vegetable-based dishes more flavour and depth. This fragrant powder makes curries, stir-fries, and other vegetable recipes taste even better and give them more flavour.",
+      },
+      {
+        question:
+          "2. What spices are typically included in Sabzi Masala Powder?",
+        answer:
+          "Sabzi Masala Powder is a mix of spices that gives Indian food an extra boost of flavour. It usually has a mix of spices with a strong smell, such as cumin, coriander, mustard, red chilli, fenugreek, and others. This blend gives vegetable recipes a rich, savory taste and a bright colour. It is a must-have seasoning for vegetarian cooking.",
+      },
+      {
+        question: "3. How is Sabzi Masala used in cooking?",
+        answer:
+          "Sabzi masala powder is a mix of spices that is used in many Indian dishes. It makes veggie dishes, curries, and stir-fries taste better. You can sprinkle or mix this spice blend into your sabzis (vegetables) while they are cooking to give them a burst of rich, savoury flavour. Sabzi masala powder makes your meatless dishes taste and smell better overall.",
+      },
+      {
+        question: "4. Is Sabzi Masala the same as Garam Masala?",
+        answer:
+          "Garam Masala is not the same as Sabzi Masala powder. Sabzi Masala is a specific blend of spices made for vegetable-based meals. Garam Masala, on the other hand, is a versatile blend of spices that can be used in both vegetarian and non-vegetarian dishes. Each one has its own flavour and uses in the kitchen.",
+      },
+      {
+        question: "5. Are there any health benefits to using Sabzi Masala?",
+        answer:
+          "Sabzi Masala Powder makes vegetable recipes taste better. Even though it is mostly used to add flavour, the spices in it may have some health benefits. Some of the spices in Sabzi Masala, like ginger and coriander, can help with growth and digestion. But the overall health benefits rely on how much and what kind of food is used.",
+      },
+    ],
   },
 
   {
@@ -116,6 +175,33 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-chat-masala/p/itmfe8b6cf21eb08?pid=SCMGQMY9HA4NG7P2",
     flipkart100:
       "https://www.flipkart.com/planetsera-chat-masala/p/itmfe8b6cf21eb08?pid=SCMGQMY9QN6TVHPF",
+    faqs: [
+      {
+        question: "1. What is Chaat Masala Powder?",
+        answer:
+          "Chaat Masala Powder is a mix of spices that gives Indian food a lot of colour and flavour. This spicy seasoning is made from cumin, coriander, and black salt, which give it a tangy and salty flavour. It gives street foods, salads, and snacks a nice burst of flavour, which makes it a staple in Indian cooking.",
+      },
+      {
+        question: "2. What are the main ingredients in Chaat Masala Powder?",
+        answer:
+          "Chaat Masala Powder is a mix of spices that is often used in Indian street food. It gives the food a spicy, flavorful kick. Its main ingredients are hot red chilli powder, aromatic cumin, tangy dried mango powder (amchur), black salt, and a mix of other spices. This flexible seasoning gives snacks, salads, and chaat dishes a burst of savory and tangy flavour.",
+      },
+      {
+        question: "3. How is Chaat Masala Powder used?",
+        answer:
+          "Chaat masala powder is a mix of spices that can be used to make many different meals taste better. It adds a tangy and spicy kick to snacks like samosas and fruit soups. It's also an essential part of popular Indian street foods like chaat and pani puri, giving them a burst of flavour. Explore the tasty world of chaat masala powder as you try new things in the kitchen.",
+      },
+      {
+        question: "4. Is Chaat Masala Powder spicy?",
+        answer:
+          "Chaat Masala Powder is a mix of spices that is spicy and sour. It is used to make foods taste better. Even though it has a nice kick of spice, it's not too hot. Instead, it has a nice mix of mild heat and bright flavours that make it a great spice for a wide range of snacks, salads, and street foods.",
+      },
+      {
+        question: "5. What are the health benefits of Chaat Masala Powder? ",
+        answer:
+          "Chaat masala powder is a delicious mix of spices that not only makes food taste better but is also good for your health. Its mix of cumin, coriander, and black salt helps with digestion, and the tangy taste of amchoor (dried mango) gives you more vitamin C. Chaat masala powder can give your dishes more flavour and a bit of health.",
+      },
+    ],
   },
   {
     id: "turmeric-powder",
@@ -155,6 +241,33 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-turmeric-powder/p/itm0c52e9d424d91?pid=SCMGQCZ8XZPM9HDJ",
     flipkart500:
       "https://www.flipkart.com/planetsera-turmeric-powder/p/itm0c52e9d424d91?pid=SCMGQ39T5DFSWMHF",
+    faqs: [
+      {
+        question: "1. What is turmeric powder (haldi powder)?",
+        answer:
+          "Turmeric powder, which is also called (haldi powder), is a spice made from the dried root of the turmeric plant. It is used a lot in cooking because it gives foods a warm, earthy flavour and a bright colour. Turmeric powder is loved for its health benefits, such as its anti-inflammatory and antioxidants, as well as its uses in cooking.",
+      },
+      {
+        question: "2. What gives turmeric powder its yellow color?",
+        answer:
+          "The bright yellow colour of turmeric powder comes from a natural pigment called curcumin. Curcumin, that gives turmeric its colour, is found in large amounts in the rhizomes. This substance is not only what gives turmeric its special colour, but it also helps turmeric's health benefits.",
+      },
+      {
+        question: "3. How is turmeric powder used in cooking?",
+        answer:
+          "Haldi powder, which is also called Turmeric powder, is a spice that can be used in many ways when cooking. It gives many foods a bright yellow colour and an earthy taste. It is a key ingredient in marinades and is often used in stews, soups, and rice. Turmeric is used in many dishes around the world because it has a mild bitter taste and a sweet smell.",
+      },
+      {
+        question: "4. What are the health benefits of turmeric powder?",
+        answer:
+          "Haldi powder is good for your health in many ways. Its active ingredient, curcumin, is a powerful anti-inflammatory and antioxidant that can help relieve pain, improve heart health, and possibly lower the risk of developing chronic illnesses. Turmeric powder is a good addition to a healthy diet because it helps keep the digestive system healthy and may help the defence system work better.",
+      },
+      {
+        question: "5. How can turmeric powder be used for skincare?",
+        answer:
+          "Turmeric powder, can be used in many different ways for skin care. It is great for skin care routines because it has natural anti-inflammatory in nature and antioxidant qualities. Mix haldi powder with yoghurt or honey to make a face mask that helps brighten skin, reduce acne, and fight signs of ageing. Using it regularly can make your skin look better and brighter.",
+      },
+    ],
   },
   {
     id: "meat-masala",
@@ -194,6 +307,33 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-meat-masala/p/itmaddb650cbfb76?pid=SCMGQ9H23UGGZSPS",
     flipkart500:
       "https://www.flipkart.com/planetsera-meat-masala/p/itmaddb650cbfb76?pid=SCMGQKPS3YAQGKZH",
+    faqs: [
+      {
+        question: "1. What is Meat Masala Powder",
+        answer:
+          "Meat Masala Powder, also called non-veg masala, is a blend of spices made especially for recipes with meat. It is a mix of many fragrant spices and herbs that bring out the flavour of meats like chicken, lamb, beef, and more. This seasoning gives non-vegetarian food more depth and richness, so it's a must-have in kitchens where meat meals are cooked to have a unique taste and smell.",
+      },
+      {
+        question: "2. How is Meat Masala Powder different from regular spices?",
+        answer:
+          "Meat Masala Powder is not like other spices because it is made especially for recipes with meat. It's a unique mix of spices made to make meat-based dishes taste better. It has coriander, cumin, and other ingredients that give it the savoury, spicy taste of non-veg masala. This makes it different from other spice mixes.",
+      },
+      {
+        question: "3. Can I use Meat Masala Powder for all types of meat?",
+        answer:
+          "Yes, Meat Masala Powder can be used with all kinds of meat, like chicken, lamb, beef, pork, and fish. It has been carefully developed to improve the taste of many meat-based recipes, making it a great seasoning for a wide range of meat-based dishes.",
+      },
+      {
+        question: "4. What are the key ingredients in Meat Masala Powder? ",
+        answer:
+          "Often called (non-veg masala), meat masala powder is usually a mix of spices like coriander, cumin, cloves, cinnamon, and more. All of these components are carefully put together to make a tasty seasoning that is meant to make meat meals taste better.",
+      },
+      {
+        question: "5. How do I use Meat Masala Powder?",
+        answer:
+          "To use Non-Veg Masala Powder well, sprinkle or mix it into your meat recipes while they are cooking, or use it to marinate meat before you grill or roast it. This spice mix takes the taste and smoothness of your non-vegetarian dishes to a higher level. Non-Veg Masala Powder makes it easy to season meat so it tastes great.",
+      },
+    ],
   },
   {
     id: "cumin-powder",
@@ -230,6 +370,34 @@ const RelatedPtoductData = [
 
     flipkart500:
       "https://www.flipkart.com/planetsera-cumin-powder/p/itmac8a4eb79d181?pid=SCMGQEF68DGSE4DW",
+    faqs: [
+      {
+        question: "1. What is Cumin Powder, and how is it made?",
+        answer:
+          "Cumin powder is a spice made from cumin seeds that have been ground up. It gives food a warm, rich flavour and is a mainstay in many cuisines around the world. Cumin seeds are roasted, ground, and sifted to make jeera powder, a fine, fragrant spice. It is often used in Indian, Middle Eastern, and Mexican cooking because it has a strong flavour.",
+      },
+      {
+        question: "2. What dishes can I use Cumin Powder in?",
+        answer:
+          "Cumin powder is a flexible spice that adds flavour to many different kinds of food. It is a popular ingredient in Indian, Mexican, and Middle Eastern food. You can add jeera powder to curries, stews, rice recipes, marinades, and even homemade spice mixes for an earthy, warm flavour and a touch of aromatic depth.",
+      },
+      {
+        question:
+          "3. Are there any health benefits associated with Cumin Powder? ",
+        answer:
+          "There may be several health benefits to cumin powder. It is known to help with digestion, reduce inflammation, and make it easier to control blood sugar. It may also make you healthier and help you lose weight. Adding jeera powder to your diet can be a tasty way to take advantage of these possible health benefits.",
+      },
+      {
+        question: "4. Can I substitute ground cumin for Cumin Powder?",
+        answer:
+          "Yes, ground cumin can be used instead of cumin powder. Whole cumin seeds are ground up to make ground cumin, which is also called jeera powder. It tastes the same as jeera Powder—earthy and warm. To keep the same taste and smell when using ground cumin in recipes that call for cumin powder, just use the same amount.",
+      },
+      {
+        question: "5. What is the shelf life of Cumin Powder?",
+        answer:
+          "Cumin powder can usually be kept for one to two years if it is kept in a cool, dry place and in a container that keeps air out. To keep its taste and strength, you should keep it away from moisture and direct sunlight. If you keep jeera powder in the right way, its unique earthy and nutty flavour will last for a long time.",
+      },
+    ],
   },
   {
     id: "garam-masala",
@@ -272,6 +440,33 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-premium-quality-garam-masala/p/itm678c2e5f0d1a2?pid=SCMGQ387HKH64BVD",
     flipkart500:
       "https://www.flipkart.com/planetsera-garam-masala/p/itm9af1cb20a0cd3?pid=SCMGQJHCP3X6ZWAF",
+    faqs: [
+      {
+        question: "1. What is Garam Masala?",
+        answer:
+          "Garam Masala is a well-known mix of spices that comes from India. It has cinnamon, cloves, cardamom, and cumin, which are all fragrant spices. This versatile spice gives recipes warmth, depth, and just a touch of heat. Garam Masala is used to make soups, stews, and grilled meats taste better. It gives Indian food a unique and delicious flavour.",
+      },
+      {
+        question: "2. How is Garam Masala Used in Cooking?",
+        answer:
+          "Garam masala powder is a mix of spices that can be used in a lot of different ways. It adds colour and depth to food. It is added to recipes like curries, stews, and rice meals to make them taste better. With just a pinch of garam masala, you can change the way your food tastes. It is a well-balanced blend of spices like cinnamon, cloves, and cardamom that gives food a rich, fragrant flavour.",
+      },
+      {
+        question: "3. Are There Variations of Garam Masala?",
+        answer:
+          "Yes, garam Masala powder can be different. Garam masala is a mix of spices that is used in Indian food. Its ingredients can change depending on where you live and what you like. Cardamom, cinnamon, cloves, and cumin are all common ingredients in garam masala, but the exact mix and proportions vary, giving different types of garam masala different tastes and levels of heat.",
+      },
+      {
+        question: "4. Is Garam Masala Spicy?",
+        answer:
+          "Garam masala powder is not spicy on its own, but it gives food flavour and depth. Cinnamon, cloves, and cardamom, among other spices, are mixed together to make a sweet blend that has a rich flavour without a lot of heat. But the amount of heat can vary depending on the blend and how well you can handle it, so if you like milder flavours, it's best to use it sparingly.",
+      },
+      {
+        question: "5. Does Garam Masala Have Health Benefits?",
+        answer:
+          "Garam masala powder is a famous spice mix in Indian food that might be good for your health. It has a mix of spices like cinnamon, cardamom, and cloves, which may help digestion, speed up the metabolism, and protect the body from free radicals. But because it is so strong, it should be used in moderation. Add garam spice to your food to take advantage of its flavour and possible health benefits.",
+      },
+    ],
   },
   {
     id: "coriander-powder",
@@ -311,6 +506,35 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-coriander-powder/p/itme906e235fc3d4?pid=SCMGQDY2UGPNQZVZ",
     flipkart500:
       "https://www.flipkart.com/planetsera-coriander-powder/p/itme906e235fc3d4?pid=SCMGQDY2NXGDAV5F",
+    faqs: [
+      {
+        question: "1. What is Coriander Powder (Dhaniya Powder)?",
+        answer:
+          "Coriander Powder (Dhaniya powder) is a spice made from coriander seeds that have been ground up. It is used in many foods around the world and gives them a warm, citrusy taste. Coriander seed can be used in many different dishes, like curries, soups, and marinades. It makes the food taste better overall. It is a must-have in the kitchen because of its unique smell and light heat.",
+      },
+      {
+        question: "2. Are There Health Benefits to Coriander Powder?",
+        answer:
+          "Coriander Powder might be good for your health. It has vitamins, which may help with digestion, reduce inflammation, and help keep the heart healthy. With its unique flavour, it is a useful spice that not only makes food taste better but also helps people feel better overall. Adding coriander powder to your diet can be both tasty and good for your health.",
+      },
+      {
+        question:
+          "3. Can Coriander Powder Be Used as a Substitute for Fresh Coriander Leaves?",
+        answer:
+          "You can use coriander powder instead of fresh coriander leaves. It has a similar but more intense flavour, so it can be used in place of fresh leaves when they aren't available. Just remember to change the amount because coriander powder is stronger than fresh coriander leaves. Usually, 1 teaspoon of powder is used for every tablespoon of fresh leaves.",
+      },
+      {
+        question:
+          "4. What Are Some Popular Recipes That Use Coriander Powder? ",
+        answer:
+          "Coriander Powder is a spice that is used in many famous dishes around the world. It makes sauces, stews, marinades, and soups taste delicious and smell great. Coriander powder is a key ingredient that makes Indian curries like chicken tikka masala and Mexican salsas taste and smell even better.",
+      },
+      {
+        question: "5. Are There Different Varieties of Coriander Powder?",
+        answer:
+          "Yes, there are different kinds of coriander powder, and each has its own taste and smell. Coriander powder and roasted coriander powder are two common versions. The regular kind is made from dried coriander seeds, while the roasted kind has a stronger, smokier flavour because it is toasted. Choose the one that fits your tastes in food the best.",
+      },
+    ],
   },
   {
     id: "amchur-powder",
@@ -343,6 +567,33 @@ const RelatedPtoductData = [
 
     flipkart50:
       "https://www.flipkart.com/planetsera-dry-mango-powder/p/itm0ad77cccb292f?pid=SCMGQDYQEMFGUFEQ",
+    faqs: [
+      {
+        question: "1. How is Amchur Powder made?",
+        answer:
+          "Amchur powder, which is also called (dry mango powder), is made from green mangoes that have been dried and ground. In this process, young mangoes are picked, left out in the sun to dry, and then finely ground into a powder. This makes a spice that tastes like citrus and is often used in Indian cooking to give foods a sour, fruity taste.",
+      },
+      {
+        question: "2. What are the culinary uses of Amchur Powder?",
+        answer:
+          "Amchur powder is made from dried green mangoes and has a sour taste. It is a versatile Indian food ingredient that gives meals a sour and fruity taste. Dry mango powder is often added to stews, marinades, chutneys, and snacks to make them taste better. It is a famous seasoning, especially in vegetarian and vegan dishes, because of its unique citrusy taste.",
+      },
+      {
+        question: "3. Does Amchur Powder have nutritional benefits?",
+        answer:
+          "Amchur Powder is good for you in many different ways. It has a lot of vitamins and antioxidants, like vitamins A and C, which help the immune system and keep the skin healthy. Because it is naturally acidic, amchur also helps with digestion. Add this tangy spice to your meals to make them taste better and maybe to help your health.",
+      },
+      {
+        question: "4. Are there variations of Amchur Powder?",
+        answer:
+          "Yes, dry mango powder can be made in different ways. Depending on the type of mango and how it is processed, these changes can include differences in taste, texture, and colour. Some Amchur powders have a tangier flavour, while others have a sweeter taste. This gives you a lot of options when cooking.",
+      },
+      {
+        question: "5. What are some recipes using Amchur Powder?",
+        answer:
+          "Yes, dry mango powder can be made in different ways. Depending on the type of mango and how it is processed, these changes can include differences in taste, texture, and colour. Some Amchur powders have a tangier flavour, while others have a sweeter taste. This gives you a lot of options when cooking.",
+      },
+    ],
   },
   {
     id: "black-pepper-powder",
@@ -379,6 +630,36 @@ const RelatedPtoductData = [
 
     flipkart500:
       "https://www.flipkart.com/planetsera-black-pepper-powder/p/itm55970223613f4?pid=SCMGQDZAPJXCPMN4",
+    faqs: [
+      {
+        question: "1. What is black pepper powder, and how is it made?",
+        answer:
+          "A famous spice black pepper powder (Kali Mirch Powder), is made from dried and ground black peppercorns. It gives food a strong, slightly spicy taste. Sun-dried whole black peppercorns are ground into a fine powder to make it. Black pepper powder is a spice that is used in many different kinds of food around the world. It is prized for its unique flavour and smell.",
+      },
+      {
+        question: "2. What are the key characteristics of black pepper powder?",
+        answer:
+          "Kali Mirch Powder, which is also called black pepper powder, is prized for its strong smell and strong, earthy flavour. It's a spice that can be used in many different ways and adds a deep, rich heat to many recipes. This finely ground powder is known for its dark colour and peppery taste, which makes it a popular choice for seasoning and improving the taste of both savoury and sweet recipes.",
+      },
+      {
+        question:
+          "3. Are there any health benefits associated with consuming black pepper powder?",
+        answer:
+          "Black pepper powder, also called Kali Mirch Powder, may be good for your health in a number of ways. It has piperine, which can help digestion, improve the absorption of nutrients, and possibly have soothing and antioxidant qualities. Also, black pepper may help people lose weight and make their lungs healthy. But it's best to use it in balance because too much of it can be bad for you",
+      },
+      {
+        question:
+          "4. Can I use black pepper powder as a seasoning for non-savory dishes?",
+        answer:
+          "Black pepper powder, may be good for your health in a number of ways. It has piperine, which can help digestion, improve the absorption of nutrients, and possibly have soothing and antioxidant qualities. Also, black pepper may help people lose weight and make their lungs healthy. But it's best to use it in balance because too much of it can be bad for you.",
+      },
+      {
+        question:
+          "5. Are there any precautions to consider when using black pepper powder?",
+        answer:
+          "Black pepper powder, may be good for your health in a number of ways. It has piperine, which can help digestion, improve the absorption of nutrients, and possibly have soothing and antioxidant qualities. Also, black pepper may help people lose weight and make their lungs healthy. But it's best to use it in balance because too much of it can be bad for you.",
+      },
+    ],
   },
 ];
 

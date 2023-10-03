@@ -7,6 +7,8 @@ import Footer from "@/components/Footer/Footer";
 import logo from "../../../../public/images/logo/logo.webp";
 import { useEffect } from "react";
 import MetaDataproducts from "../components/MetaDataproducts/MetaDataproducts";
+import Faq from "../components/Faq/Faq";
+
 const ProductDetails = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,6 +22,7 @@ const ProductDetails = () => {
       <section className=" w-full max-w-full box-border m-auto h-auto mt-16  md:mt-0 md:pt-20">
         <ProductDetailsInfo />
         <RelatedProducts />
+        <Faq />
       </section>
     </>
   );
