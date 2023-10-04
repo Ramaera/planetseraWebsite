@@ -65,7 +65,7 @@ const ProductDetailsInfo = () => {
         <div className="w-full sm:flex">
           <div className="sm:w-2/5">
             <div className="flex flex-col sm:flex-row">
-              <div className="relative flex flex-row sm:flex-col justify-evenly  sm:w-1/3 p-2 order-2 sm:order-1">
+              <div className="relative flex flex-row sm:flex-col justify-evenly  sm:w-1/3 p-2 2xl:px-10 order-2 sm:order-1">
                 <div
                   className={` ${
                     selectedMainImage ===
@@ -294,7 +294,7 @@ const ProductDetailsInfo = () => {
                         ? specificProduct?.colored
                         : specificProduct?.colored2,
                   }}
-                  className={`absolute  w-36 h-[2px] ml-1 mt-[-2px]`}></div>
+                  className={`absolute  w-36 h-[2px] ml-1 mt-[-8px]`}></div>
                 <p className="leading-[2rem] text-slate-600 text-lg font-Montserrat mt-1">
                   {specificProduct?.ProductDescription}
                 </p>

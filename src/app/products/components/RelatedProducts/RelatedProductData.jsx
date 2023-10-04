@@ -11,10 +11,10 @@ const RelatedPtoductData = [
     ProductBacks100g: "/images/allProductsImg/RedChilliPowder-Back-100.webp",
     ProductBackInfo100g:
       "/images/allProductsImg/RedChilliPowder-BackContent-100.webp",
-    ProductMasala500g: "/images/productDetailsImg/RedChilli500g.webp",
-    ProductBacks500g: "/images/productDetailsImg/RedChilliBacks500g-1.webp",
+    ProductMasala500g: "/images/allProductsImg/RedChilliPowder-500.webp",
+    ProductBacks500g: "/images/allProductsImg/RedChilliPowder-Back-500.webp",
     ProductBackInfo500g:
-      "/images/productDetailsImg/RedChilliBacksInfo500g.webp",
+      "/images/allProductsImg/RedChilliPowder-BackContent-500.webp",
     ProductBg: "/images/productDetailsImg/RedChilliBg.webp",
     BrandsOffer: "/images/allProductsImg/MyBrandsOffer.webp",
     ProductUsage:
@@ -84,10 +84,10 @@ const RelatedPtoductData = [
     ProductBacks100g: "/images/allProductsImg/SabjiMasala-Back-100.webp",
     ProductBackInfo100g:
       "/images/allProductsImg/SabjiMasala-BackContent-100.webp",
-    ProductMasala500g: "/images/productDetailsImg/SabjiMasala500g.webp",
-    ProductBacks500g: "/images/productDetailsImg/SabjiMasalaBacks500g.webp",
+    ProductMasala500g: "/images/allProductsImg/SabjiMasala-500.webp",
+    ProductBacks500g: "/images/allProductsImg/SabjiMasala-Back-500.webp",
     ProductBackInfo500g:
-      "/images/productDetailsImg/SabjiMasalaBacksInfo500g.webp",
+      "/images/allProductsImg/SabjiMasala-BackContent-500.webp",
     ProductBg: "/images/productDetailsImg/SabjiMasalaBg.webp",
     ProductUsage:
       "You only need your favourite vegetables and PlanetsEra Sabji Masala for a quick vegetable curry. It's true; no extra spice is necessary to make food irresistible. The Planetsera Sabji Masala is a must-have for anyone who needs more cooking time but still wants to make delicious vegetable meals.",
@@ -151,10 +151,10 @@ const RelatedPtoductData = [
     ProductBacks100g: "/images/allProductsImg/ChatMasala-Back-100.webp",
     ProductBackInfo100g:
       "/images/allProductsImg/ChatMasala-BacKContent-100.webp",
-    ProductMasala500g: "/images/productDetailsImg/ChatMasalaBg500g.webp",
-    ProductBacks500g: "/images/productDetailsImg/ChatMasalaBgBacks500g.webp",
+    ProductMasala500g: "/images/allProductsImg/ChatMasala-500.webp",
+    ProductBacks500g: "/images/allProductsImg/ChatMasala-Back-500.webp",
     ProductBackInfo500g:
-      "/images/productDetailsImg/ChatMasalaBgBacksInfo500g.webp",
+      "/images/allProductsImg/ChatMasala-BacKContent-500.webp",
     ProductBg: "/images/productDetailsImg/ChatMasalaBg.webp",
     ProductUsage:
       "You can sprinkle it on Salties, Samosas, Sandwiches, Tikkies, Pizzas, Pakoras, Soft drinks, Dahi Wadas, Papris, Burgers, Wafers, Paneer-Tikkas, etc.",
@@ -218,10 +218,10 @@ const RelatedPtoductData = [
     ProductBacks100g: "/images/allProductsImg/TurmericPowder-Back-100.webp",
     ProductBackInfo100g:
       "/images/allProductsImg/TurmericPowder-BackContent-100.webp",
-    ProductMasala500g: "/images/productDetailsImg/TurmericPowder500g.webp",
-    ProductBacks500g: "/images/productDetailsImg/TurmericPowderBacks500g.webp",
+    ProductMasala500g: "/images/allProductsImg/TurmericPowder-500.webp",
+    ProductBacks500g: "/images/allProductsImg/TurmericPowder-Back-500.webp",
     ProductBackInfo500g:
-      "/images/productDetailsImg/TurmericPowderBacksInfo500g.webp",
+      "/images/allProductsImg/TurmericPowder-BackContent-500.webp",
     ProductBg: "/images/productDetailsImg/TurmericPowderBg.webp",
     ProductUsage:
       "Hindus use turmeric to season fish before they cook it in India. In Indian cooking, turmeric is used both to add colour and taste. Turmeric has been used for a long time to heal cuts, treat eye infections, and treat the common cold.",
@@ -284,10 +284,10 @@ const RelatedPtoductData = [
     ProductBacks100g: "/images/allProductsImg/MeatMasala-Back-100.webp",
     ProductBackInfo100g:
       "/images/allProductsImg/MeatMasala-BackContent-100.webp",
-    ProductMasala500g: "/images/productDetailsImg/MeatMasala500g.webp",
-    ProductBacks500g: "/images/productDetailsImg/MeatMasalaBacks500g.webp",
+    ProductMasala500g: "/images/allProductsImg/MeatMasala-500.webp",
+    ProductBacks500g: "/images/allProductsImg/MeatMasala-Back-500.webp",
     ProductBackInfo500g:
-      "/images/productDetailsImg/MeatMasalaBacksInfo500g.webp",
+      "/images/allProductsImg/MeatMasala-BackContent-500.webp",
     ProductBg: "/images/productDetailsImg/MeatMasalaBg.webp",
     ProductUsage:
       "You can use PlanetsEra meat masala whenever a dark gravy is required for meat dish preparation.",
@@ -349,10 +349,10 @@ const RelatedPtoductData = [
     ProductMasala100g: "",
     ProductBacks100g: "",
     ProductBackInfo100g: "",
-    ProductMasala500g: "/images/productDetailsImg/CuminPowder500g.webp",
-    ProductBacks500g: "/images/productDetailsImg/CuminPowderBacks500g.webp",
+    ProductMasala500g: "/images/allProductsImg/CuminPowder-500.webp",
+    ProductBacks500g: "/images/allProductsImg/CuminPowder-Back-500.webp",
     ProductBackInfo500g:
-      "/images/productDetailsImg/CuminPowderBacksInfo500g.webp",
+      "/images/allProductsImg/CuminPowder-BackContent-500.webp",
     ProductBg: "/images/productDetailsImg/CuminPowderBg.webp",
     ProductUsage:
       "The tawa (girdle) is used to roast the seeds very briefly (for only a minute) then grind them into powder to release their full flavour. Digestion is one of the benefits of cumin.",
@@ -414,10 +414,10 @@ const RelatedPtoductData = [
     ProductBacks100g: "/images/allProductsImg/GaramMasala-Back-100.webp",
     ProductBackInfo100g:
       "/images/allProductsImg/GaramMasala-BackContent-100.webp",
-    ProductMasala500g: "/images/productDetailsImg/GaramMasala500g.webp",
-    ProductBacks500g: "/images/productDetailsImg/GaramMasalaBacks500g.webp",
+    ProductMasala500g: "/images/allProductsImg/GaramMasala-500.webp",
+    ProductBacks500g: "/images/allProductsImg/GaramMasala-Back-500.webp",
     ProductBackInfo500g:
-      "/images/productDetailsImg/GaramMasalaBacksInfo500g.webp",
+      "/images/allProductsImg/GaramMasala-BackContent-500.webp",
     ProductBg: "/images/productDetailsImg/GaramMasalaBg.webp",
     ProductUsage:
       "It is primarily used for preparing vegetarian dishes that require gravy. In Gujarat and Marwar, it is typically used in lentils (dal) and in snacks such as samosas, usal, patra, and farsan.",
@@ -484,10 +484,10 @@ const RelatedPtoductData = [
     ProductBacks100g: "/images/allProductsImg/CorianderPowder-Back-100.webp",
     ProductBackInfo100g:
       "/images/allProductsImg/CorianderPowder-BackContent-50.webp",
-    ProductMasala500g: "/images/productDetailsImg/CorianderPowder500g.webp",
-    ProductBacks500g: "/images/productDetailsImg/CorianderPowderBacks500g.webp",
+    ProductMasala500g: "/images/allProductsImg/CorianderPowder-500.webp",
+    ProductBacks500g: "/images/allProductsImg/CorianderPowder-Back-500.webp",
     ProductBackInfo500g:
-      "/images/productDetailsImg/CorianderPowderBacksInfo500g.webp",
+      "/images/allProductsImg/CoriandrerPowder-BackContent-500.webp",
     ProductBg: "/images/productDetailsImg/CorianderPowderBg.webp",
     ProductUsage:
       "Coriander is mainly used in Indian cuisine for its taste. When fried in oil, roasted coriander powder produces a characteristic curry flavour. The seeds of coriander have diuretic properties. Digestive toning and gas relief are its benefits.",
@@ -570,7 +570,7 @@ const RelatedPtoductData = [
     colored2: "#DCBF92",
     inactiveBtn: "rgb(253 235 208)",
     inactiveBtn2: "rgb(253 235 208)",
-
+    bgColor: "rgb(236 220 197)",
     flipkart50:
       "https://www.flipkart.com/planetsera-dry-mango-powder/p/itm0ad77cccb292f?pid=SCMGQDYQEMFGUFEQ",
     faqs: [
