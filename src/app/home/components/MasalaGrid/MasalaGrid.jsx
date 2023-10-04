@@ -25,20 +25,20 @@ function MasalaGrid() {
         <div className="flex flex-wrap mx-6 md:mx-3 basis-12/12 justify-between">
           {Our.map((items) => {
             return (
-              <div className="w-[44%] md:3/4  md:h-full flex flex-col justify-between md:basis-4/12 mb-8 md:mb-4 text-center text-2xl font-extralight tracking-wider space-y-1 md:flex md:flex-col md:items-center ">
+              <div className="w-[150px] md:3/4  md:h-full flex flex-col justify-between md:basis-4/12 mb-8 md:mb-8 text-center text-2xl font-extralight tracking-wider space-y-1 md:flex md:flex-col md:items-center ">
                 <Link href={`/products/${items.id}`}>
                   <img
                     alt="Planetsera Spices"
                     title={`Buy Planetsera ${items.productText}`}
                     src={items.ourproductImage}
-                    className="masImg md:hover:scale-110 cursor-pointer"
+                    className="sm:w-64 2xl:w-80 md:hover:scale-105 cursor-pointer"
                   />
 
-                  <h2 className="text-[18px] md:text-[24px] text-center  font-normal tracking-wide font-Montserrat">
+                  <h2 className="text-center font-[Montserrat] text-xl 2xl:text-2xl font-normal">
                     {items.productText}
                   </h2>
                 </Link>
-                <div style={{ marginTop: "10px" }}></div>
+
                 <BuynowBtn
                   link={`/products/${items.id}`}
                   text={"Buy Now"}
@@ -49,7 +49,7 @@ function MasalaGrid() {
           })}
         </div>
       </div>
-      <div className="border-[1px] border-[#F3F3F3] my-4 md:my-10"></div>
+      <div className="border-[1px] border-[#F3F3F3] my-4 sm:mb-8"></div>
       {/* <img
         alt="masala"
         src="images/backgrounds/masalaAbsolute.webp"

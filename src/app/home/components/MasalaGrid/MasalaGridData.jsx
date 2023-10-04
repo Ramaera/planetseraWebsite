@@ -1,7 +1,7 @@
 export const MasalaGridData = [
   {
     id: "red-chilli-powder",
-    ourproductImage: "images/backgrounds/ourproduct-12.webp",
+    ourproductImage: "images/allProductsImg/RedChilliPowder.webp",
     productText: "Red Chilli Powder",
     productGaram: "(50g , 100g)",
     flipkart:
@@ -10,14 +10,14 @@ export const MasalaGridData = [
 
   {
     id: "black-pepper-powder",
-    ourproductImage: "images/backgrounds/ourproduct-5.webp",
+    ourproductImage: "images/allProductsImg/BlackPepperPowder.webp",
     productText: "Black Pepper Powder",
     productGaram: "(50g)",
   },
 
   {
     id: "turmeric-powder",
-    ourproductImage: "images/backgrounds/ourproduct-10.webp",
+    ourproductImage: "images/allProductsImg/TurmericPowder.webp",
     productText: "Turmeric Powder",
     productGaram: "(50g , 100g)",
     flipkart:
@@ -26,25 +26,37 @@ export const MasalaGridData = [
 
   {
     id: "amchur-powder",
-    ourproductImage: "images/backgrounds/ourproduct-3.webp",
+    ourproductImage: "images/allProductsImg/DryMangoPowder.webp",
     productText: "Amchur Powder",
     productGaram: "(50g)",
   },
 
+  // {
+  //   id: "sabji-masala",
+  //   ourproductImage: "images/allProductsImg/SabjiMasala.webp",
+  //   productText: "Sabji Masala",
+  //   productGaram: "(50g)",
+  // },
+
   {
     id: "cumin-powder",
-    ourproductImage: "images/backgrounds/ourproduct-7.webp",
+    ourproductImage: "images/allProductsImg/CuminPowder.webp",
     productText: "Cumin Powder",
     productGaram: "(50g)",
   },
 
   {
     id: "meat-masala",
-    ourproductImage: "images/backgrounds/ourproduct-8.webp",
+    ourproductImage: "images/allProductsImg/MeatMasala.webp",
     productText: "Meat Masala",
     productGaram: "(50g)",
-    flipkart:
-      "https://www.flipkart.com/planetsera-meat-masala/p/itmaddb650cbfb76?pid=SCMGQCUTZFEDNUZJ",
   },
+
+  // {
+  //   id: "chat-masala",
+  //   ourproductImage: "images/allProductsImg/ChatMasala.webp",
+  //   productText: "Chat Masala",
+  //   productGaram: "(50g)",
+  // },
 ];
 export default MasalaGridData;

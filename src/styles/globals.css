@@ -578,11 +578,7 @@
     margin-top: 39px;
   }
 
-  .masImg {
-    width: 100%;
-    height: auto;
-    /* min-height: 180px; */
-  }
+  
 
 
   .produce_line {
@@ -1477,10 +1473,6 @@
     display: none;
   }
 
-  .masImg {
-    width: 400px;
-    height: 400px;
-  }
 
   .cus_ab {
     position: absolute;

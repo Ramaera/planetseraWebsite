@@ -36,7 +36,7 @@ const OurProduct = () => {
                   src={items.masalaImg}
                   alt="Ground spices"
                   title={`Buy Planetsera ${items.masalaName}`}
-                  className="sm:w-64 2xl:w-96"
+                  className="sm:w-64 2xl:w-80"
                 />
                 <h2 className="text-center font-[Montserrat] text-xl	2xl:text-2xl mt-2">
                   {items.masalaName}
