@@ -29,22 +29,22 @@ const OurProduct = () => {
       <div className="basis-12/12 flex flex-wrap ml-4 groundedContainer">
         {Our.map((items) => {
           return (
-            <div className="basis-4/12 mb-20 groundedImg flex flex-col items-center">
+            <div className="basis-4/12 mb-10 groundedImg flex flex-col items-center">
               <Link href={`/products/${items.id}`}>
                 <img
                   loading="lazy"
                   src={items.masalaImg}
                   alt="Ground spices"
                   title={`Buy Planetsera ${items.masalaName}`}
-                  style={{
-                    width: "fit-content",
-                    height: "fit-content",
-                    maxHeight: "450px",
-                  }}
+                  className="sm:w-64 2xl:w-96"
                 />
-                <h2 className="grounded-text5">{items.masalaName}</h2>
+                <h2 className="text-center font-[Montserrat] text-xl	2xl:text-2xl mt-2">
+                  {items.masalaName}
+                </h2>
               </Link>
               <BuynowBtn
+                width={"130px"}
+                height={"40px"}
                 link={`/products/${items.id}`}
                 text={"Buy Now"}
                 sectionClass="responsiveBtn"

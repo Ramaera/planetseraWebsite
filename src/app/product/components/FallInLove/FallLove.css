@@ -22,7 +22,7 @@
 @media screen and (max-width: 600px) {
   .fallloveBackground {
     margin-top: 20px !important;
-    margin-bottom: 50px !important;
+    margin-bottom: 20px !important;
   }
 }
 
@@ -40,7 +40,8 @@
   display: block;
   max-width: 537px !important;
   height: 403px; */
-  width: 100%;
+  margin: 0 auto;
+  width: 80%;
   max-width: fit-content;
 }
 
@@ -68,16 +69,16 @@
 }
 
 .falllove-heading {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-family: "Montserrat";
   text-align: center;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: 80%;
   margin: auto;
-  font-weight: 400;
-  letter-spacing: 4px;
-  line-height: 50px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 45px;
 }
 
 @media screen and (max-width: 600px) {

@@ -32,7 +32,7 @@ const SuccessSection = () => {
 
   return (
     <>
-      <div className="sm:mt-32">
+      <div className="sm:mt-20">
         <BsFillArrowLeftCircleFill
           className="left-arrow"
           style={{

@@ -300,18 +300,7 @@ button,
 .containerBorder {
   border-bottom:unset;
 }
-.invention-text {
-  font-family: "Montserrat";
-  letter-spacing: 2px;
-  font-size: 24px;
-  color: #75797f;
-}
 
-@media screen and (max-width: 600px) {
-  .invention-text  {
-   font-size: 18px;
-  }
-}
 
 
 .inventionBorder {

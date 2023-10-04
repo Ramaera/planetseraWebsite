@@ -1,7 +1,7 @@
 .boxZoom{
   margin: 0;
   padding: 0;
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -9,7 +9,7 @@
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1500px){
   .boxZoom{
     display: flex;
     flex-wrap: nowrap;

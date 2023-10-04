@@ -19,47 +19,59 @@ const MasalaGallery = () => {
           {MasalaGalleryData.map((items) => {
             return (
               <div>
-                <Link href={`/products/${items.id}`}>
+                <Link
+                  href={`/products/${items.id}`}
+                  className="flex items-center justify-center">
                   <img
                     alt="sabji masala"
                     title="Selected Premium Sabji Masala"
                     loading="lazy"
                     src={items?.productImage}
-                    width={"360px"}
+                    className="w-72"
                   />
                 </Link>
                 <Link href={`/products/${items.id}`}>
-                  <h3 className="text-center invention-text">
+                  <h3 className="text-center font-[Montserrat] text-xl">
                     {items?.productName}
                   </h3>
                 </Link>
-                <BuynowBtn link={`/products/${items.id}`} text={"Buy Now"} />
+                <BuynowBtn
+                  width={"140px"}
+                  height={"40px"}
+                  link={`/products/${items.id}`}
+                  text={"Buy Now"}
+                />
               </div>
             );
           })}
         </Slider>
       </div>
       {/*---------------- Web View ------------------------------*/}
-      <div className="md:flex flex-wrap	 hidden  justify-evenly mb-32 md:mb-4">
+      <div className="md:flex flex-wrap	hidden justify-evenly mb-32 md:mb-4">
         {MasalaGalleryData.map((items) => {
           return (
-            <div>
+            <div className="w-1/5 m-4 flex flex-col items-center">
               <Link href={`/products/${items.id}`}>
                 <img
-                  alt="sabji masala"
-                  title="Selected Premium Sabji Masala"
+                  alt="Planetsera Spices"
+                  title={items?.productName}
                   loading="lazy"
                   src={items?.productImage}
                   // width={"330px"}
-                  className="sm:w-[280px] xl:w-[320px] 2xl:w-[400px]"
+                  className="sm:w-64 2xl:w-96"
                 />
               </Link>
               <Link href={`/products/${items.id}`}>
-                <h3 className="text-center invention-text">
+                <h3 className="text-center font-[Montserrat] text-xl	2xl:text-2xl">
                   {items?.productName}
                 </h3>
               </Link>
-              <BuynowBtn link={`/products/${items.id}`} text={"Buy Now"} />
+              <BuynowBtn
+                width={"130px"}
+                height={"40px"}
+                link={`/products/${items.id}`}
+                text={"Buy Now"}
+              />
             </div>
           );
         })}

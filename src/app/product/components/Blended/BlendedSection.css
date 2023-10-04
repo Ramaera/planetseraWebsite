@@ -8,59 +8,27 @@
   src: url(/public/fonts/oriyafont.ttc);
 }
 
-.delight-text2 {
-  font-size: 24px;
-  font-family: "Montserrat";
-  line-height: 40px;
-  letter-spacing: 2px;
-  text-align: center;
-  margin-top: 20px;
-}
+
 
 .blended-text {
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Montserrat";
   font-weight: 300;
   text-align: center;
-  line-height: 48px;
+  line-height: 35px;
   letter-spacing: 2px;
-  margin: 50px 40px;
+  margin: 0 50px;
   color: #1e1e1e;
 }
 
 @media screen and (max-width: 600px) {
   .blended-text {
     margin: 10px 10px 30px 10px;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 
-.blended-text2 {
-  font-size: 24px;
-  font-family: "Montserrat";
-  line-height: 40px;
-  letter-spacing: 2px;
-  text-align: center;
-  color: #0d0d0d;
-  margin-top: 20px;
-}
-
-@media screen and (max-width: 600px) {
-  .blended-text2 {
-    font-size: 15px;
-    line-height: 50px;
-    margin-top: unset;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .delight-text2 {
-    font-size: 15px;
-    line-height: 50px;
-    margin-top: unset;
-  }
-}
 
 .blended-text3 {
   text-align: center;
@@ -100,9 +68,7 @@
   }
 }
 
-.blendedImg {
-  height: 403px;
-}
+
 
 .blendedMenuImg {
   position: absolute;
@@ -127,11 +93,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .spaceBlendedImg {
-    margin-bottom: 50px;
-  }
-}
+
 
 @media screen and (max-width: 600px) {
   .blended {
@@ -149,8 +111,4 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .blendedImg {
-    height: 150px;
-  }
-}
+

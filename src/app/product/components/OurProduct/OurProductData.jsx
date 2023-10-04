@@ -1,7 +1,7 @@
 const Our = [
   {
     id: "red-chilli-powder",
-    masalaImg: "images/backgrounds/ourproduct-12.webp",
+    masalaImg: "images/allProductsImg/RedChilliPowder.webp",
     masalaName: "Red Chilli Powder",
     masalaGaram: "(50gm , 100gm)",
     flipkart:
@@ -9,13 +9,13 @@ const Our = [
   },
   {
     id: "amchur-powder",
-    masalaImg: "images/backgrounds/ourproduct-3.webp",
+    masalaImg: "images/allProductsImg/DryMangoPowder.webp",
     masalaName: "Amchur Powder",
     masalaGaram: "(50gm)",
   },
   {
     id: "turmeric-powder",
-    masalaImg: "images/backgrounds/ourproduct-10.webp",
+    masalaImg: "images/allProductsImg/TurmericPowder.webp",
     masalaName: "Turmeric Powder",
     masalaGaram: "(50gm , 100gm)",
     flipkart:
@@ -23,21 +23,21 @@ const Our = [
   },
   {
     id: "black-pepper-powder",
-    masalaImg: "images/backgrounds/ourproduct-5.webp",
+    masalaImg: "images/allProductsImg/BlackPepperPowder.webp",
     masalaName: "Black Pepper Powder",
     masalaGaram: "(50gm)",
   },
 
   {
     id: "cumin-powder",
-    masalaImg: "images/backgrounds/ourproduct-7.webp",
+    masalaImg: "images/allProductsImg/CuminPowder.webp",
     masalaName: "Cumin Powder",
     masalaGaram: "(50gm)",
   },
 
   {
     id: "coriander-powder",
-    masalaImg: "images/backgrounds/ourproduct-13.webp",
+    masalaImg: "images/allProductsImg/CorianderPowder.webp",
     masalaName: "Coriander Powder",
     masalaGaram: "(50gm)",
     flipkart:

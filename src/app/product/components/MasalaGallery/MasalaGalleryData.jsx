@@ -1,49 +1,49 @@
 const MasalaGalleryData = [
   {
     id: "sabji-masala",
-    productImage: "/images/backgrounds/ourproduct-1.webp",
+    productImage: "/images/allProductsImg/SabjiMasala.webp",
     productName: "Sabji Masala",
   },
 
   {
     id: "chat-masala",
-    productImage: "/images/backgrounds/ourproduct-2.webp",
+    productImage: "/images/allProductsImg/ChatMasala.webp",
     productName: "Chat masala",
   },
 
   {
     id: "amchur-powder",
-    productImage: "/images/backgrounds/ourproduct-3.webp",
-    productName: "amchur powder",
+    productImage: "/images/allProductsImg/DryMangoPowder.webp",
+    productName: "Amchur powder",
   },
 
   {
     id: "garam-masala",
-    productImage: "/images/backgrounds/ourproduct-4.webp",
+    productImage: "/images/allProductsImg/GaramMasala.webp",
     productName: "Garam Masala",
   },
 
   {
     id: "turmeric-powder",
-    productImage: "images/backgrounds/ourproduct-10.webp",
+    productImage: "images/allProductsImg/TurmericPowder.webp",
     productName: "Turmeric Powder",
   },
 
   {
     id: "coriander-powder",
-    productImage: "images/backgrounds/ourproduct-13.webp",
+    productImage: "images/allProductsImg/CorianderPowder.webp",
     productName: "Coriander Powder",
   },
 
   {
     id: "cumin-powder",
-    productImage: "images/backgrounds/ourproduct-7.webp",
+    productImage: "images/allProductsImg/CuminPowder.webp",
     productName: "Cumin Powder",
   },
 
   {
     id: "black-pepper-powder",
-    productImage: "images/backgrounds/ourproduct-5.webp",
+    productImage: "images/allProductsImg/BlackPepperPowder.webp",
     productName: "Black Pepper Powder",
   },
 ];

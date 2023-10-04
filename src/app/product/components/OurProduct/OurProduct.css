@@ -59,21 +59,21 @@
 }
 
 .grounded-text {
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Montserrat";
   font-weight: 300;
   text-align: center;
-  line-height: 42px;
+  line-height: 35px;
   letter-spacing: 2px;
-  margin: 50px 0px;
+  margin: 10px 50px;
   color: #1e1e1e;
 }
 
 @media screen and (max-width: 600px) {
   .grounded-text {
     margin: 10px 0 10px 0;
-    font-size: 20px;
-    line-height: 25px;
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 
@@ -134,20 +134,6 @@
   color: #0d0d0d;
 }
 
-.grounded-text5 {
-  font-family: "Montserrat";
-  font-size: 24px;
-  text-align: center;
-  line-height: 28px;
-  letter-spacing: 2px;
-  color: #000000;
-}
-
-@media screen and (max-width: 600px) {
-  .grounded-text5 {
-    font-size: 18px;
-  }
-}
 
 .ourbg {
   opacity: 0.1;
