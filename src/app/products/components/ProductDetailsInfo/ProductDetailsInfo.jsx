@@ -77,8 +77,8 @@ const ProductDetailsInfo = () => {
                       : selectedButton === "500gram"
                       ? specificProduct?.ProductMasala500g
                       : specificProduct?.ProductMasala)
-                      ? "border-blue-500	 border-2 rounded-md p-1"
-                      : "border-slate-200	 border-2 rounded-md p-1"
+                      ? "border-blue-500	 border-2 rounded-md p-1 cursor-pointer"
+                      : "border-slate-200	 border-2 rounded-md p-1 cursor-pointer"
                   }`}
                   onClick={() =>
                     handleSmallImageClick(
@@ -116,8 +116,8 @@ const ProductDetailsInfo = () => {
                       : selectedButton === "500gram"
                       ? specificProduct?.ProductBacks500g
                       : specificProduct?.ProductBacks)
-                      ? "border-blue-500	 border-2 rounded-md p-1"
-                      : "border-slate-200	 border-2 rounded-md p-1"
+                      ? "border-blue-500	 border-2 rounded-md p-1 cursor-pointer"
+                      : "border-slate-200	 border-2 rounded-md p-1 cursor-pointer"
                   }`}
                   onClick={() =>
                     handleSmallImageClick(
@@ -155,8 +155,8 @@ const ProductDetailsInfo = () => {
                       : selectedButton === "500gram"
                       ? specificProduct?.ProductBackInfo500g
                       : specificProduct?.ProductBackInfo)
-                      ? "border-blue-500	 border-2 rounded-md p-1"
-                      : "border-slate-200	 border-2 rounded-md p-1"
+                      ? "border-blue-500	 border-2 rounded-md p-1 cursor-pointer"
+                      : "border-slate-200	 border-2 rounded-md p-1 cursor-pointer"
                   }`}
                   onClick={() =>
                     handleSmallImageClick(

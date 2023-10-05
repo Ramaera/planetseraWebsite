@@ -23,8 +23,6 @@ const RelatedPtoductData = [
       "Red chilli powder has a strong flavour and just the right amount of heat. A genuine Lal Mirch powder has a sharp taste that gives any blended food a distinctive flavour. Using carefully hand-selected, naturally sun-dried, scientifically processed chillies, chilli powder preserves the flavour and colour of whole chillies while maintaining their natural heat.",
     ProductDescription2:
       "Your food will have a brilliant red colour thanks to PlanetsEra Chilli Powder. Due to its widespread use in all Indian cuisines, red chilli powder is one of the most popular Indian masalas.",
-    // ProductDescription:
-    //   "PlanetsEra Red Chilli Powder: Give your dishes a fiery kick with our finely ground Red Chilli Powder, perfect for adding that extra spice to your favorite recipes.",
     ProductIngredients: "Red Chilli",
     ProductHealth:
       "Red chilli powder, which is also called chilli powder or lal mirch powder, has more to give than just a spicy taste. It helps you lose weight because it has capsaicin, speeds up your metabolism, and lowers inflammation. This spice has a lot of vitamins and antioxidants, which are good for the heart and make the defence system stronger. Its spicy kick can even ease pain and make you feel better. Red chilli powder is good for your health and a tasty addition to your diet.",
@@ -93,8 +91,6 @@ const RelatedPtoductData = [
       "You only need your favourite vegetables and PlanetsEra Sabji Masala for a quick vegetable curry. It's true; no extra spice is necessary to make food irresistible. The Planetsera Sabji Masala is a must-have for anyone who needs more cooking time but still wants to make delicious vegetable meals.",
     ProductDescription:
       "With the quality blend of herbs and spices in PlanetsEra's Sabji Masala, your vegetables will taste and have more depth. Because it is composed entirely of natural ingredients, it is free of additives and preservatives. The Sabzi Masala from PlanestEra will give your vegetables a delicious flavour. A delicate mixture of spices enhances the taste of vegetable meals. In PlanetsEra Mix Masala Powder, we provide you with the best Sabji Masala for your dishes. Adding it to veggie recipes gives them a delicious aroma and colour.",
-    // ProductDescription:
-    //   "PlanetsEra Sabji Powder: Our expertly crafted blend of coriander, cumin, turmeric, and other spices adds a delicious and aromatic flavor to your vegetable dishes.",
     ProductIngredients:
       "Coriander, Cumin, Red Chili, Turmeric, Black Pepper, Cardamom Amomum, Dry Ginger, Bay Leaf, Salt, Clove, Nutmeg, Asafoetida, Dry Mango, Curry Leaves, Black Mustard, Green Cardamom, Black Salt",
     ProductHealth:
@@ -160,8 +156,6 @@ const RelatedPtoductData = [
       "You can sprinkle it on Salties, Samosas, Sandwiches, Tikkies, Pizzas, Pakoras, Soft drinks, Dahi Wadas, Papris, Burgers, Wafers, Paneer-Tikkas, etc.",
     ProductDescription:
       "Chat Masala makes the right texture and also improves the taste of any drinks or fruits that are eaten with it. It has more than 18 different kinds of spices that are all different sizes. We know a lot about spices, so we were able to make this one-of-a-kind chat masala powder that will wake up your taste buds and make you want more. When it comes to masala spices, chat masala is one of the best ones that everyone uses and likes.",
-    // ProductDescription:
-    //   "PlanetsEra Chat Masala: Add a tangy and spicy flavor to your chaats, fruits, and salads with our Chat Masala, a blend of spices that will leave your taste buds craving for more.",
     ProductIngredients:
       "Black Salt, Salt, Coriander, Dry Mango, Cumin, Rock Salt, Fennel Seed, Pomegranate Seed, Tamarind, Mint, Carom Seed, Black Pepper, Dry Ginger, Red Chili, Nutmeg, Clove, Asafoetida, Citric Acid",
     ProductHealth:
@@ -229,7 +223,6 @@ const RelatedPtoductData = [
       "Indian food gets its colour and taste from turmeric powder, so it's great for a spicy feast. The effect is amazing and has been shaped beautifully beyond its natural form. Nearly 4,000 years ago, India's Vedic society used haldi powder as a spice that also had religious meaning.", // ProductDescription:
     ProductDescription2:
       "Turmeric's uses are also well known to all. To give your sabji the proper colour, use PlenetsEra haldi powder, created with the highest-quality turmeric powder.",
-    //   "PlanetsEra Haldi Powder: Add vibrant color and authentic flavor to your Indian dishes with our aromatic Haldi Powder, made from carefully selected turmeric roots.",
     ProductIngredients: "Turmeric",
     ProductHealth:
       "Organic turmeric powder, which is also called haldi powder, is a powerful superfood that has many health benefits. It has anti-inflammatory and antioxidant qualities because it is full of curcumin. When you consume haldi powder regularly, it helps your body digest food, boosts your immune system, and keeps your face healthy. Take advantage of the natural benefits of organic turmeric powder to improve your health overall.",
@@ -293,8 +286,6 @@ const RelatedPtoductData = [
       "You can use PlanetsEra meat masala whenever a dark gravy is required for meat dish preparation.",
     ProductDescription:
       "Meat masala is a mix of pepper, coriander, and chilli, giving meat and other non-vegetarian foods a dark brown colour and a spicy flavour. It is especially good when used in meat-containing dishes. This mixture is flavoured with a lot of food spices. It's because Indians love to season their meat well. When combined with the meat, they bring out the underlying flavour of the dish.",
-    // ProductDescription:
-    //   "PlanetsEra Meat Masala: Our rich and flavorful Meat Masala is perfect for adding an authentic taste to your meat dishes, with a unique blend of spices.",
     ProductIngredients:
       "Coriander, Cumin, Cinnamon, Mace, Clove, Green Cardamom, Nutmeg, Rai, Fennel, Seed, Kashmiri Red Chili, Turmeric, Garlic, Ginger, Black salt, Asafoetida, Bay Leaf, Black Pepper, Red Chili, Mustard, Fenugreek Leaves, Cardamom Amomum",
     ProductHealth:
@@ -358,8 +349,6 @@ const RelatedPtoductData = [
       "The tawa (girdle) is used to roast the seeds very briefly (for only a minute) then grind them into powder to release their full flavour. Digestion is one of the benefits of cumin.",
     ProductDescription:
       "Combined with other food spices or ingredients, cumin powder adds a unique flavour to any dish. Provides a taste to all your unusual foods. Ground cumin is made by grinding dried mature fruits of the cumin plant to make jeera powder. PlanetsEra cumin powder does not contain any artificial colouring or potentially dangerous ingredients.",
-    // ProductDescription:
-    //   "PlanetsEra Zeera Powder: Add a warm and earthy flavor to your cooking with our roasted and ground Zeera Powder, made from the finest cumin seeds for that authentic taste.",
     ProductIngredients: "Cumin Seed",
     ProductHealth:
       "Cumin powder, also known as jeera powder, has numerous positive health effects. Cumin powder, which is abundant in antioxidants and essential nutrients, aids digestion, promotes weight loss, and may help control blood sugar. Additionally, it is anti-inflammatory and promotes respiratory health. Include this adaptable spice in your diet to benefit from its flavorful and health-enhancing qualities.",
@@ -425,8 +414,6 @@ const RelatedPtoductData = [
       "This age-old, worldwide flavour enhancer is made with a carefully selected mixture of 12 different spices. We prepare the masala with the best garam masala ingredients: Coriander, Cumin, black pepper, Cinnamon Stick, Clove, Cardamom Amomum, Star Anise, Bay Leaf, Dry Ginger, Nutmeg, Mace, Green Cardamom. Because it is based on chilli, it lends foods an unusual, crimson-coloured gravy.",
     ProductDescription2:
       "Over the entire country of India, garam masala is used extensively. The masala spices ignite the taste buds. There's something about certain meals that makes you want to resist them. There's nothing like PlanetsEra Garam Masala, with its incredible aftertaste, to bring Indian cuisine to life.",
-    // ProductDescription:
-    //   "PlanetsEra Garam Masala: Add depth and complexity to your dishes with our signature Garam Masala, a blend of whole spices roasted and ground to perfection.",
     ProductIngredients:
       "Coriander, Cumin, Black-Pepper, Cinnamon Stick, Clove, Cardamom Amomum, Star Anise, Bay Leaf, Dry Ginger, Nutmeg, Mace, Green Cardamom",
     ProductHealth:
@@ -493,8 +480,6 @@ const RelatedPtoductData = [
       "Coriander is mainly used in Indian cuisine for its taste. When fried in oil, roasted coriander powder produces a characteristic curry flavour. The seeds of coriander have diuretic properties. Digestive toning and gas relief are its benefits.",
     ProductDescription:
       "Coriander powder smells like a freshly cut lawn of a green forest. Indian foods are often made with this kind to give them an authentic curry taste. Coriander powder, also called dhania powder, is said to have hints of lemon and sage and a hint of sweetness in the background. It is a nice spice to put in food. The flavour of PlanetsEra coriander powder has been brought to a level of perfection, and as a result, it can produce the intended effect every time it is used. Dhaniya powder is known to be a fundamental component of Indian cuisine.",
-    // ProductDescription:
-    //   "PlanetsEra Dhaniya Powder: Our freshly ground Dhaniya Powder adds a fragrant and distinct flavor to your curries, rice dishes, and more.",
     ProductIngredients: "Coriander Seed",
     ProductHealth:
       "The health benefits of coriander powder, also known as dhaniya Powder, are numerous. It helps digestion, lowers damage, and controls blood sugar levels. It supports heart health and the immune system due to its abundance of antioxidants. In addition to aiding in detoxification, coriander powder can mitigate IBS symptoms. Include this flavorful spice in your diet for a delicious method to improve your health.",
@@ -560,8 +545,6 @@ const RelatedPtoductData = [
       "A variety of dishes, salads, beverages and desserts can benefit from PlanetsEra amchur powder Powder's tangy flavour and aroma.",
     ProductDescription:
       "Amchur Powder, which is produced from dried, unripe green mangoes, gives food a tangy, sour flavour. It smells deliciously like honey and tastes tangy. It is utilised in a wide range of north Indian curries, chutneys, and pickles. Spices like amchur powder add tanginess and a mild sour taste to food. Amchur masala powder also helps make meat more tender. It's one of the most important ingredients in Punjabi food. PlanetsEra's amchur powder uses the best mangoes and the newest dehydrating technique to preserve the king of fruits' flavour, smell, and zest.",
-    // ProductDescription:
-    //   "PlanetsEra Amchur Powder: Our tangy and sour Amchur is made from dried mangoes,perfect for adding a unique and delicious flavor to your dishes.",
     ProductIngredients: "Dry Mango",
 
     ProductHealth:
