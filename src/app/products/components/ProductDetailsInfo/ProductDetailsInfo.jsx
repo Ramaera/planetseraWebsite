@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import BuyIcons from "../../../../components/BuyIcons";
 import RelatedPtoductData from "../RelatedProducts/RelatedProductData";
 // import MetaDataproducts from "../MetaDataproducts/MetaDataproducts";
+import ImageMagnifier from "./ImageMagnifier";
 import { notFound } from "next/navigation";
 import { Snackbar } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
@@ -197,7 +198,7 @@ const ProductDetailsInfo = () => {
               </div>
 
               <div className="relative border-solid border-2 rounded-xl flex items-center justify-center p-4 sm:p-8 md:mx-0 mx-2 order-1 sm:order-2">
-                <img
+                {/* <img
                   className="border-solid border-2 rounded-xl md:border-0 p-6"
                   style={{
                     background: specificProduct.bgColor,
@@ -205,8 +206,19 @@ const ProductDetailsInfo = () => {
                   src={selectedMainImage}
                   alt={specificProduct.ProductName}
                   title="PlanetsEra 100% Pure Natural Product"
-                />
+                /> */}
 
+                <div
+                  style={{
+                    background: specificProduct.bgColor,
+                  }}
+                  className="border-solid border-2 rounded-xl md:border-0 p-6">
+                  <ImageMagnifier
+                    src={selectedMainImage}
+                    alt="PlanetsEra Spices"
+                    title={specificProduct.ProductName}
+                  />
+                </div>
                 <div
                   onClick={handleClick}
                   className="absolute md:scale-100 scale-75  top-0 right-0 2xl:top-8 md:top-4 md:right-4 xl:right-6  ">
@@ -394,14 +406,18 @@ const ProductDetailsInfo = () => {
                 <div
                   className={` right-0 absolute   ${
                     specificProduct?.id === "garam-masala" || "sabji-masala"
-                      ? " md:top-[30rem] 2xl:top-[26rem]"
+                      ? " md:top-[30rem] 2xl:top-[26rem] "
                       : " md:top-[32rem] 2xl:top-[22rem]"
                   } top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9] `}>
                   <img
                     src={specificProduct?.ProductBg}
                     alt="product bg"
                     title="product bg"
-                    className="max-w-[100px] sm:max-w-[180px] 2xl:max-w-full  max-h-96	 absolute right-0"
+                    className={`absolute  right-0 ${
+                      specificProduct?.id === "garam-masala" || "sabji-masala"
+                        ? "max-w-[70px] sm:max-w-[180px] 2xl:max-w-full  max-h-96"
+                        : "max-w-[100px] sm:max-w-[180px] 2xl:max-w-full  max-h-96"
+                    }  `}
                   />
                 </div>
               </div>

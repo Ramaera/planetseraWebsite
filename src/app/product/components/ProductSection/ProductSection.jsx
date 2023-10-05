@@ -3,7 +3,7 @@ import "./ProductSection.css";
 const ProductSection = () => {
   return (
     <div className="flex justify-center flex-col">
-      <div className="w-full max-w-full box-border mx-auto h-auto flex justify-center sm:mt-[-8rem] 2xl:mt-0">
+      <div className="w-full max-w-full box-border mx-auto h-auto flex justify-center sm:mt-[-4rem]  2xl:mt-0">
         <img
           alt="bg"
           loading="lazy"

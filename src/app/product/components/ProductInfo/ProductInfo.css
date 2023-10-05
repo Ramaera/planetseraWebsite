@@ -7,9 +7,10 @@
   align-items: center;
   width: 100vw;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
-@media screen and (max-width: 1500px){
+@media screen and (max-width: 1400px){
   .boxZoom{
     display: flex;
     flex-wrap: nowrap;
@@ -17,6 +18,8 @@
     justify-content: unset !important;
     min-height: 730px;
     overflow-y: hidden ;
+    margin-top: -3rem;
+    margin-bottom: -5rem;
   }
 }
 
@@ -26,6 +29,7 @@
     flex-wrap: nowrap;
     overflow-x: scroll;
     justify-content: unset !important;
+    margin-top: unset;
   }
 }
 
