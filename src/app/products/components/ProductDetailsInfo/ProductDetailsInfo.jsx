@@ -393,8 +393,8 @@ const ProductDetailsInfo = () => {
                 />
                 <div
                   className={` right-0 absolute   ${
-                    specificProduct?.id === "garam-masala"
-                      ? " md:top-[38rem] 2xl:top-[28rem]"
+                    specificProduct?.id === "garam-masala" || "sabji-masala"
+                      ? " md:top-[30rem] 2xl:top-[26rem]"
                       : " md:top-[32rem] 2xl:top-[22rem]"
                   } top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9] `}>
                   <img

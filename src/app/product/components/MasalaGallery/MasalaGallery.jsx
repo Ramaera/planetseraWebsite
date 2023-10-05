@@ -58,7 +58,7 @@ const MasalaGallery = () => {
                   loading="lazy"
                   src={items?.productImage}
                   // width={"330px"}
-                  className="sm:w-64 2xl:w-96"
+                  className="sm:w-64 2xl:w-80"
                 />
               </Link>
               <Link href={`/products/${items.id}`}>

@@ -431,7 +431,7 @@ const RelatedPtoductData = [
       "Coriander, Cumin, Black-Pepper, Cinnamon Stick, Clove, Cardamom Amomum, Star Anise, Bay Leaf, Dry Ginger, Nutmeg, Mace, Green Cardamom",
     ProductHealth:
       "Whole garam masala has health benefits in addition to its flavour. It aids digestion, boosts the calorie burn, and aides in weight management due to its aromatic spices. Antioxidant-rich, it promotes general health and may reduce inflammation. Incorporate Planetsera's high-quality garam masala compound into your culinary endeavours for a tasty way to improve your health.",
-    colored: "#D1C2AC",
+    colored: "#996d51",
     colored2: "#E5C6BB",
     inactiveBtn: "rgb(209 194 172 / 38%)",
     inactiveBtn2: "rgb(229 198 187 / 38%)",
