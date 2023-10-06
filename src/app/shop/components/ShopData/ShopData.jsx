@@ -58,13 +58,6 @@ const MouthWateringData = [
   },
 
   {
-    id: "jaljeera-masala",
-    category: "MouthWatering",
-    masalaImg: "/images/productDetailsImg/Jaljeera.webp",
-    masalaName: "Jaljeera Masala",
-  },
-
-  {
     id: "amchur-powder",
     category: "MouthWatering",
     masalaImg: "/images/allProductsImg/DryMangoPowder.webp",
@@ -72,6 +65,14 @@ const MouthWateringData = [
     bgColor: "rgb(236 220 197)",
     flipkart:
       "https://www.flipkart.com/planetsera-dry-mango-powder/p/itm0ad77cccb292f?pid=SCMGQDYQEMFGUFEQ",
+  },
+
+  {
+    id: "chicken-masala",
+    category: "MouthWatering",
+    masalaImg: "/images/allProductsImg/ChickenMasala.webp",
+    masalaName: "Chicken Masala",
+    bgColor: "rgb(227 205 192)",
   },
 
   {
@@ -122,9 +123,9 @@ const MouthWateringData = [
   {
     id: "kitchen-king",
     category: "KitchenSpices",
-    masalaImg: "/images/productDetailsImg/KitchenKingMasala.webp",
-    masalaName: "kitchen king",
-    colored: "#F1E6E6",
+    masalaImg: "/images/allProductsImg/KitchenKing.webp",
+    masalaName: "kitchen king Masala",
+    bgColor: "rgb(169 188 170)",
   },
 
   {
@@ -160,14 +161,6 @@ const MouthWateringData = [
   },
 
   {
-    id: "chicken-masala",
-    category: "WeekandTadka",
-    masalaImg: "/images/productDetailsImg/ChickenMasala.webp",
-    masalaName: "Chicken Masala",
-    colored: "#F1E6E6",
-  },
-
-  {
     id: "garam-masala",
     category: "WeekandTadka",
     masalaImg: "/images/allProductsImg/GaramMasala.webp",
@@ -186,6 +179,14 @@ const MouthWateringData = [
     amazon: "https://www.amazon.in/dp/B0C3W3SH12?ref=myi_title_dp",
     flipkart:
       "https://www.flipkart.com/planetsera-chat-masala/p/itmfe8b6cf21eb08?pid=SCMGPU9TECU7NHNA",
+  },
+
+  {
+    id: "chicken-masala",
+    category: "WeekandTadka",
+    masalaImg: "/images/allProductsImg/ChickenMasala.webp",
+    masalaName: "Chicken Masala",
+    bgColor: "rgb(227 205 192)",
   },
 ];
 

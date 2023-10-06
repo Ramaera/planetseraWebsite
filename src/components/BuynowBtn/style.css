@@ -31,3 +31,14 @@
     margin-top: 5px;
   }
 }
+
+@media (max-width: 768px) {
+  .responsiveComingBtn .buynow-button {
+    width: 85px !important;
+    height: 30px !important;
+    font-size: 10px !important;
+    padding: 13px 6px !important;
+    margin-top: 5px;
+  
+  }
+}

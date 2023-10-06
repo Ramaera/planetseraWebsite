@@ -262,7 +262,7 @@ const ProductDetailsInfo = () => {
               <div className=" flex justify-evenly border-2 rounded-md font-Montserrat font-normal	md:font-light">
                 <div className="my-1 p-0 flex flex-col items-center justify-center">
                   <p className="">Weight </p>
-                  <p className="font-medium">
+                  <p className="font-normal">
                     {selectedButton === "50gram"
                       ? "50g"
                       : selectedButton === "100gram"
@@ -275,12 +275,12 @@ const ProductDetailsInfo = () => {
                 <div className="border-r-2"></div>
                 <div className="my-1 p-0 flex flex-col items-center  justify-center">
                   <p className="lg:mr-2">Packaging type </p>
-                  <p className="font-medium">Zipper Pouch</p>
+                  <p className="font-normal">Zipper Pouch</p>
                 </div>
                 <div className="border-r-2"></div>
                 <div className="my-1 p-0 flex flex-col items-center justify-center">
                   <p className="lg:mr-2"> Country of origin </p>
-                  <p className="font-medium">India</p>
+                  <p className="font-normal">India</p>
                 </div>
               </div>
             </div>

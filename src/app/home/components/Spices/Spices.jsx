@@ -20,7 +20,7 @@ const Spices = () => {
               src="/images/backgrounds/spices1.webp"
               alt="best spices"
               title="Why we are best"
-              className="box1 z-20 lg:w-[424px] lg:h-[523px] absolute bg-center bg-cover border-white border shadow-lg hover:z-50"
+              className="box1 z-10 lg:w-[424px] lg:h-[523px] absolute bg-center bg-cover border-white border shadow-lg hover:z-50"
             />
           </div>
         </div>
@@ -30,7 +30,7 @@ const Spices = () => {
               src="/images/backgrounds/spices2.webp"
               alt="best spices"
               title="Why we are best"
-              className="box2 z-30 lg:w-[424px] lg:h-[499px] absolute bg-center border-white border shadow-md"
+              className="box2 z-20 lg:w-[424px] lg:h-[499px] absolute bg-center border-white border shadow-md"
             />
           </div>
           <div

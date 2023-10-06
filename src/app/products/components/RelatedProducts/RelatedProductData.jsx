@@ -159,7 +159,7 @@ const RelatedPtoductData = [
     ProductIngredients:
       "Black Salt, Salt, Coriander, Dry Mango, Cumin, Rock Salt, Fennel Seed, Pomegranate Seed, Tamarind, Mint, Carom Seed, Black Pepper, Dry Ginger, Red Chili, Nutmeg, Clove, Asafoetida, Citric Acid",
     ProductHealth:
-      "Chaat masala powder isn't just a flavorful spice blend; it also offers health benefits. Packed with a mix of spices like cumin, coriander, and asafoetida, it aids digestion and can alleviate indigestion and bloating. The best chaat masala can also provide a dash of antioxidants, helping to boost your overall well-being. Enjoy its tangy goodness while reaping these health perks.",
+      "Chat masala powder isn't just a flavorful spice blend; it also offers health benefits. Packed with a mix of spices like cumin, coriander, and asafoetida, it aids digestion and can alleviate indigestion and bloating. The best chaat masala can also provide a dash of antioxidants, helping to boost your overall well-being. Enjoy its tangy goodness while reaping these health perks.",
     colored: "#CDE1A2",
     colored2: "#CDE1A2",
     inactiveBtn: "rgb(205 225 162 / 38%)",
@@ -174,29 +174,29 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-chat-masala/p/itmfe8b6cf21eb08?pid=SCMGQMY9QN6TVHPF",
     faqs: [
       {
-        question: "1. What is Chaat Masala Powder?",
+        question: "1. What is Chat Masala Powder?",
         answer:
-          "Chaat Masala Powder is a mix of spices that gives Indian food a lot of colour and flavour. This spicy seasoning is made from cumin, coriander, and black salt, which give it a tangy and salty flavour. It gives street foods, salads, and snacks a nice burst of flavour, which makes it a staple in Indian cooking.",
+          "Chat Masala Powder is a mix of spices that gives Indian food a lot of colour and flavour. This spicy seasoning is made from cumin, coriander, and black salt, which give it a tangy and salty flavour. It gives street foods, salads, and snacks a nice burst of flavour, which makes it a staple in Indian cooking.",
       },
       {
-        question: "2. What are the main ingredients in Chaat Masala Powder?",
+        question: "2. What are the main ingredients in Chat Masala Powder?",
         answer:
-          "Chaat Masala Powder is a mix of spices that is often used in Indian street food. It gives the food a spicy, flavorful kick. Its main ingredients are hot red chilli powder, aromatic cumin, tangy dried mango powder (amchur), black salt, and a mix of other spices. This flexible seasoning gives snacks, salads, and chaat dishes a burst of savory and tangy flavour.",
+          "Chat Masala Powder is a mix of spices that is often used in Indian street food. It gives the food a spicy, flavorful kick. Its main ingredients are hot red chilli powder, aromatic cumin, tangy dried mango powder (amchur), black salt, and a mix of other spices. This flexible seasoning gives snacks, salads, and chaat dishes a burst of savory and tangy flavour.",
       },
       {
-        question: "3. How is Chaat Masala Powder used?",
+        question: "3. How is Chat Masala Powder used?",
         answer:
-          "Chaat masala powder is a mix of spices that can be used to make many different meals taste better. It adds a tangy and spicy kick to snacks like samosas and fruit soups. It's also an essential part of popular Indian street foods like chaat and pani puri, giving them a burst of flavour. Explore the tasty world of chaat masala powder as you try new things in the kitchen.",
+          "Chat masala powder is a mix of spices that can be used to make many different meals taste better. It adds a tangy and spicy kick to snacks like samosas and fruit soups. It's also an essential part of popular Indian street foods like chaat and pani puri, giving them a burst of flavour. Explore the tasty world of chaat masala powder as you try new things in the kitchen.",
       },
       {
-        question: "4. Is Chaat Masala Powder spicy?",
+        question: "4. Is Chat Masala Powder spicy?",
         answer:
-          "Chaat Masala Powder is a mix of spices that is spicy and sour. It is used to make foods taste better. Even though it has a nice kick of spice, it's not too hot. Instead, it has a nice mix of mild heat and bright flavours that make it a great spice for a wide range of snacks, salads, and street foods.",
+          "Chat Masala Powder is a mix of spices that is spicy and sour. It is used to make foods taste better. Even though it has a nice kick of spice, it's not too hot. Instead, it has a nice mix of mild heat and bright flavours that make it a great spice for a wide range of snacks, salads, and street foods.",
       },
       {
-        question: "5. What are the health benefits of Chaat Masala Powder? ",
+        question: "5. What are the health benefits of Chat Masala Powder? ",
         answer:
-          "Chaat masala powder is a delicious mix of spices that not only makes food taste better but is also good for your health. Its mix of cumin, coriander, and black salt helps with digestion, and the tangy taste of amchoor (dried mango) gives you more vitamin C. Chaat masala powder can give your dishes more flavour and a bit of health.",
+          "Chat masala powder is a delicious mix of spices that not only makes food taste better but is also good for your health. Its mix of cumin, coriander, and black salt helps with digestion, and the tangy taste of amchoor (dried mango) gives you more vitamin C. Chaat masala powder can give your dishes more flavour and a bit of health.",
       },
     ],
   },

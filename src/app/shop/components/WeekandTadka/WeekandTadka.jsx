@@ -36,11 +36,11 @@ const WeekandTadka = () => {
                       style={{
                         background: item.bgColor,
                       }}
-                      className="flex items-center  justify-center rounded-xl p-4 w-full">
+                      className="relative flex items-center  justify-center rounded-xl p-4 w-full">
                       {!item?.flipkart && !item?.amazon ? (
-                        <div className=" absolute z-10  m-2 justify-items-center flex items-center">
+                        <div className="top-0 absolute z-10 justify-items-center flex items-center">
                           <img
-                            className="relative w-[100px] md:w-72"
+                            className="relative"
                             loading="lazy"
                             src="images/backgrounds/comingsoon.webp"
                             // width={"360px"}
@@ -99,7 +99,7 @@ const WeekandTadka = () => {
                         padding={"20px"}
                         height={"30px"}
                         size={"15px"}
-                        sectionClass="responsiveBtn"
+                        sectionClass="responsiveComingBtn"
                       />
                     ) : (
                       <BuynowBtn

@@ -4,11 +4,14 @@ import { useSelector } from "react-redux";
 import { IconButton } from "@mui/material";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import "./Gallery.css";
 
 const Gallery = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
   const mainImageRef = useRef(null);
+
+  const Mobile = useMediaQuery("(min-width:800px)");
 
   const images = [
     "/images/backgrounds/dig-1.webp",
@@ -63,9 +66,10 @@ const Gallery = () => {
           <div>
             <IconButton onClick={prevImage}>
               <ArrowCircleLeftIcon
-                className="sm:w-[60px] sm:h-[60px]"
-                style={{
+                sx={{
                   color: colorMe,
+                  width: Mobile ? "50px" : "25px",
+                  height: Mobile ? "50px" : "25px",
                 }}
               />
             </IconButton>
@@ -80,9 +84,10 @@ const Gallery = () => {
           <div>
             <IconButton onClick={nextImage}>
               <ArrowCircleRightIcon
-                className="sm:w-[60px] sm:h-[60px]"
-                style={{
+                sx={{
                   color: colorMe,
+                  width: Mobile ? "50px" : "25px",
+                  height: Mobile ? "50px" : "25px",
                 }}
               />
             </IconButton>

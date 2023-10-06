@@ -27,11 +27,11 @@ const Faq = () => {
           <div key={index} className="mb-6">
             <button
               className={`w-full flex items-center justify-between text-left font-semibold  p-4 transition duration-300 ${
-                openIndex === index ? " rounded-t-md" : " rounded-md"
+                openIndex === index ? " rounded-t-lg" : " rounded-lg"
               }`}
               style={{
                 color: openIndex === index ? faqDataFilter?.colored : "black",
-                backgroundColor: "rgb(248, 248, 248, 1)",
+                backgroundColor: "rgb(240, 240, 240, 1)",
               }}
               onClick={() => toggleItem(index)}>
               <span>{item.question}</span>
@@ -39,8 +39,8 @@ const Faq = () => {
             </button>
             {openIndex === index && (
               <div
-                className="bg-white px-4 pb-4  rounded-b-md "
-                style={{ backgroundColor: "rgb(248, 248, 248, 1)" }}>
+                className="bg-white px-4 pb-4  rounded-b-lg "
+                style={{ backgroundColor: "rgb(240, 240, 240, 1)" }}>
                 <p className="text-gray-700">{item.answer}</p>
               </div>
             )}

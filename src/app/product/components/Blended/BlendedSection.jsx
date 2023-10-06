@@ -122,27 +122,27 @@ const BlendedSection = () => {
         </div>
 
         <div class="w-full rounded mt-10 blendedImgBox">
-          <div className="flex items-center justify-center">
-            <div className="absolute z-10  m-2 justify-items-center flex items-center">
+          <div className="relative flex items-center justify-center">
+            {/* <div className="top-0 absolute z-10 justify-items-center flex items-center">
               <img
-                className="relative w-[100px] md:w-72"
+                className="relative sm:w-64 sm:px-10"
                 loading="lazy"
-                src="images/backgrounds/comingsoon.webp"
+                src="images/backgrounds/comingsoon.png"
                 alt="coming soon..."
               />
-            </div>
-            <div className="flex items-center justify-center opacity-50">
+            </div> */}
+            <div className="flex items-center justify-center ">
               <img
                 loading="lazy"
-                src="images/allProductsImg/ChickenMasala.webp"
+                src="images/allProductsImg/BiryaniMasalaComing.webp"
                 className="mx-auto sm:w-64 2xl:w-80"
                 alt="PlanetsEra Chicken Masala"
-                title="Chicken Masala"
+                title="Biryani Masala"
               />
             </div>
           </div>
           <h2 className="text-center font-[Montserrat] text-xl 2xl:text-2xl mt-1">
-            Chicken Masala
+            Biryani Masala
           </h2>
 
           <BuynowBtn
