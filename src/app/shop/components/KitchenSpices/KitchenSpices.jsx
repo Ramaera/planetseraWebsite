@@ -24,7 +24,7 @@ const KitchenSpices = () => {
           </h3>
         </div>
         <div className="flex w-full" id="shop">
-          <div className="flex  justify-evenly p-2 md:p-10 flex-wrap ">
+          <div className="flex  justify-evenly p-2 md:p-6 flex-wrap w-full ">
             {KitchenSpicesData.map((item) => {
               if (!item) {
                 return;
@@ -32,7 +32,11 @@ const KitchenSpices = () => {
               return (
                 <>
                   <div className="m-2 w-[45%] md:w-[22%] justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
-                    <div className="flex items-center	justify-center">
+                    <div
+                      style={{
+                        background: item.bgColor,
+                      }}
+                      className="flex items-center  justify-center rounded-xl p-4 w-full">
                       {!item?.flipkart && !item?.amazon ? (
                         <div className=" absolute z-10  m-2 justify-items-center flex items-center">
                           <img
@@ -53,7 +57,7 @@ const KitchenSpices = () => {
                         }  flex items-center justify-center `}>
                         {!item?.flipkart && !item?.amazon ? (
                           <img
-                            className="relative"
+                            className="relative w-48 2xl:w-64"
                             loading="lazy"
                             src={item?.masalaImg}
                             alt="..."
@@ -61,12 +65,12 @@ const KitchenSpices = () => {
                         ) : (
                           <Link href={`/products/${item.id}`}>
                             <img
-                              className="relative"
+                              className="relative w-48 2xl:w-64"
                               loading="lazy"
                               src={item.masalaImg}
                               // width={"360px"}
-                              alt={item.masalaName}
-                              title={`Buy Planetsera ${item.masalaName}`}
+                              alt="Planetsera Spices"
+                              title={item.masalaName}
                             />
                           </Link>
                         )}
@@ -74,12 +78,12 @@ const KitchenSpices = () => {
                     </div>
                     <div className="mt-2 mb-[-10px]">
                       {!item?.flipkart && !item?.amazon ? (
-                        <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-[13.5px] sm:text-lg">
+                        <h3 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                           {item?.masalaName}
                         </h3>
                       ) : (
                         <Link href={`/products/${item.id}`}>
-                          <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-[13.5px] sm:text-lg">
+                          <h3 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                             {item?.masalaName}
                           </h3>
                         </Link>
@@ -91,6 +95,9 @@ const KitchenSpices = () => {
                         text={"Coming soon"}
                         link=""
                         opacity={0.5}
+                        width={"143px"}
+                        padding={"20px"}
+                        height={"30px"}
                         size={"15px"}
                         sectionClass="responsiveBtn"
                       />
@@ -98,7 +105,10 @@ const KitchenSpices = () => {
                       <BuynowBtn
                         link={`/products/${item?.id}`}
                         text={"Buy Now"}
-                        sectionClass="responsiveBtn"
+                        width={"130px"}
+                        padding={"20px"}
+                        height={"30px"}
+                        sectionClass="relatedResponsiveBtn"
                       />
                     )}
                   </div>
