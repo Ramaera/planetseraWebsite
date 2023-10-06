@@ -5,7 +5,7 @@ import {
   Instagram,
   Twitter,
   LinkedIn,
-  Home,
+  Place,
   Email,
   Call,
 } from "@mui/icons-material";
@@ -162,7 +162,7 @@ const Footer = () => {
                 </h2>
                 <ul className="text-white font-medium">
                   <li className="mb-2 flex-row flex ">
-                    <Home
+                    <Place
                       style={{
                         color: "white",
                         fontSize: "40px",
@@ -206,7 +206,7 @@ const Footer = () => {
             </h2>
             <ul className="text-white font-medium">
               <li className="mb-2 flex-row flex ">
-                <Home
+                <Place
                   style={{
                     color: "white",
                     fontSize: "40px",
