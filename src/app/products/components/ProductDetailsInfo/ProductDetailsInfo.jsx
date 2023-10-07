@@ -9,6 +9,7 @@ import ImageMagnifier from "./ImageMagnifier";
 import { notFound } from "next/navigation";
 import { Snackbar } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
+// import ShareLinkProduct from "./ShareLinkProduct";
 
 const ProductDetailsInfo = () => {
   const [open, setOpen] = useState(false);
@@ -221,7 +222,18 @@ const ProductDetailsInfo = () => {
                 </div>
                 <div
                   onClick={handleClick}
-                  className="absolute md:scale-100 scale-75  top-0 right-0 2xl:top-8 md:top-4 md:right-4 xl:right-6  ">
+                  className="absolute md:scale-100 scale-75  top-0 right-0 2xl:top-8 md:top-4 2xl:mt-[-1rem] md:right-4 xl:right-6  ">
+                  {/* <ShareLinkProduct
+                    IconSahre={
+                      <Icon
+                        color={
+                          selectedButton === "50gram"
+                            ? specificProduct?.colored
+                            : specificProduct?.colored2
+                        }
+                      />
+                    }
+                  /> */}
                   <Icon
                     color={
                       selectedButton === "50gram"
