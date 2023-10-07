@@ -134,15 +134,15 @@ const BlendedSection = () => {
             <div className="flex items-center justify-center ">
               <img
                 loading="lazy"
-                src="images/allProductsImg/BriyaniMasalaComing.webp"
+                src="images/allProductsImg/PaneerMasala.webp"
                 className="mx-auto sm:w-64 2xl:w-80"
-                alt="PlanetsEra Briyani Masala"
-                title="Briyani Masala"
+                alt="PlanetsEra Paneer Masala"
+                title="Paneer Masala"
               />
             </div>
           </div>
           <h2 className="text-center font-[Montserrat] text-xl 2xl:text-2xl mt-1">
-            Briyani Masala
+            Paneer Masala
           </h2>
 
           <BuynowBtn
