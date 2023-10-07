@@ -441,7 +441,7 @@ const ProductDetailsInfo = () => {
                         ? specificProduct?.colored
                         : specificProduct?.colored2,
                   }}
-                  className={`md:text-[2.5rem] xl:text-[3.3rem] text-[2rem] tracking-widest font-[500] font-Montserrat md:mt-auto mt-8`}>
+                  className={`md:text-[2.5rem] xl:text-[3.3rem] text-[1.8rem] sm:tracking-widest font-[500] font-Montserrat md:mt-auto mt-8`}>
                   {specificProduct?.ProductName}
                 </h1>
                 <div
@@ -474,7 +474,7 @@ const ProductDetailsInfo = () => {
                     ? specificProduct?.colored
                     : specificProduct?.colored2,
               }}
-              className={` text-4xl font-Montserrat`}>
+              className={`text-[1.8rem] sm:text-4xl font-Montserrat`}>
               Usage
             </h3>
 
@@ -503,7 +503,7 @@ const ProductDetailsInfo = () => {
                   ? specificProduct?.colored
                   : specificProduct?.colored2,
             }}
-            className={` text-4xl font-Montserrat`}>
+            className={`text-[1.8rem] sm:text-4xl font-Montserrat`}>
             Ingredients
           </h3>
           <div
@@ -529,7 +529,7 @@ const ProductDetailsInfo = () => {
                       ? specificProduct?.colored
                       : specificProduct?.colored2,
                 }}
-                className={` text-4xl font-Montserrat`}>
+                className={`text-[1.8rem] sm:text-4xl font-Montserrat`}>
                 Health benefits
               </h3>
               <div
@@ -539,7 +539,7 @@ const ProductDetailsInfo = () => {
                       ? specificProduct?.colored
                       : specificProduct?.colored2,
                 }}
-                className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-0`}></div>
+                className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-[-5px] sm:mt-0`}></div>
             </div>
 
             <p className="leading-[2.2rem] text-slate-600 text-lg font-Montserrat my-1 ">
