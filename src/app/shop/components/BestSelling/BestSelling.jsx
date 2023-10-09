@@ -41,7 +41,7 @@ const BestSelling = () => {
                             loading="lazy"
                             src="images/backgrounds/comingsoon.webp"
                             // width={"360px"}
-                            alt="cooming soon"
+                            alt="coming soon"
                           />
                         </div>
                       ) : (
@@ -57,7 +57,8 @@ const BestSelling = () => {
                             className="relative w-48 2xl:w-64"
                             loading="lazy"
                             src={item?.masalaImg}
-                            alt="..."
+                            alt="Planetsera Spices"
+                            title={item.masalaName}
                           />
                         ) : (
                           <Link href={`/products/${item.id}`}>

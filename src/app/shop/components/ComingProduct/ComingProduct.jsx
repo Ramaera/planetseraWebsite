@@ -37,30 +37,31 @@ const ComingProduct = () => {
                         background: item.bgColor,
                       }}
                       className="relative flex items-center  justify-center rounded-xl p-4 w-full">
-                      {/* {!item?.flipkart && !item?.amazon ? (
+                      {!item?.flipkart && !item?.amazon ? (
                         <div className="top-0 absolute z-10  justify-items-center flex items-center">
                           <img
                             className=""
                             loading="lazy"
                             src="images/backgrounds/comingsoon.webp"
                             // width={"360px"}
-                            alt="cooming soon"
+                            alt="coming soon"
                           />
                         </div>
                       ) : (
                         ""
-                      )} */}
+                      )}
 
                       <div
                         className={`${
-                          !item?.flipkart && !item?.amazon && " "
+                          !item?.flipkart && !item?.amazon && "opacity-50"
                         }  flex items-center justify-center `}>
                         {!item?.flipkart && !item?.amazon ? (
                           <img
                             className="relative w-48 2xl:w-64"
                             loading="lazy"
                             src={item?.masalaImg}
-                            alt="..."
+                            alt="Planetsera Spices"
+                            title={item.masalaName}
                           />
                         ) : (
                           <Link href={`/products/${item.id}`}>

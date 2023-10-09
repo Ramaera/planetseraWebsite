@@ -190,6 +190,13 @@ const MouthWateringData = [
   },
 
   // --------------  ComingSoon Product  -------------------------------------------------------------------
+  {
+    id: "paneer-masala",
+    category: "ComingSoon",
+    masalaImg: "/images/allProductsImg/PaneerMasala.webp",
+    masalaName: "Paneer Masala",
+    bgColor: "rgb(228 223 180)",
+  },
 
   {
     id: "chicken-masala",
@@ -200,19 +207,11 @@ const MouthWateringData = [
   },
 
   {
-    id: "paneer-masala",
+    id: "chhole-masala",
     category: "ComingSoon",
-    masalaImg: "/images/allProductsImg/PaneerMasala.webp",
-    masalaName: "Paneer Masala",
-    bgColor: "rgb(228 223 180)",
-  },
-
-  {
-    id: "kashmiri-chilli-powder",
-    category: "ComingSoon",
-    masalaImg: "/images/allProductsImg/KashmiriChilliPowder.webp",
-    masalaName: "Kashmiri Chilli Powder",
-    bgColor: "rgb(238 238 216)",
+    masalaImg: "/images/allProductsImg/ChholeMasala.webp",
+    masalaName: "Chhole Masala",
+    bgColor: "rgb(220 202 166)",
   },
 
   {

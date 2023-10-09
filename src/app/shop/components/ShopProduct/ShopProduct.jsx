@@ -21,7 +21,7 @@ const ShopProduct = () => {
                           loading="lazy"
                           src="images/backgrounds/comingsoon.webp"
                           // width={"360px"}
-                          alt="cooming soon"
+                          alt="coming soon"
                         />
                       </div>
                     ) : (
@@ -37,7 +37,8 @@ const ShopProduct = () => {
                           className="relative"
                           loading="lazy"
                           src={item.masalaImg}
-                          alt="..."
+                          alt="Planetsera Spices"
+                          title={item.masalaName}
                         />
                       ) : (
                         <Link href={`/products/${item.id}`}>
@@ -46,8 +47,8 @@ const ShopProduct = () => {
                             loading="lazy"
                             src={item.masalaImg}
                             // width={"360px"}
-                            alt={item.masalaName}
-                            title={`Buy Planetsera ${item.masalaName}`}
+                            alt="Planetsera Spices"
+                            title={item.masalaName}
                           />
                         </Link>
                       )}

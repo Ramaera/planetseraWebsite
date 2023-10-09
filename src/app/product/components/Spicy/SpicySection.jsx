@@ -12,8 +12,8 @@ const SpicySection = () => {
               <Link href={items.link}>
                 <div className="background">
                   <img
-                    alt="masala"
-                    title="spices collection"
+                    alt="Planetsera Spices"
+                    title={items.spicyName}
                     loading="lazy"
                     src={items.spicyImage}
                     className="w-full mt-12"
