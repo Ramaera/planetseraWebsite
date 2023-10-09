@@ -188,6 +188,56 @@ const MouthWateringData = [
     masalaName: "Chicken Masala",
     bgColor: "rgb(227 205 192)",
   },
+
+  // --------------  ComingSoon Product  -------------------------------------------------------------------
+
+  {
+    id: "chicken-masala",
+    category: "ComingSoon",
+    masalaImg: "/images/allProductsImg/ChickenMasala.webp",
+    masalaName: "Chicken Masala",
+    bgColor: "rgb(227 205 192)",
+  },
+
+  {
+    id: "paneer-masala",
+    category: "ComingSoon",
+    masalaImg: "/images/allProductsImg/PaneerMasala.webp",
+    masalaName: "Paneer Masala",
+    bgColor: "rgb(228 223 180)",
+  },
+
+  {
+    id: "kashmiri-chilli-powder",
+    category: "ComingSoon",
+    masalaImg: "/images/allProductsImg/KashmiriChilliPowder.webp",
+    masalaName: "Kashmiri Chilli Powder",
+    bgColor: "rgb(238 238 216)",
+  },
+
+  {
+    id: "biryani-masala",
+    category: "ComingSoon",
+    masalaImg: "/images/allProductsImg/BiryaniMasala.webp",
+    masalaName: "Biryani Masala",
+    bgColor: "rgb(183 157 171)",
+  },
+
+  {
+    id: "chana-masala",
+    category: "ComingSoon",
+    masalaImg: "/images/allProductsImg/ChanaMasala.webp",
+    masalaName: "Chana Masala",
+    bgColor: "rgb(221 201 147)",
+  },
+
+  {
+    id: "kitchen-king",
+    category: "ComingSoon",
+    masalaImg: "/images/allProductsImg/KitchenKing.webp",
+    masalaName: "kitchen king Masala",
+    bgColor: "rgb(169 188 170)",
+  },
 ];
 
 export default MouthWateringData;

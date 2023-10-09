@@ -1,0 +1,124 @@
+"use client";
+import ShopData from "../ShopData/ShopData.jsx";
+import BuynowBtn from "../../../../components/BuynowBtn/index.jsx";
+import Link from "next/link";
+
+const ComingProduct = () => {
+  const ComingSoonData = ShopData.map((prod) => {
+    if (prod.category === "ComingSoon") {
+      return prod;
+    }
+  });
+
+  return (
+    <>
+      <div className="mt-4">
+        <div className="mx-4 sm:mx-16 relative flex items-center justify-center">
+          <img
+            src="/images/backgrounds/MouthWateringBg.webp"
+            alt="Mouth Watering Spices"
+            title="Mouth Watering Spices"
+          />
+          <h3 className="absolute text-white font-medium sm:text-5xl">
+            Coming Soon Products
+          </h3>
+        </div>
+        <div className="flex w-full" id="shop">
+          <div className="flex  justify-evenly p-2 md:p-6 flex-wrap w-full ">
+            {ComingSoonData.map((item) => {
+              if (!item) {
+                return;
+              }
+              return (
+                <>
+                  <div className="m-2 w-[45%] md:w-[22%] justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
+                    <div
+                      style={{
+                        background: item.bgColor,
+                      }}
+                      className="relative flex items-center  justify-center rounded-xl p-4 w-full">
+                      {/* {!item?.flipkart && !item?.amazon ? (
+                        <div className="top-0 absolute z-10  justify-items-center flex items-center">
+                          <img
+                            className=""
+                            loading="lazy"
+                            src="images/backgrounds/comingsoon.webp"
+                            // width={"360px"}
+                            alt="cooming soon"
+                          />
+                        </div>
+                      ) : (
+                        ""
+                      )} */}
+
+                      <div
+                        className={`${
+                          !item?.flipkart && !item?.amazon && " "
+                        }  flex items-center justify-center `}>
+                        {!item?.flipkart && !item?.amazon ? (
+                          <img
+                            className="relative w-48 2xl:w-64"
+                            loading="lazy"
+                            src={item?.masalaImg}
+                            alt="..."
+                          />
+                        ) : (
+                          <Link href={`/products/${item.id}`}>
+                            <img
+                              className="relative w-48 2xl:w-64"
+                              loading="lazy"
+                              src={item.masalaImg}
+                              // width={"360px"}
+                              alt="Planetsera Spices"
+                              title={item.masalaName}
+                            />
+                          </Link>
+                        )}
+                      </div>
+                    </div>
+                    <div className="mt-2 mb-[-10px]">
+                      {!item?.flipkart && !item?.amazon ? (
+                        <h3 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
+                          {item?.masalaName}
+                        </h3>
+                      ) : (
+                        <Link href={`/products/${item.id}`}>
+                          <h3 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
+                            {item?.masalaName}
+                          </h3>
+                        </Link>
+                      )}
+                    </div>
+
+                    {!item?.flipkart && !item?.amazon && item?.category ? (
+                      <BuynowBtn
+                        text={"Coming soon"}
+                        link=""
+                        opacity={0.5}
+                        width={"143px"}
+                        padding={"20px"}
+                        height={"30px"}
+                        size={"15px"}
+                        sectionClass="responsiveComingBtn"
+                      />
+                    ) : (
+                      <BuynowBtn
+                        link={`/products/${item?.id}`}
+                        text={"Buy Now"}
+                        width={"130px"}
+                        padding={"20px"}
+                        height={"30px"}
+                        sectionClass="relatedResponsiveBtn"
+                      />
+                    )}
+                  </div>
+                </>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+export default ComingProduct;
