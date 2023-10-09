@@ -26,7 +26,7 @@ const RelatedPtoductData = [
     ProductIngredients: "Red Chilli",
     ProductHealth:
       "Red chilli powder, which is also called chilli powder or lal mirch powder, has more to give than just a spicy taste. It helps you lose weight because it has capsaicin, speeds up your metabolism, and lowers inflammation. This spice has a lot of vitamins and antioxidants, which are good for the heart and make the defence system stronger. Its spicy kick can even ease pain and make you feel better. Red chilli powder is good for your health and a tasty addition to your diet.",
-    colored: "#C59F9F",
+    colored: "rgb(194 127 127)",
     colored2: "#C59F9F",
     inactiveBtn: "#F1E4E4",
     inactiveBtn2: "#F1E4E4",
@@ -160,9 +160,9 @@ const RelatedPtoductData = [
       "Black Salt, Salt, Coriander, Dry Mango, Cumin, Rock Salt, Fennel Seed, Pomegranate Seed, Tamarind, Mint, Carom Seed, Black Pepper, Dry Ginger, Red Chili, Nutmeg, Clove, Asafoetida, Citric Acid",
     ProductHealth:
       "Chat masala powder isn't just a flavorful spice blend; it also offers health benefits. Packed with a mix of spices like cumin, coriander, and asafoetida, it aids digestion and can alleviate indigestion and bloating. The best chaat masala can also provide a dash of antioxidants, helping to boost your overall well-being. Enjoy its tangy goodness while reaping these health perks.",
-    colored: "#CDE1A2",
+    colored: "rgb(206 206 93)",
     colored2: "#CDE1A2",
-    inactiveBtn: "rgb(205 225 162 / 38%)",
+    inactiveBtn: "rgb(209 209 69 / 38%)",
     inactiveBtn2: "rgb(205 225 162 / 38%)",
     bgColor: "rgb(238 238 216)",
 
@@ -226,9 +226,9 @@ const RelatedPtoductData = [
     ProductIngredients: "Turmeric",
     ProductHealth:
       "Organic turmeric powder, which is also called haldi powder, is a powerful superfood that has many health benefits. It has anti-inflammatory and antioxidant qualities because it is full of curcumin. When you consume haldi powder regularly, it helps your body digest food, boosts your immune system, and keeps your face healthy. Take advantage of the natural benefits of organic turmeric powder to improve your health overall.",
-    colored: "#D0C7A2",
+    colored: "rgb(214 184 65)",
     colored2: "#E2C199",
-    inactiveBtn: "rgb(208 199 162 / 38%)",
+    inactiveBtn: "rgb(214 184 65 / 38%)",
     inactiveBtn2: "rgb(226 193 153 / 38%)",
     bgColor: "rgb(228 223 203)",
 
@@ -483,7 +483,7 @@ const RelatedPtoductData = [
     ProductIngredients: "Coriander Seed",
     ProductHealth:
       "The health benefits of coriander powder, also known as dhaniya Powder, are numerous. It helps digestion, lowers damage, and controls blood sugar levels. It supports heart health and the immune system due to its abundance of antioxidants. In addition to aiding in detoxification, coriander powder can mitigate IBS symptoms. Include this flavorful spice in your diet for a delicious method to improve your health.",
-    colored: "#ABC59F",
+    colored: "rgb(132 184 108)",
     colored2: "#ABC59F",
     inactiveBtn: "rgb(171 197 159 / 38%)",
     inactiveBtn2: "rgb(171 197 159 / 38%)",
@@ -549,9 +549,9 @@ const RelatedPtoductData = [
 
     ProductHealth:
       "Amchur powder, also known as dry mango powder or amchur masala, offers more than just a tangy flavor to your dishes. Packed with vitamins, antioxidants, and digestive properties, amchur powder aids in digestion, boosts immunity, and enhances skin health. Its high vitamin C content supports overall well-being and adds a zesty twist to your culinary creations. Embrace the goodness of amchur powder for a flavorful and health-conscious culinary experience.",
-    colored: "#DCBF92",
+    colored: "rgb(212 158 74)",
     colored2: "#DCBF92",
-    inactiveBtn: "rgb(253 235 208)",
+    inactiveBtn: "rgb(212 158 74 / 38%)",
     inactiveBtn2: "rgb(253 235 208)",
     bgColor: "rgb(236 220 197)",
     flipkart50:

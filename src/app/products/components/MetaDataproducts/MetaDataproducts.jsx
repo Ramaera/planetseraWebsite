@@ -30,7 +30,7 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/black-pepper-powderl"
+            href="https://www.planetsera.com/products/black-pepper-powder"
           />
 
           <meta
@@ -162,12 +162,12 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/coriander-powderl"
+            href="https://www.planetsera.com/products/coriander-powder"
           />
 
           <meta
             property="og:url"
-            content="https://www.planetsera.com/products/coriander-powderl"
+            content="https://www.planetsera.com/products/coriander-powder"
           />
           <meta property="og:type" content="website" />
           <meta

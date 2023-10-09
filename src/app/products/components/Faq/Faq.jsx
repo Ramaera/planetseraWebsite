@@ -19,9 +19,9 @@ const Faq = () => {
 
   return (
     <div className=" p-4">
-      <h1 className="text-xl sm:text-3xl font-semibold mb-6 text-center">
+      <h6 className="text-xl sm:text-3xl font-semibold mb-6 text-center">
         Frequently Asked Questions (FAQ)
-      </h1>
+      </h6>
       <div className="max-w-4xl mx-auto">
         {faqDataFilter?.faqs?.map((item, index) => (
           <div key={index} className="mb-6">
