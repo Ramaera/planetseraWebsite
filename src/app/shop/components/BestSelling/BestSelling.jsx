@@ -15,10 +15,10 @@ const BestSelling = () => {
       <div className="border-t mx-16 xl:mt-6 2xl:mt-10 2xl:mx-20"></div>
       <div className="mt-10">
         <div className=" sm:text-left  flex flex-col  justify-center items-center">
-          <h5 className="text-red-400">PRODUCTS</h5>
-          <h2 className="text-[#1E1E1E] text-2xl sm:text-4xl font-['Montserrat'] font-bold text-center">
+          <h3 className="text-red-400">PRODUCTS</h3>
+          <h4 className="text-[#1E1E1E] text-2xl sm:text-4xl font-['Montserrat'] font-bold text-center">
             Our Best Seller Products
-          </h2>
+          </h4>
         </div>
         <div className="flex w-full" id="shop">
           <div className="flex  justify-evenly p-2 md:p-6 flex-wrap w-full">
@@ -28,7 +28,7 @@ const BestSelling = () => {
               }
               return (
                 <>
-                  <div className="m-2 w-[45%] md:w-[22%] justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
+                  <div className=" m-2 w-[45%] md:w-[22%] justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
                     <div
                       style={{
                         background: item.bgColor,
@@ -76,14 +76,14 @@ const BestSelling = () => {
                     </div>
                     <div className="mt-2 mb-[-10px]">
                       {!item?.flipkart && !item?.amazon ? (
-                        <h3 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
+                        <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                           {item?.masalaName}
-                        </h3>
+                        </h5>
                       ) : (
                         <Link href={`/products/${item.id}`}>
-                          <h3 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
+                          <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                             {item?.masalaName}
-                          </h3>
+                          </h5>
                         </Link>
                       )}
                     </div>

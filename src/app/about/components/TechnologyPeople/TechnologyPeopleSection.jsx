@@ -45,7 +45,7 @@ const TechnologyPeopleSection = () => {
               <div className="basis-4/12  photo10">
                 <img
                   alt="Mr.Devender Mishra"
-                  title="Our Founder, Mr.Devender Mishra at the launch of Planetsera Spices"
+                  title="Mr.Devender Mishra"
                   src="images/backgrounds/technologyplanet-2.webp"
                   className=" technologyPeople-img sm:max-h-96"
                 />

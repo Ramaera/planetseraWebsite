@@ -30,24 +30,24 @@ const ShopHeader = () => {
                   flexDirection: "column",
                   marginRight: "20px",
                 }}>
-                <h3 className="font-bold sm:font-normal text-black text-3xl webColor ">
+                <h2 className="font-bold sm:font-normal text-black text-3xl webColor ">
                   100+
-                </h3>
-                <h4 className="font-bold sm:font-normal text-black text-lg webColor">
+                </h2>
+                <h3 className="font-bold sm:font-normal text-black text-lg webColor">
                   Customers
-                </h4>
+                </h3>
               </div>
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
                 }}>
-                <h3 className="font-bold sm:font-normal text-black text-3xl webColor">
+                <h2 className="font-bold sm:font-normal text-black text-3xl webColor">
                   50+
-                </h3>
-                <h4 className="font-bold sm:font-normal text-black text-lg webColor">
+                </h2>
+                <h3 className="font-bold sm:font-normal text-black text-lg webColor">
                   Plant Species
-                </h4>
+                </h3>
               </div>
             </div>
           </div>

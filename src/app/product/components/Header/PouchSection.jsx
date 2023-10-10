@@ -4,9 +4,9 @@ const PouchSection = () => {
       {/* <div className="basis-2/12"></div>
       <div className="basis-8/12 flex relative w-full"> */}
       <img
-        alt="products"
-        title="collection of products"
-        loading="lazy"
+        alt="PlanetsEra Spices"
+        title="Collection of PlanetsEra Spices"
+        // loading="lazy"
         src="images/backgrounds/Picture-1.webp"
         className="pouchAlignment"
       />

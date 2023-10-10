@@ -252,6 +252,7 @@ const Footer = () => {
               <a
                 target="_blank"
                 href="https://www.facebook.com/planetseraspices/"
+                aria-label="facebook"
                 className="text-white">
                 <Facebook />
               </a>
@@ -259,6 +260,7 @@ const Footer = () => {
               <a
                 target="_blank"
                 href="https://www.instagram.com/planetseraspices/"
+                aria-label="instagram"
                 className="text-white">
                 <Instagram />
               </a>
@@ -266,6 +268,7 @@ const Footer = () => {
               <a
                 target="_blank"
                 href="https://www.linkedin.com/company/planetsera-spices/"
+                aria-label="linkedin"
                 className="text-white ">
                 <LinkedIn />
               </a>
@@ -273,6 +276,7 @@ const Footer = () => {
               <a
                 target="_blank"
                 href="https://twitter.com/Planetseraspice/"
+                aria-label="X"
                 className="text-white flex items-center">
                 <img
                   src="images/backgrounds/X-Logo.png"

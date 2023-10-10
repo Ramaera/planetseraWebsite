@@ -39,7 +39,7 @@ const Faq = () => {
             </button>
             {openIndex === index && (
               <div
-                className="bg-white px-4 pb-4  rounded-b-lg "
+                className="bg-white px-4 pb-4  rounded-b-lg delay-1000 transition duration-1000 ease-in"
                 style={{ backgroundColor: "rgb(240, 240, 240, 1)" }}>
                 <p className="text-gray-700">{item.answer}</p>
               </div>

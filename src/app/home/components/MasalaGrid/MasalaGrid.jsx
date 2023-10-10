@@ -29,7 +29,7 @@ function MasalaGrid() {
                 <Link href={`/products/${items.id}`}>
                   <img
                     alt="Planetsera Spices"
-                    title={`Buy Planetsera ${items.productText}`}
+                    title={items.productText}
                     src={items.ourproductImage}
                     className="sm:w-64 2xl:w-80 md:hover:scale-105 cursor-pointer"
                   />

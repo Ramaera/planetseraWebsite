@@ -16,7 +16,7 @@ const QualitySection = () => {
             <div className="basis-4/12  photo10">
               <img
                 alt="Mr. Devender Mishra"
-                title="Our Founder, Mr. Devender Mishra addressing the press"
+                title="Mr. Devender Mishra"
                 src="images/backgrounds/quality-2.webp"
                 className="quality-img sm:max-h-96"
               />

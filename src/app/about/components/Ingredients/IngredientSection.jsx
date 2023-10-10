@@ -153,7 +153,7 @@ const IngredientSection = () => {
         <div className="basis-5/12">
           <img
             alt="Delicious and natural"
-            title="Delicious and natural way to enhance your well-being."
+            title="PlanetsEra Spices"
             src="images/backgrounds/ingredientsImg.webp"
             className="myImage-main 2xl:m-0"
           />
@@ -164,7 +164,7 @@ const IngredientSection = () => {
             <div className="w-full basis-2/12">
               <img
                 alt="Delicious and natural"
-                title="Delicious and natural way to enhance your well-being."
+                title="PlanetsEra Spices"
                 src={
                   colorMe === "#ff4f4f"
                     ? redFour

@@ -62,8 +62,8 @@ function Header() {
                 <div className="basis-4/12 header-display"></div>
                 <div className="">
                   <img
-                    alt="masala"
-                    title="Diverse blend of culture and taste"
+                    alt="Planetsera Spices"
+                    title="Planetsera Spices"
                     src={slider}
                     className="header-img md:scale-[0.95] xl:scale-100"
                   />
@@ -129,6 +129,7 @@ function Header() {
                 alt="masala"
                 src={cusinesImage}
                 className="absolute cus_ab"
+                loading="lazy"
               />
             </div>
           </div>

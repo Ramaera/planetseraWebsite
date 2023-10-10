@@ -19,10 +19,11 @@ const MouthWatering = () => {
             src="/images/backgrounds/MouthWateringBg.webp"
             alt="Mouth Watering Spices"
             title="Mouth Watering Spices"
+            loading="lazy"
           />
-          <h3 className="absolute text-white font-medium sm:text-5xl">
+          <h4 className="absolute text-white font-medium sm:text-5xl">
             Mouth Watering Spices
-          </h3>
+          </h4>
         </div>
         <div className="flex w-full" id="shop">
           <div className="flex  justify-evenly p-2 md:p-6 flex-wrap w-full ">
@@ -80,14 +81,14 @@ const MouthWatering = () => {
                     </div>
                     <div className="mt-2 mb-[-10px]">
                       {!item?.flipkart && !item?.amazon ? (
-                        <h3 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
+                        <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                           {item?.masalaName}
-                        </h3>
+                        </h5>
                       ) : (
                         <Link href={`/products/${item.id}`}>
-                          <h3 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
+                          <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                             {item?.masalaName}
-                          </h3>
+                          </h5>
                         </Link>
                       )}
                     </div>
