@@ -51,7 +51,10 @@ const MetaDataproducts = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="banner image url" />
+          <meta
+            property="og:image"
+            content="/images/banner/BlackPepperPowder-Banner.jpg"
+          />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
 
@@ -69,7 +72,10 @@ const MetaDataproducts = () => {
             name="twitter:description"
             content=" Black Pepper Powder (Kali Mirch Powder) adds robust, aromatic flavour to your dishes. Our premium, finely ground black pepper powder elevates foods."
           />
-          <meta name="twitter:image" content="banner image url" />
+          <meta
+            name="twitter:image"
+            content="/images/banner/BlackPepperPowder-Banner.jpg"
+          />
         </>
       )}
 
@@ -117,7 +123,10 @@ const MetaDataproducts = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="banner image url" />
+          <meta
+            property="og:image"
+            content="/images/banner/ChatMasala-Banner.jpg"
+          />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
 
@@ -135,7 +144,10 @@ const MetaDataproducts = () => {
             name="twitter:description"
             content=" With our Chat Masala Powder, you can find the perfect blend of spices and add authentic tastes to your dishes. Buy Now to Make Your Mouth Water!"
           />
-          <meta name="twitter:image" content="banner image url" />
+          <meta
+            name="twitter:image"
+            content="/images/banner/ChatMasala-Banner.jpg"
+          />
         </>
       )}
 
@@ -183,7 +195,10 @@ const MetaDataproducts = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="banner image url" />
+          <meta
+            property="og:image"
+            content="/images/banner/CorianderPowder-Banner.jpg"
+          />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
 
@@ -201,7 +216,10 @@ const MetaDataproducts = () => {
             name="twitter:description"
             content=" Add some depth to the flavour of your food with some coriander powder, also known as dhaniya powder. Uncover the secret to gastronomic perfection with every dash!"
           />
-          <meta name="twitter:image" content="banner image url" />
+          <meta
+            name="twitter:image"
+            content="/images/banner/CorianderPowder-Banner.jpg"
+          />
         </>
       )}
 
@@ -249,7 +267,10 @@ const MetaDataproducts = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="banner image url" />
+          <meta
+            property="og:image"
+            content="/images/banner/GaramMasala-Banner.jpg"
+          />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
 
@@ -267,7 +288,10 @@ const MetaDataproducts = () => {
             name="twitter:description"
             content=" Explore the excellent flavour profile of PlanetSera's Garam Masala spice combination today. Our quality, aromatic spice combination will take your recipes to the next level."
           />
-          <meta name="twitter:image" content="banner image url" />
+          <meta
+            name="twitter:image"
+            content="/images/banner/GaramMasala-Banner.jpg"
+          />
         </>
       )}
 
@@ -314,7 +338,10 @@ const MetaDataproducts = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="banner image url" />
+          <meta
+            property="og:image"
+            content="/images/banner/MeatMasala-Banner.jpg"
+          />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
           <meta name="twitter:card" content="summary_large_image" />
@@ -331,7 +358,10 @@ const MetaDataproducts = () => {
             name="twitter:description"
             content=" Find the most delicious combination of meat masala spices! Your recipes can be taken to the next level by using the finest spices for meat."
           />
-          <meta name="twitter:image" content="banner image url" />
+          <meta
+            name="twitter:image"
+            content="/images/banner/MeatMasala-Banner.jpg"
+          />
         </>
       )}
 
@@ -375,7 +405,10 @@ const MetaDataproducts = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="banner image url" />
+          <meta
+            property="og:image"
+            content="/images/banner/RedChilliPowder-Banner.jpg"
+          />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
 
@@ -393,7 +426,10 @@ const MetaDataproducts = () => {
             name="twitter:description"
             content="Explore the spicy world of red chilli powder. Our premium lal Mirch powder gives recipes a tangy zing. Shop today for the perfect spice to enhance your cooking."
           />
-          <meta name="twitter:image" content="banner image url" />
+          <meta
+            name="twitter:image"
+            content="/images/banner/RedChilliPowder-Banner.jpg"
+          />
         </>
       )}
 
@@ -441,7 +477,10 @@ const MetaDataproducts = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="banner image url" />
+          <meta
+            property="og:image"
+            content="/images/banner/SabjiMasala-Banner.jpg"
+          />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
 
@@ -459,7 +498,10 @@ const MetaDataproducts = () => {
             name="twitter:description"
             content="PlanetSera's excellent Sabji Masala enhances any dish. This delicious spice blend, perfected through time, will elevate your cooking. PlanetSera Sabji Masala reveals the heart of Indian cookery."
           />
-          <meta name="twitter:image" content="banner image url" />
+          <meta
+            name="twitter:image"
+            content="/images/banner/SabjiMasala-Banner.jpg"
+          />
         </>
       )}
 
@@ -506,7 +548,10 @@ const MetaDataproducts = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="banner image url" />
+          <meta
+            property="og:image"
+            content="/images/banner/TurmericPowder-Banner.jpg"
+          />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
 
@@ -524,7 +569,10 @@ const MetaDataproducts = () => {
             name="twitter:description"
             content="PlanetSera Haldi Powder has a deep, authentic taste. Our quality turmeric powder from the best farms adds natural goodness to every recipe. Haldi Powder from PlanetSera adds golden flavour to your dishes."
           />
-          <meta name="twitter:image" content="banner image url" />
+          <meta
+            name="twitter:image"
+            content="/images/banner/TurmericPowder-Banner.jpg"
+          />
         </>
       )}
 
@@ -572,7 +620,10 @@ const MetaDataproducts = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="banner image url" />
+          <meta
+            property="og:image"
+            content="/images/banner/CuminPowder-Banner.jpg"
+          />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
 
@@ -590,7 +641,10 @@ const MetaDataproducts = () => {
             name="twitter:description"
             content="PlanetSera's Jeera Powder will transport you to the heart of traditional Indian cooking. Our premium cumin seed powder will elevate your cooking to new heights with every use."
           />
-          <meta name="twitter:image" content="banner image url" />
+          <meta
+            name="twitter:image"
+            content="/images/banner/CuminPowder-Banner.jpg"
+          />
         </>
       )}
 
@@ -637,7 +691,10 @@ const MetaDataproducts = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="banner image url" />
+          <meta
+            property="og:image"
+            content="/images/banner/AmchurPowder-Banner.jpg"
+          />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
 
@@ -655,7 +712,10 @@ const MetaDataproducts = () => {
             name="twitter:description"
             content="Our premium spice combination gives foods a zesty, acidic kick. Taste authentic dried mango, handcrafted to perfection, in your dishes. PlanetSera's Amchur Powder adds Indian flavour to your cuisine.."
           />
-          <meta name="twitter:image" content="banner image url" />
+          <meta
+            name="twitter:image"
+            content="/images/banner/AmchurPowder-Banner.jpg"
+          />
         </>
       )}
     </>
