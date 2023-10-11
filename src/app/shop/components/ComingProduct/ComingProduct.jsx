@@ -15,13 +15,13 @@ const ComingProduct = () => {
       <div className="mt-4">
         <div className="mx-4 sm:mx-16 relative flex items-center justify-center">
           <img
-            src="/images/backgrounds/MouthWateringBg.webp"
-            alt="Coming Soon Spices"
-            title="Coming Soon Spices"
+            src="/images/backgrounds/UpcomingBg.webp"
+            alt="Upcoming Spices"
+            title="Upcoming Spices"
             loading="lazy"
           />
           <h4 className="absolute text-white font-medium sm:text-5xl">
-            Coming Soon Products
+            Upcoming Products
           </h4>
         </div>
         <div className="flex w-full" id="shop">

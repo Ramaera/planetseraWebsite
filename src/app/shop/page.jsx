@@ -7,7 +7,7 @@ import NonvegTadka from "./components/NonvegTadka/NonvegTadka";
 import KitchenSpices from "./components/KitchenSpices/KitchenSpices";
 import WeekandTadka from "./components/WeekandTadka/WeekandTadka";
 import ShopBuy from "./components/ShopBuy/ShopBuy";
-// import ComingProduct from "./components/ComingProduct/ComingProduct";
+import ComingProduct from "./components/ComingProduct/ComingProduct";
 import BuyProduct from "./components/ShopProduct/ShopProduct";
 import ShopSpicesFooter from "./components/ShopSpicesFooter/ShopSpicesFooter";
 import Footer from "@/components/Footer/Footer";
@@ -78,7 +78,7 @@ const Shop = () => {
       {/* <NonvegTadka /> */}
       <KitchenSpices />
       <WeekandTadka />
-      {/* <ComingProduct /> */}
+      <ComingProduct />
       <ShopBuy />
       {/* <BuyProduct /> */}
       {/* <ShopSpicesFooter /> */}
