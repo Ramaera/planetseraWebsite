@@ -1,4 +1,4 @@
-import "./TechnologyPeopleSection.css";
+import "@/public/styles/technologyPeopleSection.css";
 
 const TechnologyPeopleSection = () => {
   return (

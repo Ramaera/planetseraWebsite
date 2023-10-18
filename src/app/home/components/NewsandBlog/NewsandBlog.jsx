@@ -1,5 +1,5 @@
 import Cards from "./Cards";
-import "./newsandblog.css";
+import "@/public/styles/newsandblog.css";
 import NewsInfo from "./NewsInfo";
 import { NewsData } from "./Newsdata";
 const newsCards = NewsData.map((item) => {

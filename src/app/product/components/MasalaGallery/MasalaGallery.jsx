@@ -1,6 +1,6 @@
-import "./MasalaGallery.css";
+import "@/public/styles/masalaGallery.css";
 import Slider from "infinite-react-carousel";
-import BuynowBtn from "../../../../components/BuynowBtn";
+import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
 import MasalaGalleryData from "./MasalaGalleryData";
 

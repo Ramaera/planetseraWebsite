@@ -1,7 +1,6 @@
 "use client";
-import "./Header.css";
-import "../../../../styles/mediaQuery.css";
-import "../../../../styles/globals.css";
+import "@/public/styles/header.css";
+import "@/public/styles/globals.css";
 import LogoSection from "@/components/Navigation/LogoSection";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";

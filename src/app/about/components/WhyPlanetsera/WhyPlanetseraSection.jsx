@@ -1,4 +1,4 @@
-import "./whyPlanetsera.css";
+import "@/public/styles/whyPlanetsera.css";
 import WhyPlanetserasection1 from "./WhyPlanetserasection1";
 
 const WhyPlanetseraSection = () => {

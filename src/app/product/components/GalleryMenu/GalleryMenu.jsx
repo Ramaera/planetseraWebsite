@@ -1,5 +1,5 @@
 "use client";
-import "./GalleryMenu.css";
+import "@/public/styles/galleryMenu.css";
 import { useSelector } from "react-redux";
 
 const GalleryMenu = () => {

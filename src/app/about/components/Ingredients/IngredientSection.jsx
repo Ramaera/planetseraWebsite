@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import "./IngredientSection.css";
+import "@/public/styles/ingredientSectionStyle.css";
 import { useSelector } from "react-redux";
 
 const IngredientSection = () => {

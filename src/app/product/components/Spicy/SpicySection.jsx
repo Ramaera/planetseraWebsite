@@ -1,4 +1,4 @@
-import "./SpicySection.css";
+import "@/public/styles/spicySection.css";
 import SpicyData from "./SpicyData";
 import Link from "next/link";
 

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import Link from "next/link";
-import "./style.css";
+import "@/public/styles/buyNowBtnStyle.css";
 
 const Index = ({
   link,

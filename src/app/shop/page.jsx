@@ -1,15 +1,14 @@
 "use client";
 import React, { useEffect } from "react";
-import ShopHeader from "./components/ShopHeader/ShopHeader";
-import BestSelling from "./components/BestSelling/BestSelling";
-import MouthWatering from "./components/MouthWatering/MouthWatering";
-import NonvegTadka from "./components/NonvegTadka/NonvegTadka";
-import KitchenSpices from "./components/KitchenSpices/KitchenSpices";
-import WeekandTadka from "./components/WeekandTadka/WeekandTadka";
-import ShopBuy from "./components/ShopBuy/ShopBuy";
-import ComingProduct from "./components/ComingProduct/ComingProduct";
-import ShopSpicesFooter from "./components/ShopSpicesFooter/ShopSpicesFooter";
-import Footer from "@/components/Footer/Footer";
+import ShopHeader from "@/app/shop/components/ShopHeader/ShopHeader";
+import BestSelling from "@/app/shop/components/BestSelling/BestSelling";
+import MouthWatering from "@/app/shop/components/MouthWatering/MouthWatering";
+import NonvegTadka from "@/app/shop/components/NonvegTadka/NonvegTadka";
+import KitchenSpices from "@/app/shop/components/KitchenSpices/KitchenSpices";
+import WeekandTadka from "@/app/shop/components/WeekandTadka/WeekandTadka";
+import ShopBuy from "@/app/shop/components/ShopBuy/ShopBuy";
+import ComingProduct from "@/app/shop/components/ComingProduct/ComingProduct";
+import ShopSpicesFooter from "@/app/shop/components/ShopSpicesFooter/ShopSpicesFooter";
 import Head from "next/head";
 
 const Shop = () => {

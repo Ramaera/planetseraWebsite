@@ -1,4 +1,4 @@
-import "./ExtraOrdinarySection.css";
+import "@/public/styles/extraOrdinarySection.css";
 
 const ExtraOrdinarySection = () => {
   return (

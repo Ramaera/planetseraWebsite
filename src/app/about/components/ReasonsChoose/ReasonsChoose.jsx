@@ -1,5 +1,5 @@
 "use client";
-import "./ReasonsChoose.css";
+import "@/public/styles/reasonsChoose.css";
 import React, { useState } from "react";
 import ReasonsChooseData from "./ReasonsChooseData";
 

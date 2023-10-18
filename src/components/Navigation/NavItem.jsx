@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import "./navigation.css";
+import "@/public/styles/navigation.css";
 import { useParams } from "next/navigation";
 import RelatedPtoductData from "@/app/products/components/RelatedProducts/RelatedProductData";
 import { useEffect, useState } from "react";
@@ -40,7 +40,11 @@ const NavItem = ({ page }) => {
           : "text-white"
       }`}>
       <Link className={"scale-[0.6] mb-8 sm:mt-[-0.6rem]"} href="/">
-        <img className="" src="/images/logo/logo.webp" alt="logo" />
+        <img
+          className=""
+          src="https://www.planetsera.com/images/logo/logo.webp"
+          alt="logo"
+        />
       </Link>
       <ul
         style={{

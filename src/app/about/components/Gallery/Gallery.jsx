@@ -5,7 +5,7 @@ import { IconButton } from "@mui/material";
 import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import "./Gallery.css";
+import "@/public/styles/galleryStyle.css";
 
 const Gallery = () => {
   const colorMe = useSelector((state) => state.colorUs.color);

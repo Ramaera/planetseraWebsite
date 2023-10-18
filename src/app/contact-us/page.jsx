@@ -1,7 +1,6 @@
 "use client";
-import ContactUsHeader from "./components/ContractUsHeader/ContractUsHeader";
-import ContactUsCentre from "./components/ContactUsCentre/ContactUsCentre";
-import AboutFooter from "./components/AboutFooter/AboutFooter";
+import ContactUsHeader from "@/app/contact-us/components/ContractUsHeader/ContractUsHeader";
+import ContactUsCentre from "@/app/contact-us/components/ContactUsCentre/ContactUsCentre";
 import Head from "next/head";
 import { useEffect } from "react";
 

@@ -9,8 +9,7 @@ import {
   Email,
   Call,
 } from "@mui/icons-material";
-
-import "./footer.css";
+import "@/public/styles/footer.css";
 import FooterTop from "./FooterTop";
 import { useSelector } from "react-redux";
 

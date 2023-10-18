@@ -1,5 +1,5 @@
 import React from "react";
-import "./review.css";
+import "@/public/styles/review.css";
 import ReviewImg from "./ReviewImg";
 import ReviewInfo from "./ReviewInfo";
 

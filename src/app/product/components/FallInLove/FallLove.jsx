@@ -1,5 +1,5 @@
 "use client";
-import "./FallLove.css";
+import "@/public/styles/fallLove.css";
 import { useSelector } from "react-redux";
 
 const FallLove = () => {

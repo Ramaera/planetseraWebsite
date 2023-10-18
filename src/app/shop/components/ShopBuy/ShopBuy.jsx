@@ -1,5 +1,5 @@
 "use client";
-import "./ShopBuy.css";
+import "@/public/styles/shopBuy.css";
 import { useSelector } from "react-redux";
 
 const ShopBuy = () => {

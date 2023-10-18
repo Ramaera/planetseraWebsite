@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./InstagramRecipe.css";
+import "@/public/styles/instagramRecipe.css";
 import { InstagramEmbedDangerousHTML } from "./InstagramPost";
 import { InstagramSocialIcon } from "./InstagramSocialIcon";
 import InstagramHeading from "./InstagramHeading";

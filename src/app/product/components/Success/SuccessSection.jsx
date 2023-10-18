@@ -1,5 +1,5 @@
 "use client";
-import "./SuccessSection.css";
+import "@/public/styles/successSection.css";
 import React, { useState } from "react";
 import { SliderData } from "./SuccessSectionData";
 import {

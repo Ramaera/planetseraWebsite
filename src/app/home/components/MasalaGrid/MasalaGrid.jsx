@@ -1,7 +1,7 @@
 "use client";
 import Our from "./MasalaGridData";
 import { useSelector } from "react-redux";
-import BuynowBtn from "../../../../components/BuynowBtn";
+import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
 
 function MasalaGrid() {

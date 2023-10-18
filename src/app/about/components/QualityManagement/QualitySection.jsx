@@ -1,4 +1,4 @@
-import "./QualitySection.css";
+import "@/public/styles/qualitySection.css";
 
 const QualitySection = () => {
   return (

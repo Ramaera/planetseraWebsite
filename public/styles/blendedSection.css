@@ -1,14 +1,7 @@
 @font-face {
-   
-  src: url(/public/fonts/josefont.ttf);
-}
-
-@font-face {
   font-family: oriyafont;
   src: url(/public/fonts/oriyafont.ttc);
 }
-
-
 
 .blended-text {
   font-size: 20px;

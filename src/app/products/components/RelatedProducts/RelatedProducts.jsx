@@ -1,6 +1,6 @@
 import RelatedPtoductData from "./RelatedProductData";
 import Link from "next/link";
-import BuynowBtn from "../../../../components/BuynowBtn";
+import BuynowBtn from "@/components/BuynowBtn";
 import { usePathname } from "next/navigation";
 
 const RelatedProducts = () => {

@@ -1,4 +1,4 @@
-import "./GallerySection.css";
+import "@/public/styles/gallerySection.css";
 import GalleryImageTwo from "./GalleryImageTwo";
 import GalleryImageThree from "./GalleryImageThree";
 import GalleryImageFive from "./GalleryImageFive";

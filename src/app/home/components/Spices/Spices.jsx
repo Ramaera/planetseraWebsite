@@ -1,5 +1,5 @@
 "use client";
-import "./spices.css";
+import "@/public/styles/spices.css";
 import SpicesInfo from "./SpicesInfo";
 import { useSelector } from "react-redux";
 

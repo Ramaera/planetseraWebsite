@@ -1,8 +1,7 @@
 "use client";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
-import EarnSection from "./components/EarnSection/EarnSection";
-import Footer from "@/components/Footer/Footer";
+import EarnSection from "@/app/earn/components/EarnSection/EarnSection";
 
 const Earn = () => {
   return (

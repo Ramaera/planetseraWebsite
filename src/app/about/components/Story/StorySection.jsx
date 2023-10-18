@@ -1,5 +1,5 @@
 import React from "react";
-import "./StorySection.css";
+import "@/public/styles/storySection.css";
 import { useSelector } from "react-redux";
 
 const StorySection = () => {

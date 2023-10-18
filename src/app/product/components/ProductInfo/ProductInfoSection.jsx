@@ -1,4 +1,4 @@
-import "./ProductInfo.css";
+import "@/public/styles/productInfo.css";
 import Data from "./ProductInfoData";
 import Link from "next/link";
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import "./navigation.css";
+import "@/public/styles/navigation.css";
 import { useSelector } from "react-redux";
 
 const LogoSection = () => {

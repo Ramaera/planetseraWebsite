@@ -1,6 +1,6 @@
-import "./OurProduct.css";
+import "@/public/styles/ourProduct.css";
 import Our from "./OurProductData";
-import BuynowBtn from "../../../../components/BuynowBtn";
+import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
 
 const OurProduct = () => {

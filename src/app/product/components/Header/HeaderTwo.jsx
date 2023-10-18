@@ -1,5 +1,5 @@
 "use client";
-import "./HeaderTwo.css";
+import "@/public/styles/headerTwo.css";
 import PouchSection from "./PouchSection";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import NavItem from "@/components/Navigation/NavItem";

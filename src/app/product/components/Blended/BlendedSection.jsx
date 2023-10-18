@@ -1,5 +1,5 @@
-import "./BlendedSection.css";
-import BuynowBtn from "../../../../components/BuynowBtn";
+import "@/public/styles/blendedSection.css";
+import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
 
 const BlendedSection = () => {

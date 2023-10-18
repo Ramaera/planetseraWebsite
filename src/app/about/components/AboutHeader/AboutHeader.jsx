@@ -1,5 +1,5 @@
 "use client";
-import "./AboutHeader.css";
+import "@/public/styles/aboutHeader.css";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import { useSelector } from "react-redux";

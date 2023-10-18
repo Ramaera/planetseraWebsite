@@ -1,6 +1,6 @@
 "use client";
 import ShopData from "../ShopData/ShopData.jsx";
-import BuynowBtn from "../../../../components/BuynowBtn";
+import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
 
 const NonvegTadka = () => {

@@ -1,6 +1,6 @@
 "use client";
 import ShopData from "../ShopData/ShopData.jsx";
-import BuynowBtn from "../../../../components/BuynowBtn/index.jsx";
+import BuynowBtn from "@/components/BuynowBtn/index.jsx";
 import Link from "next/link";
 
 const ComingProduct = () => {

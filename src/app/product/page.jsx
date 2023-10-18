@@ -1,21 +1,19 @@
 "use client";
-import HeaderTwo from "./components/Header/HeaderTwo";
-import GalleryMenu from "./components/GalleryMenu/GalleryMenu";
-import MasalaGallery from "./components/MasalaGallery/MasalaGallery";
-import SuccessSection from "./components/Success/SuccessSection";
-import SpicySection from "./components/Spicy/SpicySection";
-import ExtraOrdinarySection from "./components/ExtraOrdinary/ExtraOrdinarySection";
-import FallLove from "./components/FallInLove/FallLove";
-import ProductInfoSection from "./components/ProductInfo/ProductInfoSection";
-import ProductSection from "./components/ProductSection/ProductSection";
-import IngredientSection from "./components/Ingredients/IngredientSection";
-import BlendedSection from "./components/Blended/BlendedSection";
-import OurProduct from "./components/OurProduct/OurProduct";
-import GallerySection from "./components/Gallery/GallerySection";
-import InstagramRecipe from "./components/InstagramRecipe/InstagramRecipe";
-import Footer from "@/components/Footer/Footer";
+import HeaderTwo from "@/app/product/components/Header/HeaderTwo";
+import GalleryMenu from "@/app/product/components/GalleryMenu/GalleryMenu";
+import MasalaGallery from "@/app/product/components/MasalaGallery/MasalaGallery";
+import SuccessSection from "@/app/product/components/Success/SuccessSection";
+import SpicySection from "@/app/product/components/Spicy/SpicySection";
+import ExtraOrdinarySection from "@/app/product/components/ExtraOrdinary/ExtraOrdinarySection";
+import FallLove from "@/app/product/components/FallInLove/FallLove";
+import ProductInfoSection from "@/app/product/components/ProductInfo/ProductInfoSection";
+import ProductSection from "@/app/product/components/ProductSection/ProductSection";
+import IngredientSection from "@/app/product/components/Ingredients/IngredientSection";
+import BlendedSection from "@/app/product/components/Blended/BlendedSection";
+import OurProduct from "@/app/product/components/OurProduct/OurProduct";
+import GallerySection from "@/app/product/components/Gallery/GallerySection";
+import InstagramRecipe from "@/app/product/components/InstagramRecipe/InstagramRecipe";
 import Head from "next/head";
-import { useEffect } from "react";
 
 const Products = () => {
   return (

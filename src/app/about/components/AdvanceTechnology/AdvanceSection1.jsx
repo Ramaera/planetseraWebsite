@@ -1,4 +1,5 @@
-import "./AdvanceSection.css";
+import "@/public/styles/advanceSection.css";
+
 import { useSelector } from "react-redux";
 
 const AdvanceSection1 = () => {

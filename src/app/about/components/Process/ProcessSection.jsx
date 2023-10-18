@@ -1,4 +1,4 @@
-import "./Process.css";
+import "@/public/styles/processStyle.css";
 import ProcessSection1 from "./ProcessSection1";
 import { useSelector } from "react-redux";
 

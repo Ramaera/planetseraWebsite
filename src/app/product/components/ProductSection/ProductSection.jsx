@@ -1,4 +1,4 @@
-import "./ProductSection.css";
+import "@/public/styles/productSection.css";
 
 const ProductSection = () => {
   return (

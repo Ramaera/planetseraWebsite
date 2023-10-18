@@ -1,6 +1,7 @@
-import "./ContactUsHeader.css";
+import "@/public/styles/contactUsHeader.css";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import NavItem from "@/components/Navigation/NavItem";
+
 const ContactUsHeader = () => {
   const image = "/images/backgrounds/Headerimage.webp";
   return (

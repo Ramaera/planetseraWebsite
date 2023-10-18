@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { usePathname, useRouter } from "next/navigation";
-import "../../styles/mediaQuery.css";
-import "./navigation.css";
+import "@/public/styles/navigation.css";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -39,7 +38,7 @@ const NavigationMobile = ({ page }) => {
         <div className="basis-3/12 pl-2">
           <img
             loading="lazy"
-            src="/images/logo/logo.webp"
+            src="https://www.planetsera.com/images/logo/logo.webp"
             alt="logo"
             className=" absolute w-16 mt-2"
           />

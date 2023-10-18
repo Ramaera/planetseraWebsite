@@ -1,9 +1,8 @@
 "use client";
-import "../styles/globals.css";
-import "../styles/mediaQuery.css";
+import "@/public/styles/globals.css";
 import { Inter, Montserrat } from "next/font/google";
 import { Provider } from "react-redux";
-import { store } from "../state/store";
+import { store } from "@/state/store";
 import { client } from "@/apollo";
 import { ApolloProvider } from "@apollo/client";
 import { useEffect } from "react";

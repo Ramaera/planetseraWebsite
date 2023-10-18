@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import "./ShopHeader.css";
+import "@/public/styles/shopHeader.css";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
 

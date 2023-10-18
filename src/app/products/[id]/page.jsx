@@ -1,13 +1,11 @@
 "use client";
-import ProductDetailsInfo from "../components/ProductDetailsInfo/ProductDetailsInfo";
-import RelatedProducts from "../components/RelatedProducts/RelatedProducts";
+import ProductDetailsInfo from "@/app/products/components/ProductDetailsInfo/ProductDetailsInfo";
+import RelatedProducts from "@/app/products/components/RelatedProducts/RelatedProducts";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import NavItem from "@/components/Navigation/NavItem";
-import Footer from "@/components/Footer/Footer";
-import logo from "../../../../public/images/logo/logo.webp";
 import { useEffect } from "react";
-import MetaDataproducts from "../components/MetaDataproducts/MetaDataproducts";
-import Faq from "../components/Faq/Faq";
+import MetaDataproducts from "@/app/products/components/MetaDataproducts/MetaDataproducts";
+import Faq from "@/app/products/components/Faq/Faq";
 
 const ProductDetails = () => {
   useEffect(() => {

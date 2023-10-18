@@ -1,7 +1,7 @@
 "use client";
 import { CREATE_CONTACT_RESPONSE } from "../../../../apollo/queries";
 import { useMutation } from "@apollo/client";
-import "./ContactUsCenter.css";
+import "@/public/styles/contactUsCenter.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";

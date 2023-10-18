@@ -2,9 +2,8 @@
 import Icon from "./Icon";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import BuyIcons from "../../../../components/BuyIcons";
+import BuyIcons from "@/components/BuyIcons";
 import RelatedPtoductData from "../RelatedProducts/RelatedProductData";
-// import MetaDataproducts from "../MetaDataproducts/MetaDataproducts";
 import ImageMagnifier from "./ImageMagnifier";
 import { notFound } from "next/navigation";
 import { Snackbar } from "@mui/material";
