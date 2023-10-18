@@ -45,6 +45,7 @@ function SectionMain() {
       <div className="basis-12/12 flex my-3 px-5">
         <div className="basis-12/12 w-full">
           <img
+            loading="lazy"
             alt="masala"
             src="images/backgrounds/m1.webp"
             class="max-w-full  md:h-auto vert-move mx-auto"

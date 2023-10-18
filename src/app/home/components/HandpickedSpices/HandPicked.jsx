@@ -53,6 +53,7 @@ const HandPicked = () => {
           className="btn-container md:flex md:justify-center"
           data-aos="fade-up">
           <img
+            loading="lazy"
             src={checkImg1(colorMe)}
             alt="organically and handpicked spices"
             title="Spices that are grown organically and handpicked"

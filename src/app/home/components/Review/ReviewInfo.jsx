@@ -28,6 +28,7 @@ const ReviewInfo = () => {
         </h2>
         <div className="flex lg:ml-2 mt-6">
           <img
+            loading="lazy"
             src={checkbg(colorMe)}
             alt="bg"
             className="lg:mr-2 h-[60px] w-[60px] quotes w-none "

@@ -26,11 +26,10 @@ const Faq = () => {
         {faqDataFilter?.faqs?.map((item, index) => (
           <div key={index} className="mb-6">
             <button
-              className={`w-full flex items-center justify-between text-left font-semibold  p-4 transition duration-300 ${
+              className={`w-full flex items-center justify-between text-left font-semibold  p-4 transition duration-300 text-black ${
                 openIndex === index ? " rounded-t-lg" : " rounded-lg"
               }`}
               style={{
-                color: openIndex === index ? faqDataFilter?.colored : "black",
                 backgroundColor: "rgb(240, 240, 240, 1)",
               }}
               onClick={() => toggleItem(index)}>

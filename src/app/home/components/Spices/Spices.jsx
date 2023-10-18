@@ -17,6 +17,7 @@ const Spices = () => {
           </div>
           <div>
             <img
+              loading="lazy"
               src="/images/backgrounds/spices1.webp"
               alt="best spices"
               title="Why we are best"
@@ -27,6 +28,7 @@ const Spices = () => {
         <div className="box">
           <div>
             <img
+              loading="lazy"
               src="/images/backgrounds/spices2.webp"
               alt="best spices"
               title="Why we are best"

@@ -25,6 +25,7 @@ const ReviewImg = () => {
 
       <div>
         <img
+          loading="lazy"
           src={changeBg(colorMe)}
           alt="customer review"
           title="Customer review about spices"

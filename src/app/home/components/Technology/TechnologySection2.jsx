@@ -52,6 +52,7 @@ const TechnologySection2 = () => {
         data-aos="fade-down-left">
         <div data-aos="fade-up-left">
           <img
+            loading="lazy"
             alt="quality spices"
             title="Quality preservation using latest technology"
             src={checkbg(colorMe)}

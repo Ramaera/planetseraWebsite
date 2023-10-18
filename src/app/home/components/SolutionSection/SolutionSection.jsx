@@ -26,6 +26,7 @@ function SolutionSection() {
           className="basis-7/12 md:w-[50%] solution-background"
           data-aos="slide-right">
           <img
+            loading="lazy"
             alt="Desired flavour spices"
             title="Desired Flavour and Aroma PlanetsEra Spices"
             src={checkbg(colorMe)}
@@ -58,6 +59,7 @@ function SolutionSection() {
         </div>
       </div>
       <img
+        loading="lazy"
         src={spicebg}
         className="w-full md:mt-[-9rem] xl:md:mt-[-18rem] 2xl:mt-[-22rem]"
         alt="masala"
