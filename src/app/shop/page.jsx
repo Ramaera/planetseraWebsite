@@ -8,7 +8,6 @@ import KitchenSpices from "./components/KitchenSpices/KitchenSpices";
 import WeekandTadka from "./components/WeekandTadka/WeekandTadka";
 import ShopBuy from "./components/ShopBuy/ShopBuy";
 import ComingProduct from "./components/ComingProduct/ComingProduct";
-import BuyProduct from "./components/ShopProduct/ShopProduct";
 import ShopSpicesFooter from "./components/ShopSpicesFooter/ShopSpicesFooter";
 import Footer from "@/components/Footer/Footer";
 import Head from "next/head";

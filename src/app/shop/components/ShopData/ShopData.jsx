@@ -101,7 +101,7 @@ const MouthWateringData = [
   {
     id: "meat-masala",
     category: "NonvegTadka",
-    masalaImg: "/images/productDetailsImg/MeatMasala.webp",
+    masalaImg: "/images/allProductsImg/MeatMasala.webp",
     masalaName: "Meat Masala",
     colored: "#F1E6E6",
     flipkart:
