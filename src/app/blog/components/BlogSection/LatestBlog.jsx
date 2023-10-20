@@ -2,8 +2,10 @@
 import { useEffect, useState } from "react";
 import BlogData from "../BlogData/BlogData";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 const LatestBlog = ({ selected }) => {
+  const colorMe = useSelector((state) => state.colorUs.color);
   const [displayCount, setDisplayCount] = useState(4);
   // console.log("selectedCategory", selected);
   const LatestBlogData = selected
@@ -24,9 +26,9 @@ const LatestBlog = ({ selected }) => {
     <>
       <div>
         <div className=" sm:text-left  flex flex-col  justify-center items-center">
-          <h4 className="text-[#1E1E1E] text-2xl sm:text-4xl font-['Montserrat'] font-bold text-center">
+          <h3 className="text-[#1E1E1E] text-2xl sm:text-4xl font-['Montserrat'] font-bold text-center">
             Our Latest Blog
-          </h4>
+          </h3>
         </div>
         <div className="flex w-full" id="shop">
           <div className="flex p-2 md:p-6 flex-wrap w-full">
@@ -63,9 +65,12 @@ const LatestBlog = ({ selected }) => {
           </div>
         </div>
         {displayCount < LatestBlogData.length && (
-          <div className="text-center w-full">
+          <div className="text-center w-full mb-2">
             <button
-              className="mt-4 p-2 bg-blue-500 text-white rounded-md"
+              style={{
+                background: ` ${colorMe}`,
+              }}
+              className={`mt-4 py-3 px-6 text-white rounded-md hover:font-medium`}
               onClick={loadMore}>
               Load More
             </button>
