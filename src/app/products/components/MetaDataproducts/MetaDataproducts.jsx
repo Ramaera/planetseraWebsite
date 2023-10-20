@@ -53,7 +53,7 @@ const MetaDataproducts = () => {
           />
           <meta
             property="og:image"
-            content="/images/banner/BlackPepperPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/BlackPepperPowder-Banner.jpg"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
@@ -74,7 +74,7 @@ const MetaDataproducts = () => {
           />
           <meta
             name="twitter:image"
-            content="/images/banner/BlackPepperPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/BlackPepperPowder-Banner.jpg"
           />
         </>
       )}
@@ -125,7 +125,7 @@ const MetaDataproducts = () => {
           />
           <meta
             property="og:image"
-            content="/images/banner/ChatMasala-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/ChatMasala-Banner.jpg"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
@@ -146,7 +146,7 @@ const MetaDataproducts = () => {
           />
           <meta
             name="twitter:image"
-            content="/images/banner/ChatMasala-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/ChatMasala-Banner.jpg"
           />
         </>
       )}
@@ -197,7 +197,7 @@ const MetaDataproducts = () => {
           />
           <meta
             property="og:image"
-            content="/images/banner/CorianderPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/CorianderPowder-Banner.jpg"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
@@ -218,7 +218,7 @@ const MetaDataproducts = () => {
           />
           <meta
             name="twitter:image"
-            content="/images/banner/CorianderPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/CorianderPowder-Banner.jpg"
           />
         </>
       )}
@@ -269,7 +269,7 @@ const MetaDataproducts = () => {
           />
           <meta
             property="og:image"
-            content="/images/banner/GaramMasala-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/GaramMasala-Banner.jpg"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
@@ -290,7 +290,7 @@ const MetaDataproducts = () => {
           />
           <meta
             name="twitter:image"
-            content="/images/banner/GaramMasala-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/GaramMasala-Banner.jpg"
           />
         </>
       )}
@@ -340,7 +340,7 @@ const MetaDataproducts = () => {
           />
           <meta
             property="og:image"
-            content="/images/banner/MeatMasala-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/MeatMasala-Banner.jpg"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
@@ -360,7 +360,7 @@ const MetaDataproducts = () => {
           />
           <meta
             name="twitter:image"
-            content="/images/banner/MeatMasala-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/MeatMasala-Banner.jpg"
           />
         </>
       )}
@@ -407,7 +407,7 @@ const MetaDataproducts = () => {
           />
           <meta
             property="og:image"
-            content="/images/banner/RedChilliPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/RedChilliPowder-Banner.jpg"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
@@ -428,7 +428,7 @@ const MetaDataproducts = () => {
           />
           <meta
             name="twitter:image"
-            content="/images/banner/RedChilliPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/RedChilliPowder-Banner.jpg"
           />
         </>
       )}
@@ -479,7 +479,7 @@ const MetaDataproducts = () => {
           />
           <meta
             property="og:image"
-            content="/images/banner/SabjiMasala-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/SabjiMasala-Banner.jpg"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
@@ -500,7 +500,7 @@ const MetaDataproducts = () => {
           />
           <meta
             name="twitter:image"
-            content="/images/banner/SabjiMasala-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/SabjiMasala-Banner.jpg"
           />
         </>
       )}
@@ -550,7 +550,7 @@ const MetaDataproducts = () => {
           />
           <meta
             property="og:image"
-            content="/images/banner/TurmericPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/TurmericPowder-Banner.jpg"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
@@ -571,7 +571,7 @@ const MetaDataproducts = () => {
           />
           <meta
             name="twitter:image"
-            content="/images/banner/TurmericPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/TurmericPowder-Banner.jpg"
           />
         </>
       )}
@@ -622,7 +622,7 @@ const MetaDataproducts = () => {
           />
           <meta
             property="og:image"
-            content="/images/banner/CuminPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/CuminPowder-Banner.jpg"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
@@ -643,7 +643,7 @@ const MetaDataproducts = () => {
           />
           <meta
             name="twitter:image"
-            content="/images/banner/CuminPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/CuminPowder-Banner.jpg"
           />
         </>
       )}
@@ -693,7 +693,7 @@ const MetaDataproducts = () => {
           />
           <meta
             property="og:image"
-            content="/images/banner/AmchurPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/AmchurPowder-Banner.jpg"
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
@@ -714,7 +714,7 @@ const MetaDataproducts = () => {
           />
           <meta
             name="twitter:image"
-            content="/images/banner/AmchurPowder-Banner.jpg"
+            content="https://www.planetsera.com/images/banner/AmchurPowder-Banner.jpg"
           />
         </>
       )}
