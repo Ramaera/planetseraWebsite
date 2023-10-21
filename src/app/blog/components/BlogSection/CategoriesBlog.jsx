@@ -16,43 +16,53 @@ const CategoriesBlog = ({ selected, setSelected }) => {
           <ul className="py-1">
             <li
               onClick={() => handleCategoryClick("")}
-              className={`cursor-pointer ${
-                selected === "" ? "bg-gray-300" : ""
+              className={`cursor-pointer p-2 ${
+                selected === "" ? "bg-gray-300 rounded-lg font-semibold" : ""
               }`}>
               All
             </li>
             <li
               onClick={() => handleCategoryClick("BestSelling")}
-              className={`cursor-pointer ${
-                selected === "BestSelling" ? "bg-gray-300" : ""
+              className={`cursor-pointer p-2 ${
+                selected === "BestSelling"
+                  ? "bg-gray-300 rounded-lg font-semibold"
+                  : ""
               }`}>
               Best Selling
             </li>
             <li
               onClick={() => handleCategoryClick("MouthWatering")}
-              className={`cursor-pointer ${
-                selected === "MouthWatering" ? "bg-gray-300" : ""
+              className={`cursor-pointer p-2 ${
+                selected === "MouthWatering"
+                  ? "bg-gray-300 rounded-lg font-semibold"
+                  : ""
               }`}>
               Mouth Watering
             </li>
             <li
               onClick={() => handleCategoryClick("NonvegTadka")}
-              className={`cursor-pointer ${
-                selected === "NonvegTadka" ? "bg-gray-300" : ""
+              className={`cursor-pointer p-2 ${
+                selected === "NonvegTadka"
+                  ? "bg-gray-300 rounded-lg font-semibold"
+                  : ""
               }`}>
               Nonveg Tadka
             </li>
             <li
               onClick={() => handleCategoryClick("KitchenSpices")}
-              className={`cursor-pointer ${
-                selected === "KitchenSpices" ? "bg-gray-300" : ""
+              className={`cursor-pointer p-2 ${
+                selected === "KitchenSpices"
+                  ? "bg-gray-300 rounded-lg font-semibold"
+                  : ""
               }`}>
               Kitchen Spices
             </li>
             <li
               onClick={() => handleCategoryClick("WeekandTadka")}
-              className={`cursor-pointer ${
-                selected === "WeekandTadka" ? "bg-gray-300" : ""
+              className={`cursor-pointer p-2 ${
+                selected === "WeekandTadka"
+                  ? "bg-gray-300 rounded-lg font-semibold"
+                  : ""
               }`}>
               Weekand Tadka
             </li>

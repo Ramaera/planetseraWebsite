@@ -2,19 +2,21 @@
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
 import BlogData from "../BlogData/BlogData";
+import { useSelector } from "react-redux";
 
 const BlogDetails = () => {
   const { id } = useParams();
   const specificBlog = BlogData.find((list) => list.id === id);
   if (!specificBlog) return notFound();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const colorMe = useSelector((state) => state.colorUs.color);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <>
-      <div className="mr-16 ml-10 mb-4 justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-4 ">
+      <div className="mx-4 sm:mr-16 sm:ml-10 mb-4 justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-4 ">
         <div className="flex items-center  justify-center rounded-xl w-full">
           <img
             className="rounded-md w-full"
@@ -24,8 +26,15 @@ const BlogDetails = () => {
             title={specificBlog.blogName}
           />
         </div>
+        <div className="justify-start flex w-full mt-4 mb-2">
+          <h3
+            className="rounded-2xl py-1 px-3 text-white"
+            style={{ background: `${colorMe}` }}>
+            {specificBlog?.categoryName}
+          </h3>
+        </div>
         <div className="mt-2">
-          <h4 className="font-[Montserrat] text-[13.5px] font-semibold sm:text-3xl ">
+          <h4 className="font-[Montserrat] font-semibold sm:text-3xl ">
             {specificBlog?.blogName}
           </h4>
           <p className="my-3">{specificBlog?.blogDetail}</p>
@@ -35,15 +44,6 @@ const BlogDetails = () => {
             <div key={index} className="my-2">
               <h5 className="font-semibold sm:text-xl">{item.blogList}</h5>
               <p className="text-gray-700 mb-4">{item.blogListAbout}</p>
-              {item.blogListAbout2 && (
-                <p className="text-gray-700 mb-4">{item.blogListAbout2}</p>
-              )}
-              {item.blogListAbout3 && (
-                <p className="text-gray-700 mb-4">{item.blogListAbout3}</p>
-              )}
-              {item.blogListAbout4 && (
-                <p className="text-gray-700 mb-4">{item.blogListAbout}</p>
-              )}
             </div>
           ))}
         </div>

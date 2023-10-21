@@ -7,7 +7,7 @@ const BlogData = [
   {
     id: "you-must-have-in-your-kitchen",
     category: "BestSelling",
-    categoryName: "BestSelling",
+    categoryName: "Best Selling",
     type: "RecentBlog",
     blogImg: "/images/blog/Essential-17-Spicesces.png",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
@@ -17,32 +17,25 @@ const BlogData = [
       {
         blogList: (
           <>
-            "1.{" "}
+            1.{" "}
             <Link href="/products/red-chilli-powder" className="text-red-500">
               Turmeric Powder
             </Link>{" "}
-            Haldi Powder: The Golden Elixir"
+            Haldi Powder: The Golden Elixir
           </>
         ),
-        blogListAbout: (
-          <>
-            "It is often called the Golden Spice, and it is an important part of
-            Indian food. In addition to its beautiful golden colour, it is
-            highly valued for its many health benefits . In curry powders and
-            spice mixes like masalas, turmeric is an important ingredient
-            because it gives food an earthy, slightly bitter flavour."
-          </>
-        ),
+        blogListAbout:
+          "It is often called the Golden Spice, and it is an important part of Indian food. In addition to its beautiful golden colour, it is highly valued for its many health benefits . In curry powders and spice mixes like masalas, turmeric is an important ingredient because it gives food an earthy, slightly bitter flavour.",
       },
       {
         blogList: (
           <>
             {" "}
-            "2.{" "}
+            2.{" "}
             <Link href="/products/cumin-powder" className="text-red-500">
               Cumin
             </Link>{" "}
-            (Jeera): The Flavorful Backbone"
+            (Jeera): The Flavorful Backbone
           </>
         ),
         blogListAbout:
@@ -52,7 +45,7 @@ const BlogData = [
         blogList: "3. Coriander (Dhania): The Versatile Delight",
         blogListAbout: (
           <>
-            "Coriander is a useful herb that comes in both seed and ground form.
+            Coriander is a useful herb that comes in both seed and ground form.
             Ground coriander is an important part of{" "}
             <Link href="/products/coriander-powder" className="text-red-500">
               coriander powders
@@ -89,7 +82,7 @@ const BlogData = [
             <Link href="/products/red-chilli-powder" className="text-red-500">
               Red Chili Powder
             </Link>{" "}
-            (Lal Mirch Powder): The Fiery Essence"
+            (Lal Mirch Powder): The Fiery Essence
           </>
         ),
         blogListAbout:
@@ -146,14 +139,39 @@ const BlogData = [
       },
       {
         blogList: "17. Garam Masala: The Heart of Indian Cooking",
-        blogListAbout:
-          "Cardamom, cloves, cinnamon, and black pepper are the four primary components of the classic spice mixture known as garam masala. Because it lends warmth and depth to a wide variety of Indian cuisines, it is an essential component in the kitchens of many Indian homes.",
-        blogListAbout2:
-          "These 17 spice jewels are more than simply ingredients; they encapsulate India's culinary legacy. Each one adds its own distinct flavour and perfume to the table, and when combined, they form an orchestra of flavour that has captured food lovers all over the world.",
-        blogListAbout3:
-          "To truly appreciate these spices, it is necessary to grasp their particular properties as well as how they complement other foods. Freshness is essential, so keep your spices in airtight containers away from direct sunlight and heat.",
-        blogListAbout4:
-          "With these 17 spice jewels, you'll unlock the secrets of Indian cuisine, bringing depth and dimension to your cooking. The variety of Indian flavours awaits you, so dig in and transform your kitchen into a canvas for producing culinary masterpieces that embody the essence of India.",
+        blogListAbout: (
+          <>
+            <p className="mb-4">
+              Cardamom, cloves, cinnamon, and black pepper are the four primary
+              components of the classic spice mixture known as garam masala.
+              Because it lends warmth and depth to a wide variety of Indian
+              cuisines, it is an essential component in the kitchens of many
+              Indian homes.
+            </p>
+
+            <p className="mb-4">
+              These 17 spice jewels are more than simply ingredients; they
+              encapsulate India's culinary legacy. Each one adds its own
+              distinct flavour and perfume to the table, and when combined, they
+              form an orchestra of flavour that has captured food lovers all
+              over the world.
+            </p>
+
+            <p className="mb-4">
+              To truly appreciate these spices, it is necessary to grasp their
+              particular properties as well as how they complement other foods.
+              Freshness is essential, so keep your spices in airtight containers
+              away from direct sunlight and heat.
+            </p>
+            <p>
+              With these 17 spice jewels, you'll unlock the secrets of Indian
+              cuisine, bringing depth and dimension to your cooking. The variety
+              of Indian flavours awaits you, so dig in and transform your
+              kitchen into a canvas for producing culinary masterpieces that
+              embody the essence of India.
+            </p>
+          </>
+        ),
       },
     ],
   },

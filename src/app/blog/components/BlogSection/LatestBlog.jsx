@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import BlogData from "../BlogData/BlogData";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const LatestBlog = ({ selected }) => {
   const colorMe = useSelector((state) => state.colorUs.color);
@@ -38,7 +39,7 @@ const LatestBlog = ({ selected }) => {
               }
               return (
                 <>
-                  <div className=" m-2 w-[47%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
+                  <div className=" m-2 sm:w-[47%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
                     <div className="flex items-center  justify-center rounded-xl  w-full">
                       <Link href={`/blog/${item.id}`}>
                         <img
@@ -57,6 +58,12 @@ const LatestBlog = ({ selected }) => {
                         </h5>
                       </Link>
                       <p>{item?.blogDetail}</p>
+                      <Link href={`/blog/${item.id}`}>
+                        <h6 className="mt-2 text-gray-600">
+                          Read More
+                          <ArrowForwardIcon style={{ color: `${colorMe}` }} />
+                        </h6>
+                      </Link>
                     </div>
                   </div>
                 </>
@@ -65,12 +72,12 @@ const LatestBlog = ({ selected }) => {
           </div>
         </div>
         {displayCount < LatestBlogData.length && (
-          <div className="text-center w-full mb-2">
+          <div className="text-center w-full mb-6 sm:mb-6 sm:mt-4">
             <button
               style={{
                 background: ` ${colorMe}`,
               }}
-              className={`mt-4 py-3 px-6 text-white rounded-md hover:font-medium`}
+              className={`py-3 px-6 text-white rounded-md hover:font-medium`}
               onClick={loadMore}>
               Load More
             </button>

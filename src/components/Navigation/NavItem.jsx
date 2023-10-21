@@ -40,16 +40,15 @@ const NavItem = ({ page }) => {
           : "text-white"
       }`}>
       <Link className={"scale-[0.6] mb-8 sm:mt-[-0.6rem]"} href="/">
-        <img
-          className=""
-          src="https://www.planetsera.com/images/logo/logo.webp"
-          alt="logo"
-        />
+        <img className="" src="../images/logo/logo.webp" alt="logo" />
       </Link>
       <ul
         style={{
           color:
-            (page === "shop" || page === "about" || page === "products") &&
+            (page === "blog" ||
+              page === "shop" ||
+              page === "about" ||
+              page === "products") &&
             "black",
         }}
         id="navigation"

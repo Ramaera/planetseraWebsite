@@ -9,14 +9,14 @@ const BlogHeader = () => {
 
   return (
     <>
-      <NavItem page={"shop"} className="pb-40" />
+      <NavItem page={"blog"} className="pb-40" />
       <div className="h-16 sm:h-10 xl:h-20 2xl:h-28  hidden md:block"></div>
       <section
         className="bg-cover bg-center bg-no-repeat lg:bg-contain lg:mx-16 2xl:bg-cover 2xl:mx-24 2xl:rounded-3xl"
         style={{
           backgroundImage: `url(${bg1})`,
         }}>
-        <NavigationMobile page={"shop"} />
+        <NavigationMobile page={"blog"} />
         <div className="relative mx-auto px-4 py-10 sm:py-20  lg:flex  lg:items-center  ">
           <div className="text-center sm:text-left md:ml-28 2xl:ml-40  2xl:w-4/12 pt-10 md:pt-0">
             <h1 className="shop-heading tracking-wider webColor">
