@@ -182,18 +182,18 @@ const BlogData = [
     categoryName: "BestSelling",
     type: "RecentBlog",
     blogImg: "/images/banner/SabjiMasala-Banner.jpg",
-    blogName: "Discover the Spice Routes",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
   {
     id: "red-chilli-powder",
     category: "BestSelling",
     type: "RecentBlog",
     blogImg: "/images/banner/RedChilliPowder-Banner.jpg",
-    blogName: "10 Different Types of Chillies in India : Know All About Them",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -201,9 +201,9 @@ const BlogData = [
     category: "BestSelling",
     type: "RecentBlog",
     blogImg: "/images/banner/CorianderPowder-Banner.jpg",
-    blogName: "11 Benefits Of Spices That Can Help You To Live Healthy Life",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -211,9 +211,9 @@ const BlogData = [
     category: "BestSelling",
     type: "RecentBlog",
     blogImg: "/images/banner/BlackPepperPowder-Banner.jpg",
-    blogName: "Top 11 Masala Companies In India",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   // --------------  LatestBlog  -------------------------------------------------------------------
@@ -223,9 +223,9 @@ const BlogData = [
     category: "MouthWatering",
     type: "LatestBlog",
     blogImg: "/images/banner/ChatMasala-Banner.jpg",
-    blogName: "How PlanetsEra Spices ensures responsibility of different.",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -233,9 +233,9 @@ const BlogData = [
     category: "MouthWatering",
     type: "LatestBlog",
     blogImg: "/images/banner/AmchurPowder-Banner.jpg",
-    blogName: "The must-have PlanetsEra Spices for every kitchen",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -243,7 +243,7 @@ const BlogData = [
     category: "MouthWatering",
     type: "LatestBlog",
     blogImg: "/images/banner/ChickenMasala-Banner.jpg",
-    blogName: "Using PlanetsEra Spices in a variety of dishes",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
       "India - The Largest Red-Chili Producer and Consumer. Did you know that Andhra Pradesh is the largest red-chili-producing state in India? Well, it’s no surprise, for we all know how rich their cuisine is with spice.",
   },
@@ -253,9 +253,9 @@ const BlogData = [
     category: "MouthWatering",
     type: "LatestBlog",
     blogImg: "/images/banner/RedChilliPowder-Banner.jpg",
-    blogName: "How to choose the right spice",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -263,9 +263,9 @@ const BlogData = [
     category: "NonvegTadka",
     type: "LatestBlog",
     blogImg: "/images/banner/MeatMasala-Banner.jpg",
-    blogName: "Exploring flavours and traditions",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   // --------------  popular  -------------------------------------------------------------------
@@ -275,9 +275,9 @@ const BlogData = [
     category: "KitchenSpices",
     type: "popular",
     blogImg: "/images/banner/SabjiMasala-Banner.jpg",
-    blogName: "Sabji Masala",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -285,9 +285,9 @@ const BlogData = [
     category: "KitchenSpices",
     type: "popular",
     blogImg: "/images/banner/KitchenKingMasala-Banner.jpg",
-    blogName: "kitchen king Masala",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -295,9 +295,9 @@ const BlogData = [
     category: "KitchenSpices",
     type: "popular",
     blogImg: "/images/banner/CuminPowder-Banner.jpg",
-    blogName: "Cumin Powder",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -305,9 +305,9 @@ const BlogData = [
     category: "KitchenSpices",
     type: "popular",
     blogImg: "/images/banner/TurmericPowder-Banner.jpg",
-    blogName: "Turmeric Powder",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -315,9 +315,9 @@ const BlogData = [
     category: "WeekandTadka",
     type: "popular",
     blogImg: "/images/banner/MeatMasala-Banner.jpg",
-    blogName: "Meat Masala",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -325,9 +325,9 @@ const BlogData = [
     category: "WeekandTadka",
     type: "popular",
     blogImg: "/images/banner/GaramMasala-Banner.jpg",
-    blogName: "Garam Masala",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -335,9 +335,9 @@ const BlogData = [
     category: "WeekandTadka",
     type: "popular",
     blogImg: "/images/banner/ChatMasala-Banner.jpg",
-    blogName: "Chat Masala",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
   {
@@ -345,9 +345,9 @@ const BlogData = [
     category: "WeekandTadka",
     type: "popular",
     blogImg: "/images/banner/ChickenMasala-Banner.jpg",
-    blogName: "Chicken Masala",
+    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Discover the key assets for ensuring high-quality translations. From skilled translators to translation memory tools, learn what you need for success.",
+      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 ];
 
