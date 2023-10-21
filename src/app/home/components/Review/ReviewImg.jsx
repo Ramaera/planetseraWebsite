@@ -1,5 +1,5 @@
 "use client";
-import "@/public/styles/review.css";
+import "../../../../../public/styles/review.css";
 import { useSelector } from "react-redux";
 
 const ReviewImg = () => {

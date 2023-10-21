@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import "@/public/styles/spicesandHealth.css";
+import "../../../../../public/styles/spicesandHealth.css";
 import { useSelector } from "react-redux";
 import HealthySpices from "./HealthySpices";
 

@@ -1,6 +1,6 @@
 "use client";
 import { useSelector } from "react-redux";
-import "@/public/styles/handpicked.css";
+import "../../../../../public/styles/handpicked.css";
 import Link from "next/link";
 
 const HandPicked = () => {

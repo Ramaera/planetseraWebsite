@@ -1,5 +1,5 @@
 "use client";
-import "@/public/styles/recipes.css";
+import "../../../../../public/styles/recipes.css";
 import { InstagramEmbedDangerousHTML } from "./InstagramFeed";
 import { SocialIcon } from "./SocialIcon";
 import { useSelector } from "react-redux";

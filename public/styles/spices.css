@@ -3,10 +3,6 @@
   left: 70px;
 }
 
-@font-face {
-   
-  src: url(/public/fonts/josefont.ttf);
-}
 
 .box1 {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
