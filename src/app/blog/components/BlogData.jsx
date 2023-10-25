@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-
 const BlogData = [
   // --------------  RecentBlog  -------------------------------------------------------------------
 
@@ -178,7 +177,7 @@ const BlogData = [
 
   {
     id: "sabji-masala",
-    category: "BestSelling",
+    category: "MouthWatering",
     categoryName: "BestSelling",
     type: "RecentBlog",
     blogImg: "/images/banner/SabjiMasala-Banner.jpg",
@@ -188,7 +187,7 @@ const BlogData = [
   },
   {
     id: "red-chilli-powder",
-    category: "BestSelling",
+    category: "KitchenSpices",
     type: "RecentBlog",
     blogImg: "/images/banner/RedChilliPowder-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
@@ -230,7 +229,7 @@ const BlogData = [
 
   {
     id: "amchur-powder",
-    category: "MouthWatering",
+    category: "BestSelling",
     type: "LatestBlog",
     blogImg: "/images/banner/AmchurPowder-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
@@ -282,7 +281,7 @@ const BlogData = [
 
   {
     id: "kitchen-king",
-    category: "KitchenSpices",
+    category: "BestSelling",
     type: "popular",
     blogImg: "/images/banner/KitchenKingMasala-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",

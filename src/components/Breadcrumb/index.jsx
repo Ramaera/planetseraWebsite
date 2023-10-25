@@ -13,8 +13,8 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
   const pathNames = paths.split("/").filter((path) => path);
 
   return (
-    <div className="mx-16">
-      <ul className="flex py-2">
+    <div className="mx-2 sm:mx-16">
+      <ul className="flex py-3">
         <li className="hover:underline mx-1 font-bold">
           <Link href={"/"}>
             <HomeIcon sx={{ fontSize: 30, marginTop: -1 }} />

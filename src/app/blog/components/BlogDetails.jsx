@@ -1,13 +1,13 @@
 "use client";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
-import BlogData from "../BlogData/BlogData";
+import BlogData from "./BlogData";
 import { useSelector } from "react-redux";
 
 const BlogDetails = () => {
   const { id } = useParams();
   const specificBlog = BlogData.find((list) => list.id === id);
-  if (!specificBlog) return notFound();
+  if (!specificBlog) return;
 
   const colorMe = useSelector((state) => state.colorUs.color);
   // useEffect(() => {
@@ -39,11 +39,11 @@ const BlogDetails = () => {
           </h4>
           <p className="my-3">{specificBlog?.blogDetail}</p>
         </div>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl 2xl:max-w-full mx-auto">
           {specificBlog?.blogDescription?.map((item, index) => (
             <div key={index} className="my-2">
               <h5 className="font-semibold sm:text-xl">{item.blogList}</h5>
-              <p className="text-gray-700 mb-4">{item.blogListAbout}</p>
+              <h6 className="text-gray-700 mb-4">{item.blogListAbout}</h6>
             </div>
           ))}
         </div>

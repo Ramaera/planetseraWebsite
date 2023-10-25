@@ -1,39 +1,49 @@
 "use client";
 import React from "react";
-import "@/public/styles/shopHeader.css";
+import "@/public/styles/globals.css";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
+import { useSelector } from "react-redux";
 
 const BlogHeader = () => {
-  const bg1 = "/images/backgrounds/ShopBg.webp";
+  const colorMe = useSelector((state) => state.colorUs.color);
+  const bg1 = "/images/backgrounds/BlogBg.webp";
 
+  console.log("colorMe", colorMe);
   return (
     <>
       <NavItem page={"blog"} className="pb-40" />
-      <div className="h-16 sm:h-10 xl:h-20 2xl:h-28  hidden md:block"></div>
+      <div className="h-16 sm:h-10 xl:h-20 2xl:h-24  hidden md:block"></div>
       <section
-        className="bg-cover bg-center bg-no-repeat lg:bg-contain lg:mx-16 2xl:bg-cover 2xl:mx-24 2xl:rounded-3xl"
+        className="bg-cover bg-center bg-no-repeat  lg:mx-16 lg:rounded-3xl sm:mt-10 xl:mt-0"
         style={{
           backgroundImage: `url(${bg1})`,
         }}>
         <NavigationMobile page={"blog"} />
-        <div className="relative mx-auto px-4 py-10 sm:py-20  lg:flex  lg:items-center  ">
-          <div className="text-center sm:text-left md:ml-28 2xl:ml-40  2xl:w-4/12 pt-10 md:pt-0">
-            <h1 className="shop-heading tracking-wider webColor">
-              Experience a <br /> burst of flavors
+        <div className=" mx-auto px-4 py-10 sm:py-20  flex items-center justify-center  w-full">
+          <div className="text-center">
+            <h1
+              className="blog-heading text-white"
+              style={{
+                backgroundImage: `linear-gradient(to right, ${colorMe}, ${
+                  colorMe + "80"
+                })`,
+                textShadow: `0px 0px 0px ${colorMe + "85"}`,
+              }}>
+              Planetsera <br /> special blogs
             </h1>
 
-            <div className="flex justify-center	md:justify-start sm:mt-6">
+            {/* <div className="flex justify-center	md:justify-start sm:mt-6">
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
                   marginRight: "20px",
                 }}>
-                <h2 className="font-bold sm:font-normal text-black text-3xl webColor ">
+                <h2 className="font-bold sm:font-normal text-black text-3xl  ">
                   100+
                 </h2>
-                <h3 className="font-bold sm:font-normal text-black text-lg webColor">
+                <h3 className="font-bold sm:font-normal text-black text-lg ">
                   Customers
                 </h3>
               </div>
@@ -49,15 +59,8 @@ const BlogHeader = () => {
                   Plant Species
                 </h3>
               </div>
-            </div>
+            </div> */}
           </div>
-          {/* <div className="md:w-7/12 relative  md:ml-[-30px] 2xl:ml-[-130px]">
-            <img
-              src="/images/backgrounds/ShopSpices1.webp"
-              alt="Shop spices"
-              title="Buy planetsera spices"
-            />
-          </div> */}
         </div>
       </section>
     </>

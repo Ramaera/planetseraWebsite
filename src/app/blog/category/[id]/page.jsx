@@ -1,10 +1,10 @@
 "use client";
-import BlogDetails from "../components/BlogDetails";
+import CategorySection from "../../components/CategorySection";
 
 const index = () => {
   return (
     <>
-      <BlogDetails />
+      <CategorySection />
     </>
   );
 };

@@ -1,5 +1,6 @@
 "use client";
-import BlogData from "../BlogData/BlogData";
+import { useSelector } from "react-redux";
+import BlogData from "./BlogData";
 import Link from "next/link";
 
 const RecentBlog = () => {
@@ -37,7 +38,7 @@ const RecentBlog = () => {
                       </Link>
                     </div>
                     <div className="w-1/2 ml-2 h-full">
-                      <span className="border-[0.5px] rounded-2xl bg-green-300 p-1 text-[11px]">
+                      <span className="border-[0.5px] rounded-2xl p-1 text-[11px] bg-gray-300">
                         {item?.category}
                       </span>
                       <Link href={`/blog/${item.id}`}>

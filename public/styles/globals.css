@@ -1606,3 +1606,21 @@
   backdrop-filter: saturate(180%) blur(5px);
   background: hsla(0,0%,100%,.8); */
 }
+
+.blog-heading {
+  font-size: 45px;
+  font-family: "Montserrat";
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+  line-height: 50px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .blog-heading {
+    font-size: 25px;
+    line-height: 40px;
+  }
+}
