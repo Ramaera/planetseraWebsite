@@ -40,7 +40,7 @@ const NavItem = ({ page }) => {
           : "text-white"
       }`}>
       <Link className={"scale-[0.6] mb-8 sm:mt-[-0.6rem]"} href="/">
-        <img className="" src="../images/logo/logo.webp" alt="logo" />
+        <img className="" src="/images/logo/logo.webp" alt="logo" />
       </Link>
       <ul
         style={{

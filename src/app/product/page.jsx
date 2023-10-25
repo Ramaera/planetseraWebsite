@@ -1,4 +1,5 @@
 "use client";
+import { useEffect } from "react";
 import HeaderTwo from "@/app/product/components/Header/HeaderTwo";
 import GalleryMenu from "@/app/product/components/GalleryMenu/GalleryMenu";
 import MasalaGallery from "@/app/product/components/MasalaGallery/MasalaGallery";
@@ -16,6 +17,9 @@ import InstagramRecipe from "@/app/product/components/InstagramRecipe/InstagramR
 import Head from "next/head";
 
 const Products = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Head />

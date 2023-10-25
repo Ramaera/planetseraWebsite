@@ -1,3 +1,5 @@
+"use client";
+import { useEffect } from "react";
 import Header from "@/app/home/components/Header/Header";
 import SectionMain from "@/app/home/components/SectionMain/SectionMain";
 import FoodySection from "@/app/home/components/Foody/FoodySection";
@@ -14,6 +16,9 @@ import Review from "@/app/home/components/Review/Review";
 import Head from "next/head";
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Head />
