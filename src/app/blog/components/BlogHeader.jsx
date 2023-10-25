@@ -9,7 +9,6 @@ const BlogHeader = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
   const bg1 = "/images/backgrounds/BlogBg.webp";
 
-  console.log("colorMe", colorMe);
   return (
     <>
       <NavItem page={"blog"} className="pb-40" />

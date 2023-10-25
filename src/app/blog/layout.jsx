@@ -4,6 +4,7 @@ import BlogHeader from "./components/BlogHeader";
 import CategoriesBlog from "./components/CategoriesBlog";
 import RecentBlog from "./components/RecentBlog";
 import Breadcrumbs from "@/components/Breadcrumb";
+import PopularBlog from "./components/PopularBlog";
 
 const BlogLayout = ({ children }) => {
   return (
@@ -19,6 +20,7 @@ const BlogLayout = ({ children }) => {
         {/* right side */}
         <div className="sm:w-9/12 order-1 sm:order-2">{children}</div>
       </div>
+      <PopularBlog />
     </>
   );
 };
