@@ -298,8 +298,8 @@ const ProductDetailsInfo = () => {
             {/* ////////////////// */}
           </div>
           <div className="md:w-3/5 md:pl-10">
-            <div>
-              <div className="hidden sm:block">
+            <div className="flex flex-col">
+              <div className="order-4 sm:order-3">
                 <h1
                   style={{
                     color:
@@ -307,7 +307,7 @@ const ProductDetailsInfo = () => {
                         ? specificProduct?.colored
                         : specificProduct?.colored,
                   }}
-                  className={`md:text-[2.5rem] xl:text-[3rem] text-[2rem] tracking-widest font-[500] font-Montserrat mt-2 sm:mt-0`}>
+                  className={`md:text-[2.5rem] xl:text-[3rem] text-[1.8rem] sm:tracking-widest font-[500] font-Montserrat mt-8 sm:mt-0`}>
                   {specificProduct?.ProductName}
                 </h1>
                 <div
@@ -317,7 +317,7 @@ const ProductDetailsInfo = () => {
                         ? specificProduct?.colored
                         : specificProduct?.colored,
                   }}
-                  className={`absolute  w-36 h-[2px] ml-1 mt-[-8px]`}></div>
+                  className={`absolute  w-36 h-[2px] ml-1 mt-[-2px] sm:mt-[-8px]`}></div>
                 <p className="leading-[2rem] text-slate-600 text-lg font-Montserrat mt-1">
                   {specificProduct?.ProductDescription}
                 </p>
@@ -329,7 +329,7 @@ const ProductDetailsInfo = () => {
               </div>
 
               <br />
-              <div>
+              <div className="order-3 sm:order-4">
                 <h2 className="text-[#202020] md:text-[1.7rem] text-[1.2rem]  font-Montserrat">
                   Select weight:
                 </h2>
@@ -431,34 +431,6 @@ const ProductDetailsInfo = () => {
                     }  `}
                   />
                 </div>
-              </div>
-              <div className=" sm:hidden">
-                <h1
-                  style={{
-                    color:
-                      selectedButton === "50gram"
-                        ? specificProduct?.colored
-                        : specificProduct?.colored,
-                  }}
-                  className={`md:text-[2.5rem] xl:text-[3.3rem] text-[1.8rem] sm:tracking-widest font-[500] font-Montserrat md:mt-auto mt-8`}>
-                  {specificProduct?.ProductName}
-                </h1>
-                <div
-                  style={{
-                    backgroundColor:
-                      selectedButton === "50gram"
-                        ? specificProduct?.colored
-                        : specificProduct?.colored,
-                  }}
-                  className={`absolute  w-36 h-[2px] ml-1 mt-[-2px]`}></div>
-                <p className="leading-[2rem] text-slate-600 text-lg font-Montserrat mt-1">
-                  {specificProduct?.ProductDescription}
-                </p>
-                {specificProduct?.ProductDescription2 && (
-                  <p className="leading-[2rem] text-slate-600 text-lg font-Montserrat mt-3">
-                    {specificProduct?.ProductDescription2}
-                  </p>
-                )}
               </div>
             </div>
           </div>
