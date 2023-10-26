@@ -1,20 +1,12 @@
-import Cards from "./Cards";
-import "@/public/styles/newsandblog.css";
+import NewsBlogCard from "./NewsBlogCard";
 import NewsInfo from "./NewsInfo";
-import { NewsData } from "./Newsdata";
-const newsCards = NewsData.map((item) => {
-  return (
-    <div className="">
-      <Cards item={item} />
-    </div>
-  );
-});
+
 const NewsandBlog = () => {
   return (
     <div className="newsandblog mx-auto relative">
       <NewsInfo />
-      <div className="flex flex-row justify-around flex-wrap mt-2 md:mt-12 mx-auto">
-        {newsCards}
+      <div className="flex flex-row justify-around flex-wrap mt-2  mx-auto">
+        <NewsBlogCard />
       </div>
     </div>
   );

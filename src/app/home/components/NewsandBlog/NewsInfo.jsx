@@ -18,13 +18,13 @@ const NewsInfo = () => {
           <div data-aos="fade-right" data-aos-duration="1000">
             <h2
               style={{ color: colorMe }}
-              className="text-[1.7rem]  md:text-[49px] font-normal sm:font-medium text-center leading-[40px] md:leading-[80px] tracking-widest relative">
+              className="text-[1.5rem]  md:text-[49px] font-normal sm:font-medium sm:text-center leading-[40px] md:leading-[80px] tracking-widest relative">
               Latest News and Blog
             </h2>
-            <div className="blog_line"></div>
+            {/* <div className="blog_line"></div> */}
           </div>
           <div data-aos="fade-left" data-aos-duration="1000">
-            <p className="text-[#1e1e1e] text-[16px]  font-normal md:leading-[39px] md:tracking-[0.07em] mt-4 md:mt-0 md:text-center">
+            <p className="text-[#1e1e1e] text-[16px]  font-normal md:leading-[39px] md:tracking-[0.07em] mt-2 md:mt-0 md:text-center">
               Get more information on the how our spices give desirable taste
               enriched with authenticity in flavor. PlanetsEra Spices are
               handpicked for quality to ensure that each product of ours is
