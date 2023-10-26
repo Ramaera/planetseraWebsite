@@ -30,7 +30,7 @@ const BlogDetails = () => {
           <h3
             className="rounded-2xl py-1 px-3 text-white"
             style={{ background: `${colorMe}` }}>
-            {specificBlog?.categoryName}
+            {specificBlog?.blogDate}
           </h3>
         </div>
         <div className="mt-2">

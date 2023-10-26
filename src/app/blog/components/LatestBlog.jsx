@@ -28,7 +28,7 @@ const LatestBlog = () => {
     <>
       <div>
         <div className=" sm:text-left  flex flex-col  justify-center items-center">
-          <h3 className="text-[#1E1E1E] text-2xl sm:text-4xl font-['Montserrat'] font-bold text-center">
+          <h3 className="text-[#1E1E1E] text-3xl sm:text-4xl font-['Montserrat'] font-bold text-center">
             Our Latest Blog
           </h3>
         </div>
@@ -42,7 +42,7 @@ const LatestBlog = () => {
                 <>
                   <div
                     key={index}
-                    className={`m-2 sm:w-[47%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3 `}>
+                    className={`m-2 sm:w-[47%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-2 sm:p-3 `}>
                     <div className="flex items-center  justify-center rounded-xl  w-full">
                       <Link href={`/blog/${item.id}`}>
                         <img
@@ -60,7 +60,7 @@ const LatestBlog = () => {
                           {item?.blogName}
                         </h5>
                       </Link>
-                      <p>{item?.blogDetail}</p>
+                      <p>{item?.blogDetail.slice(0, 130)} . . .</p>
                       <Link href={`/blog/${item.id}`}>
                         <h6 className="mt-2 text-gray-600 font-semibold">
                           Read More

@@ -4,6 +4,7 @@ import BlogData from "./BlogData";
 import Link from "next/link";
 
 const RecentBlog = () => {
+  const colorMe = useSelector((state) => state.colorUs.color);
   const RecentBlogData = BlogData.map((list) => {
     if (list.type === "RecentBlog") {
       return list;
@@ -38,8 +39,13 @@ const RecentBlog = () => {
                       </Link>
                     </div>
                     <div className="w-1/2 ml-2 h-full">
-                      <span className="border-[0.5px] rounded-2xl p-1 text-[11px] bg-gray-300">
-                        {item?.category}
+                      <span
+                        className="border-[0.5px] rounded-2xl py-1 px-2 text-[11px] text-white"
+                        style={{
+                          background: `${colorMe}`,
+                          opacity: 0.9,
+                        }}>
+                        {item?.blogDate}
                       </span>
                       <Link href={`/blog/${item.id}`}>
                         <p className="font-[Montserrat] text-[13px]">

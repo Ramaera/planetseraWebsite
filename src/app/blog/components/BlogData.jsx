@@ -8,10 +8,11 @@ const BlogData = [
     category: "BestSelling",
     categoryName: "Best Selling",
     type: "RecentBlog",
+    blogDate: "25 Oct 2023",
     blogImg: "/images/blog/Essential-17-Spicesces.png",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
+      "Indian food is a true work of cooking art, it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
     blogDescription: [
       {
         blogList: (
@@ -180,6 +181,7 @@ const BlogData = [
     category: "MouthWatering",
     categoryName: "BestSelling",
     type: "RecentBlog",
+    blogDate: "23 Oct 2023",
     blogImg: "/images/banner/SabjiMasala-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
@@ -189,16 +191,20 @@ const BlogData = [
     id: "red-chilli-powder",
     category: "KitchenSpices",
     type: "RecentBlog",
+    blogDate: "20 Oct 2023",
     blogImg: "/images/banner/RedChilliPowder-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
       "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
+  // --------------  without type  and mix -------------------------------------------------------------------
+
   {
     id: "coriander-powder",
     category: "BestSelling",
-    type: "RecentBlog",
+    type: "",
+    blogDate: "10 Oct 2023",
     blogImg: "/images/banner/CorianderPowder-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
@@ -208,60 +214,20 @@ const BlogData = [
   {
     id: "black-pepper-powder",
     category: "BestSelling",
-    type: "RecentBlog",
+    type: "",
+    blogDate: "10 Oct 2023",
     blogImg: "/images/banner/BlackPepperPowder-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
       "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
 
-  // --------------  LatestBlog  -------------------------------------------------------------------
-
   {
-    id: "chat-masala",
-    category: "MouthWatering",
-    type: "LatestBlog",
-    blogImg: "/images/banner/ChatMasala-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
-  },
-
-  {
-    id: "amchur-powder",
-    category: "BestSelling",
-    type: "LatestBlog",
-    blogImg: "/images/banner/AmchurPowder-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
-  },
-
-  {
-    id: "chicken-masala",
-    category: "MouthWatering",
-    type: "LatestBlog",
-    blogImg: "/images/banner/ChickenMasala-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "India - The Largest Red-Chili Producer and Consumer. Did you know that Andhra Pradesh is the largest red-chili-producing state in India? Well, it’s no surprise, for we all know how rich their cuisine is with spice.",
-  },
-
-  {
-    id: "red-chilli-powder",
-    category: "MouthWatering",
-    type: "LatestBlog",
-    blogImg: "/images/banner/RedChilliPowder-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
-  },
-
-  {
-    id: "meat-masala",
-    category: "NonvegTadka",
-    type: "LatestBlog",
-    blogImg: "/images/banner/MeatMasala-Banner.jpg",
+    id: "sabji-masala",
+    category: "KitchenSpices",
+    type: "",
+    blogDate: "10 Oct 2023",
+    blogImg: "/images/banner/SabjiMasala-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
       "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
@@ -270,19 +236,10 @@ const BlogData = [
   // --------------  popular  -------------------------------------------------------------------
 
   {
-    id: "sabji-masala",
-    category: "KitchenSpices",
-    type: "popular",
-    blogImg: "/images/banner/SabjiMasala-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
-  },
-
-  {
     id: "kitchen-king",
     category: "BestSelling",
     type: "popular",
+    blogDate: "10 Oct 2023",
     blogImg: "/images/banner/KitchenKingMasala-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
@@ -293,6 +250,7 @@ const BlogData = [
     id: "cumin-powder",
     category: "KitchenSpices",
     type: "popular",
+    blogDate: "10 Oct 2023",
     blogImg: "/images/banner/CuminPowder-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
@@ -303,6 +261,7 @@ const BlogData = [
     id: "turmeric-powder",
     category: "KitchenSpices",
     type: "popular",
+    blogDate: "10 Oct 2023",
     blogImg: "/images/banner/TurmericPowder-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
@@ -313,6 +272,7 @@ const BlogData = [
     id: "meat-masala",
     category: "WeekandTadka",
     type: "popular",
+    blogDate: "10 Oct 2023",
     blogImg: "/images/banner/MeatMasala-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
@@ -323,6 +283,7 @@ const BlogData = [
     id: "garam-masala",
     category: "WeekandTadka",
     type: "popular",
+    blogDate: "10 Oct 2023",
     blogImg: "/images/banner/GaramMasala-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
@@ -333,6 +294,7 @@ const BlogData = [
     id: "chat-masala",
     category: "WeekandTadka",
     type: "popular",
+    blogDate: "10 Oct 2023",
     blogImg: "/images/banner/ChatMasala-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
@@ -343,6 +305,7 @@ const BlogData = [
     id: "chicken-masala",
     category: "WeekandTadka",
     type: "popular",
+    blogDate: "10 Oct 2023",
     blogImg: "/images/banner/ChickenMasala-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
