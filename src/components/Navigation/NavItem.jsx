@@ -68,6 +68,11 @@ const NavItem = ({ page }) => {
         <li>
           <Link href="/about">About</Link>
         </li>
+
+        <li>
+          <Link href="/blog">Blog</Link>
+        </li>
+
         <li>
           <Link href="/contact-us" className="mr-1">
             Contact Us

@@ -127,6 +127,19 @@ const NavigationMobile = ({ page }) => {
 
               <li>
                 <Link
+                  href="/blog"
+                  passHref
+                  className="px-4 py-2 flex w-full rounded-md"
+                  style={{
+                    color: currentRoute === "/blog" && colorMe,
+                    fontWeight: currentRoute === "/blog" && 600,
+                  }}>
+                  Blog
+                </Link>
+              </li>
+
+              <li>
+                <Link
                   href="/contact-us"
                   passHref
                   className="px-4 py-2 flex w-full rounded-md "
