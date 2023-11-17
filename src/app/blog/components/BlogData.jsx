@@ -9,7 +9,7 @@ const BlogData = [
     categoryName: "Best Selling",
     type: "RecentBlog",
     blogDate: "25 Oct 2023",
-    blogImg: "/images/blog/Essential-17-Spicesces.png",
+    blogImg: "/images/blog/blog-1.png",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
       "Indian food is a true work of cooking art, it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
@@ -182,8 +182,9 @@ const BlogData = [
     categoryName: "BestSelling",
     type: "RecentBlog",
     blogDate: "23 Oct 2023",
-    blogImg: "/images/banner/SabjiMasala-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
+    blogImg: "/images/blog/blog-2.png",
+    blogName:
+      "How to Check Adulteration of Spices: Safeguarding Your Culinary Delights",
     blogDetail:
       "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
@@ -192,8 +193,8 @@ const BlogData = [
     category: "KitchenSpices",
     type: "RecentBlog",
     blogDate: "20 Oct 2023",
-    blogImg: "/images/banner/RedChilliPowder-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
+    blogImg: "/images/blog/blog-3.png",
+    blogName: "Discover the Spice Routes: Where Spices are Grown in India",
     blogDetail:
       "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
   },
@@ -208,7 +209,7 @@ const BlogData = [
     blogImg: "/images/banner/CorianderPowder-Banner.jpg",
     blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
     blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
+      "Spices are the heart of any dish, and making sure they are real is essential for making tasty food. However, the market is full of cases of adulteration, where spices are mixed with other substances or ingredients that aren't as good. As a consumer and food lover, you need to know how to tell if spices have been tampered with so that the flavours you make are clean and real. The ways and techniques to keep your culinary delights safe are covered in this piece.",
   },
 
   {

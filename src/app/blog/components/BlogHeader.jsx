@@ -14,7 +14,7 @@ const BlogHeader = () => {
       <NavItem page={"blog"} className="pb-40" />
       <div className="h-16 sm:h-10 xl:h-20 2xl:h-24  hidden md:block"></div>
       <section
-        className="bg-cover bg-center bg-no-repeat  lg:mx-16 lg:rounded-3xl sm:mt-10 xl:mt-0"
+        className="bg-cover bg-center bg-no-repeat  lg:mx-16 lg:rounded-3xl sm:mt-10 xl:mt-0 sm:h-72"
         style={{
           backgroundImage: `url(${bg1})`,
         }}>
@@ -29,36 +29,8 @@ const BlogHeader = () => {
                 })`,
                 textShadow: `0px 0px 0px ${colorMe + "85"}`,
               }}>
-              Planetsera <br /> special blogs
+              Discover Spice Stories Here
             </h1>
-
-            {/* <div className="flex justify-center	md:justify-start sm:mt-6">
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  marginRight: "20px",
-                }}>
-                <h2 className="font-bold sm:font-normal text-black text-3xl  ">
-                  100+
-                </h2>
-                <h3 className="font-bold sm:font-normal text-black text-lg ">
-                  Customers
-                </h3>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                }}>
-                <h2 className="font-bold sm:font-normal text-black text-3xl webColor">
-                  50+
-                </h2>
-                <h3 className="font-bold sm:font-normal text-black text-lg webColor">
-                  Plant Species
-                </h3>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>
