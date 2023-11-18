@@ -177,7 +177,7 @@ const BlogData = [
   },
 
   {
-    id: "sabji-masala",
+    id: "how-to-check-adulteration-of-spices",
     category: "MouthWatering",
     categoryName: "BestSelling",
     type: "RecentBlog",
@@ -187,9 +187,332 @@ const BlogData = [
       "How to Check Adulteration of Spices: Safeguarding Your Culinary Delights",
     blogDetail:
       "Spices are the heart of any dish, and making sure they are real is essential for making tasty food. However, the market is full of cases of adulteration, where spices are mixed with other substances or ingredients that aren't as good. As a consumer and food lover, you need to know how to tell if spices have been tampered with so that the flavours you make are clean and real. The ways and techniques to keep your culinary delights safe are covered in this piece.",
+    blogDescription: [
+      {
+        blogList: "Understanding Adulteration in Spices        ",
+        blogListAbout: (
+          <>
+            Adulteration is adding flaws or poor quality materials to a product,
+            usually to make more of it or lower the cost of making it. This can
+            mean adding fillers like flour or starch, or even pollutants like
+            sawdust, to spices. Using fake spices can have a wide range of
+            effects, from mild changes in taste to health risks, especially if
+            dangerous substances are added.
+          </>
+        ),
+      },
+      {
+        blogList: "Recognizing the Signs of Adulteration        ",
+        blogListAbout: (
+          <>
+            Before getting into the ways to tell if a spice has been tampered
+            with, it's important to know what other people have noticed:
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Aroma That Doesn't Stay the Same:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Before getting into the ways to tell if a spice has been
+                tampered with, it's important to know what other people have
+                noticed:
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Differences in Colour:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Some spices are known for having bright colours. It could mean
+                that your spice has been tampered with if it looks dull, faded,
+                or has a colour that doesn't seem right.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              grain Size and Texture:
+              <span className="font-normal text-gray-700 text-base ">
+                Spices usually have a certain grain size and texture. If your
+                spice feels too fine or rough, it may have been mixed with
+                something else.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Test of Taste:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Taste is the best way to tell. The spices may not have been what
+                they supposed to be if your dish doesn't taste right or has a
+                strange aftertaste.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Solubility:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Real spices shouldn't be easily broken down in water. If your
+                pepper spreads out quickly when you mix it with water, it might
+                have fillers added to it.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Unusual Sediments:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Look inside the jar that your spice is in. If you see strange
+                sediments or trash, it means that the water has been tampered
+                with.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Home-Based Methods to Check Spice Adulteration        ",
+      },
+      {
+        blogList: "1. Physical Inspection:        ",
+        blogListAbout: (
+          <>
+            Colour and Feeling: Look at the spice's colour and feel it. They
+            should live up to what you expect from them. To give you an example,
+            saffron that looks and feels more like turmeric might not be what it
+            seems to be.
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Smell:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                The smell of spices is very important. It's a bad sign if the
+                spice doesn't have its usual smell or smells strange.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Taste:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                A quick taste test can tell you a lot. Real herbs should have a
+                strong, real flavour.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              2. Test with water:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Water tends to break down a lot of ground spices. To see if this
+                is true, mix some of the spice with water. It might not be pure
+                if it disappears quickly and doesn't leave much behind.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              3. Starch Test:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Mix a little of the spice with iodine to see if it has extra
+                starch. A change in colour to blue-black shows that starch is
+                present, which suggests that the food has been tampered with.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              4. Float Test:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Spices can be mixed with some artificial things, like stones.
+                The float test can help find these kinds of contaminants. If you
+                put the spice in a glass of water, anything that isn't water
+                will move to the top.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Laboratory-Based Testing      ",
+        blogListAbout: (
+          <>
+            The above home-based methods are good for quick checks, but they
+            might miss small signs of adulteration sometimes. In this case, you
+            might want to send your spices to a lab for more advanced testing.
+            Techniques like chromatography and spectroscopy can be used by
+            professional labs to accurately find adulterants.
+          </>
+        ),
+      },
+      {
+        blogList: "Purchasing Quality Spices        ",
+        blogListAbout: (
+          <>
+            <p>
+              <span className="text-3xl">•</span> Buying spices from trustworthy
+              stores is one of the best ways to be sure that they have not been
+              tampered with. When you buy spices, keep these things in mind:
+            </p>
+            <p>
+              <span className="text-3xl">•</span> Buy whole spices instead of
+              ground ones because ground spices are more likely to be tampered
+              with. For the freshest taste, grind them yourself at home.
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Check the Packaging:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Spices should come in sealed, clear packaging that can't be
+                opened. Infections are less likely to happen this way.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Buy from brands you can trust:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Brands you can trust put quality and identity first. Do some
+                research and pick companies that have a good name.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Certifications:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Look for certifications like the Food Safety and Standards
+                Authority of India (FSSAI) in India. These approvals show that
+                food safety standards are being met.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Smaller Amounts:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Buy spices in smaller amounts so you can use them up before they
+                lose their flavour.
+              </span>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "How to Store Things Safely       ",
+        blogListAbout: (
+          <>
+            To keep the quality and purity of your spices, you need to store
+            them correctly:
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Containers That Don't Let Air In:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                To keep your spices' flavour and smell, store them in containers
+                that don't let air in.
+              </span>
+              <p className="font-normal text-gray-700 text-base mt-5 ">
+                Cool and dark Put your spice jars somewhere out of direct
+                sunlight and heat, since these things can make the spices less
+                fresh.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="font-semibold  text-black text-xl">
+              Label and Date:{" "}
+              <span className="font-normal text-gray-700 text-base ">
+                Write the date you bought the spices on the labels of your spice
+                containers to make sure you use the freshest spices.
+              </span>
+              <p className="font-normal text-gray-700 text-base mt-5">
+                Since spices are what make a dish taste good, it's important to
+                use real, pure spices in all of your cooking. Knowing the signs
+                of adulteration and using the tests listed can help you make
+                sure that the spices you buy are real. To make even more sure of
+                the quality and consistency of your spices, buy them from
+                reputable stores and store them properly. You can keep enjoying
+                the bright and real flavours that spices add to your food as
+                long as you stay alert and educated.
+              </p>
+            </p>
+          </>
+        ),
+      },
+    ],
   },
   {
-    id: "red-chilli-powder",
+    id: "where-spices-are-grown-in-india",
     category: "KitchenSpices",
     type: "RecentBlog",
     blogDate: "20 Oct 2023",
@@ -557,12 +880,12 @@ const BlogData = [
   },
 
   {
-    id: "black-pepper-powder",
+    id: "herbs-and-spices-that-fight-inflammation",
     category: "BestSelling",
     type: "",
     blogDate: "10 Oct 2023",
     blogImg: "/images/blog/blog-5.png",
-    blogName: "Herbs and Spices That Fight Inflammation    ",
+    blogName: "Herbs and Spices That Fight Inflammation",
     blogDetail:
       "The body's normal reaction to damage or infection is inflammation. Acute inflammation is beneficial, but chronic inflammation can be detrimental and is associated with a number of illnesses, including as cancer, autoimmune disorders, and heart disease. The good news is that inflammation can be reduced by utilizing nature's power. For millennia, people have utilized herbs and spices for their therapeutic qualities, and many of them have anti-inflammatory effects. We'll look at 17 spices and herbs in this article that can reduce inflammation and improve your health.",
     blogDescription: [
@@ -950,7 +1273,7 @@ const BlogData = [
         ),
       },
       {
-        blogList: "Organic Chili Powder        ",
+        blogList: "Organic Chili Powder",
         blogListAbout: (
           <>
             Including{" "}
