@@ -12,6 +12,27 @@ const ContactUs = () => {
   return (
     <>
       <Head />
+      <script type="application/ld+json">
+        {`
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "PlanetsEra",
+  "url": "https://www.planetsera.com/",
+  "logo": "logo url",
+  "description": "Planetsera Masala is a centre for the authentic flavours of India. Today, we are India’s favourite for our spicy masalas and best delicious Spices!",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "H-150",
+    "addressLocality": "Sector-63",
+    "addressRegion": "Gautam Budh Nagar",
+    "postalCode": "201301",
+    "addressCountry": "India"
+  }
+}
+`}
+      </script>
+
       <title>
         Contact Us | The Best online Spices Brand in India | Planetsera
       </title>

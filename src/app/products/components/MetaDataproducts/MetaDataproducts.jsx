@@ -8,7 +8,6 @@ const MetaDataproducts = () => {
   return (
     <>
       <Head />
-      {/*----------------------- Meta tag Black Pepper Powder  --------------------------------------------------- */}
       {currentRoute === "/products/black-pepper-powder" && (
         <>
           <title>
@@ -78,7 +77,6 @@ const MetaDataproducts = () => {
           />
         </>
       )}
-
       {/*----------------------- Meta tag  Chat Masala --------------------------------------------------- */}
       {currentRoute === "/products/chat-masala" && (
         <>
@@ -150,10 +148,32 @@ const MetaDataproducts = () => {
           />
         </>
       )}
-
       {/*----------------------- Meta tag  Coriander Powder --------------------------------------------------- */}
       {currentRoute === "/products/coriander-powder" && (
         <>
+          <script type="application/ld+json">
+            {`
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is Coriander Powder (Dhaniya Powder)?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Coriander Powder (Dhaniya powder) is a spice made from coriander seeds that have been ground up. It is used in many foods around the world and gives them a warm, citrusy taste. Coriander seed can be used in many different dishes, like curries, soups, and marinades. It makes the food taste better overall. It is a must-have in the kitchen because of its unique smell and light heat."
+    }
+  },{
+    "@type": "Question",
+    "name": "Are There Health Benefits to Coriander Powder?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Coriander Powder might be good for your health. It has vitamins, which may help with digestion, reduce inflammation, and help keep the heart healthy. With its unique flavour, it is a useful spice that not only makes food taste better but also helps people feel better overall. Adding coriander powder to your diet can be both tasty and good for your health."
+    }
+  }]
+}
+`}
+          </script>
           <title>
             Experience the Magic of Coriander Powder | Quality Dhaniya Powder
             for Your Recipes
@@ -222,7 +242,6 @@ const MetaDataproducts = () => {
           />
         </>
       )}
-
       {/*----------------------- Meta tag Garam Masala  --------------------------------------------------- */}
       {currentRoute === "/products/garam-masala" && (
         <>
@@ -294,7 +313,6 @@ const MetaDataproducts = () => {
           />
         </>
       )}
-
       {/*----------------------- Meta tag Meat Masala --------------------------------------------------- */}
       {currentRoute === "/products/meat-masala" && (
         <>
@@ -364,7 +382,6 @@ const MetaDataproducts = () => {
           />
         </>
       )}
-
       {/*----------------------- Meta tag Red Chilli Powder --------------------------------------------------- */}
       {currentRoute === "/products/red-chilli-powder" && (
         <>
@@ -432,7 +449,6 @@ const MetaDataproducts = () => {
           />
         </>
       )}
-
       {/*----------------------- Meta tag Sabji Masala --------------------------------------------------- */}
       {currentRoute === "/products/sabji-masala" && (
         <>
@@ -504,7 +520,6 @@ const MetaDataproducts = () => {
           />
         </>
       )}
-
       {/*----------------------- Meta tag Turmeric powder --------------------------------------------------- */}
       {currentRoute === "/products/turmeric-powder" && (
         <>
@@ -575,7 +590,6 @@ const MetaDataproducts = () => {
           />
         </>
       )}
-
       {/*----------------------- Meta tag  Cumin Powder --------------------------------------------------- */}
       {currentRoute === "/products/cumin-powder" && (
         <>
@@ -647,7 +661,6 @@ const MetaDataproducts = () => {
           />
         </>
       )}
-
       {/*----------------------- Meta tag  Amchur Powder  --------------------------------------------------- */}
       {currentRoute === "/products/amchur-powder" && (
         <>
