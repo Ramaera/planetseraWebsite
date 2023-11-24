@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import BlogData from "./BlogData";
 import { useSelector } from "react-redux";
 
@@ -9,14 +9,22 @@ const BlogDetails = () => {
   const specificBlog = BlogData.find((list) => list.id === id);
   if (!specificBlog) return;
 
+  const scrollTopRef = useRef(null);
   const colorMe = useSelector((state) => state.colorUs.color);
+
   // useEffect(() => {
   //   window.scrollTo(0, 0);
   // }, []);
 
+  useEffect(() => {
+    scrollTopRef.current.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   return (
     <>
-      <div className="mx-4 sm:mr-16 sm:ml-10 mb-4 justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-4 ">
+      <div
+        ref={scrollTopRef}
+        className="mx-4 sm:mr-16 sm:ml-10 mb-4 justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-4 ">
         <div className="flex items-center  justify-center rounded-xl w-full">
           <img
             className="rounded-md w-full  "
@@ -29,8 +37,7 @@ const BlogDetails = () => {
         <div className="justify-start flex w-full mt-4 mb-2">
           <h3
             className="rounded-2xl py-1 px-3 text-white"
-            style={{ background: `${colorMe}` }}
-          >
+            style={{ background: `${colorMe}` }}>
             {specificBlog?.blogDate}
           </h3>
         </div>

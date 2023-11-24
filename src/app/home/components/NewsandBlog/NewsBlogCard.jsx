@@ -7,11 +7,7 @@ import BuynowBtn from "@/components/BuynowBtn/index";
 
 const NewsBlogCard = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
-  const BlogNewsData = BlogData.map((list) => {
-    if (list.type === "RecentBlog") {
-      return list;
-    }
-  });
+  const BlogNewsData = BlogData;
 
   return (
     <div className="flex w-full">
@@ -24,8 +20,7 @@ const NewsBlogCard = () => {
             <>
               <div
                 key={index}
-                className={`m-2 sm:w-[30%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3 group cursor-pointer`}
-              >
+                className={`m-2 sm:w-[30%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3 group cursor-pointer`}>
                 <div className="flex rounded-xl w-full relative overflow-hidden">
                   <Link href={`/blog/${item.id}`}>
                     <img

@@ -1610,9 +1610,9 @@
 .blog-heading {
   font-size: 45px;
   font-family: "Montserrat";
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background-clip: text; */
   font-weight: bold;
   line-height: 50px;
 }

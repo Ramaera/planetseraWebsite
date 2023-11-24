@@ -9,7 +9,8 @@ const MetaDatablogs = () => {
     <>
       <Head />
       {/*-----------------------  Essential Indian Spices List You Must Have In Your Kitchen  --------------------------------------------------- */}
-      {currentRoute === "/blog/you-must-have-in-your-kitchen" && (
+      {currentRoute ===
+        "/blog/essential-indian-spices-you-must-have-in-your-kitchen" && (
         <>
           <script type="application/ld+json">
             {`
@@ -58,10 +59,13 @@ const MetaDatablogs = () => {
           />
           <meta name="keywords" content="" />
           <meta name="robots" content="index,  follow" />
-          <link rel="canonical" href="/blog/you-must-have-in-your-kitchen" />
+          <link
+            rel="canonical"
+            href="/blog/essential-indian-spices-you-must-have-in-your-kitchen"
+          />
           <meta
             property="og:url"
-            content="/blog/you-must-have-in-your-kitchen"
+            content="/blog/essential-indian-spices-you-must-have-in-your-kitchen"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -84,7 +88,7 @@ const MetaDatablogs = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="/blog/you-must-have-in-your-kitchen"
+            content="/blog/essential-indian-spices-you-must-have-in-your-kitchen"
           />
           <meta
             name="twitter:title"

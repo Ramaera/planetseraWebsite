@@ -110,7 +110,7 @@ const BlogData = [
     ],
   },
   {
-    id: "you-must-have-in-your-kitchen",
+    id: "essential-indian-spices-you-must-have-in-your-kitchen",
     category: "BestSelling",
     categoryName: "Best Selling",
     type: "popular",
@@ -836,8 +836,7 @@ const BlogData = [
             Spices can speed up your digestion. Capsaicin, which is found in hot
             <Link
               href="/products/black-pepper-powder"
-              className=" text-red-500"
-            >
+              className=" text-red-500">
               {" "}
               chilli peppers{" "}
             </Link>{" "}
@@ -1187,8 +1186,7 @@ const BlogData = [
           <>
             <Link
               href="/products/black-pepper-powder"
-              className=" text-red-500"
-            >
+              className=" text-red-500">
               {" "}
               Black Pepper{" "}
             </Link>

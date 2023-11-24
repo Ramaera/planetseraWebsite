@@ -17,19 +17,18 @@ const BlogHeader = () => {
         className="bg-cover bg-center bg-no-repeat   lg:mx-16 lg:rounded-3xl sm:mt-10 xl:mt-0 sm:h-72"
         style={{
           backgroundImage: `url(${bg1})`,
-        }}
-      >
+        }}>
         <NavigationMobile page={"blog"} />
         <div className=" mx-auto px-4 py-10 sm:py-[7.5rem]  flex items-center justify-center   w-full">
           <div className="text-center items-center">
             <div
-              className="blog-heading text-white text-6xl "
-              style={{
-                backgroundImage: `linear-gradient(to right, ${colorMe}, ${
-                  colorMe + "80"
-                })`,
-                textShadow: `0px 0px 0px ${colorMe + "85"}`,
-              }}
+              className="blog-heading text-black text-6xl "
+              // style={{
+              //   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
+              //     colorMe + "80"
+              //   })`,
+              //   textShadow: `0px 0px 0px ${colorMe + "85"}`,
+              // }}
             >
               Discover Spice Stories Here
             </div>

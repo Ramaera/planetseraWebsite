@@ -22,7 +22,10 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
         <ul className="flex py-3">
           <li className="hover:underline mx-1 font-bold">
             <Link href={"/"}>
-              <HomeIcon sx={{ fontSize: 30, marginTop: -1 }} />
+              <HomeIcon
+                sx={{ fontSize: 30, marginTop: -1, marginRight: 0.3 }}
+              />
+              Home
             </Link>
           </li>
           {pathNames.length > 0 && <KeyboardDoubleArrowRightIcon />}
@@ -30,18 +33,23 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
             let href = `/${pathNames.slice(0, index + 1).join("/")}`;
             let itemClasses =
               paths === href
-                ? { textDecoration: "underline", color: colorMe }
-                : { textDecoration: "underline" };
+                ? { textDecoration: "none", color: colorMe }
+                : { textDecoration: "none" };
+
+            // let itemLink = capitalizeLinks
+            //   ? link[0].toUpperCase() + link.slice(1, link.length)
+            //   : link;
 
             let itemLink = capitalizeLinks
-              ? link[0].toUpperCase() + link.slice(1, link.length)
+              ? link
+                  .replace(/-/g, " ")
+                  .replace(/\b\w/g, (firstChar) => firstChar.toUpperCase())
               : link;
             return (
               <React.Fragment key={index}>
                 <li
                   className="hover:underline mx-1 font-semibold"
-                  style={itemClasses}
-                >
+                  style={itemClasses}>
                   <Link href={href}>{itemLink}</Link>
                 </li>
 
