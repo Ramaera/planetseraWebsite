@@ -19,7 +19,7 @@ const BlogDetails = () => {
       <div className="mx-4 sm:mr-16 sm:ml-10 mb-4 justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-4 ">
         <div className="flex items-center  justify-center rounded-xl w-full">
           <img
-            className="rounded-md w-full"
+            className="rounded-md w-full  "
             loading="lazy"
             src={specificBlog.blogImg}
             alt="Planetsera Spices"
@@ -29,7 +29,8 @@ const BlogDetails = () => {
         <div className="justify-start flex w-full mt-4 mb-2">
           <h3
             className="rounded-2xl py-1 px-3 text-white"
-            style={{ background: `${colorMe}` }}>
+            style={{ background: `${colorMe}` }}
+          >
             {specificBlog?.blogDate}
           </h3>
         </div>

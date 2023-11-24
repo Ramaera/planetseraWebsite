@@ -2,15 +2,121 @@
 import Link from "next/link";
 const BlogData = [
   // --------------  RecentBlog  -------------------------------------------------------------------
+  {
+    id: "the-best-organic-spice-blends-for-delicious-meals",
+    category: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "24 Nov 2023",
+    blogImg: "/images/blog/blog-7.png",
+    blogName: "The Best Organic Spice Blends for Delicious Meals",
+    blogDetail:
+      "Using organic spices is a wonderful way to produce delicious food that is also good for you. Not only are they excellent for your health, but they also have the potential to impart a flavour profile all their own to the food you prepare. Because there are so many different organic spice mixes on the market, it can be difficult to choose which one is ideal for the food you are preparing. This article will discuss some of the most flavorful organic spice combinations that may be used in cooking.Organic Curry Powder (Curry Powder)The use of curry powder is an excellent method for imparting flavour to food. Spices like turmeric, cumin, coriander, fenugreek, and cardamom are combined in this versatile spice mix, which can be employed in the preparation of a wide range of foods. The absence of any artificial flavours or preservatives makes organic curry powder an excellent option. This makes it a very popular choice. In addition to this, it is an excellent source of antioxidants, which, among other benefits, can assist in the reduction of inflammation and the promotion of overall improved health.",
 
+    blogDescription: [
+      {
+        blogList: "Organic Garam Masala",
+        blogListAbout: (
+          <>
+            The Indian spice mixture known as{" "}
+            <Link href="/products/garam-masala" className="text-red-500">
+              garam masala{" "}
+            </Link>{" "}
+            is a common ingredient in Indian cuisine. Cumin, coriander,
+            cardamom, cloves, cinnamon, and black pepper are the individual
+            components that make up this blend. Because it does not contain any
+            artificial additives or preservatives, organic garam masala is an
+            excellent option to consider. It has a distinct flavour that can
+            lend a great deal of complexity to the recipes you prepare.
+          </>
+        ),
+      },
+      {
+        blogList: "Organic Chili Powder",
+        blogListAbout: (
+          <>
+            Including{" "}
+            <Link href="/products/red-chilli-powder" className="text-red-500">
+              chilli powder{" "}
+            </Link>{" "}
+            in your foods is an excellent way to give them an extra kick. It is
+            a mixture of many spices, including cumin, garlic powder, oregano,
+            and chilli peppers, among others. Because it does not contain any
+            artificial additives or preservatives, organic chilli powder is a
+            fantastic option to take into consideration. In addition to this, it
+            is an excellent source of antioxidants, which, among other benefits,
+            can assist in the reduction of inflammation and the promotion of
+            overall improved health.
+          </>
+        ),
+      },
+      {
+        blogList: "Organic Italian Seasoning",
+        blogListAbout: (
+          <>
+            Adding some flavour to your dishes with some Italian seasoning is a
+            terrific idea. It is a mixture of many herbs and spices, including
+            garlic, oregano, basil, thyme, and rosemary. Because it does not
+            contain any artificial additives or preservatives, organic Italian
+            seasoning is an excellent option to consider. It has a distinct
+            flavour that can lend a great deal of complexity to the recipes you
+            prepare.
+          </>
+        ),
+      },
+      {
+        blogList: "Organic Cajun Seasoning",
+        blogListAbout: (
+          <>
+            Adding some flavour to your dishes with some Italian seasoning is a
+            terrific idea. It is a mixture of many herbs and spices, including
+            garlic, oregano, basil, thyme, and rosemary. Because it does not
+            contain any artificial additives or preservatives, organic Italian
+            seasoning is an excellent option to consider. It has a distinct
+            flavour that can lend a great deal of complexity to the recipes you
+            prepare.
+          </>
+        ),
+      },
+      {
+        blogList: "Organic Mexican Seasoning        ",
+        blogListAbout: (
+          <>
+            <p>
+              Adding flavour to your dishes with Mexican seasoning is an
+              excellent way to do it. It is a mixture of many spices, including
+              cumin, garlic powder,{" "}
+              <Link href="/products/red-chilli-powder" className="text-red-500">
+                chilli powder
+              </Link>{" "}
+              , oregano, and paprika, among others. Because it does not contain
+              any artificial additives or preservatives, organic Mexican
+              seasoning is a fantastic option to take into consideration. It has
+              a distinct flavour that can lend a great deal of complexity to the
+              recipes you prepare.
+            </p>
+            <p className="mt-5">
+              Adding flavour to your foods with organic spices is an excellent
+              method to do it. Curry powder, garam masala, chilli powder,
+              Italian seasoning, Cajun seasoning, and Mexican seasoning are just
+              some of the organic spice combinations you may get. These organic
+              spice mixtures are not only an excellent source of antioxidants
+              but also have the potential to provide your foods a flavour all
+              their own. So, if you want to spice up your dishes without
+              sacrificing health, try one of these all-natural spice mixes.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
   {
     id: "you-must-have-in-your-kitchen",
     category: "BestSelling",
     categoryName: "Best Selling",
-    type: "RecentBlog",
-    blogDate: "25 Oct 2023",
+    type: "popular",
+    blogDate: "20 Nov 2023",
     blogImg: "/images/blog/blog-1.png",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
+    blogName: "17 Essential Indian Spices  You Must Have In Your Kitchen",
     blogDetail:
       "Indian food is a true work of cooking art, it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
     blogDescription: [
@@ -181,7 +287,7 @@ const BlogData = [
     category: "MouthWatering",
     categoryName: "BestSelling",
     type: "RecentBlog",
-    blogDate: "23 Oct 2023",
+    blogDate: "15 Nov 2023",
     blogImg: "/images/blog/blog-2.png",
     blogName:
       "How to Check Adulteration of Spices: Safeguarding Your Culinary Delights",
@@ -515,7 +621,7 @@ const BlogData = [
     id: "where-spices-are-grown-in-india",
     category: "KitchenSpices",
     type: "RecentBlog",
-    blogDate: "20 Oct 2023",
+    blogDate: "10 Nov 2023",
     blogImg: "/images/blog/blog-3.png",
     blogName: "Discover the Spice Routes: Where Spices are Grown in India",
     blogDetail:
@@ -676,8 +782,8 @@ const BlogData = [
   {
     id: "benefits-of-spices-that-can-help-you-to-live-healthy-life",
     category: "BestSelling",
-    type: "RecentBlog",
-    blogDate: "10 Oct 2023",
+    type: "popular",
+    blogDate: "4 Nov 2023",
     blogImg: "/images/blog/blog-4.png",
     blogName: "Benefits Of Spices That Can Help You To Live Healthy Life",
     blogDetail:
@@ -882,8 +988,8 @@ const BlogData = [
   {
     id: "herbs-and-spices-that-fight-inflammation",
     category: "BestSelling",
-    type: "",
-    blogDate: "10 Oct 2023",
+    type: "popular",
+    blogDate: "31 Oct 2023",
     blogImg: "/images/blog/blog-5.png",
     blogName: "Herbs and Spices That Fight Inflammation",
     blogDetail:
@@ -1130,8 +1236,8 @@ const BlogData = [
   {
     id: "health-benefits-of-black-cumin-seed",
     category: "BestSelling",
-    type: "",
-    blogDate: "10 Oct 2023",
+    type: "popular",
+    blogDate: "25 Oct 2023",
     blogImg: "/images/blog/blog-6.png",
     blogName: "Health Benefits Of Black Cumin Seed",
     blogDetail:
@@ -1244,192 +1350,8 @@ const BlogData = [
       },
     ],
   },
-  {
-    id: "the-best-organic-spice-blends-for-delicious-meals",
-    category: "BestSelling",
-    type: "",
-    blogDate: "10 Oct 2023",
-    blogImg: "/images/blog/blog-7.png",
-    blogName: "The Best Organic Spice Blends for Delicious Meals",
-    blogDetail:
-      "Using organic spices is a wonderful way to produce delicious food that is also good for you. Not only are they excellent for your health, but they also have the potential to impart a flavour profile all their own to the food you prepare. Because there are so many different organic spice mixes on the market, it can be difficult to choose which one is ideal for the food you are preparing. This article will discuss some of the most flavorful organic spice combinations that may be used in cooking.Organic Curry Powder (Curry Powder)The use of curry powder is an excellent method for imparting flavour to food. Spices like turmeric, cumin, coriander, fenugreek, and cardamom are combined in this versatile spice mix, which can be employed in the preparation of a wide range of foods. The absence of any artificial flavours or preservatives makes organic curry powder an excellent option. This makes it a very popular choice. In addition to this, it is an excellent source of antioxidants, which, among other benefits, can assist in the reduction of inflammation and the promotion of overall improved health.",
-
-    blogDescription: [
-      {
-        blogList: "Organic Garam Masala",
-        blogListAbout: (
-          <>
-            The Indian spice mixture known as{" "}
-            <Link href="/products/garam-masala" className="text-red-500">
-              garam masala{" "}
-            </Link>{" "}
-            is a common ingredient in Indian cuisine. Cumin, coriander,
-            cardamom, cloves, cinnamon, and black pepper are the individual
-            components that make up this blend. Because it does not contain any
-            artificial additives or preservatives, organic garam masala is an
-            excellent option to consider. It has a distinct flavour that can
-            lend a great deal of complexity to the recipes you prepare.
-          </>
-        ),
-      },
-      {
-        blogList: "Organic Chili Powder",
-        blogListAbout: (
-          <>
-            Including{" "}
-            <Link href="/products/red-chilli-powder" className="text-red-500">
-              chilli powder{" "}
-            </Link>{" "}
-            in your foods is an excellent way to give them an extra kick. It is
-            a mixture of many spices, including cumin, garlic powder, oregano,
-            and chilli peppers, among others. Because it does not contain any
-            artificial additives or preservatives, organic chilli powder is a
-            fantastic option to take into consideration. In addition to this, it
-            is an excellent source of antioxidants, which, among other benefits,
-            can assist in the reduction of inflammation and the promotion of
-            overall improved health.
-          </>
-        ),
-      },
-      {
-        blogList: "Organic Italian Seasoning",
-        blogListAbout: (
-          <>
-            Adding some flavour to your dishes with some Italian seasoning is a
-            terrific idea. It is a mixture of many herbs and spices, including
-            garlic, oregano, basil, thyme, and rosemary. Because it does not
-            contain any artificial additives or preservatives, organic Italian
-            seasoning is an excellent option to consider. It has a distinct
-            flavour that can lend a great deal of complexity to the recipes you
-            prepare.
-          </>
-        ),
-      },
-      {
-        blogList: "Organic Cajun Seasoning",
-        blogListAbout: (
-          <>
-            Adding some flavour to your dishes with some Italian seasoning is a
-            terrific idea. It is a mixture of many herbs and spices, including
-            garlic, oregano, basil, thyme, and rosemary. Because it does not
-            contain any artificial additives or preservatives, organic Italian
-            seasoning is an excellent option to consider. It has a distinct
-            flavour that can lend a great deal of complexity to the recipes you
-            prepare.
-          </>
-        ),
-      },
-      {
-        blogList: "Organic Mexican Seasoning        ",
-        blogListAbout: (
-          <>
-            <p>
-              Adding flavour to your dishes with Mexican seasoning is an
-              excellent way to do it. It is a mixture of many spices, including
-              cumin, garlic powder,{" "}
-              <Link href="/products/red-chilli-powder" className="text-red-500">
-                chilli powder
-              </Link>{" "}
-              , oregano, and paprika, among others. Because it does not contain
-              any artificial additives or preservatives, organic Mexican
-              seasoning is a fantastic option to take into consideration. It has
-              a distinct flavour that can lend a great deal of complexity to the
-              recipes you prepare.
-            </p>
-            <p className="mt-5">
-              Adding flavour to your foods with organic spices is an excellent
-              method to do it. Curry powder, garam masala, chilli powder,
-              Italian seasoning, Cajun seasoning, and Mexican seasoning are just
-              some of the organic spice combinations you may get. These organic
-              spice mixtures are not only an excellent source of antioxidants
-              but also have the potential to provide your foods a flavour all
-              their own. So, if you want to spice up your dishes without
-              sacrificing health, try one of these all-natural spice mixes.
-            </p>
-          </>
-        ),
-      },
-    ],
-  },
 
   // --------------  popular  -------------------------------------------------------------------
-
-  {
-    id: "kitchen-king",
-    category: "BestSelling",
-    type: "popular",
-    blogDate: "10 Oct 2023",
-    blogImg: "/images/banner/KitchenKingMasala-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
-  },
-
-  {
-    id: "cumin-powder",
-    category: "KitchenSpices",
-    type: "popular",
-    blogDate: "10 Oct 2023",
-    blogImg: "/images/banner/CuminPowder-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
-  },
-
-  {
-    id: "turmeric-powder",
-    category: "KitchenSpices",
-    type: "popular",
-    blogDate: "10 Oct 2023",
-    blogImg: "/images/banner/TurmericPowder-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
-  },
-
-  {
-    id: "meat-masala",
-    category: "WeekandTadka",
-    type: "popular",
-    blogDate: "10 Oct 2023",
-    blogImg: "/images/banner/MeatMasala-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
-  },
-
-  {
-    id: "garam-masala",
-    category: "WeekandTadka",
-    type: "popular",
-    blogDate: "10 Oct 2023",
-    blogImg: "/images/banner/GaramMasala-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
-  },
-
-  {
-    id: "chat-masala",
-    category: "WeekandTadka",
-    type: "popular",
-    blogDate: "10 Oct 2023",
-    blogImg: "/images/banner/ChatMasala-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
-  },
-
-  {
-    id: "chicken-masala",
-    category: "WeekandTadka",
-    type: "popular",
-    blogDate: "10 Oct 2023",
-    blogImg: "/images/banner/ChickenMasala-Banner.jpg",
-    blogName: "17 Essential Indian Spices List You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art; it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
-  },
 ];
 
 export default BlogData;
