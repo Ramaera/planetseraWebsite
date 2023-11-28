@@ -20,15 +20,20 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
       <MetaBreadcrumb />
       <div className="mx-2 sm:mx-16">
         <ul className="flex py-3">
-          <li className="hover:underline mx-1 font-bold">
+          <li className="hover:underline mx-1 font-bold ">
             <Link href={"/"}>
-              <HomeIcon
-                sx={{ fontSize: 30, marginTop: -1, marginRight: 0.3 }}
-              />
-              Home
+              <div className="flex text-xs sm:text-base ">
+                <HomeIcon
+                  className="text-md sm:text-3xl "
+                  sx={{ marginRight: 0.3, marginTop: -0.5 }}
+                />
+                Home
+              </div>
             </Link>
           </li>
-          {pathNames.length > 0 && <KeyboardDoubleArrowRightIcon />}
+          {pathNames.length > 0 && (
+            <KeyboardDoubleArrowRightIcon className="text-lg sm:text-2xl" />
+          )}
           {pathNames.map((link, index) => {
             let href = `/${pathNames.slice(0, index + 1).join("/")}`;
             let itemClasses =
@@ -48,8 +53,9 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
             return (
               <React.Fragment key={index}>
                 <li
-                  className="hover:underline mx-1 font-semibold"
-                  style={itemClasses}>
+                  className="hover:underline mx-1 font-semibold text-xs sm:text-base"
+                  style={itemClasses}
+                >
                   <Link href={href}>{itemLink}</Link>
                 </li>
 
@@ -57,7 +63,7 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
                 <Link href={href}>{itemLink}</Link>
               </li> */}
                 {pathNames.length !== index + 1 && (
-                  <KeyboardDoubleArrowRightIcon />
+                  <KeyboardDoubleArrowRightIcon className="text-lg sm:text-2xl" />
                 )}
               </React.Fragment>
             );

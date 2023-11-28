@@ -13,16 +13,17 @@ const BlogHeader = () => {
     <>
       <NavItem page={"blog"} className="pb-40" />
       <div className="h-16 sm:h-10 xl:h-20 2xl:h-24  hidden md:block"></div>
+      <NavigationMobile page={"blog"} />
       <section
-        className="bg-cover bg-center bg-no-repeat   lg:mx-16 lg:rounded-3xl sm:mt-10 xl:mt-0 sm:h-72"
+        className="bg-cover bg-center bg-no-repeat mx-4  lg:mx-16 rounded-xl lg:rounded-3xl sm:mt-10 xl:mt-0 sm:h-72 mt-16"
         style={{
           backgroundImage: `url(${bg1})`,
-        }}>
-        <NavigationMobile page={"blog"} />
+        }}
+      >
         <div className=" mx-auto px-4 py-10 sm:py-[7.5rem]  flex items-center justify-center   w-full">
           <div className="text-center items-center">
             <div
-              className="blog-heading text-black text-6xl "
+              className="blog-heading text-black "
               // style={{
               //   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
               //     colorMe + "80"

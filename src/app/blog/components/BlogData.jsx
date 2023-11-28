@@ -348,7 +348,7 @@ const BlogData = [
         blogListAbout: (
           <>
             <p className="font-semibold  text-black text-xl">
-              grain Size and Texture:
+              Grain Size and Texture:
               <span className="font-normal text-gray-700 text-base ">
                 Spices usually have a certain grain size and texture. If your
                 spice feels too fine or rough, it may have been mixed with
@@ -836,7 +836,8 @@ const BlogData = [
             Spices can speed up your digestion. Capsaicin, which is found in hot
             <Link
               href="/products/black-pepper-powder"
-              className=" text-red-500">
+              className=" text-red-500"
+            >
               {" "}
               chilli peppers{" "}
             </Link>{" "}
@@ -1186,7 +1187,8 @@ const BlogData = [
           <>
             <Link
               href="/products/black-pepper-powder"
-              className=" text-red-500">
+              className=" text-red-500"
+            >
               {" "}
               Black Pepper{" "}
             </Link>

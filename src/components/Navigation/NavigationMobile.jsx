@@ -60,7 +60,9 @@ const NavigationMobile = ({ page }) => {
                 fontSize="large"
                 style={{
                   color:
-                    page === "about" || page === "products" ? "black" : "white",
+                    page === "about" || page === "products" || page === "blog"
+                      ? "black"
+                      : "white",
                 }}
               />
             )}
@@ -72,7 +74,8 @@ const NavigationMobile = ({ page }) => {
           <div id="mobilenavigation">
             <ul
               className="px-8 py-4 mx-4  "
-              style={{ borderColor: `${colorMe}` }}>
+              style={{ borderColor: `${colorMe}` }}
+            >
               <li>
                 <Link
                   href="/"
@@ -82,7 +85,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/" && colorMe,
                     fontWeight: currentRoute === "/" && 600,
-                  }}>
+                  }}
+                >
                   Home
                 </Link>
               </li>
@@ -94,7 +98,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/product" && colorMe,
                     fontWeight: currentRoute === "/product" && 600,
-                  }}>
+                  }}
+                >
                   Product
                 </Link>
               </li>
@@ -107,7 +112,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/shop" && colorMe,
                     fontWeight: currentRoute === "/shop" && 600,
-                  }}>
+                  }}
+                >
                   Shop
                 </Link>
               </li>
@@ -120,7 +126,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/about" && colorMe,
                     fontWeight: currentRoute === "/about" && 600,
-                  }}>
+                  }}
+                >
                   About
                 </Link>
               </li>
@@ -133,7 +140,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/blog" && colorMe,
                     fontWeight: currentRoute === "/blog" && 600,
-                  }}>
+                  }}
+                >
                   Blog
                 </Link>
               </li>
@@ -146,7 +154,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/contact-us" && colorMe,
                     fontWeight: currentRoute === "/contact-us" && 600,
-                  }}>
+                  }}
+                >
                   Contact Us
                 </Link>
               </li>
