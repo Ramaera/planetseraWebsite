@@ -19,7 +19,7 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
     <>
       <MetaBreadcrumb />
       <div className="mx-2 sm:mx-16">
-        <ul className="flex py-3">
+        <ul className="flex py-3 items-center ">
           <li className="hover:underline mx-1 font-bold ">
             <Link href={"/"}>
               <div className="flex text-xs sm:text-base ">
