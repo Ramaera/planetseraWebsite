@@ -124,7 +124,7 @@ const BlogData = [
         blogList: (
           <>
             1.{" "}
-            <Link href="/products/red-chilli-powder" className="text-red-500">
+            <Link href="/products/turmeric-powder" className="text-red-500">
               Turmeric Powder
             </Link>{" "}
             Haldi Powder: The Golden Elixir
@@ -836,8 +836,7 @@ const BlogData = [
             Spices can speed up your digestion. Capsaicin, which is found in hot
             <Link
               href="/products/black-pepper-powder"
-              className=" text-red-500"
-            >
+              className=" text-red-500">
               {" "}
               chilli peppers{" "}
             </Link>{" "}
@@ -1187,8 +1186,7 @@ const BlogData = [
           <>
             <Link
               href="/products/black-pepper-powder"
-              className=" text-red-500"
-            >
+              className=" text-red-500">
               {" "}
               Black Pepper{" "}
             </Link>
