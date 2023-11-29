@@ -102,23 +102,33 @@
 .hero-Images {
   background-repeat: no-repeat;
   background-size: cover;
+  min-height: 850px;
   height: 90vh;
   width: 100%;
   background-position: center center;
 }
 @media screen and (max-width: 1600px) {
 .hero-Images {
+  min-height: 750px;
   height: 90vh;
  }
 }
+@media screen and (max-width: 1500px) {
+  .hero-Images {
+    min-height: 650px;
+    height: 90vh;
+   }
+  }
 @media screen and (max-width: 1300px) {
   .hero-Images {
+    min-height: 550px;
     height: 90vh;
    }
   }
 @media screen and (max-width: 600px) {
   .hero-Images {
     background-size: unset;
+    min-height: unset;
     height: 700px;
   }
 }
