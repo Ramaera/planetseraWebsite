@@ -103,6 +103,19 @@ const NavigationMobile = ({ page }) => {
                   Product
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/cart"
+                  passHref
+                  className="px-4 py-2 flex w-full rounded-md"
+                  style={{
+                    color: currentRoute === "/cart" && colorMe,
+                    fontWeight: currentRoute === "/cart" && 600,
+                  }}
+                >
+                  Cart
+                </Link>
+              </li>
 
               <li>
                 <Link

@@ -14,7 +14,8 @@ const ContactUsHeader = () => {
         className="bg-cover bg-no-repeat"
         style={{
           backgroundImage: `url(${image})`,
-        }}>
+        }}
+      >
         <div className="basis-12/12 flex justify-end ml-auto items-baseline detailContainer "></div>
 
         <h1 className="text-white text-center pt-16 md:py-[20vh]  md:mx-4 mx-4 contactText text-2xl md:text-6xl ">

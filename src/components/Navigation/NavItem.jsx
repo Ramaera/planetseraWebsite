@@ -38,7 +38,8 @@ const NavItem = ({ page }) => {
         isVisible
           ? "	navHeader text-black border-[1px] border-slate-300	"
           : "text-white"
-      }`}>
+      }`}
+    >
       <Link className={"scale-[0.6] mb-8 sm:mt-[-0.6rem]"} href="/">
         <img className="" src="/images/logo/logo.webp" alt="logo" />
       </Link>
@@ -47,18 +48,23 @@ const NavItem = ({ page }) => {
           color:
             (page === "blog" ||
               page === "shop" ||
+              page === "cart" ||
               page === "about" ||
               page === "products") &&
             "black",
         }}
         id="navigation"
-        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}>
+        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}
+      >
         <li>
           <Link href="/">Home</Link>
         </li>
 
         <li>
           <Link href="/product">Product</Link>
+        </li>
+        <li>
+          <Link href="/cart">Cart</Link>
         </li>
 
         <li>
