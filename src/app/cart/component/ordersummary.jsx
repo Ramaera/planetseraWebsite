@@ -1,13 +1,15 @@
 import React from "react";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import InputAdornment from "@mui/material/InputAdornment";
+// import Address from "../address";
 
 import TextField from "@mui/material/TextField";
+import Link from "next/link";
 const ordersummary = () => {
   return (
     <>
       <div style={{ width: "25%" }}>
-        <div className="border-2 p-3">
+        <div className="border-2 p-3 rounded-2xl">
           <p className="text-2xl	">Order Summary</p>
           <div className="flex  justify-between mt-5 ">
             price <span>₹ 500</span>
@@ -18,7 +20,7 @@ const ordersummary = () => {
           <div className="flex  justify-between mt-5">
             Shipping <span className="Cart-remove">₹ 500</span>
           </div>
-          <div className="flex  justify-between mt-5">
+          <div className="flex  justify-between mt-5 border-b-2 pb-5">
             Coupon Applied <span>₹ 500</span>
           </div>
           <div className="flex  justify-between mt-5">
@@ -52,8 +54,10 @@ const ordersummary = () => {
             }}
           />
 
-          <div className="flex justify-center border-2 rounded-xl mt-5 Cartbgcolor">
-            <button className="text-white">Proceed To Checkout</button>
+          <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor py-3">
+            <Link href="/cart/address" className="text-white">
+              Proceed To Checkout
+            </Link>
           </div>
         </div>
       </div>

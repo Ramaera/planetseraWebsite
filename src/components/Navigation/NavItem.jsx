@@ -5,6 +5,7 @@ import "@/public/styles/navigation.css";
 import { useParams } from "next/navigation";
 import RelatedPtoductData from "@/app/products/components/RelatedProducts/RelatedProductData";
 import { useEffect, useState } from "react";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const NavItem = ({ page }) => {
   const { id } = useParams();
@@ -50,6 +51,7 @@ const NavItem = ({ page }) => {
               page === "shop" ||
               page === "cart" ||
               page === "about" ||
+              page === "address" ||
               page === "products") &&
             "black",
         }}
@@ -62,9 +64,6 @@ const NavItem = ({ page }) => {
 
         <li>
           <Link href="/product">Product</Link>
-        </li>
-        <li>
-          <Link href="/cart">Cart</Link>
         </li>
 
         <li>
@@ -82,6 +81,11 @@ const NavItem = ({ page }) => {
         <li>
           <Link href="/contact-us" className="mr-1">
             Contact Us
+          </Link>
+        </li>
+        <li>
+          <Link href="/cart">
+            <ShoppingCartIcon />
           </Link>
         </li>
       </ul>
