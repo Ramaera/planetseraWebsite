@@ -22,10 +22,12 @@ const page = () => {
   return (
     <>
       <div className="  flex w-full  ">
-        <div className=" p-10 border-b-2 w-full ">
-          <p className="text-xl	">Shipment Method</p>
+        <div className=" p-10  w-full font-mont ">
+          <p style={{ color: "#2F302F" }} className="text-xl	">
+            Shipment Method
+          </p>
 
-          <FormControl className="w-full">
+          <FormControl className="w-full mt-5">
             <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
@@ -33,8 +35,9 @@ const page = () => {
               value={value}
               onChange={handleChange}
             >
-              <div className=" flex justify-between w-full">
+              <div className=" flex justify-between w-full border-b-2 pb-2">
                 <FormControlLabel
+                  style={{ color: "#2F302F" }}
                   value="Regular Shipment"
                   control={<Radio />}
                   label="Free --> Regular Shipment"
@@ -43,16 +46,18 @@ const page = () => {
                   <p>Date</p>
                 </div>
               </div>
-              <div className="mt-10 flex justify-between">
+              <div className="mt-10 flex justify-between border-b-2 pb-10">
                 <FormControlLabel
+                  style={{ color: "#2F302F" }}
                   value="Priority Shipping"
                   control={<Radio />}
                   label="$ 50 --> Priority Shipping"
                 />
                 <p>Date</p>
               </div>
-              <div className="mt-10 flex justify-between">
+              <div className="mt-10 flex justify-between border-b-2 pb-10">
                 <FormControlLabel
+                  style={{ color: "#2F302F" }}
                   value="Schedule"
                   control={<Radio />}
                   label="Schedule --> Choose a date that works for you."

@@ -543,12 +543,15 @@
   }
   
   .healthyScroll {
-    height: 60vh;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
     transition: transform 10s linear;
+  }
+  .cartScroll {
+    max-height: 500px;
+    overflow: auto;
   }
   
   /* .healthyScroll::-webkit-scrollbar {

@@ -20,23 +20,14 @@ const address = () => {
   };
   return (
     <>
-      <div className="navMobile ">
-        <NavigationMobile />
-      </div>
-
-      <NavItem page={"cart"} />
       <div>
-        <div className="p-32">
+        <div className="font-mont">
           <div className="  flex  justify-between">
             <div className="w-2/3">
-              <div className="flex">
-                <Stepper />
-              </div>
-              <div className="flex p-10 border-b-2 ">
+              <div className="flex p-10  ">
                 <RadioButton />
               </div>
             </div>
-            <Ordersummary />
           </div>
           <div className="">
             <button onClick={toggleVisibility}>

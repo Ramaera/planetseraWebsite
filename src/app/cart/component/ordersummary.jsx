@@ -1,15 +1,23 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import InputAdornment from "@mui/material/InputAdornment";
+import { usePathname, useRouter } from "next/navigation";
+
 // import Address from "../address";
 
 import TextField from "@mui/material/TextField";
 import Link from "next/link";
 const ordersummary = () => {
+  const currentRoute = usePathname();
+
   return (
     <>
-      <div style={{ width: "25%" }}>
-        <div className="border-2 p-3 rounded-2xl">
+      <div style={{ width: "28%" }}>
+        <div
+          style={{ color: "#2F302F" }}
+          className="border-2 py-10 px-5 rounded-2xl"
+        >
           <p className="text-2xl	">Order Summary</p>
           <div className="flex  justify-between mt-5 ">
             price <span>₹ 500</span>
@@ -29,36 +37,42 @@ const ordersummary = () => {
           <div className="flex  justify-between mt-5">
             Estimated Delivery By <span>₹ 500</span>
           </div>
-          <TextField
-            variant="standard"
-            placeholder="Coupon Code"
-            sx={{
-              width: "100%",
-              border: 0,
-              borderWidth: 0,
-              boxSizing: "inherit",
-              borderWidth: 1,
-              height: "2rem",
-              paddingLeft: 3,
-              borderColor: "#E2E2E2",
-              borderRadius: 9999,
-              marginTop: 3,
-            }}
-            InputProps={{
-              disableUnderline: "true",
-              endAdornment: (
-                <InputAdornment className="mr-3" position="end">
-                  <LocalOfferIcon />
-                </InputAdornment>
-              ),
-            }}
-          />
 
-          <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor py-3">
-            <Link href="/cart/address" className="text-white">
-              Proceed To Checkout
-            </Link>
-          </div>
+          {currentRoute === "/cart" && (
+            <>
+              {" "}
+              <TextField
+                className="py-2"
+                variant="standard"
+                placeholder="Coupon Code"
+                sx={{
+                  width: "100%",
+                  border: 0,
+                  borderWidth: 0,
+                  boxSizing: "inherit",
+                  borderWidth: 1,
+                  height: "3rem",
+                  paddingLeft: 3,
+                  borderColor: "#E2E2E2",
+                  borderRadius: 9999,
+                  marginTop: 3,
+                }}
+                InputProps={{
+                  disableUnderline: "true",
+                  endAdornment: (
+                    <InputAdornment className="mr-3" position="end">
+                      <LocalOfferIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <Link href="/cart/shippingDetail" className="text-white">
+                <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor py-3">
+                  Proceed To Checkout
+                </div>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </>

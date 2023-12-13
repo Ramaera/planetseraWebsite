@@ -15,16 +15,23 @@ import { LiaCcVisa } from "react-icons/lia";
 const page = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [value, setValue] = React.useState("female");
+  // const styles = (theme) => ({
+  //   radio: {
+  //     "&$checked": {
+  //       color: "#4B8DF8",
+  //     },
+  //   },
+  //   checked: {},
+  // });
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
   return (
     <>
-      {" "}
-      <div>
+      <div className="font-mont">
         <p className="text-xl">Payment Method</p>
-        <FormControl className="w-full">
+        <FormControl className="w-full mt-5">
           <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
           <RadioGroup
             aria-labelledby="demo-controlled-radio-buttons-group"
@@ -57,7 +64,7 @@ const page = () => {
                 label="Credit/Debit Cards"
               />
               <div className="flex">
-                <LiaCcVisa className="w-8 h-8" />
+                <LiaCcVisa color="#B9BBBF" className="w-14 h-8" />
                 <LiaCcMastercard className="w-8 h-8 pl-1 ml-2" />
                 <BsPaypal className="w-8 h-8 pl-1 ml-2" />
               </div>
