@@ -32,7 +32,7 @@ const page = () => {
               be completed within 3-6 hours. You will receive an email
               confirmation when your order is completed.
             </div>
-            <div className="flex justify-center rounded-2xl Cartbgcolor w-52	h-14 mt-10	 py-3">
+            <div className="flex justify-center rounded-2xl Cartbgcolor w-52	h-14 mt-10 items-center	 py-3">
               <Link href="" className="text-white">
                 Continue Shopping
               </Link>

@@ -8,6 +8,7 @@ import FormLabel from "@mui/material/FormLabel";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { Box } from "@mui/material";
 
 const page = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -35,32 +36,51 @@ const page = () => {
               value={value}
               onChange={handleChange}
             >
-              <div className=" flex justify-between w-full border-b-2 pb-2">
+              <div className=" pb-5 pt-5 flex justify-between w-full border-b-2 ">
                 <FormControlLabel
+                  className="font-mont"
                   style={{ color: "#2F302F" }}
                   value="Regular Shipment"
                   control={<Radio />}
-                  label="Free --> Regular Shipment"
+                  label={
+                    <Box component="div" fontFamily="Montserrat">
+                      Free <span className="ml-2">Regular Shipment</span>
+                    </Box>
+                  }
                 />
                 <div>
                   <p>Date</p>
                 </div>
               </div>
-              <div className="mt-10 flex justify-between border-b-2 pb-10">
+              <div className="pb-5 pt-7 flex justify-between border-b-2 ">
                 <FormControlLabel
+                  className="font-mont"
                   style={{ color: "#2F302F" }}
                   value="Priority Shipping"
                   control={<Radio />}
-                  label="$ 50 --> Priority Shipping"
+                  label={
+                    <Box component="div" fontFamily="Montserrat">
+                      ₹ 50 <span className="ml-2">Priority Shipping</span>
+                    </Box>
+                  }
                 />
+
                 <p>Date</p>
               </div>
-              <div className="mt-10 flex justify-between border-b-2 pb-10">
+              <div className="mt-5 flex justify-between border-b-2 pb-5 item-center">
                 <FormControlLabel
+                  className="font-mont"
                   style={{ color: "#2F302F" }}
                   value="Schedule"
                   control={<Radio />}
-                  label="Schedule --> Choose a date that works for you."
+                  label={
+                    <Box component="div" fontFamily="Montserrat">
+                      Schedule
+                      <span className="ml-2">
+                        Choose a date that works for you.
+                      </span>
+                    </Box>
+                  }
                 />
                 <div className="">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>

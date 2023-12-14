@@ -60,7 +60,10 @@ const NavigationMobile = ({ page }) => {
                 fontSize="large"
                 style={{
                   color:
-                    page === "about" || page === "products" || page === "blog"
+                    page === "cart" ||
+                    page === "products" ||
+                    page === "blog" ||
+                    page === "about"
                       ? "black"
                       : "white",
                 }}

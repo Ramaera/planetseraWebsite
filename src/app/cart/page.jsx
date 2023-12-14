@@ -34,38 +34,41 @@ const Page = () => {
   return (
     <>
       <div className="navMobile ">
-        <NavigationMobile />
+        <NavigationMobile page={"cart"} />
       </div>
 
       <NavItem page={"cart"} />
-      <div className=" p-32 flex w-full justify-between font-mont ">
-        <div className="w-4/6">
+      <div className=" sm:p-32 py-16 px-3 sm:flex w-full sm:justify-between font-mont ">
+        <div className="sm:w-4/6">
           <div className="flex">
-            <div className="text-2xl mont-font">Cart</div>
-            <div className="text-xl text-slate-500 p-1 px-3 mont-font">
+            <div className="sm:text-2xl mont-font">Cart</div>
+            <div className="sm:text-xl text-slate-500 sm:p-1 px-3 mont-font">
               {cartItems.length} Items
             </div>
           </div>
-          <div className="cartScroll w-full ">
+          <div className="cartScroll sm:w-full sm:pt-20 pt-5">
             {cartItems.map((item, index) => (
-              <div className="flex p-10 border-b-2 ">
-                <div className="w-32 h-32">
-                  <img src={item.cartImg} alt="" />
+              <div className="flex sm:px-10 py-5    border-b-2 ">
+                <div className="">
+                  <img className=" sm:w-40 sm:h-32" src={item.cartImg} alt="" />
                 </div>
-                <div className="mont-font pl-6 ">
+                <div className="mont-font sm:ml-10 ml-10   ">
                   <div>
-                    <p className="Cart text-xl ">{item.name}</p>
+                    <p className="Cart sm:text-xl ">{item.name}</p>
                   </div>
-                  <div className="mt-3">
+                  <div className="mt-2 text-xs sm:text-base">
                     <p style={{ color: "#B9BBBF" }}>
                       Pkg
                       <span className="pl-2 text-black">{item.pkgWeight}</span>
                     </p>
                   </div>
+                  <div className="flex sm:hidden sm:w-full sm:justify-end text-xs sm:text-base mt-3	">
+                    {item.price}
+                  </div>
                   <div className="flex">
-                    <div className="flex justify-between mt-5 border-2 rounded-2xl w-32 p-2">
+                    <div className="flex justify-between items-center text-xs sm:text-base mt-4 sm:px-3 px-1  border-2 rounded-2xl sm:w-36 w-28  ">
                       <button onClick={() => handleDecrement(index)}>
-                        <HorizontalRuleIcon />
+                        <HorizontalRuleIcon className="w-5 h-5" />
                       </button>
 
                       {item.quantity}
@@ -75,11 +78,15 @@ const Page = () => {
                       </button>
                     </div>
                     <div>
-                      <p className="p-2 mt-7 Cart-remove">Remove</p>
+                      <p className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
+                        Remove
+                      </p>
                     </div>
                   </div>
                 </div>
-                <div className="flex w-full justify-end">{item.price}</div>
+                <div className="sm:flex hidden sm:w-full sm:justify-end text-xs sm:text-base	">
+                  {item.price}
+                </div>
               </div>
             ))}
           </div>

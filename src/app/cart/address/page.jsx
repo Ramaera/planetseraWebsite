@@ -21,21 +21,18 @@ const address = () => {
   return (
     <>
       <div>
-        <div className="font-mont">
-          <div className="  flex  justify-between">
-            <div className="w-2/3">
-              <div className="flex p-10  ">
-                <RadioButton />
-              </div>
-            </div>
+        <div className="font-mont w-full">
+          <div className="w-full p-10">
+            <RadioButton />
           </div>
+
           <div className="">
             <button onClick={toggleVisibility}>
               <p className="Cart-remove">+ Add New Address</p>
             </button>
 
             {isVisible && (
-              <div className="w-1/2 pt-5">
+              <div className="w-full pt-5">
                 <div>
                   <input
                     className="w-full border-2 p-2 rounded-md"

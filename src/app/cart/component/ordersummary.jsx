@@ -13,14 +13,14 @@ const ordersummary = () => {
 
   return (
     <>
-      <div style={{ width: "28%" }}>
+      <div className="font-mont " style={{ width: "25%" }}>
         <div
-          style={{ color: "#2F302F" }}
-          className="border-2 py-10 px-5 rounded-2xl"
+          style={{ color: "#2F302F", borderRadius: "37px" }}
+          className="border py-9 px-6 shadow-xl"
         >
           <p className="text-2xl	">Order Summary</p>
           <div className="flex  justify-between mt-5 ">
-            price <span>₹ 500</span>
+            Price <span>₹ 500</span>
           </div>
           <div className="flex  justify-between mt-5">
             Discount <span>₹ 500</span>
@@ -40,7 +40,6 @@ const ordersummary = () => {
 
           {currentRoute === "/cart" && (
             <>
-              {" "}
               <TextField
                 className="py-2"
                 variant="standard"

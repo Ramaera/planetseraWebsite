@@ -30,7 +30,7 @@ const page = () => {
   return (
     <>
       <div className="font-mont">
-        <p className="text-xl">Payment Method</p>
+        <p className="text-xl mt-5">Payment Method</p>
         <FormControl className="w-full mt-5">
           <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
           <RadioGroup
@@ -41,6 +41,7 @@ const page = () => {
           >
             <div className=" flex justify-between w-full">
               <FormControlLabel
+                className="font-mont"
                 value="Regular Shipment"
                 control={<Radio />}
                 label="Pay With UPI"
@@ -51,6 +52,7 @@ const page = () => {
             </div>
             <div className="mt-10 flex justify-between">
               <FormControlLabel
+                className="font-mont"
                 value="Priority Shipping"
                 control={<Radio />}
                 label="Pay on Delivery"
@@ -59,26 +61,31 @@ const page = () => {
             </div>
             <div className="mt-10 flex justify-between">
               <FormControlLabel
+                className="font-mont"
                 value="Schedule"
                 control={<Radio />}
                 label="Credit/Debit Cards"
               />
               <div className="flex">
-                <LiaCcVisa color="#B9BBBF" className="w-14 h-8" />
-                <LiaCcMastercard className="w-8 h-8 pl-1 ml-2" />
-                <BsPaypal className="w-8 h-8 pl-1 ml-2" />
+                <LiaCcVisa color="#B9BBBF" className="w-16 h-10" />
+                <LiaCcMastercard
+                  color="#B9BBBF"
+                  className="w-16 h-10 pl-1 ml-2"
+                />
+                <BsPaypal color="#B9BBBF" className="w-16 h-10 pl-1 ml-2" />
               </div>
             </div>
             <div className="mt-10 flex justify-between">
               <FormControlLabel
+                className="font-mont"
                 value="Other Payment Methods"
                 control={<Radio />}
                 label="Other Payment Methods"
               />
               <div className="flex">
-                <FaCcAmazonPay className="w-8 h-8" />
-                <FaCcApplePay className="w-8 h-8 pl-1 ml-2" />
-                <FaGooglePay className="w-8 h-8 pl-1 ml-2" />
+                <FaCcAmazonPay color="#B9BBBF" className="w-16 h-10" />
+                <FaCcApplePay color="#B9BBBF" className="w-16 h-10 pl-1 ml-2" />
+                <FaGooglePay color="#B9BBBF" className="w-16 h-10 pl-1 ml-2" />
               </div>
             </div>
           </RadioGroup>
