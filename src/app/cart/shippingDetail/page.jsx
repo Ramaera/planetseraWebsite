@@ -15,18 +15,19 @@ const ShippingDetails = () => {
   return (
     <>
       <div className="navMobile ">
-        <NavigationMobile />
+        <NavigationMobile page={"cart"} />
       </div>
 
       <NavItem page={"cart"} />
       <div>
-        <div className="p-32">
-          <div className="  flex  justify-between">
-            <div className="w-2/3">
+        <div className="sm:p-32 py-32 px-2">
+          <div className="  sm:flex  justify-between px-2 ">
+            <div className="sm:w-2/3 w-full">
               <div className="flex">
                 <Stepper />
               </div>
             </div>
+
             <Ordersummary />
           </div>
         </div>

@@ -71,12 +71,17 @@ export default function HorizontalLinearStepper() {
         {steps.map((label, index) => (
           <Step key={label}>
             <div
-              style={{ paddingInline: "40px", fontSize: "24px" }}
-              className={index <= activeStep ? "text-red-300" : "text-black"}
+              className={`${
+                index < activeStep
+                  ? "text-red-500"
+                  : index === activeStep
+                  ? "text-gray-900"
+                  : "text-gray-300"
+              } sm:px-10 px-2 sm:text-3xl text-xl flex sm:flex-none sm:font-medium`}
             >
               {label}
               {index < steps.length - 1 && (
-                <ArrowForwardIosIcon className="ml-16" />
+                <ArrowForwardIosIcon className="sm:ml-16 sm:mt-2 mt-1 ml-2 " />
               )}
             </div>
           </Step>
@@ -91,9 +96,15 @@ export default function HorizontalLinearStepper() {
           <div></div>
         </React.Fragment>
       ) : (
-        <React.Fragment>
-          <Typography sx={{ mt: 2, mb: 1 }}>Step {activeStep + 1}</Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+        <React.Fragment sx={{ width: "100%" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              pt: 3,
+              width: "100%",
+            }}
+          >
             <Button
               color="inherit"
               disabled={activeStep === 0}
@@ -104,7 +115,7 @@ export default function HorizontalLinearStepper() {
             </Button>
             <Box sx={{ flex: "1 1 auto" }} />
             <Button onClick={handleNextPage}>
-              {activeStep === steps.length - 1 ? "Finish" : "Next"}
+              {activeStep === steps.length - 1 ? "Finish" : "Proceed"}
             </Button>
           </Box>
         </React.Fragment>

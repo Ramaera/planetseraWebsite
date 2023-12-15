@@ -10,9 +10,10 @@ import TextField from "@mui/material/TextField";
 import { client } from "@/apollo";
 import AddIcon from "@mui/icons-material/Add";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
+import IndianStatesDropdown from "../component/statesdropdownlist";
 
 const address = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   // Function to toggle visibility
   const toggleVisibility = () => {
@@ -22,51 +23,51 @@ const address = () => {
     <>
       <div>
         <div className="font-mont w-full">
-          <div className="w-full p-10">
+          {/* <div className="w-full sm:p-10 px-3 py-5">
             <RadioButton />
           </div>
 
-          <div className="">
-            <button onClick={toggleVisibility}>
-              <p className="Cart-remove">+ Add New Address</p>
-            </button>
-
+          <button onClick={toggleVisibility}>
+            <p className="Cart-remove">+ Add New Address</p>
+          </button> */}
+          <div className="py-10  px-3">
             {isVisible && (
-              <div className="w-full pt-5">
-                <div>
+              <div className="w-full ">
+                <div className="flex  justify-between  ">
                   <input
-                    className="w-full border-2 p-2 rounded-md"
-                    type="text"
-                    placeholder="Country/Region"
-                  />
-                </div>
-                <div className="flex  justify-between mt-5 ">
-                  <input
-                    className="w-[48%] border-2 p-1 rounded-md"
+                    className=" border-2 p-1 px-3 rounded-md w-full"
                     type="text"
                     placeholder="Name"
                   />
+                </div>
+                <div className="mt-5">
                   <input
-                    className="w-[48%] border-2 p-1 rounded-md"
+                    className=" border-2 p-1 px-3 rounded-md w-full"
                     type="text"
                     placeholder="Mobile No:"
                   />
                 </div>
+                <div className="mt-5 sm:w-full border-2 p-2 rounded-md">
+                  <IndianStatesDropdown />
+                </div>
+
                 <div className="flex  justify-between mt-5">
                   <input
-                    className="w-[48%] border-2 p-1 rounded-md"
+                    className=" border-2 p-1 px-3 rounded-md w-full"
                     type="text"
                     placeholder="City"
                   />
+                </div>
+                <div className="mt-5">
                   <input
-                    className=" w-[48%] border-2 p-1 rounded-md"
+                    className="  border-2 p-1 px-3 rounded-md w-full"
                     type="text"
                     placeholder="PIN Code:"
                   />
                 </div>
                 <TextField
                   placeholder="Full Address"
-                  className="mt-5 w-full rounded-md"
+                  className="mt-5 w-full rounded-md "
                 ></TextField>
 
                 <div className="flex justify-center pt-5 mt-5 ">

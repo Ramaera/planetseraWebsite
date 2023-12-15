@@ -23,7 +23,7 @@ const page = () => {
   return (
     <>
       <div className="  flex w-full  ">
-        <div className=" p-10  w-full font-mont ">
+        <div className=" sm:p-10 p-2  w-full font-mont ">
           <p style={{ color: "#2F302F" }} className="text-xl	">
             Shipment Method
           </p>
@@ -36,47 +36,83 @@ const page = () => {
               value={value}
               onChange={handleChange}
             >
-              <div className=" pb-5 pt-5 flex justify-between w-full border-b-2 ">
+              <div className=" pb-5 pt-5 flex justify-between w-full border-b-2 items-center ">
                 <FormControlLabel
                   className="font-mont"
                   style={{ color: "#2F302F" }}
                   value="Regular Shipment"
-                  control={<Radio />}
+                  control={
+                    <Radio
+                      sx={{
+                        "&, &.Mui-checked": {
+                          color: "#FE7171",
+                        },
+                      }}
+                    />
+                  }
                   label={
-                    <Box component="div" fontFamily="Montserrat">
+                    <Box
+                      className="responsive-box-shipping"
+                      component="div"
+                      fontFamily="Montserrat"
+                    >
                       Free <span className="ml-2">Regular Shipment</span>
                     </Box>
                   }
                 />
                 <div>
-                  <p>Date</p>
+                  <p className="sm:text-base text-xs flex ">Date</p>
                 </div>
               </div>
-              <div className="pb-5 pt-7 flex justify-between border-b-2 ">
+              <div className="pb-5 pt-7 flex justify-between border-b-2 items-center ">
                 <FormControlLabel
                   className="font-mont"
                   style={{ color: "#2F302F" }}
                   value="Priority Shipping"
-                  control={<Radio />}
+                  control={
+                    <Radio
+                      sx={{
+                        "&, &.Mui-checked": {
+                          color: "#FE7171",
+                        },
+                      }}
+                    />
+                  }
                   label={
-                    <Box component="div" fontFamily="Montserrat">
+                    <Box
+                      className="responsive-box-shipping"
+                      component="div"
+                      fontFamily="Montserrat"
+                    >
                       ₹ 50 <span className="ml-2">Priority Shipping</span>
                     </Box>
                   }
                 />
 
-                <p>Date</p>
+                <p className="sm:text-base text-xs flex ">Date</p>
               </div>
               <div className="mt-5 flex justify-between border-b-2 pb-5 item-center">
                 <FormControlLabel
                   className="font-mont"
                   style={{ color: "#2F302F" }}
                   value="Schedule"
-                  control={<Radio />}
+                  control={
+                    <Radio
+                      sx={{
+                        "&, &.Mui-checked": {
+                          color: "#FE7171",
+                        },
+                      }}
+                    />
+                  }
                   label={
-                    <Box component="div" fontFamily="Montserrat">
+                    <Box
+                      className="responsive-box-shipping"
+                      component="div"
+                      fontFamily="Montserrat"
+                    >
                       Schedule
-                      <span className="ml-2">
+                      <span className="ml-2 text-xs sm:text-base">
                         Choose a date that works for you.
                       </span>
                     </Box>
@@ -84,7 +120,7 @@ const page = () => {
                 />
                 <div className="">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker />
+                    <DatePicker className="" />
                   </LocalizationProvider>
                 </div>
               </div>

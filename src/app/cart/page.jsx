@@ -38,7 +38,7 @@ const Page = () => {
       </div>
 
       <NavItem page={"cart"} />
-      <div className=" sm:p-32 py-16 px-3 sm:flex w-full sm:justify-between font-mont ">
+      <div className=" sm:p-32 py-16 mt-10 sm:mt-0 px-3 sm:flex w-full sm:justify-between font-mont ">
         <div className="sm:w-4/6">
           <div className="flex">
             <div className="sm:text-2xl mont-font">Cart</div>
