@@ -13,6 +13,7 @@ const Index = ({
   height,
   padding,
   sectionClass,
+  onClick,
 }) => {
   const colorMe = useSelector((state) => state.colorUs.color);
 
@@ -24,10 +25,11 @@ const Index = ({
 
   return (
     <div
-      className={`mt-2 sm:mt-4 mb-2 flex flex-wrap gap-4 text-center justify-center ${sectionClass}`}>
+      className={`mt-2 sm:mt-4 mb-2 flex flex-wrap gap-4 text-center justify-center ${sectionClass}`}
+    >
       <Link
         href={link}
-        onClick={handleClick}
+        onClick={onClick}
         className={`buynow-button py-4 hover:scale-105 ${
           disabled ? "disabled" : ""
         }`}
@@ -45,7 +47,8 @@ const Index = ({
           padding: padding || "22px",
           opacity: opacity,
         }}
-        disabled={disabled}>
+        disabled={disabled}
+      >
         {text}
       </Link>
     </div>

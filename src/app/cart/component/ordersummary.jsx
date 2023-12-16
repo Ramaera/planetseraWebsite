@@ -8,7 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 import TextField from "@mui/material/TextField";
 import Link from "next/link";
-const ordersummary = () => {
+const ordersummary = ({ totalCartPrice }) => {
   const currentRoute = usePathname();
 
   return (
@@ -20,7 +20,7 @@ const ordersummary = () => {
         >
           <p className="text-2xl	">Order Summary</p>
           <div className="flex  justify-between mt-5 ">
-            Price <span>₹ 500</span>
+            Price <span>₹ {totalCartPrice}</span>
           </div>
           <div className="flex  justify-between mt-5">
             Discount <span>₹ 500</span>
@@ -32,7 +32,7 @@ const ordersummary = () => {
             Coupon Applied <span>₹ 500</span>
           </div>
           <div className="flex  justify-between mt-5">
-            Total <span>₹ 500</span>
+            Total <span>₹ {totalCartPrice}</span>
           </div>
           <div className="flex  justify-between mt-5">
             Estimated Delivery By <span>₹ 500</span>

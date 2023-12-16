@@ -114,6 +114,7 @@ export default function HorizontalLinearStepper() {
               Back
             </Button>
             <Box sx={{ flex: "1 1 auto" }} />
+            {/* disabled={CartData.length == 0} */}
             <Button onClick={handleNextPage}>
               {activeStep === steps.length - 1 ? "Finish" : "Proceed"}
             </Button>

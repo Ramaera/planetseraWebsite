@@ -6,8 +6,11 @@ import { useParams } from "next/navigation";
 import RelatedPtoductData from "@/app/products/components/RelatedProducts/RelatedProductData";
 import { useEffect, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+// import { useSelector } from "react-redux";
 
 const NavItem = ({ page }) => {
+  const cartItems = useSelector((state) => state.cart.items);
+
   const { id } = useParams();
   const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const [isVisible, setIsVisible] = useState(false);
@@ -83,9 +86,14 @@ const NavItem = ({ page }) => {
             Contact Us
           </Link>
         </li>
+
         <li>
-          <Link href="/cart">
+          <Link className="flex" href="/cart">
             <ShoppingCartIcon />
+
+            <div className="px-1" style={{ color: "#ff4f4f" }}>
+              {cartItems.length}
+            </div>
           </Link>
         </li>
       </ul>

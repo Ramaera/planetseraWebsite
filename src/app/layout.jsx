@@ -2,7 +2,10 @@
 import "@/public/styles/globals.css";
 import { Inter, Montserrat } from "next/font/google";
 import { Provider } from "react-redux";
-import { store } from "@/state/store";
+// import { store } from "@/state/store";
+import { persistor, store } from "@/state/store";
+import { PersistGate } from "redux-persist/integration/react";
+
 import { client } from "@/apollo";
 import { ApolloProvider } from "@apollo/client";
 import { useEffect } from "react";
@@ -51,10 +54,14 @@ export default function RootLayout({ children }) {
       </Script>
 
       <body
-        className={`${inter.className} ${montserrat.variable} font-Montserrat`}>
+        className={`${inter.className} ${montserrat.variable} font-Montserrat`}
+      >
         <ApolloProvider client={client}>
           <Provider store={store}>
-            {children}
+            <PersistGate loading={null} persistor={persistor}>
+              {children}
+            </PersistGate>
+
             <ScrollToTopButton />
             <Footer />
           </Provider>

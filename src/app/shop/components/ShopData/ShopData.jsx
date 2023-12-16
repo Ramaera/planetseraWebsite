@@ -9,6 +9,8 @@ const MouthWateringData = [
     bgColor: "rgb(177 211 176)",
     flipkart:
       "https://www.flipkart.com/planetsera-sabji-masala/p/itma9772eaa0b140?pid=SCMGQ9JXXW8ZHXPG",
+    price: "120",
+    pkg: "50gm",
   },
 
   {
@@ -21,6 +23,8 @@ const MouthWateringData = [
       "https://www.amazon.in/RED-CHILLI-POWDER-50g-Pack/dp/B0C8HH725H/ref=sr_1_1?keywords=Planetsera&qid=1687608191&sr=8-1",
     flipkart:
       "https://www.flipkart.com/planetsera-red-chilli-powder/p/itm301769743d0e6?pid=SCMGQ9KNZZZFGDHV",
+    price: "220",
+    pkg: "50gm",
   },
 
   {
@@ -32,6 +36,8 @@ const MouthWateringData = [
     amazon: "https://www.amazon.in/dp/B0C3W2FW1M?ref=myi_title_dp",
     flipkart:
       "https://www.flipkart.com/planetsera-coriander-powder/p/itme906e235fc3d4?pid=SCMGQDY2UGPNQZVZ",
+    price: "120",
+    pkg: "50gm",
   },
 
   {
@@ -42,6 +48,8 @@ const MouthWateringData = [
     bgColor: "rgb(161 161 161)",
     flipkart:
       "https://www.flipkart.com/planetsera-black-pepper-powder/p/itm55970223613f4?pid=SCMGQDZA7DF4SGXS",
+    price: "220",
+    pkg: "50gm",
   },
 
   // --------------  MouthWatering  -------------------------------------------------------------------
