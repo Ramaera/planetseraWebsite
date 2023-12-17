@@ -3,13 +3,23 @@ import React, { useState, useEffect } from "react";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import InputAdornment from "@mui/material/InputAdornment";
 import { usePathname, useRouter } from "next/navigation";
+import { useSelector } from "react-redux";
 
 // import Address from "../address";
 
 import TextField from "@mui/material/TextField";
 import Link from "next/link";
-const ordersummary = ({ totalCartPrice }) => {
+const ordersummary = () => {
   const currentRoute = usePathname();
+
+  const CartData = useSelector((state) => state.cart.items);
+
+  const calculateTotalPrice = () => {
+    return CartData.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+  };
 
   return (
     <>
@@ -20,7 +30,7 @@ const ordersummary = ({ totalCartPrice }) => {
         >
           <p className="text-2xl	">Order Summary</p>
           <div className="flex  justify-between mt-5 ">
-            Price <span>₹ {totalCartPrice}</span>
+            Price <span>₹ {calculateTotalPrice()}</span>
           </div>
           <div className="flex  justify-between mt-5">
             Discount <span>₹ 500</span>
@@ -32,7 +42,7 @@ const ordersummary = ({ totalCartPrice }) => {
             Coupon Applied <span>₹ 500</span>
           </div>
           <div className="flex  justify-between mt-5">
-            Total <span>₹ {totalCartPrice}</span>
+            Total <span>₹ {calculateTotalPrice()}</span>
           </div>
           <div className="flex  justify-between mt-5">
             Estimated Delivery By <span>₹ 500</span>

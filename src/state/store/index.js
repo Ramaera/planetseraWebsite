@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import colorUsReducer from "../slice/colorUsSlice";
 import cartReducer from "../slice/cartSlice";
-
+import addressReducer from "../slice/addressSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 
@@ -13,6 +13,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   colorUs: colorUsReducer,
   cart: cartReducer,
+  address: addressReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

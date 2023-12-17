@@ -23,12 +23,6 @@ const Page = () => {
     dispatch(removeFromCart(item));
   };
 
-  const calculateTotalPrice = () => {
-    return CartData.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
-  };
   const CartData = useSelector((state) => state.cart.items);
 
   // console.log("CartData", CartData);
@@ -124,12 +118,16 @@ const Page = () => {
             </div>
           </div>
 
-          <Ordersummary totalCartPrice={calculateTotalPrice()} />
+          <Ordersummary />
         </div>
       ) : (
-        <div>Empty cart</div>
+        <div
+          className="flex justify-center items-center h-screen
+        "
+        >
+          Empty cart
+        </div>
       )}
-      {/* <OrderPlaced /> */}
     </>
   );
 };

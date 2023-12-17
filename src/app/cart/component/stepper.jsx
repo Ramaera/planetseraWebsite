@@ -13,11 +13,13 @@ import OrderPlaced from "../../orderPlaced/page";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { useSelector, useDispatch } from "react-redux";
 
 const steps = ["Address ", "Shipping ", "Payment "];
 
 export default function HorizontalLinearStepper() {
   const router = useRouter();
+  const addressesData = useSelector((state) => state.address);
 
   const [activeStep, setActiveStep] = React.useState(0);
   const [customComponentIndex, setCustomComponentIndex] = React.useState(0);
@@ -115,7 +117,10 @@ export default function HorizontalLinearStepper() {
             </Button>
             <Box sx={{ flex: "1 1 auto" }} />
             {/* disabled={CartData.length == 0} */}
-            <Button onClick={handleNextPage}>
+            <Button
+              onClick={handleNextPage}
+              disabled={addressesData.selectedAddress == null}
+            >
               {activeStep === steps.length - 1 ? "Finish" : "Proceed"}
             </Button>
           </Box>
