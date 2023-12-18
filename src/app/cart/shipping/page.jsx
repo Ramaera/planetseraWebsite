@@ -9,13 +9,19 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { Box } from "@mui/material";
+import { useSelector, useDispatch } from "react-redux";
+import { selectShipment } from "@/state/slice/shipmentSlice";
 
 const page = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [value, setValue] = React.useState("female");
 
+  const shipmentData = useSelector((state) => state.shipment);
+
+  const dispatch = useDispatch();
+
   const handleChange = (event) => {
-    setValue(event.target.value);
+    dispatch(selectShipment(event.target.value));
   };
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
@@ -33,7 +39,7 @@ const page = () => {
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
-              value={value}
+              value={shipmentData.shippingMethod}
               onChange={handleChange}
             >
               <div className=" pb-5 pt-5 flex justify-between w-full border-b-2 items-center ">

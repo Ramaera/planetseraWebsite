@@ -6,6 +6,8 @@ import { useParams } from "next/navigation";
 import RelatedPtoductData from "@/app/products/components/RelatedProducts/RelatedProductData";
 import { useEffect, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from "@mui/material/Badge";
+
 // import { useSelector } from "react-redux";
 
 const NavItem = ({ page }) => {
@@ -89,11 +91,9 @@ const NavItem = ({ page }) => {
 
         <li>
           <Link className="flex" href="/cart">
-            <ShoppingCartIcon />
-
-            <div className="px-1" style={{ color: "#ff4f4f" }}>
-              {cartItems.length}
-            </div>
+            <Badge badgeContent={cartItems.length} color="primary">
+              <ShoppingCartIcon />
+            </Badge>
           </Link>
         </li>
       </ul>

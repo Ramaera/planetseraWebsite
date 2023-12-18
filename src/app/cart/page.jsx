@@ -44,6 +44,7 @@ const Page = () => {
       setCartItems(updatedCartItems);
     }
   };
+  // console.log("www", CartData.length);
 
   return (
     <>

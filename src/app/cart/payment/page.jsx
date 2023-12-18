@@ -12,24 +12,60 @@ import { FaGooglePay } from "react-icons/fa6";
 import { BsPaypal } from "react-icons/bs";
 import { LiaCcVisa } from "react-icons/lia";
 import TextField from "@mui/material/TextField";
+import { useSelector, useDispatch } from "react-redux";
+import { selectPayment } from "@/state/slice/paymentSlice";
+import { saveCard } from "@/state/slice/paymentSlice";
+import Savedcarddetails from "./component/savedcarddetails";
 
 const page = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isCardSelected, setCardSelected] = useState(false);
-  const handleCardSelectionChange = () => {
-    setCardSelected(!isCardSelected);
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
   };
-
-  const [value, setValue] = React.useState("female");
+  const paymentData = useSelector((state) => state.payment);
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
-    setValue(event.target.value);
+    dispatch(selectPayment(event.target.value));
 
-    // If the selected radio button is not "Credit/Debit Cards", hide the card details
     if (event.target.value !== "Credit/Debit Cards") {
       setCardSelected(false);
     }
   };
+  const [isCardSelected, setCardSelected] = useState(false);
+
+  const handleCardSelectionChange = () => {
+    setCardSelected(!isCardSelected);
+  };
+  const [formData, setFormData] = useState({
+    cardNumber: "",
+    expiryDate: "",
+    cvv: "",
+    cardholderName: "",
+  });
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSaveCardDetails = () => {
+    if (
+      formData.cardNumber &&
+      formData.expiryDate &&
+      formData.cvv &&
+      formData.cardholderName
+    ) {
+      // console.log("strt");
+
+      dispatch(saveCard(formData));
+      // console.log("aftr");
+    } else {
+      alert("Please fill in all required fields");
+    }
+  };
+
+  // console.log("ads", formData);
 
   return (
     <>
@@ -42,7 +78,7 @@ const page = () => {
           <RadioGroup
             aria-labelledby="demo-controlled-radio-buttons-group"
             name="controlled-radio-buttons-group"
-            value={value}
+            value={paymentData.selectedPayment}
             onChange={handleChange}
           >
             <div className=" flex justify-between w-full text-xs sm:text-base ">
@@ -113,38 +149,57 @@ const page = () => {
               </div>
             </div>
             {isCardSelected && (
-              <div id="card-details" className="flex flex-col pt-2">
-                <TextField
-                  id="outlined-basic"
-                  label="Card Number"
-                  variant="outlined"
-                />
-                <div className="flex w-full pt-5 justify-between rounded">
-                  <TextField
-                    style={{ width: "48%" }}
-                    className="rounded"
-                    id="outlined-basic"
-                    label="Expiry date"
-                    variant="outlined"
+              <>
+                <Savedcarddetails />
+                <div id="card-details" className="flex flex-col pt-2">
+                  <input
+                    className="border-2 p-1 px-3 rounded-md w-full"
+                    type="text"
+                    placeholder="Card Number"
+                    name="cardNumber"
+                    value={formData.cardNumber}
+                    onChange={handleInputChange}
+                    required
                   />
-                  <TextField
-                    style={{ width: "48%" }}
-                    className="rounded"
-                    id="outlined-basic"
-                    label="Cvc / Cvv"
-                    variant="outlined"
+                  <div className="flex w-full pt-5 justify-between rounded">
+                    <input
+                      style={{ width: "48%" }}
+                      className="border-2 p-1 px-3 rounded-md w-full"
+                      type="text"
+                      placeholder="Expiry"
+                      name="expiryDate"
+                      value={formData.expiryDate}
+                      onChange={handleInputChange}
+                      required
+                    />
+                    <input
+                      style={{ width: "48%" }}
+                      className="border-2 p-1 px-3 rounded-md w-full"
+                      type="text"
+                      placeholder="Cvv / Cvc"
+                      name="cvv"
+                      value={formData.cvv}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                  <input
+                    className="border-2 p-1 px-3 mt-5 rounded-md w-full"
+                    type="text"
+                    placeholder="Card Holder's Name"
+                    name="cardholderName"
+                    value={formData.cardholderName}
+                    onChange={handleInputChange}
+                    required
                   />
+                  <button
+                    onClick={handleSaveCardDetails}
+                    className="flex justify-center rounded-2xl mt-5 Cartbgcolor py-3"
+                  >
+                    Enter Card Details
+                  </button>
                 </div>
-                <TextField
-                  className="mt-5"
-                  id="outlined-basic"
-                  label="Card Holder Name"
-                  variant="outlined"
-                />
-                <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor py-3">
-                  Enter Card Details
-                </div>
-              </div>
+              </>
             )}
 
             <div className=" text-xs sm:text-base mt-10 flex justify-between items-center">

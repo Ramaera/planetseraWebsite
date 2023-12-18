@@ -17,7 +17,7 @@ import { useDispatch } from "react-redux";
 import { saveAddress } from "@/state/slice/addressSlice";
 
 const address = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const dispatch = useDispatch();
 
   // Function to toggle visibility
@@ -40,7 +40,7 @@ const address = () => {
   };
 
   const handleSaveAndDeliverClick = () => {
-    console.log(formData);
+    // console.log(formData);
     // Check if all required fields are filled
     if (
       formData.name &&
@@ -50,22 +50,11 @@ const address = () => {
       formData.pinCode &&
       formData.address
     ) {
-      console.log("savng", formData);
+      console.log("savng");
 
       dispatch(saveAddress(formData));
-      // ... rest of the code
+      console.log("end");
     } else {
-      console.error(
-        "Incomplete form data. Please fill in all required fields.",
-        {
-          name: formData.name,
-          mobile: formData.mobile,
-          // state: formData.state,
-          city: formData.city,
-          pinCode: formData.pinCode,
-          address: formData.address,
-        }
-      );
       alert("Please fill in all required fields");
     }
   };

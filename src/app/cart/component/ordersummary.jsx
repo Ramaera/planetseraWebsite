@@ -14,6 +14,8 @@ const ordersummary = () => {
 
   const CartData = useSelector((state) => state.cart.items);
 
+  // console.log("cartItems", cartItems);
+
   const calculateTotalPrice = () => {
     return CartData.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -29,6 +31,26 @@ const ordersummary = () => {
           className="border py-9 px-6 shadow-xl"
         >
           <p className="text-2xl	">Order Summary</p>
+          <div className="flex justify-between   mt-5 ">
+            Items
+            <div>
+              {CartData.map((item, index) => (
+                <>
+                  <div className="flex">{item?.masalaName}</div>
+                  <div style={{ color: "#B9BBBF" }} className="flex">
+                    Pkg: <span className="ml-2 text-black">{item?.pkg}</span>
+                  </div>
+                  <div style={{ color: "#B9BBBF" }} className="flex">
+                    Qty:
+                    <span className="text-black ml-2">{item?.quantity}</span>
+                  </div>
+                </>
+              ))}
+            </div>
+          </div>
+          {/* <div className="flex  justify-between mt-5 ">
+            Items <p>{cartItems.item?.masalaName}</p>
+          </div> */}
           <div className="flex  justify-between mt-5 ">
             Price <span>₹ {calculateTotalPrice()}</span>
           </div>

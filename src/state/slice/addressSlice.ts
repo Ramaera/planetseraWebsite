@@ -5,20 +5,20 @@ const addressSlice = createSlice({
   initialState: {
     selectedAddress:null,
     allAddresses:[],
-    shippingMethod : null,
-    shippingDate : null,
-    paymentMethod: null,
+ 
     
   },
   reducers: {
     saveAddress: (state, action) => {
-        console.log("saving..",)
+      console.log("saving..",state)
+
+        // console.log("saving..",)
         const random_id= Math.floor(Math.random() * 100000);
       state.allAddresses.push({...action.payload, id: random_id});
       if(!state.selectedAddress) state.selectedAddress= random_id;
     },
     removeAddress: (state, action) => {
-        console.log("removing...",)
+        // console.log("removing...",)
         state.allAddresses = state.allAddresses.filter((item)=> item.id != action.payload.id); 
         if(state.selectedAddress==action.payload.id) state.selectedAddress= null;
 
