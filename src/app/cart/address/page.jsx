@@ -24,6 +24,14 @@ const address = () => {
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
   };
+  const initialFormData = {
+    name: "",
+    mobile: "",
+    // state: "",
+    city: "",
+    pinCode: "",
+    address: "",
+  };
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
@@ -37,6 +45,9 @@ const address = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+  const clearForm = () => {
+    setFormData(initialFormData);
   };
 
   const handleSaveAndDeliverClick = () => {
@@ -57,6 +68,7 @@ const address = () => {
     } else {
       alert("Please fill in all required fields");
     }
+    clearForm();
   };
 
   return (

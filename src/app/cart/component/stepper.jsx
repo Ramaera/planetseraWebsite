@@ -120,11 +120,11 @@ export default function HorizontalLinearStepper() {
             <Box sx={{ flex: "1 1 auto" }} />
             <Button
               onClick={handleNextPage}
-              disabled={
-                // addressesData.selectedAddress == null ||
-                // shipmentData.shippingMethod == null ||
-                paymentData.selectedPayment == null
-              }
+              // disabled={
+              //   addressesData.selectedAddress == null ||
+              //   shipmentData.shippingMethod == null ||
+              //   paymentData.selectedPayment == null
+              // }
             >
               {activeStep === steps.length - 1 ? "Finish" : "Proceed"}
             </Button>

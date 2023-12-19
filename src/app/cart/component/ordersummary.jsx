@@ -13,14 +13,26 @@ const ordersummary = () => {
   const currentRoute = usePathname();
 
   const CartData = useSelector((state) => state.cart.items);
+  const [discount, setDiscount] = useState(56);
+  const [shipping, setShipping] = useState(30);
+  const [couponAmount, setCouponAmount] = useState(20);
 
   // console.log("cartItems", cartItems);
 
-  const calculateTotalPrice = () => {
+  const calculatePrice = () => {
     return CartData.reduce(
       (total, item) => total + item.price * item.quantity,
       0
     );
+  };
+
+  const calculateTotalPrice = () => {
+    const totalPrice = calculatePrice();
+    const discountedPrice = totalPrice - discount;
+    const totalPriceWithShipping = discountedPrice + shipping;
+    const totalPriceAfterCoupon = totalPriceWithShipping - couponAmount;
+
+    return totalPriceAfterCoupon;
   };
 
   return (
@@ -36,13 +48,8 @@ const ordersummary = () => {
             <div>
               {CartData.map((item, index) => (
                 <>
-                  <div className="flex">{item?.masalaName}</div>
-                  <div style={{ color: "#B9BBBF" }} className="flex">
-                    Pkg: <span className="ml-2 text-black">{item?.pkg}</span>
-                  </div>
-                  <div style={{ color: "#B9BBBF" }} className="flex">
-                    Qty:
-                    <span className="text-black ml-2">{item?.quantity}</span>
+                  <div className="flex">
+                    {item?.masalaName} × {item?.quantity}
                   </div>
                 </>
               ))}
@@ -52,22 +59,22 @@ const ordersummary = () => {
             Items <p>{cartItems.item?.masalaName}</p>
           </div> */}
           <div className="flex  justify-between mt-5 ">
-            Price <span>₹ {calculateTotalPrice()}</span>
+            Price <span>₹ {calculatePrice()}</span>
           </div>
           <div className="flex  justify-between mt-5">
-            Discount <span>₹ 500</span>
+            Discount <span>- ₹{discount}</span>
           </div>
           <div className="flex  justify-between mt-5">
-            Shipping <span className="Cart-remove">₹ 500</span>
+            Shipping <span className="Cart-remove">+ ₹{shipping}</span>
           </div>
           <div className="flex  justify-between mt-5 border-b-2 pb-5">
-            Coupon Applied <span>₹ 500</span>
+            Coupon Applied <span>- ₹{couponAmount}</span>
           </div>
           <div className="flex  justify-between mt-5">
             Total <span>₹ {calculateTotalPrice()}</span>
           </div>
           <div className="flex  justify-between mt-5">
-            Estimated Delivery By <span>₹ 500</span>
+            Estimated Delivery By <span>In 2 Days</span>
           </div>
 
           {currentRoute === "/cart" && (

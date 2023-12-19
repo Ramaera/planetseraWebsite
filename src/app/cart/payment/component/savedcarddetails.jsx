@@ -6,64 +6,65 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import { useDispatch, useSelector } from "react-redux";
 import { Box } from "@mui/material";
-import { selectPayment } from "@/state/slice/paymentSlice";
+import { selectPayment, removePayment } from "@/state/slice/paymentSlice";
 import { useState } from "react";
+import { LiaCcVisa } from "react-icons/lia";
+// import { BorderColor } from "@mui/icons-material";
 
 export const savedcarddetails = () => {
   const paymentData = useSelector((state) => state.payment);
-  const [isCardSelected, setCardSelected] = useState(false);
+  const [selectedButton, setSelectedButton] = useState(null);
+
+  const handleClick = (index) => {
+    setSelectedButton(index);
+  };
+
   const dispatch = useDispatch();
   const handleChange = (event) => {
     dispatch(selectPayment(event.target.value));
 
     if (event.target.value !== "Credit/Debit Cards") {
-      setCardSelected(false);
+      setSelectedButton(null); // Reset selectedButton when changing the payment method
     }
   };
   return (
-    <div>
-      <div>
-        <FormControl className="w-full">
-          <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
-          <RadioGroup
-            className=""
-            aria-labelledby="demo-controlled-radio-buttons-group"
-            name="controlled-radio-buttons-group"
-            value={paymentData.selectedPayment}
-            onChange={handleChange}
-          >
-            <div className="w-full">
-              {paymentData.allPayment?.map((item) => (
-                <div className="flex w-full justify-between my-8">
-                  <div className="sm:w-8/12  ">
-                    <FormControlLabel
-                      value={item.id}
-                      control={
-                        <Radio
-                          sx={{
-                            "&, &.Mui-checked": {
-                              color: "#FE7171",
-                            },
-                          }}
-                        />
-                      }
-                      label={
-                        <Box className="responsive-box">{item.cardNumber}</Box>
-                      }
-                    />
-                    <div
-                      style={{ color: "#2F302F" }}
-                      className="px-8 sm:font-normal text-xs sm:text-base	"
-                    >
-                      <p>{item.expiryDate}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
+    <div className="w-full flex-wrap">
+      {paymentData.allPayment?.map((item, index) => (
+        <button
+          key={index}
+          onClick={() => handleClick(index)}
+          className={`flex w-full border-2 justify-between my-8 ${
+            selectedButton === index ? "border-red-500" : "border-gray-500"
+          }`}
+        >
+          <div className=" ">
+            <div className="flex   justify-center font-normal	text-sm	py-1	 px-5 rounded-2xl">
+              <div className="text-base  ">
+                *****{item.cardNumber?.slice(-4)}
+                <p>{item.expiryDate}</p>
+              </div>
+
+              <div
+                style={{ color: "#2F302F" }}
+                className=" sm:font-normal text-xs sm:text-base flex items-center	"
+              >
+                <LiaCcVisa
+                  color="#090ded"
+                  className="sm:w-12 sm:h-8 w-8  h-8 ml-2 items-center flex"
+                />
+              </div>
             </div>
-          </RadioGroup>
-        </FormControl>
-      </div>
+          </div>
+          <div className="text-xs sm:text-base sm:w-2/12 w-5/12 mt-3	">
+            <button
+              className="Cart-remove"
+              onClick={() => dispatch(removePayment(item))}
+            >
+              Remove
+            </button>
+          </div>
+        </button>
+      ))}
     </div>
   );
 };

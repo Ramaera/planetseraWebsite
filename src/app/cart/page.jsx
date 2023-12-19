@@ -112,7 +112,7 @@ const Page = () => {
                     </div>
                   </div>
                   <div className="sm:flex hidden sm:w-full sm:justify-end text-xs sm:text-base	">
-                    ₹ {item.price * item.quantity}
+                    ₹ {item.price} × {item.quantity}
                   </div>
                 </div>
               ))}

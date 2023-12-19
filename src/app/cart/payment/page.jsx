@@ -36,6 +36,15 @@ const page = () => {
 
   const handleCardSelectionChange = () => {
     setCardSelected(!isCardSelected);
+    if (!isCardSelected) {
+      setIsVisible(false);
+    }
+  };
+  const initialFormData = {
+    cardNumber: "",
+    expiryDate: "",
+    cvv: "",
+    cardholderName: "",
   };
   const [formData, setFormData] = useState({
     cardNumber: "",
@@ -48,6 +57,9 @@ const page = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+  const clearForm = () => {
+    setFormData(initialFormData);
   };
   const handleSaveCardDetails = () => {
     if (
@@ -63,6 +75,7 @@ const page = () => {
     } else {
       alert("Please fill in all required fields");
     }
+    clearForm();
   };
 
   // console.log("ads", formData);
@@ -115,7 +128,8 @@ const page = () => {
                 label="Pay on Delivery"
               />
             </div>
-            <div className="mt-10 flex justify-between text-xs sm:text-base items-center ">
+
+            <div className="mt-5 flex justify-between text-xs sm:text-base items-center ">
               <FormControlLabel
                 style={{ color: "#2F302F" }}
                 className="font-mont"
@@ -150,54 +164,63 @@ const page = () => {
             </div>
             {isCardSelected && (
               <>
-                <Savedcarddetails />
-                <div id="card-details" className="flex flex-col pt-2">
-                  <input
-                    className="border-2 p-1 px-3 rounded-md w-full"
-                    type="text"
-                    placeholder="Card Number"
-                    name="cardNumber"
-                    value={formData.cardNumber}
-                    onChange={handleInputChange}
-                    required
-                  />
-                  <div className="flex w-full pt-5 justify-between rounded">
-                    <input
-                      style={{ width: "48%" }}
-                      className="border-2 p-1 px-3 rounded-md w-full"
-                      type="text"
-                      placeholder="Expiry"
-                      name="expiryDate"
-                      value={formData.expiryDate}
-                      onChange={handleInputChange}
-                      required
-                    />
-                    <input
-                      style={{ width: "48%" }}
-                      className="border-2 p-1 px-3 rounded-md w-full"
-                      type="text"
-                      placeholder="Cvv / Cvc"
-                      name="cvv"
-                      value={formData.cvv}
-                      onChange={handleInputChange}
-                      required
-                    />
-                  </div>
-                  <input
-                    className="border-2 p-1 px-3 mt-5 rounded-md w-full"
-                    type="text"
-                    placeholder="Card Holder's Name"
-                    name="cardholderName"
-                    value={formData.cardholderName}
-                    onChange={handleInputChange}
-                    required
-                  />
-                  <button
-                    onClick={handleSaveCardDetails}
-                    className="flex justify-center rounded-2xl mt-5 Cartbgcolor py-3"
-                  >
-                    Enter Card Details
+                {isCardSelected && <Savedcarddetails />}
+                <div>
+                  <button className="Cart-remove" onClick={toggleVisibility}>
+                    + Add New Card
                   </button>
+                  {isVisible ? (
+                    <div id="card-details" className="flex flex-col pt-2">
+                      <input
+                        className="border-2 p-1 px-3 rounded-md w-full"
+                        type="text"
+                        placeholder="Card Number"
+                        name="cardNumber"
+                        value={formData.cardNumber}
+                        onChange={handleInputChange}
+                        required
+                      />
+                      <div className="flex w-full pt-5 justify-between rounded">
+                        <input
+                          style={{ width: "48%" }}
+                          className="border-2 p-1 px-3 rounded-md w-full"
+                          type="text"
+                          placeholder="Expiry"
+                          name="expiryDate"
+                          value={formData.expiryDate}
+                          onChange={handleInputChange}
+                          required
+                        />
+                        <input
+                          style={{ width: "48%" }}
+                          className="border-2 p-1 px-3 rounded-md w-full"
+                          type="text"
+                          placeholder="Cvv / Cvc"
+                          name="cvv"
+                          value={formData.cvv}
+                          onChange={handleInputChange}
+                          required
+                        />
+                      </div>
+                      <input
+                        className="border-2 p-1 px-3 mt-5 rounded-md w-full"
+                        type="text"
+                        placeholder="Card Holder's Name"
+                        name="cardholderName"
+                        value={formData.cardholderName}
+                        onChange={handleInputChange}
+                        required
+                      />
+                      <button
+                        onClick={handleSaveCardDetails}
+                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor py-3"
+                      >
+                        Enter Card Details
+                      </button>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </>
             )}

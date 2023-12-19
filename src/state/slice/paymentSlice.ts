@@ -14,8 +14,13 @@ const paymentSlice = createSlice({
       const random_id = Math.floor(Math.random() * 100000);
       state.allPayment?.push({ ...action.payload, id: random_id });
       if (!state.selectedPayment) state.selectedPayment = random_id;
-      // console.log("saving.123å.",state.allPayment)
     },
+    removePayment: (state, action) => {
+      // console.log("removing...",)
+      state.allPayment = state.allPayment.filter((item)=> item.id != action.payload.id); 
+      if(state.selectedPayment==action.payload.id) state.selectedPayment= null;
+
+  },
     selectPayment: (state, action) => {
       state.selectedPayment = action.payload;
     },
@@ -26,5 +31,5 @@ const paymentSlice = createSlice({
 });
 
 
-export const { selectPayment, saveCard } = paymentSlice.actions;
+export const { selectPayment, saveCard,removePayment } = paymentSlice.actions;
 export default paymentSlice.reducer;
