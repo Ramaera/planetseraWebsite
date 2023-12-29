@@ -66,8 +66,35 @@ const Footer = () => {
                       // onClick={() => window.scrollTo(0, 0)}
                       onClick={() =>
                         window.scrollTo({ top: 0, behavior: "auto !important" })
-                      }>
+                      }
+                    >
                       Product
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h2 className="mb-4 text-sm font-bold text-gray-300 uppercase">
+                  Quick Links
+                </h2>
+
+                <ul className="text-white font-normal">
+                  <li className="mb-2">
+                    <Link
+                      href="/terms-and-conditions"
+                      className="underlineEffect "
+                    >
+                      Terms of Use
+                    </Link>
+                  </li>
+                  <li className="mb-2">
+                    <Link href="/privacy-policy" className="underlineEffect">
+                      Privacy Policy
+                    </Link>
+                  </li>
+                  <li className="mb-2">
+                    <Link href="/return-policy" className="underlineEffect">
+                      Return Policy
                     </Link>
                   </li>
                 </ul>
@@ -80,28 +107,32 @@ const Footer = () => {
                   <li className="mb-2">
                     <Link
                       href="/products/chat-masala"
-                      className="underlineEffect">
+                      className="underlineEffect"
+                    >
                       Chat Masala
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
                       href="/products/garam-masala"
-                      className="underlineEffect">
+                      className="underlineEffect"
+                    >
                       Garam Masala
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
                       href="/products/meat-masala"
-                      className="underlineEffect">
+                      className="underlineEffect"
+                    >
                       Meat Masala
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
                       href="/products/sabji-masala"
-                      className="underlineEffect">
+                      className="underlineEffect"
+                    >
                       Sabji Masala
                     </Link>
                   </li>
@@ -115,28 +146,32 @@ const Footer = () => {
                   <li className="mb-2">
                     <Link
                       href="/products/coriander-powder"
-                      className="underlineEffect">
+                      className="underlineEffect"
+                    >
                       Coriander Powder
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
                       href="/products/cumin-powder"
-                      className="underlineEffect">
+                      className="underlineEffect"
+                    >
                       Cumin Powder
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
                       href={"/products/red-chilli-powder"}
-                      className="underlineEffect">
+                      className="underlineEffect"
+                    >
                       Red chilli powder
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
                       href="/products/turmeric-powder"
-                      className="underlineEffect">
+                      className="underlineEffect"
+                    >
                       Turmeric Powder
                     </Link>
                   </li>
@@ -252,7 +287,8 @@ const Footer = () => {
                 target="_blank"
                 href="https://www.facebook.com/planetseraspices/"
                 aria-label="facebook"
-                className="text-white">
+                className="text-white"
+              >
                 <Facebook />
               </a>
 
@@ -260,7 +296,8 @@ const Footer = () => {
                 target="_blank"
                 href="https://www.instagram.com/planetseraspices/"
                 aria-label="instagram"
-                className="text-white">
+                className="text-white"
+              >
                 <Instagram />
               </a>
 
@@ -268,7 +305,8 @@ const Footer = () => {
                 target="_blank"
                 href="https://www.linkedin.com/company/planetsera-spices/"
                 aria-label="linkedin"
-                className="text-white ">
+                className="text-white "
+              >
                 <LinkedIn />
               </a>
 
@@ -276,7 +314,8 @@ const Footer = () => {
                 target="_blank"
                 href="https://twitter.com/Planetseraspice/"
                 aria-label="X"
-                className="text-white flex items-center">
+                className="text-white flex items-center"
+              >
                 <img
                   src="images/backgrounds/X-Logo.png"
                   alt="X-logo"

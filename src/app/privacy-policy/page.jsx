@@ -5,8 +5,8 @@ import Privacy from "./components/Privacy";
 const PrivacyPolicy = () => {
   return (
     <>
-      <NavItem page={"products"} />
-      <NavigationMobile page={"products"} />
+      <NavItem page={"privacy-policy"} />
+      <NavigationMobile page={"privacy-policy"} />
       <Privacy />
     </>
   );

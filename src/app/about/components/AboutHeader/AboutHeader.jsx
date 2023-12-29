@@ -18,7 +18,8 @@ const AboutHeader = () => {
           backgroundImage: `url(${
             colorMe === "#2dc83c" ? bg3 : colorMe === "#ffc400" ? bg2 : bg1
           })`,
-        }}>
+        }}
+      >
         <NavItem page={"about"} />
         <NavigationMobile page={"about"} />
 
@@ -35,7 +36,8 @@ const AboutHeader = () => {
                   })`,
 
                   textShadow: `0px 0px 0px ${colorMe + "85"}`,
-                }}>
+                }}
+              >
                 Establishing the bond of love and trust through PlanetsEra
                 spices
               </h1>
@@ -56,7 +58,8 @@ const AboutHeader = () => {
                     cursor: "pointer",
                     zIndex: "19",
                     fontWeight: "400",
-                  }}>
+                  }}
+                >
                   Explore More
                 </a>
               </div>
