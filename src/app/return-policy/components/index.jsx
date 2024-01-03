@@ -100,10 +100,10 @@ const index = () => {
           <p className="py-2">
             We only replace items if they are defective or damaged. If you need
             to exchange it for the same item, send us an email at
-            info@groceryworld.in Shipping costs are non-refundable. If you
-            receive a refund, the cost of return shipping will be deducted from
-            your refund. Depending on where you live, the time it may take for
-            your exchanged product to reach you, may vary.
+            Care@ramaera.in Shipping costs are non-refundable. If you receive a
+            refund, the cost of return shipping will be deducted from your
+            refund. Depending on where you live, the time it may take for your
+            exchanged product to reach you, may vary.
           </p>
         </div>
       </div>

@@ -17,8 +17,8 @@ const index = () => {
             Terms And Conditions
           </h2>
           <p className="sm:mt-10 mt-5">
-            Grocery World is the trademarks of Ramaera Industries Limited and
-            its provides Grocery World which is a provider of online shopping
+            Planetsera is the trademarks of Ramaera Industries Limited and its
+            provides Planetsera which is a provider of online shopping
             facilities to the public at large. Ramaera Industries Limited is a
             company incorporated under the Companies Act, 2013 having its
             registered office at H-150, Sector-63, Gautam Buddha Nagar, Uttar
@@ -26,10 +26,10 @@ const index = () => {
           </p>
           <p className="py-2">
             It is advisable that all registrants to the website
-            www.groceryworld.in or the mobile application of Ramaera Industries
-            are accepting the terms and conditions as well as the Privacy Policy
-            and agreeing to the contents therein. In case you do not
-            agree/accept the terms and conditions then please do not proceed
+            www.planetsera.com.in or the mobile application of Ramaera
+            Industries are accepting the terms and conditions as well as the
+            Privacy Policy and agreeing to the contents therein. In case you do
+            not agree/accept the terms and conditions then please do not proceed
             further. If you proceed further then it shall be deemed acceptance
             of these terms and conditions and you shall be unconditionally bound
             by it.
@@ -61,7 +61,7 @@ const index = () => {
           </p>
           <p className="py-2">
             In case of any clarifications, please feel free to revert at
-            info@groceryworld.in.
+            Care@ramaera.in.
           </p>
           <h2
             style={{
