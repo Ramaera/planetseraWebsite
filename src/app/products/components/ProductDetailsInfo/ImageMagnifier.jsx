@@ -4,9 +4,9 @@ const ImageMagnifier = ({
   src,
   width,
   height,
-  magnifierHeight = 140,
-  magnifieWidth = 140,
-  zoomLevel = 1.8,
+  magnifierHeight = 200,
+  magnifieWidth = 200,
+  zoomLevel = 2.5,
 }) => {
   const [[x, y], setXY] = useState([0, 0]);
   const [[imgWidth, imgHeight], setSize] = useState([0, 0]);
@@ -17,7 +17,8 @@ const ImageMagnifier = ({
         position: "relative",
         height: height,
         width: width,
-      }}>
+      }}
+    >
       <img
         src={src}
         style={{ height: height, width: width }}
@@ -73,7 +74,8 @@ const ImageMagnifier = ({
           //calculete position of zoomed image.
           backgroundPositionX: `${-x * zoomLevel + magnifieWidth / 2}px`,
           backgroundPositionY: `${-y * zoomLevel + magnifierHeight / 2}px`,
-        }}></div>
+        }}
+      ></div>
     </div>
   );
 };
