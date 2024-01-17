@@ -5,11 +5,22 @@ import "@/public/styles/navigation.css";
 import { useParams } from "next/navigation";
 import RelatedPtoductData from "@/app/products/components/RelatedProducts/RelatedProductData";
 import { useEffect, useState } from "react";
+import Login from "../Login";
 
 const NavItem = ({ page }) => {
   const { id } = useParams();
   const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const [isVisible, setIsVisible] = useState(false);
+  const [loginModal, setLoginModal] = useState(false);
+
+  const openLoginModal = () => {
+    setLoginModal(true);
+  };
+
+  const closeLoginModal = () => {
+    setLoginModal(false);
+  };
+
   const dispatch = useDispatch();
   // console.log(page);
   const colorMe = useSelector((state) => state.colorUs.color);
@@ -74,10 +85,15 @@ const NavItem = ({ page }) => {
         </li>
 
         <li>
-          <Link href="/contact-us" className="mr-1">
-            Contact Us
-          </Link>
+          <Link href="/contact-us">Contact Us</Link>
         </li>
+
+        <li className="mr-1" onClick={openLoginModal}>
+          {/* <Link href="/contact-us" className="mr-1"> */}
+          Login
+          {/* </Link> */}
+        </li>
+        <Login isOpen={loginModal} closeLoginModal={closeLoginModal} />
       </ul>
     </div>
   );
