@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "@/app/home/components/Header/Header";
 import SectionMain from "@/app/home/components/SectionMain/SectionMain";
 import FoodySection from "@/app/home/components/Foody/FoodySection";
@@ -14,8 +14,24 @@ import NewsandBlog from "@/app/home/components/NewsandBlog/NewsandBlog";
 import Spices from "@/app/home/components/Spices/Spices";
 import Review from "@/app/home/components/Review/Review";
 import Head from "next/head";
+import { fetchData } from "@/api";
 
 const Home = () => {
+  const [dataProduct, setDataProduct] = useState([]);
+  useEffect(() => {
+    const fetchDataAndNavigate = async () => {
+      try {
+        const data = await fetchData();
+        setDataProduct(data);
+      } catch (error) {
+        // Handle error
+      }
+    };
+
+    fetchDataAndNavigate();
+  }, []);
+  console.log("asdfgh", dataProduct);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
