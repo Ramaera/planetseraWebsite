@@ -446,6 +446,66 @@ const MetaDatablogs = () => {
           <meta name="twitter:image" content="/images/blog/blog-7.png" />
         </>
       )}
+      {/*-----------------------Unleash-The-Power-Of-Black-Pepper  --------------------------------------------------- */}
+      {currentRoute === "/blog/unleash-the-Power-of-black-pepper" && (
+        <>
+          <title>
+            Unleash the Power of Black Pepper: A Spice Packed with Health
+            Benefits
+          </title>
+          <meta name="text" content="planetsera" />
+          <meta
+            name="title"
+            content="Unleash the Power of Black Pepper: A Spice Packed with Health Benefits"
+          />
+          <meta
+            name="description"
+            content="Experience black pepper's amazing digestive, nutritional, and anti-inflammatory properties. This powerful spice can improve brain function, immunity, blood sugar regulation, and taste. Use black pepper to spice up your life!"
+          />
+          <meta name="keywords" content="" />
+          <meta name="robots" content="index,  follow" />
+          <link
+            rel="canonical"
+            href="/blog/unleash-the-Power-of-black-pepper"
+          />
+          <meta
+            property="og:url"
+            content="/blog/unleash-the-Power-of-black-pepper"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Unleash the Power of Black Pepper: A Spice Packed with Health Benefits"
+          />
+          <meta
+            property="og:description"
+            content="Experience black pepper's amazing digestive, nutritional, and anti-inflammatory properties. This powerful spice can improve brain function, immunity, blood sugar regulation, and taste. Use black pepper to spice up your life!"
+          />
+          <meta
+            name="og_site_name"
+            property="og:site_name"
+            content="planetsera.com"
+          />
+          <meta property="og:image" content="/images/blog/blog-8.png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="627" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="planetsera.com" />
+          <meta
+            property="twitter:url"
+            content="/blog/unleash-the-Power-of-black-pepper"
+          />
+          <meta
+            name="twitter:title"
+            content="Unleash the Power of Black Pepper: A Spice Packed with Health Benefits"
+          />
+          <meta
+            name="twitter:description"
+            content="Experience black pepper's amazing digestive, nutritional, and anti-inflammatory properties. This powerful spice can improve brain function, immunity, blood sugar regulation, and taste. Use black pepper to spice up your life!"
+          />
+          <meta name="twitter:image" content="/images/blog/blog-8.png" />
+        </>
+      )}
     </>
   );
 };
