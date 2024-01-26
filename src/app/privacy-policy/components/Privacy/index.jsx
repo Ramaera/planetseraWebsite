@@ -25,26 +25,26 @@ const index = () => {
               is a trademark of Ramaera Industries Limited, a company
               incorporated under the Companies Act, 2013 with its registered and
               corporate office at H-150, Sector-63, Gautam Buddha Nagar, Uttar
-              Pradesh, Noida - 201301, INDIA in the course of its business.
+              Pradesh, Noida-201301, India, in the course of its business.
             </span>
           </p>
           <p className="py-2 ">
-            The Company respects your privacy and values the trust you place in
-            it. Set out below is the Company’s ‘Privacy Policy’ which details
+            The company respects your privacy and values the trust you place in
+            it. Set out below is the Company’s ‘Privacy Policy', which details
             the manner in which information relating to you is collected, used
             and disclosed
           </p>
           <p className="py-2">
-            Customer are advised to read and understand our Privacy Policy
-            carefully, as by accessing the website/app you agree to be bound by
-            the terms and conditions of the Privacy Policy and consent to the
-            collection, storage and use of information relating to you as
+            Customers are advised to read and understand our privacy policy
+            carefully, as by accessing the website or app, you agree to be bound
+            by the terms and conditions of the privacy policy and consent to the
+            collection, storage, and use of information relating to you as
             provided herein.
           </p>
           <p className="py-2 ">
-            If you do not agree with the terms and conditions of our Privacy
-            Policy, including in relation to the manner of collection or use of
-            your information, please do not use or access the website/app.
+            If you do not agree with the terms and conditions of our privacy
+            policy, including in relation to the manner of collection or use of
+            your information, please do not use or access the website or app.
           </p>
           <h5
             style={{
@@ -55,16 +55,16 @@ const index = () => {
             Personal identification information
           </h5>
           <p className="py-2">
-            We may automatically track certain information about you based upon
+            We may automatically track certain information about you based on
             your behavior on the website. We use this information to do internal
-            research on our users’ demographics, interests, and behavior to
-            better understand, protect and serve our users. This information is
-            compiled and analyzed on an aggregated basis. This information may
-            include the URL that you just came from (whether this URL is on the
-            website or not), which URL you next go to (whether this URL is on
-            the website or not), your computer browser information, your IP
-            address, and other information associated with your interaction with
-            the website.
+            research on our users’ demographics, interests, and behaviors to
+            better understand, protect,them and serve our users. This
+            information is compiled and analyzed on an aggregated basis. This
+            information may include the URL that you just came from (whether
+            this URL is on the website or not), which URL you next go to
+            (whether this URL is on the website or not), your computer browser
+            information, your IP address, and other information associated with
+            your interaction with the website.
           </p>
           <h5
             style={{
@@ -75,12 +75,12 @@ const index = () => {
             Non-personal identification information:{" "}
           </h5>
           <p className="py-2">
-            We may collect non-personal identification information about Users
-            whenever they interact with our Site. Non-personal identification
-            information may include the browser name, the type of computer and
-            technical information about Users means the type of connection to
-            our Site, such as the operating system and the Internet service
-            providers utilized and other similar information.
+            We may collect non-personal identification information about users
+            whenever they interact with our site. Non-personal identification
+            information may include the browser name, the type of computer,
+            technical information about users, the type of connection to our
+            site, such as the operating system and the Internet service
+            providers utilized, and other similar information.
           </p>
           <h5
             style={{
@@ -92,28 +92,28 @@ const index = () => {
           </h5>
           <p className="py-2">
             Ramaera Industries will use your personal information to provide
-            personalized features to you on the Site and to provide for
-            promotional offers to you through the Site and other channels.
-            Ramaera Industries will also provide this information to its
-            business associates and partners to get in touch with you when
-            necessary to provide the services requested by you. Ramaera
-            Industries will use this information to preserve transaction history
-            as governed by existing law or policy. Ramaera Industries may also
-            use contact information internally to direct its efforts for product
+            personalized features to you on the site and to provide promotional
+            offers to you through the Site and other channels. Ramaera
+            Industries will also provide this information to its business
+            associates and partners to get in touch with you when necessary to
+            provide the services requested by you. Ramaera Industries will use
+            this information to preserve transaction history as governed by
+            existing law or policy. Ramaera Industries may also use contact
+            information internally to direct its efforts for product
             improvement, to contact you as a survey respondent, to notify you if
             you win any contest; and to send you promotional materials from its
             contest sponsors or advertisers. Ramaera Industries will also use
             this information to serve various promotional and advertising
             materials to you via display advertisements through the Google Ad
-            network on third party websites. You can opt out of Google Analytics
-            for Display Advertising and customize Google Display network ads
-            using the Ads Preferences Manager. Information about Customers on an
-            aggregate (exlcuding any information that may identify you
-            specifically) covering Customer transaction data and Customer
+            network on third-party websites. You can opt out of Google Analytics
+            for display advertising and customize Google Display network ads
+            using the Ads Preferences Manager. Information about customers on an
+            aggregate basis (excluding any information that may identify you
+            specifically) covering customer transaction data and customer
             demographic and location data may be provided to partners of Ramaera
             Industries for the purpose of creating additional features on the
             website, creating appropriate merchandising or creating new products
-            and services and conducting marketing research and statistical
+            and services, and conducting marketing research and statistical
             analysis of customer behavior and transactions.
           </p>
           <h5
