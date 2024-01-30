@@ -378,7 +378,6 @@ const BlogData = [
       },
     ],
   },
-
   {
     id: "how-to-check-adulteration-of-spices",
     category: "MouthWatering",
@@ -714,6 +713,56 @@ const BlogData = [
       },
     ],
   },
+
+  // {
+  //   id: "the-nutritional-value-of-black-pepper",
+  //   category: "MouthWatering",
+  //   categoryName: "BestSelling",
+  //   type: "RecentBlog",
+  //   blogDate: "13-Jan-2024",
+  //   blogImg: "/images/blog/blog-9.png",
+  //   blogName: "The Nutritional Value of Black Pepper: What You Need to Know",
+  //   blogDetail:
+  //     "One of the most widely used seasonings all over the world is black pepper, also known as Piper nigrum. It is used to a wide variety of foods, ranging from soups and stews to salads and side dishes, in order to impart flavour and spice. But black pepper isn't simply a flavour enhancer; it's also a powerhouse when it comes to the nutritional value it provides. In this piece, we will discuss the health benefits of black pepper as well as its nutritional worth. Black pepper has been shown to have a number of positive effects on health.What exactly is this Black Pepper ?The flowering vine that produces black pepper is native to India as well as other tropical locations. The small, spherical berries of the plant are what are ultimately used to generate the spice that we refer to as black pepper after it has been dried and pulverised. A wide variety of recipes can benefit from the spice's ability to provide flavour and fire.",
+  //   blogDescription: [
+  //     {
+  //       blogList: "Nutritional Value of  Black Pepper        ",
+  //       blogListAbout: (
+  //         <>
+  //           The spice known as black pepper contains significant amounts of a
+  //           number of important vitamins and minerals. It has an especially high
+  //           vitamin K content, which is essential for maintaining strong bones
+  //           and proper blood clotting. Additionally, it is an excellent supplier
+  //           of the minerals manganese, magnesium, and iron. In addition to this,
+  //           black pepper includes a component known as piperine, which has been
+  //           demonstrated to possess anti-inflammatory as well as antioxidant
+  //           capabilities.
+  //         </>
+  //       ),
+  //     },
+  //     {
+  //       blogList: "Health Benefits of Black Pepper        ",
+  //       blogListAbout: (
+  //         <>
+  //           The health benefits of black pepper are numerous. Here are just a
+  //           few of the ways it can improve your health:
+  //         </>
+  //       ),
+  //     },
+  //     {
+  //       blogList: "Digestive Health        ",
+  //       blogListAbout: (
+  //         <>
+  //           Because it encourages the generation of hydrochloric acid in the
+  //           stomach, black pepper can assist in the improvement of digestive
+  //           function. This makes the process of breaking down food more
+  //           effective, which lowers the likelihood of experiencing indigestion
+  //           and other digestive difficulties.
+  //         </>
+  //       ),
+  //     },
+  //   ],
+  // },
   {
     id: "where-spices-are-grown-in-india",
     category: "KitchenSpices",

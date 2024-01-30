@@ -5,8 +5,14 @@ import "@/public/styles/navigation.css";
 import { useParams } from "next/navigation";
 import RelatedPtoductData from "@/app/products/components/RelatedProducts/RelatedProductData";
 import { useEffect, useState } from "react";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from "@mui/material/Badge";
+
+// import { useSelector } from "react-redux";
 
 const NavItem = ({ page }) => {
+  const cartItems = useSelector((state) => state.cart.items);
+
   const { id } = useParams();
   const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const [isVisible, setIsVisible] = useState(false);
@@ -48,7 +54,9 @@ const NavItem = ({ page }) => {
           color:
             (page === "blog" ||
               page === "shop" ||
+              page === "cart" ||
               page === "about" ||
+              page === "address" ||
               page === "products") &&
             "black",
         }}
@@ -78,6 +86,14 @@ const NavItem = ({ page }) => {
         <li>
           <Link href="/contact-us" className="mr-1">
             Contact Us
+          </Link>
+        </li>
+
+        <li>
+          <Link className="flex" href="/cart">
+            <Badge badgeContent={cartItems.length} color="primary">
+              <ShoppingCartIcon />
+            </Badge>
           </Link>
         </li>
       </ul>

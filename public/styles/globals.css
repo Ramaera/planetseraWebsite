@@ -543,14 +543,48 @@
   }
   
   .healthyScroll {
-    height: 60vh;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
     transition: transform 10s linear;
   }
+  .cartScroll {
+    max-height: 500px;
+    overflow: auto;
+  }
   
+  @media only screen and (max-width: 600px) {
+    .cartScroll {
+      max-height: unset;
+
+        overflow: none;
+    }
+}
+/* ResponsiveComponent.css */
+.responsive-box {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Montserrat';
+  color: #2F302F;
+}
+
+@media (max-width: 600px) {
+  .responsive-box {
+    font-size: 18px;
+  }
+}
+.responsive-box-shipping {
+  font-size: 16px;
+  
+}
+
+@media (max-width: 600px) {
+  .responsive-box-shipping {
+    font-size: 12px;
+  }
+}
+
   /* .healthyScroll::-webkit-scrollbar {
     display: none;
   } */

@@ -60,9 +60,10 @@ const NavigationMobile = ({ page }) => {
                 fontSize="large"
                 style={{
                   color:
-                    page === "about" ||
+                    page === "cart" ||
                     page === "products" ||
                     page === "blog" ||
+                    page === "about" ||
                     page === "return-policy" ||
                     page === "privacy-policy" ||
                     page === "terms-and-conditions"
@@ -162,6 +163,19 @@ const NavigationMobile = ({ page }) => {
                   }}
                 >
                   Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/cart"
+                  passHref
+                  className="px-4 py-2 flex w-full rounded-md"
+                  style={{
+                    color: currentRoute === "/cart" && colorMe,
+                    fontWeight: currentRoute === "/cart" && 600,
+                  }}
+                >
+                  Cart
                 </Link>
               </li>
             </ul>

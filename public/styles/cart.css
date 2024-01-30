@@ -1,0 +1,25 @@
+.Cart {
+    /* font-size: 3.1rem; */
+    font-family: "Montserrat";
+    background: -webkit-linear-gradient(#ff4f4f, #fe7171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+   
+  }
+  .Cart-remove {
+    
+    font-family: "Montserrat";
+    background: -webkit-linear-gradient(#ff4f4f, #fe7171);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+  }
+  .Cartbgcolor {
+    
+    font-family: "Montserrat";
+    background: -webkit-linear-gradient(#ff4f4f, #fe7171);
+    color: white;
+    
+   
+  }
