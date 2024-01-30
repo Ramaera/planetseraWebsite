@@ -28,8 +28,8 @@ const ordersummary = () => {
 
   const calculateTotalPrice = () => {
     const totalPrice = calculatePrice();
-    const discountedPrice = totalPrice - discount;
-    const totalPriceWithShipping = discountedPrice + shipping;
+    // const discountedPrice = totalPrice - discount;
+    const totalPriceWithShipping = totalPrice + shipping;
     const totalPriceAfterCoupon = totalPriceWithShipping - couponAmount;
 
     return totalPriceAfterCoupon;
@@ -61,9 +61,9 @@ const ordersummary = () => {
           <div className="flex  justify-between mt-5 ">
             Price <span>₹ {calculatePrice()}</span>
           </div>
-          <div className="flex  justify-between mt-5">
+          {/* <div className="flex  justify-between mt-5">
             Discount <span>- ₹{discount}</span>
-          </div>
+          </div> */}
           <div className="flex  justify-between mt-5">
             Shipping <span className="Cart-remove">+ ₹{shipping}</span>
           </div>
@@ -74,7 +74,7 @@ const ordersummary = () => {
             Total <span>₹ {calculateTotalPrice()}</span>
           </div>
           <div className="flex  justify-between mt-5">
-            Estimated Delivery By <span>In 2 Days</span>
+            Estimated Delivery By <span>In 5 Days</span>
           </div>
 
           {currentRoute === "/cart" && (
