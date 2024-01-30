@@ -193,6 +193,7 @@ const NavigationMobile = ({ page }) => {
                   onClick={openLoginModal}
                   href=""
                   passHref
+                  cursor-pointer
                   className="px-4 py-2 flex w-full rounded-md "
                   style={{
                     color: currentRoute === "/login" && colorMe,

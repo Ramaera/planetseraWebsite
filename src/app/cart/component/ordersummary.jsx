@@ -104,11 +104,11 @@ const ordersummary = () => {
                   ),
                 }}
               />
-              <Link href="/cart/shippingDetail" className="text-white">
-                <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor py-3">
-                  Proceed To Checkout
-                </div>
-              </Link>
+              {/* <Link href="/cart/shippingDetail" className="text-white"> */}
+              <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-not-allowed py-3">
+                Proceed To Checkout
+              </div>
+              {/* </Link> */}
             </>
           )}
         </div>

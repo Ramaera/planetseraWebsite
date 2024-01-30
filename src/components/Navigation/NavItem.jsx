@@ -105,7 +105,7 @@ const NavItem = ({ page }) => {
             </Badge>
           </Link>
         </li>
-        <li className="mr-1" onClick={openLoginModal}>
+        <li className="mr-1 cursor-pointer" onClick={openLoginModal}>
           {/* <Link href="/contact-us" className="mr-1"> */}
           Login
           {/* </Link> */}
