@@ -8,6 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import disableScroll from "disable-scroll";
+import Login from "../Login";
 
 usePathname;
 const NavigationMobile = ({ page }) => {
@@ -23,6 +24,14 @@ const NavigationMobile = ({ page }) => {
   };
 
   const [showMenu, setShowMenu] = useState(false);
+
+  const [loginModal, setLoginModal] = useState(false);
+  const openLoginModal = () => {
+    setLoginModal(true);
+  };
+  const closeLoginModal = () => {
+    setLoginModal(false);
+  };
 
   const toggleClick = () => {
     setShowMenu(!showMenu);
@@ -178,6 +187,22 @@ const NavigationMobile = ({ page }) => {
                   Cart
                 </Link>
               </li>
+
+              <li>
+                <Link
+                  onClick={openLoginModal}
+                  href=""
+                  passHref
+                  className="px-4 py-2 flex w-full rounded-md "
+                  style={{
+                    color: currentRoute === "/login" && colorMe,
+                    fontWeight: currentRoute === "/login" && 600,
+                  }}
+                >
+                  Login
+                </Link>
+              </li>
+              <Login isOpen={loginModal} closeLoginModal={closeLoginModal} />
             </ul>
           </div>
         </div>

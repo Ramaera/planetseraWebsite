@@ -9,6 +9,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
 
 // import { useSelector } from "react-redux";
+import Login from "../Login";
 
 const NavItem = ({ page }) => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -16,6 +17,16 @@ const NavItem = ({ page }) => {
   const { id } = useParams();
   const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const [isVisible, setIsVisible] = useState(false);
+  const [loginModal, setLoginModal] = useState(false);
+
+  const openLoginModal = () => {
+    setLoginModal(true);
+  };
+
+  const closeLoginModal = () => {
+    setLoginModal(false);
+  };
+
   const dispatch = useDispatch();
   // console.log(page);
   const colorMe = useSelector((state) => state.colorUs.color);
@@ -84,9 +95,7 @@ const NavItem = ({ page }) => {
         </li>
 
         <li>
-          <Link href="/contact-us" className="mr-1">
-            Contact Us
-          </Link>
+          <Link href="/contact-us">Contact Us</Link>
         </li>
 
         <li>
@@ -96,6 +105,12 @@ const NavItem = ({ page }) => {
             </Badge>
           </Link>
         </li>
+        <li className="mr-1" onClick={openLoginModal}>
+          {/* <Link href="/contact-us" className="mr-1"> */}
+          Login
+          {/* </Link> */}
+        </li>
+        <Login isOpen={loginModal} closeLoginModal={closeLoginModal} />
       </ul>
     </div>
   );
