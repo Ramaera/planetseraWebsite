@@ -4,6 +4,7 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import InputAdornment from "@mui/material/InputAdornment";
 import { usePathname, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
+import Login from "@/components/Login";
 
 // import Address from "../address";
 
@@ -11,11 +12,21 @@ import TextField from "@mui/material/TextField";
 import Link from "next/link";
 const ordersummary = () => {
   const currentRoute = usePathname();
-
+  const colorMe = useSelector((state) => state.colorUs.color);
   const CartData = useSelector((state) => state.cart.items);
   const [discount, setDiscount] = useState(56);
   const [shipping, setShipping] = useState(30);
   const [couponAmount, setCouponAmount] = useState(20);
+  const [registered, setRegistered] = useState(true);
+  const [loginModal, setLoginModal] = useState(false);
+
+  const openLoginModal = () => {
+    setLoginModal(true);
+  };
+
+  const closeLoginModal = () => {
+    setLoginModal(false);
+  };
 
   // console.log("cartItems", cartItems);
 
@@ -37,12 +48,12 @@ const ordersummary = () => {
 
   return (
     <>
-      <div className="font-mont sm:w-1/4 pt-10	 ">
+      <div className="font-mont sm:w-1/4 pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
           className="border py-9 px-6 shadow-xl"
         >
-          <p className="text-2xl	">Order Summary</p>
+          <p className="text-2xl  ">Order Summary</p>
           <div className="flex justify-between   mt-5 ">
             Items
             <div>
@@ -67,19 +78,19 @@ const ordersummary = () => {
           <div className="flex  justify-between mt-5">
             Shipping <span className="Cart-remove">+ ₹{shipping}</span>
           </div>
-          <div className="flex  justify-between mt-5 border-b-2 pb-5">
+          {/* <div className="flex  justify-between mt-5 border-b-2 pb-5">
             Coupon Applied <span>- ₹{couponAmount}</span>
-          </div>
+          </div> */}
           <div className="flex  justify-between mt-5">
             Total <span>₹ {calculateTotalPrice()}</span>
           </div>
-          <div className="flex  justify-between mt-5">
+          {/* <div className="flex  justify-between mt-5">
             Estimated Delivery By <span>In 5 Days</span>
-          </div>
+          </div> */}
 
           {currentRoute === "/cart" && (
             <>
-              <TextField
+              {/* <TextField
                 className="py-2"
                 variant="standard"
                 placeholder="Coupon Code"
@@ -103,12 +114,32 @@ const ordersummary = () => {
                     </InputAdornment>
                   ),
                 }}
-              />
-              {/* <Link href="/cart/shippingDetail" className="text-white"> */}
-              <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-not-allowed py-3">
-                Proceed To Checkout
-              </div>
-              {/* </Link> */}
+              /> */}
+              {registered ? (
+                <>
+                  <Link href="/cart/shippingDetail" className="text-white">
+                    <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor  py-3">
+                      Proceed To Checkout
+                    </div>
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <div
+                    onClick={openLoginModal}
+                    className="text-white"
+                    style={{ color: colorMe, fontWeight: "bold" }}
+                  >
+                    <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
+                      Proceed To Checkout
+                    </div>
+                  </div>
+                  <Login
+                    isOpen={loginModal}
+                    closeLoginModal={closeLoginModal}
+                  />
+                </>
+              )}
             </>
           )}
         </div>

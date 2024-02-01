@@ -108,7 +108,7 @@ const page = () => {
                     }}
                   />
                 }
-                label="Pay With UPI"
+                label="Pay Online"
               />
             </div>
             <div className="mt-10 flex justify-between text-xs sm:text-base ">
@@ -129,7 +129,7 @@ const page = () => {
               />
             </div>
 
-            <div className="mt-5 flex justify-between text-xs sm:text-base items-center ">
+            {/* <div className="mt-5 flex justify-between text-xs sm:text-base items-center ">
               <FormControlLabel
                 style={{ color: "#2F302F" }}
                 className="font-mont"
@@ -255,7 +255,7 @@ const page = () => {
                   className="sm:w-12 sm:h-6 w-8 h-6 sm:pl-1 sm:ml-2"
                 />
               </div>
-            </div>
+            </div> */}
           </RadioGroup>
         </FormControl>
       </div>
