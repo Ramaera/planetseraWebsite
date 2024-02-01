@@ -15,6 +15,9 @@ import {
   incrementQuantity,
   decrementQuantity,
 } from "@/state/slice/cartSlice";
+import BuynowBtn from "@/components/BuynowBtn";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+
 // import CartData from "./CartData";
 
 const Page = () => {
@@ -82,7 +85,7 @@ const Page = () => {
                         <span className="pl-2 text-black">{item.pkg}</span>
                       </p>
                     </div>
-                    <div className="flex sm:hidden sm:w-full sm:justify-end text-xs sm:text-base mt-3	">
+                    <div className="flex sm:hidden sm:w-full sm:justify-end text-xs sm:text-base mt-3 ">
                       {item.price}
                     </div>
                     <div className="flex">
@@ -108,7 +111,7 @@ const Page = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="sm:flex hidden sm:w-full sm:justify-end text-xs sm:text-base	">
+                  <div className="sm:flex hidden sm:w-full sm:justify-end text-xs sm:text-base  ">
                     ₹ {item.price} × {item.quantity}
                   </div>
                 </div>
@@ -119,10 +122,19 @@ const Page = () => {
           <Ordersummary />
         </div>
       ) : (
-        <div
-          className="flex justify-center items-center h-screen
-        ">
-          Empty cart
+        <div className="h-screen flex justify-center items-center flex-col ">
+          <div className="sm:text-4xl font-semibold">
+            Your Planetsera Cart Is Empty
+          </div>
+          <ShoppingCartOutlinedIcon className="h-20 w-20" />
+          <div className="  ">
+            <BuynowBtn
+              text="Shop Now"
+              className="text-green-800"
+              href="/shop"
+              link="/shop"
+            />
+          </div>
         </div>
       )}
     </>

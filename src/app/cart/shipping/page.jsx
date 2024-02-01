@@ -30,7 +30,7 @@ const page = () => {
     <>
       <div className="  flex w-full  ">
         <div className=" sm:p-10 p-2  w-full font-mont ">
-          <p style={{ color: "#2F302F" }} className="text-xl	">
+          <p style={{ color: "#2F302F" }} className="text-xl  ">
             Shipment Method
           </p>
 
@@ -97,7 +97,7 @@ const page = () => {
 
                 <p className="sm:text-base text-xs flex ">Date</p>
               </div>
-              <div className="mt-5 flex justify-between border-b-2 pb-5 item-center">
+              {/* <div className="mt-5 flex justify-between border-b-2 pb-5 item-center">
                 <FormControlLabel
                   className="font-mont"
                   style={{ color: "#2F302F" }}
@@ -129,7 +129,7 @@ const page = () => {
                     <DatePicker className="" />
                   </LocalizationProvider>
                 </div>
-              </div>
+              </div> */}
             </RadioGroup>
           </FormControl>
         </div>

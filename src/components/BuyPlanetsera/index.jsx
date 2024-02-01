@@ -65,13 +65,13 @@ const Index = ({ stock, onClick, itemlist }) => {
         </div>
       ) : (
         <>
-          <div className="mt-[-16px]">
+          <div className="mt-[-16px] h-[50px]">
             <BuynowBtn
               link="/cart"
               text="Proceed"
               width="130px"
               height="50px"
-              sectionClass="relatedResponsiveBtn"
+              // sectionClass="relatedResponsiveBtn"
               // onClick={() => handleAddToCart(item)}
             />
           </div>
