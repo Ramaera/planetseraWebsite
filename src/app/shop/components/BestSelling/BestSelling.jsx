@@ -39,8 +39,7 @@ const BestSelling = () => {
                     style={{
                       background: item.bgColor,
                     }}
-                    className="flex items-center  justify-center rounded-xl p-4 w-full"
-                  >
+                    className="flex items-center  justify-center rounded-xl p-4 w-full">
                     {!item?.flipkart && !item?.amazon ? (
                       <div className=" absolute z-10  m-2 justify-items-center flex items-center">
                         <img
@@ -58,8 +57,7 @@ const BestSelling = () => {
                     <div
                       className={`${
                         !item?.flipkart && !item?.amazon && " opacity-50"
-                      }  flex items-center justify-center `}
-                    >
+                      }  flex items-center justify-center `}>
                       {!item?.flipkart && !item?.amazon ? (
                         <img
                           className="relative w-48 2xl:w-64"
@@ -109,14 +107,12 @@ const BestSelling = () => {
                     />
                   ) : (
                     <BuynowBtn
-                      // link={`/products/${item?.id}`}
-                      link=""
-                      text={"Add to Cart"}
-                      width={"150px"}
-                      padding={"20px"}
-                      height={"30px"}
+                      link={`/products/${item?.id}`}
+                      text={"Buy Now"}
+                      width={"130px"}
+                      height={"40px"}
                       sectionClass="relatedResponsiveBtn"
-                      onClick={() => handleAddToCart(item)}
+                      // onClick={() => handleAddToCart(item)}
                     />
                   )}
                 </div>

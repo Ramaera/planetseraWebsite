@@ -37,6 +37,8 @@ const RelatedPtoductData = [
       "https://www.flipkart.com/planetsera-red-chilli-powder/p/itm301769743d0e6?pid=SCMGQ9KNZZZFGDHV",
     flipkart500:
       "https://www.flipkart.com/planetsera-red-chilli-powder/p/itm301769743d0e6?pid=SCMGQNF5PEHPS94Z",
+    planetsera50: "InStock",
+    planetsera100: "InStock",
     faqs: [
       {
         question:

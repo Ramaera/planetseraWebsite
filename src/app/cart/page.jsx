@@ -88,24 +88,21 @@ const Page = () => {
                     <div className="flex">
                       <div className="flex justify-between items-center text-xs sm:text-base mt-4 sm:px-3 px-1  border-2 rounded-2xl sm:w-36 w-28  ">
                         <button
-                          onClick={() => dispatch(decrementQuantity(index))}
-                        >
+                          onClick={() => dispatch(decrementQuantity(index))}>
                           <HorizontalRuleIcon className="w-5 h-5" />
                         </button>
 
                         {item.quantity}
 
                         <button
-                          onClick={() => dispatch(incrementQuantity(index))}
-                        >
+                          onClick={() => dispatch(incrementQuantity(index))}>
                           <AddIcon />
                         </button>
                       </div>
                       <div>
                         <button
                           onClick={() => handleRemoveFromCart(item)}
-                          className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base"
-                        >
+                          className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
                           Remove
                         </button>
                       </div>
@@ -124,8 +121,7 @@ const Page = () => {
       ) : (
         <div
           className="flex justify-center items-center h-screen
-        "
-        >
+        ">
           Empty cart
         </div>
       )}

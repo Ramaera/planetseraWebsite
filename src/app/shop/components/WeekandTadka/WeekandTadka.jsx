@@ -21,7 +21,7 @@ const WeekandTadka = () => {
             loading="lazy"
           />
           <h4 className="absolute text-white font-medium sm:text-5xl">
-            Weekand Ka Tadka
+            Weekend Ka Tadka
           </h4>
         </div>
         <div className="flex w-full" id="shop">

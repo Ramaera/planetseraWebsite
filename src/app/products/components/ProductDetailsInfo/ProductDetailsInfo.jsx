@@ -395,18 +395,32 @@ const ProductDetailsInfo = () => {
                   <BuyIcons
                     flipkart={specificProduct?.flipkart50}
                     amazon={specificProduct?.amazon50}
+                    planetsera={specificProduct}
                   />
                 ) : selectedButton === "100gram" ? (
                   <BuyIcons
                     flipkart={specificProduct?.flipkart100}
                     amazon={specificProduct?.amazon100}
+                    planetsera={specificProduct}
                   />
                 ) : (
                   <BuyIcons
                     flipkart={specificProduct?.flipkart500}
                     amazon={specificProduct?.amazon500}
+                    planetsera={specificProduct}
                   />
                 )}
+
+                {/* <BuynowBtn
+                  // link={`/products/${item?.id}`}
+                  link="#"
+                  text={"Add to Cart"}
+                  width={"150px"}
+                  padding={"20px"}
+                  height={"30px"}
+                  sectionClass="relatedResponsiveBtn"
+                  onClick={() => handleAddToCart(specificProduct)}
+                /> */}
 
                 <img
                   className="sm:w-[60%]"
