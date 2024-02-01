@@ -410,17 +410,18 @@ const ProductDetailsInfo = () => {
                     planetsera={specificProduct}
                   />
                 )}
-
-                {/* <BuynowBtn
-                  // link={`/products/${item?.id}`}
-                  link="#"
-                  text={"Add to Cart"}
-                  width={"150px"}
-                  padding={"20px"}
-                  height={"30px"}
-                  sectionClass="relatedResponsiveBtn"
-                  onClick={() => handleAddToCart(specificProduct)}
-                /> */}
+                {/* {show && (
+                  <BuynowBtn
+                    // link={`/products/${item?.id}`}
+                    link="#"
+                    text={"Add to Cart"}
+                    width={"150px"}
+                    padding={"20px"}
+                    height={"30px"}
+                    sectionClass="relatedResponsiveBtn"
+                    onClick={() => handleAddToCart(specificProduct)}
+                  />
+                )} */}
 
                 <img
                   className="sm:w-[60%]"

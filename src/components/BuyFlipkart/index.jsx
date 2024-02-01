@@ -6,7 +6,7 @@ const index = ({ link, home }) => {
       rel="noopener noreferrer"
       className={`${
         link &&
-        "hover:scale-105 transition-transform  border-[#1178d0] border-2 p-1 rounded-[50px]"
+        "hover:scale-105 transition-transform  border-[#1178d0] border-2 p-1 rounded-[50px] items-center justify-center h-[50px]"
       } relative `}>
       <img
         src="/images/backgrounds/flipkart.webp"

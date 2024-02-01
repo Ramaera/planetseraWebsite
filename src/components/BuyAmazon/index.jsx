@@ -6,7 +6,7 @@ const index = ({ link, home }) => {
       rel="noopener noreferrer"
       className={`${
         link &&
-        "hover:scale-105 transition-transform  border-[#000000] border-2 p-1 rounded-[50px]"
+        "hover:scale-105 transition-transform  border-[#000000] border-2 p-1 rounded-[50px]  h-[50px]"
       } relative  `}>
       <img
         src="/images/backgrounds/amazon.webp"
