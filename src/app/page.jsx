@@ -28,9 +28,9 @@ const Home = () => {
       }
     };
 
-    fetchDataAndNavigate();
+    // fetchDataAndNavigate();
   }, []);
-  console.log("asdfgh", dataProduct);
+  // console.log("asdfgh", dataProduct);
 
   useEffect(() => {
     window.scrollTo(0, 0);

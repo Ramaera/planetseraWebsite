@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client"
+import { gql } from "@apollo/client";
 
 export const CREATE_CONTACT_RESPONSE = gql(`
 mutation createUs (
@@ -18,7 +18,7 @@ mutation createUs (
     {
       name
     }
-}`)
+}`);
 
 export const CREATE_REWARD = gql(`
 mutation createPlanetseraReward (
@@ -38,4 +38,13 @@ mutation createPlanetseraReward (
     {
       rewardCode
     }
-}`)
+}`);
+
+export const LOGIN = gql(`
+mutation Login( $email: String!, $password: String!) {
+  login(data: { email: $email, password: $password }) {
+      accessToken
+      refreshToken
+  }
+}
+`);

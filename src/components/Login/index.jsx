@@ -3,9 +3,12 @@ import { IconButton, Modal } from "@mui/material";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { useSelector } from "react-redux";
 import Link from "next/link";
+import { LOGIN } from "@/apollo/queries/index";
+import { useMutation } from "@apollo/client";
 
 const Login = ({ isOpen, closeLoginModal }) => {
   const colorMe = useSelector((state) => state.colorUs.color);
+  const [login] = useMutation(LOGIN);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -19,6 +22,46 @@ const Login = ({ isOpen, closeLoginModal }) => {
     });
   };
 
+  const validateForm = () => {
+    if (!formData.email) {
+      toast.error("Email is not valid!");
+      return;
+    }
+
+    if (!formData.password) {
+      toast.error("Password is not valid!");
+      return;
+    }
+    return true;
+  };
+
+  const handleSubmit = async () => {
+    const isValid = validateForm();
+
+    if (isValid) {
+      console.log("enter");
+      try {
+        const resp = await login({
+          variables: {
+            email: formData.email,
+            password: formData.password,
+          },
+        });
+        console.log("succee");
+        const data = resp.data.login;
+        for (let key of Object.keys(data)) {
+          localStorage.setItem(key, data[key]);
+        }
+        console.log("data", data);
+        // router.reload();
+      } catch (err) {
+        console.log("err", err);
+        // toast.error(err.message);
+      }
+    }
+  };
+
+  console.log("formData", formData);
   return (
     <Modal open={isOpen} onClose={closeLoginModal}>
       <div className="flex items-center justify-center min-h-screen m-auto w-[90%] sm:w-full overflow-y-auto max-h-[60%] h-auto">
@@ -67,6 +110,9 @@ const Login = ({ isOpen, closeLoginModal }) => {
 
               <button
                 type="submit"
+                onClick={() => {
+                  handleSubmit();
+                }}
                 style={{
                   backgroundImage: `linear-gradient(to right, ${colorMe}, ${
                     colorMe + "80"
