@@ -9,9 +9,17 @@ import { notFound } from "next/navigation";
 import { Snackbar } from "@mui/material";
 import MuiAlert from "@mui/material/Alert";
 // import ShareLinkProduct from "./ShareLinkProduct";
+import { useDispatch, useSelector } from "react-redux";
+import BuynowBtn from "@/components/BuynowBtn";
+import AddIcon from "@mui/icons-material/Add";
+import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
+import { addToCart } from "@/state/slice/cartSlice";
 
 const ProductDetailsInfo = () => {
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
   const [open, setOpen] = useState(false);
+
   const handleClick = () => {
     setOpen(true);
     navigator.clipboard.writeText(window.location.toString());
@@ -58,6 +66,19 @@ const ProductDetailsInfo = () => {
   const handleSmallImageClick = (image) => {
     setSelectedMainImage(image);
     setActiveImage(image);
+  };
+
+  const handleAddToCart = () => {
+    const productId = specificProduct.id;
+    dispatch(addToCart({ id: productId, quantity: quantity }));
+  };
+
+  const handleIncrementQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleDecrementQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity > 1 && prevQuantity - 1);
   };
 
   return (
@@ -391,37 +412,50 @@ const ProductDetailsInfo = () => {
                     </button>
                   )}
                 </div>
+                <div className="flex">
+                  <div className="h-12 flex justify-between items-center text-xs sm:text-base mt-2 sm:mt-4 px-3   border-2 border-black rounded-3xl sm:w-36 w-32  mr-3">
+                    <button onClick={handleDecrementQuantity}>
+                      <HorizontalRuleIcon className="w-5 h-5" />
+                    </button>
+                    <h5 className="font-medium text-md text-slate-500">
+                      {quantity}
+                    </h5>
+
+                    <button onClick={handleIncrementQuantity}>
+                      <AddIcon />
+                    </button>
+                  </div>
+
+                  <BuynowBtn
+                    onClick={handleAddToCart}
+                    link="#"
+                    text={"Add to Cart"}
+                    width={"150px"}
+                    padding={"20px"}
+                  />
+                </div>
+                <h6 className="mt-6 font-base text-md">
+                  You Can Also Buy From Here
+                </h6>
                 {selectedButton === "50gram" ? (
                   <BuyIcons
                     flipkart={specificProduct?.flipkart50}
                     amazon={specificProduct?.amazon50}
-                    planetsera={specificProduct}
+                    // planetsera={specificProduct}
                   />
                 ) : selectedButton === "100gram" ? (
                   <BuyIcons
                     flipkart={specificProduct?.flipkart100}
                     amazon={specificProduct?.amazon100}
-                    planetsera={specificProduct}
+                    // planetsera={specificProduct}
                   />
                 ) : (
                   <BuyIcons
                     flipkart={specificProduct?.flipkart500}
                     amazon={specificProduct?.amazon500}
-                    planetsera={specificProduct}
+                    // planetsera={specificProduct}
                   />
                 )}
-                {/* {show && (
-                  <BuynowBtn
-                    // link={`/products/${item?.id}`}
-                    link="#"
-                    text={"Add to Cart"}
-                    width={"150px"}
-                    padding={"20px"}
-                    height={"30px"}
-                    sectionClass="relatedResponsiveBtn"
-                    onClick={() => handleAddToCart(specificProduct)}
-                  />
-                )} */}
 
                 <img
                   className="sm:w-[60%]"

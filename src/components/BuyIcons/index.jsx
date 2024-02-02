@@ -8,7 +8,7 @@ const index = ({ amazon, flipkart, planetsera, home = 0 }) => {
     <div className="w-full flex md:flex-nowrap flex-wrap gap-3 md:gap-7 py-2 pb-6">
       <BuyFlipkart home={home} link={flipkart} />
       <BuyAmazon home={home} link={amazon} />
-      <BuyPlanetsera itemlist={planetsera} />
+      {/* <BuyPlanetsera itemlist={planetsera} /> */}
     </div>
   );
 };

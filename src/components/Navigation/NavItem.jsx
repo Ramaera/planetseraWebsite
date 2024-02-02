@@ -8,11 +8,20 @@ import { useEffect, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
 
-// import { useSelector } from "react-redux";
 import Login from "../Login";
 
 const NavItem = ({ page }) => {
   const cartItems = useSelector((state) => state.cart.items);
+
+  // const cartItemsQuantity = cartItems.reduce(
+  //   (total, item) => total + item.quantity,
+  //   0
+  // );
+
+  let cartItemsQuantity = 0;
+  cartItems.forEach((item) => {
+    cartItemsQuantity += item.quantity;
+  });
 
   const { id } = useParams();
   const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
@@ -55,8 +64,7 @@ const NavItem = ({ page }) => {
         isVisible
           ? "	navHeader text-black border-[1px] border-slate-300	"
           : "text-white"
-      }`}
-    >
+      }`}>
       <Link className={"scale-[0.6] mb-8 sm:mt-[-0.6rem]"} href="/">
         <img className="" src="/images/logo/logo.webp" alt="logo" />
       </Link>
@@ -72,8 +80,7 @@ const NavItem = ({ page }) => {
             "black",
         }}
         id="navigation"
-        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}
-      >
+        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}>
         <li>
           <Link href="/">Home</Link>
         </li>
@@ -100,7 +107,7 @@ const NavItem = ({ page }) => {
 
         <li>
           <Link className="flex" href="/cart">
-            <Badge badgeContent={cartItems.length} color="primary">
+            <Badge badgeContent={cartItemsQuantity} color="primary">
               <ShoppingCartIcon />
             </Badge>
           </Link>

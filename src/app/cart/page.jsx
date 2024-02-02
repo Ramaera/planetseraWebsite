@@ -18,36 +18,21 @@ import {
 import BuynowBtn from "@/components/BuynowBtn";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
-// import CartData from "./CartData";
-
 const Page = () => {
-  const dispatch = useDispatch();
-  const handleRemoveFromCart = (item) => {
-    dispatch(removeFromCart(item));
-  };
-
   const CartData = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
 
-  // console.log("CartData", CartData);
-  const [cartItems, setCartItems] = useState(
-    CartData.map((item) => ({ ...item }))
-  );
-  const colorMe = useSelector((state) => state.colorUs.color);
-
-  const handleIncrement = (index) => {
-    const updatedCartItems = [...cartItems];
-    updatedCartItems[index].quantity += 1;
-    setCartItems(updatedCartItems);
+  const handleRemoveFromCart = (productId) => {
+    dispatch(removeFromCart({ id: productId }));
   };
 
-  const handleDecrement = (index) => {
-    const updatedCartItems = [...cartItems];
-    if (updatedCartItems[index].quantity > 1) {
-      updatedCartItems[index].quantity -= 1;
-      setCartItems(updatedCartItems);
-    }
+  const handleIncrementQuantity = (index) => {
+    dispatch(incrementQuantity({ index }));
   };
-  // console.log("www", CartData.length);
+
+  const handleDecrementQuantity = (index) => {
+    dispatch(decrementQuantity({ index }));
+  };
 
   return (
     <>
@@ -90,21 +75,19 @@ const Page = () => {
                     </div>
                     <div className="flex">
                       <div className="flex justify-between items-center text-xs sm:text-base mt-4 sm:px-3 px-1  border-2 rounded-2xl sm:w-36 w-28  ">
-                        <button
-                          onClick={() => dispatch(decrementQuantity(index))}>
+                        <button onClick={() => handleDecrementQuantity(index)}>
                           <HorizontalRuleIcon className="w-5 h-5" />
                         </button>
 
                         {item.quantity}
 
-                        <button
-                          onClick={() => dispatch(incrementQuantity(index))}>
+                        <button onClick={() => handleIncrementQuantity(index)}>
                           <AddIcon />
                         </button>
                       </div>
                       <div>
                         <button
-                          onClick={() => handleRemoveFromCart(item)}
+                          onClick={() => handleRemoveFromCart(item.id)}
                           className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
                           Remove
                         </button>
