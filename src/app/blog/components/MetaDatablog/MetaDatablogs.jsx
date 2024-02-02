@@ -506,6 +506,125 @@ const MetaDatablogs = () => {
           <meta name="twitter:image" content="/images/blog/blog-8.png" />
         </>
       )}
+      {/*-----------------------the-nutritional-value-of-black-pepper --------------------------------------------------- */}
+
+      {currentRoute === "/blog/the-nutritional-value-of-black-pepper" && (
+        <>
+          <title>
+            Black pepper; A Spicy Superfood Packed, with Nutritional Benefits
+          </title>
+          <meta name="text" content="planetsera" />
+          <meta
+            name="title"
+            content="Black pepper; A Spicy Superfood Packed, with Nutritional Benefits"
+          />
+          <meta
+            name="description"
+            content="Pepper, especially black pepper, is very spicy and good for you. Find out how this spice can help your health and what vitamins, minerals, and enzymes it contains. Find out how add black pepper to your food can make it better."
+          />
+          <meta name="keywords" content="" />
+          <meta name="robots" content="index,  follow" />
+          <link
+            rel="canonical"
+            href="/blog/the-nutritional-value-of-black-pepper"
+          />
+          <meta
+            property="og:url"
+            content="/blog/the-nutritional-value-of-black-pepper"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Black pepper; A Spicy Superfood Packed, with Nutritional Benefits"
+          />
+          <meta
+            property="og:description"
+            content="Pepper, especially black pepper, is very spicy and good for you. Find out how this spice can help your health and what vitamins, minerals, and enzymes it contains. Find out how add black pepper to your food can make it better."
+          />
+          <meta
+            name="og_site_name"
+            property="og:site_name"
+            content="planetsera.com"
+          />
+          <meta property="og:image" content="/images/blog/blog-9.png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="627" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="planetsera.com" />
+          <meta
+            property="twitter:url"
+            content="/blog/the-nutritional-value-of-black-pepper"
+          />
+          <meta
+            name="twitter:title"
+            content="Black pepper; A Spicy Superfood Packed, with Nutritional Benefits"
+          />
+          <meta
+            name="twitter:description"
+            content="Pepper, especially black pepper, is very spicy and good for you. Find out how this spice can help your health and what vitamins, minerals, and enzymes it contains. Find out how add black pepper to your food can make it better."
+          />
+          <meta name="twitter:image" content="/images/blog/blog-9.png" />
+        </>
+      )}
+      {currentRoute === "/blog/turmeric-based-drinks-for-health-boost" && (
+        <>
+          <title>
+            Golden Elixirs: DIY Turmeric-based Drinks for a Health Boost
+          </title>
+          <meta name="text" content="planetsera" />
+          <meta
+            name="title"
+            content="Golden Elixirs: DIY Turmeric-based Drinks for a Health Boost"
+          />
+          <meta
+            name="description"
+            content="Explore the benefits of organic haldi powder and turmeric powder. Learn about the numerous applications for these spices, their scientific basis, and why using organic turmeric powder can significantly improve your overall health."
+          />
+          <meta name="keywords" content="" />
+          <meta name="robots" content="index,  follow" />
+          <link
+            rel="canonical"
+            href="/blog/turmeric-based-drinks-for-health-boost"
+          />
+          <meta
+            property="og:url"
+            content="/blog/turmeric-based-drinks-for-health-boost"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Golden Elixirs: DIY Turmeric-based Drinks for a Health Boost"
+          />
+
+          <meta
+            property="og:description"
+            content="Explore the benefits of organic haldi powder and turmeric powder. Learn about the numerous applications for these spices, their scientific basis, and why using organic turmeric powder can significantly improve your overall health."
+          />
+          <meta
+            name="og_site_name"
+            property="og:site_name"
+            content="planetsera.com"
+          />
+          <meta property="og:image" content="/images/blog/blog-10.png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="627" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="planetsera.com" />
+          <meta
+            property="twitter:url"
+            content="/blog/turmeric-based-drinks-for-health-boost"
+          />
+          <meta
+            name="twitter:title"
+            content="Golden Elixirs: DIY Turmeric-based Drinks for a Health Boost"
+          />
+          <meta
+            name="twitter:description"
+            content="Explore the benefits of organic haldi powder and turmeric powder. Learn about the numerous applications for these spices, their scientific basis, and why using organic turmeric powder can significantly improve your overall health."
+          />
+          <meta name="twitter:image" content="/images/blog/blog-9.png" />
+        </>
+      )}
     </>
   );
 };
