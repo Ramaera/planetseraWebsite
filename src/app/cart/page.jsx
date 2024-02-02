@@ -20,6 +20,11 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Page = () => {
   const CartData = useSelector((state) => state.cart.items);
+  const cartItemsQuantity = CartData.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   const dispatch = useDispatch();
 
   const handleRemoveFromCart = (productId) => {
@@ -34,6 +39,8 @@ const Page = () => {
     dispatch(decrementQuantity({ index }));
   };
 
+  console.log("CartData", CartData);
+
   return (
     <>
       <div className="navMobile ">
@@ -47,31 +54,28 @@ const Page = () => {
             <div className="flex">
               <div className="sm:text-2xl mont-font">Cart</div>
               <div className="sm:text-xl text-slate-500 sm:p-1 px-3 mont-font">
-                {CartData.length} Items
+                {" "}
+                {cartItemsQuantity} Items
               </div>
             </div>
             <div className="cartScroll sm:w-full sm:pt-20 pt-5">
               {CartData.map((item, index) => (
                 <div className="flex sm:px-10 py-5    border-b-2 ">
                   <div className="">
-                    <img
-                      className=" sm:w-40 sm:h-32"
-                      src={item.masalaImg}
-                      alt=""
-                    />
+                    <img className=" sm:w-44 sm:h-28" src={item.image} alt="" />
                   </div>
                   <div className="mont-font sm:ml-10 ml-10   ">
                     <div>
-                      <p className="Cart sm:text-xl ">{item.masalaName}</p>
+                      <p className="Cart sm:text-xl ">{item.name}</p>
                     </div>
-                    <div className="mt-2 text-xs sm:text-base">
+                    {/* <div className="mt-2 text-xs sm:text-base">
                       <p style={{ color: "#B9BBBF" }}>
                         Pkg
                         <span className="pl-2 text-black">{item.pkg}</span>
                       </p>
-                    </div>
+                    </div> */}
                     <div className="flex sm:hidden sm:w-full sm:justify-end text-xs sm:text-base mt-3 ">
-                      {item.price}
+                      ₹ {item.price}
                     </div>
                     <div className="flex">
                       <div className="flex justify-between items-center text-xs sm:text-base mt-4 sm:px-3 px-1  border-2 rounded-2xl sm:w-36 w-28  ">

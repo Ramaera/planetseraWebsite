@@ -13,15 +13,15 @@ import Login from "../Login";
 const NavItem = ({ page }) => {
   const cartItems = useSelector((state) => state.cart.items);
 
-  // const cartItemsQuantity = cartItems.reduce(
-  //   (total, item) => total + item.quantity,
-  //   0
-  // );
+  const cartItemsQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
-  let cartItemsQuantity = 0;
-  cartItems.forEach((item) => {
-    cartItemsQuantity += item.quantity;
-  });
+  // let cartItemsQuantity = 0;
+  // cartItems.forEach((item) => {
+  //   cartItemsQuantity += item.quantity;
+  // });
 
   const { id } = useParams();
   const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);

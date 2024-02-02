@@ -70,7 +70,18 @@ const ProductDetailsInfo = () => {
 
   const handleAddToCart = () => {
     const productId = specificProduct.id;
-    dispatch(addToCart({ id: productId, quantity: quantity }));
+    const productImage = specificProduct?.ProductMasala;
+    const productName = specificProduct?.ProductName;
+    const productPrice = 100;
+    dispatch(
+      addToCart({
+        id: productId,
+        quantity: quantity,
+        image: productImage,
+        name: productName,
+        price: productPrice,
+      })
+    );
   };
 
   const handleIncrementQuantity = () => {

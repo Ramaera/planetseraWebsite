@@ -41,9 +41,10 @@ const ordersummary = () => {
     const totalPrice = calculatePrice();
     // const discountedPrice = totalPrice - discount;
     const totalPriceWithShipping = totalPrice + shipping;
-    const totalPriceAfterCoupon = totalPriceWithShipping - couponAmount;
+    // const totalPriceAfterCoupon = totalPriceWithShipping - couponAmount;
 
-    return totalPriceAfterCoupon;
+    // return totalPriceAfterCoupon;
+    return totalPriceWithShipping;
   };
 
   return (
@@ -51,8 +52,7 @@ const ordersummary = () => {
       <div className="font-mont sm:w-1/4 pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
-          className="border py-9 px-6 shadow-xl"
-        >
+          className="border py-9 px-6 shadow-xl">
           <p className="text-2xl  ">Order Summary</p>
           <div className="flex justify-between   mt-5 ">
             Items
@@ -60,7 +60,7 @@ const ordersummary = () => {
               {CartData.map((item, index) => (
                 <>
                   <div className="flex">
-                    {item?.masalaName} × {item?.quantity}
+                    {item?.name} × {item?.quantity}
                   </div>
                 </>
               ))}
@@ -128,8 +128,7 @@ const ordersummary = () => {
                   <div
                     onClick={openLoginModal}
                     className="text-white"
-                    style={{ color: colorMe, fontWeight: "bold" }}
-                  >
+                    style={{ color: colorMe, fontWeight: "bold" }}>
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
                       Proceed To Checkout
                     </div>
