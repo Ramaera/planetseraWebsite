@@ -4,6 +4,7 @@ import cartReducer from "../slice/cartSlice";
 import addressReducer from "../slice/addressSlice";
 import shipmentReducer from "../slice/shipmentSlice";
 import paymentReducer from "../slice/paymentSlice";
+import userReducer from "../slice/userSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 
@@ -15,6 +16,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   colorUs: colorUsReducer,
   cart: cartReducer,
+  user: userReducer,
   address: addressReducer,
   shipment: shipmentReducer,
   payment: paymentReducer,

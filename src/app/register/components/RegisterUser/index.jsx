@@ -5,7 +5,9 @@ import { CREATE_REWARD } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 import { ToastContainer, toast } from "react-toastify";
 import { useSelector } from "react-redux";
+import { Link } from "@mui/material";
 import "react-toastify/dist/ReactToastify.css";
+import Login from "@/components/Login";
 
 const index = () => {
   const [createPlanetseraReward] = useMutation(CREATE_REWARD);
@@ -15,6 +17,15 @@ const index = () => {
   const [code, setCode] = useState("");
   const [password, setPassword] = useState("");
   const [confetti, setConfetti] = useState(false);
+  const [loginModal, setLoginModal] = useState(false);
+
+  const openLoginModal = () => {
+    setLoginModal(true);
+  };
+
+  const closeLoginModal = () => {
+    setLoginModal(false);
+  };
   const colorMe = useSelector((state) => state.colorUs.color);
 
   const { width, height } = useWindowSize();
@@ -85,7 +96,8 @@ const index = () => {
 
               <form
                 onSubmit={(e) => submitHandler(e)}
-                className="ml-auto  bg-white h-full md:w-1/3 w-full rounded-3xl p-4 flex justify-center items-center  flex-col rounded-t-sm md:rounded-t-3xl border-red-500 border-2 	">
+                className="ml-auto  bg-white h-full md:w-1/3 w-full rounded-3xl p-4 flex justify-center items-center  flex-col rounded-t-sm md:rounded-t-3xl border-red-500 border-2 	"
+              >
                 <label htmlFor="reward" className="text-xl my-2">
                   Please Enter Reward Code
                 </label>
@@ -107,7 +119,8 @@ const index = () => {
                     background: colorMe,
                     color: "white",
                   }}
-                  className="mt-4 p-4 rounded-lg">
+                  className="mt-4 p-4 rounded-lg"
+                >
                   Submit
                 </button>
               </form>
@@ -116,10 +129,12 @@ const index = () => {
         )}
         <form
           onSubmit={(e) => rewardHandler(e)}
-          className="flex flex-col p-8 m-4 w-full md:w-1/3 bg-gray-200 rounded-2xl">
+          className="flex flex-col p-8 m-4 w-full md:w-1/3 bg-gray-200 rounded-2xl"
+        >
           {" "}
           <h1
-            className={` text-[${colorMe}] text-center text-2xl mb-4  font-medium	`}>
+            className={` text-[${colorMe}] text-center text-2xl mb-4  font-medium	`}
+          >
             Register Here
           </h1>
           <input
@@ -166,11 +181,24 @@ const index = () => {
             <button
               // type="submit"
               style={{ background: colorMe, color: "white" }}
-              className="mt-4 p-4 h-[56px] border-solid border border-white rounded-3xl	">
+              className="mt-4 p-4 h-[56px] border-solid border border-white rounded-3xl	"
+            >
               Complete your Registration
             </button>
+            <p>
+              {" "}
+              Already A User?{" "}
+              <span
+                className="text-orange-600 curosr-pointer"
+                onClick={openLoginModal}
+              >
+                {" "}
+                Click Here For Login
+              </span>
+            </p>
           </div>
         </form>
+        <Login isOpen={loginModal} closeLoginModal={closeLoginModal} />
       </div>
     </>
   );

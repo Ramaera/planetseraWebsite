@@ -11,7 +11,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 const httpLink = createHttpLink({
-  uri: "http://103.146.242.156:6770/graphql",
+  uri: "http://localhost:6770/graphql",
 });
 let ACCESSTOKEN;
 const getApolloClient = () => {

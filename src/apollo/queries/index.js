@@ -48,3 +48,10 @@ mutation Login( $email: String!, $password: String!) {
   }
 }
 `);
+
+export const GetUser = gql(`
+query GetUser {
+  me {
+   email
+  }
+}`);

@@ -14,7 +14,7 @@ import { selectShipment } from "@/state/slice/shipmentSlice";
 
 const page = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [value, setValue] = React.useState("female");
+  const [value, setValue] = React.useState("Regular Shipment");
 
   const shipmentData = useSelector((state) => state.shipment);
 

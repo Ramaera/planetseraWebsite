@@ -5,14 +5,15 @@ import { useSelector } from "react-redux";
 import Link from "next/link";
 import { LOGIN } from "@/apollo/queries/index";
 import { useMutation } from "@apollo/client";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = ({ isOpen, closeLoginModal }) => {
   const colorMe = useSelector((state) => state.colorUs.color);
   const [login] = useMutation(LOGIN);
 
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    email: "mohan.it@ramaera.in",
+    password: "1234567890",
   });
 
   const handleInputChange = (e) => {
@@ -35,7 +36,8 @@ const Login = ({ isOpen, closeLoginModal }) => {
     return true;
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    event.preventDefault();
     const isValid = validateForm();
 
     if (isValid) {
@@ -47,37 +49,38 @@ const Login = ({ isOpen, closeLoginModal }) => {
             password: formData.password,
           },
         });
-        console.log("succee");
+
         const data = resp.data.login;
         for (let key of Object.keys(data)) {
           localStorage.setItem(key, data[key]);
         }
-        console.log("data", data);
+        console.log("success");
         // router.reload();
       } catch (err) {
-        console.log("err", err);
+        toast.error(err.message);
         // toast.error(err.message);
       }
     }
   };
 
-  console.log("formData", formData);
   return (
     <Modal open={isOpen} onClose={closeLoginModal}>
       <div className="flex items-center justify-center min-h-screen m-auto w-[90%] sm:w-full overflow-y-auto max-h-[60%] h-auto">
         <div
           className="fixed inset-0 bg-gray-600 opacity-75"
-          onClick={closeLoginModal}></div>
+          onClick={closeLoginModal}
+        ></div>
         <div className="relative bg-white rounded-lg max-w-md w-full overflow-y-auto">
           <div className="relative p-8 sm:p-10 rounded-b-lg sm:rounded-r-lg">
             <IconButton
               aria-label="close"
               onClick={closeLoginModal}
-              className="absolute top-2 right-2 ">
+              className="absolute top-2 right-2 "
+            >
               <CancelIcon sx={{ color: "lightGrey", fontSize: 30 }} />
             </IconButton>
             <h2 className="text-2xl sm:text-4xl font-bold text-slate-800 text-center">
-              Welecome Back
+              Welcome Back , Login
             </h2>
             <img src="/images/logo/logo.webp" className="mx-auto my-4" />
             <h3 className="mb-2 text-xl sm:text-xl font-semibold text-slate-600  ">
@@ -118,20 +121,23 @@ const Login = ({ isOpen, closeLoginModal }) => {
                     colorMe + "80"
                   })`,
                 }}
-                className="text-white rounded-lg py-2 px-4 w-full font-semibold sm:text-xl">
+                className="text-white rounded-lg py-2 px-4 w-full font-semibold sm:text-xl"
+              >
                 Log In
               </button>
             </form>
             <p className="text-slate-600 text-sm mt-4 text-right">
-              If not a register?{" "}
+              If not a User?{" "}
               <Link
                 href={"/register"}
-                style={{ color: colorMe, fontWeight: "bold" }}>
+                style={{ color: colorMe, fontWeight: "bold" }}
+              >
                 Register Now
               </Link>
             </p>
           </div>
         </div>
+        <Toaster />
       </div>
     </Modal>
   );

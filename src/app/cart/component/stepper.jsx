@@ -20,6 +20,7 @@ const steps = ["Address ", "Shipping ", "Payment "];
 export default function HorizontalLinearStepper() {
   const router = useRouter();
   const addressesData = useSelector((state) => state.address);
+  console.log(addressesData.selectedAddress);
   const shipmentData = useSelector((state) => state.shipment);
   const paymentData = useSelector((state) => state.payment);
 
@@ -122,8 +123,9 @@ export default function HorizontalLinearStepper() {
               onClick={handleNextPage}
               disabled={
                 addressesData.selectedAddress == null ||
-                shipmentData.shippingMethod == null ||
-                paymentData.selectedPayment == null
+                activeStep === steps.length - 1
+                // shipmentData.shippingMethod == null ||
+                // paymentData.selectedPayment == null
               }
             >
               {activeStep === steps.length - 1 ? "Finish" : "Proceed"}

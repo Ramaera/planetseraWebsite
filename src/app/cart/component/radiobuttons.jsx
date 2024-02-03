@@ -32,7 +32,7 @@ export default function ControlledRadioButtonsGroup() {
         onChange={handleChange}
       >
         <div className="w-full">
-          {addressesData.allAddresses.map((_address) => (
+          {addressesData?.allAddresses?.map((_address) => (
             <div className="flex w-full justify-between my-8">
               <div className="sm:w-8/12  ">
                 <FormControlLabel

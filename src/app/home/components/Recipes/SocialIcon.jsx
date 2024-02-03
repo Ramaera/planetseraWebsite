@@ -1,5 +1,6 @@
 export const SocialIcon = [
   {
+    id: 1,
     shareIcon: "images/backgrounds/share.webp",
     commentIcon: "images/backgrounds/comment.webp",
     likeIcon: "images/backgrounds/like.webp",
@@ -8,6 +9,7 @@ export const SocialIcon = [
   },
 
   {
+    id: 2,
     shareIcon: "images/backgrounds/share.webp",
     commentIcon: "images/backgrounds/comment.webp",
     likeIcon: "images/backgrounds/like.webp",
@@ -16,6 +18,7 @@ export const SocialIcon = [
   },
 
   {
+    id: 3,
     shareIcon: "images/backgrounds/share.webp",
     commentIcon: "images/backgrounds/comment.webp",
     likeIcon: "images/backgrounds/like.webp",
