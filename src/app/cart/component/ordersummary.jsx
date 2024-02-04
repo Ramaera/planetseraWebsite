@@ -17,9 +17,9 @@ const ordersummary = () => {
   const [discount, setDiscount] = useState(56);
   const [shipping, setShipping] = useState(30);
   const [couponAmount, setCouponAmount] = useState(20);
+  const user = useSelector((state) => state?.user);
   const [registered, setRegistered] = useState(true);
   const [loginModal, setLoginModal] = useState(false);
-
   const openLoginModal = () => {
     setLoginModal(true);
   };
@@ -27,8 +27,14 @@ const ordersummary = () => {
   const closeLoginModal = () => {
     setLoginModal(false);
   };
+  const getData = () => {
+    return useSelector((state) => state?.user);
+  };
+  // useEffect(() => {
+  //   const user = getData();
+  // }, []);
 
-  // console.log("cartItems", cartItems);
+  console.log("cartItems", user);
 
   const calculatePrice = () => {
     return CartData.reduce(
@@ -52,7 +58,8 @@ const ordersummary = () => {
       <div className="font-mont sm:w-1/4 pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
-          className="border py-9 px-6 shadow-xl">
+          className="border py-9 px-6 shadow-xl"
+        >
           <p className="text-2xl  ">Order Summary</p>
           <div className="flex justify-between   mt-5 ">
             Items
@@ -115,7 +122,7 @@ const ordersummary = () => {
                   ),
                 }}
               /> */}
-              {registered ? (
+              {Object.keys(user).length !== 0 ? (
                 <>
                   <Link href="/cart/shippingDetail" className="text-white">
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor  py-3">
@@ -128,7 +135,8 @@ const ordersummary = () => {
                   <div
                     onClick={openLoginModal}
                     className="text-white"
-                    style={{ color: colorMe, fontWeight: "bold" }}>
+                    style={{ color: colorMe, fontWeight: "bold" }}
+                  >
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
                       Proceed To Checkout
                     </div>

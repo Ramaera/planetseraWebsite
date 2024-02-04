@@ -11,13 +11,12 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 const httpLink = createHttpLink({
-  uri: "http://localhost:6770/graphql",
+  uri: process.env.NEXT_PUBLIC_API_URL,
 });
 let ACCESSTOKEN;
 const getApolloClient = () => {
   if (typeof window !== "undefined") {
     ACCESSTOKEN = localStorage.getItem("accessToken");
-    //console.log("!@£$", ACCESSTOKEN)
   }
   return new ApolloClient({
     link: authLink.concat(httpLink),

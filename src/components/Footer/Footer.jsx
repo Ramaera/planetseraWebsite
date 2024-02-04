@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <>
       {/* <FooterTop /> */}
-      <footer className="bg-black bottom-0 ">
+      <footer className="bg-black bottom-0">
         <div className="mx-auto w-full px-8 py-6 pb-4 ">
           <div className="md:flex md:justify-between">
             <div className="mb-4 md:mb-0 justify-center md:justify-center md:items-start md:w-[30%] flex">

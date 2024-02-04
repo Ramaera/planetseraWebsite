@@ -13,7 +13,6 @@ import Login from "../Login";
 const NavItem = ({ page }) => {
   const cartItems = useSelector((state) => state.cart.items);
   const user = useSelector((state) => state?.user);
-
   const cartItemsQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
@@ -115,7 +114,7 @@ const NavItem = ({ page }) => {
             </Badge>
           </Link>
         </li>
-        {!user && (
+        {Object.keys(user).length === 0 && (
           <li className="mr-1 cursor-pointer" onClick={openLoginModal}>
             Login
           </li>

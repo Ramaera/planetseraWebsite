@@ -51,8 +51,6 @@ const address = () => {
   };
 
   const handleSaveAndDeliverClick = () => {
-    // console.log(formData);
-    // Check if all required fields are filled
     if (
       formData.name &&
       formData.mobile &&
@@ -61,10 +59,7 @@ const address = () => {
       formData.pinCode &&
       formData.address
     ) {
-      console.log("savng");
-
       dispatch(saveAddress(formData));
-      console.log("end");
     } else {
       alert("Please fill in all required fields");
     }

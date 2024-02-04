@@ -16,7 +16,6 @@ export default function ControlledRadioButtonsGroup() {
   const addressesData = useSelector((state) => state.address);
   const dispatch = useDispatch();
 
-  console.log("addressesData", addressesData);
   const handleChange = (event) => {
     dispatch(selectAddress(event.target.value));
   };

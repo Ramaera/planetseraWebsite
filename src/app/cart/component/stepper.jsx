@@ -20,7 +20,6 @@ const steps = ["Address ", "Shipping ", "Payment "];
 export default function HorizontalLinearStepper() {
   const router = useRouter();
   const addressesData = useSelector((state) => state.address);
-  console.log(addressesData.selectedAddress);
   const shipmentData = useSelector((state) => state.shipment);
   const paymentData = useSelector((state) => state.payment);
 

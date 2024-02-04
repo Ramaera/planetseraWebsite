@@ -68,17 +68,12 @@ const page = () => {
       formData.cvv &&
       formData.cardholderName
     ) {
-      // console.log("strt");
-
       dispatch(saveCard(formData));
-      // console.log("aftr");
     } else {
       alert("Please fill in all required fields");
     }
     clearForm();
   };
-
-  // console.log("ads", formData);
 
   return (
     <>

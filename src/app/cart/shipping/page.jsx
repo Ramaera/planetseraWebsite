@@ -39,7 +39,11 @@ const page = () => {
             <RadioGroup
               aria-labelledby="demo-controlled-radio-buttons-group"
               name="controlled-radio-buttons-group"
-              value={shipmentData.shippingMethod}
+              value={
+                shipmentData.shippingMethod
+                  ? shipmentData.shippingMethod
+                  : value
+              }
               onChange={handleChange}
             >
               <div className=" pb-5 pt-5 flex justify-between w-full border-b-2 items-center ">

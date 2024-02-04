@@ -16,6 +16,7 @@ const NavigationMobile = ({ page }) => {
   const currentRoute = usePathname();
 
   const colorMe = useSelector((state) => state.colorUs.color);
+  const user = useSelector((state) => state?.user);
 
   const dispatch = useDispatch();
 
@@ -187,22 +188,24 @@ const NavigationMobile = ({ page }) => {
                   Cart
                 </Link>
               </li>
+              {Object.keys(user).length === 0 && (
+                <li>
+                  <Link
+                    onClick={openLoginModal}
+                    href=""
+                    passHref
+                    cursor-pointer
+                    className="px-4 py-2 flex w-full rounded-md "
+                    style={{
+                      color: currentRoute === "/login" && colorMe,
+                      fontWeight: currentRoute === "/login" && 600,
+                    }}
+                  >
+                    Login
+                  </Link>
+                </li>
+              )}
 
-              <li>
-                <Link
-                  onClick={openLoginModal}
-                  href=""
-                  passHref
-                  cursor-pointer
-                  className="px-4 py-2 flex w-full rounded-md "
-                  style={{
-                    color: currentRoute === "/login" && colorMe,
-                    fontWeight: currentRoute === "/login" && 600,
-                  }}
-                >
-                  Login
-                </Link>
-              </li>
               <Login isOpen={loginModal} closeLoginModal={closeLoginModal} />
             </ul>
           </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 const FooterEnd = () => {
   return (
-    <div className="flex footer-end justify-around">
+    <div className="flex footer-end justify-around bottom-0">
       <div className="lg:basis-9/12 lg:h-36 social-container bg-[#0D0D0D] flex justify-around">
         <div className="basis-12/12 footAli">
           <div className="basis-4/12 flex justify-center">

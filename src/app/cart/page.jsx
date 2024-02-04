@@ -39,8 +39,6 @@ const Page = () => {
     dispatch(decrementQuantity({ index }));
   };
 
-  console.log("CartData", CartData);
-
   return (
     <>
       <div className="navMobile ">
@@ -92,7 +90,8 @@ const Page = () => {
                       <div>
                         <button
                           onClick={() => handleRemoveFromCart(item.id)}
-                          className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
+                          className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base"
+                        >
                           Remove
                         </button>
                       </div>

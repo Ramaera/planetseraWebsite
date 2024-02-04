@@ -30,7 +30,6 @@ const Home = () => {
 
     // fetchDataAndNavigate();
   }, []);
-  // console.log("asdfgh", dataProduct);
 
   useEffect(() => {
     window.scrollTo(0, 0);

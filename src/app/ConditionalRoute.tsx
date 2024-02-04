@@ -13,7 +13,6 @@ const ConditionalRoute = ({ children }) => {
   const router = useRouter();
   const pathname = usePathname();
   const userResp = useQuery(GetUser);
-  console.log("-->>", userResp);
   const dispatch = useDispatch();
   const loadUser = async () => {
     try {
@@ -23,8 +22,7 @@ const ConditionalRoute = ({ children }) => {
       if (userResp.error && userResp.error.graphQLErrors) {
         for (let error of userResp.error.graphQLErrors) {
           if (error.extensions.code === "UNAUTHENTICATED") {
-            // localStorage.clear();
-            console.log("not found");
+            localStorage.clear();
           }
         }
       }
@@ -32,7 +30,7 @@ const ConditionalRoute = ({ children }) => {
     return null;
   };
   const handleRoutes = async () => {
-    if (!isAuthenticated && pathname.toLowerCase() === "/cart/shippingDetail") {
+    if (!isAuthenticated && pathname.toLowerCase() === "/cart/shippingdetail") {
       router.replace("/register");
     } else if (isAuthenticated && pathname.toLowerCase() == "/register") {
       router.replace("/");
@@ -46,7 +44,6 @@ const ConditionalRoute = ({ children }) => {
       setLoading(false);
     }
     const user = await loadUser();
-    console.log("its a final user", user);
     if (user) {
       setAuthenticated(true);
       dispatch(setOrUpdateUser(user));

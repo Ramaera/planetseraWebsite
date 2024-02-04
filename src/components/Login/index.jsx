@@ -6,10 +6,13 @@ import Link from "next/link";
 import { LOGIN } from "@/apollo/queries/index";
 import { useMutation } from "@apollo/client";
 import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const Login = ({ isOpen, closeLoginModal }) => {
   const colorMe = useSelector((state) => state.colorUs.color);
+  const [hide, setHide] = useState(closeLoginModal);
   const [login] = useMutation(LOGIN);
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     email: "mohan.it@ramaera.in",
@@ -41,7 +44,6 @@ const Login = ({ isOpen, closeLoginModal }) => {
     const isValid = validateForm();
 
     if (isValid) {
-      console.log("enter");
       try {
         const resp = await login({
           variables: {
@@ -54,8 +56,9 @@ const Login = ({ isOpen, closeLoginModal }) => {
         for (let key of Object.keys(data)) {
           localStorage.setItem(key, data[key]);
         }
-        console.log("success");
-        // router.reload();
+
+        closeLoginModal();
+        router.refresh();
       } catch (err) {
         toast.error(err.message);
         // toast.error(err.message);
