@@ -15,9 +15,12 @@ export const userSlice = createSlice({
       state.data = action.payload;
     },
     logout: (state) => {
-      state.data = null;
+
+      state.data = undefined;
       localStorage.clear();
+
       window.location.reload();
+      return initialState
     },
   },
 });

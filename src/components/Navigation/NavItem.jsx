@@ -7,16 +7,22 @@ import RelatedPtoductData from "@/app/products/components/RelatedProducts/Relate
 import { useEffect, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Logout from "../Logout";
 
 import Login from "../Login";
 
 const NavItem = ({ page }) => {
   const cartItems = useSelector((state) => state.cart.items);
   const user = useSelector((state) => state?.user);
+
   const cartItemsQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
   );
+  useEffect(() => {}, []);
+
+  console.log("Object.keys(user)", user);
 
   // let cartItemsQuantity = 0;
   // cartItems.forEach((item) => {
@@ -27,13 +33,24 @@ const NavItem = ({ page }) => {
   const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const [isVisible, setIsVisible] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
+  const [logoutModal, setLogoutModal] = useState(false);
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
   const openLoginModal = () => {
     setLoginModal(true);
   };
+  const openLogoutModal = () => {
+    setLogoutModal(true);
+  };
 
   const closeLoginModal = () => {
     setLoginModal(false);
+  };
+  const closeLogoutModal = () => {
+    setLogoutModal(false);
   };
 
   const dispatch = useDispatch();
@@ -114,13 +131,18 @@ const NavItem = ({ page }) => {
             </Badge>
           </Link>
         </li>
-        {Object.keys(user).length === 0 && (
+        {true ? (
           <li className="mr-1 cursor-pointer" onClick={openLoginModal}>
             Login
+          </li>
+        ) : (
+          <li>
+            <AccountCircleIcon onClick={openLogoutModal} />
           </li>
         )}
 
         <Login isOpen={loginModal} closeLoginModal={closeLoginModal} />
+        <Logout isOpen={logoutModal} closeLoginModal={closeLogoutModal} />
       </ul>
     </div>
   );
