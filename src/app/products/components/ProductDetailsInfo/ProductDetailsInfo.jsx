@@ -14,6 +14,7 @@ import BuynowBtn from "@/components/BuynowBtn";
 import AddIcon from "@mui/icons-material/Add";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import { addToCart } from "@/state/slice/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
 
 const ProductDetailsInfo = () => {
   const dispatch = useDispatch();
@@ -82,6 +83,16 @@ const ProductDetailsInfo = () => {
         price: productPrice,
       })
     );
+    toast.success("Item Added To Your Cart", {
+      position: "top-center",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   const handleIncrementQuantity = () => {
@@ -444,6 +455,7 @@ const ProductDetailsInfo = () => {
                     width={"150px"}
                     padding={"20px"}
                   />
+                  <ToastContainer />
                 </div>
                 <h6 className="mt-6 font-base text-md">
                   You Can Also Buy From Here

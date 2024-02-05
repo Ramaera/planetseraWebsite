@@ -9,6 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import disableScroll from "disable-scroll";
 import Login from "../Login";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from "@mui/material/Badge";
 
 usePathname;
 const NavigationMobile = ({ page }) => {
@@ -17,6 +19,12 @@ const NavigationMobile = ({ page }) => {
 
   const colorMe = useSelector((state) => state.colorUs.color);
   const user = useSelector((state) => state?.user);
+
+  const cartItems = useSelector((state) => state.cart.items);
+  const cartItemsQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   const dispatch = useDispatch();
 
@@ -90,8 +98,7 @@ const NavigationMobile = ({ page }) => {
           <div id="mobilenavigation">
             <ul
               className="px-8 py-4 mx-4  "
-              style={{ borderColor: `${colorMe}` }}
-            >
+              style={{ borderColor: `${colorMe}` }}>
               <li>
                 <Link
                   href="/"
@@ -101,8 +108,7 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/" && colorMe,
                     fontWeight: currentRoute === "/" && 600,
-                  }}
-                >
+                  }}>
                   Home
                 </Link>
               </li>
@@ -114,8 +120,7 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/product" && colorMe,
                     fontWeight: currentRoute === "/product" && 600,
-                  }}
-                >
+                  }}>
                   Product
                 </Link>
               </li>
@@ -128,8 +133,7 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/shop" && colorMe,
                     fontWeight: currentRoute === "/shop" && 600,
-                  }}
-                >
+                  }}>
                   Shop
                 </Link>
               </li>
@@ -142,8 +146,7 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/about" && colorMe,
                     fontWeight: currentRoute === "/about" && 600,
-                  }}
-                >
+                  }}>
                   About
                 </Link>
               </li>
@@ -156,8 +159,7 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/blog" && colorMe,
                     fontWeight: currentRoute === "/blog" && 600,
-                  }}
-                >
+                  }}>
                   Blog
                 </Link>
               </li>
@@ -170,8 +172,7 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/contact-us" && colorMe,
                     fontWeight: currentRoute === "/contact-us" && 600,
-                  }}
-                >
+                  }}>
                   Contact Us
                 </Link>
               </li>
@@ -183,9 +184,12 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/cart" && colorMe,
                     fontWeight: currentRoute === "/cart" && 600,
-                  }}
-                >
+                    alignItems: "center",
+                  }}>
                   Cart
+                  <Badge badgeContent={cartItemsQuantity} color="primary">
+                    <ShoppingCartIcon sx={{ marginLeft: 1 }} />
+                  </Badge>
                 </Link>
               </li>
               {Object.keys(user).length === 0 && (
@@ -199,8 +203,7 @@ const NavigationMobile = ({ page }) => {
                     style={{
                       color: currentRoute === "/login" && colorMe,
                       fontWeight: currentRoute === "/login" && 600,
-                    }}
-                  >
+                    }}>
                     Login
                   </Link>
                 </li>
