@@ -17,8 +17,8 @@ const Login = ({ isOpen, closeLoginModal }) => {
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
-    email: "mohan.it@ramaera.in",
-    password: "1234567890",
+    email: "",
+    password: "",
   });
 
   const handleInputChange = (e) => {
