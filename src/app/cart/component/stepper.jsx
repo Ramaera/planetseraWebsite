@@ -70,7 +70,7 @@ export default function HorizontalLinearStepper() {
   }
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <div className="w-full ">
       <div className="flex">
         {steps.map((label, index) => (
           <Step key={label}>
@@ -81,8 +81,7 @@ export default function HorizontalLinearStepper() {
                   : index === activeStep
                   ? "text-gray-900"
                   : "text-gray-300"
-              } sm:px-10 px-2 sm:text-3xl text-xl flex sm:flex-none sm:font-medium`}
-            >
+              } sm:pr-10 px-1 sm:text-3xl text-xl flex sm:flex-none sm:font-medium`}>
               {label}
               {index < steps.length - 1 && (
                 <ArrowForwardIosIcon className="sm:ml-16 sm:mt-2 mt-1 ml-2 " />
@@ -107,32 +106,32 @@ export default function HorizontalLinearStepper() {
               flexDirection: "row",
               pt: 3,
               width: "100%",
-            }}
-          >
+              // pl: 4,
+            }}>
             <Button
+              variant="outlined"
               color="inherit"
               disabled={activeStep === 0}
               onClick={handleBack}
-              sx={{ mr: 1 }}
-            >
+              sx={{ mr: 1 }}>
               Back
             </Button>
             <Box sx={{ flex: "1 1 auto" }} />
             <Button
+              variant="outlined"
               onClick={handleNextPage}
               disabled={
                 addressesData.selectedAddress == null ||
                 activeStep === steps.length - 1
                 // shipmentData.shippingMethod == null ||
                 // paymentData.selectedPayment == null
-              }
-            >
+              }>
               {activeStep === steps.length - 1 ? "Finish" : "Proceed"}
             </Button>
           </Box>
         </React.Fragment>
       )}
       {customComponent}
-    </Box>
+    </div>
   );
 }

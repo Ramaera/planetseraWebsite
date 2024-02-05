@@ -10,6 +10,7 @@ import { client } from "@/apollo";
 import AddIcon from "@mui/icons-material/Add";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import { useDispatch } from "react-redux";
+import Link from "next/link";
 import {
   removeFromCart,
   incrementQuantity,
@@ -47,7 +48,7 @@ const Page = () => {
 
       <NavItem page={"cart"} />
       {CartData.length > 0 ? (
-        <div className=" sm:p-32 py-16 mt-10 sm:mt-0 px-3 sm:flex w-full sm:justify-between font-mont ">
+        <div className="sm:p-32 py-16 mt-10 sm:mt-0 px-3 sm:flex w-full sm:justify-between font-mont sm:min-h-[76vh]">
           <div className="sm:w-4/6">
             <div className="flex">
               <div className="sm:text-2xl mont-font">Cart</div>
@@ -60,11 +61,19 @@ const Page = () => {
               {CartData.map((item, index) => (
                 <div className="flex sm:px-10 py-5    border-b-2 ">
                   <div className="">
-                    <img className=" sm:w-44 sm:h-28" src={item.image} alt="" />
+                    <Link href={`/products/${item.id}`}>
+                      <img
+                        className="w-24 sm:w-44 "
+                        src={item.image}
+                        alt="PlanetsEra Spices"
+                      />
+                    </Link>
                   </div>
                   <div className="mont-font sm:ml-10 ml-10   ">
                     <div>
-                      <p className="Cart sm:text-xl ">{item.name}</p>
+                      <Link href={`/products/${item.id}`}>
+                        <p className="Cart sm:text-xl ">{item.name}</p>
+                      </Link>
                     </div>
                     {/* <div className="mt-2 text-xs sm:text-base">
                       <p style={{ color: "#B9BBBF" }}>
@@ -90,8 +99,7 @@ const Page = () => {
                       <div>
                         <button
                           onClick={() => handleRemoveFromCart(item.id)}
-                          className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base"
-                        >
+                          className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
                           Remove
                         </button>
                       </div>

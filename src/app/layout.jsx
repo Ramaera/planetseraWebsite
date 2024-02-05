@@ -56,8 +56,7 @@ export default function RootLayout({ children }) {
         </Script>
 
         <body
-          className={`${inter.className} ${montserrat.variable} font-Montserrat`}
-        >
+          className={`${inter.className} ${montserrat.variable} font-Montserrat`}>
           <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
               <ConditionalRoute>{children}</ConditionalRoute>
