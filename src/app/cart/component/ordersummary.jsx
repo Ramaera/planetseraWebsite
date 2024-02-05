@@ -34,8 +34,6 @@ const ordersummary = () => {
   //   const user = getData();
   // }, []);
 
-  console.log("cartItems", user);
-
   const calculatePrice = () => {
     return CartData.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -122,7 +120,7 @@ const ordersummary = () => {
                   ),
                 }}
               /> */}
-              {Object.keys(user).length !== 0 ? (
+              {user.data ? (
                 <>
                   <Link href="/cart/shippingDetail" className="text-white">
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor  py-3">

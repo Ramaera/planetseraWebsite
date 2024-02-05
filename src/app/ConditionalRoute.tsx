@@ -59,7 +59,7 @@ const ConditionalRoute = ({ children }) => {
     if (!isLoading) {
       handleRoutes();
     }
-  }, [isLoading, pathname, isAuthenticated]);
+  }, [isLoading, isAuthenticated]);
 
   return <>{!isLoading && isAuthFinished ? children : null}</>;
 };

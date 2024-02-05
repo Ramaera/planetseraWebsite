@@ -20,8 +20,6 @@ const NavItem = ({ page }) => {
     (total, item) => total + item.quantity,
     0
   );
-  useEffect(() => {}, []);
-
   console.log("Object.keys(user)", user);
 
   // let cartItemsQuantity = 0;
@@ -34,6 +32,7 @@ const NavItem = ({ page }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [logoutModal, setLogoutModal] = useState(false);
+  console.log("Object.keys(user).length", user.data);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -59,6 +58,7 @@ const NavItem = ({ page }) => {
   const changeColor = () => {
     dispatch(changeColor("#ff4f4f"));
   };
+  useEffect(() => {}, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -131,7 +131,7 @@ const NavItem = ({ page }) => {
             </Badge>
           </Link>
         </li>
-        {true ? (
+        {!user.data ? (
           <li className="mr-1 cursor-pointer" onClick={openLoginModal}>
             Login
           </li>

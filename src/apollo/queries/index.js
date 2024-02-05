@@ -45,6 +45,10 @@ mutation Login( $email: String!, $password: String!) {
   login(data: { email: $email, password: $password }) {
       accessToken
       refreshToken
+      user{
+        name
+        email
+      }
   }
 }
 `);

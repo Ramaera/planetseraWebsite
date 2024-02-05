@@ -61,9 +61,9 @@ export default function RootLayout({ children }) {
           <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
               <ConditionalRoute>{children}</ConditionalRoute>
+              <Footer />
             </PersistGate>
             <ScrollToTopButton />
-            <Footer />
           </Provider>
         </body>
       </ApolloProvider>
