@@ -61,7 +61,7 @@ const LatestBlog = () => {
                           {item?.blogName}
                         </h5>
                       </Link>
-                      <p>{item?.blogDetail.slice(0, 130)} . . .</p>
+                      <p>{item?.blogDetail?.slice(0, 130)} . . .</p>
                       <Link href={`/blog/${item.id}`}>
                         <h6 className="mt-2 text-gray-600 font-semibold">
                           Read More
