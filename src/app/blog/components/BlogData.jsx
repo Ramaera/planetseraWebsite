@@ -2,210 +2,231 @@
 import Link from "next/link";
 const BlogData = [
   // --------------  RecentBlog  -------------------------------------------------------------------
-  // {
-  //   id: "red-chilli-powder-in-everyday-cooking",
-  //   category: "MouthWatering",
-  //   categoryName: "BestSelling",
-  //   type: "RecentBlog",
-  //   blogDate: "28-Jan-2024",
-  //   blogImg: "/images/blog/blog-11.png",
-  //   blogName:
-  //     "From Spice Rack to Table: Creative Uses of Red Chilli Powder in Everyday Cooking",
+  {
+    id: "red-chilli-powder-in-everyday-cooking",
+    category: "MouthWatering",
+    categoryName: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "28-Jan-2024",
+    blogImg: "/images/blog/blog-11.png",
+    blogName:
+      "From Spice Rack to Table: Creative Uses of Red Chilli Powder in Everyday Cooking",
 
-  //   blogDescription: [
-  //     {
-  //       blogList: "The Fiery Allure of Red Chilli Powder",
-  //       blogListAbout: (
-  //         <>
-  //           In the culinary world, few ingredients possess the power to
-  //           transform dishes like red chilli powder. Known as lal mirch powder
-  //           in Hindi, this spice is a staple in kitchens worldwide, adding a
-  //           fiery kick that elevates the flavor profile of diverse cuisines.
-  //           Join us on a journey from the spice rack to the table as we explore
-  //           the creative uses of red chilli powder, with a special spotlight on
-  //           Planetsera chili powder—an embodiment of quality and spice.
-  //         </>
-  //       ),
-  //     },
+    blogDescription: [
+      {
+        blogList: "The Fiery Allure of Red Chilli Powder",
+        blogListAbout: (
+          <>
+            In the culinary world, few ingredients possess the power to
+            transform dishes like red chilli powder. Known as lal mirch powder
+            in Hindi, this spice is a staple in kitchens worldwide, adding a
+            fiery kick that elevates the flavor profile of diverse cuisines.
+            Join us on a journey from the spice rack to the table as we explore
+            the creative uses of red chilli powder, with a special spotlight on
+            Planetsera chili powder—an embodiment of quality and spice.
+          </>
+        ),
+      },
 
-  //     {
-  //       blogList: "Section 1: The Dynamic Universe of Red Chilli Powder",
-  //       blogListAbout: (
-  //         <>
-  //           <p className=" font-semibold mt-3 ">
-  //             1. Understanding Red Chilli Powder:
-  //             <ul className="text-base  mt-2 ml-5">
-  //               <li>1 cup of milk (dairy or plant-based)</li>
-  //               <li>1 teaspoon of organic turmeric powder</li>
-  //               <li>1/2 teaspoon of cinnamon</li>
-  //               <li>A pinch of black pepper</li>
-  //               <li>Sweetener of choice (honey, maple syrup)</li>
-  //             </ul>
-  //           </p>
-  //           <p className="text-xl font-semibold mt-3 ml-5">
-  //             • <span>Instructions:</span>
-  //             <ul className="text-base  mt-2 ml-5">
-  //               <li>Heat the milk in a saucepan.</li>
-  //               <li>Add turmeric powder, cinnamon, and black pepper.</li>
-  //               <li>Stir well and let it simmer for a few minutes.</li>
-  //               <li>Sweeten to taste with honey or maple syrup.</li>
-  //               <li>Strain and enjoy your comforting golden elixir.</li>
-  //             </ul>
-  //           </p>
-  //         </>
-  //       ),
-  //     },
-  //     {
-  //       blogList: "2. Turmeric Tea Infusion:",
-  //       blogListAbout: (
-  //         <>
-  //           <p className="text-xl font-semibold mt-3 ml-5">
-  //             • <span>Ingredients:</span>
-  //             <ul className="text-base  mt-2 ml-5">
-  //               <li>1 teaspoon of organic haldi powder</li>
-  //               <li>1 cup of hot water</li>
-  //               <li>Fresh ginger slices</li>
-  //               <li>Lemon wedge</li>
-  //               <li>Optional: a dash of cayenne pepper for extra warmth</li>
-  //             </ul>
-  //           </p>
-  //           <p className="text-xl font-semibold mt-3 ml-5">
-  //             • <span>Instructions:</span>
-  //             <ul className="text-base  mt-2 ml-5">
-  //               <li>
-  //                 Steep turmeric powder and fresh ginger slices in hot water.
-  //               </li>
-  //               <li>Squeeze in a lemon wedge.</li>
-  //               <li>
-  //                 Optional: Add a dash of cayenne pepper for a spicy kick.
-  //               </li>
-  //               <li>Strain and sip on this invigorating turmeric tea.</li>
-  //             </ul>
-  //           </p>
-  //         </>
-  //       ),
-  //     },
-  //     {
-  //       blogList: "3. Turmeric Smoothie Bliss:        ",
-  //       blogListAbout: (
-  //         <>
-  //           <p className="text-xl font-semibold mt-3 ml-5">
-  //             • <span>Ingredients:</span>
-  //             <ul className="text-base  mt-2 ml-5">
-  //               <li>1 banana</li>
-  //               <li>1/2 cup pineapple chunks</li>
-  //               <li>1/2 teaspoon of organic turmeric powder</li>
-  //               <li>1/2 teaspoon of grated fresh ginger</li>
-  //               <li>1 cup of coconut water or almond milk</li>
-  //               <li>Ice cubes</li>
-  //             </ul>
-  //           </p>
-  //           <p className="text-xl font-semibold mt-3 ml-5">
-  //             • <span>Instructions:</span>
-  //             <ul className="text-base  mt-2 ml-5">
-  //               <li>Blend all ingredients until smooth.</li>
-  //               <li>
-  //                 Pour into a glass and savor the tropical flavors with the
-  //                 goodness of turmeric.
-  //               </li>
-  //             </ul>
-  //           </p>
-  //         </>
-  //       ),
-  //     },
-  //     {
-  //       blogList: "Creative Turmeric Uses Beyond the Cup: ",
-  //     },
-  //     {
-  //       blogList: "1. Turmeric Latte Popsicles:",
-  //       blogListAbout: (
-  //         <>
-  //           <p className="text-xl font-semibold mt-3 ml-5">
-  //             • <span>Ingredients:</span>
-  //             <ul className="text-base  mt-2 ml-5">
-  //               <li>1 cup of coconut milk</li>
-  //               <li>1 teaspoon of organic haldi powder</li>
-  //               <li>2 tablespoons of honey or agave syrup</li>
-  //             </ul>
-  //           </p>
-  //           <p className="text-xl font-semibold mt-3 ml-5">
-  //             • <span>Instructions:</span>
-  //             <ul className="text-base  mt-2 ml-5">
-  //               <li>Mix all ingredients thoroughly.</li>
-  //               <li>Pour into popsicle molds and freeze overnight.</li>
-  //               <li>Enjoy a refreshing turmeric-infused treat.</li>
-  //             </ul>
-  //           </p>
-  //         </>
-  //       ),
-  //     },
-  //     {
-  //       blogList: "2. Turmeric Citrus Spritzer:",
-  //       blogListAbout: (
-  //         <>
-  //           <p className="text-xl font-semibold mt-3 ml-5">
-  //             • <span>Ingredients:</span>
-  //             <ul className="text-base  mt-2 ml-5">
-  //               <li>Sparkling water</li>
-  //               <li>1 teaspoon of turmeric powder</li>
-  //               <li>Orange or grapefruit slices</li>
-  //             </ul>
-  //           </p>
-  //           <p className="text-xl font-semibold mt-3 ml-5">
-  //             • <span>Instructions:</span>
-  //             <ul className="text-base  mt-2 ml-5">
-  //               <li>Add turmeric powder to sparkling water.</li>
-  //               <li>Garnish with citrus slices.</li>
-  //               <li>Serve over ice for a bubbly, citrusy delight.</li>
-  //             </ul>
-  //           </p>
-  //         </>
-  //       ),
-  //     },
-  //     {
-  //       blogList:
-  //         "Choosing the Right Organic Haldi Powder: Tips for Quality and Flavor        ",
-  //       blogListAbout: (
-  //         <>
-  //           When selecting organic haldi powder, opt for reputable brands known
-  //           for their commitment to quality. Look for certifications that ensure
-  //           the product is free from pesticides and additives. The richness of
-  //           color and aroma can also be indicators of the spice's quality.
-  //         </>
-  //       ),
-  //     },
-  //     {
-  //       blogList: "Sip, Savor, and Boost Your Well-Being       ",
-  //       blogListAbout: (
-  //         <>
-  //           <p>
-  //             As we delve into the world of DIY turmeric-based drinks, it
-  //             becomes clear that the golden elixirs crafted from organic haldi
-  //             powder offer not only a delightful sensory experience but also a
-  //             myriad of health benefits. From the comforting warmth of golden
-  //             milk to the invigorating zest of turmeric tea, these drinks
-  //             provide a delicious way to incorporate turmeric into your daily
-  //             routine.
-  //           </p>
-  //           <p className="mt-2">
-  //             Embrace the creative turmeric uses outlined here and experiment
-  //             with your own variations to suit your taste preferences. Whether
-  //             you're seeking a soothing evening beverage or a refreshing
-  //             smoothie to kickstart your day, turmeric-based drinks can be a
-  //             flavorful addition to your wellness journey.
-  //           </p>
-  //           <p className="mt-2">
-  //             So, raise your glass to golden elixirs, and let the nourishing
-  //             properties of turmeric powder contribute to a vibrant and
-  //             health-conscious lifestyle. Cheers to the golden spice that not
-  //             only adds richness to our recipes but also infuses our lives with
-  //             a touch of wellness!
-  //           </p>
-  //         </>
-  //       ),
-  //     },
-  //   ],
-  // },
+      {
+        blogList: "Section 1: The Dynamic Universe of Red Chilli Powder",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Understanding Red Chilli Powder:
+              <p className="text-base  mt-2 ml-5">
+                Red chilli powder is derived from dried and ground red peppers,
+                known for both their vibrant color and intense heat. Lal mirch
+                powder is a versatile spice that comes in various heat levels,
+                allowing cooks to tailor the spiciness of their dishes. Its
+                ability to infuse dishes with both color and heat makes it an
+                essential component in diverse culinary traditions.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              2. Heat Varieties:
+              <p className="text-base  mt-2 ml-5">
+                Red chilli powder is not a one-size-fits-all spice. Different
+                varieties of red peppers result in varying levels of heat. From
+                mild to extra hot, each variant brings its unique character to
+                dishes. Understanding the heat level of your red chilli powder
+                allows you to control the intensity of spiciness in your
+                recipes.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Section 2: Everyday Culinary Delights        ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              1. Spicy Kick to Soups and Stews:
+              <p className="text-base  mt-2 ml-5">
+                Elevate your soups and stews by incorporating red chilli powder.
+                A pinch adds depth and warmth to broths, transforming mundane
+                recipes into soul-soothing delights. Experiment with the heat
+                levels to suit your taste, turning your favorite comfort foods
+                into spicy masterpieces.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              2. Flavorful Marinades:
+              <p className="text-base  mt-2 ml-5">
+                Create flavorful marinades for meats and vegetables by blending
+                red chilli powder with complementary spices, herbs, and oils.
+                The spice's vibrant color enhances the visual appeal of your
+                dishes, while its heat infuses every bite with an unforgettable
+                kick. Planetsera chili powder, with its premium quality, brings
+                an extra layer of richness to your marinades.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Section 3: Spice Essentials for Indian Cuisine        ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              1. Tadka Magic:
+              <p className="text-base  mt-2 ml-5">
+                Tadka, or tempering, is a quintessential technique in Indian
+                cooking. Red chilli powder takes center stage in this process,
+                where it is heated in oil or ghee along with other spices. The
+                resulting aromatic and spicy blend is then drizzled over dal,
+                vegetables, or rice, bringing an explosion of flavors to every
+                bite.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              2. Masala Blends:
+              <p className="text-base  mt-2 ml-5">
+                Red chilli powder is a key player in creating masala blends that
+                form the backbone of many Indian dishes. Whether it's garam
+                masala, sambar powder, or curry powder, lal mirch powder
+                contributes its unique heat and color to these spice blends.
+                Experiment with homemade masalas, adjusting the red chilli
+                powder to achieve the desired level of spiciness.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Section 4: Global Fusion with Red Chilli Powder ",
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              1. Spicy Tex-Mex Delights:
+              <p className="text-base  mt-2 ml-5">
+                Red chilli powder transcends cultural boundaries, making its
+                mark in global cuisines. In Tex-Mex dishes, it adds a fiery
+                punch to classics like chili con carne, enchiladas, and spicy
+                salsa. Planetsera chili powder, with its finely ground texture,
+                seamlessly integrates into these recipes, providing an authentic
+                and intense flavor.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              2. Asian Inspirations:
+              <ul className="text-base  mt-2 ml-5">
+                Embrace the spice in Asian cuisine by incorporating red chilli
+                powder into stir-fries, noodle dishes, and sauces. The spice
+                complements the umami flavors of soy sauce and enhances the heat
+                of dishes like Kung Pao chicken or Thai curries. Planetsera
+                chili powder, known for its consistency, ensures a uniform
+                distribution of spice.
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Section 5: Planetsera Chili Powder - A Spice Revelation        ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              1. Quality Beyond Compare:
+              <p className="text-base  mt-2 ml-5">
+                Planetsera chili powder stands out as a symbol of quality in the
+                world of spices. Known for its commitment to excellence,
+                Planetsera delivers chili powder that is finely ground,
+                intensely flavorful, and consistent in heat. Elevate your
+                culinary creations with a spice that reflects a dedication to
+                quality and authenticity.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              2. Versatility in Every Dash:
+              <p className="text-base  mt-2 ml-5">
+                Planetsera chili powder's versatility shines in both traditional
+                and innovative recipes. Its fine texture allows for easy
+                blending, ensuring an even distribution of heat in every dish.
+                Whether you're crafting a traditional curry or experimenting
+                with a new global fusion creation, Planetsera chili powder adds
+                a touch of culinary magic.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Section 6: Beyond the Kitchen - Red Chilli Powder Hacks          ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              1. Natural Pest Repellent:
+              <p className="text-base  mt-2 ml-5">
+                Red chilli powder isn't just for the kitchen—it can serve as a
+                natural pest repellent in your garden. Sprinkle a mixture of red
+                chilli powder and water around your plants to deter pests and
+                protect your garden without the use of harmful chemicals.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              2. DIY Spicy Seasoned Nuts:
+              <p className="text-base  mt-2 ml-5">
+                Transform plain nuts into a flavorful snack by tossing them in a
+                mixture of red chilli powder, salt, and your favorite spices.
+                Roast them in the oven for a spicy and crunchy treat that's
+                perfect for parties or everyday snacking.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Spicy Adventures Await        ",
+        blogListAbout: (
+          <>
+            <p>
+              As we conclude our exploration of creative uses for red chilli
+              powder, the spice journey from the rack to the table unveils a
+              world of possibilities. From everyday culinary delights to global
+              fusion creations, and the quality assurance of Planetsera chili
+              powder, this spice adds a fiery touch that elevates every dish it
+              graces.
+            </p>
+            <p className="mt-3">
+              Embrace the boldness of red chilli powder, experiment with heat
+              levels, and let your culinary creativity run wild. Whether you're
+              crafting traditional Indian dishes, exploring global flavors, or
+              utilizing red chilli powder beyond the kitchen, the spice's
+              versatility and intensity promise a culinary adventure that
+              ignites the senses and leaves a lasting impression on every
+              palate.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
   {
     id: "turmeric-based-drinks-for-health-boost",
     category: "MouthWatering",

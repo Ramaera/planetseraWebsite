@@ -566,6 +566,8 @@ const MetaDatablogs = () => {
           <meta name="twitter:image" content="/images/blog/blog-9.png" />
         </>
       )}
+      {/*-----------------------turmeric-based-drinks-for-health-boost --------------------------------------------------- */}
+
       {currentRoute === "/blog/turmeric-based-drinks-for-health-boost" && (
         <>
           <title>
@@ -623,6 +625,66 @@ const MetaDatablogs = () => {
             content="Explore the benefits of organic haldi powder and turmeric powder. Learn about the numerous applications for these spices, their scientific basis, and why using organic turmeric powder can significantly improve your overall health."
           />
           <meta name="twitter:image" content="/images/blog/blog-9.png" />
+        </>
+      )}
+      {/*-----------------------red-chilli-powder-in-everyday-cooking --------------------------------------------------- */}
+
+      {currentRoute === "/blog/red-chilli-powder-in-everyday-cooking" && (
+        <>
+          <title>
+            Unleashing Culinary Fire with Creative Uses of Red Chilli Powder
+          </title>
+          <meta name="text" content="planetsera" />
+          <meta
+            name="title"
+            content="Unleashing Culinary Fire with Creative Uses of Red Chilli Powder"
+          />
+          <meta
+            name="description"
+            content="Our guide to creativity red chilli powder uses in everyday cooking reveals its powerful flavors. Discover lal mirch powder's flexibility and Planetsera chili powder's secrets. Improve your food and add heat with these spicy recipes and kitchen staples."
+          />
+          <meta name="keywords" content="" />
+          <meta name="robots" content="index,  follow" />
+          <link
+            rel="canonical"
+            href="/blog/red-chilli-powder-in-everyday-cooking"
+          />
+          <meta
+            property="og:url"
+            content="/blog/red-chilli-powder-in-everyday-cooking"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Unleashing Culinary Fire with Creative Uses of Red Chilli Powder"
+          />
+          <meta
+            property="og:description"
+            content="Our guide to creativity red chilli powder uses in everyday cooking reveals its powerful flavors. Discover lal mirch powder's flexibility and Planetsera chili powder's secrets. Improve your food and add heat with these spicy recipes and kitchen staples."
+          />
+          <meta
+            name="og_site_name"
+            property="og:site_name"
+            content="planetsera.com"
+          />
+          <meta property="og:image" content="/images/blog/blog-11.png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="627" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="planetsera.com" />
+          <meta
+            property="twitter:url"
+            content="/blog/red-chilli-powder-in-everyday-cooking"
+          />
+          <meta
+            name="twitter:title"
+            content="Unleashing Culinary Fire with Creative Uses of Red Chilli Powder"
+          />
+          <meta
+            name="twitter:description"
+            content="Our guide to creativity red chilli powder uses in everyday cooking reveals its powerful flavors. Discover lal mirch powder's flexibility and Planetsera chili powder's secrets. Improve your food and add heat with these spicy recipes and kitchen staples."
+          />
+          <meta name="twitter:image" content="/images/blog/blog-11.png" />
         </>
       )}
     </>

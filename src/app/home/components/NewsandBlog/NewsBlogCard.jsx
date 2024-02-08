@@ -20,7 +20,8 @@ const NewsBlogCard = () => {
             <>
               <div
                 key={index}
-                className={`m-2 sm:w-[30%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3 group cursor-pointer`}>
+                className={`m-2 sm:w-[30%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3 group cursor-pointer`}
+              >
                 <div className="flex rounded-xl w-full relative overflow-hidden">
                   <Link href={`/blog/${item.id}`}>
                     <img
@@ -38,7 +39,7 @@ const NewsBlogCard = () => {
                       {item?.blogName}
                     </h5>
 
-                    <p>{item?.blogDetail.slice(0, 130)} . . . .</p>
+                    <p>{item?.blogDetail?.slice(0, 130)} . . . .</p>
                     <h6 className="mt-2 text-gray-600 font-semibold">
                       Read More
                       <ArrowForwardIcon style={{ color: `${colorMe}` }} />
