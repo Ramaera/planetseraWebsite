@@ -26,10 +26,17 @@ const BlogDetails = () => {
         ref={scrollTopRef}
         className="mx-4 sm:mr-16 sm:ml-10 mb-4 justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-4 "
       >
-        <img
-          src={specificBlog?.blogImg}
-          className="flex items-center  justify-center rounded-xl w-full"
-        ></img>
+        <div className="flex items-center  justify-center rounded-xl w-full">
+          {specificBlog.blogImg && (
+            <img
+              className="rounded-md w-full  "
+              loading="lazy"
+              src={specificBlog.blogImg}
+              alt="Planetsera Spices"
+              title={specificBlog.blogName}
+            />
+          )}
+        </div>
         <div className="justify-start flex w-full mt-4 mb-2">
           <h3
             className="rounded-2xl py-1 px-3 text-white"

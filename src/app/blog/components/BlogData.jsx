@@ -2,6 +2,670 @@
 import Link from "next/link";
 const BlogData = [
   // --------------  RecentBlog  -------------------------------------------------------------------
+  // {
+  //   id: "red-chilli-powder-in-everyday-cooking",
+  //   category: "MouthWatering",
+  //   categoryName: "BestSelling",
+  //   type: "RecentBlog",
+  //   blogDate: "28-Jan-2024",
+  //   blogImg: "/images/blog/blog-11.png",
+  //   blogName:
+  //     "From Spice Rack to Table: Creative Uses of Red Chilli Powder in Everyday Cooking",
+
+  //   blogDescription: [
+  //     {
+  //       blogList: "The Fiery Allure of Red Chilli Powder",
+  //       blogListAbout: (
+  //         <>
+  //           In the culinary world, few ingredients possess the power to
+  //           transform dishes like red chilli powder. Known as lal mirch powder
+  //           in Hindi, this spice is a staple in kitchens worldwide, adding a
+  //           fiery kick that elevates the flavor profile of diverse cuisines.
+  //           Join us on a journey from the spice rack to the table as we explore
+  //           the creative uses of red chilli powder, with a special spotlight on
+  //           Planetsera chili powder—an embodiment of quality and spice.
+  //         </>
+  //       ),
+  //     },
+
+  //     {
+  //       blogList: "Section 1: The Dynamic Universe of Red Chilli Powder",
+  //       blogListAbout: (
+  //         <>
+  //           <p className=" font-semibold mt-3 ">
+  //             1. Understanding Red Chilli Powder:
+  //             <ul className="text-base  mt-2 ml-5">
+  //               <li>1 cup of milk (dairy or plant-based)</li>
+  //               <li>1 teaspoon of organic turmeric powder</li>
+  //               <li>1/2 teaspoon of cinnamon</li>
+  //               <li>A pinch of black pepper</li>
+  //               <li>Sweetener of choice (honey, maple syrup)</li>
+  //             </ul>
+  //           </p>
+  //           <p className="text-xl font-semibold mt-3 ml-5">
+  //             • <span>Instructions:</span>
+  //             <ul className="text-base  mt-2 ml-5">
+  //               <li>Heat the milk in a saucepan.</li>
+  //               <li>Add turmeric powder, cinnamon, and black pepper.</li>
+  //               <li>Stir well and let it simmer for a few minutes.</li>
+  //               <li>Sweeten to taste with honey or maple syrup.</li>
+  //               <li>Strain and enjoy your comforting golden elixir.</li>
+  //             </ul>
+  //           </p>
+  //         </>
+  //       ),
+  //     },
+  //     {
+  //       blogList: "2. Turmeric Tea Infusion:",
+  //       blogListAbout: (
+  //         <>
+  //           <p className="text-xl font-semibold mt-3 ml-5">
+  //             • <span>Ingredients:</span>
+  //             <ul className="text-base  mt-2 ml-5">
+  //               <li>1 teaspoon of organic haldi powder</li>
+  //               <li>1 cup of hot water</li>
+  //               <li>Fresh ginger slices</li>
+  //               <li>Lemon wedge</li>
+  //               <li>Optional: a dash of cayenne pepper for extra warmth</li>
+  //             </ul>
+  //           </p>
+  //           <p className="text-xl font-semibold mt-3 ml-5">
+  //             • <span>Instructions:</span>
+  //             <ul className="text-base  mt-2 ml-5">
+  //               <li>
+  //                 Steep turmeric powder and fresh ginger slices in hot water.
+  //               </li>
+  //               <li>Squeeze in a lemon wedge.</li>
+  //               <li>
+  //                 Optional: Add a dash of cayenne pepper for a spicy kick.
+  //               </li>
+  //               <li>Strain and sip on this invigorating turmeric tea.</li>
+  //             </ul>
+  //           </p>
+  //         </>
+  //       ),
+  //     },
+  //     {
+  //       blogList: "3. Turmeric Smoothie Bliss:        ",
+  //       blogListAbout: (
+  //         <>
+  //           <p className="text-xl font-semibold mt-3 ml-5">
+  //             • <span>Ingredients:</span>
+  //             <ul className="text-base  mt-2 ml-5">
+  //               <li>1 banana</li>
+  //               <li>1/2 cup pineapple chunks</li>
+  //               <li>1/2 teaspoon of organic turmeric powder</li>
+  //               <li>1/2 teaspoon of grated fresh ginger</li>
+  //               <li>1 cup of coconut water or almond milk</li>
+  //               <li>Ice cubes</li>
+  //             </ul>
+  //           </p>
+  //           <p className="text-xl font-semibold mt-3 ml-5">
+  //             • <span>Instructions:</span>
+  //             <ul className="text-base  mt-2 ml-5">
+  //               <li>Blend all ingredients until smooth.</li>
+  //               <li>
+  //                 Pour into a glass and savor the tropical flavors with the
+  //                 goodness of turmeric.
+  //               </li>
+  //             </ul>
+  //           </p>
+  //         </>
+  //       ),
+  //     },
+  //     {
+  //       blogList: "Creative Turmeric Uses Beyond the Cup: ",
+  //     },
+  //     {
+  //       blogList: "1. Turmeric Latte Popsicles:",
+  //       blogListAbout: (
+  //         <>
+  //           <p className="text-xl font-semibold mt-3 ml-5">
+  //             • <span>Ingredients:</span>
+  //             <ul className="text-base  mt-2 ml-5">
+  //               <li>1 cup of coconut milk</li>
+  //               <li>1 teaspoon of organic haldi powder</li>
+  //               <li>2 tablespoons of honey or agave syrup</li>
+  //             </ul>
+  //           </p>
+  //           <p className="text-xl font-semibold mt-3 ml-5">
+  //             • <span>Instructions:</span>
+  //             <ul className="text-base  mt-2 ml-5">
+  //               <li>Mix all ingredients thoroughly.</li>
+  //               <li>Pour into popsicle molds and freeze overnight.</li>
+  //               <li>Enjoy a refreshing turmeric-infused treat.</li>
+  //             </ul>
+  //           </p>
+  //         </>
+  //       ),
+  //     },
+  //     {
+  //       blogList: "2. Turmeric Citrus Spritzer:",
+  //       blogListAbout: (
+  //         <>
+  //           <p className="text-xl font-semibold mt-3 ml-5">
+  //             • <span>Ingredients:</span>
+  //             <ul className="text-base  mt-2 ml-5">
+  //               <li>Sparkling water</li>
+  //               <li>1 teaspoon of turmeric powder</li>
+  //               <li>Orange or grapefruit slices</li>
+  //             </ul>
+  //           </p>
+  //           <p className="text-xl font-semibold mt-3 ml-5">
+  //             • <span>Instructions:</span>
+  //             <ul className="text-base  mt-2 ml-5">
+  //               <li>Add turmeric powder to sparkling water.</li>
+  //               <li>Garnish with citrus slices.</li>
+  //               <li>Serve over ice for a bubbly, citrusy delight.</li>
+  //             </ul>
+  //           </p>
+  //         </>
+  //       ),
+  //     },
+  //     {
+  //       blogList:
+  //         "Choosing the Right Organic Haldi Powder: Tips for Quality and Flavor        ",
+  //       blogListAbout: (
+  //         <>
+  //           When selecting organic haldi powder, opt for reputable brands known
+  //           for their commitment to quality. Look for certifications that ensure
+  //           the product is free from pesticides and additives. The richness of
+  //           color and aroma can also be indicators of the spice's quality.
+  //         </>
+  //       ),
+  //     },
+  //     {
+  //       blogList: "Sip, Savor, and Boost Your Well-Being       ",
+  //       blogListAbout: (
+  //         <>
+  //           <p>
+  //             As we delve into the world of DIY turmeric-based drinks, it
+  //             becomes clear that the golden elixirs crafted from organic haldi
+  //             powder offer not only a delightful sensory experience but also a
+  //             myriad of health benefits. From the comforting warmth of golden
+  //             milk to the invigorating zest of turmeric tea, these drinks
+  //             provide a delicious way to incorporate turmeric into your daily
+  //             routine.
+  //           </p>
+  //           <p className="mt-2">
+  //             Embrace the creative turmeric uses outlined here and experiment
+  //             with your own variations to suit your taste preferences. Whether
+  //             you're seeking a soothing evening beverage or a refreshing
+  //             smoothie to kickstart your day, turmeric-based drinks can be a
+  //             flavorful addition to your wellness journey.
+  //           </p>
+  //           <p className="mt-2">
+  //             So, raise your glass to golden elixirs, and let the nourishing
+  //             properties of turmeric powder contribute to a vibrant and
+  //             health-conscious lifestyle. Cheers to the golden spice that not
+  //             only adds richness to our recipes but also infuses our lives with
+  //             a touch of wellness!
+  //           </p>
+  //         </>
+  //       ),
+  //     },
+  //   ],
+  // },
+  {
+    id: "turmeric-based-drinks-for-health-boost",
+    category: "MouthWatering",
+    categoryName: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "24-Jan-2024",
+    blogImg: "/images/blog/blog-10.png",
+    blogName:
+      "Golden Elixirs: DIY Turmeric-based Drinks for a Health Boost    ",
+    blogDetail:
+      "In the realm of wellness, few ingredients have captured the spotlight quite like turmeric. Known for its vibrant color and potent health benefits, turmeric powder, or haldi powder, has become a staple in many households. Today, we'll explore the golden elixirs you can create with this versatile spice, focusing on DIY turmeric-based drinks that not only tantalize the taste buds but also offer a natural health boost.",
+    blogDescription: [
+      {
+        blogList: "The Power of Turmeric: A Brief Overview          ",
+        blogListAbout: (
+          <>
+            Turmeric, scientifically known as Curcuma longa, has been cherished
+            for centuries for its culinary and medicinal properties. The roots
+            of the turmeric plant are dried and ground to produce the golden
+            spice we commonly refer to as turmeric powder or haldi powder.
+          </>
+        ),
+      },
+      {
+        blogList: "Organic Turmeric Powder: Purity Unleashed        ",
+        blogListAbout: (
+          <>
+            For those who seek the highest quality, organic turmeric powder is
+            the way to go. Cultivated without synthetic pesticides or
+            fertilizers, organic haldi powder ensures a level of purity that
+            aligns with a natural and wholesome lifestyle.
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Turmeric Powder Benefits: A Comprehensive Boost for Health        ",
+      },
+      {
+        blogList: "1.  Anti-Inflammatory Marvel        ",
+        blogListAbout: (
+          <>
+            At the heart of turmeric's health benefits lies curcumin, a powerful
+            anti-inflammatory compound. Regular consumption of turmeric has been
+            linked to the reduction of chronic inflammation, which is often
+            associated with various diseases.
+          </>
+        ),
+      },
+      {
+        blogList: "2. Antioxidant Defense        ",
+        blogListAbout: (
+          <>
+            Turmeric is a rich source of antioxidants that combat oxidative
+            stress by neutralizing free radicals. These compounds play a vital
+            role in promoting overall health and well-being.
+          </>
+        ),
+      },
+      {
+        blogList: "3. Joint Health and Pain Relief        ",
+        blogListAbout: (
+          <>
+            Traditionally, turmeric has been used to alleviate joint pain and
+            promote joint health. Studies suggest that its anti-inflammatory
+            properties may contribute to reducing symptoms associated with
+            conditions like arthritis.
+          </>
+        ),
+      },
+      {
+        blogList:
+          "DIY Turmeric-Based Drinks: Infusing Wellness into Your Routine        ",
+      },
+      {
+        blogList: "1. Golden Milk Elixir:",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Ingredients:</span>
+              <ul className="text-base  mt-2 ml-5">
+                <li>1 cup of milk (dairy or plant-based)</li>
+                <li>1 teaspoon of organic turmeric powder</li>
+                <li>1/2 teaspoon of cinnamon</li>
+                <li>A pinch of black pepper</li>
+                <li>Sweetener of choice (honey, maple syrup)</li>
+              </ul>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Instructions:</span>
+              <ul className="text-base  mt-2 ml-5">
+                <li>Heat the milk in a saucepan.</li>
+                <li>Add turmeric powder, cinnamon, and black pepper.</li>
+                <li>Stir well and let it simmer for a few minutes.</li>
+                <li>Sweeten to taste with honey or maple syrup.</li>
+                <li>Strain and enjoy your comforting golden elixir.</li>
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "2. Turmeric Tea Infusion:",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Ingredients:</span>
+              <ul className="text-base  mt-2 ml-5">
+                <li>1 teaspoon of organic haldi powder</li>
+                <li>1 cup of hot water</li>
+                <li>Fresh ginger slices</li>
+                <li>Lemon wedge</li>
+                <li>Optional: a dash of cayenne pepper for extra warmth</li>
+              </ul>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Instructions:</span>
+              <ul className="text-base  mt-2 ml-5">
+                <li>
+                  Steep turmeric powder and fresh ginger slices in hot water.
+                </li>
+                <li>Squeeze in a lemon wedge.</li>
+                <li>
+                  Optional: Add a dash of cayenne pepper for a spicy kick.
+                </li>
+                <li>Strain and sip on this invigorating turmeric tea.</li>
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "3. Turmeric Smoothie Bliss:        ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Ingredients:</span>
+              <ul className="text-base  mt-2 ml-5">
+                <li>1 banana</li>
+                <li>1/2 cup pineapple chunks</li>
+                <li>1/2 teaspoon of organic turmeric powder</li>
+                <li>1/2 teaspoon of grated fresh ginger</li>
+                <li>1 cup of coconut water or almond milk</li>
+                <li>Ice cubes</li>
+              </ul>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Instructions:</span>
+              <ul className="text-base  mt-2 ml-5">
+                <li>Blend all ingredients until smooth.</li>
+                <li>
+                  Pour into a glass and savor the tropical flavors with the
+                  goodness of turmeric.
+                </li>
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Creative Turmeric Uses Beyond the Cup: ",
+      },
+      {
+        blogList: "1. Turmeric Latte Popsicles:",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Ingredients:</span>
+              <ul className="text-base  mt-2 ml-5">
+                <li>1 cup of coconut milk</li>
+                <li>1 teaspoon of organic haldi powder</li>
+                <li>2 tablespoons of honey or agave syrup</li>
+              </ul>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Instructions:</span>
+              <ul className="text-base  mt-2 ml-5">
+                <li>Mix all ingredients thoroughly.</li>
+                <li>Pour into popsicle molds and freeze overnight.</li>
+                <li>Enjoy a refreshing turmeric-infused treat.</li>
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "2. Turmeric Citrus Spritzer:",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Ingredients:</span>
+              <ul className="text-base  mt-2 ml-5">
+                <li>Sparkling water</li>
+                <li>1 teaspoon of turmeric powder</li>
+                <li>Orange or grapefruit slices</li>
+              </ul>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Instructions:</span>
+              <ul className="text-base  mt-2 ml-5">
+                <li>Add turmeric powder to sparkling water.</li>
+                <li>Garnish with citrus slices.</li>
+                <li>Serve over ice for a bubbly, citrusy delight.</li>
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Choosing the Right Organic Haldi Powder: Tips for Quality and Flavor        ",
+        blogListAbout: (
+          <>
+            When selecting organic haldi powder, opt for reputable brands known
+            for their commitment to quality. Look for certifications that ensure
+            the product is free from pesticides and additives. The richness of
+            color and aroma can also be indicators of the spice's quality.
+          </>
+        ),
+      },
+      {
+        blogList: "Sip, Savor, and Boost Your Well-Being       ",
+        blogListAbout: (
+          <>
+            <p>
+              As we delve into the world of DIY turmeric-based drinks, it
+              becomes clear that the golden elixirs crafted from organic haldi
+              powder offer not only a delightful sensory experience but also a
+              myriad of health benefits. From the comforting warmth of golden
+              milk to the invigorating zest of turmeric tea, these drinks
+              provide a delicious way to incorporate turmeric into your daily
+              routine.
+            </p>
+            <p className="mt-2">
+              Embrace the creative turmeric uses outlined here and experiment
+              with your own variations to suit your taste preferences. Whether
+              you're seeking a soothing evening beverage or a refreshing
+              smoothie to kickstart your day, turmeric-based drinks can be a
+              flavorful addition to your wellness journey.
+            </p>
+            <p className="mt-2">
+              So, raise your glass to golden elixirs, and let the nourishing
+              properties of turmeric powder contribute to a vibrant and
+              health-conscious lifestyle. Cheers to the golden spice that not
+              only adds richness to our recipes but also infuses our lives with
+              a touch of wellness!
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    id: "the-nutritional-value-of-black-pepper",
+    category: "MouthWatering",
+    categoryName: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "20-Jan-2024",
+    blogImg: "/images/blog/blog-9.png",
+    blogName: "The Nutritional Value of Black Pepper: What You Need to Know",
+    blogDetail:
+      "One of the most widely used seasonings all over the world is black pepper, also known as Piper nigrum. It is used to a wide variety of foods, ranging from soups and stews to salads and side dishes, in order to impart flavour and spice. But black pepper isn't simply a flavour enhancer; it's also a powerhouse when it comes to the nutritional value it provides. In this piece, we will discuss the health benefits of black pepper as well as its nutritional worth. Black pepper has been shown to have a number of positive effects on health.What exactly is this Black Pepper ?The flowering vine that produces black pepper is native to India as well as other tropical locations. The small, spherical berries of the plant are what are ultimately used to generate the spice that we refer to as black pepper after it has been dried and pulverised. A wide variety of recipes can benefit from the spice's ability to provide flavour and fire.",
+    blogDescription: [
+      {
+        blogList: "Nutritional Value of  Black Pepper        ",
+        blogListAbout: (
+          <>
+            The spice known as black pepper contains significant amounts of a
+            number of important vitamins and minerals. It has an especially high
+            vitamin K content, which is essential for maintaining strong bones
+            and proper blood clotting. Additionally, it is an excellent supplier
+            of the minerals manganese, magnesium, and iron. In addition to this,
+            black pepper includes a component known as piperine, which has been
+            demonstrated to possess anti-inflammatory as well as antioxidant
+            capabilities.
+          </>
+        ),
+      },
+      {
+        blogList: "Health Benefits of Black Pepper        ",
+        blogListAbout: (
+          <>
+            The health benefits of black pepper are numerous. Here are just a
+            few of the ways it can improve your health:
+          </>
+        ),
+      },
+      {
+        blogList: "Digestive Health        ",
+        blogListAbout: (
+          <>
+            Because it encourages the generation of hydrochloric acid in the
+            stomach, black pepper can assist in the improvement of digestive
+            function. This makes the process of breaking down food more
+            effective, which lowers the likelihood of experiencing indigestion
+            and other digestive difficulties.
+          </>
+        ),
+      },
+      {
+        blogList: "Weight Loss       ",
+        blogListAbout: (
+          <>
+            Your metabolism can be revved up with the help of black pepper,
+            which in turn can make losing weight easier. In addition to this, it
+            helps reduce appetite, which in turn makes it easier to eat less
+            food and therefore lose weight.
+          </>
+        ),
+      },
+      {
+        blogList: "Pain Relief        ",
+        blogListAbout: (
+          <>
+            Black pepper has a long history of use as a medicinal remedy for a
+            wide range of conditions, including the treatment of pain. It has
+            the potential to help reduce inflammation, which in turn has the
+            potential to help relieve both pain and discomfort.
+          </>
+        ),
+      },
+      {
+        blogList: "Antioxidant Properties        ",
+        blogListAbout: (
+          <>
+            Piperine, which is found in black pepper, is an organic component
+            that possesses high antioxidant capabilities. This can assist in
+            protecting the body from the damage that is caused by free radicals
+            and can lessen the risk of certain diseases.
+          </>
+        ),
+      },
+      {
+        blogList: "How to Use Black Pepper        ",
+        blogListAbout: (
+          <>
+            There are many applications for black pepper can be found in the
+            kitchen. It can be used to impart flavour and spice to foods such as
+            soups, stews, salads, and side dishes. Additionally, it can be
+            applied to meats and vegetables as a rub before cooking. In addition
+            to this, it can be brewed into a tea by first bringing it to a boil
+            in some water.
+          </>
+        ),
+      },
+      {
+        blogList: "Conclusion        ",
+        blogListAbout: (
+          <>
+            Black pepper, in addition to being a tasty spice, is also a
+            powerhouse in terms of its nutritional value. It has a high
+            concentration of vital vitamins and minerals, and it also possesses
+            a wide range of beneficial features for your health, such as the
+            ability to aid digestion, reduce body fat, alleviate pain, and act
+            as an antioxidant. It is versatile enough to be utilised in a number
+            of different meals and may even be brewed as a tea. Therefore, if
+            you are seeking for a spice that is both savoury and healthful,
+            there is no better option than black pepper.
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    id: "unleash-the-Power-of-black-pepper",
+    category: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "16 Jan 2024",
+    blogImg: "/images/blog/blog-8.png",
+    blogName: "The Benefit of Black Pepper, You need to know everything",
+    blogDetail:
+      "Black pepper, popularly known as the king of spices, is a prominent spice that is used in various meals all over the world. It is used in a wide variety of cuisines. It has a flavour that is all its own, as well as a harsh and pungent scent that can give any dish an extra kick. However, were you aware that black pepper also has many positive effects on one's health? In this article, we will go over the numerous advantages of black pepper, as well as the reasons why you should always have some in your kitchen. The Black Pepper's Positive Effects on NutritionThere are a number of important vitamins and minerals that can be found in black pepper, including vitamin K, iron, and manganese. In addition to this, it is an excellent source of dietary fibre, which plays an important role in the maintenance of a healthy digestive system. Because it is low in both calories and fat, black pepper is an excellent addition to any diet that is focused on maintaining a healthy weight",
+
+    blogDescription: [
+      {
+        blogList: "Antioxidant Properties        ",
+        blogListAbout: (
+          <>
+            Piperine is a component of{" "}
+            <Link href="/products/black-pepper-powder" className="text-red-500">
+              black pepper{" "}
+            </Link>{" "}
+            that has powerful antioxidant capabilities. Black pepper includes
+            piperine. Antioxidants play an important role in defending the body
+            against the harmful effects of free radicals, which have been linked
+            to a wide range of adverse health effects. In addition, studies have
+            indicated that piperine can aid to lower inflammation, which is
+            another factor that can contribute to general improvements in
+            health.
+          </>
+        ),
+      },
+      {
+        blogList: "Improves Digestion",
+        blogListAbout: (
+          <>
+            Additionally, black pepper might facilitate better digestion in the
+            body. Piperine, which is found in black pepper, has been shown to
+            help accelerate the creation of hydrochloric acid in the stomach,
+            which is essential for effective digestion. It may also assist in
+            alleviating the signs and symptoms of indigestion, including gas and
+            bloating, in some people.
+          </>
+        ),
+      },
+      {
+        blogList: "Boosts Metabolism        ",
+        blogListAbout: (
+          <>
+            In addition to helping to speed up your metabolism, black pepper can
+            do the same. Piperine, which is found in{" "}
+            <Link href="/products/black-pepper-powder" className="text-red-500">
+              black pepper{" "}
+            </Link>{" "}
+            , has been demonstrated in a number of studies to boost the body's
+            ability to burn fat, which can, in turn, assist in the process of
+            weight reduction. In addition to this, black pepper has been shown
+            to assist in the regulation of blood sugar levels, which can be of
+            benefit to people who have diabetes.
+          </>
+        ),
+      },
+      {
+        blogList: "Improves Brain Function        ",
+        blogListAbout: (
+          <>
+            Additionally,{" "}
+            <Link href="/products/black-pepper-powder" className="text-red-500">
+              black pepper{" "}
+            </Link>{" "}
+            has been found to have potential benefits in enhancing cognitive
+            performance. The presence of piperine in black pepper has been found
+            to potentially enhance the synthesis of dopamine and serotonin,
+            hence perhaps contributing to the amelioration of mood and
+            enhancement of cognitive attention. Additionally, it has been found
+            to potentially mitigate the likelihood of cognitive decline and
+            enhance memory function.
+          </>
+        ),
+      },
+      {
+        blogList: "Conclusion        ",
+        blogListAbout: (
+          <>
+            Black pepper is a widely utilized spice that is renowned for its
+            numerous health-promoting properties. The consumption of this
+            particular source is highly beneficial because of its rich content
+            of vital vitamins and minerals. Moreover, it has been found to
+            possess properties that might potentially mitigate inflammation,
+            enhance digestive processes, augment metabolic rates, and optimize
+            cognitive abilities. To fully harness the numerous advantages of{" "}
+            <Link href="/products/black-pepper-powder" className="text-red-500">
+              black pepper{" "}
+            </Link>{" "}
+            , it is advisable to use it in your culinary preparations.
+          </>
+        ),
+      },
+    ],
+  },
   {
     id: "the-best-organic-spice-blends-for-delicious-meals",
     category: "BestSelling",
@@ -109,103 +773,7 @@ const BlogData = [
       },
     ],
   },
-  {
-    id: "unleash-the-Power-of-black-pepper",
-    category: "BestSelling",
-    type: "RecentBlog",
-    blogDate: "16 Jan 2024",
-    blogImg: "/images/blog/blog-8.png",
-    blogName: "The Benefit of Black Pepper, You need to know everything",
-    blogDetail:
-      "Black pepper, popularly known as the king of spices, is a prominent spice that is used in various meals all over the world. It is used in a wide variety of cuisines. It has a flavour that is all its own, as well as a harsh and pungent scent that can give any dish an extra kick. However, were you aware that black pepper also has many positive effects on one's health? In this article, we will go over the numerous advantages of black pepper, as well as the reasons why you should always have some in your kitchen. The Black Pepper's Positive Effects on NutritionThere are a number of important vitamins and minerals that can be found in black pepper, including vitamin K, iron, and manganese. In addition to this, it is an excellent source of dietary fibre, which plays an important role in the maintenance of a healthy digestive system. Because it is low in both calories and fat, black pepper is an excellent addition to any diet that is focused on maintaining a healthy weight",
 
-    blogDescription: [
-      {
-        blogList: "Antioxidant Properties        ",
-        blogListAbout: (
-          <>
-            Piperine is a component of{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
-              black pepper{" "}
-            </Link>{" "}
-            that has powerful antioxidant capabilities. Black pepper includes
-            piperine. Antioxidants play an important role in defending the body
-            against the harmful effects of free radicals, which have been linked
-            to a wide range of adverse health effects. In addition, studies have
-            indicated that piperine can aid to lower inflammation, which is
-            another factor that can contribute to general improvements in
-            health.
-          </>
-        ),
-      },
-      {
-        blogList: "Improves Digestion",
-        blogListAbout: (
-          <>
-            Additionally, black pepper might facilitate better digestion in the
-            body. Piperine, which is found in black pepper, has been shown to
-            help accelerate the creation of hydrochloric acid in the stomach,
-            which is essential for effective digestion. It may also assist in
-            alleviating the signs and symptoms of indigestion, including gas and
-            bloating, in some people.
-          </>
-        ),
-      },
-      {
-        blogList: "Boosts Metabolism        ",
-        blogListAbout: (
-          <>
-            In addition to helping to speed up your metabolism, black pepper can
-            do the same. Piperine, which is found in{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
-              black pepper{" "}
-            </Link>{" "}
-            , has been demonstrated in a number of studies to boost the body's
-            ability to burn fat, which can, in turn, assist in the process of
-            weight reduction. In addition to this, black pepper has been shown
-            to assist in the regulation of blood sugar levels, which can be of
-            benefit to people who have diabetes.
-          </>
-        ),
-      },
-      {
-        blogList: "Improves Brain Function        ",
-        blogListAbout: (
-          <>
-            Additionally,{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
-              black pepper{" "}
-            </Link>{" "}
-            has been found to have potential benefits in enhancing cognitive
-            performance. The presence of piperine in black pepper has been found
-            to potentially enhance the synthesis of dopamine and serotonin,
-            hence perhaps contributing to the amelioration of mood and
-            enhancement of cognitive attention. Additionally, it has been found
-            to potentially mitigate the likelihood of cognitive decline and
-            enhance memory function.
-          </>
-        ),
-      },
-      {
-        blogList: "Conclusion        ",
-        blogListAbout: (
-          <>
-            Black pepper is a widely utilized spice that is renowned for its
-            numerous health-promoting properties. The consumption of this
-            particular source is highly beneficial because of its rich content
-            of vital vitamins and minerals. Moreover, it has been found to
-            possess properties that might potentially mitigate inflammation,
-            enhance digestive processes, augment metabolic rates, and optimize
-            cognitive abilities. To fully harness the numerous advantages of{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
-              black pepper{" "}
-            </Link>{" "}
-            , it is advisable to use it in your culinary preparations.
-          </>
-        ),
-      },
-    ],
-  },
   {
     id: "essential-indian-spices-you-must-have-in-your-kitchen",
     category: "BestSelling",
