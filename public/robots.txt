@@ -1,8 +1,4 @@
 User-agent: *
-
-User-agent: Httrack
-Disallow: /
-
 User-agent: bingbot
 User-agent: googlebot
 User-agent: msnbot
@@ -13,9 +9,28 @@ User-agent: YandexBot
 User-agent: ia_archiver
 User-agent: Alexabot
 User-agent: Mediapartners-Google
+allow: /
 
-allow:/
+User-agent: Httrack
+Disallow: /
+Disallow: /search
 
-Disallow: /*?*search=
+Disallow: /*/reviews 
+
+Disallow: /*/reviews/$ 
+
 Disallow: /404
+Disallow: /search/
+
+Disallow: /dashboard/
+
+Disallow: /user/
+
+Disallow: /forgotpassword
+
+Disallow: /My%20Account/
+
 Disallow: /admin
+Disallow: /blog/amp/*
+Disallow: /blog/amp/
+Disallow: /blog/amp

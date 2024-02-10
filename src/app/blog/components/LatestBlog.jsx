@@ -34,7 +34,7 @@ const LatestBlog = () => {
         </div>
         <div className="flex w-full" id="shop">
           <div className="flex p-2 md:p-6 flex-wrap w-full">
-            {LatestBlogData.slice(0, displayCount).map((item, index) => {
+            {LatestBlogData?.slice(0, displayCount).map((item, index) => {
               if (!item) {
                 return null;
               }
@@ -61,7 +61,8 @@ const LatestBlog = () => {
                           {item?.blogName}
                         </h5>
                       </Link>
-                      <p>{item?.blogDetail?.slice(0, 130)} . . .</p>
+                      {console.log("itemblogDetail", item.blogDetail)}
+                      <p>{item?.blogHeading} . . .</p>
                       <Link href={`/blog/${item.id}`}>
                         <h6 className="mt-2 text-gray-600 font-semibold">
                           Read More

@@ -12,9 +12,18 @@ const BlogData = [
     blogName:
       "From Spice Rack to Table: Creative Uses of Red Chilli Powder in Everyday Cooking",
 
+    blogDetail: <></>,
+
     blogDescription: [
       {
-        blogList: "The Fiery Allure of Red Chilli Powder",
+        blogList: (
+          <>
+            The Fiery Allure of{" "}
+            <Link href="/products/red-chilli-powder" className="text-red-500">
+              Red Chilli Powder
+            </Link>
+          </>
+        ),
         blogListAbout: (
           <>
             In the culinary world, few ingredients possess the power to
@@ -34,18 +43,24 @@ const BlogData = [
           <>
             <p className="text-xl font-semibold mt-3 ml-5 ">
               1. Understanding Red Chilli Powder:
-              <p className="text-base  mt-2 ml-5">
+              <p className="text-base font-normal  mt-2 ml-5">
                 Red chilli powder is derived from dried and ground red peppers,
-                known for both their vibrant color and intense heat. Lal mirch
-                powder is a versatile spice that comes in various heat levels,
-                allowing cooks to tailor the spiciness of their dishes. Its
-                ability to infuse dishes with both color and heat makes it an
-                essential component in diverse culinary traditions.
+                known for both their vibrant color and intense heat.{" "}
+                <Link
+                  href="/products/red-chilli-powder"
+                  className="text-red-500"
+                >
+                  Lal mirch Powder
+                </Link>{" "}
+                is a versatile spice that comes in various heat levels, allowing
+                cooks to tailor the spiciness of their dishes. Its ability to
+                infuse dishes with both color and heat makes it an essential
+                component in diverse culinary traditions.
               </p>
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               2. Heat Varieties:
-              <p className="text-base  mt-2 ml-5">
+              <p className="text-base font-normal  mt-2 ml-5">
                 Red chilli powder is not a one-size-fits-all spice. Different
                 varieties of red peppers result in varying levels of heat. From
                 mild to extra hot, each variant brings its unique character to
@@ -63,9 +78,15 @@ const BlogData = [
           <>
             <p className="text-xl font-semibold mt-3 ml-5">
               1. Spicy Kick to Soups and Stews:
-              <p className="text-base  mt-2 ml-5">
-                Elevate your soups and stews by incorporating red chilli powder.
-                A pinch adds depth and warmth to broths, transforming mundane
+              <p className="text-base font-normal  mt-2 ml-5">
+                Elevate your soups and stews by incorporating{" "}
+                <Link
+                  href="/products/red-chilli-powder"
+                  className="text-red-500"
+                >
+                  red chilli Powder
+                </Link>
+                . A pinch adds depth and warmth to broths, transforming mundane
                 recipes into soul-soothing delights. Experiment with the heat
                 levels to suit your taste, turning your favorite comfort foods
                 into spicy masterpieces.
@@ -73,7 +94,7 @@ const BlogData = [
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               2. Flavorful Marinades:
-              <p className="text-base  mt-2 ml-5">
+              <p className="text-base font-normal  mt-2 ml-5">
                 Create flavorful marinades for meats and vegetables by blending
                 red chilli powder with complementary spices, herbs, and oils.
                 The spice's vibrant color enhances the visual appeal of your
@@ -91,7 +112,7 @@ const BlogData = [
           <>
             <p className="text-xl font-semibold mt-3 ml-5">
               1. Tadka Magic:
-              <p className="text-base  mt-2 ml-5">
+              <p className="text-base font-normal  mt-2 ml-5">
                 Tadka, or tempering, is a quintessential technique in Indian
                 cooking. Red chilli powder takes center stage in this process,
                 where it is heated in oil or ghee along with other spices. The
@@ -102,13 +123,19 @@ const BlogData = [
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               2. Masala Blends:
-              <p className="text-base  mt-2 ml-5">
-                Red chilli powder is a key player in creating masala blends that
-                form the backbone of many Indian dishes. Whether it's garam
-                masala, sambar powder, or curry powder, lal mirch powder
-                contributes its unique heat and color to these spice blends.
-                Experiment with homemade masalas, adjusting the red chilli
-                powder to achieve the desired level of spiciness.
+              <p className="text-base font-normal  mt-2 ml-5">
+                <Link
+                  href="/products/red-chilli-powder"
+                  className="text-red-500"
+                >
+                  Red chilli Powder
+                </Link>{" "}
+                is a key player in creating masala blends that form the backbone
+                of many Indian dishes. Whether it's garam masala, sambar powder,
+                or curry powder, lal mirch powder contributes its unique heat
+                and color to these spice blends. Experiment with homemade
+                masalas, adjusting the red chilli powder to achieve the desired
+                level of spiciness.
               </p>
             </p>
           </>
@@ -122,7 +149,7 @@ const BlogData = [
           <>
             <p className="text-xl font-semibold mt-3 ml-5">
               1. Spicy Tex-Mex Delights:
-              <p className="text-base  mt-2 ml-5">
+              <p className="text-base font-normal  mt-2 ml-5">
                 Red chilli powder transcends cultural boundaries, making its
                 mark in global cuisines. In Tex-Mex dishes, it adds a fiery
                 punch to classics like chili con carne, enchiladas, and spicy
@@ -133,7 +160,7 @@ const BlogData = [
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               2. Asian Inspirations:
-              <ul className="text-base  mt-2 ml-5">
+              <ul className="text-base font-normal  mt-2 ml-5">
                 Embrace the spice in Asian cuisine by incorporating red chilli
                 powder into stir-fries, noodle dishes, and sauces. The spice
                 complements the umami flavors of soy sauce and enhances the heat
@@ -152,7 +179,7 @@ const BlogData = [
           <>
             <p className="text-xl font-semibold mt-3 ml-5">
               1. Quality Beyond Compare:
-              <p className="text-base  mt-2 ml-5">
+              <p className="text-base font-normal  mt-2 ml-5">
                 Planetsera chili powder stands out as a symbol of quality in the
                 world of spices. Known for its commitment to excellence,
                 Planetsera delivers chili powder that is finely ground,
@@ -163,7 +190,7 @@ const BlogData = [
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               2. Versatility in Every Dash:
-              <p className="text-base  mt-2 ml-5">
+              <p className="text-base  font-normal mt-2 ml-5">
                 Planetsera chili powder's versatility shines in both traditional
                 and innovative recipes. Its fine texture allows for easy
                 blending, ensuring an even distribution of heat in every dish.
@@ -182,7 +209,7 @@ const BlogData = [
           <>
             <p className="text-xl font-semibold mt-3 ml-5">
               1. Natural Pest Repellent:
-              <p className="text-base  mt-2 ml-5">
+              <p className="text-base font-normal  mt-2 ml-5">
                 Red chilli powder isn't just for the kitchen—it can serve as a
                 natural pest repellent in your garden. Sprinkle a mixture of red
                 chilli powder and water around your plants to deter pests and
@@ -191,7 +218,7 @@ const BlogData = [
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               2. DIY Spicy Seasoned Nuts:
-              <p className="text-base  mt-2 ml-5">
+              <p className="text-base font-normal  mt-2 ml-5">
                 Transform plain nuts into a flavorful snack by tossing them in a
                 mixture of red chilli powder, salt, and your favorite spices.
                 Roast them in the oven for a spicy and crunchy treat that's
@@ -227,6 +254,7 @@ const BlogData = [
       },
     ],
   },
+
   {
     id: "turmeric-based-drinks-for-health-boost",
     category: "MouthWatering",
@@ -236,8 +264,22 @@ const BlogData = [
     blogImg: "/images/blog/blog-10.png",
     blogName:
       "Golden Elixirs: DIY Turmeric-based Drinks for a Health Boost    ",
-    blogDetail:
-      "In the realm of wellness, few ingredients have captured the spotlight quite like turmeric. Known for its vibrant color and potent health benefits, turmeric powder, or haldi powder, has become a staple in many households. Today, we'll explore the golden elixirs you can create with this versatile spice, focusing on DIY turmeric-based drinks that not only tantalize the taste buds but also offer a natural health boost.",
+    blogHeading: ` In the realm of wellness, few ingredients have captured the spotlight
+      quite like turmeric.`,
+    blogDetail: (
+      <>
+        In the realm of wellness, few ingredients have captured the spotlight
+        quite like turmeric. Known for its vibrant color and potent health
+        benefits, turmeric powder, or{" "}
+        <Link href="/products/turmeric-powder" className="text-red-500">
+          haldi powder
+        </Link>
+        , has become a staple in many households. Today, we'll explore the
+        golden elixirs you can create with this versatile spice, focusing on DIY
+        turmeric-based drinks that not only tantalize the taste buds but also
+        offer a natural health boost.
+      </>
+    ),
     blogDescription: [
       {
         blogList: "The Power of Turmeric: A Brief Overview          ",
@@ -251,7 +293,15 @@ const BlogData = [
         ),
       },
       {
-        blogList: "Organic Turmeric Powder: Purity Unleashed        ",
+        blogList: (
+          <>
+            Organic{" "}
+            <Link href="/products/turmeric-powder" className="text-red-500">
+              Turmeric Powder
+            </Link>
+            : Purity Unleashed{" "}
+          </>
+        ),
         blogListAbout: (
           <>
             For those who seek the highest quality, organic turmeric powder is
@@ -307,7 +357,7 @@ const BlogData = [
           <>
             <p className="text-xl font-semibold mt-3 ml-5">
               • <span>Ingredients:</span>
-              <ul className="text-base  mt-2 ml-5">
+              <ul className="text-base font-normal  mt-2 ml-5">
                 <li>1 cup of milk (dairy or plant-based)</li>
                 <li>1 teaspoon of organic turmeric powder</li>
                 <li>1/2 teaspoon of cinnamon</li>
@@ -317,7 +367,7 @@ const BlogData = [
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               • <span>Instructions:</span>
-              <ul className="text-base  mt-2 ml-5">
+              <ul className="text-base font-normal  mt-2 ml-5">
                 <li>Heat the milk in a saucepan.</li>
                 <li>Add turmeric powder, cinnamon, and black pepper.</li>
                 <li>Stir well and let it simmer for a few minutes.</li>
@@ -334,7 +384,7 @@ const BlogData = [
           <>
             <p className="text-xl font-semibold mt-3 ml-5">
               • <span>Ingredients:</span>
-              <ul className="text-base  mt-2 ml-5">
+              <ul className="text-base font-normal  mt-2 ml-5">
                 <li>1 teaspoon of organic haldi powder</li>
                 <li>1 cup of hot water</li>
                 <li>Fresh ginger slices</li>
@@ -344,7 +394,7 @@ const BlogData = [
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               • <span>Instructions:</span>
-              <ul className="text-base  mt-2 ml-5">
+              <ul className="text-base font-normal  mt-2 ml-5">
                 <li>
                   Steep turmeric powder and fresh ginger slices in hot water.
                 </li>
@@ -364,7 +414,7 @@ const BlogData = [
           <>
             <p className="text-xl font-semibold mt-3 ml-5">
               • <span>Ingredients:</span>
-              <ul className="text-base  mt-2 ml-5">
+              <ul className="text-base font-normal  mt-2 ml-5">
                 <li>1 banana</li>
                 <li>1/2 cup pineapple chunks</li>
                 <li>1/2 teaspoon of organic turmeric powder</li>
@@ -375,7 +425,7 @@ const BlogData = [
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               • <span>Instructions:</span>
-              <ul className="text-base  mt-2 ml-5">
+              <ul className="text-base font-normal  mt-2 ml-5">
                 <li>Blend all ingredients until smooth.</li>
                 <li>
                   Pour into a glass and savor the tropical flavors with the
@@ -395,7 +445,7 @@ const BlogData = [
           <>
             <p className="text-xl font-semibold mt-3 ml-5">
               • <span>Ingredients:</span>
-              <ul className="text-base  mt-2 ml-5">
+              <ul className="text-base font-normal  mt-2 ml-5">
                 <li>1 cup of coconut milk</li>
                 <li>1 teaspoon of organic haldi powder</li>
                 <li>2 tablespoons of honey or agave syrup</li>
@@ -403,7 +453,7 @@ const BlogData = [
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               • <span>Instructions:</span>
-              <ul className="text-base  mt-2 ml-5">
+              <ul className="text-base font-normal  mt-2 ml-5">
                 <li>Mix all ingredients thoroughly.</li>
                 <li>Pour into popsicle molds and freeze overnight.</li>
                 <li>Enjoy a refreshing turmeric-infused treat.</li>
@@ -418,7 +468,7 @@ const BlogData = [
           <>
             <p className="text-xl font-semibold mt-3 ml-5">
               • <span>Ingredients:</span>
-              <ul className="text-base  mt-2 ml-5">
+              <ul className="text-base font-normal  mt-2 ml-5">
                 <li>Sparkling water</li>
                 <li>1 teaspoon of turmeric powder</li>
                 <li>Orange or grapefruit slices</li>
@@ -426,7 +476,7 @@ const BlogData = [
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               • <span>Instructions:</span>
-              <ul className="text-base  mt-2 ml-5">
+              <ul className="text-base font-normal mt-2 ml-5">
                 <li>Add turmeric powder to sparkling water.</li>
                 <li>Garnish with citrus slices.</li>
                 <li>Serve over ice for a bubbly, citrusy delight.</li>
@@ -436,8 +486,15 @@ const BlogData = [
         ),
       },
       {
-        blogList:
-          "Choosing the Right Organic Haldi Powder: Tips for Quality and Flavor        ",
+        blogList: (
+          <>
+            Choosing the Right Organic{" "}
+            <Link href="/products/turmeric-powder" className="text-red-500">
+              Haldi Powder
+            </Link>
+            : Tips for Quality and Flavor{" "}
+          </>
+        ),
         blogListAbout: (
           <>
             When selecting organic haldi powder, opt for reputable brands known
@@ -453,12 +510,14 @@ const BlogData = [
           <>
             <p>
               As we delve into the world of DIY turmeric-based drinks, it
-              becomes clear that the golden elixirs crafted from organic haldi
-              powder offer not only a delightful sensory experience but also a
-              myriad of health benefits. From the comforting warmth of golden
-              milk to the invigorating zest of turmeric tea, these drinks
-              provide a delicious way to incorporate turmeric into your daily
-              routine.
+              becomes clear that the golden elixirs crafted from organic{" "}
+              <Link href="/products/turmeric-powder" className="text-red-500">
+                haldi powder
+              </Link>{" "}
+              offer not only a delightful sensory experience but also a myriad
+              of health benefits. From the comforting warmth of golden milk to
+              the invigorating zest of turmeric tea, these drinks provide a
+              delicious way to incorporate turmeric into your daily routine.
             </p>
             <p className="mt-2">
               Embrace the creative turmeric uses outlined here and experiment
@@ -487,11 +546,40 @@ const BlogData = [
     blogDate: "20-Jan-2024",
     blogImg: "/images/blog/blog-9.png",
     blogName: "The Nutritional Value of Black Pepper: What You Need to Know",
-    blogDetail:
-      "One of the most widely used seasonings all over the world is black pepper, also known as Piper nigrum. It is used to a wide variety of foods, ranging from soups and stews to salads and side dishes, in order to impart flavour and spice. But black pepper isn't simply a flavour enhancer; it's also a powerhouse when it comes to the nutritional value it provides. In this piece, we will discuss the health benefits of black pepper as well as its nutritional worth. Black pepper has been shown to have a number of positive effects on health.What exactly is this Black Pepper ?The flowering vine that produces black pepper is native to India as well as other tropical locations. The small, spherical berries of the plant are what are ultimately used to generate the spice that we refer to as black pepper after it has been dried and pulverised. A wide variety of recipes can benefit from the spice's ability to provide flavour and fire.",
+    blogHeading: ` One of the most widely used seasonings all over the world is black
+    pepper, also known as Piper nigrum.`,
+    blogDetail: (
+      <>
+        One of the most widely used seasonings all over the world is black
+        pepper, also known as Piper nigrum. It is used to a wide variety of
+        foods, ranging from soups and stews to salads and side dishes, in order
+        to impart flavour and spice. But black pepper isn't simply a flavour
+        enhancer; it's also a powerhouse when it comes to the nutritional value
+        it provides. In this piece, we will discuss the health benefits of black
+        pepper as well as its nutritional worth.{" "}
+        <Link href="/products/black-pepper-powder" className="text-red-500">
+          Black Pepper{" "}
+        </Link>{" "}
+        has been shown to have a number of positive effects on health.What
+        exactly is this Black Pepper ?The flowering vine that produces black
+        pepper is native to India as well as other tropical locations. The
+        small, spherical berries of the plant are what are ultimately used to
+        generate the spice that we refer to as black pepper after it has been
+        dried and pulverised. A wide variety of recipes can benefit from the
+        spice's ability to provide flavour and fire.
+      </>
+    ),
     blogDescription: [
       {
-        blogList: "Nutritional Value of  Black Pepper        ",
+        blogList: (
+          <>
+            {" "}
+            Nutritional Value of{" "}
+            <Link href="/products/black-pepper-powder" className="text-red-500">
+              Black Pepper{" "}
+            </Link>
+          </>
+        ),
         blogListAbout: (
           <>
             The spice known as black pepper contains significant amounts of a
@@ -519,10 +607,14 @@ const BlogData = [
         blogListAbout: (
           <>
             Because it encourages the generation of hydrochloric acid in the
-            stomach, black pepper can assist in the improvement of digestive
-            function. This makes the process of breaking down food more
-            effective, which lowers the likelihood of experiencing indigestion
-            and other digestive difficulties.
+            stomach,{" "}
+            <Link href="/products/black-pepper-powder" className="text-red-500">
+              Black Pepper{" "}
+            </Link>{" "}
+            can assist in the improvement of digestive function. This makes the
+            process of breaking down food more effective, which lowers the
+            likelihood of experiencing indigestion and other digestive
+            difficulties.
           </>
         ),
       },
@@ -552,10 +644,17 @@ const BlogData = [
         blogList: "Antioxidant Properties        ",
         blogListAbout: (
           <>
-            Piperine, which is found in black pepper, is an organic component
-            that possesses high antioxidant capabilities. This can assist in
-            protecting the body from the damage that is caused by free radicals
-            and can lessen the risk of certain diseases.
+            Piperine, which is found in{" "}
+            <Link
+              href="/products/black-pepper-powder"
+              className="text-red-500 "
+            >
+              Black Pepper{" "}
+            </Link>{" "}
+            , is an organic component that possesses high antioxidant
+            capabilities. This can assist in protecting the body from the damage
+            that is caused by free radicals and can lessen the risk of certain
+            diseases.
           </>
         ),
       },
@@ -597,9 +696,30 @@ const BlogData = [
     blogDate: "16 Jan 2024",
     blogImg: "/images/blog/blog-8.png",
     blogName: "The Benefit of Black Pepper, You need to know everything",
-    blogDetail:
-      "Black pepper, popularly known as the king of spices, is a prominent spice that is used in various meals all over the world. It is used in a wide variety of cuisines. It has a flavour that is all its own, as well as a harsh and pungent scent that can give any dish an extra kick. However, were you aware that black pepper also has many positive effects on one's health? In this article, we will go over the numerous advantages of black pepper, as well as the reasons why you should always have some in your kitchen. The Black Pepper's Positive Effects on NutritionThere are a number of important vitamins and minerals that can be found in black pepper, including vitamin K, iron, and manganese. In addition to this, it is an excellent source of dietary fibre, which plays an important role in the maintenance of a healthy digestive system. Because it is low in both calories and fat, black pepper is an excellent addition to any diet that is focused on maintaining a healthy weight",
-
+    blogHeading: ` Black pepper, popularly known as the king of spices, is a prominent
+    spice that is used in various meals all over the world.`,
+    blogDetail: (
+      <>
+        Black pepper, popularly known as the king of spices, is a prominent
+        spice that is used in various meals all over the world. It is used in a
+        wide variety of cuisines. It has a flavour that is all its own, as well
+        as a harsh and pungent scent that can give any dish an extra kick.
+        However, were you aware that{" "}
+        <Link href="/products/black-pepper-powder" className="text-red-500">
+          black pepper
+        </Link>{" "}
+        also has many positive effects on one's health? In this article, we will
+        go over the numerous advantages of black pepper, as well as the reasons
+        why you should always have some in your kitchen. The Black Pepper's
+        Positive Effects on NutritionThere are a number of important vitamins
+        and minerals that can be found in black pepper, including vitamin K,
+        iron, and manganese. In addition to this, it is an excellent source of
+        dietary fibre, which plays an important role in the maintenance of a
+        healthy digestive system. Because it is low in both calories and fat,
+        black pepper is an excellent addition to any diet that is focused on
+        maintaining a healthy weight
+      </>
+    ),
     blogDescription: [
       {
         blogList: "Antioxidant Properties        ",
@@ -694,8 +814,28 @@ const BlogData = [
     blogDate: "24 Nov 2023",
     blogImg: "/images/blog/blog-7.png",
     blogName: "The Best Organic Spice Blends for Delicious Meals",
-    blogDetail:
-      "Using organic spices is a wonderful way to produce delicious food that is also good for you. Not only are they excellent for your health, but they also have the potential to impart a flavour profile all their own to the food you prepare. Because there are so many different organic spice mixes on the market, it can be difficult to choose which one is ideal for the food you are preparing. This article will discuss some of the most flavorful organic spice combinations that may be used in cooking.Organic Curry Powder (Curry Powder)The use of curry powder is an excellent method for imparting flavour to food. Spices like turmeric, cumin, coriander, fenugreek, and cardamom are combined in this versatile spice mix, which can be employed in the preparation of a wide range of foods. The absence of any artificial flavours or preservatives makes organic curry powder an excellent option. This makes it a very popular choice. In addition to this, it is an excellent source of antioxidants, which, among other benefits, can assist in the reduction of inflammation and the promotion of overall improved health.",
+    blogHeading: `  Using organic spices is a wonderful way to produce delicious food that
+    is also good for you. Not only are they excellent for your health,`,
+    blogDetail: (
+      <>
+        Using organic spices is a wonderful way to produce delicious food that
+        is also good for you. Not only are they excellent for your health, but
+        they also have the potential to impart a flavour profile all their own
+        to the food you prepare. Because there are so many different organic
+        spice mixes on the market, it can be difficult to choose which one is
+        ideal for the food you are preparing. This article will discuss some of
+        the most flavorful organic spice combinations that may be used in
+        cooking.Organic Curry Powder (Curry Powder)The use of curry powder is an
+        excellent method for imparting flavour to food. Spices like turmeric,
+        cumin, coriander, fenugreek, and cardamom are combined in this versatile
+        spice mix, which can be employed in the preparation of a wide range of
+        foods. The absence of any artificial flavours or preservatives makes
+        organic curry powder an excellent option. This makes it a very popular
+        choice. In addition to this, it is an excellent source of antioxidants,
+        which, among other benefits, can assist in the reduction of inflammation
+        and the promotion of overall improved health.
+      </>
+    ),
 
     blogDescription: [
       {
@@ -803,8 +943,21 @@ const BlogData = [
     blogDate: "20 Nov 2023",
     blogImg: "/images/blog/blog-1.png",
     blogName: "17 Essential Indian Spices  You Must Have In Your Kitchen",
-    blogDetail:
-      "Indian food is a true work of cooking art, it's a beautiful mix of colours, smells, and tastes. A lot of different spices are at the heart of this magical culinary trip. Spices aren't just ingredients; they're what make Indian food taste so good without even saying a word. Each spice has its own story and flavour that it brings to a dish. When mixed together, they make a symphony of taste that has amazed people for hundreds of years. This piece will delve into the fascinating world of 17 important Indian spices, revealing the secrets that make Indian food a culinary treasure around the world.",
+    blogHeading: `  Indian food is a true work of cooking art, it's a beautiful mix of
+    colours, smells, and tastes. A lot of different spices`,
+    blogDetail: (
+      <>
+        Indian food is a true work of cooking art, it's a beautiful mix of
+        colours, smells, and tastes. A lot of different spices are at the heart
+        of this magical culinary trip. Spices aren't just ingredients; they're
+        what make Indian food taste so good without even saying a word. Each
+        spice has its own story and flavour that it brings to a dish. When mixed
+        together, they make a symphony of taste that has amazed people for
+        hundreds of years. This piece will delve into the fascinating world of
+        17 important Indian spices, revealing the secrets that make Indian food
+        a culinary treasure around the world.
+      </>
+    ),
     blogDescription: [
       {
         blogList: (
@@ -976,8 +1129,19 @@ const BlogData = [
     blogImg: "/images/blog/blog-2.png",
     blogName:
       "How to Check Adulteration of Spices: Safeguarding Your Culinary Delights",
-    blogDetail:
-      "Spices are the heart of any dish, and making sure they are real is essential for making tasty food. However, the market is full of cases of adulteration, where spices are mixed with other substances or ingredients that aren't as good. As a consumer and food lover, you need to know how to tell if spices have been tampered with so that the flavours you make are clean and real. The ways and techniques to keep your culinary delights safe are covered in this piece.",
+    blogHeading: `  Spices are the heart of any dish, and making sure they are real is
+      essential for making tasty food. However, the market is full`,
+    blogDetail: (
+      <>
+        Spices are the heart of any dish, and making sure they are real is
+        essential for making tasty food. However, the market is full of cases of
+        adulteration, where spices are mixed with other substances or
+        ingredients that aren't as good. As a consumer and food lover, you need
+        to know how to tell if spices have been tampered with so that the
+        flavours you make are clean and real. The ways and techniques to keep
+        your culinary delights safe are covered in this piece.
+      </>
+    ),
     blogDescription: [
       {
         blogList: "Understanding Adulteration in Spices        ",
@@ -1359,8 +1523,24 @@ const BlogData = [
     blogDate: "10 Nov 2023",
     blogImg: "/images/blog/blog-3.png",
     blogName: "Discover the Spice Routes: Where Spices are Grown in India",
-    blogDetail:
-      "India also known as the 'Land of Spices' , has served as a repository of fragrant and savoury spices for numerous generations. The diversearray of flavours within the nation's culinary traditions has not onlycaptivated the sensory experiences of successive generations, but hasalso exerted a significant influence on the trajectory of historical events. The spices originating from India were highly coveted by explorers and traders on a global scale, resulting in the creation of historic trade routes dedicated to the transportation of these valuable commodities, facilitating connections between the Eastern and Wester regions. This essay aims to undertake an exploration of the places in India where these exceptional spices are farmed, imparting a vibrant burst of flavour and aroma to our culinary endeavours.",
+    blogHeading: `India also known as the 'Land of Spices' , has served as a repository of
+    fragrant and savoury spices for numerous generations. The`,
+    blogDetail: (
+      <>
+        India also known as the 'Land of Spices' , has served as a repository of
+        fragrant and savoury spices for numerous generations. The diversearray
+        of flavours within the nation's culinary traditions has not
+        onlycaptivated the sensory experiences of successive generations, but
+        hasalso exerted a significant influence on the trajectory of historical
+        events. The spices originating from India were highly coveted by
+        explorers and traders on a global scale, resulting in the creation of
+        historic trade routes dedicated to the transportation of these valuable
+        commodities, facilitating connections between the Eastern and Wester
+        regions. This essay aims to undertake an exploration of the places in
+        India where these exceptional spices are farmed, imparting a vibrant
+        burst of flavour and aroma to our culinary endeavours.
+      </>
+    ),
     blogDescription: [
       {
         blogList: "1. Kerala - The Spice Garden of India,",
@@ -1521,8 +1701,18 @@ const BlogData = [
     blogDate: "4 Nov 2023",
     blogImg: "/images/blog/blog-4.png",
     blogName: "Benefits Of Spices That Can Help You To Live Healthy Life",
-    blogDetail:
-      "It's strange how spices, those delightful bits of flavour, can tell us stories through our taste buds. Spices are great for cooking, but they are also very good for you in other ways. They offer a treasure trove of health and happiness as nature's way of feeding and healing. We'll look at 11 interesting health benefits of spices that will make your life not only better for you but also a real treat for your senses.",
+    blogHeading: `It's strange how spices, those delightful bits of flavour, can tell us
+    stories through our taste buds. Spices are great for cooking,`,
+    blogDetail: (
+      <>
+        It's strange how spices, those delightful bits of flavour, can tell us
+        stories through our taste buds. Spices are great for cooking, but they
+        are also very good for you in other ways. They offer a treasure trove of
+        health and happiness as nature's way of feeding and healing. We'll look
+        at 11 interesting health benefits of spices that will make your life not
+        only better for you but also a real treat for your senses.
+      </>
+    ),
     blogDescription: [
       {
         blogList: "1. Spicy Symphony to Help Your Digest:",
@@ -1727,8 +1917,21 @@ const BlogData = [
     blogDate: "31 Oct 2023",
     blogImg: "/images/blog/blog-5.png",
     blogName: "Herbs and Spices That Fight Inflammation",
-    blogDetail:
-      "The body's normal reaction to damage or infection is inflammation. Acute inflammation is beneficial, but chronic inflammation can be detrimental and is associated with a number of illnesses, including as cancer, autoimmune disorders, and heart disease. The good news is that inflammation can be reduced by utilizing nature's power. For millennia, people have utilized herbs and spices for their therapeutic qualities, and many of them have anti-inflammatory effects. We'll look at 17 spices and herbs in this article that can reduce inflammation and improve your health.",
+    blogHeading: `The body's normal reaction to damage or infection is inflammation. Acute
+    inflammation is beneficial, but chronic inflammation can be detrimental`,
+    blogDetail: (
+      <>
+        The body's normal reaction to damage or infection is inflammation. Acute
+        inflammation is beneficial, but chronic inflammation can be detrimental
+        and is associated with a number of illnesses, including as cancer,
+        autoimmune disorders, and heart disease. The good news is that
+        inflammation can be reduced by utilizing nature's power. For millennia,
+        people have utilized herbs and spices for their therapeutic qualities,
+        and many of them have anti-inflammatory effects. We'll look at 17 spices
+        and herbs in this article that can reduce inflammation and improve your
+        health.
+      </>
+    ),
     blogDescription: [
       {
         blogList: "Turmeric",
@@ -1975,8 +2178,24 @@ const BlogData = [
     blogDate: "25 Oct 2023",
     blogImg: "/images/blog/blog-6.png",
     blogName: "Health Benefits Of Black Cumin Seed",
-    blogDetail:
-      "In traditional medicine, black cumin seed has been used for hundreds of years. It is now becoming more and more famous in the West. The seed, which is also called Nigella sativa, is thought to have many health benefits, such as reducing inflammation and fighting viruses. Black cumin seed is good for you, and this piece will talk about how you can use it to make your health better.What does Black Cumin Seed mean?The black cumin seed is a small, dark seed that comes from the Mediterranean and some parts of Asia. In traditional medicine, the seed has been used for hundreds of years to treat a wide range of problems, from skin problems to stomach problems. People often mix up this seed with cumin, which is also called black seed or black caraway. But black cumin seed is not the same species as cumin and smells and tastes different.",
+    blogHeading: `In traditional medicine, black cumin seed has been used for hundreds of
+    years. It is now becoming more and more famous in the West. `,
+    blogDetail: (
+      <>
+        In traditional medicine, black cumin seed has been used for hundreds of
+        years. It is now becoming more and more famous in the West. The seed,
+        which is also called Nigella sativa, is thought to have many health
+        benefits, such as reducing inflammation and fighting viruses. Black
+        cumin seed is good for you, and this piece will talk about how you can
+        use it to make your health better.What does Black Cumin Seed mean?The
+        black cumin seed is a small, dark seed that comes from the Mediterranean
+        and some parts of Asia. In traditional medicine, the seed has been used
+        for hundreds of years to treat a wide range of problems, from skin
+        problems to stomach problems. People often mix up this seed with cumin,
+        which is also called black seed or black caraway. But black cumin seed
+        is not the same species as cumin and smells and tastes different.
+      </>
+    ),
     blogDescription: [
       {
         blogList: "Nutritional Profile of Black Cumin Seed",

@@ -12,7 +12,7 @@ const NewsBlogCard = () => {
   return (
     <div className="flex w-full">
       <div className="flex p-2 md:p-6 flex-wrap w-full justify-center ">
-        {BlogNewsData.slice(0, 3).map((item, index) => {
+        {BlogNewsData?.slice(0, 3).map((item, index) => {
           if (!item) {
             return null;
           }
@@ -38,8 +38,9 @@ const NewsBlogCard = () => {
                     <h5 className="font-[Montserrat] text-[13.5px] font-semibold sm:text-xl 2xl:text-2xl">
                       {item?.blogName}
                     </h5>
+                    {console.log(item.blogHeading)}
+                    <p>{item?.blogHeading} . . . .</p>
 
-                    <p>{item?.blogDetail?.slice(0, 130)} . . . .</p>
                     <h6 className="mt-2 text-gray-600 font-semibold">
                       Read More
                       <ArrowForwardIcon style={{ color: `${colorMe}` }} />
