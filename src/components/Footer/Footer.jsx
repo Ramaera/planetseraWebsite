@@ -97,6 +97,11 @@ const Footer = () => {
                       Return Policy
                     </Link>
                   </li>
+                  <li className="mb-2">
+                    <Link href="/shipping-policy" className="underlineEffect">
+                      Shipping Policy
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div>
