@@ -690,6 +690,66 @@ const MetaDatablogs = () => {
             <meta name="twitter:image" content="/images/blog/blog-11.png" />
           </>
         )}
+
+        {currentRoute === "/blog/art-of-seasoning-with-sabji-masala" && (
+          <>
+            <title>
+              From the Garden to Table: Culinary Alchemy with Sabji Masala
+              Powder
+            </title>
+            <meta name="text" content="planetsera" />
+            <meta
+              name="title"
+              content="From the Garden to Table: Culinary Alchemy with Sabji Masala Powder"
+            />
+            <meta
+              name="description"
+              content="Discover the magical journey from garden to table as we explore the art of seasoning with sabji masala. Unlock the secrets of affordable sabji masala powder and elevate your vegetable dishes with this aromatic spice blend."
+            />
+            <meta name="keywords" content="" />
+            <meta name="robots" content="index,  follow" />
+            <link
+              rel="canonical"
+              href="/blog/art-of-seasoning-with-sabji-masala"
+            />
+            <meta
+              property="og:url"
+              content="/blog/art-of-seasoning-with-sabji-masala"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:title"
+              content="From the Garden to Table: Culinary Alchemy with Sabji Masala Powder"
+            />
+            <meta
+              property="og:description"
+              content="Discover the magical journey from garden to table as we explore the art of seasoning with sabji masala. Unlock the secrets of affordable sabji masala powder and elevate your vegetable dishes with this aromatic spice blend."
+            />
+            <meta
+              name="og_site_name"
+              property="og:site_name"
+              content="planetsera.com"
+            />
+            <meta property="og:image" content="/images/blog/blog-12.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="627" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:domain" content="planetsera.com" />
+            <meta
+              property="twitter:url"
+              content="/blog/art-of-seasoning-with-sabji-masala"
+            />
+            <meta
+              name="twitter:title"
+              content="From the Garden to Table: Culinary Alchemy with Sabji Masala Powder"
+            />
+            <meta
+              name="twitter:description"
+              content="Discover the magical journey from garden to table as we explore the art of seasoning with sabji masala. Unlock the secrets of affordable sabji masala powder and elevate your vegetable dishes with this aromatic spice blend."
+            />
+            <meta name="twitter:image" content="/images/blog/blog-12.png" />
+          </>
+        )}
       </Head>
     </>
   );
