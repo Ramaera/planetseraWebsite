@@ -15,7 +15,7 @@ const ordersummary = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
   const CartData = useSelector((state) => state.cart.items);
   const [discount, setDiscount] = useState(56);
-  const [shipping, setShipping] = useState(30);
+  const [shipping, setShipping] = useState(50);
   const [couponAmount, setCouponAmount] = useState(20);
   const user = useSelector((state) => state?.user);
   const [registered, setRegistered] = useState(true);
