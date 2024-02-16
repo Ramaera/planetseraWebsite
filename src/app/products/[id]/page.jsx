@@ -20,10 +20,8 @@ const ProductDetails = () => {
       <NavigationMobile page={"products"} />
       <section className=" w-full max-w-full box-border m-auto h-auto mt-16  md:mt-0 md:pt-20">
         <div className=" mt-5">
-          {" "}
           <Breadcrumbs capitalizeLinks />
         </div>
-
         <ProductDetailsInfo />
         <RelatedProducts />
         <Faq />

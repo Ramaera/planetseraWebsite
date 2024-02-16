@@ -3,6 +3,8 @@ import Slider from "infinite-react-carousel";
 import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
 import MasalaGalleryData from "./MasalaGalleryData";
+import { useQuery } from "@apollo/client";
+import { Get_All_Products } from "@/apollo/queries";
 
 const settings = {
   autoplay: true,
@@ -11,6 +13,8 @@ const settings = {
 };
 
 const MasalaGallery = () => {
+  const allProducts = useQuery(Get_All_Products);
+
   return (
     <>
       {/*-------------- Mobile View -----------------------------*/}
@@ -21,7 +25,8 @@ const MasalaGallery = () => {
               <div>
                 <Link
                   href={`/products/${items.id}`}
-                  className="flex items-center justify-center">
+                  className="flex items-center justify-center"
+                >
                   <img
                     alt="sabji masala"
                     title="Selected Premium Sabji Masala"
@@ -48,32 +53,35 @@ const MasalaGallery = () => {
       </div>
       {/*---------------- Web View ------------------------------*/}
       <div className="md:flex flex-wrap	hidden justify-evenly mb-32 md:mb-4">
-        {MasalaGalleryData.map((items) => {
-          return (
-            <div className="w-1/5 m-4 flex flex-col items-center">
-              <Link href={`/products/${items.id}`}>
-                <img
-                  alt="Planetsera Spices"
-                  title={items?.productName}
-                  loading="lazy"
-                  src={items?.productImage}
-                  // width={"330px"}
-                  className="sm:w-64 2xl:w-80"
+        {allProducts?.data?.allProducts.map((items) => {
+          if (!items.category.includes("ComingSoon")) {
+            return (
+              <div className="w-1/5 m-4 flex flex-col items-center">
+                <Link href={`/products/${items.id}`}>
+                  <img
+                    alt="Planetsera Spices"
+                    title={items?.productName}
+                    loading="lazy"
+                    src={items?.productImage}
+                    // width={"330px"}
+                    className="sm:w-64 2xl:w-80"
+                  />
+                </Link>
+
+                <Link href={`/products/${items?.id}`}>
+                  <h3 className="text-center font-[Montserrat] text-xl	2xl:text-2xl">
+                    {items?.title}
+                  </h3>
+                </Link>
+                <BuynowBtn
+                  width={"130px"}
+                  height={"40px"}
+                  link={`/products/${items?.id}`}
+                  text={"Buy Now"}
                 />
-              </Link>
-              <Link href={`/products/${items.id}`}>
-                <h3 className="text-center font-[Montserrat] text-xl	2xl:text-2xl">
-                  {items?.productName}
-                </h3>
-              </Link>
-              <BuynowBtn
-                width={"130px"}
-                height={"40px"}
-                link={`/products/${items.id}`}
-                text={"Buy Now"}
-              />
-            </div>
-          );
+              </div>
+            );
+          }
         })}
       </div>
     </>

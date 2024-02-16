@@ -59,3 +59,25 @@ query GetUser {
    email
   }
 }`);
+
+export const Get_All_Products = gql(`
+
+query AllProducts {
+  allProducts {
+      description
+      id
+      metaData
+      title
+      category
+      Amazon
+      Flipkart
+      ProductsVariant {
+          id
+          imageUrl
+          price
+          stock
+          weight
+      }
+  }
+}
+`);

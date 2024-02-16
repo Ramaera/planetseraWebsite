@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { UserType } from "../types/user";
 
 export type UserState = {
   data: UserType | undefined;
