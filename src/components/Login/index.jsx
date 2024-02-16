@@ -1,22 +1,24 @@
 import { useState } from "react";
 import { IconButton, Modal } from "@mui/material";
 import CancelIcon from "@mui/icons-material/Cancel";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { LOGIN } from "@/apollo/queries/index";
 import { useMutation } from "@apollo/client";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { setOrUpdateUser } from "@/state/slice/userSlice";
 
 const Login = ({ isOpen, closeLoginModal }) => {
   const colorMe = useSelector((state) => state.colorUs.color);
   const [hide, setHide] = useState(closeLoginModal);
   const [login] = useMutation(LOGIN);
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
-    email: "mohan.it@ramaera.in",
-    password: "1234567890",
+    email: "",
+    password: "",
   });
 
   const handleInputChange = (e) => {
@@ -56,6 +58,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
         for (let key of Object.keys(data)) {
           localStorage.setItem(key, data[key]);
         }
+        dispatch(setOrUpdateUser(data.user));
 
         closeLoginModal();
         router.refresh();

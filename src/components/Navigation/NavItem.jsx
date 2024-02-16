@@ -20,8 +20,6 @@ const NavItem = ({ page }) => {
     (total, item) => total + item.quantity,
     0
   );
-  useEffect(() => {}, []);
-
   console.log("Object.keys(user)", user);
 
   // let cartItemsQuantity = 0;
@@ -34,6 +32,7 @@ const NavItem = ({ page }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [logoutModal, setLogoutModal] = useState(false);
+  console.log("Object.keys(user).length", user.data);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -59,6 +58,7 @@ const NavItem = ({ page }) => {
   const changeColor = () => {
     dispatch(changeColor("#ff4f4f"));
   };
+  useEffect(() => {}, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,8 +81,7 @@ const NavItem = ({ page }) => {
         isVisible
           ? "	navHeader text-black border-[1px] border-slate-300	"
           : "text-white"
-      }`}
-    >
+      }`}>
       <Link className={"scale-[0.6] mb-8 sm:mt-[-0.6rem]"} href="/">
         <img className="" src="/images/logo/logo.webp" alt="logo" />
       </Link>
@@ -94,12 +93,13 @@ const NavItem = ({ page }) => {
               page === "cart" ||
               page === "about" ||
               page === "address" ||
-              page === "products") &&
+              page === "products" ||
+              page === "privacy-policy" ||
+              page === "return-policy") &&
             "black",
         }}
         id="navigation"
-        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}
-      >
+        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}>
         <li>
           <Link href="/">Home</Link>
         </li>
@@ -131,7 +131,7 @@ const NavItem = ({ page }) => {
             </Badge>
           </Link>
         </li>
-        {true ? (
+        {!user.data ? (
           <li className="mr-1 cursor-pointer" onClick={openLoginModal}>
             Login
           </li>

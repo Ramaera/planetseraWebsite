@@ -20,7 +20,7 @@ const ShippingDetails = () => {
 
       <NavItem page={"cart"} />
       <div>
-        <div className="sm:p-32 py-32 px-2">
+        <div className="sm:p-32 py-20 px-2 sm:min-h-[80vh]">
           <div className="  sm:flex  justify-between px-2 ">
             <div className="sm:w-2/3 w-full">
               <div className="flex">
