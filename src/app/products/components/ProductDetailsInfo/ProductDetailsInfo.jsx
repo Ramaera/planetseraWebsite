@@ -100,6 +100,16 @@ const ProductDetailsInfo = () => {
     setQuantity((prevQuantity) => prevQuantity > 1 && prevQuantity - 1);
   };
 
+  function compareWeight(a, b) {
+    if (a.weight < b.weight) {
+      return -1;
+    }
+    if (a.weight > b.weight) {
+      return 1;
+    }
+    return 0;
+  }
+
   return (
     <>
       <div className="sm:m-8 m-4">
@@ -157,25 +167,27 @@ const ProductDetailsInfo = () => {
                 </h2>
                 <div className="flex my-3 sm:my-5">
                   <div>
-                    {specificProduct?.ProductsVariant.map((variantData) => (
-                      <button
-                        style={
-                          selectedButton === variantData.weight
-                            ? {
-                                color: "red",
-                                borderColor: "red",
-                              }
-                            : {
-                                color: specificProduct?.inactiveBtn,
-                                borderColor: specificProduct?.inactiveBtn,
-                              }
-                        }
-                        onClick={() => setSelectedButton(variantData.weight)}
-                        className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]"
-                      >
-                        {variantData.weight} g
-                      </button>
-                    ))}
+                    {[...specificProduct?.ProductsVariant]
+                      ?.sort(compareWeight)
+                      .map((variantData) => (
+                        <button
+                          style={
+                            selectedButton === variantData.weight
+                              ? {
+                                  color: "red",
+                                  borderColor: "red",
+                                }
+                              : {
+                                  color: specificProduct?.inactiveBtn,
+                                  borderColor: specificProduct?.inactiveBtn,
+                                }
+                          }
+                          onClick={() => setSelectedButton(variantData.weight)}
+                          className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]"
+                        >
+                          {variantData.weight} g
+                        </button>
+                      ))}
                   </div>
                 </div>
                 <div className="flex">
