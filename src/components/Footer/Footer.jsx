@@ -66,7 +66,8 @@ const Footer = () => {
                       // onClick={() => window.scrollTo(0, 0)}
                       onClick={() =>
                         window.scrollTo({ top: 0, behavior: "auto !important" })
-                      }>
+                      }
+                    >
                       Product
                     </Link>
                   </li>
@@ -81,7 +82,8 @@ const Footer = () => {
                   <li className="mb-2">
                     <Link
                       href="/terms-and-conditions"
-                      className="underlineEffect ">
+                      className="underlineEffect "
+                    >
                       Terms of Use
                     </Link>
                   </li>
@@ -104,29 +106,33 @@ const Footer = () => {
                 <ul className="text-white font-normal">
                   <li className="mb-2">
                     <Link
-                      href="/products/chat-masala"
-                      className="underlineEffect">
+                      href="/product/chat-masala"
+                      className="underlineEffect"
+                    >
                       Chat Masala
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
-                      href="/products/garam-masala"
-                      className="underlineEffect">
+                      href="/product/garam-masala"
+                      className="underlineEffect"
+                    >
                       Garam Masala
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
-                      href="/products/meat-masala"
-                      className="underlineEffect">
+                      href="/product/meat-masala"
+                      className="underlineEffect"
+                    >
                       Meat Masala
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
-                      href="/products/sabji-masala"
-                      className="underlineEffect">
+                      href="/product/sabji-masala"
+                      className="underlineEffect"
+                    >
                       Sabji Masala
                     </Link>
                   </li>
@@ -139,29 +145,33 @@ const Footer = () => {
                 <ul className="text-white font-normal">
                   <li className="mb-2">
                     <Link
-                      href="/products/coriander-powder"
-                      className="underlineEffect">
+                      href="/product/coriander-powder"
+                      className="underlineEffect"
+                    >
                       Coriander Powder
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
-                      href="/products/cumin-powder"
-                      className="underlineEffect">
+                      href="/product/cumin-powder"
+                      className="underlineEffect"
+                    >
                       Cumin Powder
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
-                      href={"/products/red-chilli-powder"}
-                      className="underlineEffect">
+                      href={"/product/red-chilli-powder"}
+                      className="underlineEffect"
+                    >
                       Red chilli powder
                     </Link>
                   </li>
                   <li className="mb-2">
                     <Link
-                      href="/products/turmeric-powder"
-                      className="underlineEffect">
+                      href="/product/turmeric-powder"
+                      className="underlineEffect"
+                    >
                       Turmeric Powder
                     </Link>
                   </li>
@@ -277,7 +287,8 @@ const Footer = () => {
                 target="_blank"
                 href="https://www.facebook.com/planetseraspices/"
                 aria-label="facebook"
-                className="text-white">
+                className="text-white"
+              >
                 <Facebook />
               </a>
 
@@ -285,7 +296,8 @@ const Footer = () => {
                 target="_blank"
                 href="https://www.instagram.com/planetseraspices/"
                 aria-label="instagram"
-                className="text-white">
+                className="text-white"
+              >
                 <Instagram />
               </a>
 
@@ -293,7 +305,8 @@ const Footer = () => {
                 target="_blank"
                 href="https://www.linkedin.com/company/planetsera-spices/"
                 aria-label="linkedin"
-                className="text-white ">
+                className="text-white "
+              >
                 <LinkedIn />
               </a>
 
@@ -301,7 +314,8 @@ const Footer = () => {
                 target="_blank"
                 href="https://twitter.com/Planetseraspice/"
                 aria-label="X"
-                className="text-white flex items-center">
+                className="text-white flex items-center"
+              >
                 <img
                   src="images/backgrounds/X-Logo.png"
                   alt="X-logo"

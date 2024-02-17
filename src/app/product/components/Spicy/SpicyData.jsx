@@ -2,25 +2,25 @@ const SpicyData = [
   {
     spicyImage: "images/backgrounds/blackPapper.webp",
     spicyImageBox: "images/backgrounds/blackPapper-box1.webp",
-    link: "/products/black-pepper-powder",
+    link: "/product/black-pepper-powder",
     spicyName: "Black Pepper Powder",
   },
   {
     spicyImage: "images/backgrounds/garam-masala.webp",
     spicyImageBox: "images/backgrounds/garam-masala-box.webp",
-    link: "/products/garam-masala",
+    link: "/product/garam-masala",
     spicyName: "Garam Masala",
   },
   {
     spicyImage: "images/backgrounds/corriander.webp",
     spicyImageBox: "images/backgrounds/corriander-box.webp",
-    link: "/products/coriander-powder",
+    link: "/product/coriander-powder",
     spicyName: "Coriander Powder",
   },
   {
     spicyImage: "images/backgrounds/turmeric.webp",
     spicyImageBox: "images/backgrounds/turmeric-box.webp",
-    link: "/products/turmeric-powder",
+    link: "/product/turmeric-powder",
     spicyName: "turmeric-powder",
   },
   {
@@ -32,7 +32,7 @@ const SpicyData = [
   {
     spicyImage: "images/backgrounds/red-chilli.webp",
     spicyImageBox: "images/backgrounds/redchilli-box.webp",
-    link: "/products/red-chilli-powder",
+    link: "/product/red-chilli-powder",
     spicyName: "Red Chilli Powder",
   },
 ];

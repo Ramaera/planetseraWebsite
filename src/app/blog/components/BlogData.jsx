@@ -18,7 +18,7 @@ const BlogData = [
         blogListAbout: (
           <>
             The Indian spice mixture known as{" "}
-            <Link href="/products/garam-masala" className="text-red-500">
+            <Link href="/product/garam-masala" className="text-red-500">
               garam masala{" "}
             </Link>{" "}
             is a common ingredient in Indian cuisine. Cumin, coriander,
@@ -35,7 +35,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Including{" "}
-            <Link href="/products/red-chilli-powder" className="text-red-500">
+            <Link href="/product/red-chilli-powder" className="text-red-500">
               chilli powder{" "}
             </Link>{" "}
             in your foods is an excellent way to give them an extra kick. It is
@@ -85,7 +85,7 @@ const BlogData = [
               Adding flavour to your dishes with Mexican seasoning is an
               excellent way to do it. It is a mixture of many spices, including
               cumin, garlic powder,{" "}
-              <Link href="/products/red-chilli-powder" className="text-red-500">
+              <Link href="/product/red-chilli-powder" className="text-red-500">
                 chilli powder
               </Link>{" "}
               , oregano, and paprika, among others. Because it does not contain
@@ -125,7 +125,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Piperine is a component of{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               black pepper{" "}
             </Link>{" "}
             that has powerful antioxidant capabilities. Black pepper includes
@@ -157,7 +157,7 @@ const BlogData = [
           <>
             In addition to helping to speed up your metabolism, black pepper can
             do the same. Piperine, which is found in{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               black pepper{" "}
             </Link>{" "}
             , has been demonstrated in a number of studies to boost the body's
@@ -173,7 +173,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Additionally,{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               black pepper{" "}
             </Link>{" "}
             has been found to have potential benefits in enhancing cognitive
@@ -197,7 +197,7 @@ const BlogData = [
             possess properties that might potentially mitigate inflammation,
             enhance digestive processes, augment metabolic rates, and optimize
             cognitive abilities. To fully harness the numerous advantages of{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               black pepper{" "}
             </Link>{" "}
             , it is advisable to use it in your culinary preparations.
@@ -221,7 +221,7 @@ const BlogData = [
         blogList: (
           <>
             1.{" "}
-            <Link href="/products/turmeric-powder" className="text-red-500">
+            <Link href="/product/turmeric-powder" className="text-red-500">
               Turmeric Powder
             </Link>{" "}
             Haldi Powder: The Golden Elixir
@@ -235,7 +235,7 @@ const BlogData = [
           <>
             {" "}
             2.{" "}
-            <Link href="/products/cumin-powder" className="text-red-500">
+            <Link href="/product/cumin-powder" className="text-red-500">
               Cumin
             </Link>{" "}
             (Jeera): The Flavorful Backbone
@@ -250,7 +250,7 @@ const BlogData = [
           <>
             Coriander is a useful herb that comes in both seed and ground form.
             Ground coriander is an important part of{" "}
-            <Link href="/products/coriander-powder" className="text-red-500">
+            <Link href="/product/coriander-powder" className="text-red-500">
               coriander powders
             </Link>{" "}
             and the seeds have a spicy, slightly sweet taste. It makes a lot of
@@ -282,7 +282,7 @@ const BlogData = [
         blogList: (
           <>
             8.{" "}
-            <Link href="/products/red-chilli-powder" className="text-red-500">
+            <Link href="/product/red-chilli-powder" className="text-red-500">
               Red Chili Powder
             </Link>{" "}
             (Lal Mirch Powder): The Fiery Essence
@@ -321,7 +321,7 @@ const BlogData = [
         blogListAbout: (
           <>
             {" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               Black pepper
             </Link>
             , which may be purchased either whole or ground, is a time-honored
@@ -779,7 +779,7 @@ const BlogData = [
           <>
             Known as the 'Spice Garden of India,' Kerala may be found in the
             southern part of the subcontinent.{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               Black pepper
             </Link>{" "}
             , cardamom, cloves, cinnamon, and nutmeg are just some of the spices
@@ -800,7 +800,7 @@ const BlogData = [
             industry. The humid climate and cool temperatures of the misty hills
             are perfect for growing this delicious spice. There is a plethora of
             cardamom,{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               Black pepper
             </Link>
             , and other spices here.
@@ -817,7 +817,7 @@ const BlogData = [
         blogListAbout: (
           <>
             The Guntur Sannam and Byadgi types of{" "}
-            <Link href="/products/red-chilli-powder" className="text-red-500">
+            <Link href="/product/red-chilli-powder" className="text-red-500">
               Red Chilies
             </Link>{" "}
             grown in Andhra Pradesh are famous for being very hot. The extreme
@@ -839,7 +839,7 @@ const BlogData = [
             The state of Telangana is where turmeric, a bright and important
             Indian spice, comes from. Nizamabad in Telangana is famous for
             growing high-quality{" "}
-            <Link href="/products/turmeric-powder" className=" text-red-500">
+            <Link href="/product/turmeric-powder" className=" text-red-500">
               turmeric
             </Link>{" "}
             , which is liked for both its taste and its health benefits. Curry
@@ -856,7 +856,7 @@ const BlogData = [
             states of India, are great places to find rare spices. You can find
             spices like the very hot Bhut Jolokia chilli pepper here, as well as
             ginger,{" "}
-            <Link href="/products/turmeric-powder" className=" text-red-500">
+            <Link href="/product/turmeric-powder" className=" text-red-500">
               turmeric
             </Link>
             , and other herbs that are only found in this area. North-East
@@ -881,7 +881,7 @@ const BlogData = [
           <>
             Rajasthan is known for its rich culture and beautiful castles. It is
             also a major source of spices like{" "}
-            <Link href="/products/coriander-powder" className="text-red-500">
+            <Link href="/product/coriander-powder" className="text-red-500">
               coriander
             </Link>{" "}
             , ajwain, and cumin. Traditional foods from the state, like dal
@@ -940,7 +940,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Spices like{" "}
-            <Link href="/products/cumin-powder" className="text-red-500">
+            <Link href="/product/cumin-powder" className="text-red-500">
               cumin
             </Link>
             , ginger, and fennel play the lead parts in this music. They make
@@ -957,7 +957,7 @@ const BlogData = [
           <>
             Spices are like a magical shield that keeps you from getting sick.
             They are full of vitamins, which help your body fight off illness.
-            <Link href="/products/turmeric-powder" className=" text-red-500">
+            <Link href="/product/turmeric-powder" className=" text-red-500">
               Turmeric's
             </Link>{" "}
             curcumin is the main ingredient that fights inflammation and makes
@@ -980,10 +980,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Spices can speed up your digestion. Capsaicin, which is found in hot
-            <Link
-              href="/products/black-pepper-powder"
-              className=" text-red-500"
-            >
+            <Link href="/product/black-pepper-powder" className=" text-red-500">
               {" "}
               chilli peppers{" "}
             </Link>{" "}
@@ -1061,7 +1058,7 @@ const BlogData = [
           <>
             <p>
               It's still early days, but vegetables, especially{" "}
-              <Link href="/products/turmeric-powder" className=" text-red-500">
+              <Link href="/product/turmeric-powder" className=" text-red-500">
                 Turmeric's
               </Link>{" "}
               , show promise in the fight against cancer. Cancer cells don't
@@ -1088,11 +1085,11 @@ const BlogData = [
               <span className="text-3xl ">•</span> Spice Symphony: You can make
               your own spice blends or use mixes that are already made, like
               curry powder,{" "}
-              <Link href="/products/red-chilli-powder" className="text-red-500">
+              <Link href="/product/red-chilli-powder" className="text-red-500">
                 chilli powder{" "}
               </Link>{" "}
               , or{" "}
-              <Link href="/products/garam-masala" className="text-red-500">
+              <Link href="/product/garam-masala" className="text-red-500">
                 garam masala.
               </Link>{" "}
             </p>
@@ -1145,7 +1142,7 @@ const BlogData = [
         blogList: "Turmeric",
         blogListAbout: (
           <>
-            <Link href="/products/turmeric-powder" className=" text-red-500">
+            <Link href="/product/turmeric-powder" className=" text-red-500">
               Turmeric
             </Link>{" "}
             is widely recognised as a prominent spice with anti-inflammatory
@@ -1296,7 +1293,7 @@ const BlogData = [
         blogList: "Coriander",
         blogListAbout: (
           <>
-            <Link href="/products/coriander-powder" className="text-red-500">
+            <Link href="/product/coriander-powder" className="text-red-500">
               Coriander
             </Link>
             , which is sometimes called cilantro, is full of vitamins and can
@@ -1331,10 +1328,7 @@ const BlogData = [
         blogList: "Black Pepper",
         blogListAbout: (
           <>
-            <Link
-              href="/products/black-pepper-powder"
-              className=" text-red-500"
-            >
+            <Link href="/product/black-pepper-powder" className=" text-red-500">
               {" "}
               Black Pepper{" "}
             </Link>

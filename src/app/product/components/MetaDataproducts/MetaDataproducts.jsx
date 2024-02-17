@@ -8,7 +8,7 @@ const MetaDataproducts = () => {
   return (
     <>
       <Head />
-      {currentRoute === "/products/black-pepper-powder" && (
+      {currentRoute === "/product/black-pepper-powder" && (
         <>
           <title>
             Shop Kali Mirch Powder | Buy Black Pepper Powder Online | Planetsera
@@ -29,12 +29,12 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/black-pepper-powder"
+            href="https://www.planetsera.com/product/black-pepper-powder"
           />
 
           <meta
             property="og:url"
-            content="https://www.planetsera.com/products/black-pepper-powder"
+            content="https://www.planetsera.com/product/black-pepper-powder"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -61,7 +61,7 @@ const MetaDataproducts = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="https://www.planetsera.com/products/black-pepper-powder"
+            content="https://www.planetsera.com/product/black-pepper-powder"
           />
           <meta
             name="twitter:title"
@@ -78,7 +78,7 @@ const MetaDataproducts = () => {
         </>
       )}
       {/*----------------------- Meta tag  Chat Masala --------------------------------------------------- */}
-      {currentRoute === "/products/chat-masala" && (
+      {currentRoute === "/product/chat-masala" && (
         <>
           <title>
             Adding flavor to Your Conversations with Chat Masala Powder |
@@ -100,12 +100,12 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/chat-masala"
+            href="https://www.planetsera.com/product/chat-masala"
           />
 
           <meta
             property="og:url"
-            content="https://www.planetsera.com/products/chat-masala"
+            content="https://www.planetsera.com/product/chat-masala"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -132,7 +132,7 @@ const MetaDataproducts = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="https://www.planetsera.com/products/chat-masala"
+            content="https://www.planetsera.com/product/chat-masala"
           />
           <meta
             name="twitter:title"
@@ -149,7 +149,7 @@ const MetaDataproducts = () => {
         </>
       )}
       {/*----------------------- Meta tag  Coriander Powder --------------------------------------------------- */}
-      {currentRoute === "/products/coriander-powder" && (
+      {currentRoute === "/product/coriander-powder" && (
         <>
           <script type="application/ld+json">
             {`
@@ -194,12 +194,12 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/coriander-powder"
+            href="https://www.planetsera.com/product/coriander-powder"
           />
 
           <meta
             property="og:url"
-            content="https://www.planetsera.com/products/coriander-powder"
+            content="https://www.planetsera.com/product/coriander-powder"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -226,7 +226,7 @@ const MetaDataproducts = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="https://www.planetsera.com/products/coriander-powder"
+            content="https://www.planetsera.com/product/coriander-powder"
           />
           <meta
             name="twitter:title"
@@ -243,7 +243,7 @@ const MetaDataproducts = () => {
         </>
       )}
       {/*----------------------- Meta tag Garam Masala  --------------------------------------------------- */}
-      {currentRoute === "/products/garam-masala" && (
+      {currentRoute === "/product/garam-masala" && (
         <>
           <title>
             Spices of the highest quality Garam Masala, used to create authentic
@@ -265,12 +265,12 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/garam-masala"
+            href="https://www.planetsera.com/product/garam-masala"
           />
 
           <meta
             property="og:url"
-            content="https://www.planetsera.com/products/garam-masala"
+            content="https://www.planetsera.com/product/garam-masala"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -297,7 +297,7 @@ const MetaDataproducts = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="https://www.planetsera.com/products/garam-masala"
+            content="https://www.planetsera.com/product/garam-masala"
           />
           <meta
             name="twitter:title"
@@ -314,7 +314,7 @@ const MetaDataproducts = () => {
         </>
       )}
       {/*----------------------- Meta tag Meat Masala --------------------------------------------------- */}
-      {currentRoute === "/products/meat-masala" && (
+      {currentRoute === "/product/meat-masala" && (
         <>
           <title>
             Spice Up Your Meat Dishes with Premium Meat Masala | Planetsera
@@ -335,12 +335,12 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/meat-masala"
+            href="https://www.planetsera.com/product/meat-masala"
           />
 
           <meta
             property="og:url"
-            content="https://www.planetsera.com/products/meat-masala"
+            content="https://www.planetsera.com/product/meat-masala"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -366,7 +366,7 @@ const MetaDataproducts = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="https://www.planetsera.com/products/meat-masala"
+            content="https://www.planetsera.com/product/meat-masala"
           />
           <meta
             name="twitter:title"
@@ -383,7 +383,7 @@ const MetaDataproducts = () => {
         </>
       )}
       {/*----------------------- Meta tag Red Chilli Powder --------------------------------------------------- */}
-      {currentRoute === "/products/red-chilli-powder" && (
+      {currentRoute === "/product/red-chilli-powder" && (
         <>
           <title>
             Use Premium Red chili Powder to Give Your Food a Kick | Planetsera
@@ -401,12 +401,12 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/red-chilli-powder"
+            href="https://www.planetsera.com/product/red-chilli-powder"
           />
 
           <meta
             property="og:url"
-            content="https://www.planetsera.com/products/red-chilli-powder"
+            content="https://www.planetsera.com/product/red-chilli-powder"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -433,7 +433,7 @@ const MetaDataproducts = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="https://www.planetsera.com/products/red-chilli-powder"
+            content="https://www.planetsera.com/product/red-chilli-powder"
           />
           <meta
             name="twitter:title"
@@ -450,7 +450,7 @@ const MetaDataproducts = () => {
         </>
       )}
       {/*----------------------- Meta tag Sabji Masala --------------------------------------------------- */}
-      {currentRoute === "/products/sabji-masala" && (
+      {currentRoute === "/product/sabji-masala" && (
         <>
           <title>
             Enjoy the Joy of Cooking: Sabji Masala Varieties to Spice Up Your
@@ -472,12 +472,12 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/sabji-masala"
+            href="https://www.planetsera.com/product/sabji-masala"
           />
 
           <meta
             property="og:url"
-            content="https://www.planetsera.com/products/sabji-masala"
+            content="https://www.planetsera.com/product/sabji-masala"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -504,7 +504,7 @@ const MetaDataproducts = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="https://www.planetsera.com/products/sabji-masala"
+            content="https://www.planetsera.com/product/sabji-masala"
           />
           <meta
             name="twitter:title"
@@ -521,7 +521,7 @@ const MetaDataproducts = () => {
         </>
       )}
       {/*----------------------- Meta tag Turmeric powder --------------------------------------------------- */}
-      {currentRoute === "/products/turmeric-powder" && (
+      {currentRoute === "/product/turmeric-powder" && (
         <>
           <title>
             PlanetSera Haldi Powder: The Golden Elixir of Real Flavour
@@ -542,12 +542,12 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/turmeric-powder"
+            href="https://www.planetsera.com/product/turmeric-powder"
           />
 
           <meta
             property="og:url"
-            content="https://www.planetsera.com/products/turmeric-powder"
+            content="https://www.planetsera.com/product/turmeric-powder"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -574,7 +574,7 @@ const MetaDataproducts = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="https://www.planetsera.com/products/turmeric-powder"
+            content="https://www.planetsera.com/product/turmeric-powder"
           />
           <meta
             name="twitter:title"
@@ -591,7 +591,7 @@ const MetaDataproducts = () => {
         </>
       )}
       {/*----------------------- Meta tag  Cumin Powder --------------------------------------------------- */}
-      {currentRoute === "/products/cumin-powder" && (
+      {currentRoute === "/product/cumin-powder" && (
         <>
           <title>
             Planetsera's Cumin and Jeera Powders Will Transform Your Cooking
@@ -613,12 +613,12 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/cumin-powder"
+            href="https://www.planetsera.com/product/cumin-powder"
           />
 
           <meta
             property="og:url"
-            content="https://www.planetsera.com/products/cumin-powder"
+            content="https://www.planetsera.com/product/cumin-powder"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -645,7 +645,7 @@ const MetaDataproducts = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="https://www.planetsera.com/products/cumin-powder"
+            content="https://www.planetsera.com/product/cumin-powder"
           />
           <meta
             name="twitter:title"
@@ -662,7 +662,7 @@ const MetaDataproducts = () => {
         </>
       )}
       {/*----------------------- Meta tag  Amchur Powder  --------------------------------------------------- */}
-      {currentRoute === "/products/amchur-powder" && (
+      {currentRoute === "/product/amchur-powder" && (
         <>
           <title>
             PlanetSera Amchur Powder Will Take Your Recipes to the Next Level
@@ -683,12 +683,12 @@ const MetaDataproducts = () => {
           <meta name="robots" content="index, follow" />
           <link
             rel="canonical"
-            href="https://www.planetsera.com/products/amchur-powder"
+            href="https://www.planetsera.com/product/amchur-powder"
           />
 
           <meta
             property="og:url"
-            content="https://www.planetsera.com/products/amchur-powder"
+            content="https://www.planetsera.com/product/amchur-powder"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -715,7 +715,7 @@ const MetaDataproducts = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="https://www.planetsera.com/products/amchur-powder"
+            content="https://www.planetsera.com/product/amchur-powder"
           />
           <meta
             name="twitter:title"

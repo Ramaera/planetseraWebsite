@@ -7,7 +7,8 @@ const OurProduct = () => {
   return (
     <div
       className="w-full max-w-full box-border m-auto h-auto relative mt-10 md:mt-20 containerBorder"
-      id="groundSpices">
+      id="groundSpices"
+    >
       <div className="basis-12/12 absolute ourbg"></div>
       <div className=" groundbg">
         <img
@@ -30,7 +31,7 @@ const OurProduct = () => {
         {Our.map((items) => {
           return (
             <div className="basis-4/12 mb-10 groundedImg flex flex-col items-center">
-              <Link href={`/products/${items.id}`}>
+              <Link href={`/product/${items.id}`}>
                 <img
                   loading="lazy"
                   src={items.masalaImg}
@@ -45,7 +46,7 @@ const OurProduct = () => {
               <BuynowBtn
                 width={"130px"}
                 height={"40px"}
-                link={`/products/${items.id}`}
+                link={`/product/${items.id}`}
                 text={"Buy Now"}
                 sectionClass="responsiveBtn"
               />

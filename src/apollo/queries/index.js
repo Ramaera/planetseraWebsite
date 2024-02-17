@@ -71,13 +71,29 @@ query AllProducts {
       category
       Amazon
       Flipkart
+      productImageUrl
       ProductsVariant {
           id
           imageUrl
           price
           stock
           weight
+          
       }
+  }
+}
+`);
+
+export const Add_To_Cart = gql(`
+
+
+
+mutation CreateCart($buyerId: String!, $checkedOut: Boolean!  $itemCount: Int! $productVariantId: Int! ) {
+  createCart(
+      CreateCartInput: { buyerId: $buyerId, checkedOut: $checkedOut, itemCount: $itemCount, productVariantId: $productVariantId }
+  ) {
+      buyerId
+  
   }
 }
 `);

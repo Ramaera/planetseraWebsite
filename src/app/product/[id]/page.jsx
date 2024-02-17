@@ -1,11 +1,11 @@
 "use client";
-import ProductDetailsInfo from "@/app/products/components/ProductDetailsInfo/ProductDetailsInfo";
-import RelatedProducts from "@/app/products/components/RelatedProducts/RelatedProducts";
+import ProductDetailsInfo from "@/app/product/components/ProductDetailsInfo/ProductDetailsInfo";
+import RelatedProducts from "@/app/product/components/RelatedProducts/RelatedProducts";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import NavItem from "@/components/Navigation/NavItem";
 import { useEffect } from "react";
-import MetaDataproducts from "@/app/products/components/MetaDataproducts/MetaDataproducts";
-import Faq from "@/app/products/components/Faq/Faq";
+import MetaDataproducts from "@/app/product/components/MetaDataproducts/MetaDataproducts";
+import Faq from "@/app/product/components/Faq/Faq";
 import Breadcrumbs from "@/components/Breadcrumb";
 
 const ProductDetails = () => {

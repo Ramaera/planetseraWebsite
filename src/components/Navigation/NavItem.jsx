@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import "@/public/styles/navigation.css";
 import { useParams } from "next/navigation";
-import RelatedPtoductData from "@/app/products/components/RelatedProducts/RelatedProductData";
+import RelatedPtoductData from "@/app/product/components/RelatedProducts/RelatedProductData";
 import { useEffect, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
@@ -81,7 +81,8 @@ const NavItem = ({ page }) => {
         isVisible
           ? "	navHeader text-black border-[1px] border-slate-300	"
           : "text-white"
-      }`}>
+      }`}
+    >
       <Link className={"scale-[0.6] mb-8 sm:mt-[-0.6rem]"} href="/">
         <img className="" src="/images/logo/logo.webp" alt="logo" />
       </Link>
@@ -99,7 +100,8 @@ const NavItem = ({ page }) => {
             "black",
         }}
         id="navigation"
-        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}>
+        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}
+      >
         <li>
           <Link href="/">Home</Link>
         </li>

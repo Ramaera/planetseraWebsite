@@ -24,7 +24,7 @@ const MasalaGallery = () => {
             return (
               <div>
                 <Link
-                  href={`/products/${items.id}`}
+                  href={`/product/${items.id}`}
                   className="flex items-center justify-center"
                 >
                   <img
@@ -35,7 +35,7 @@ const MasalaGallery = () => {
                     className="w-72"
                   />
                 </Link>
-                <Link href={`/products/${items.id}`}>
+                <Link href={`/product/${items.id}`}>
                   <h3 className="text-center font-[Montserrat] text-xl">
                     {items?.productName}
                   </h3>
@@ -43,7 +43,7 @@ const MasalaGallery = () => {
                 <BuynowBtn
                   width={"140px"}
                   height={"40px"}
-                  link={`/products/${items.id}`}
+                  link={`/product/${items.id}`}
                   text={"Buy Now"}
                 />
               </div>
@@ -57,18 +57,18 @@ const MasalaGallery = () => {
           if (!items.category.includes("ComingSoon")) {
             return (
               <div className="w-1/5 m-4 flex flex-col items-center">
-                <Link href={`/products/${items.id}`}>
+                <Link href={`/product/${items.id}`}>
                   <img
                     alt="Planetsera Spices"
                     title={items?.productName}
                     loading="lazy"
-                    src={items?.productImage}
+                    src={`https://planetseraapi.planetsera.com/get-images/${items?.productImageUrl}`}
                     // width={"330px"}
                     className="sm:w-64 2xl:w-80"
                   />
                 </Link>
 
-                <Link href={`/products/${items?.id}`}>
+                <Link href={`/product/${items?.id}`}>
                   <h3 className="text-center font-[Montserrat] text-xl	2xl:text-2xl">
                     {items?.title}
                   </h3>
@@ -76,7 +76,7 @@ const MasalaGallery = () => {
                 <BuynowBtn
                   width={"130px"}
                   height={"40px"}
-                  link={`/products/${items?.id}`}
+                  link={`/product/${items?.id}`}
                   text={"Buy Now"}
                 />
               </div>

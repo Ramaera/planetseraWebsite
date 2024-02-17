@@ -61,7 +61,7 @@ const Page = () => {
               {CartData.map((item, index) => (
                 <div className="flex sm:px-10 py-5    border-b-2 ">
                   <div className="">
-                    <Link href={`/products/${item.id}`}>
+                    <Link href={`/product/${item.id}`}>
                       <img
                         className="w-24 sm:w-44 "
                         src={item.image}
@@ -71,7 +71,7 @@ const Page = () => {
                   </div>
                   <div className="mont-font sm:ml-10 ml-10   ">
                     <div>
-                      <Link href={`/products/${item.id}`}>
+                      <Link href={`/product/${item.id}`}>
                         <p className="Cart sm:text-xl ">{item.name}</p>
                       </Link>
                     </div>
@@ -99,7 +99,8 @@ const Page = () => {
                       <div>
                         <button
                           onClick={() => handleRemoveFromCart(item.id)}
-                          className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
+                          className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base"
+                        >
                           Remove
                         </button>
                       </div>

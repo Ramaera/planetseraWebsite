@@ -44,7 +44,7 @@ const MouthWatering = () => {
                           <img
                             className=""
                             loading="lazy"
-                            src="images/backgrounds/comingsoon.webp"
+                            src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
                             // width={"360px"}
                             alt="coming soon"
                           />
@@ -64,16 +64,16 @@ const MouthWatering = () => {
                           <img
                             className="relative w-48 2xl:w-64"
                             loading="lazy"
-                            // src={item?.masalaImg}
+                            src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
                             alt="Planetsera Spices"
                             title={product.title}
                           />
                         ) : (
-                          <Link href={`/products/${product.id}`}>
+                          <Link href={`/product/${product.id}`}>
                             <img
                               className="relative w-48 2xl:w-64"
                               loading="lazy"
-                              // src={item.masalaImg}
+                              src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
                               // width={"360px"}
                               alt="Planetsera Spices"
                               title={product.title}
@@ -88,7 +88,7 @@ const MouthWatering = () => {
                           {product?.title}
                         </h5>
                       ) : (
-                        <Link href={`/products/${product.id}`}>
+                        <Link href={`/product/${product.id}`}>
                           <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                             {product?.title}
                           </h5>
@@ -111,7 +111,7 @@ const MouthWatering = () => {
                       />
                     ) : (
                       <BuynowBtn
-                        link={`/products/${product?.id}`}
+                        link={`/product/${product?.id}`}
                         text={"Buy Now"}
                         width={"130px"}
                         padding={"20px"}

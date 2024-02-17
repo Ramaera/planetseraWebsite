@@ -19,20 +19,20 @@ import { ToastContainer, toast } from "react-toastify";
 import { useQuery } from "@apollo/client";
 import { Get_All_Products } from "@/apollo/queries";
 import Specifications from "../../[id]/components/Specifications";
+import { useMutation } from "@apollo/client";
+import { Add_To_Cart } from "@/apollo/queries/index";
 
 const ProductDetailsInfo = () => {
-  const allProducts = useQuery(Get_All_Products);
-
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
+  const [addToCartServer] = useMutation(Add_To_Cart);
 
   const { id } = useParams();
+  const allProducts = useQuery(Get_All_Products);
+
   const specificProduct = allProducts?.data?.allProducts.find(
     (prod) => prod.id === id
   );
-
-  // const ProductVariant = specificProduct.ProductsVariant.a;
-  console.log("specificProduct", specificProduct?.ProductsVariant);
 
   // const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const [selectedButton, setSelectedButton] = useState(50);
@@ -43,7 +43,7 @@ const ProductDetailsInfo = () => {
   );
   if (!specificProduct) return notFound();
 
-  const specificVariant = specificProduct?.ProductsVariant.find(
+  const specificVariant = specificProduct?.ProductsVariant?.find(
     (variant) => variant.weight === selectedButton
   );
 
@@ -71,6 +71,12 @@ const ProductDetailsInfo = () => {
     const productImage = specificProduct?.ProductMasala;
     const productName = specificProduct?.ProductName;
     const productPrice = 100;
+    console.log("Adding to server", {
+      buyerId: "clsmtpueg0002pf1tkw1ps1ab",
+      checkedOut: false,
+      itemCount: 1,
+      productVariantId: specificVariant?.id,
+    });
     dispatch(
       addToCart({
         id: productId,
@@ -80,6 +86,16 @@ const ProductDetailsInfo = () => {
         price: productPrice,
       })
     );
+
+    addToCartServer({
+      variables: {
+        buyerId: "clsmwzkuq0002yu7kcfh6om6e",
+        checkedOut: false,
+        itemCount: 1,
+        productVariantId: specificVariant?.id,
+      },
+    });
+
     toast.success("Item Added To Your Cart", {
       position: "top-center",
       autoClose: 2500,
@@ -97,7 +113,9 @@ const ProductDetailsInfo = () => {
   };
 
   const handleDecrementQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity > 1 && prevQuantity - 1);
+    setQuantity((prevQuantity) =>
+      prevQuantity > 1 ? prevQuantity - 1 : prevQuantity
+    );
   };
 
   function compareWeight(a, b) {
@@ -167,27 +185,30 @@ const ProductDetailsInfo = () => {
                 </h2>
                 <div className="flex my-3 sm:my-5">
                   <div>
-                    {[...specificProduct?.ProductsVariant]
-                      ?.sort(compareWeight)
-                      .map((variantData) => (
-                        <button
-                          style={
-                            selectedButton === variantData.weight
-                              ? {
-                                  color: "red",
-                                  borderColor: "red",
-                                }
-                              : {
-                                  color: specificProduct?.inactiveBtn,
-                                  borderColor: specificProduct?.inactiveBtn,
-                                }
-                          }
-                          onClick={() => setSelectedButton(variantData.weight)}
-                          className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]"
-                        >
-                          {variantData.weight} g
-                        </button>
-                      ))}
+                    {specificProduct?.ProductsVariant?.length > 0 &&
+                      [...specificProduct?.ProductsVariant]
+                        ?.sort(compareWeight)
+                        .map((variantData) => (
+                          <button
+                            style={
+                              selectedButton === variantData.weight
+                                ? {
+                                    color: "red",
+                                    borderColor: "red",
+                                  }
+                                : {
+                                    color: specificProduct?.inactiveBtn,
+                                    borderColor: specificProduct?.inactiveBtn,
+                                  }
+                            }
+                            onClick={() =>
+                              setSelectedButton(variantData.weight)
+                            }
+                            className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]"
+                          >
+                            {variantData.weight} g
+                          </button>
+                        ))}
                   </div>
                 </div>
                 <div className="flex">
@@ -264,7 +285,7 @@ const ProductDetailsInfo = () => {
             </div>
           </div>
         </div>
-        {specificProduct.metaData.map((item) => (
+        {specificProduct?.metaData?.map((item) => (
           <>
             <div className="mt-4">
               <h3

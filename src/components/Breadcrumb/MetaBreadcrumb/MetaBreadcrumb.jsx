@@ -9,7 +9,7 @@ export const MetaBreadcrumb = () => {
     <>
       <Head />
       {/*-----------------------Schema for Metacrumb coriander-powder--------------------------------------------------- */}
-      {currentRoute === "/products/coriander-powder" && (
+      {currentRoute === "/product/coriander-powder" && (
         <>
           <script type="application/ld+json">
             {`
@@ -30,7 +30,7 @@ export const MetaBreadcrumb = () => {
     "@type": "ListItem", 
     "position": 3, 
     "name": "Coriander Powder",
-    "item": "https://www.planetsera.com/products/coriander-powder"  
+    "item": "https://www.planetsera.com/product/coriander-powder"  
   }]
 }
 `}

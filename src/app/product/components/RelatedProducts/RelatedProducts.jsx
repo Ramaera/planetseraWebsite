@@ -9,18 +9,19 @@ const RelatedProducts = () => {
     <>
       <div className="flex flex-wrap mx-2 md:mx-3 mb-4">
         {RelatedPtoductData.map((pro) => {
-          if (currentRoute === `/products/${pro.id}`) {
+          if (currentRoute === `/product/${pro.id}`) {
             return null;
           }
           return (
             <div className="w-2/4 md:w-1/4 p-1 md:p-5" key={pro.id}>
               <div className="border-gray-200 border-[1px] rounded-xl p-2 sm:px-4 sm:pt-4 pb-1 2xl:px-8 2xl:pt-8">
-                <Link href={`/products/${pro.id}`}>
+                <Link href={`/product/${pro.id}`}>
                   <div
                     className="border-solid border-2 rounded-xl md:border-0 p-6  flex items-center flex-col justify-center"
                     style={{
                       background: pro.bgColor,
-                    }}>
+                    }}
+                  >
                     {" "}
                     <img
                       src={pro.ProductMasala}
@@ -30,7 +31,7 @@ const RelatedProducts = () => {
                     />
                   </div>
                 </Link>
-                <Link href={`/products/${pro.id}`}>
+                <Link href={`/product/${pro.id}`}>
                   <h5
                     className="text-center py-2 text-[13px] md:text-xl	text-slate-600"
                     // style={{
@@ -42,7 +43,7 @@ const RelatedProducts = () => {
                 </Link>
                 <div className="mt-[-1rem]">
                   <BuynowBtn
-                    link={`/products/${pro.id}`}
+                    link={`/product/${pro.id}`}
                     text={"View"}
                     sectionClass="relatedResponsiveBtn"
                     width={"125px"}

@@ -13,6 +13,9 @@ const BestSelling = () => {
     dispatch(addToCart(item));
   };
   const allProducts = useQuery(Get_All_Products);
+
+  const specificProduct = allProducts?.data?.allProducts;
+
   return (
     <>
       <div className="border-t mx-16 xl:mt-6 2xl:mt-10 2xl:mx-20"></div>
@@ -25,7 +28,7 @@ const BestSelling = () => {
         </div>
         <div className="flex w-full" id="shop">
           <div className="flex justify-evenly p-2 md:p-6 flex-wrap w-full">
-            {allProducts?.data?.allProducts
+            {specificProduct
               ?.filter((product) => product?.category?.includes("BestSelling"))
               .map((product) => (
                 <div
@@ -40,52 +43,57 @@ const BestSelling = () => {
                     }
                     className="flex items-center justify-center rounded-xl p-4 w-full"
                   >
-                    {!product?.Flipkart && !product?.Amazon ? (
-                      <div className="absolute z-10 m-2 justify-items-center flex items-center">
-                        <img
-                          className="relative w-[100px] md:w-72"
-                          loading="lazy"
-                          src="images/backgrounds/comingsoon.webp"
-                          alt="coming soon"
-                        />
-                      </div>
-                    ) : (
-                      ""
-                    )}
-
-                    <div
-                      className={`${
-                        !product?.Flipkart && !product?.Amazon && " opacity-50"
-                      }  flex items-center justify-center `}
-                    >
+                    <>
                       {!product?.Flipkart && !product?.Amazon ? (
-                        <img
-                          className="relative w-48 2xl:w-64"
-                          loading="lazy"
-                          // src={product?.masalaImg}
-                          alt="Planetsera Spices"
-                          title={product.title}
-                        />
+                        <div className="absolute z-10 m-2 justify-items-center flex items-center">
+                          <img
+                            className="relative w-[100px] md:w-72"
+                            loading="lazy"
+                            src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
+                            alt="coming soon"
+                          />
+                        </div>
                       ) : (
-                        <Link href={`/products/${product.id}`}>
+                        ""
+                      )}
+
+                      <div
+                        className={`${
+                          !product?.Flipkart &&
+                          !product?.Amazon &&
+                          " opacity-50"
+                        }  flex items-center justify-center `}
+                      >
+                        {!product?.Flipkart && !product?.Amazon ? (
                           <img
                             className="relative w-48 2xl:w-64"
                             loading="lazy"
-                            // src={product.masalaImg}
+                            src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
                             alt="Planetsera Spices"
                             title={product.title}
                           />
-                        </Link>
-                      )}
-                    </div>
+                        ) : (
+                          <Link href={`/product/${product.id}`}>
+                            <img
+                              className="relative w-48 2xl:w-64"
+                              loading="lazy"
+                              src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
+                              alt="Planetsera Spices"
+                              title={product.title}
+                            />
+                          </Link>
+                        )}
+                      </div>
+                    </>
                   </div>
+
                   <div className="mt-2 mb-[-10px]">
                     {!product?.Flipkart && !product?.Amazon ? (
                       <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                         {product?.title}
                       </h5>
                     ) : (
-                      <Link href={`/products/${product.id}`}>
+                      <Link href={`/product/${product.id}`}>
                         <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                           {product?.title}
                         </h5>
@@ -108,7 +116,7 @@ const BestSelling = () => {
                     />
                   ) : (
                     <BuynowBtn
-                      link={`/products/${product?.id}`}
+                      link={`/product/${product?.id}`}
                       text={"Buy Now"}
                       width={"130px"}
                       height={"40px"}

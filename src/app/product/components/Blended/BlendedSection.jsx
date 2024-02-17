@@ -6,7 +6,8 @@ const BlendedSection = () => {
   return (
     <div
       className="w-full max-w-full box-border m-auto h-auto relative mt-10 md:mt-10"
-      id="blendedSpices">
+      id="blendedSpices"
+    >
       <div className="basis-12/12 md:mx-16 md:my-4 m-2">
         <img
           src="images/backgrounds/BlendedSpicesBg.webp"
@@ -30,7 +31,7 @@ const BlendedSection = () => {
 
       <div class="container grid grid-cols-3 gap-2 mx-auto blended">
         <div class="w-full rounded blendedImgBox">
-          <Link href={`/products/garam-masala`}>
+          <Link href={`/product/garam-masala`}>
             <img
               alt="PlanetsEra Garam Masala"
               title="Garam Masala"
@@ -46,14 +47,14 @@ const BlendedSection = () => {
           <BuynowBtn
             width={"130px"}
             height={"40px"}
-            link={`/products/garam-masala`}
+            link={`/product/garam-masala`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />
         </div>
 
         <div class="w-full rounded  blendedImgBox">
-          <Link href={`/products/sabji-masala`}>
+          <Link href={`/product/sabji-masala`}>
             <img
               src="images/allProductsImg/SabjiMasala.webp"
               alt="PlanetsEra Sabji Masala"
@@ -69,14 +70,14 @@ const BlendedSection = () => {
           <BuynowBtn
             width={"130px"}
             height={"40px"}
-            link={`/products/sabji-masala`}
+            link={`/product/sabji-masala`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />
         </div>
 
         <div class="w-full rounded blendedImgBox z-10">
-          <Link href={`/products/meat-masala`}>
+          <Link href={`/product/meat-masala`}>
             <img
               loading="lazy"
               src="images/allProductsImg/MeatMasala.webp"
@@ -92,14 +93,14 @@ const BlendedSection = () => {
           <BuynowBtn
             width={"130px"}
             height={"40px"}
-            link={`/products/meat-masala`}
+            link={`/product/meat-masala`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />
         </div>
 
         <div class="w-full rounded mt-10 blendedImgBox">
-          <Link href={`/products/chat-masala`}>
+          <Link href={`/product/chat-masala`}>
             <img
               src="images/allProductsImg/ChatMasala.webp"
               alt="PlanetsEra Chat masala"
@@ -115,7 +116,7 @@ const BlendedSection = () => {
           <BuynowBtn
             width={"130px"}
             height={"40px"}
-            link={`/products/chat-masala`}
+            link={`/product/chat-masala`}
             text={"Buy Now"}
             sectionClass="responsiveBtn"
           />
