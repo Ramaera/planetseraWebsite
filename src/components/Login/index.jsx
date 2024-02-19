@@ -4,12 +4,25 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { LOGIN } from "@/apollo/queries/index";
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { setOrUpdateUser } from "@/state/slice/userSlice";
+import { Get_BUYER, Add_To_Cart, Get_VIEW_CART } from "@/apollo/queries";
+import { addToCart } from "@/state/slice/cartSlice";
 
 const Login = ({ isOpen, closeLoginModal }) => {
+  const CartData = useSelector((state) => state.cart.items);
+
+  const ViewCartData = useQuery(Get_VIEW_CART, {
+    variables: {
+      buyerId: "clssth0vd0002x6jdl6ibs17o",
+    },
+  });
+
+  const buyerid = useQuery(Get_BUYER);
+  console.log("buyerid", buyerid?.getBuyer?.id);
+  const [addToCartServer] = useMutation(Add_To_Cart);
   const colorMe = useSelector((state) => state.colorUs.color);
   const [hide, setHide] = useState(closeLoginModal);
   const [login] = useMutation(LOGIN);
@@ -60,6 +73,29 @@ const Login = ({ isOpen, closeLoginModal }) => {
         }
         dispatch(setOrUpdateUser(data.user));
 
+        if (CartData.length > 0) {
+          CartData.map((item) =>
+            addToCartServer({
+              variables: {
+                buyerId: "clssth0vd0002x6jdl6ibs17o",
+                checkedOut: false,
+                itemCount: item?.quantity,
+                productVariantId: item?.id,
+              },
+            })
+          );
+        }
+
+        // ViewCartData?.data?.viewCart.map((list) =>
+        //   dispatch(
+        //     addToCart({
+        //       id: list?.productVariantIds,
+        //       quantity: list?.itemCount,
+        //       name: "Red",
+        //     })
+        //   )
+        // );
+
         closeLoginModal();
         router.refresh();
       } catch (err) {
@@ -74,15 +110,13 @@ const Login = ({ isOpen, closeLoginModal }) => {
       <div className="flex items-center justify-center min-h-screen m-auto w-[90%] sm:w-full overflow-y-auto max-h-[60%] h-auto">
         <div
           className="fixed inset-0 bg-gray-600 opacity-75"
-          onClick={closeLoginModal}
-        ></div>
+          onClick={closeLoginModal}></div>
         <div className="relative bg-white rounded-lg max-w-md w-full overflow-y-auto">
           <div className="relative p-8 sm:p-10 rounded-b-lg sm:rounded-r-lg">
             <IconButton
               aria-label="close"
               onClick={closeLoginModal}
-              className="absolute top-2 right-2 "
-            >
+              className="absolute top-2 right-2 ">
               <CancelIcon sx={{ color: "lightGrey", fontSize: 30 }} />
             </IconButton>
             <h2 className="text-2xl sm:text-4xl font-bold text-slate-800 text-center">
@@ -127,8 +161,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
                     colorMe + "80"
                   })`,
                 }}
-                className="text-white rounded-lg py-2 px-4 w-full font-semibold sm:text-xl"
-              >
+                className="text-white rounded-lg py-2 px-4 w-full font-semibold sm:text-xl">
                 Log In
               </button>
             </form>
@@ -136,8 +169,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
               If not a User?{" "}
               <Link
                 href={"/register"}
-                style={{ color: colorMe, fontWeight: "bold" }}
-              >
+                style={{ color: colorMe, fontWeight: "bold" }}>
                 Register Now
               </Link>
             </p>

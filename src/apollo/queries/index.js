@@ -97,3 +97,24 @@ mutation CreateCart($buyerId: String!, $checkedOut: Boolean!  $itemCount: Int! $
   }
 }
 `);
+
+export const Get_BUYER = gql(`
+query GetBuyer {
+  getBuyer {
+      id
+      userId
+  }
+}
+`);
+
+export const Get_VIEW_CART = gql(`
+query ViewCart($buyerId: String!) {
+  viewCart(buyerId: $buyerId) {
+      buyerId
+      checkedOut
+      itemCount
+      productVariantIds
+      subTotal
+  }
+}
+`);

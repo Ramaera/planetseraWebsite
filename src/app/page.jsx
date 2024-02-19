@@ -17,18 +17,22 @@ import Head from "next/head";
 import { fetchData } from "@/api";
 
 const Home = () => {
-  const [dataProduct, setDataProduct] = useState([]);
+  // const [dataProduct, setDataProduct] = useState([]);
   useEffect(() => {
     const fetchDataAndNavigate = async () => {
-      try {
-        const data = await fetchData();
-        setDataProduct(data);
-      } catch (error) {
-        // Handle error
+      const accessToken = await AsyncStorage.getItem("accessToken");
+      if (accessToken) {
+        try {
+          const data = await fetchData();
+          console.log("fetchData", data);
+          // setDataProduct(data);
+        } catch (error) {
+          // Handle error
+        }
       }
     };
 
-    // fetchDataAndNavigate();
+    fetchDataAndNavigate();
   }, []);
 
   useEffect(() => {

@@ -18,9 +18,19 @@ import {
 } from "@/state/slice/cartSlice";
 import BuynowBtn from "@/components/BuynowBtn";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { useQuery } from "@apollo/client";
+import { Get_All_Products } from "@/apollo/queries";
 
 const Page = () => {
+  const allProductsQuery = useQuery(Get_All_Products);
+  const allProducts =
+    allProductsQuery.data?.allProducts.flatMap(
+      (list) => list?.ProductsVariant
+    ) || [];
+
   const CartData = useSelector((state) => state.cart.items);
+
+  console.log("allProducts", allProducts);
   const cartItemsQuantity = CartData.reduce(
     (total, item) => total + item.quantity,
     0
@@ -58,59 +68,59 @@ const Page = () => {
               </div>
             </div>
             <div className="cartScroll sm:w-full sm:pt-20 pt-5">
-              {CartData.map((item, index) => (
-                <div className="flex sm:px-10 py-5    border-b-2 ">
-                  <div className="">
-                    <Link href={`/product/${item.id}`}>
-                      <img
-                        className="w-24 sm:w-44 "
-                        src={item.image}
-                        alt="PlanetsEra Spices"
-                      />
-                    </Link>
-                  </div>
-                  <div className="mont-font sm:ml-10 ml-10   ">
-                    <div>
+              {CartData.map((item, index) => {
+                const product = allProducts.find((prod) => prod.id === item.id);
+                return (
+                  <div className="flex sm:px-10 py-5    border-b-2 ">
+                    <div className="">
                       <Link href={`/product/${item.id}`}>
-                        <p className="Cart sm:text-xl ">{item.name}</p>
+                        <img
+                          className="w-24 sm:w-44"
+                          src={`https://planetseraapi.planetsera.com/get-images/${product?.imageUrl[0]}`}
+                          alt="PlanetsEra Spices"
+                        />
                       </Link>
                     </div>
-                    {/* <div className="mt-2 text-xs sm:text-base">
-                      <p style={{ color: "#B9BBBF" }}>
-                        Pkg
-                        <span className="pl-2 text-black">{item.pkg}</span>
-                      </p>
-                    </div> */}
-                    <div className="flex sm:hidden sm:w-full sm:justify-end text-xs sm:text-base mt-3 ">
-                      ₹ {item.price}
-                    </div>
-                    <div className="flex">
-                      <div className="flex justify-between items-center text-xs sm:text-base mt-4 sm:px-3 px-1  border-2 rounded-2xl sm:w-36 w-28  ">
-                        <button onClick={() => handleDecrementQuantity(index)}>
-                          <HorizontalRuleIcon className="w-5 h-5" />
-                        </button>
 
-                        {item.quantity}
-
-                        <button onClick={() => handleIncrementQuantity(index)}>
-                          <AddIcon />
-                        </button>
-                      </div>
+                    <div className="mont-font sm:ml-10 ml-10   ">
                       <div>
-                        <button
-                          onClick={() => handleRemoveFromCart(item.id)}
-                          className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base"
-                        >
-                          Remove
-                        </button>
+                        <Link href={`/product/${item.id}`}>
+                          <p className="Cart sm:text-xl ">{item.name}</p>
+                        </Link>
+                      </div>
+                      <div className="flex sm:hidden sm:w-full sm:justify-end text-xs sm:text-base mt-3 ">
+                        ₹ {product?.price}
+                      </div>
+
+                      <div className="flex">
+                        <div className="flex justify-between items-center text-xs sm:text-base mt-4 sm:px-3 px-1  border-2 rounded-2xl sm:w-36 w-28  ">
+                          <button
+                            onClick={() => handleDecrementQuantity(index)}>
+                            <HorizontalRuleIcon className="w-5 h-5" />
+                          </button>
+
+                          {item.quantity}
+
+                          <button
+                            onClick={() => handleIncrementQuantity(index)}>
+                            <AddIcon />
+                          </button>
+                        </div>
+                        <div>
+                          <button
+                            onClick={() => handleRemoveFromCart(item.id)}
+                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
+                            Remove
+                          </button>
+                        </div>
                       </div>
                     </div>
+                    <div className="sm:flex hidden sm:w-full sm:justify-end text-xs sm:text-base  ">
+                      ₹ {product?.price} × {item?.quantity}
+                    </div>
                   </div>
-                  <div className="sm:flex hidden sm:w-full sm:justify-end text-xs sm:text-base  ">
-                    ₹ {item.price} × {item.quantity}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 

@@ -21,12 +21,14 @@ import { Get_All_Products } from "@/apollo/queries";
 import Specifications from "../../[id]/components/Specifications";
 import { useMutation } from "@apollo/client";
 import { Add_To_Cart } from "@/apollo/queries/index";
+import { Get_BUYER } from "@/apollo/queries";
 
 const ProductDetailsInfo = () => {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const [addToCartServer] = useMutation(Add_To_Cart);
-
+  const { data } = useQuery(Get_BUYER);
+  console.log("getBuyer", data?.getBuyer?.id);
   const { id } = useParams();
   const allProducts = useQuery(Get_All_Products);
 
@@ -67,31 +69,19 @@ const ProductDetailsInfo = () => {
   // };
 
   const handleAddToCart = () => {
-    const productId = specificProduct.id;
-    const productImage = specificProduct?.ProductMasala;
-    const productName = specificProduct?.ProductName;
-    const productPrice = 100;
-    console.log("Adding to server", {
-      buyerId: "clsmtpueg0002pf1tkw1ps1ab",
-      checkedOut: false,
-      itemCount: 1,
-      productVariantId: specificVariant?.id,
-    });
     dispatch(
       addToCart({
-        id: productId,
+        id: specificVariant?.id,
         quantity: quantity,
-        image: productImage,
-        name: productName,
-        price: productPrice,
+        name: specificProduct.title,
       })
     );
 
     addToCartServer({
       variables: {
-        buyerId: "clsmwzkuq0002yu7kcfh6om6e",
+        buyerId: data?.getBuyer?.id,
         checkedOut: false,
-        itemCount: 1,
+        itemCount: quantity,
         productVariantId: specificVariant?.id,
       },
     });
@@ -155,8 +145,7 @@ const ProductDetailsInfo = () => {
                         ? specificProduct?.colored
                         : specificProduct?.colored,
                   }}
-                  className={`md:text-[2.5rem] xl:text-[3rem] text-[1.8rem] sm:tracking-widest font-[500] font-Montserrat mt-8 sm:mt-0`}
-                >
+                  className={`md:text-[2.5rem] xl:text-[3rem] text-[1.8rem] sm:tracking-widest font-[500] font-Montserrat mt-8 sm:mt-0`}>
                   {specificProduct?.title}
                 </h1>
                 <div
@@ -166,8 +155,7 @@ const ProductDetailsInfo = () => {
                         ? specificProduct?.colored
                         : specificProduct?.colored,
                   }}
-                  className={`absolute  w-36 h-[2px] ml-1 mt-[-2px] sm:mt-[-8px]`}
-                ></div>
+                  className={`absolute  w-36 h-[2px] ml-1 mt-[-2px] sm:mt-[-8px]`}></div>
                 <p className="leading-[2rem] text-slate-600 text-lg font-Montserrat mt-1">
                   {specificProduct?.description}
                 </p>
@@ -204,8 +192,7 @@ const ProductDetailsInfo = () => {
                             onClick={() =>
                               setSelectedButton(variantData.weight)
                             }
-                            className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]"
-                          >
+                            className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]">
                             {variantData.weight} g
                           </button>
                         ))}
@@ -268,8 +255,7 @@ const ProductDetailsInfo = () => {
                     specificProduct?.id === "garam-masala" || "sabji-masala"
                       ? " md:top-[30rem] 2xl:top-[26rem] "
                       : " md:top-[32rem] 2xl:top-[22rem]"
-                  } top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9] `}
-                >
+                  } top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9] `}>
                   <img
                     src={specificProduct?.ProductBg}
                     alt="Product Back Info"
@@ -295,8 +281,7 @@ const ProductDetailsInfo = () => {
                       ? specificProduct?.colored
                       : specificProduct?.colored,
                 }}
-                className={`text-[1.65rem] 2xl:text-3xl font-Montserrat`}
-              >
+                className={`text-[1.65rem] 2xl:text-3xl font-Montserrat`}>
                 Usage
               </h3>
 
@@ -307,8 +292,7 @@ const ProductDetailsInfo = () => {
                       ? specificProduct?.colored
                       : specificProduct?.colored,
                 }}
-                className={`absolute  w-16 h-[2px] ml-1 mt-[-2px]`}
-              ></div>
+                className={`absolute  w-16 h-[2px] ml-1 mt-[-2px]`}></div>
               <p className="leading-[1.8rem] text-slate-600 text-[16px] 2xl:text-lg  my-1 font-Montserrat">
                 {item?.usage}
               </p>
@@ -321,8 +305,7 @@ const ProductDetailsInfo = () => {
                       ? specificProduct?.colored
                       : specificProduct?.colored,
                 }}
-                className={`text-[1.65rem] 2xl:text-3xl  font-Montserrat`}
-              >
+                className={`text-[1.65rem] 2xl:text-3xl  font-Montserrat`}>
                 Ingredients
               </h3>
               <div
@@ -332,8 +315,7 @@ const ProductDetailsInfo = () => {
                       ? specificProduct?.colored
                       : specificProduct?.colored,
                 }}
-                className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-0`}
-              ></div>
+                className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-0`}></div>
               <p className="leading-[1.8rem] text-slate-600 text-[16px] 2xl:text-lg  my-1 font-Montserrat">
                 {item?.ingredients}
               </p>
@@ -347,8 +329,7 @@ const ProductDetailsInfo = () => {
                         ? specificProduct?.colored
                         : specificProduct?.colored,
                   }}
-                  className={`text-[1.65rem] 2xl:text-3xl font-Montserrat`}
-                >
+                  className={`text-[1.65rem] 2xl:text-3xl font-Montserrat`}>
                   Health benefits
                 </h3>
                 <div
@@ -358,8 +339,7 @@ const ProductDetailsInfo = () => {
                         ? specificProduct?.colored
                         : specificProduct?.colored,
                   }}
-                  className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-[-5px] sm:mt-0`}
-                ></div>
+                  className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-[-5px] sm:mt-0`}></div>
               </div>
 
               <p className="leading-[1.8rem] text-slate-600 text-[16px] 2xl:text-lg font-Montserrat my-1 ">
@@ -376,8 +356,7 @@ const ProductDetailsInfo = () => {
                 ? specificProduct?.colored
                 : specificProduct?.colored,
           }}
-          className={` text-4xl  leading-[2.5rem] font-Montserrat md:mt-4`}
-        >
+          className={` text-4xl  leading-[2.5rem] font-Montserrat md:mt-4`}>
           Related Products
         </h4>
         <div
@@ -387,8 +366,7 @@ const ProductDetailsInfo = () => {
                 ? specificProduct?.colored
                 : specificProduct?.colored,
           }}
-          className={`absolute  w-[8.5vw] h-[2px] ml-1`}
-        ></div>
+          className={`absolute  w-[8.5vw] h-[2px] ml-1`}></div>
       </div>
     </>
   );
