@@ -69,7 +69,7 @@ const WeekandTadka = () => {
                             title={item.title}
                           />
                         ) : (
-                          <Link href={`/product/${item.id}`}>
+                          <Link href={`/product/${item.productUrl}`}>
                             <img
                               className="relative w-48 2xl:w-64"
                               loading="lazy"
@@ -88,7 +88,7 @@ const WeekandTadka = () => {
                           {item?.title}
                         </h5>
                       ) : (
-                        <Link href={`/product/${item.id}`}>
+                        <Link href={`/product/${item.productUrl}`}>
                           <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                             {item?.title}
                           </h5>
@@ -109,7 +109,7 @@ const WeekandTadka = () => {
                       />
                     ) : (
                       <BuynowBtn
-                        link={`/product/${item?.id}`}
+                        link={`/product/${item?.productUrl}`}
                         text={"Buy Now"}
                         width={"130px"}
                         padding={"20px"}

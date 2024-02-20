@@ -38,7 +38,7 @@ const OurProduct = () => {
           ) {
             return (
               <div className="basis-4/12 mb-10 groundedImg flex flex-col items-center">
-                <Link href={`/product/${items.id}`}>
+                <Link href={`/product/${items.productUrl}`}>
                   <img
                     loading="lazy"
                     src={`https://planetseraapi.planetsera.com/get-images/${items?.productImageUrl}`}
@@ -53,7 +53,7 @@ const OurProduct = () => {
                 <BuynowBtn
                   width={"130px"}
                   height={"40px"}
-                  link={`/product/${items.id}`}
+                  link={`/product/${items.productUrl}`}
                   text={"Buy Now"}
                   sectionClass="responsiveBtn"
                 />

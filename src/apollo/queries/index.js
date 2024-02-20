@@ -79,6 +79,7 @@ query AllProducts {
       Flipkart
       productImageUrl
       type
+      productUrl
       ProductsVariant {
           id
           imageUrl

@@ -33,7 +33,7 @@ const ProductDetailsInfo = () => {
   const allProducts = useQuery(Get_All_Products);
 
   const specificProduct = allProducts?.data?.allProducts.find(
-    (prod) => prod.id === id
+    (prod) => prod.productUrl === id
   );
 
   // const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);

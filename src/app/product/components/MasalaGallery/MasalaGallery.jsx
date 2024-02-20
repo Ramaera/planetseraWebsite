@@ -67,7 +67,7 @@ const MasalaGallery = () => {
           ) {
             return (
               <div className="w-1/5 m-4 flex flex-col items-center">
-                <Link href={`/product/${items.id}`}>
+                <Link href={`/product/${items.productUrl}`}>
                   <img
                     alt="Planetsera Spices"
                     title={items?.title}
@@ -78,7 +78,7 @@ const MasalaGallery = () => {
                   />
                 </Link>
 
-                <Link href={`/product/${items?.id}`}>
+                <Link href={`/product/${items?.productUrl}`}>
                   <h3 className="text-center font-[Montserrat] text-xl	2xl:text-2xl">
                     {items?.title}
                   </h3>
@@ -86,7 +86,7 @@ const MasalaGallery = () => {
                 <BuynowBtn
                   width={"130px"}
                   height={"40px"}
-                  link={`/product/${items?.id}`}
+                  link={`/product/${items?.productUrl}`}
                   text={"Buy Now"}
                 />
               </div>
