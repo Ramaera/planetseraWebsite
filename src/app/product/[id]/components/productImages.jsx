@@ -10,7 +10,7 @@ const ProductImages = ({ specificVariant, selectedButton }) => {
     navigator.clipboard.writeText(window.location.toString());
   };
 
-  console.log("--->>>>", specificVariant);
+  // console.log("--->>>>", specificVariant);
   const [selectedMainImage, setSelectedMainImage] = useState(
     specificVariant?.imageUrl[0]
   );
@@ -39,8 +39,7 @@ const ProductImages = ({ specificVariant, selectedButton }) => {
               //   }`}
               onClick={() => {
                 setSelectedMainImage(img);
-              }}
-            >
+              }}>
               <img
                 src={`https://planetseraapi.planetsera.com/get-images/${img}`}
                 className="w-10 sm:w-full"
@@ -55,8 +54,7 @@ const ProductImages = ({ specificVariant, selectedButton }) => {
             // style={{
             //   background: specificProduct.bgColor,
             // }}
-            className="border-solid border-2 rounded-xl md:border-0 p-6"
-          >
+            className="border-solid border-2 rounded-xl md:border-0 p-6">
             <ImageMagnifier
               src={`https://planetseraapi.planetsera.com/get-images/${selectedMainImage}`}
               alt="PlanetsEra Spices"
@@ -65,23 +63,20 @@ const ProductImages = ({ specificVariant, selectedButton }) => {
           </div>
           <div
             onClick={handleClick}
-            className="absolute md:scale-100 scale-75  top-0 right-0 2xl:top-8 md:top-4 2xl:mt-[-1rem] md:right-4 xl:right-6  "
-          >
+            className="absolute md:scale-100 scale-75  top-0 right-0 2xl:top-8 md:top-4 2xl:mt-[-1rem] md:right-4 xl:right-6  ">
             <Icon color={"red"} />
             <Snackbar
               open={open}
               onClose={() => setOpen(false)}
               autoHideDuration={2000}
-              sx={{ width: "150px" }}
-            >
+              sx={{ width: "150px" }}>
               <MuiAlert
                 severity="success"
                 className="mb-[-10px] md:mb-[-20px]"
                 sx={{
                   width: "100%",
                   marginLeft: "-100px",
-                }}
-              >
+                }}>
                 Link Copied!
               </MuiAlert>
             </Snackbar>

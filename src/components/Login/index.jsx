@@ -20,7 +20,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
     },
   });
 
-  console.log("ViewCartData", ViewCartData);
+  // console.log("ViewCartData", ViewCartData);
 
   const buyerid = useQuery(Get_BUYER);
 
@@ -76,14 +76,17 @@ const Login = ({ isOpen, closeLoginModal }) => {
         dispatch(setOrUpdateUser(data.user));
 
         if (CartData.length > 0) {
-          CartData.forEach((item) =>
-            addToCartServer({
-              variables: {
-                buyerId: data?.user?.buyer?.id,
-                qty: item?.quantity,
-                productVariantId: item?.id,
-              },
-            })
+          console.log("CartData", CartData.length);
+          CartData?.map(
+            (item) =>
+              addToCartServer({
+                variables: {
+                  buyerId: data?.user?.buyer?.id,
+                  qty: item?.quantity,
+                  productVariantId: item?.id,
+                },
+              }),
+            console.log("item", item)
           );
           console.log("reach");
 

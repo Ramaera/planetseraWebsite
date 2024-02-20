@@ -115,11 +115,9 @@ query GetBuyer {
 export const Get_VIEW_CART = gql(`
 query ViewCart($buyerId: String!) {
   viewCart(buyerId: $buyerId) {
-      buyerId
-      checkedOut
-      itemCount
-      productVariantIds
-      subTotal
+    productVariantId
+    qty
+    name
   }
 }
 `);
