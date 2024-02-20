@@ -1,13 +1,15 @@
 import "@/public/styles/blendedSection.css";
 import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
+import { useQuery } from "@apollo/client";
+import { Get_All_Products } from "@/apollo/queries";
 
 const BlendedSection = () => {
+  const allProducts = useQuery(Get_All_Products);
   return (
     <div
       className="w-full max-w-full box-border m-auto h-auto relative mt-10 md:mt-10"
-      id="blendedSpices"
-    >
+      id="blendedSpices">
       <div className="basis-12/12 md:mx-16 md:my-4 m-2">
         <img
           src="images/backgrounds/BlendedSpicesBg.webp"
@@ -29,132 +31,37 @@ const BlendedSection = () => {
         <div className="basis-1/12"></div>
       </div>
 
-      <div class="container grid grid-cols-3 gap-2 mx-auto blended">
-        <div class="w-full rounded blendedImgBox">
-          <Link href={`/product/garam-masala`}>
-            <img
-              alt="PlanetsEra Garam Masala"
-              title="Garam Masala"
-              loading="lazy"
-              src="images/allProductsImg/GaramMasala.webp"
-              className="mx-auto sm:w-64 2xl:w-80"
-            />
-            <h2 className="text-center font-[Montserrat] text-xl 2xl:text-2xl mt-1">
-              Garam Masala
-            </h2>
-          </Link>
-
-          <BuynowBtn
-            width={"130px"}
-            height={"40px"}
-            link={`/product/garam-masala`}
-            text={"Buy Now"}
-            sectionClass="responsiveBtn"
-          />
-        </div>
-
-        <div class="w-full rounded  blendedImgBox">
-          <Link href={`/product/sabji-masala`}>
-            <img
-              src="images/allProductsImg/SabjiMasala.webp"
-              alt="PlanetsEra Sabji Masala"
-              title="Sabji Masala"
-              loading="lazy"
-              className="mx-auto sm:w-64 2xl:w-80"
-            />
-            <h2 className="text-center font-[Montserrat] text-xl 2xl:text-2xl mt-1">
-              Sabji Masala
-            </h2>
-          </Link>
-
-          <BuynowBtn
-            width={"130px"}
-            height={"40px"}
-            link={`/product/sabji-masala`}
-            text={"Buy Now"}
-            sectionClass="responsiveBtn"
-          />
-        </div>
-
-        <div class="w-full rounded blendedImgBox z-10">
-          <Link href={`/product/meat-masala`}>
-            <img
-              loading="lazy"
-              src="images/allProductsImg/MeatMasala.webp"
-              className="mx-auto sm:w-64 2xl:w-80"
-              alt="PlanetsEra Meat masala"
-              title="Meat Masala"
-            />
-            <h2 className="text-center font-[Montserrat] text-xl 2xl:text-2xl mt-1">
-              Meat Masala
-            </h2>
-          </Link>
-
-          <BuynowBtn
-            width={"130px"}
-            height={"40px"}
-            link={`/product/meat-masala`}
-            text={"Buy Now"}
-            sectionClass="responsiveBtn"
-          />
-        </div>
-
-        <div class="w-full rounded mt-10 blendedImgBox">
-          <Link href={`/product/chat-masala`}>
-            <img
-              src="images/allProductsImg/ChatMasala.webp"
-              alt="PlanetsEra Chat masala"
-              title="Chat Masala"
-              loading="lazy"
-              className="mx-auto sm:w-64 2xl:w-80"
-            />
-            <h2 className="text-center font-[Montserrat] text-xl 2xl:text-2xl mt-1">
-              Chat Masala
-            </h2>
-          </Link>
-
-          <BuynowBtn
-            width={"130px"}
-            height={"40px"}
-            link={`/product/chat-masala`}
-            text={"Buy Now"}
-            sectionClass="responsiveBtn"
-          />
-        </div>
-
-        <div class="w-full rounded mt-10 blendedImgBox">
-          <div className="relative flex items-center justify-center">
-            {/* <div className="top-0 absolute z-10 justify-items-center flex items-center">
-              <img
-                className="relative sm:w-64 sm:px-10"
-                loading="lazy"
-                src="images/backgrounds/comingsoon.png"
-                alt="coming soon..."
-              />
-            </div> */}
-            <div className="flex items-center justify-center ">
-              <img
-                loading="lazy"
-                src="images/allProductsImg/PaneerMasala.webp"
-                className="mx-auto sm:w-64 2xl:w-80"
-                alt="PlanetsEra Paneer Masala"
-                title="Paneer Masala"
-              />
-            </div>
-          </div>
-          <h2 className="text-center font-[Montserrat] text-xl 2xl:text-2xl mt-1">
-            Paneer Masala
-          </h2>
-
-          <BuynowBtn
-            height={"40px"}
-            text={"Coming soon"}
-            link=""
-            opacity={0.5}
-            size={"15px"}
-            sectionClass="responsiveBtn"
-          />
-        </div>
+      <div className="basis-12/12 flex flex-wrap ml-4 groundedContainer">
+        {allProducts?.data?.allProducts.map((items) => {
+          if (
+            items?.type.includes("blended") &&
+            !items.category.includes("ComingSoon")
+          ) {
+            return (
+              <div className="basis-4/12 mb-10 groundedImg flex flex-col items-center">
+                <Link href={`/product/${items.id}`}>
+                  <img
+                    loading="lazy"
+                    src={`https://planetseraapi.planetsera.com/get-images/${items?.productImageUrl}`}
+                    alt="Planetsera Spices"
+                    title={items.title}
+                    className="sm:w-64 2xl:w-80"
+                  />
+                  <h2 className="text-center font-[Montserrat] text-xl	2xl:text-2xl mt-2">
+                    {items.title}
+                  </h2>
+                </Link>
+                <BuynowBtn
+                  width={"130px"}
+                  height={"40px"}
+                  link={`/product/${items.id}`}
+                  text={"Buy Now"}
+                  sectionClass="responsiveBtn"
+                />
+              </div>
+            );
+          }
+        })}
       </div>
 
       <div className="basis-12/12 absolute blendedMenuImg w-48 md:w-[52vh] mt-[-65vh] 2xl:mt-[-55vh] 2xl:w-96">

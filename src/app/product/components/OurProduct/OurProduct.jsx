@@ -2,13 +2,16 @@ import "@/public/styles/ourProduct.css";
 import Our from "./OurProductData";
 import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
+import { useQuery } from "@apollo/client";
+import { Get_All_Products } from "@/apollo/queries";
 
 const OurProduct = () => {
+  const allProducts = useQuery(Get_All_Products);
+
   return (
     <div
       className="w-full max-w-full box-border m-auto h-auto relative mt-10 md:mt-20 containerBorder"
-      id="groundSpices"
-    >
+      id="groundSpices">
       <div className="basis-12/12 absolute ourbg"></div>
       <div className=" groundbg">
         <img
@@ -28,30 +31,35 @@ const OurProduct = () => {
         </div>
       </div>
       <div className="basis-12/12 flex flex-wrap ml-4 groundedContainer">
-        {Our.map((items) => {
-          return (
-            <div className="basis-4/12 mb-10 groundedImg flex flex-col items-center">
-              <Link href={`/product/${items.id}`}>
-                <img
-                  loading="lazy"
-                  src={items.masalaImg}
-                  alt="Planetsera Spices"
-                  title={items.masalaName}
-                  className="sm:w-64 2xl:w-80"
+        {allProducts?.data?.allProducts.map((items) => {
+          if (
+            items?.type.includes("grounded") &&
+            !items.category.includes("ComingSoon")
+          ) {
+            return (
+              <div className="basis-4/12 mb-10 groundedImg flex flex-col items-center">
+                <Link href={`/product/${items.id}`}>
+                  <img
+                    loading="lazy"
+                    src={`https://planetseraapi.planetsera.com/get-images/${items?.productImageUrl}`}
+                    alt="Planetsera Spices"
+                    title={items.title}
+                    className="sm:w-64 2xl:w-80"
+                  />
+                  <h2 className="text-center font-[Montserrat] text-xl	2xl:text-2xl mt-2">
+                    {items.title}
+                  </h2>
+                </Link>
+                <BuynowBtn
+                  width={"130px"}
+                  height={"40px"}
+                  link={`/product/${items.id}`}
+                  text={"Buy Now"}
+                  sectionClass="responsiveBtn"
                 />
-                <h2 className="text-center font-[Montserrat] text-xl	2xl:text-2xl mt-2">
-                  {items.masalaName}
-                </h2>
-              </Link>
-              <BuynowBtn
-                width={"130px"}
-                height={"40px"}
-                link={`/product/${items.id}`}
-                text={"Buy Now"}
-                sectionClass="responsiveBtn"
-              />
-            </div>
-          );
+              </div>
+            );
+          }
         })}
       </div>
     </div>
