@@ -19,7 +19,12 @@ import {
 import BuynowBtn from "@/components/BuynowBtn";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useQuery } from "@apollo/client";
-import { Get_All_Products, Get_VIEW_CART } from "@/apollo/queries";
+import {
+  Get_All_Products,
+  Get_VIEW_CART,
+  REMOVE_ITEM_CART,
+} from "@/apollo/queries";
+import { useMutation } from "@apollo/client";
 
 const Page = () => {
   const user = useSelector((state) => state?.user);
@@ -44,6 +49,8 @@ const Page = () => {
 
   const CartData = useSelector((state) => state.cart.items);
 
+  const [removeItemCart] = useMutation(REMOVE_ITEM_CART);
+
   console.log("allProducts", allProducts);
   const cartItemsQuantity = ViewCartData?.data?.viewCart.reduce(
     (total, item) => total + item.qty,
@@ -52,8 +59,25 @@ const Page = () => {
 
   const dispatch = useDispatch();
 
-  const handleRemoveFromCart = (productId) => {
-    dispatch(removeFromCart({ id: productId }));
+  const handleRemoveFromCart = (id) => {
+    // dispatch(removeFromCart({ id: productId }));
+    console.log("idd", id);
+    removeItemCart({
+      variables: {
+        cartItem: id,
+      },
+    });
+
+    toast.success("Item Added To Your Cart", {
+      position: "top-center",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
 
   const handleIncrementQuantity = (index) => {
@@ -125,7 +149,7 @@ const Page = () => {
                         </div>
                         <div>
                           <button
-                            onClick={() => handleRemoveFromCart(item.id)}
+                            onClick={() => handleRemoveFromCart(item?.id)}
                             className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
                             Remove
                           </button>

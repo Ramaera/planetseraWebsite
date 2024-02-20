@@ -118,6 +118,39 @@ query ViewCart($buyerId: String!) {
     productVariantId
     qty
     name
+    id
   }
 }
 `);
+
+export const REMOVE_ITEM_CART = gql(`
+mutation RemoveItemFromCart ($cartItem: String!) {
+  removeItemFromCart (cartItem: $cartItem) {
+      success
+  }
+}
+`);
+
+export const DELETE_CART = gql(`
+mutation DeleteCart ($cartId : String!){
+  deleteCart ( cartId : $cartId ) {
+      id
+      name
+      productVariantId
+      qty
+  }
+}
+`);
+
+// export const CART_OPEARTION = gql(`
+// mutation CartOpeartion ($cartItemId: String!, $operation: String!, $qty: Int! ) {
+//   cartOpeartion(
+//       CartOperationInput: { cartItemId: $cartItemId, operation: $operation, qty: $qty }
+//   ) {
+//       id
+//       name
+//       productVariantId
+//       qty
+//   }
+// }
+// `);
