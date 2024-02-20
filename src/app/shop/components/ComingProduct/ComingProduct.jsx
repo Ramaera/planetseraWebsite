@@ -39,7 +39,7 @@ const ComingProduct = () => {
                   <div className="m-2 w-[45%] md:w-[22%] justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
                     <div
                       style={{
-                        background: item.bgColor,
+                        background: item?.metaData[0]?.bgColor,
                       }}
                       className="relative flex items-center  justify-center rounded-xl p-4 w-full">
                       {!item?.Flipkart && !item?.Amazon ? (
@@ -69,7 +69,7 @@ const ComingProduct = () => {
                             title={item.title}
                           />
                         ) : (
-                          <Link href={`/products/${item.id}`}>
+                          <Link href={`/product/${item.id}`}>
                             <img
                               className="relative w-48 2xl:w-64"
                               loading="lazy"
@@ -88,7 +88,7 @@ const ComingProduct = () => {
                           {item?.title}
                         </h5>
                       ) : (
-                        <Link href={`/products/${item.id}`}>
+                        <Link href={`/product/${item.id}`}>
                           <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                             {item?.title}
                           </h5>
@@ -109,7 +109,7 @@ const ComingProduct = () => {
                       />
                     ) : (
                       <BuynowBtn
-                        link={`/products/${item?.id}`}
+                        link={`/product/${item?.id}`}
                         text={"Buy Now"}
                         width={"130px"}
                         padding={"20px"}

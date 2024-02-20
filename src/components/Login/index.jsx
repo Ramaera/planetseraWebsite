@@ -80,8 +80,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
             addToCartServer({
               variables: {
                 buyerId: data?.user?.buyer?.id,
-                checkedOut: false,
-                itemCount: item?.quantity,
+                qty: item?.quantity,
                 productVariantId: item?.id,
               },
             })

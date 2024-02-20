@@ -24,11 +24,11 @@ import { Add_To_Cart } from "@/apollo/queries/index";
 import { Get_BUYER } from "@/apollo/queries";
 
 const ProductDetailsInfo = () => {
+  const user = useSelector((state) => state?.user);
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const [addToCartServer] = useMutation(Add_To_Cart);
-  const { data } = useQuery(Get_BUYER);
-  console.log("getBuyer", data?.getBuyer?.id);
+
   const { id } = useParams();
   const allProducts = useQuery(Get_All_Products);
 
@@ -79,9 +79,8 @@ const ProductDetailsInfo = () => {
 
     addToCartServer({
       variables: {
-        buyerId: data?.getBuyer?.id,
-        checkedOut: false,
-        itemCount: quantity,
+        buyerId: user?.data?.buyer?.id,
+        qty: quantity,
         productVariantId: specificVariant?.id,
       },
     });
