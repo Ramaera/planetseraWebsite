@@ -22,13 +22,21 @@ import Specifications from "../../[id]/components/Specifications";
 import { useMutation } from "@apollo/client";
 import { Add_To_Cart } from "@/apollo/queries/index";
 import { Get_BUYER } from "@/apollo/queries";
+import Login from "@/components/Login";
 
 const ProductDetailsInfo = () => {
   const user = useSelector((state) => state?.user);
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const [addToCartServer] = useMutation(Add_To_Cart);
+  const [loginModal, setLoginModal] = useState(false);
 
+  const openLoginModal = () => {
+    setLoginModal(true);
+  };
+  const closeLoginModal = () => {
+    setLoginModal(false);
+  };
   const { id } = useParams();
   const allProducts = useQuery(Get_All_Products);
 
@@ -69,33 +77,37 @@ const ProductDetailsInfo = () => {
   // };
 
   const handleAddToCart = () => {
-    dispatch(
-      addToCart({
-        id: specificVariant?.id,
-        quantity: quantity,
-        name: specificProduct.title,
-      })
-    );
+    if (user?.data) {
+      dispatch(
+        addToCart({
+          id: specificVariant?.id,
+          quantity: quantity,
+          name: specificProduct.title,
+        })
+      );
 
-    addToCartServer({
-      variables: {
-        buyerId: user?.data?.buyer?.id,
-        name: specificProduct.title,
-        qty: quantity,
-        productVariantId: specificVariant?.id,
-      },
-    });
+      addToCartServer({
+        variables: {
+          buyerId: user?.data?.buyer?.id,
+          name: specificProduct?.title,
+          qty: quantity,
+          productVariantId: specificVariant?.id,
+        },
+      });
 
-    toast.success("Item Added To Your Cart", {
-      position: "top-center",
-      autoClose: 2500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
+      toast.success("Item Added To Your Cart", {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      openLoginModal();
+    }
   };
 
   const handleIncrementQuantity = () => {
@@ -368,6 +380,7 @@ const ProductDetailsInfo = () => {
           }}
           className={`absolute  w-[8.5vw] h-[2px] ml-1`}></div>
       </div>
+      <Login isOpen={loginModal} closeLoginModal={closeLoginModal} />
     </>
   );
 };

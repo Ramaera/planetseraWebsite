@@ -21,6 +21,8 @@ const Login = ({ isOpen, closeLoginModal }) => {
   });
 
   // console.log("ViewCartData", ViewCartData);
+  const CartDataList = CartData.map((list) => list.quantity);
+  console.log("CartData", CartDataList);
 
   const buyerid = useQuery(Get_BUYER);
 
@@ -75,32 +77,28 @@ const Login = ({ isOpen, closeLoginModal }) => {
         }
         dispatch(setOrUpdateUser(data.user));
 
-        if (CartData.length > 0) {
-          console.log("CartData", CartData.length);
-          CartData?.map(
-            (item) =>
-              addToCartServer({
-                variables: {
-                  buyerId: data?.user?.buyer?.id,
-                  qty: item?.quantity,
-                  productVariantId: item?.id,
-                },
-              }),
-            console.log("item", item)
-          );
-          console.log("reach");
+        // if (CartData.length > 0) {
+        //   CartData?.map((item) =>
+        //     addToCartServer({
+        //       variables: {
+        //         buyerId: data?.user?.buyer?.id,
+        //         qty: item?.quantity,
+        //         productVariantId: item?.id,
+        //       },
+        //     })
+        //   );
 
-          // await dispatch(clearCart());
+        // await dispatch(clearCart());
 
-          // await ViewCartData.refetch();
+        // await ViewCartData.refetch();
 
-          // const updatedCartItems = ViewCartData?.data?.viewCart.map((list) => ({
-          //   id: list?.productVariantIds,
-          //   quantity: list?.itemCount,
-          //   name: "Red",
-          // }));
-          // dispatch(addToCart(updatedCartItems));
-        }
+        // const updatedCartItems = ViewCartData?.data?.viewCart.map((list) => ({
+        //   id: list?.productVariantIds,
+        //   quantity: list?.qty,
+        //   name: list?.name,
+        // }));
+        // dispatch(addToCart(updatedCartItems));
+        // }
 
         closeLoginModal();
         router.refresh();

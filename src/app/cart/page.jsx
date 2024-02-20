@@ -19,9 +19,23 @@ import {
 import BuynowBtn from "@/components/BuynowBtn";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useQuery } from "@apollo/client";
-import { Get_All_Products } from "@/apollo/queries";
+import { Get_All_Products, Get_VIEW_CART } from "@/apollo/queries";
 
 const Page = () => {
+  const user = useSelector((state) => state?.user);
+
+  const ViewCartData = useQuery(Get_VIEW_CART, {
+    variables: {
+      buyerId: user?.data?.buyer?.id,
+    },
+  });
+
+  useEffect(() => {
+    ViewCartData.refetch();
+  }, [user]);
+
+  console.log("ViewCartData", ViewCartData);
+
   const allProductsQuery = useQuery(Get_All_Products);
   const allProducts =
     allProductsQuery.data?.allProducts.flatMap(
@@ -31,8 +45,8 @@ const Page = () => {
   const CartData = useSelector((state) => state.cart.items);
 
   console.log("allProducts", allProducts);
-  const cartItemsQuantity = CartData.reduce(
-    (total, item) => total + item.quantity,
+  const cartItemsQuantity = ViewCartData?.data?.viewCart.reduce(
+    (total, item) => total + item.qty,
     0
   );
 
@@ -57,7 +71,7 @@ const Page = () => {
       </div>
 
       <NavItem page={"cart"} />
-      {CartData.length > 0 ? (
+      {ViewCartData?.data?.viewCart?.length > 0 ? (
         <div className="sm:p-32 py-16 mt-10 sm:mt-0 px-3 sm:flex w-full sm:justify-between font-mont sm:min-h-[76vh]">
           <div className="sm:w-4/6">
             <div className="flex">
@@ -68,8 +82,11 @@ const Page = () => {
               </div>
             </div>
             <div className="cartScroll sm:w-full sm:pt-20 pt-5">
-              {CartData.map((item, index) => {
-                const product = allProducts.find((prod) => prod.id === item.id);
+              {ViewCartData?.data?.viewCart?.map((item, index) => {
+                const product = allProducts.find(
+                  (prod) => prod.id === item.productVariantId
+                );
+
                 return (
                   <div className="flex sm:px-10 py-5    border-b-2 ">
                     <div className="">
@@ -81,13 +98,13 @@ const Page = () => {
                         />
                       </Link>
                     </div>
-
                     <div className="mont-font sm:ml-10 ml-10   ">
                       <div>
                         <Link href={`/product/${item.id}`}>
                           <p className="Cart sm:text-xl ">{item.name}</p>
                         </Link>
                       </div>
+                      <div> {product?.weight}g</div>
                       <div className="flex sm:hidden sm:w-full sm:justify-end text-xs sm:text-base mt-3 ">
                         ₹ {product?.price}
                       </div>
@@ -99,7 +116,7 @@ const Page = () => {
                             <HorizontalRuleIcon className="w-5 h-5" />
                           </button>
 
-                          {item.quantity}
+                          {item.qty}
 
                           <button
                             onClick={() => handleIncrementQuantity(index)}>
@@ -116,7 +133,7 @@ const Page = () => {
                       </div>
                     </div>
                     <div className="sm:flex hidden sm:w-full sm:justify-end text-xs sm:text-base  ">
-                      ₹ {product?.price} × {item?.quantity}
+                      ₹ {product?.price} × {item?.qty}
                     </div>
                   </div>
                 );
