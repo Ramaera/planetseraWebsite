@@ -48,6 +48,9 @@ mutation Login( $email: String!, $password: String!) {
       user{
         name
         email
+        buyer {
+          id
+        }
       }
   }
 }
@@ -57,6 +60,9 @@ export const GetUser = gql(`
 query GetUser {
   me {
    email
+   buyer {
+    id
+   }
   }
 }`);
 

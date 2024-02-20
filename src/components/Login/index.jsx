@@ -9,7 +9,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { setOrUpdateUser } from "@/state/slice/userSlice";
 import { Get_BUYER, Add_To_Cart, Get_VIEW_CART } from "@/apollo/queries";
-import { addToCart } from "@/state/slice/cartSlice";
+import { addToCart, clearCart } from "@/state/slice/cartSlice";
 
 const Login = ({ isOpen, closeLoginModal }) => {
   const CartData = useSelector((state) => state.cart.items);
@@ -20,8 +20,10 @@ const Login = ({ isOpen, closeLoginModal }) => {
     },
   });
 
+  console.log("ViewCartData", ViewCartData);
+
   const buyerid = useQuery(Get_BUYER);
-  console.log("buyerid", buyerid?.getBuyer?.id);
+
   const [addToCartServer] = useMutation(Add_To_Cart);
   const colorMe = useSelector((state) => state.colorUs.color);
   const [hide, setHide] = useState(closeLoginModal);
@@ -74,27 +76,28 @@ const Login = ({ isOpen, closeLoginModal }) => {
         dispatch(setOrUpdateUser(data.user));
 
         if (CartData.length > 0) {
-          CartData.map((item) =>
+          CartData.forEach((item) =>
             addToCartServer({
               variables: {
-                buyerId: "clssth0vd0002x6jdl6ibs17o",
+                buyerId: data?.user?.buyer?.id,
                 checkedOut: false,
                 itemCount: item?.quantity,
                 productVariantId: item?.id,
               },
             })
           );
-        }
 
-        // ViewCartData?.data?.viewCart.map((list) =>
-        //   dispatch(
-        //     addToCart({
-        //       id: list?.productVariantIds,
-        //       quantity: list?.itemCount,
-        //       name: "Red",
-        //     })
-        //   )
-        // );
+          // await dispatch(clearCart());
+
+          // await ViewCartData.refetch();
+
+          // const updatedCartItems = ViewCartData?.data?.viewCart.map((list) => ({
+          //   id: list?.productVariantIds,
+          //   quantity: list?.itemCount,
+          //   name: "Red",
+          // }));
+          // dispatch(addToCart(updatedCartItems));
+        }
 
         closeLoginModal();
         router.refresh();
