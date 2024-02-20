@@ -92,11 +92,11 @@ query AllProducts {
 `);
 
 export const Add_To_Cart = gql(`
-mutation CreateCart($buyerId: String!, $qty: Int! $productVariantId : Int! ) {
+mutation CreateCart($buyerId: String!, $name : String!,  $qty: Int! $productVariantId : Int! ) {
   createCart(
-      CreateCartInput: { buyerId: $buyerId, qty: $qty, productVariantId: $productVariantId }
+      CreateCartInput: { buyerId: $buyerId, name : $name, qty: $qty, productVariantId: $productVariantId }
   ) {
-      buyerId
+    name
   
   }
 }

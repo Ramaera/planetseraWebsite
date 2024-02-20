@@ -16,7 +16,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
 
   const ViewCartData = useQuery(Get_VIEW_CART, {
     variables: {
-      buyerId: "clssth0vd0002x6jdl6ibs17o",
+      buyerId: "clsu1heiy000217prqznru1ta",
     },
   });
 
@@ -85,6 +85,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
               },
             })
           );
+          console.log("reach");
 
           // await dispatch(clearCart());
 

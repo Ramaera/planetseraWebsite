@@ -80,6 +80,7 @@ const ProductDetailsInfo = () => {
     addToCartServer({
       variables: {
         buyerId: user?.data?.buyer?.id,
+        name: specificProduct.title,
         qty: quantity,
         productVariantId: specificVariant?.id,
       },
