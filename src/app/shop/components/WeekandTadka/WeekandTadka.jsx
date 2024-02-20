@@ -8,6 +8,12 @@ import { useQuery } from "@apollo/client";
 const WeekandTadka = () => {
   const allProducts = useQuery(Get_All_Products);
 
+  const WeekandTadkaData = allProducts?.data?.allProducts.filter((prod) => {
+    if (prod?.category?.includes("WeekandTadka")) {
+      return prod;
+    }
+  });
+
   return (
     <>
       <div className="mt-4">
@@ -24,25 +30,24 @@ const WeekandTadka = () => {
         </div>
         <div className="flex w-full" id="shop">
           <div className="flex  justify-evenly p-2 md:p-6 flex-wrap w-full ">
-            {allProducts?.data?.allProducts
-              ?.filter((product) => product?.category?.includes("WeekandTadka"))
-              .map((product) => (
+            {WeekandTadkaData?.map((item) => {
+              if (!item) {
+                return;
+              }
+              return (
                 <>
                   <div className="m-2 w-[45%] md:w-[22%] justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
                     <div
-                      style={
-                        {
-                          // background: item.bgColor,
-                        }
-                      }
-                      className="relative flex items-center  justify-center rounded-xl p-4 w-full"
-                    >
-                      {!product?.Flipkart && !product?.Amazon ? (
+                      style={{
+                        background: item.bgColor,
+                      }}
+                      className="relative flex items-center  justify-center rounded-xl p-4 w-full">
+                      {!item?.Flipkart && !item?.Amazon ? (
                         <div className="top-0 absolute z-10 justify-items-center flex items-center">
                           <img
                             className="relative"
                             loading="lazy"
-                            src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
+                            src="images/backgrounds/comingsoon.webp"
                             // width={"360px"}
                             alt="coming soon"
                           />
@@ -53,50 +58,45 @@ const WeekandTadka = () => {
 
                       <div
                         className={`${
-                          !product?.Flipkart &&
-                          !product?.Amazon &&
-                          " opacity-50"
-                        }  flex items-center justify-center `}
-                      >
-                        {!product?.Flipkart && !product?.Amazon ? (
+                          !item?.Flipkart && !item?.Amazon && " opacity-50"
+                        }  flex items-center justify-center `}>
+                        {!item?.Flipkart && !item?.Amazon ? (
                           <img
                             className="relative w-48 2xl:w-64"
                             loading="lazy"
-                            src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
+                            src={`https://planetseraapi.planetsera.com/get-images/${item?.productImageUrl}`}
                             alt="Planetsera Spices"
-                            title={product.title}
+                            title={item.title}
                           />
                         ) : (
-                          <Link href={`/product/${product.id}`}>
+                          <Link href={`/products/${item.id}`}>
                             <img
                               className="relative w-48 2xl:w-64"
                               loading="lazy"
-                              src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
+                              src={`https://planetseraapi.planetsera.com/get-images/${item?.productImageUrl}`}
                               // width={"360px"}
                               alt="Planetsera Spices"
-                              title={product.title}
+                              title={item.title}
                             />
                           </Link>
                         )}
                       </div>
                     </div>
                     <div className="mt-2 mb-[-10px]">
-                      {!product?.Flipkart && !product?.Amazon ? (
+                      {!item?.Flipkart && !item?.Amazon ? (
                         <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
-                          {product?.title}
+                          {item?.title}
                         </h5>
                       ) : (
-                        <Link href={`/product/${product.id}`}>
+                        <Link href={`/products/${item.id}`}>
                           <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
-                            {product?.title}
+                            {item?.title}
                           </h5>
                         </Link>
                       )}
                     </div>
 
-                    {!product?.Flipkart &&
-                    !product?.Amazon &&
-                    product?.category ? (
+                    {!item?.Flipkart && !item?.Amazon && item?.category ? (
                       <BuynowBtn
                         text={"Coming soon"}
                         link=""
@@ -109,7 +109,7 @@ const WeekandTadka = () => {
                       />
                     ) : (
                       <BuynowBtn
-                        link={`/product/${product?.id}`}
+                        link={`/products/${item?.id}`}
                         text={"Buy Now"}
                         width={"130px"}
                         padding={"20px"}
@@ -119,7 +119,8 @@ const WeekandTadka = () => {
                     )}
                   </div>
                 </>
-              ))}
+              );
+            })}
           </div>
         </div>
       </div>

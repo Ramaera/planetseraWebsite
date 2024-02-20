@@ -25,8 +25,7 @@ const MasalaGallery = () => {
               <div>
                 <Link
                   href={`/product/${items.id}`}
-                  className="flex items-center justify-center"
-                >
+                  className="flex items-center justify-center">
                   <img
                     alt="sabji masala"
                     title="Selected Premium Sabji Masala"
@@ -51,16 +50,27 @@ const MasalaGallery = () => {
           })}
         </Slider>
       </div>
+
       {/*---------------- Web View ------------------------------*/}
       <div className="md:flex flex-wrap	hidden justify-evenly mb-32 md:mb-4">
         {allProducts?.data?.allProducts.map((items) => {
-          if (!items.category.includes("ComingSoon")) {
+          if (
+            !items.category.includes("ComingSoon") &&
+            (items.title.includes("Sabji Masala") ||
+              items.title.includes("Chat Masala") ||
+              items.title.includes("Amchur Powder") ||
+              items.title.includes("Garam Masala") ||
+              items.title.includes("Turmeric Powder") ||
+              items.title.includes("Coriander Powder") ||
+              items.title.includes("Cumin Powder") ||
+              items.title.includes("Black Pepper Powder"))
+          ) {
             return (
               <div className="w-1/5 m-4 flex flex-col items-center">
                 <Link href={`/product/${items.id}`}>
                   <img
                     alt="Planetsera Spices"
-                    title={items?.productName}
+                    title={items?.title}
                     loading="lazy"
                     src={`https://planetseraapi.planetsera.com/get-images/${items?.productImageUrl}`}
                     // width={"330px"}
