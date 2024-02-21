@@ -38,7 +38,7 @@ const Page = () => {
     },
   });
 
-  console.log("ViewCartData", ViewCartData?.data?.viewCart.cartItem);
+  // console.log("ViewCartData", ViewCartData?.data?.viewCart.cartItem);
 
   const allProductsQuery = useQuery(Get_All_Products);
   const allProducts =
@@ -165,7 +165,8 @@ const Page = () => {
                           <button
                             onClick={() =>
                               handleDecrementQuantity(index, item.id)
-                            }>
+                            }
+                          >
                             <HorizontalRuleIcon className="w-5 h-5" />
                           </button>
 
@@ -174,14 +175,16 @@ const Page = () => {
                           <button
                             onClick={() =>
                               handleIncrementQuantity(index, item.id)
-                            }>
+                            }
+                          >
                             <AddIcon />
                           </button>
                         </div>
                         <div>
                           <button
                             onClick={() => handleRemoveFromCart(item?.id)}
-                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
+                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base"
+                          >
                             Remove
                           </button>
                           <ToastContainer />
