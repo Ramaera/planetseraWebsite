@@ -1,5 +1,15 @@
 import { createSlice, current } from "@reduxjs/toolkit";
+import { AddressType } from "../types/address";
 
+export type AddressState = {
+  selectedAddress: [];
+  allAddresses: [AddressType] | [];
+};
+
+const initialState: AddressState = {
+  selectedAddress: null,
+  allAddresses: [],
+};
 const addressSlice = createSlice({
   name: "address",
   initialState: {

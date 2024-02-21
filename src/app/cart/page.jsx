@@ -25,7 +25,9 @@ import {
   Get_All_Products,
   Get_VIEW_CART,
   REMOVE_ITEM_CART,
+  GET_ALL_ADDRESS,
 } from "@/apollo/queries";
+import { saveAddress } from "@/state/slice/addressSlice";
 import { useMutation } from "@apollo/client";
 
 const Page = () => {
@@ -38,7 +40,13 @@ const Page = () => {
     },
   });
 
-  // console.log("ViewCartData", ViewCartData?.data?.viewCart.cartItem);
+  const getAllAddress = useQuery(GET_ALL_ADDRESS, {
+    variables: {
+      buyerId: user?.data?.buyer?.id,
+    },
+  });
+
+  console.log("ViewCartData", ViewCartData?.data?.viewCart.cartItem);
 
   const allProductsQuery = useQuery(Get_All_Products);
   const allProducts =
@@ -47,7 +55,6 @@ const Page = () => {
     ) || [];
 
   const CartData = useSelector((state) => state.cart.items);
-
   const [removeItemCart] = useMutation(REMOVE_ITEM_CART);
 
   const cartItemsQuantity = ViewCartData?.data?.viewCart?.cartItem.reduce(
@@ -165,8 +172,7 @@ const Page = () => {
                           <button
                             onClick={() =>
                               handleDecrementQuantity(index, item.id)
-                            }
-                          >
+                            }>
                             <HorizontalRuleIcon className="w-5 h-5" />
                           </button>
 
@@ -175,16 +181,14 @@ const Page = () => {
                           <button
                             onClick={() =>
                               handleIncrementQuantity(index, item.id)
-                            }
-                          >
+                            }>
                             <AddIcon />
                           </button>
                         </div>
                         <div>
                           <button
                             onClick={() => handleRemoveFromCart(item?.id)}
-                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base"
-                          >
+                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
                             Remove
                           </button>
                           <ToastContainer />
