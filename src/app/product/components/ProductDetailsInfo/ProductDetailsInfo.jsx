@@ -44,6 +44,8 @@ const ProductDetailsInfo = () => {
     (prod) => prod.productUrl === id
   );
 
+  console.log("specificProduct", specificProduct);
+  // specificProduct?.metaData[0]?.productBg,
   // const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const [selectedButton, setSelectedButton] = useState(50);
   const [defaultSelectedButton, setDefaultSelectedButton] = useState(50);
@@ -136,6 +138,7 @@ const ProductDetailsInfo = () => {
         <div className="w-full sm:flex">
           <div className="sm:w-2/5">
             <ProductImages
+              specificProduct={specificProduct}
               specificVariant={specificVariant}
               selectedButton={selectedButton}
               // handleClick={handleClick}
@@ -152,20 +155,14 @@ const ProductDetailsInfo = () => {
               <div className="order-4 sm:order-3">
                 <h1
                   style={{
-                    color:
-                      selectedButton === "50gram"
-                        ? specificProduct?.colored
-                        : specificProduct?.colored,
+                    color: specificProduct?.metaData[0]?.colored,
                   }}
                   className={`md:text-[2.5rem] xl:text-[3rem] text-[1.8rem] sm:tracking-widest font-[500] font-Montserrat mt-8 sm:mt-0`}>
                   {specificProduct?.title}
                 </h1>
                 <div
                   style={{
-                    backgroundColor:
-                      selectedButton === "50gram"
-                        ? specificProduct?.colored
-                        : specificProduct?.colored,
+                    backgroundColor: specificProduct?.metaData[0]?.colored,
                   }}
                   className={`absolute  w-36 h-[2px] ml-1 mt-[-2px] sm:mt-[-8px]`}></div>
                 <p className="leading-[2rem] text-slate-600 text-lg font-Montserrat mt-1">
@@ -193,12 +190,16 @@ const ProductDetailsInfo = () => {
                             style={
                               selectedButton === variantData.weight
                                 ? {
-                                    color: "red",
-                                    borderColor: "red",
+                                    color:
+                                      specificProduct?.metaData[0]?.colored,
+                                    borderColor:
+                                      specificProduct?.metaData[0]?.colored,
                                   }
                                 : {
-                                    color: specificProduct?.inactiveBtn,
-                                    borderColor: specificProduct?.inactiveBtn,
+                                    color:
+                                      specificProduct?.metaData[0]?.inactiveBtn,
+                                    borderColor:
+                                      specificProduct?.metaData[0]?.inactiveBtn,
                                   }
                             }
                             onClick={() =>
@@ -233,13 +234,13 @@ const ProductDetailsInfo = () => {
                   />
                   <ToastContainer />
                 </div>
-                <h6 className="mt-6 font-base text-md">
-                  You Can Also Buy From Here
-                </h6>
+                <p className="mt-6 font-base text-md text-slate-500">
+                  You can also buy from here
+                </p>
                 {selectedButton === "50gram" ? (
                   <BuyIcons
-                    flipkart={specificProduct?.flipkart50}
-                    amazon={specificProduct?.amazon50}
+                    flipkart={specificProduct?.Flipkart}
+                    amazon={specificProduct?.Amazon}
                     // planetsera={specificProduct}
                   />
                 ) : selectedButton === "100gram" ? (
@@ -264,16 +265,18 @@ const ProductDetailsInfo = () => {
                 />
                 <div
                   className={` right-0 absolute   ${
-                    specificProduct?.id === "garam-masala" || "sabji-masala"
+                    specificProduct?.productUrl === "garam-masala" ||
+                    "sabji-masala"
                       ? " md:top-[30rem] 2xl:top-[26rem] "
                       : " md:top-[32rem] 2xl:top-[22rem]"
                   } top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9] `}>
                   <img
-                    src={specificProduct?.ProductBg}
+                    src={`https://planetseraapi.planetsera.com/get-images/${specificProduct?.metaData[0]?.productBg}`}
                     alt="Product Back Info"
                     // title="product bg"
                     className={`absolute  right-0 ${
-                      specificProduct?.id === "garam-masala" || "sabji-masala"
+                      specificProduct?.productUrl === "garam-masala" ||
+                      "sabji-masala"
                         ? "max-w-[70px] sm:max-w-[180px] 2xl:max-w-full  max-h-96"
                         : "max-w-[100px] sm:max-w-[180px] 2xl:max-w-full  max-h-96"
                     }  `}
@@ -288,10 +291,7 @@ const ProductDetailsInfo = () => {
             <div className="mt-4">
               <h3
                 style={{
-                  color:
-                    selectedButton === "50gram"
-                      ? specificProduct?.colored
-                      : specificProduct?.colored,
+                  color: item?.colored,
                 }}
                 className={`text-[1.65rem] 2xl:text-3xl font-Montserrat`}>
                 Usage
@@ -299,10 +299,7 @@ const ProductDetailsInfo = () => {
 
               <div
                 style={{
-                  backgroundColor:
-                    selectedButton === "50gram"
-                      ? specificProduct?.colored
-                      : specificProduct?.colored,
+                  backgroundColor: item?.colored,
                 }}
                 className={`absolute  w-16 h-[2px] ml-1 mt-[-2px]`}></div>
               <p className="leading-[1.8rem] text-slate-600 text-[16px] 2xl:text-lg  my-1 font-Montserrat">
@@ -312,20 +309,14 @@ const ProductDetailsInfo = () => {
             <div className="mt-2 sm:mt-4  z-10 relative">
               <h3
                 style={{
-                  color:
-                    selectedButton === "50gram"
-                      ? specificProduct?.colored
-                      : specificProduct?.colored,
+                  color: item?.colored,
                 }}
                 className={`text-[1.65rem] 2xl:text-3xl  font-Montserrat`}>
                 Ingredients
               </h3>
               <div
                 style={{
-                  backgroundColor:
-                    selectedButton === "50gram"
-                      ? specificProduct?.colored
-                      : specificProduct?.colored,
+                  backgroundColor: item?.colored,
                 }}
                 className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-0`}></div>
               <p className="leading-[1.8rem] text-slate-600 text-[16px] 2xl:text-lg  my-1 font-Montserrat">
@@ -336,20 +327,14 @@ const ProductDetailsInfo = () => {
               <div>
                 <h3
                   style={{
-                    color:
-                      selectedButton === "50gram"
-                        ? specificProduct?.colored
-                        : specificProduct?.colored,
+                    color: item?.colored,
                   }}
                   className={`text-[1.65rem] 2xl:text-3xl font-Montserrat`}>
                   Health benefits
                 </h3>
                 <div
                   style={{
-                    backgroundColor:
-                      selectedButton === "50gram"
-                        ? specificProduct?.colored
-                        : specificProduct?.colored,
+                    backgroundColor: item?.colored,
                   }}
                   className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-[-5px] sm:mt-0`}></div>
               </div>
@@ -363,20 +348,14 @@ const ProductDetailsInfo = () => {
 
         <h4
           style={{
-            color:
-              selectedButton === "50gram"
-                ? specificProduct?.colored
-                : specificProduct?.colored,
+            color: specificProduct?.metaData[0]?.colored,
           }}
           className={` text-4xl  leading-[2.5rem] font-Montserrat md:mt-4`}>
           Related Products
         </h4>
         <div
           style={{
-            backgroundColor:
-              selectedButton === "50gram"
-                ? specificProduct?.colored
-                : specificProduct?.colored,
+            backgroundColor: specificProduct?.metaData[0]?.colored,
           }}
           className={`absolute  w-[8.5vw] h-[2px] ml-1`}></div>
       </div>

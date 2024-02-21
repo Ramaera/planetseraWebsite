@@ -11,6 +11,8 @@ import disableScroll from "disable-scroll";
 import Login from "../Login";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
+import { useQuery } from "@apollo/client";
+import { Get_VIEW_CART } from "@/apollo/queries";
 
 usePathname;
 const NavigationMobile = ({ page }) => {
@@ -21,10 +23,26 @@ const NavigationMobile = ({ page }) => {
   const user = useSelector((state) => state?.user);
 
   const cartItems = useSelector((state) => state.cart.items);
-  const cartItemsQuantity = cartItems.reduce(
-    (total, item) => total + item.quantity,
+
+  const ViewCartData = useQuery(Get_VIEW_CART, {
+    variables: {
+      buyerId: user?.data?.buyer?.id,
+    },
+  });
+
+  useEffect(() => {
+    ViewCartData.refetch();
+  }, [user, cartItems]);
+
+  const cartItemsQuantity = ViewCartData?.data?.viewCart?.cartItem.reduce(
+    (total, item) => total + item.qty,
     0
   );
+
+  // const cartItemsQuantity = cartItems.reduce(
+  //   (total, item) => total + item.quantity,
+  //   0
+  // );
 
   const dispatch = useDispatch();
 

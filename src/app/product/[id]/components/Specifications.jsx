@@ -9,14 +9,13 @@ const Specifications = ({ selectedButton, specificProduct }) => {
                 ? specificProduct?.colored
                 : specificProduct?.colored,
           }}
-          className={`md:text-center text-2xl  tracking-widest font-light my-2 font-Montserrat text-center`}
-        >
+          className={`md:text-center text-2xl  tracking-widest font-light my-2 font-Montserrat text-center`}>
           Specifications
         </h3>
         <div className=" flex justify-evenly border-2 rounded-md font-Montserrat font-normal	md:font-light">
           <div className="my-1 p-0 flex flex-col items-center justify-center">
             <p className="">Weight </p>
-            <p className="font-normal">{selectedButton + " gm"}</p>
+            <p className="font-normal">{selectedButton + " g"}</p>
           </div>
           <div className="border-r-2"></div>
           <div className="my-1 p-0 flex flex-col items-center  justify-center">
