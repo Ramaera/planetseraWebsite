@@ -19,6 +19,7 @@ import {
 import BuynowBtn from "@/components/BuynowBtn";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useQuery } from "@apollo/client";
+import { CART_OPEARTION } from "@/apollo/queries";
 import {
   Get_All_Products,
   Get_VIEW_CART,
@@ -28,6 +29,7 @@ import { useMutation } from "@apollo/client";
 
 const Page = () => {
   const user = useSelector((state) => state?.user);
+  const [CartOpeartion] = useMutation(CART_OPEARTION);
 
   const ViewCartData = useQuery(Get_VIEW_CART, {
     variables: {
@@ -39,7 +41,7 @@ const Page = () => {
     ViewCartData.refetch();
   }, [user]);
 
-  console.log("ViewCartData", ViewCartData);
+  console.log("ViewCartData", ViewCartData?.data?.viewCart.cartItem);
 
   const allProductsQuery = useQuery(Get_All_Products);
   const allProducts =
@@ -51,8 +53,7 @@ const Page = () => {
 
   const [removeItemCart] = useMutation(REMOVE_ITEM_CART);
 
-  console.log("allProducts", allProducts);
-  const cartItemsQuantity = ViewCartData?.data?.viewCart.reduce(
+  const cartItemsQuantity = ViewCartData?.data?.viewCart?.cartItem.reduce(
     (total, item) => total + item.qty,
     0
   );
@@ -80,11 +81,31 @@ const Page = () => {
     });
   };
 
-  const handleIncrementQuantity = (index) => {
+  const handleIncrementQuantity = async (index, itemId) => {
+    console.log("clicked", itemId);
+    try {
+      const resp = await CartOpeartion({
+        variables: {
+          cartItemId: itemId,
+          operation: "INCREMENT",
+          qty: 1,
+        },
+      });
+    } catch (err) {
+      console.log("err", err.message);
+    }
+
     dispatch(incrementQuantity({ index }));
   };
 
-  const handleDecrementQuantity = (index) => {
+  const handleDecrementQuantity = async (index, itemId) => {
+    const resp = await CartOpeartion({
+      variables: {
+        cartItemId: itemId,
+        operation: "DECREMENT",
+        qty: 1,
+      },
+    });
     dispatch(decrementQuantity({ index }));
   };
 
@@ -95,7 +116,7 @@ const Page = () => {
       </div>
 
       <NavItem page={"cart"} />
-      {ViewCartData?.data?.viewCart?.length > 0 ? (
+      {ViewCartData?.data?.viewCart?.cartItem.length > 0 ? (
         <div className="sm:p-32 py-16 mt-10 sm:mt-0 px-3 sm:flex w-full sm:justify-between font-mont sm:min-h-[76vh]">
           <div className="sm:w-4/6">
             <div className="flex">
@@ -106,7 +127,7 @@ const Page = () => {
               </div>
             </div>
             <div className="cartScroll sm:w-full sm:pt-20 pt-5">
-              {ViewCartData?.data?.viewCart?.map((item, index) => {
+              {ViewCartData?.data?.viewCart?.cartItem.map((item, index) => {
                 const product = allProducts.find(
                   (prod) => prod.id === item.productVariantId
                 );
@@ -136,21 +157,28 @@ const Page = () => {
                       <div className="flex">
                         <div className="flex justify-between items-center text-xs sm:text-base mt-4 sm:px-3 px-1  border-2 rounded-2xl sm:w-36 w-28  ">
                           <button
-                            onClick={() => handleDecrementQuantity(index)}>
+                            onClick={() =>
+                              handleDecrementQuantity(index, item.id)
+                            }
+                          >
                             <HorizontalRuleIcon className="w-5 h-5" />
                           </button>
 
                           {item.qty}
 
                           <button
-                            onClick={() => handleIncrementQuantity(index)}>
+                            onClick={() =>
+                              handleIncrementQuantity(index, item.id)
+                            }
+                          >
                             <AddIcon />
                           </button>
                         </div>
                         <div>
                           <button
                             onClick={() => handleRemoveFromCart(item?.id)}
-                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
+                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base"
+                          >
                             Remove
                           </button>
                         </div>

@@ -115,10 +115,15 @@ query GetBuyer {
 export const Get_VIEW_CART = gql(`
 query ViewCart($buyerId: String!) {
   viewCart(buyerId: $buyerId) {
-    productVariantId
-    qty
-    name
+    buyerId
     id
+    cartItem{
+      id
+      productVariantId
+      name
+      qty
+      
+    }
   }
 }
 `);
@@ -142,15 +147,12 @@ mutation DeleteCart ($cartId : String!){
 }
 `);
 
-// export const CART_OPEARTION = gql(`
-// mutation CartOpeartion ($cartItemId: String!, $operation: String!, $qty: Int! ) {
-//   cartOpeartion(
-//       CartOperationInput: { cartItemId: $cartItemId, operation: $operation, qty: $qty }
-//   ) {
-//       id
-//       name
-//       productVariantId
-//       qty
-//   }
-// }
-// `);
+export const CART_OPEARTION = gql(`
+mutation CartOpeartion ($cartItemId: String!, $operation: String!, $qty: Int! ) {
+  cartOpeartion(
+      CartOperationInput: { cartItemId: $cartItemId, operation: $operation, qty: $qty }
+  ) {
+      success
+  }
+}
+`);
