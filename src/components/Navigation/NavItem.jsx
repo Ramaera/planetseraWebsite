@@ -24,6 +24,7 @@ const NavItem = ({ page }) => {
     },
   });
 
+  console.log("cartItems", cartItems);
   useEffect(() => {
     ViewCartData.refetch();
   }, [user, cartItems]);

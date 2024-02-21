@@ -76,30 +76,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
           localStorage.setItem(key, data[key]);
         }
         dispatch(setOrUpdateUser(data.user));
-
-        // if (CartData.length > 0) {
-        //   CartData?.map((item) =>
-        //     addToCartServer({
-        //       variables: {
-        //         buyerId: data?.user?.buyer?.id,
-        //         qty: item?.quantity,
-        //         productVariantId: item?.id,
-        //       },
-        //     })
-        //   );
-
-        // await dispatch(clearCart());
-
-        // await ViewCartData.refetch();
-
-        // const updatedCartItems = ViewCartData?.data?.viewCart.map((list) => ({
-        //   id: list?.productVariantIds,
-        //   quantity: list?.qty,
-        //   name: list?.name,
-        // }));
-        // dispatch(addToCart(updatedCartItems));
-        // }
-
+        // await fetchData(data);
         closeLoginModal();
         router.refresh();
       } catch (err) {
@@ -109,6 +86,56 @@ const Login = ({ isOpen, closeLoginModal }) => {
     }
   };
 
+  // const fetchData = async (data) => {
+  //   try {
+  //     if (data) {
+  //       console.log("first", data?.user?.buyer?.id);
+  //       const ViewCartData = useQuery(Get_VIEW_CART, {
+  //         variables: {
+  //           buyerId: data?.user?.buyer?.id,
+  //         },
+  //       });
+  //       console.log("second", ViewCartData);
+  //       if (ViewCartData) {
+  //         const updatedCartItems = ViewCartData?.data?.viewCart?.cartItem.map(
+  //           (list) => ({
+  //             id: list?.productVariantIds,
+  //             quantity: list?.qty,
+  //             name: list?.name,
+  //           })
+  //         );
+  //         console.log("third", updatedCartItems);
+  //         dispatch(addToCart(updatedCartItems));
+  //         console.log("end");
+  //       }
+  //     }
+  //   } catch (err) {
+  //     toast.error(err.message);
+  //   }
+  // };
+
+  // if (CartData.length > 0) {
+  //   CartData?.map((item) =>
+  //     addToCartServer({
+  //       variables: {
+  //         buyerId: data?.user?.buyer?.id,
+  //         qty: item?.quantity,
+  //         productVariantId: item?.id,
+  //       },
+  //     })
+  //   );
+
+  // await dispatch(clearCart());
+
+  // await ViewCartData.refetch();
+
+  // const updatedCartItems = ViewCartData?.data?.viewCart.map((list) => ({
+  //   id: list?.productVariantIds,
+  //   quantity: list?.qty,
+  //   name: list?.name,
+  // }));
+  // dispatch(addToCart(updatedCartItems));
+  // }
   return (
     <Modal open={isOpen} onClose={closeLoginModal}>
       <div className="flex items-center justify-center min-h-screen m-auto w-[90%] sm:w-full overflow-y-auto max-h-[60%] h-auto">
