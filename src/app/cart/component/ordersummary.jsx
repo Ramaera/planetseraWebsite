@@ -81,7 +81,7 @@ const ordersummary = () => {
                 );
                 return (
                   <div className="flex">
-                    {item?.name} × {item?.qty}
+                    {item?.name} {product?.weight}g × {item?.qty}
                   </div>
                 );
               })}

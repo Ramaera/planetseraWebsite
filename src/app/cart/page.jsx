@@ -20,6 +20,7 @@ import BuynowBtn from "@/components/BuynowBtn";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useQuery } from "@apollo/client";
 import { CART_OPEARTION } from "@/apollo/queries";
+import { ToastContainer, toast } from "react-toastify";
 import {
   Get_All_Products,
   Get_VIEW_CART,
@@ -57,15 +58,13 @@ const Page = () => {
   const dispatch = useDispatch();
 
   const handleRemoveFromCart = (id) => {
-    // dispatch(removeFromCart({ id: productId }));
-    console.log("idd", id);
     removeItemCart({
       variables: {
         cartItem: id,
       },
     });
 
-    toast.success("Item Added To Your Cart", {
+    toast.error("Product Remove From Your Cart", {
       position: "top-center",
       autoClose: 2500,
       hideProgressBar: false,
@@ -75,6 +74,8 @@ const Page = () => {
       progress: undefined,
       theme: "light",
     });
+
+    dispatch(removeFromCart({ id }));
   };
 
   const handleIncrementQuantity = async (index, itemId) => {
@@ -107,7 +108,12 @@ const Page = () => {
 
   useEffect(() => {
     ViewCartData.refetch();
-  }, [user, handleDecrementQuantity, handleIncrementQuantity]);
+  }, [
+    user,
+    handleDecrementQuantity,
+    handleIncrementQuantity,
+    handleRemoveFromCart,
+  ]);
 
   return (
     <>
@@ -126,28 +132,28 @@ const Page = () => {
                 {cartItemsQuantity} Items
               </div>
             </div>
-            <div className="cartScroll sm:w-full sm:pt-20 pt-5">
+            <div className="cartScroll sm:w-full  pt-5">
               {ViewCartData?.data?.viewCart?.cartItem.map((item, index) => {
                 const product = allProducts.find(
                   (prod) => prod.id === item.productVariantId
                 );
-
+                // console.log("product", allProducts);
                 return (
                   <div className="flex sm:px-10 py-5    border-b-2 ">
                     <div className="">
-                      <Link href={`/product/${item.id}`}>
-                        <img
-                          className="w-24 sm:w-44"
-                          src={`https://planetseraapi.planetsera.com/get-images/${product?.imageUrl[0]}`}
-                          alt="PlanetsEra Spices"
-                        />
-                      </Link>
+                      {/* <Link href={`/product/${product?.productUrl}`}> */}
+                      <img
+                        className="w-24 sm:w-44"
+                        src={`https://planetseraapi.planetsera.com/get-images/${product?.imageUrl[0]}`}
+                        alt="PlanetsEra Spices"
+                      />
+                      {/* </Link> */}
                     </div>
                     <div className="mont-font sm:ml-10 ml-10   ">
                       <div>
-                        <Link href={`/product/${item.id}`}>
-                          <p className="Cart sm:text-xl ">{item.name}</p>
-                        </Link>
+                        {/* <Link href={`/product/${item.id}`}> */}
+                        <p className="Cart sm:text-xl ">{item.name}</p>
+                        {/* </Link> */}
                       </div>
                       <div> {product?.weight}g</div>
                       <div className="flex sm:hidden sm:w-full sm:justify-end text-xs sm:text-base mt-3 ">
@@ -178,6 +184,7 @@ const Page = () => {
                             className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
                             Remove
                           </button>
+                          <ToastContainer />
                         </div>
                       </div>
                     </div>
