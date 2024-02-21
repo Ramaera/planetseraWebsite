@@ -69,6 +69,7 @@ const address = () => {
           name: formData.name,
           mobileNumber: formData.mobile,
           buyerId: user?.data?.buyer?.id,
+
           address: [
             { city: formData.city },
             { pinCode: formData.pinCode },
@@ -77,7 +78,7 @@ const address = () => {
         },
       });
       console.log("formData", formData, "resp", resp.data.addAddress);
-      // dispatch(saveAddress(resp?.data?.addAddress));
+      dispatch(saveAddress(resp?.data?.addAddress));
     } else {
       alert("Please fill in all required fields");
     }

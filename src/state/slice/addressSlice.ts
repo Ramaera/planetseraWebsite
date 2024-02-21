@@ -18,9 +18,14 @@ const addressSlice = createSlice({
   },
   reducers: {
     saveAddress: (state, action) => {
-      const random_id = Math.floor(Math.random() * 100000);
-      state.allAddresses.push({ ...action.payload, id: random_id });
-      if (!state.selectedAddress) state.selectedAddress = random_id;
+      // // const random_id = Math.floor(Math.random() * 100000);
+      // state.allAddresses.push({ ...action.payload, id: random_id });
+      // if (!state.selectedAddress) state.selectedAddress = random_id;
+      console.log("action",action.payload);
+      
+      const { addresId } = action.payload;
+      state.allAddresses.push(action.payload);
+      if (!state.selectedAddress) state.selectedAddress = addresId;
     },
     removeAddress: (state, action) => {
       state.allAddresses = state.allAddresses.filter(
@@ -38,3 +43,44 @@ const addressSlice = createSlice({
 export const { saveAddress, removeAddress, selectAddress } =
   addressSlice.actions;
 export default addressSlice.reducer;
+// import { createSlice } from "@reduxjs/toolkit";
+// import { AddressType } from "../types/address";
+
+// export type AddressState = {
+//   selectedAddress: number | null; // Assuming selectedAddress is a number
+//   allAddresses: AddressType[]; // Assuming AddressType is a type for addresses
+// };
+
+// const initialState: AddressState = {
+//   selectedAddress: null,
+//   allAddresses: [],
+// };
+
+// const addressSlice = createSlice({
+//   name: "address",
+//   initialState,
+//   reducers: {
+//     saveAddress: (state, action) => {
+//       const random_id = Math.floor(Math.random() * 100000);
+//       const newAddress = { ...action.payload, id: random_id };
+//       return {
+//         ...state,
+//         allAddresses: [...state.allAddresses, newAddress],
+//         selectedAddress: state.selectedAddress ? state.selectedAddress : random_id,
+//       };
+//     },
+//     removeAddress: (state, action) => {
+//       state.allAddresses = state.allAddresses.filter(
+//         (item) => item.id !== action.payload.id
+//       );
+//       if (state.selectedAddress === action.payload.id)
+//         state.selectedAddress = null;
+//     },
+//     selectAddress: (state, action) => {
+//       state.selectedAddress = action.payload;
+//     },
+//   },
+// });
+
+// export const { saveAddress, removeAddress, selectAddress } = addressSlice.actions;
+// export default addressSlice.reducer;

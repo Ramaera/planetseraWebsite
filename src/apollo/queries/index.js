@@ -167,6 +167,7 @@ mutation AddAddress($buyerId:String!, $mobileNumber:String!,$name:String,$addres
             name: $name
         }
     ) {
+      addresId
         address
         buyerId
         mobileNumber
