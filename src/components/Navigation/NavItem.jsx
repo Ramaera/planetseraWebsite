@@ -15,7 +15,7 @@ import { Get_VIEW_CART } from "@/apollo/queries";
 import Login from "../Login";
 
 const NavItem = ({ page }) => {
-  const cartItems = useSelector((state) => state.cart.items);
+  const cartItems = useSelector((state) => state.cart);
   const user = useSelector((state) => state?.user);
 
   const ViewCartData = useQuery(Get_VIEW_CART, {
@@ -26,7 +26,7 @@ const NavItem = ({ page }) => {
 
   useEffect(() => {
     ViewCartData.refetch();
-  }, [user]);
+  }, [user, cartItems]);
 
   const cartItemsQuantity = ViewCartData?.data?.viewCart?.cartItem.reduce(
     (total, item) => total + item.qty,
@@ -92,8 +92,7 @@ const NavItem = ({ page }) => {
         isVisible
           ? "	navHeader text-black border-[1px] border-slate-300	"
           : "text-white"
-      }`}
-    >
+      }`}>
       <Link className={"scale-[0.6] mb-8 sm:mt-[-0.6rem]"} href="/">
         <img className="" src="/images/logo/logo.webp" alt="logo" />
       </Link>
@@ -111,8 +110,7 @@ const NavItem = ({ page }) => {
             "black",
         }}
         id="navigation"
-        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}
-      >
+        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}>
         <li>
           <Link href="/">Home</Link>
         </li>

@@ -5,6 +5,8 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { usePathname, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import Login from "@/components/Login";
+import { useQuery } from "@apollo/client";
+import { Get_VIEW_CART, Get_All_Products } from "@/apollo/queries";
 
 // import Address from "../address";
 
@@ -27,16 +29,27 @@ const ordersummary = () => {
   const closeLoginModal = () => {
     setLoginModal(false);
   };
-  const getData = () => {
-    return useSelector((state) => state?.user);
-  };
-  // useEffect(() => {
-  //   const user = getData();
-  // }, []);
+
+  const allProductsQuery = useQuery(Get_All_Products);
+  const allProducts =
+    allProductsQuery.data?.allProducts.flatMap(
+      (list) => list?.ProductsVariant
+    ) || [];
+
+  const ViewCartData = useQuery(Get_VIEW_CART, {
+    variables: {
+      buyerId: user?.data?.buyer?.id,
+    },
+  });
 
   const calculatePrice = () => {
-    return CartData.reduce(
-      (total, item) => total + item.price * item.quantity,
+    return allProducts.reduce(
+      (total, prod) =>
+        prod.price *
+          (ViewCartData?.data?.viewCart?.cartItem.find(
+            (item) => item.productVariantId === prod.id
+          )?.qty || 0) +
+        total,
       0
     );
   };
@@ -56,19 +69,22 @@ const ordersummary = () => {
       <div className="font-mont sm:w-1/4 pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
-          className="border py-9 px-6 shadow-xl"
-        >
+          className="border py-9 px-6 shadow-xl">
           <p className="text-2xl  ">Order Summary</p>
-          <div className="flex justify-between   mt-5 ">
+
+          <div className="flex justify-between flex-col   mt-5 ">
             Items
             <div>
-              {CartData.map((item, index) => (
-                <>
+              {ViewCartData?.data?.viewCart?.cartItem.map((item, index) => {
+                const product = allProducts.find(
+                  (prod) => prod.id === item.productVariantId
+                );
+                return (
                   <div className="flex">
-                    {item?.name} × {item?.quantity}
+                    {item?.name} × {item?.qty}
                   </div>
-                </>
-              ))}
+                );
+              })}
             </div>
           </div>
           {/* <div className="flex  justify-between mt-5 ">
@@ -133,8 +149,7 @@ const ordersummary = () => {
                   <div
                     onClick={openLoginModal}
                     className="text-white"
-                    style={{ color: colorMe, fontWeight: "bold" }}
-                  >
+                    style={{ color: colorMe, fontWeight: "bold" }}>
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
                       Proceed To Checkout
                     </div>
