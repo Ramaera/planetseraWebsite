@@ -156,3 +156,12 @@ mutation CartOpeartion ($cartItemId: String!, $operation: String!, $qty: Int! ) 
   }
 }
 `);
+
+export const REMOVE_ITEM_FROM_CART = gql(`
+
+mutation RemoveItemFromCart ($cartItem: String!) {
+  removeItemFromCart(cartItem: $cartItem) {
+      success
+  }
+}
+`);

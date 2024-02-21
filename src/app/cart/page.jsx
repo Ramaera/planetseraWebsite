@@ -20,12 +20,14 @@ import BuynowBtn from "@/components/BuynowBtn";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useQuery } from "@apollo/client";
 import { CART_OPEARTION } from "@/apollo/queries";
+import { ToastContainer, toast } from "react-toastify";
 import {
   Get_All_Products,
   Get_VIEW_CART,
   REMOVE_ITEM_CART,
 } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
+import { REMOVE_ITEM_FROM_CART } from "@/apollo/queries";
 
 const Page = () => {
   const user = useSelector((state) => state?.user);
@@ -36,10 +38,6 @@ const Page = () => {
       buyerId: user?.data?.buyer?.id,
     },
   });
-
-  useEffect(() => {
-    ViewCartData.refetch();
-  }, [user]);
 
   console.log("ViewCartData", ViewCartData?.data?.viewCart.cartItem);
 
@@ -108,7 +106,9 @@ const Page = () => {
     });
     dispatch(decrementQuantity({ index }));
   };
-
+  useEffect(() => {
+    ViewCartData.refetch();
+  }, [user, handleRemoveFromCart]);
   return (
     <>
       <div className="navMobile ">
