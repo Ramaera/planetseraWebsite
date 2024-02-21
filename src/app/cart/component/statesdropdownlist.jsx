@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const IndianStatesDropdown = () => {
+const IndianStatesDropdown = ({ getSelectedState }) => {
   // Array of Indian states
   const indianStates = [
     "Andhra Pradesh",
@@ -47,6 +47,7 @@ const IndianStatesDropdown = () => {
   // Function to handle state changes
   const handleStateChange = (event) => {
     setSelectedState(event.target.value);
+    getSelectedState(selectedState);
   };
 
   return (

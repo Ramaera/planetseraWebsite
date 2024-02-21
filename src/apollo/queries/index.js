@@ -156,3 +156,34 @@ mutation CartOpeartion ($cartItemId: String!, $operation: String!, $qty: Int! ) 
   }
 }
 `);
+
+export const ADD_ADDRESS = gql(`
+mutation AddAddress($buyerId:String!, $mobileNumber:String!,$name:String,$address:[JSONObject!]!) {
+    addAddress(
+        data: {
+            address: $address
+            buyerId: $buyerId
+            mobileNumber: $mobileNumber
+            name: $name
+        }
+    ) {
+        address
+        buyerId
+        mobileNumber
+        name
+    }
+}
+
+
+`);
+
+export const GET_ALL_ADDRESS = gql(`
+ query GetBuyerAddress($buyerId:String!) {
+    getBuyerAddress(buyerId:$buyerId ) {
+        address
+        buyerId
+        mobileNumber
+        name
+    }
+}
+`);

@@ -20,9 +20,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
     },
   });
 
-  // console.log("ViewCartData", ViewCartData);
-  const CartDataList = CartData.map((list) => list.quantity);
-  console.log("CartData", CartDataList);
+  console.log("ViewCartData", ViewCartData);
 
   const buyerid = useQuery(Get_BUYER);
 
@@ -77,28 +75,42 @@ const Login = ({ isOpen, closeLoginModal }) => {
         }
         dispatch(setOrUpdateUser(data.user));
 
-        // if (CartData.length > 0) {
-        //   CartData?.map((item) =>
-        //     addToCartServer({
-        //       variables: {
-        //         buyerId: data?.user?.buyer?.id,
-        //         qty: item?.quantity,
-        //         productVariantId: item?.id,
-        //       },
-        //     })
-        //   );
+        if (CartData.length > 0) {
+          console.log("CartData", CartData.length);
+          CartData.map(
+            (item) => console.log("item", item),
+            addToCartServer({
+              variables: {
+                buyerId: data?.user?.buyer?.id,
+                qty: item?.quantity,
+                productVariantId: item?.id,
+              },
+            })
+          );
+          // CartData?.map(
+          //   (item) =>
+          //     addToCartServer({
+          //       variables: {
+          //         buyerId: data?.user?.buyer?.id,
+          //         qty: item?.quantity,
+          //         productVariantId: item?.id,
+          //       },
+          //     }),
+          //   console.log("item", item)
+          // );
+          console.log("reach");
 
-        // await dispatch(clearCart());
+          // await dispatch(clearCart());
 
-        // await ViewCartData.refetch();
+          // await ViewCartData.refetch();
 
-        // const updatedCartItems = ViewCartData?.data?.viewCart.map((list) => ({
-        //   id: list?.productVariantIds,
-        //   quantity: list?.qty,
-        //   name: list?.name,
-        // }));
-        // dispatch(addToCart(updatedCartItems));
-        // }
+          // const updatedCartItems = ViewCartData?.data?.viewCart.map((list) => ({
+          //   id: list?.productVariantIds,
+          //   quantity: list?.itemCount,
+          //   name: "Red",
+          // }));
+          // dispatch(addToCart(updatedCartItems));
+        }
 
         closeLoginModal();
         router.refresh();
@@ -114,13 +126,15 @@ const Login = ({ isOpen, closeLoginModal }) => {
       <div className="flex items-center justify-center min-h-screen m-auto w-[90%] sm:w-full overflow-y-auto max-h-[60%] h-auto">
         <div
           className="fixed inset-0 bg-gray-600 opacity-75"
-          onClick={closeLoginModal}></div>
+          onClick={closeLoginModal}
+        ></div>
         <div className="relative bg-white rounded-lg max-w-md w-full overflow-y-auto">
           <div className="relative p-8 sm:p-10 rounded-b-lg sm:rounded-r-lg">
             <IconButton
               aria-label="close"
               onClick={closeLoginModal}
-              className="absolute top-2 right-2 ">
+              className="absolute top-2 right-2 "
+            >
               <CancelIcon sx={{ color: "lightGrey", fontSize: 30 }} />
             </IconButton>
             <h2 className="text-2xl sm:text-4xl font-bold text-slate-800 text-center">
@@ -165,7 +179,8 @@ const Login = ({ isOpen, closeLoginModal }) => {
                     colorMe + "80"
                   })`,
                 }}
-                className="text-white rounded-lg py-2 px-4 w-full font-semibold sm:text-xl">
+                className="text-white rounded-lg py-2 px-4 w-full font-semibold sm:text-xl"
+              >
                 Log In
               </button>
             </form>
@@ -173,7 +188,8 @@ const Login = ({ isOpen, closeLoginModal }) => {
               If not a User?{" "}
               <Link
                 href={"/register"}
-                style={{ color: colorMe, fontWeight: "bold" }}>
+                style={{ color: colorMe, fontWeight: "bold" }}
+              >
                 Register Now
               </Link>
             </p>

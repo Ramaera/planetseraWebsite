@@ -24,7 +24,9 @@ import {
   Get_All_Products,
   Get_VIEW_CART,
   REMOVE_ITEM_CART,
+  GET_ALL_ADDRESS,
 } from "@/apollo/queries";
+import { saveAddress } from "@/state/slice/addressSlice";
 import { useMutation } from "@apollo/client";
 
 const Page = () => {
@@ -37,9 +39,11 @@ const Page = () => {
     },
   });
 
-  useEffect(() => {
-    ViewCartData.refetch();
-  }, [user]);
+  const getAllAddress = useQuery(GET_ALL_ADDRESS, {
+    variables: {
+      buyerId: user?.data?.buyer?.id,
+    },
+  });
 
   console.log("ViewCartData", ViewCartData?.data?.viewCart.cartItem);
 
@@ -50,7 +54,6 @@ const Page = () => {
     ) || [];
 
   const CartData = useSelector((state) => state.cart.items);
-
   const [removeItemCart] = useMutation(REMOVE_ITEM_CART);
 
   const cartItemsQuantity = ViewCartData?.data?.viewCart?.cartItem.reduce(
@@ -108,6 +111,10 @@ const Page = () => {
     });
     dispatch(decrementQuantity({ index }));
   };
+
+  useEffect(() => {
+    ViewCartData.refetch();
+  }, [user]);
 
   return (
     <>
