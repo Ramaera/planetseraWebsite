@@ -140,10 +140,7 @@ mutation RemoveItemFromCart ($cartItem: String!) {
 export const DELETE_CART = gql(`
 mutation DeleteCart ($cartId : String!){
   deleteCart ( cartId : $cartId ) {
-      id
-      name
-      productVariantId
-      qty
+    success
   }
 }
 `);
@@ -188,4 +185,27 @@ export const GET_ALL_ADDRESS = gql(`
         name
     }
 }
+`);
+
+export const CREATE_ORDER = gql(`
+  mutation CreateOrder(
+    $AddressId: Int!
+    $ShippingCost: Int!
+    $buyerId: String!
+    $cartId: String!
+    $orderAmount: Float!
+  ) {
+    createOrder(
+      CreateOrder: {
+        AddressId: $AddressId
+        ShippingCost: $ShippingCost
+        buyerId: $buyerId
+        cartId: $cartId
+        orderAmount: $orderAmount
+      }
+    ) {
+      buyerId
+      orderAmount
+    }
+  }
 `);
