@@ -224,7 +224,7 @@ export const CREATE_ORDER = gql(`
 `);
 
 export const REMOVE_ADDRESS = gql(`
-mutation RemoveAddress ($AddressId : String!){
+mutation RemoveAddress ($AddressId : Int!){
   removeAddress ( AddressId : $AddressId ) {
     success
   }
