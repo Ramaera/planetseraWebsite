@@ -44,8 +44,7 @@ const page = () => {
                   ? shipmentData.shippingMethod
                   : value
               }
-              onChange={handleChange}
-            >
+              onChange={handleChange}>
               <div className=" pb-5 pt-5 flex justify-between w-full border-b-2 items-center ">
                 <FormControlLabel
                   className="font-mont"
@@ -64,8 +63,7 @@ const page = () => {
                     <Box
                       className="responsive-box-shipping"
                       component="div"
-                      fontFamily="Montserrat"
-                    >
+                      fontFamily="Montserrat">
                       Free <span className="ml-2">Regular Shipment</span>
                     </Box>
                   }
@@ -92,8 +90,7 @@ const page = () => {
                     <Box
                       className="responsive-box-shipping"
                       component="div"
-                      fontFamily="Montserrat"
-                    >
+                      fontFamily="Montserrat">
                       ₹ 50 <span className="ml-2">Priority Shipping</span>
                     </Box>
                   }

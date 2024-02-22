@@ -60,6 +60,7 @@ export const GetUser = gql(`
 query GetUser {
   me {
    email
+   name
    buyer {
     id
    }
@@ -167,7 +168,6 @@ mutation AddAddress($buyerId:String!, $mobileNumber:String!,$name:String,$addres
             name: $name
         }
     ) {
-      addresId
         address
         buyerId
         mobileNumber
@@ -181,6 +181,7 @@ mutation AddAddress($buyerId:String!, $mobileNumber:String!,$name:String,$addres
 export const GET_ALL_ADDRESS = gql(`
  query GetBuyerAddress($buyerId:String!) {
     getBuyerAddress(buyerId:$buyerId ) {
+        addresId
         address
         buyerId
         mobileNumber

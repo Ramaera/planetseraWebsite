@@ -17,7 +17,7 @@ const ordersummary = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
   const CartData = useSelector((state) => state.cart.items);
   const [discount, setDiscount] = useState(56);
-  const [shipping, setShipping] = useState(50);
+  const [shipping, setShipping] = useState(100);
   const [couponAmount, setCouponAmount] = useState(20);
   const user = useSelector((state) => state?.user);
   const [registered, setRegistered] = useState(true);
@@ -56,13 +56,23 @@ const ordersummary = () => {
 
   const calculateTotalPrice = () => {
     const totalPrice = calculatePrice();
-    // const discountedPrice = totalPrice - discount;
-    const totalPriceWithShipping = totalPrice + shipping;
-    // const totalPriceAfterCoupon = totalPriceWithShipping - couponAmount;
 
-    // return totalPriceAfterCoupon;
-    return totalPriceWithShipping;
+    if (totalPrice >= 200) {
+      const totalPriceWithShipping = totalPrice + 50;
+      return totalPriceWithShipping;
+    } else {
+      const totalPriceWithShipping = totalPrice + 100;
+      return totalPriceWithShipping;
+    }
   };
+
+  useEffect(() => {
+    if (calculatePrice() >= 200) {
+      setShipping(50);
+    } else {
+      setShipping(100);
+    }
+  }, [calculatePrice]);
 
   return (
     <>

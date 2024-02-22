@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useSelector, useDispatch } from "react-redux";
 
-const steps = ["Address ", "Shipping ", "Payment "];
+const steps = ["Address ", "Payment "];
 
 export default function HorizontalLinearStepper() {
   const router = useRouter();
@@ -58,10 +58,10 @@ export default function HorizontalLinearStepper() {
     case 0:
       customComponent = <Address />;
       break;
+    // case 1:
+    //   customComponent = <Shipping />;
+    //   break;
     case 1:
-      customComponent = <Shipping />;
-      break;
-    case 2:
       customComponent = <Payment />;
       break;
     // Add more cases for additional custom components if needed
