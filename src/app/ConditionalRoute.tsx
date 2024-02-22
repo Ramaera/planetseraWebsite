@@ -6,7 +6,7 @@ import * as React from "react";
 import { usePathname } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { setOrUpdateUser } from "@/state/slice/userSlice";
-import { addToCart } from "@/state/slice/cartSlice";
+import { addToCart, clearCart, storeInCart } from "@/state/slice/cartSlice";
 import { useSelector } from "react-redux";
 
 const ConditionalRoute = ({ children }) => {
@@ -23,12 +23,15 @@ const ConditionalRoute = ({ children }) => {
   //     buyerId: userResp?.data?.me?.buyer?.id,
   //   },
   // });
+  // const CartData = useSelector((state) => state?.cart.items);
+  // console.log("CartData", CartData);
 
   // const [ViewCartData, { loading, data }] = useLazyQuery(Get_VIEW_CART, {
   //   variables: { buyerId: userResp?.data?.me?.buyer?.id },
   // });
 
   // if (ViewCartData) {
+  //   dispatch(clearCart());
   //   // const updatedCartItems = ViewCartData?.data?.viewCart?.cartItem?.map(
   //   const updatedCartItems = data?.viewCart?.cartItem?.map((list) => ({
   //     id: list?.productVariantId,
@@ -36,14 +39,14 @@ const ConditionalRoute = ({ children }) => {
   //     name: list?.name,
   //   }));
   //   updatedCartItems?.forEach((item) => {
-  //     dispatch(addToCart(item));
+  //     dispatch(storeInCart(item));
   //   });
   //   // dispatch(addToCart(updatedCartItems));
   // }
 
   // useEffect(() => {
   //   ViewCartData();
-  // }, [ViewCartData]);
+  // }, []);
 
   const loadUser = async () => {
     try {

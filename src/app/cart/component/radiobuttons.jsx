@@ -11,16 +11,21 @@ import "@/public/styles/globals.css";
 import { Montserrat } from "next/font/google";
 import { useSelector, useDispatch } from "react-redux";
 import { removeAddress, selectAddress } from "@/state/slice/addressSlice";
-import { GET_ALL_ADDRESS } from "@/apollo/queries";
+import { GET_ALL_ADDRESS, REMOVE_ADDRESS } from "@/apollo/queries";
 import { useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 
 export default function ControlledRadioButtonsGroup() {
   const user = useSelector((state) => state?.user);
+  const [removeAddress] = useMutation(REMOVE_ADDRESS);
 
   const selectedAddressId = useSelector(
     (state) => state?.address?.selectedAddress
   );
-  console.log("address", selectedAddressId);
+
+  const address = useSelector((state) => state?.address);
+
+  console.log("address", address);
 
   const addressesData = useQuery(GET_ALL_ADDRESS, {
     variables: {
@@ -33,6 +38,19 @@ export default function ControlledRadioButtonsGroup() {
     dispatch(selectAddress(event.target.value));
   };
 
+  const handleRemoveAddress = async (address) => {
+    try {
+      const resp = await removeAddress({
+        variables: {
+          AddressId: address?.addresId,
+        },
+      });
+      dispatch(removeAddress(address));
+    } catch (err) {
+      console.log("err", err.message);
+    }
+  };
+
   return (
     <FormControl className="w-full">
       <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
@@ -41,17 +59,15 @@ export default function ControlledRadioButtonsGroup() {
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"
         value={selectedAddressId}
-        onChange={handleChange}
-      >
+        onChange={handleChange}>
         <div className="w-full">
           {addressesData?.data?.getBuyerAddress?.map(
             (_address) => (
-              console.log("cvbnm", _address),
+              console.log("aaaaa", _address),
               (
                 <div
                   className="flex w-full justify-between my-8"
-                  key={_address?.addresId}
-                >
+                  key={_address?.addresId}>
                   <div className="sm:w-8/12  ">
                     <FormControlLabel
                       value={_address?.addresId}
@@ -71,8 +87,7 @@ export default function ControlledRadioButtonsGroup() {
 
                     <div
                       style={{ color: "#2F302F" }}
-                      className="px-8 sm:font-normal text-xs sm:text-base	"
-                    >
+                      className="px-8 sm:font-normal text-xs sm:text-base	">
                       <p>
                         {_address?.address[0]?.city}{" "}
                         {_address?.address[1]?.pincode}{" "}
@@ -85,8 +100,7 @@ export default function ControlledRadioButtonsGroup() {
                     {/* Edit | */}
                     <button
                       className="Cart-remove"
-                      onClick={() => dispatch(removeAddress(_address))}
-                    >
+                      onClick={() => handleRemoveAddress(_address)}>
                       Remove
                     </button>
                   </div>

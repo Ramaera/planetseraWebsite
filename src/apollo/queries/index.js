@@ -204,8 +204,29 @@ export const CREATE_ORDER = gql(`
         orderAmount: $orderAmount
       }
     ) {
-      buyerId
-      orderAmount
+      newOrder {
+        buyerId
+        orderDate
+        address {
+            addresId
+            address
+            buyerId
+            mobileNumber
+            name
+        }
+    }
+    orderItems {
+        productVariantId
+        qty
+    }
     }
   }
+`);
+
+export const REMOVE_ADDRESS = gql(`
+mutation RemoveAddress ($AddressId : String!){
+  removeAddress ( AddressId : $AddressId ) {
+    success
+  }
+}
 `);

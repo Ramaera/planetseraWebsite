@@ -8,8 +8,10 @@ import axios from "axios";
 import BuynowBtn from "@/components/BuynowBtn";
 import { CREATE_ORDER, DELETE_CART } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
+import { useRouter } from "next/navigation";
 
 const page = () => {
+  const router = useRouter();
   const addressesData = useSelector((state) => state.address);
   const user = useSelector((state) => state?.user);
 
@@ -115,9 +117,14 @@ const page = () => {
           cartId: CartId,
         },
       });
+      handleOrderPlaced();
     } catch (err) {
       console.log("err", err.message);
     }
+  };
+
+  const handleOrderPlaced = () => {
+    router.push("/orderPlaced");
   };
 
   return (
