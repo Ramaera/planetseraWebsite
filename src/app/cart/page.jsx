@@ -99,7 +99,7 @@ const Page = () => {
       console.log("err", err.message);
     }
 
-    dispatch(incrementQuantity({ index }));
+    dispatch(incrementQuantity({ itemId }));
   };
 
   const handleDecrementQuantity = async (index, itemId) => {

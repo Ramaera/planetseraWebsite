@@ -24,9 +24,17 @@ const cartSlice = createSlice({
       state.items = state.items.filter((item) => item.id !== id);
     },
 
+    // incrementQuantity: (state, action) => {
+    //   const { index } = action.payload;
+    //   state.items[index].quantity += 1;
+    // },
+
     incrementQuantity: (state, action) => {
-      const { index } = action.payload;
-      state.items[index].quantity += 1;
+      const { id } = action.payload;
+      const existingItem = state.items.find((item) => item.id === id);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      }
     },
 
     decrementQuantity: (state, action) => {
