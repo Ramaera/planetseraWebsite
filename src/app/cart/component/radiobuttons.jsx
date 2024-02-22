@@ -11,11 +11,24 @@ import "@/public/styles/globals.css";
 import { Montserrat } from "next/font/google";
 import { useSelector, useDispatch } from "react-redux";
 import { removeAddress, selectAddress } from "@/state/slice/addressSlice";
+import { GET_ALL_ADDRESS } from "@/apollo/queries";
+import { useQuery } from "@apollo/client";
 
 export default function ControlledRadioButtonsGroup() {
-  const addressesData = useSelector((state) => state.address);
-  const dispatch = useDispatch();
+  const user = useSelector((state) => state?.user);
 
+  const selectedAddressId = useSelector(
+    (state) => state?.address?.selectedAddress
+  );
+  console.log("address", selectedAddressId);
+
+  const addressesData = useQuery(GET_ALL_ADDRESS, {
+    variables: {
+      buyerId: user?.data?.buyer?.id,
+    },
+  });
+
+  const dispatch = useDispatch();
   const handleChange = (event) => {
     dispatch(selectAddress(event.target.value));
   };
@@ -27,48 +40,60 @@ export default function ControlledRadioButtonsGroup() {
         className=""
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"
-        value={addressesData.selectedAddress}
+        value={selectedAddressId}
         onChange={handleChange}
       >
         <div className="w-full">
-          {addressesData?.allAddresses?.map((_address) => (
-            <div className="flex w-full justify-between my-8">
-              <div className="sm:w-8/12  ">
-                <FormControlLabel
-                  value={_address.id}
-                  control={
-                    <Radio
-                      sx={{
-                        "&, &.Mui-checked": {
-                          color: "#FE7171",
-                        },
-                      }}
-                    />
-                  }
-                  label={<Box className="responsive-box">{_address.name}</Box>}
-                />
+          {addressesData?.data?.getBuyerAddress?.map(
+            (_address) => (
+              console.log("cvbnm", _address),
+              (
                 <div
-                  style={{ color: "#2F302F" }}
-                  className="px-8 sm:font-normal text-xs sm:text-base	"
+                  className="flex w-full justify-between my-8"
+                  key={_address?.addresId}
                 >
-                  <p>
-                    {_address.address},{_address.city},{_address.state} ,
-                    {_address.pinCode}
-                  </p>
-                  <p>Contact :- {_address.mobile}</p>
+                  <div className="sm:w-8/12  ">
+                    <FormControlLabel
+                      value={_address?.addresId}
+                      control={
+                        <Radio
+                          sx={{
+                            "&, &.Mui-checked": {
+                              color: "#FE7171",
+                            },
+                          }}
+                        />
+                      }
+                      label={
+                        <Box className="responsive-box">{_address.name}</Box>
+                      }
+                    />
+
+                    <div
+                      style={{ color: "#2F302F" }}
+                      className="px-8 sm:font-normal text-xs sm:text-base	"
+                    >
+                      <p>
+                        {_address?.address[0]?.city}{" "}
+                        {_address?.address[1]?.pincode}{" "}
+                        {_address?.address[2]?.address}
+                      </p>
+                      <p>Contact :- {_address.mobileNumber}</p>
+                    </div>
+                  </div>
+                  <div className="text-xs sm:text-base sm:w-2/12 w-5/12 mt-3	">
+                    {/* Edit | */}
+                    <button
+                      className="Cart-remove"
+                      onClick={() => dispatch(removeAddress(_address))}
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div className="text-xs sm:text-base sm:w-2/12 w-5/12 mt-3	">
-                {/* Edit | */}
-                <button
-                  className="Cart-remove"
-                  onClick={() => dispatch(removeAddress(_address))}
-                >
-                  Remove
-                </button>
-              </div>
-            </div>
-          ))}
+              )
+            )
+          )}
         </div>
       </RadioGroup>
     </FormControl>
