@@ -94,12 +94,23 @@ query AllProducts {
 `);
 
 export const Add_To_Cart = gql(`
-mutation createCart($buyerId: String!, $name : String!,  $qty: Int!, $productVariantId : Int! ) {
+mutation CreateCart ($buyerId: String!, $name : String!,  $qty: Int!, $productVariantId : Int! ) {
   createCart(
-      CreateCartInput: { buyerId: $buyerId, name : $name, qty: $qty, productVariantId: $productVariantId }
+      createCartInput: {
+          buyerId: $buyerId,
+          name: $name,
+          productVariantId: $productVariantId ,
+          qty: $qty
+      }
   ) {
-    success
-  
+      buyerId
+      id
+      cartItem {
+          id
+          name
+          productVariantId
+          qty
+      }
   }
 }
 `);
@@ -250,7 +261,7 @@ query AllOrders ($buyerId: String!) {
           productVariantId
           qty
           name
-          
+
       }
   }
 }

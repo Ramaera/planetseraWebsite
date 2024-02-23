@@ -14,7 +14,7 @@ import BuynowBtn from "@/components/BuynowBtn";
 import ProductImages from "../../[id]/components/productImages";
 import AddIcon from "@mui/icons-material/Add";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
-import { addToCart } from "@/state/slice/cartSlice";
+import { addToCart, storeInCart, clearCart } from "@/state/slice/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
 import { useQuery } from "@apollo/client";
 import { Get_All_Products } from "@/apollo/queries";
@@ -44,7 +44,7 @@ const ProductDetailsInfo = () => {
     (prod) => prod.productUrl === id
   );
 
-  console.log("specificProduct", specificProduct);
+  // console.log("specificProduct", specificProduct);
   // specificProduct?.metaData[0]?.productBg,
   // const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const [selectedButton, setSelectedButton] = useState(50);
@@ -63,35 +63,54 @@ const ProductDetailsInfo = () => {
     setSelectedButton(variantWeight);
   };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     if (user?.data) {
-      const resp = addToCartServer({
-        variables: {
-          buyerId: user?.data?.buyer?.id,
-          name: specificProduct?.title,
-          qty: quantity,
-          productVariantId: specificVariant?.id,
-        },
-      });
+      try {
+        const resp = await addToCartServer({
+          variables: {
+            buyerId: user?.data?.buyer?.id,
+            name: specificProduct?.title,
+            qty: quantity,
+            productVariantId: specificVariant?.id,
+          },
+        });
 
-      dispatch(
-        addToCart({
-          productVariantId: specificVariant?.id,
-          qty: quantity,
-          name: specificProduct.title,
-        })
-      );
+        if (resp) {
+          dispatch(clearCart());
+          const updatedCartItems = resp.data?.createCart?.cartItem?.map(
+            (list) => ({
+              id: list?.id,
+              productVariantId: list?.productVariantId,
+              qty: list?.qty,
+              name: list?.name,
+            })
+          );
+          updatedCartItems?.forEach((item) => {
+            dispatch(storeInCart(item));
+          });
+        }
 
-      toast.success("Product Added To Your Cart", {
-        position: "top-center",
-        autoClose: 2500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+        // dispatch(
+        //   addToCart({
+        //     productVariantId: specificVariant?.id,
+        //     qty: quantity,
+        //     name: specificProduct.title,
+        //   })
+        // );
+
+        toast.success("Product Added To Your Cart", {
+          position: "top-center",
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      } catch (err) {
+        console.log("err", err.message);
+      }
     } else {
       openLoginModal();
     }
