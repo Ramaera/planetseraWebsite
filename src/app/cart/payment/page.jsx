@@ -83,7 +83,7 @@ const page = () => {
         window.open(
           response.data,
           "_blank",
-          "resizable=yes, scrollbars=yes, titlebar=yes, width=800, height=900, top=10, left=10"
+          "resizable=yes, scrollbars=yes, titlebar=yes, width=900, height=800, top=10, left=10"
         );
       })
       .catch((error) => {
