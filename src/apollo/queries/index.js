@@ -218,6 +218,7 @@ export const CREATE_ORDER = gql(`
     orderItems {
         productVariantId
         qty
+        name
     }
     }
   }
@@ -227,6 +228,30 @@ export const REMOVE_ADDRESS = gql(`
 mutation RemoveAddress ($AddressId : Int!){
   removeAddress ( AddressId : $AddressId ) {
     success
+  }
+}
+`);
+
+export const ALL_ORDERS = gql(`
+query AllOrders ($buyerId: String!) {
+  allOrders(buyerId: $buyerId) {
+      id
+      ShippingCost
+      orderAmount
+      status
+      address {
+          addresId
+          address
+          buyerId
+          mobileNumber
+          name
+      }
+      orderItems {
+          productVariantId
+          qty
+          name
+          
+      }
   }
 }
 `);

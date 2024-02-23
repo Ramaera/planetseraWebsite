@@ -76,7 +76,7 @@ const NavItem = ({ page }) => {
   return (
     <div
       className={`fixed  w-full  left-0 z-30 justify-between md:flex hidden h-[78px] sm:pr-10 sm:pl-4 ${
-        isVisible
+        isVisible || page === "orders"
           ? "	navHeader text-black border-[1px] border-slate-300	"
           : "text-white"
       }`}>
@@ -93,7 +93,8 @@ const NavItem = ({ page }) => {
               page === "address" ||
               page === "products" ||
               page === "privacy-policy" ||
-              page === "return-policy") &&
+              page === "return-policy" ||
+              page === "orders") &&
             "black",
         }}
         id="navigation"

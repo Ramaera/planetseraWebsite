@@ -87,7 +87,8 @@ const NavigationMobile = ({ page }) => {
                     page === "about" ||
                     page === "return-policy" ||
                     page === "privacy-policy" ||
-                    page === "terms-and-conditions"
+                    page === "terms-and-conditions" ||
+                    page === "orders"
                       ? "black"
                       : "white",
                 }}
