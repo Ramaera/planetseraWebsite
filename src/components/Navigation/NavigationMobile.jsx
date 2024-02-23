@@ -22,27 +22,12 @@ const NavigationMobile = ({ page }) => {
   const colorMe = useSelector((state) => state.colorUs.color);
   const user = useSelector((state) => state?.user);
 
-  const cartItems = useSelector((state) => state.cart.items);
+  const CartData = useSelector((state) => state.cart.items);
 
-  const ViewCartData = useQuery(Get_VIEW_CART, {
-    variables: {
-      buyerId: user?.data?.buyer?.id,
-    },
-  });
-
-  useEffect(() => {
-    ViewCartData.refetch();
-  }, [user, cartItems]);
-
-  const cartItemsQuantity = ViewCartData?.data?.viewCart?.cartItem.reduce(
-    (total, item) => total + item.qty,
+  const cartItemsQuantity = CartData.reduce(
+    (total, item) => total + item?.qty,
     0
   );
-
-  // const cartItemsQuantity = cartItems.reduce(
-  //   (total, item) => total + item.quantity,
-  //   0
-  // );
 
   const dispatch = useDispatch();
 

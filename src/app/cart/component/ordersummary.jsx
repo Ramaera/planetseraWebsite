@@ -1,7 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import LocalOfferIcon from "@mui/icons-material/LocalOffer";
-import InputAdornment from "@mui/material/InputAdornment";
 import { usePathname, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import Login from "@/components/Login";
@@ -38,19 +36,12 @@ const ordersummary = () => {
       (list) => list?.ProductsVariant
     ) || [];
 
-  const ViewCartData = useQuery(Get_VIEW_CART, {
-    variables: {
-      buyerId: user?.data?.buyer?.id,
-    },
-  });
-
   const calculatePrice = () => {
     return allProducts.reduce(
       (total, prod) =>
         prod.price *
-          (ViewCartData?.data?.viewCart?.cartItem.find(
-            (item) => item.productVariantId === prod.id
-          )?.qty || 0) +
+          (CartData.find((item) => item.productVariantId === prod.id)?.qty ||
+            0) +
         total,
       0
     );
@@ -87,7 +78,7 @@ const ordersummary = () => {
           <div className="flex justify-between flex-col   mt-5 ">
             Items
             <div>
-              {ViewCartData?.data?.viewCart?.cartItem.map((item, index) => {
+              {CartData.map((item, index) => {
                 const product = allProducts.find(
                   (prod) => prod.id === item.productVariantId
                 );

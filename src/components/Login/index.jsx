@@ -1,37 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IconButton, Modal } from "@mui/material";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { LOGIN } from "@/apollo/queries/index";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation, useQuery, useLazyQuery } from "@apollo/client";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { setOrUpdateUser } from "@/state/slice/userSlice";
-import { Get_BUYER, Add_To_Cart, Get_VIEW_CART } from "@/apollo/queries";
-import { addToCart, clearCart } from "@/state/slice/cartSlice";
+import { Get_VIEW_CART } from "@/apollo/queries";
+import { clearCart, storeInCart } from "@/state/slice/cartSlice";
 
 const Login = ({ isOpen, closeLoginModal }) => {
+  const dispatch = useDispatch();
   const CartData = useSelector((state) => state.cart.items);
+  const user = useSelector((state) => state?.user);
 
-  const ViewCartData = useQuery(Get_VIEW_CART, {
-    variables: {
-      buyerId: "clsu1heiy000217prqznru1ta",
-    },
+  const [ViewCartData, { loading, data }] = useLazyQuery(Get_VIEW_CART, {
+    variables: { buyerId: user?.data?.buyer?.id },
   });
 
-  // console.log("ViewCartData", ViewCartData);
+  useEffect(() => {
+    ViewCartData();
+    if (data) {
+      console.log("second", data);
+      dispatch(clearCart());
+
+      const updatedCartItems = data?.viewCart?.cartItem?.map((list) => ({
+        id: list?.id,
+        productVariantId: list?.productVariantId,
+        qty: list?.qty,
+        name: list?.name,
+      }));
+      updatedCartItems?.forEach((item) => {
+        dispatch(storeInCart(item));
+      });
+    }
+  }, [data]);
+
+  console.log("ViewCartData", data);
   const CartDataList = CartData.map((list) => list.quantity);
-  // console.log("CartData", CartDataList);
+  console.log("CartData", CartDataList);
 
-  const buyerid = useQuery(Get_BUYER);
-
-  const [addToCartServer] = useMutation(Add_To_Cart);
   const colorMe = useSelector((state) => state.colorUs.color);
   const [hide, setHide] = useState(closeLoginModal);
   const [login] = useMutation(LOGIN);
   const router = useRouter();
-  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -76,7 +90,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
           localStorage.setItem(key, data[key]);
         }
         dispatch(setOrUpdateUser(data.user));
-        // await fetchData(data);
+
         closeLoginModal();
         router.refresh();
       } catch (err) {
@@ -85,34 +99,6 @@ const Login = ({ isOpen, closeLoginModal }) => {
       }
     }
   };
-
-  // const fetchData = async (data) => {
-  //   try {
-  //     if (data) {
-  //       console.log("first", data?.user?.buyer?.id);
-  //       const ViewCartData = useQuery(Get_VIEW_CART, {
-  //         variables: {
-  //           buyerId: data?.user?.buyer?.id,
-  //         },
-  //       });
-  //       console.log("second", ViewCartData);
-  //       if (ViewCartData) {
-  //         const updatedCartItems = ViewCartData?.data?.viewCart?.cartItem.map(
-  //           (list) => ({
-  //             id: list?.productVariantIds,
-  //             quantity: list?.qty,
-  //             name: list?.name,
-  //           })
-  //         );
-  //         console.log("third", updatedCartItems);
-  //         dispatch(addToCart(updatedCartItems));
-  //         console.log("end");
-  //       }
-  //     }
-  //   } catch (err) {
-  //     toast.error(err.message);
-  //   }
-  // };
 
   // if (CartData.length > 0) {
   //   CartData?.map((item) =>

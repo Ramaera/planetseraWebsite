@@ -15,6 +15,8 @@ import {
   removeFromCart,
   incrementQuantity,
   decrementQuantity,
+  clearCart,
+  storeInCart,
 } from "@/state/slice/cartSlice";
 import BuynowBtn from "@/components/BuynowBtn";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -25,68 +27,54 @@ import {
   Get_All_Products,
   Get_VIEW_CART,
   REMOVE_ITEM_CART,
-  GET_ALL_ADDRESS,
 } from "@/apollo/queries";
-import { saveAddress } from "@/state/slice/addressSlice";
-import { useMutation } from "@apollo/client";
+import { useMutation, useLazyQuery } from "@apollo/client";
 
 const Page = () => {
-  const user = useSelector((state) => state?.user);
+  const dispatch = useDispatch();
   const [CartOpeartion] = useMutation(CART_OPEARTION);
-
-  const ViewCartData = useQuery(Get_VIEW_CART, {
-    variables: {
-      buyerId: user?.data?.buyer?.id,
-    },
-  });
-
-  const getAllAddress = useQuery(GET_ALL_ADDRESS, {
-    variables: {
-      buyerId: user?.data?.buyer?.id,
-    },
-  });
-
-  console.log("ViewCartData", ViewCartData?.data?.viewCart.cartItem);
-
+  const [removeItemCart] = useMutation(REMOVE_ITEM_CART);
   const allProductsQuery = useQuery(Get_All_Products);
+  const user = useSelector((state) => state?.user);
   const allProducts =
     allProductsQuery.data?.allProducts.flatMap(
       (list) => list?.ProductsVariant
     ) || [];
 
   const CartData = useSelector((state) => state.cart.items);
-  const [removeItemCart] = useMutation(REMOVE_ITEM_CART);
 
-  const cartItemsQuantity = ViewCartData?.data?.viewCart?.cartItem.reduce(
-    (total, item) => total + item.qty,
+  const cartItemsQuantity = CartData.reduce(
+    (total, item) => total + item?.qty,
     0
   );
 
-  const dispatch = useDispatch();
+  const handleRemoveFromCart = async (id, productVariantId) => {
+    try {
+      await removeItemCart({
+        variables: {
+          cartItem: id,
+        },
+      });
 
-  const handleRemoveFromCart = (id) => {
-    removeItemCart({
-      variables: {
-        cartItem: id,
-      },
-    });
+      dispatch(removeFromCart({ productVariantId }));
 
-    toast.error("Product Remove From Your Cart", {
-      position: "top-center",
-      autoClose: 2500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-    });
-
-    dispatch(removeFromCart({ id }));
+      toast.success("Product removed from your cart", {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
   };
 
-  const handleIncrementQuantity = async (index, itemId) => {
-    console.log("clicked", itemId);
+  const handleIncrementQuantity = async (index, itemId, productVariantId) => {
+    console.log("clicl", CartData, itemId);
     try {
       const resp = await CartOpeartion({
         variables: {
@@ -95,32 +83,29 @@ const Page = () => {
           qty: 1,
         },
       });
+      console.log("resp", resp);
+      dispatch(incrementQuantity({ productVariantId }));
+    } catch (err) {
+      console.log("errdd", err.message);
+    }
+  };
+
+  const handleDecrementQuantity = async (index, itemId, productVariantId) => {
+    console.log("clicked", itemId);
+    try {
+      const resp = await CartOpeartion({
+        variables: {
+          cartItemId: itemId,
+          operation: "DECREMENT",
+          qty: 1,
+        },
+      });
+      console.log("resp", resp);
+      dispatch(decrementQuantity({ productVariantId }));
     } catch (err) {
       console.log("err", err.message);
     }
-
-    dispatch(incrementQuantity({ itemId }));
   };
-
-  const handleDecrementQuantity = async (index, itemId) => {
-    const resp = await CartOpeartion({
-      variables: {
-        cartItemId: itemId,
-        operation: "DECREMENT",
-        qty: 1,
-      },
-    });
-    dispatch(decrementQuantity({ index }));
-  };
-
-  useEffect(() => {
-    ViewCartData.refetch();
-  }, [
-    user,
-    handleDecrementQuantity,
-    handleIncrementQuantity,
-    handleRemoveFromCart,
-  ]);
 
   return (
     <>
@@ -129,22 +114,21 @@ const Page = () => {
       </div>
 
       <NavItem page={"cart"} />
-      {ViewCartData?.data?.viewCart?.cartItem.length > 0 ? (
+      {CartData?.length > 0 ? (
         <div className="sm:p-32 py-16 mt-10 sm:mt-0 px-3 sm:flex w-full sm:justify-between font-mont sm:min-h-[76vh]">
           <div className="sm:w-4/6">
             <div className="flex">
               <div className="sm:text-2xl mont-font">Cart</div>
               <div className="sm:text-xl text-slate-500 sm:p-1 px-3 mont-font">
-                {" "}
                 {cartItemsQuantity} Items
               </div>
             </div>
             <div className="cartScroll sm:w-full  pt-5">
-              {ViewCartData?.data?.viewCart?.cartItem.map((item, index) => {
+              {CartData?.map((item, index) => {
                 const product = allProducts.find(
                   (prod) => prod.id === item.productVariantId
                 );
-                // console.log("product", allProducts);
+                console.log("product", product);
                 return (
                   <div className="flex sm:px-10 py-5    border-b-2 ">
                     <div className="">
@@ -171,7 +155,11 @@ const Page = () => {
                         <div className="flex justify-between items-center text-xs sm:text-base mt-4 sm:px-3 px-1  border-2 rounded-2xl sm:w-36 w-28  ">
                           <button
                             onClick={() =>
-                              handleDecrementQuantity(index, item.id)
+                              handleDecrementQuantity(
+                                index,
+                                item?.id,
+                                item.productVariantId
+                              )
                             }>
                             <HorizontalRuleIcon className="w-5 h-5" />
                           </button>
@@ -180,14 +168,23 @@ const Page = () => {
 
                           <button
                             onClick={() =>
-                              handleIncrementQuantity(index, item.id)
+                              handleIncrementQuantity(
+                                index,
+                                item?.id,
+                                item.productVariantId
+                              )
                             }>
                             <AddIcon />
                           </button>
                         </div>
                         <div>
                           <button
-                            onClick={() => handleRemoveFromCart(item?.id)}
+                            onClick={() =>
+                              handleRemoveFromCart(
+                                item?.id,
+                                item.productVariantId
+                              )
+                            }
                             className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
                             Remove
                           </button>
