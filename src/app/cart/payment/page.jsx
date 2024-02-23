@@ -77,20 +77,20 @@ const page = () => {
       name: BuyerName,
       email: BuyerEmail,
     };
-    // axios
-    //   .post("https://nvg1b95j-6770.inc1.devtunnels.ms/api/pay", postData)
-    //   .then((response) => {
-    //     window.open(
-    //       response.data,
-    //       "_blank",
-    //       "resizable=yes, scrollbars=yes, titlebar=yes, width=800, height=900, top=10, left=10"
-    //     );
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error occurred while processing payment:", error);
-    //   });
+    axios
+      .post("https://planetseraapi.planetsera.com/api/pay", postData)
+      .then((response) => {
+        window.open(
+          response.data,
+          "_blank",
+          "resizable=yes, scrollbars=yes, titlebar=yes, width=800, height=900, top=10, left=10"
+        );
+      })
+      .catch((error) => {
+        console.error("Error occurred while processing payment:", error);
+      });
 
-    handleCreateOrder();
+    // handleCreateOrder();
   };
 
   const handleCreateOrder = async () => {
