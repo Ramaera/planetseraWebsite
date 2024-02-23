@@ -690,6 +690,7 @@ const MetaDatablogs = () => {
             <meta name="twitter:image" content="/images/blog/blog-11.png" />
           </>
         )}
+        {/*-----------------------art-of-seasoning-with-sabji-masala--------------------------------------------------- */}
 
         {currentRoute === "/blog/art-of-seasoning-with-sabji-masala" && (
           <>
@@ -730,7 +731,7 @@ const MetaDatablogs = () => {
               property="og:site_name"
               content="planetsera.com"
             />
-            <meta property="og:image" content="/images/blog/blog-12.png" />
+            <meta property="og:image" content="/images/blog/defaultblog.png" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="627" />
             <meta name="twitter:card" content="summary_large_image" />
@@ -747,7 +748,67 @@ const MetaDatablogs = () => {
               name="twitter:description"
               content="Discover the magical journey from garden to table as we explore the art of seasoning with sabji masala. Unlock the secrets of affordable sabji masala powder and elevate your vegetable dishes with this aromatic spice blend."
             />
-            <meta name="twitter:image" content="/images/blog/blog-12.png" />
+            <meta name="twitter:image" content="/images/blog/defaultblog.png" />
+          </>
+        )}
+        {/*-----------------------ultimate-guide-to-using-sabji-masala--------------------------------------------------- */}
+        {currentRoute === "/blog/ultimate-guide-to-using-sabji-masala" && (
+          <>
+            <title>
+              A Comprehensive Guide to Unleashing the Flavors of Sabji Masala
+              Powder
+            </title>
+            <meta name="text" content="planetsera" />
+            <meta
+              name="title"
+              content="A Comprehensive Guide to Unleashing the Flavors of Sabji Masala Powder"
+            />
+            <meta
+              name="description"
+              content="With our complete sabji masala powder guide, turn vegetable meals into gourmet wonders. Learn how to season with inexpensive sabji masala and improve your cooking with the right spices. Maximize veggie masala powder for delicious cooking."
+            />
+            <meta name="keywords" content="" />
+            <meta name="robots" content="index,  follow" />
+            <link
+              rel="canonical"
+              href="/blog/ultimate-guide-to-using-sabji-masala"
+            />
+            <meta
+              property="og:url"
+              content="/blog/ultimate-guide-to-using-sabji-masala"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:title"
+              content="A Comprehensive Guide to Unleashing the Flavors of Sabji Masala Powder"
+            />
+            <meta
+              property="og:description"
+              content="With our complete sabji masala powder guide, turn vegetable meals into gourmet wonders. Learn how to season with inexpensive sabji masala and improve your cooking with the right spices. Maximize veggie masala powder for delicious cooking."
+            />
+            <meta
+              name="og_site_name"
+              property="og:site_name"
+              content="planetsera.com"
+            />
+            <meta property="og:image" content="/images/blog/defaultblog.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="627" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:domain" content="planetsera.com" />
+            <meta
+              property="twitter:url"
+              content="/blog/ultimate-guide-to-using-sabji-masala"
+            />
+            <meta
+              name="twitter:title"
+              content="A Comprehensive Guide to Unleashing the Flavors of Sabji Masala Powder"
+            />
+            <meta
+              name="twitter:description"
+              content="With our complete sabji masala powder guide, turn vegetable meals into gourmet wonders. Learn how to season with inexpensive sabji masala and improve your cooking with the right spices. Maximize veggie masala powder for delicious cooking."
+            />
+            <meta name="twitter:image" content="/images/blog/defaultblog.png" />
           </>
         )}
       </Head>

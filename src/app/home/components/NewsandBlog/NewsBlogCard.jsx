@@ -38,7 +38,7 @@ const NewsBlogCard = () => {
                     <h5 className="font-[Montserrat] text-[13.5px] font-semibold sm:text-xl 2xl:text-2xl">
                       {item?.blogName}
                     </h5>
-                    {console.log(item.blogHeading)}
+                    {/* {console.log(item.blogHeading)} */}
                     <p>{item?.blogHeading} . . . .</p>
 
                     <h6 className="mt-2 text-gray-600 font-semibold">

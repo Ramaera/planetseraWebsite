@@ -61,7 +61,7 @@ const LatestBlog = () => {
                           {item?.blogName}
                         </h5>
                       </Link>
-                      {console.log("itemblogDetail", item.blogDetail)}
+                      {/* {console.log("itemblogDetail", item.blogDetail)} */}
                       <p>{item?.blogHeading} . . .</p>
                       <Link href={`/blog/${item.id}`}>
                         <h6 className="mt-2 text-gray-600 font-semibold">

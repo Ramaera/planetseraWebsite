@@ -14,7 +14,7 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
   const colorMe = useSelector((state) => state.colorUs.color);
-  console.log("color", colorMe);
+  // console.log("color", colorMe);
   return (
     <>
       <MetaBreadcrumb />
