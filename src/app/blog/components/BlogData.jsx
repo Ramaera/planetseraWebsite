@@ -212,83 +212,26 @@ const BlogData = [
         ),
         blogListAbout: (
           <>
-            While sabji masala is synonymous with Indian cuisine, its
-            versatility extends to global culinary explorations. Use this spice
-            blend to add an Indian twist to your favorite international dishes.
-            Whether it's pasta, grilled vegetables, or roasted potatoes, sabji
-            masala can infuse a touch of exotic flavor that surprises and
-            delights the palate.
-          </>
-        ),
-      },
-      {
-        blogList:
-          "Savoring the Benefits: Health and Wellness with Sabji Masala        ",
-        blogListAbout: (
-          <>
-            Beyond its culinary prowess, sabji masala offers health benefits
-            that align with the holistic nature of Indian spices.
-          </>
-        ),
-      },
-      {
-        blogListAbout: (
-          <>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              1. Digestive Aid:
-              <p className="text-base font-normal  mt-2 ml-5">
-                The combination of coriander, cumin, and fennel in sabji masala
-                aids digestion. These spices are known for their digestive
-                properties, making the spice blend a flavorful and healthful
-                addition to your meals.
-              </p>
+            <p>
+              If you prefer the convenience of buying garam masala instead of
+              making it from scratch, there are several options available
+              online. Planetsera offers a high-quality garam masala that
+              captures the essence of traditional Indian flavors. Their garam
+              masala is carefully crafted using premium ingredients and expert
+              techniques, ensuring a rich and aromatic blend that will elevate
+              your culinary creations. With just a few clicks, you can have
+              authentic garam masala delivered right to your doorstep.
             </p>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              2. Anti-Inflammatory Potential:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Turmeric, a key ingredient in sabji masala, contains curcumin, a
-                powerful anti-inflammatory compound. Incorporating sabji masala
-                into your cooking allows you to enjoy the potential
-                anti-inflammatory benefits of turmeric.
-              </p>
-            </p>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              3. Rich in Antioxidants:
-              <p className="text-base font-normal  mt-2 ml-5">
-                The spices in sabji masala, including coriander and cumin, are
-                rich in antioxidants. These compounds play a vital role in
-                neutralizing free radicals and supporting overall health.
-              </p>
-            </p>
-          </>
-        ),
-      },
-      {
-        blogList: (
-          <>
-            Conclusion: Elevating Every Bite with{" "}
-            <Link href="/products/sabji-masala" className="text-red-500">
-              Sabji Masala
-            </Link>{" "}
-          </>
-        ),
-        blogListAbout: (
-          <>
-            <p className="text-base font-normal  mt-2 ml-5">
-              As we conclude our ultimate guide to using sabji masala powder, we
-              invite you to embark on a culinary journey where every vegetable
-              dish becomes a masterpiece. The art of seasoning with affordable
-              sabji masala transforms the mundane into the extraordinary,
-              bringing depth, aroma, and a symphony of flavors to your kitchen
-              creations.
-            </p>
-            <p className="text-base font-normal  mt-2 ml-5">
-              Whether you're a fan of traditional Indian cuisine or love to
-              experiment with global flavors, sabji masala is a versatile spice
-              blend that deserves a place in every kitchen. So, dust off your
-              spice jars, explore the world of vegetable masala powder, and
-              savor the delightful experience of elevating your vegetable dishes
-              to new heights with the magic of sabji masala.
+            <p className="text-base font-normal  mt-2">
+              Garam masala is a time-honored spice blend that adds depth,
+              warmth, and complexity to Indian cuisine. By understanding the
+              essential garam masala ingredients, learning how to make it from
+              scratch, and discovering the convenience of buying garam masala
+              online, such as the exceptional Planetsera garam masala, you can
+              embark on a culinary journey that pays tribute to the flavors
+              passed down from generation to generation. So, step into your
+              kitchen, embrace the aromatic spices, and recreate the magic of
+              Grandma's kitchen with timeless garam masala recipes.
             </p>
           </>
         ),
