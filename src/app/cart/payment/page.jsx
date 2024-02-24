@@ -62,8 +62,6 @@ const page = () => {
   const BuyerId = user?.data?.buyer?.id;
   const BuyerEmail = user?.data?.email;
   const BuyerName = user?.data?.name;
-  const CartId = ViewCartData?.data?.viewCart?.id;
-  const AddressId = addressesData?.selectedAddress;
 
   useEffect(() => {
     if (calculatePrice() >= 200) {
@@ -90,7 +88,6 @@ const page = () => {
         );
       })
 
-      // handleCreateOrder();
       .catch((error) => {
         console.error("Error occurred while processing payment:", error);
       });
@@ -142,53 +139,15 @@ const page = () => {
   //   checkStatus();
   // }, []);
 
-  const handleCreateOrder = async () => {
-    try {
-      const resp = await createOrder({
-        variables: {
-          AddressId: parseInt(AddressId),
-          ShippingCost: shipping,
-          buyerId: BuyerId,
-          cartId: CartId,
-          orderAmount: calculateTotalPrice(),
-        },
-      });
-      handleDeleteCart();
-    } catch (err) {
-      console.log("err", err.message);
-    }
-  };
-
-  const handleDeleteCart = async () => {
-    try {
-      const resp = await deleteCart({
-        variables: {
-          cartId: CartId,
-        },
-      });
-
-      await dispatch(clearCart());
-
-      await handleOrderPlaced();
-    } catch (err) {
-      console.log("err", err.message);
-    }
-  };
-
-  const handleOrderPlaced = () => {
-    router.push("/orderPlaced");
-  };
-
   return (
     <>
       <div className="font-mont">
         <p style={{ color: "#2F302F" }} className="text-xl mt-5 text-center">
-          Payment Method
+          {/* Payment Method */}
+          Coming Soon
         </p>
 
-        <BuynowBtn onClick={payOnline} link="#" text={"Pay Online"} />
-
-        {/* <Button onClick={payOnline}>Pay Online</Button> */}
+        {/* <BuynowBtn onClick={payOnline} link="#" text={"Pay Online"} /> */}
       </div>
     </>
   );
