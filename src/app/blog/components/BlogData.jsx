@@ -2,6 +2,300 @@
 import Link from "next/link";
 const BlogData = [
   // --------------  RecentBlog  -------------------------------------------------------------------
+
+  {
+    id: "timeless-garam-masala-recipes",
+    category: "MouthWatering",
+    categoryName: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "12-Feb-2024",
+    blogImg: "/images/blog/defaultblog.png",
+    blogName: "From Grandma's Kitchen to Yours: Timeless Garam Masala Recipes",
+
+    blogDetail: (
+      <>
+        If there's one thing that can transport you back to your childhood and
+        evoke a sense of nostalgia, it's the aroma of spices wafting through the
+        kitchen. And when it comes to Indian cuisine, one spice blend that holds
+        a special place in every household is{" "}
+        <Link className="text-red-500" href="/products/garam-masala">
+          Garam Masala
+        </Link>{" "}
+        . Passed down through generations, garam masala is a quintessential part
+        of traditional Indian cooking. In this blog post, we will delve into the
+        world of garam masala, explore its ingredients, learn how to make it
+        from scratch, and discover the convenience of buying garam masala
+        online, such as the exceptional Planetsera garam masala.
+      </>
+    ),
+
+    blogDescription: [
+      {
+        blogList: (
+          <>
+            What is{" "}
+            <Link className="text-red-500" href="/products/garam-masala">
+              Garam Masala
+            </Link>{" "}
+          </>
+        ),
+        blogListAbout: (
+          <>
+            Garam masala, which translates to "hot spice blend," is a fragrant
+            and flavorful mixture of spices commonly used in Indian dishes.
+            While the exact composition of garam masala may vary from region to
+            region and even from household to household, it typically includes a
+            combination of aromatic spices like cardamom, cinnamon, cloves,
+            cumin, coriander, and black peppercorns. These spices are carefully
+            blended to create a harmonious balance of flavors, adding depth and
+            warmth to dishes.
+          </>
+        ),
+      },
+
+      {
+        blogList: "Unlocking the Essence: What is Sabji Masala?",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              Garam Masala Ingredients:
+              <p className="text-base font-normal  mt-2 ml-5">
+                To make garam masala from scratch, you will need the following
+                ingredients:
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              Cardamom :
+              <p className="text-base font-normal  mt-2 ml-5">
+                Known for its sweet and floral notes, cardamom adds a delicate
+                flavor to garam masala.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              Cinnamon :
+              <p className="text-base font-normal  mt-2 ml-5">
+                With its warm and woody aroma, cinnamon provides a rich and
+                comforting element to the spice blend.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              Cloves :
+              <p className="text-base font-normal  mt-2 ml-5">
+                Cloves lend a slightly pungent and sweet taste to garam masala,
+                enhancing its overall flavor profile.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              <Link href="/products/cumin-powder" className="text-red-500">
+                Cumin :
+              </Link>
+              <p className="text-base font-normal  mt-2 ml-5">
+                Cumin seeds bring an earthy and slightly nutty taste to the
+                blend, balancing out the sweetness of other spices.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              <Link href="/products/coriander-powder" className="text-red-500">
+                Coriander :
+              </Link>
+              <p className="text-base font-normal  mt-2 ml-5">
+                Coriander seeds contribute a citrusy and slightly floral flavor
+                to garam masala, adding a refreshing twist
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              <Link
+                href="/products/black-pepper-powder"
+                className="text-red-500"
+              >
+                Black peppercorns :
+              </Link>
+              <p className="text-base font-normal  mt-2 ml-5">
+                Black peppercorns provide a subtle heat and a hint of spiciness
+                to the spice blend.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: <>Making Garam Masala from Scratch:</>,
+        blogListAbout: (
+          <>
+            <p className="text-base font-semibold mt-3 ml-5">
+              While it may be convenient to buy garam masala from the store,
+              there's something special about making it from scratch. Here's a
+              simple recipe to create your own homemade garam masala:
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              Ingredients:
+              <p className="text-base font-normal  mt-2 ml-5">
+                2 tablespoons cardamom pods
+              </p>
+              <p className="text-base font-normal  mt-2 ml-5">
+                1 cinnamon stick
+              </p>
+              <p className="text-base font-normal  mt-2 ml-5">
+                1 tablespoon cloves
+              </p>
+              <p className="text-base font-normal  mt-2 ml-5">
+                2 tablespoons cumin seeds
+              </p>
+              <p className="text-base font-normal  mt-2 ml-5">
+                2 tablespoons coriander seeds
+              </p>
+              <p className="text-base font-normal  mt-2 ml-5">
+                1 tablespoon black peppercorns
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: <> Instructions:</>,
+      },
+
+      {
+        blogList: "Heat a skillet over medium heat and add all the spices.",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold  mt-2 ml-5">
+              Gently toast the spices for a few minutes until they become
+              fragrant, stirring occasionally to avoid burning.
+            </p>
+            <p className="text-base font-normal  mt-2 ml-5">
+              1: Remove the spices from the heat and let them cool completely.
+            </p>
+            <p className="text-base font-normal  mt-2 ml-5">
+              2: Once cooled, transfer the spices to a spice grinder or mortar
+              and pestle.
+            </p>
+            <p className="text-base font-normal  mt-2 ml-5">
+              3: Grind the spices until you achieve a fine powder consistency.
+            </p>
+            <p className="text-base font-normal  mt-2 ml-5">
+              4: Store the garam masala in an airtight container in a cool, dark
+              place for up to six months.
+            </p>
+            <p className="text-base font-normal  mt-2 ml-5">
+              5: Using Garam Masala in Recipes:
+            </p>
+
+            <p className="text-base font-normal  mt-2 ml-5">
+              Garam masala can be used in a variety of Indian dishes to enhance
+              their flavors. It is often added towards the end of cooking or
+              sprinkled on top as a finishing touch. Traditional recipes like
+              Butter Chicken, Chana Masala, and Biryani all rely on the distinct
+              flavors of garam masala to create a truly authentic taste.
+              However, don't limit yourself to just Indian cuisine. Garam masala
+              can also be used in fusion dishes to add a unique twist to your
+              culinary creations.
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            Convenience of Buying{" "}
+            <Link href="/products/garam-masala" className="text-red-500">
+              Garam Masala
+            </Link>{" "}
+            Online:
+          </>
+        ),
+        blogListAbout: (
+          <>
+            While sabji masala is synonymous with Indian cuisine, its
+            versatility extends to global culinary explorations. Use this spice
+            blend to add an Indian twist to your favorite international dishes.
+            Whether it's pasta, grilled vegetables, or roasted potatoes, sabji
+            masala can infuse a touch of exotic flavor that surprises and
+            delights the palate.
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Savoring the Benefits: Health and Wellness with Sabji Masala        ",
+        blogListAbout: (
+          <>
+            Beyond its culinary prowess, sabji masala offers health benefits
+            that align with the holistic nature of Indian spices.
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              1. Digestive Aid:
+              <p className="text-base font-normal  mt-2 ml-5">
+                The combination of coriander, cumin, and fennel in sabji masala
+                aids digestion. These spices are known for their digestive
+                properties, making the spice blend a flavorful and healthful
+                addition to your meals.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              2. Anti-Inflammatory Potential:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Turmeric, a key ingredient in sabji masala, contains curcumin, a
+                powerful anti-inflammatory compound. Incorporating sabji masala
+                into your cooking allows you to enjoy the potential
+                anti-inflammatory benefits of turmeric.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              3. Rich in Antioxidants:
+              <p className="text-base font-normal  mt-2 ml-5">
+                The spices in sabji masala, including coriander and cumin, are
+                rich in antioxidants. These compounds play a vital role in
+                neutralizing free radicals and supporting overall health.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            Conclusion: Elevating Every Bite with{" "}
+            <Link href="/products/sabji-masala" className="text-red-500">
+              Sabji Masala
+            </Link>{" "}
+          </>
+        ),
+        blogListAbout: (
+          <>
+            <p className="text-base font-normal  mt-2 ml-5">
+              As we conclude our ultimate guide to using sabji masala powder, we
+              invite you to embark on a culinary journey where every vegetable
+              dish becomes a masterpiece. The art of seasoning with affordable
+              sabji masala transforms the mundane into the extraordinary,
+              bringing depth, aroma, and a symphony of flavors to your kitchen
+              creations.
+            </p>
+            <p className="text-base font-normal  mt-2 ml-5">
+              Whether you're a fan of traditional Indian cuisine or love to
+              experiment with global flavors, sabji masala is a versatile spice
+              blend that deserves a place in every kitchen. So, dust off your
+              spice jars, explore the world of vegetable masala powder, and
+              savor the delightful experience of elevating your vegetable dishes
+              to new heights with the magic of sabji masala.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+
   {
     id: "ultimate-guide-to-using-sabji-masala",
     category: "MouthWatering",

@@ -21,7 +21,8 @@ const MasalaGallery = () => {
               <div>
                 <Link
                   href={`/products/${items.id}`}
-                  className="flex items-center justify-center">
+                  className="flex items-center justify-center"
+                >
                   <img
                     alt="sabji masala"
                     title="Selected Premium Sabji Masala"
