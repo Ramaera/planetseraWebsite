@@ -11,7 +11,7 @@ import { client } from "@/apollo";
 import AddIcon from "@mui/icons-material/Add";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 
-const ShippingDetails = () => {
+const Checkout = () => {
   return (
     <>
       <div className="navMobile ">
@@ -35,4 +35,4 @@ const ShippingDetails = () => {
     </>
   );
 };
-export default ShippingDetails;
+export default Checkout;

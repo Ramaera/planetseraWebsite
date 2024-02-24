@@ -39,6 +39,9 @@ export default function HorizontalLinearStepper() {
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => {
+      if (activeStep === 0) {
+        router.push("/cart");
+      }
       // Reset custom component on going back
       setCustomComponentIndex(prevActiveStep - 1);
       return prevActiveStep - 1;
@@ -111,7 +114,7 @@ export default function HorizontalLinearStepper() {
             <Button
               variant="outlined"
               color="inherit"
-              disabled={activeStep === 0}
+              // disabled={activeStep === 0}
               onClick={handleBack}
               sx={{ mr: 1 }}>
               Back

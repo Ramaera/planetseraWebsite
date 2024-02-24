@@ -141,7 +141,7 @@ const ordersummary = () => {
               /> */}
               {user.data ? (
                 <>
-                  <Link href="/cart/shippingDetail" className="text-white">
+                  <Link href="/cart/checkout" className="text-white">
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor  py-3">
                       Proceed To Checkout
                     </div>

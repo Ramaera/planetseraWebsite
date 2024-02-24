@@ -32,7 +32,7 @@ const ConditionalRoute = ({ children }) => {
     return null;
   };
   const handleRoutes = async () => {
-    if (!isAuthenticated && pathname.toLowerCase() === "/cart/shippingdetail") {
+    if (!isAuthenticated && pathname.toLowerCase() === "/cart/checkout") {
       router.replace("/register");
     } else if (isAuthenticated && pathname.toLowerCase() == "/register") {
       router.replace("/");
