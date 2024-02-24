@@ -26,35 +26,16 @@ const BlogData = [
         ),
         blogListAbout: (
           <>
-            In the heart of every kitchen, a magical transformation occurs when
-            garden-fresh vegetables meet the aromatic dance of spices. At the
-            core of this culinary alchemy lies sabji masala, a fragrant spice
-            blend that elevates the simplest of vegetables into delectable
-            masterpieces. Join us on a journey from garden to table as we
-            explore the art of seasoning with sabji masala powder, unlocking the
-            secrets of affordability and flavor that make this spice blend a
-            kitchen essential.
-          </>
-        ),
-      },
-
-      {
-        blogList: "Cultivating Flavor: Understanding Sabji Masala",
-        blogListAbout: (
-          <>
-            <p className="text-xl font-semibold mt-3 ml-5 ">
-              Sabji Masala Unveiled:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Derived from the Hindi word 'sabzi,' meaning vegetables, sabji
-                masala is a quintessential spice blend in Indian cuisine.
-                Comprising a harmonious mix of ground spices, such as coriander,
-                cumin, turmeric, chili, and more,{" "}
-                <Link href="/products/sabji-masala" className="text-red-500">
-                  sabji masala
-                </Link>{" "}
-                adds depth and aroma to a wide array of vegetable dishes.
-              </p>
-            </p>
+            The Indian spice mixture known as{" "}
+            <Link href="/product/garam-masala" className="text-red-500">
+              garam masala{" "}
+            </Link>{" "}
+            is a common ingredient in Indian cuisine. Cumin, coriander,
+            cardamom, cloves, cinnamon, and black pepper are the individual
+            components that make up this blend. Because it does not contain any
+            artificial additives or preservatives, organic garam masala is an
+            excellent option to consider. It has a distinct flavour that can
+            lend a great deal of complexity to the recipes you prepare.
           </>
         ),
       },
@@ -63,45 +44,9 @@ const BlogData = [
           "The Garden's Bounty: Fresh Vegetables and the Essence of Sabji Masala",
         blogListAbout: (
           <>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              1. Selecting Fresh Vegetables:
-              <p className="text-base font-normal  mt-2 ml-5">
-                The journey from garden to table begins with the careful
-                selection of fresh vegetables. Whether plucked from your
-                backyard garden or sourced from local markets, the quality of
-                your vegetables forms the foundation for a flavorful culinary
-                experience.
-              </p>
-            </p>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              2. The Versatility of Sabji Masala:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Sabji masala powder seamlessly complements a variety of
-                vegetables. From the earthy notes of potatoes and carrots to the
-                vibrant hues of bell peppers and spinach, this spice blend acts
-                as a culinary chameleon, adapting to the unique characteristics
-                of each vegetable.
-              </p>
-            </p>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              3. Customizing Your Blend:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Embrace the spirit of culinary experimentation by customizing
-                your sabji masala blend. Adjust the ratios of spices to suit
-                your taste preferences and the flavor profiles of the vegetables
-                you've chosen. The art of seasoning with sabji masala allows for
-                endless creativity in the kitchen.
-              </p>
-            </p>
-          </>
-        ),
-      },
-      {
-        blogList: (
-          <>
-            Affordable{" "}
-            <Link href="/products/sabji-masala" className="text-red-500">
-              Sabji Masala
+            Including{" "}
+            <Link href="/product/red-chilli-powder" className="text-red-500">
+              chilli powder{" "}
             </Link>{" "}
             A Spice Blend for Every Kitchen{" "}
           </>
@@ -234,273 +179,27 @@ const BlogData = [
         blogListAbout: (
           <>
             <p>
-              As we conclude our exploration of the art of seasoning with sabji
-              masala, we invite you to savor the symphony of flavors that
-              unfolds from garden to table. The journey from cultivating fresh
-              vegetables to infusing them with the aromatic magic of sabji
-              masala is a celebration of culinary creativity and sensory
-              delight.
+              Adding flavour to your dishes with Mexican seasoning is an
+              excellent way to do it. It is a mixture of many spices, including
+              cumin, garlic powder,{" "}
+              <Link href="/product/red-chilli-powder" className="text-red-500">
+                chilli powder
+              </Link>{" "}
+              , oregano, and paprika, among others. Because it does not contain
+              any artificial additives or preservatives, organic Mexican
+              seasoning is a fantastic option to take into consideration. It has
+              a distinct flavour that can lend a great deal of complexity to the
+              recipes you prepare.
             </p>
-            <p className="mt-3">
-              Whether you're a seasoned chef or an aspiring home cook, mastering
-              the art of seasoning with affordable sabji masala powder opens the
-              door to a world of culinary possibilities. From humble gardens to
-              kitchen tables around the globe, sabji masala transforms every
-              vegetable dish into a masterpiece, showcasing the richness of
-              flavors that nature and spice bring to our plates.
-            </p>
-          </>
-        ),
-      },
-    ],
-  },
-
-  {
-    id: "red-chilli-powder-in-everyday-cooking",
-    category: "MouthWatering",
-    categoryName: "BestSelling",
-    type: "RecentBlog",
-    blogDate: "28-Jan-2024",
-    blogImg: "/images/blog/blog-11.png",
-    blogName:
-      "From Spice Rack to Table: Creative Uses of Red Chilli Powder in Everyday Cooking",
-
-    blogDetail: <></>,
-
-    blogDescription: [
-      {
-        blogList: (
-          <>
-            The Fiery Allure of{" "}
-            <Link href="/products/red-chilli-powder" className="text-red-500">
-              Red Chilli Powder
-            </Link>
-          </>
-        ),
-        blogListAbout: (
-          <>
-            In the culinary world, few ingredients possess the power to
-            transform dishes like red chilli powder. Known as lal mirch powder
-            in Hindi, this spice is a staple in kitchens worldwide, adding a
-            fiery kick that elevates the flavor profile of diverse cuisines.
-            Join us on a journey from the spice rack to the table as we explore
-            the creative uses of red chilli powder, with a special spotlight on
-            Planetsera chili powder—an embodiment of quality and spice.
-          </>
-        ),
-      },
-
-      {
-        blogList: "Section 1: The Dynamic Universe of Red Chilli Powder",
-        blogListAbout: (
-          <>
-            <p className="text-xl font-semibold mt-3 ml-5 ">
-              1. Understanding Red Chilli Powder:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Red chilli powder is derived from dried and ground red peppers,
-                known for both their vibrant color and intense heat.{" "}
-                <Link
-                  href="/products/red-chilli-powder"
-                  className="text-red-500"
-                >
-                  Lal mirch Powder
-                </Link>{" "}
-                is a versatile spice that comes in various heat levels, allowing
-                cooks to tailor the spiciness of their dishes. Its ability to
-                infuse dishes with both color and heat makes it an essential
-                component in diverse culinary traditions.
-              </p>
-            </p>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              2. Heat Varieties:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Red chilli powder is not a one-size-fits-all spice. Different
-                varieties of red peppers result in varying levels of heat. From
-                mild to extra hot, each variant brings its unique character to
-                dishes. Understanding the heat level of your red chilli powder
-                allows you to control the intensity of spiciness in your
-                recipes.
-              </p>
-            </p>
-          </>
-        ),
-      },
-      {
-        blogList: "Section 2: Everyday Culinary Delights        ",
-        blogListAbout: (
-          <>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              1. Spicy Kick to Soups and Stews:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Elevate your soups and stews by incorporating{" "}
-                <Link
-                  href="/products/red-chilli-powder"
-                  className="text-red-500"
-                >
-                  red chilli Powder
-                </Link>
-                . A pinch adds depth and warmth to broths, transforming mundane
-                recipes into soul-soothing delights. Experiment with the heat
-                levels to suit your taste, turning your favorite comfort foods
-                into spicy masterpieces.
-              </p>
-            </p>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              2. Flavorful Marinades:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Create flavorful marinades for meats and vegetables by blending
-                red chilli powder with complementary spices, herbs, and oils.
-                The spice's vibrant color enhances the visual appeal of your
-                dishes, while its heat infuses every bite with an unforgettable
-                kick. Planetsera chili powder, with its premium quality, brings
-                an extra layer of richness to your marinades.
-              </p>
-            </p>
-          </>
-        ),
-      },
-      {
-        blogList: "Section 3: Spice Essentials for Indian Cuisine        ",
-        blogListAbout: (
-          <>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              1. Tadka Magic:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Tadka, or tempering, is a quintessential technique in Indian
-                cooking. Red chilli powder takes center stage in this process,
-                where it is heated in oil or ghee along with other spices. The
-                resulting aromatic and spicy blend is then drizzled over dal,
-                vegetables, or rice, bringing an explosion of flavors to every
-                bite.
-              </p>
-            </p>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              2. Masala Blends:
-              <p className="text-base font-normal  mt-2 ml-5">
-                <Link
-                  href="/products/red-chilli-powder"
-                  className="text-red-500"
-                >
-                  Red chilli Powder
-                </Link>{" "}
-                is a key player in creating masala blends that form the backbone
-                of many Indian dishes. Whether it's garam masala, sambar powder,
-                or curry powder, lal mirch powder contributes its unique heat
-                and color to these spice blends. Experiment with homemade
-                masalas, adjusting the red chilli powder to achieve the desired
-                level of spiciness.
-              </p>
-            </p>
-          </>
-        ),
-      },
-      {
-        blogList: "Section 4: Global Fusion with Red Chilli Powder ",
-      },
-      {
-        blogListAbout: (
-          <>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              1. Spicy Tex-Mex Delights:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Red chilli powder transcends cultural boundaries, making its
-                mark in global cuisines. In Tex-Mex dishes, it adds a fiery
-                punch to classics like chili con carne, enchiladas, and spicy
-                salsa. Planetsera chili powder, with its finely ground texture,
-                seamlessly integrates into these recipes, providing an authentic
-                and intense flavor.
-              </p>
-            </p>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              2. Asian Inspirations:
-              <ul className="text-base font-normal  mt-2 ml-5">
-                Embrace the spice in Asian cuisine by incorporating red chilli
-                powder into stir-fries, noodle dishes, and sauces. The spice
-                complements the umami flavors of soy sauce and enhances the heat
-                of dishes like Kung Pao chicken or Thai curries. Planetsera
-                chili powder, known for its consistency, ensures a uniform
-                distribution of spice.
-              </ul>
-            </p>
-          </>
-        ),
-      },
-      {
-        blogList:
-          "Section 5: Planetsera Chili Powder - A Spice Revelation        ",
-        blogListAbout: (
-          <>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              1. Quality Beyond Compare:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Planetsera chili powder stands out as a symbol of quality in the
-                world of spices. Known for its commitment to excellence,
-                Planetsera delivers chili powder that is finely ground,
-                intensely flavorful, and consistent in heat. Elevate your
-                culinary creations with a spice that reflects a dedication to
-                quality and authenticity.
-              </p>
-            </p>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              2. Versatility in Every Dash:
-              <p className="text-base  font-normal mt-2 ml-5">
-                Planetsera chili powder's versatility shines in both traditional
-                and innovative recipes. Its fine texture allows for easy
-                blending, ensuring an even distribution of heat in every dish.
-                Whether you're crafting a traditional curry or experimenting
-                with a new global fusion creation, Planetsera chili powder adds
-                a touch of culinary magic.
-              </p>
-            </p>
-          </>
-        ),
-      },
-      {
-        blogList:
-          "Section 6: Beyond the Kitchen - Red Chilli Powder Hacks          ",
-        blogListAbout: (
-          <>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              1. Natural Pest Repellent:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Red chilli powder isn't just for the kitchen—it can serve as a
-                natural pest repellent in your garden. Sprinkle a mixture of red
-                chilli powder and water around your plants to deter pests and
-                protect your garden without the use of harmful chemicals.
-              </p>
-            </p>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              2. DIY Spicy Seasoned Nuts:
-              <p className="text-base font-normal  mt-2 ml-5">
-                Transform plain nuts into a flavorful snack by tossing them in a
-                mixture of red chilli powder, salt, and your favorite spices.
-                Roast them in the oven for a spicy and crunchy treat that's
-                perfect for parties or everyday snacking.
-              </p>
-            </p>
-          </>
-        ),
-      },
-      {
-        blogList: "Spicy Adventures Await        ",
-        blogListAbout: (
-          <>
-            <p>
-              As we conclude our exploration of creative uses for red chilli
-              powder, the spice journey from the rack to the table unveils a
-              world of possibilities. From everyday culinary delights to global
-              fusion creations, and the quality assurance of Planetsera chili
-              powder, this spice adds a fiery touch that elevates every dish it
-              graces.
-            </p>
-            <p className="mt-3">
-              Embrace the boldness of red chilli powder, experiment with heat
-              levels, and let your culinary creativity run wild. Whether you're
-              crafting traditional Indian dishes, exploring global flavors, or
-              utilizing red chilli powder beyond the kitchen, the spice's
-              versatility and intensity promise a culinary adventure that
-              ignites the senses and leaves a lasting impression on every
-              palate.
+            <p className="mt-5">
+              Adding flavour to your foods with organic spices is an excellent
+              method to do it. Curry powder, garam masala, chilli powder,
+              Italian seasoning, Cajun seasoning, and Mexican seasoning are just
+              some of the organic spice combinations you may get. These organic
+              spice mixtures are not only an excellent source of antioxidants
+              but also have the potential to provide your foods a flavour all
+              their own. So, if you want to spice up your dishes without
+              sacrificing health, try one of these all-natural spice mixes.
             </p>
           </>
         ),
@@ -979,7 +678,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Piperine is a component of{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               black pepper{" "}
             </Link>{" "}
             that has powerful antioxidant capabilities. Black pepper includes
@@ -1011,7 +710,7 @@ const BlogData = [
           <>
             In addition to helping to speed up your metabolism, black pepper can
             do the same. Piperine, which is found in{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               black pepper{" "}
             </Link>{" "}
             , has been demonstrated in a number of studies to boost the body's
@@ -1027,7 +726,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Additionally,{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               black pepper{" "}
             </Link>{" "}
             has been found to have potential benefits in enhancing cognitive
@@ -1051,7 +750,7 @@ const BlogData = [
             possess properties that might potentially mitigate inflammation,
             enhance digestive processes, augment metabolic rates, and optimize
             cognitive abilities. To fully harness the numerous advantages of{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               black pepper{" "}
             </Link>{" "}
             , it is advisable to use it in your culinary preparations.
@@ -1216,7 +915,7 @@ const BlogData = [
         blogList: (
           <>
             1.{" "}
-            <Link href="/products/turmeric-powder" className="text-red-500">
+            <Link href="/product/turmeric-powder" className="text-red-500">
               Turmeric Powder
             </Link>{" "}
             Haldi Powder: The Golden Elixir
@@ -1230,7 +929,7 @@ const BlogData = [
           <>
             {" "}
             2.{" "}
-            <Link href="/products/cumin-powder" className="text-red-500">
+            <Link href="/product/cumin-powder" className="text-red-500">
               Cumin
             </Link>{" "}
             (Jeera): The Flavorful Backbone
@@ -1245,7 +944,7 @@ const BlogData = [
           <>
             Coriander is a useful herb that comes in both seed and ground form.
             Ground coriander is an important part of{" "}
-            <Link href="/products/coriander-powder" className="text-red-500">
+            <Link href="/product/coriander-powder" className="text-red-500">
               coriander powders
             </Link>{" "}
             and the seeds have a spicy, slightly sweet taste. It makes a lot of
@@ -1277,7 +976,7 @@ const BlogData = [
         blogList: (
           <>
             8.{" "}
-            <Link href="/products/red-chilli-powder" className="text-red-500">
+            <Link href="/product/red-chilli-powder" className="text-red-500">
               Red Chili Powder
             </Link>{" "}
             (Lal Mirch Powder): The Fiery Essence
@@ -1316,7 +1015,7 @@ const BlogData = [
         blogListAbout: (
           <>
             {" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               Black pepper
             </Link>
             , which may be purchased either whole or ground, is a time-honored
@@ -1801,7 +1500,7 @@ const BlogData = [
           <>
             Known as the 'Spice Garden of India,' Kerala may be found in the
             southern part of the subcontinent.{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               Black pepper
             </Link>{" "}
             , cardamom, cloves, cinnamon, and nutmeg are just some of the spices
@@ -1822,7 +1521,7 @@ const BlogData = [
             industry. The humid climate and cool temperatures of the misty hills
             are perfect for growing this delicious spice. There is a plethora of
             cardamom,{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               Black pepper
             </Link>
             , and other spices here.
@@ -1839,7 +1538,7 @@ const BlogData = [
         blogListAbout: (
           <>
             The Guntur Sannam and Byadgi types of{" "}
-            <Link href="/products/red-chilli-powder" className="text-red-500">
+            <Link href="/product/red-chilli-powder" className="text-red-500">
               Red Chilies
             </Link>{" "}
             grown in Andhra Pradesh are famous for being very hot. The extreme
@@ -1861,7 +1560,7 @@ const BlogData = [
             The state of Telangana is where turmeric, a bright and important
             Indian spice, comes from. Nizamabad in Telangana is famous for
             growing high-quality{" "}
-            <Link href="/products/turmeric-powder" className=" text-red-500">
+            <Link href="/product/turmeric-powder" className=" text-red-500">
               turmeric
             </Link>{" "}
             , which is liked for both its taste and its health benefits. Curry
@@ -1878,7 +1577,7 @@ const BlogData = [
             states of India, are great places to find rare spices. You can find
             spices like the very hot Bhut Jolokia chilli pepper here, as well as
             ginger,{" "}
-            <Link href="/products/turmeric-powder" className=" text-red-500">
+            <Link href="/product/turmeric-powder" className=" text-red-500">
               turmeric
             </Link>
             , and other herbs that are only found in this area. North-East
@@ -1903,7 +1602,7 @@ const BlogData = [
           <>
             Rajasthan is known for its rich culture and beautiful castles. It is
             also a major source of spices like{" "}
-            <Link href="/products/coriander-powder" className="text-red-500">
+            <Link href="/product/coriander-powder" className="text-red-500">
               coriander
             </Link>{" "}
             , ajwain, and cumin. Traditional foods from the state, like dal
@@ -1972,7 +1671,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Spices like{" "}
-            <Link href="/products/cumin-powder" className="text-red-500">
+            <Link href="/product/cumin-powder" className="text-red-500">
               cumin
             </Link>
             , ginger, and fennel play the lead parts in this music. They make
@@ -1989,7 +1688,7 @@ const BlogData = [
           <>
             Spices are like a magical shield that keeps you from getting sick.
             They are full of vitamins, which help your body fight off illness.
-            <Link href="/products/turmeric-powder" className=" text-red-500">
+            <Link href="/product/turmeric-powder" className=" text-red-500">
               Turmeric's
             </Link>{" "}
             curcumin is the main ingredient that fights inflammation and makes
@@ -2012,10 +1711,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Spices can speed up your digestion. Capsaicin, which is found in hot
-            <Link
-              href="/products/black-pepper-powder"
-              className=" text-red-500"
-            >
+            <Link href="/product/black-pepper-powder" className=" text-red-500">
               {" "}
               chilli peppers{" "}
             </Link>{" "}
@@ -2093,7 +1789,7 @@ const BlogData = [
           <>
             <p>
               It's still early days, but vegetables, especially{" "}
-              <Link href="/products/turmeric-powder" className=" text-red-500">
+              <Link href="/product/turmeric-powder" className=" text-red-500">
                 Turmeric's
               </Link>{" "}
               , show promise in the fight against cancer. Cancer cells don't
@@ -2120,11 +1816,11 @@ const BlogData = [
               <span className="text-3xl ">•</span> Spice Symphony: You can make
               your own spice blends or use mixes that are already made, like
               curry powder,{" "}
-              <Link href="/products/red-chilli-powder" className="text-red-500">
+              <Link href="/product/red-chilli-powder" className="text-red-500">
                 chilli powder{" "}
               </Link>{" "}
               , or{" "}
-              <Link href="/products/garam-masala" className="text-red-500">
+              <Link href="/product/garam-masala" className="text-red-500">
                 garam masala.
               </Link>{" "}
             </p>
@@ -2190,7 +1886,7 @@ const BlogData = [
         blogList: "Turmeric",
         blogListAbout: (
           <>
-            <Link href="/products/turmeric-powder" className=" text-red-500">
+            <Link href="/product/turmeric-powder" className=" text-red-500">
               Turmeric
             </Link>{" "}
             is widely recognised as a prominent spice with anti-inflammatory
@@ -2341,7 +2037,7 @@ const BlogData = [
         blogList: "Coriander",
         blogListAbout: (
           <>
-            <Link href="/products/coriander-powder" className="text-red-500">
+            <Link href="/product/coriander-powder" className="text-red-500">
               Coriander
             </Link>
             , which is sometimes called cilantro, is full of vitamins and can
@@ -2376,10 +2072,7 @@ const BlogData = [
         blogList: "Black Pepper",
         blogListAbout: (
           <>
-            <Link
-              href="/products/black-pepper-powder"
-              className=" text-red-500"
-            >
+            <Link href="/product/black-pepper-powder" className=" text-red-500">
               {" "}
               Black Pepper{" "}
             </Link>

@@ -1,20 +1,52 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IconButton, Modal } from "@mui/material";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { LOGIN } from "@/apollo/queries/index";
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery, useLazyQuery } from "@apollo/client";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { setOrUpdateUser } from "@/state/slice/userSlice";
+import { Get_VIEW_CART } from "@/apollo/queries";
+import { clearCart, storeInCart } from "@/state/slice/cartSlice";
 
 const Login = ({ isOpen, closeLoginModal }) => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state?.user);
+  const [active, setActive] = useState(false);
+
+  const [ViewCartData, { loading, data, refetch }] = useLazyQuery(
+    Get_VIEW_CART,
+    {
+      variables: { buyerId: user?.data?.buyer?.id },
+    }
+  );
+
+  useEffect(() => {
+    ViewCartData();
+  }, [user]);
+
+  if (active && user && data) {
+    dispatch(clearCart());
+
+    const updatedCartItems = data?.viewCart?.cartItem?.map((list) => ({
+      id: list?.id,
+      productVariantId: list?.productVariantId,
+      qty: list?.qty,
+      name: list?.name,
+    }));
+    updatedCartItems?.forEach((item) => {
+      dispatch(storeInCart(item));
+    });
+
+    setActive(false);
+  }
+
   const colorMe = useSelector((state) => state.colorUs.color);
   const [hide, setHide] = useState(closeLoginModal);
   const [login] = useMutation(LOGIN);
   const router = useRouter();
-  const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -59,7 +91,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
           localStorage.setItem(key, data[key]);
         }
         dispatch(setOrUpdateUser(data.user));
-
+        setActive(true);
         closeLoginModal();
         router.refresh();
       } catch (err) {
@@ -69,20 +101,40 @@ const Login = ({ isOpen, closeLoginModal }) => {
     }
   };
 
+  // if (CartData.length > 0) {
+  //   CartData?.map((item) =>
+  //     addToCartServer({
+  //       variables: {
+  //         buyerId: data?.user?.buyer?.id,
+  //         qty: item?.quantity,
+  //         productVariantId: item?.id,
+  //       },
+  //     })
+  //   );
+
+  // await dispatch(clearCart());
+
+  // await ViewCartData.refetch();
+
+  // const updatedCartItems = ViewCartData?.data?.viewCart.map((list) => ({
+  //   id: list?.productVariantIds,
+  //   quantity: list?.qty,
+  //   name: list?.name,
+  // }));
+  // dispatch(addToCart(updatedCartItems));
+  // }
   return (
     <Modal open={isOpen} onClose={closeLoginModal}>
       <div className="flex items-center justify-center min-h-screen m-auto w-[90%] sm:w-full overflow-y-auto max-h-[60%] h-auto">
         <div
           className="fixed inset-0 bg-gray-600 opacity-75"
-          onClick={closeLoginModal}
-        ></div>
+          onClick={closeLoginModal}></div>
         <div className="relative bg-white rounded-lg max-w-md w-full overflow-y-auto">
           <div className="relative p-8 sm:p-10 rounded-b-lg sm:rounded-r-lg">
             <IconButton
               aria-label="close"
               onClick={closeLoginModal}
-              className="absolute top-2 right-2 "
-            >
+              className="absolute top-2 right-2 ">
               <CancelIcon sx={{ color: "lightGrey", fontSize: 30 }} />
             </IconButton>
             <h2 className="text-2xl sm:text-4xl font-bold text-slate-800 text-center">
@@ -127,8 +179,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
                     colorMe + "80"
                   })`,
                 }}
-                className="text-white rounded-lg py-2 px-4 w-full font-semibold sm:text-xl"
-              >
+                className="text-white rounded-lg py-2 px-4 w-full font-semibold sm:text-xl">
                 Log In
               </button>
             </form>
@@ -136,8 +187,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
               If not a User?{" "}
               <Link
                 href={"/register"}
-                style={{ color: colorMe, fontWeight: "bold" }}
-              >
+                style={{ color: colorMe, fontWeight: "bold" }}>
                 Register Now
               </Link>
             </p>

@@ -1,64 +1,57 @@
 "use client";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import "@/public/styles/navigation.css";
 import { useParams } from "next/navigation";
-import RelatedPtoductData from "@/app/products/components/RelatedProducts/RelatedProductData";
-import { useEffect, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
+import { logout } from "@/state/slice/userSlice";
 import Logout from "../Logout";
-
 import Login from "../Login";
 
 const NavItem = ({ page }) => {
-  const cartItems = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
   const user = useSelector((state) => state?.user);
-
-  const cartItemsQuantity = cartItems.reduce(
-    (total, item) => total + item.quantity,
+  const CartData = useSelector((state) => state.cart.items);
+  const cartItemsQuantity = CartData.reduce(
+    (total, item) => total + item?.qty,
     0
   );
-  console.log("Object.keys(user)", user);
 
-  // let cartItemsQuantity = 0;
-  // cartItems.forEach((item) => {
-  //   cartItemsQuantity += item.quantity;
-  // });
-
-  const { id } = useParams();
-  const specificProduct = RelatedPtoductData.find((prod) => prod.id === id);
   const [isVisible, setIsVisible] = useState(false);
+  const [anchorElUser, setAnchorElUser] = useState(null);
   const [loginModal, setLoginModal] = useState(false);
   const [logoutModal, setLogoutModal] = useState(false);
-  console.log("Object.keys(user).length", user.data);
-
-  const handleLogout = () => {
-    dispatch(logout());
-  };
 
   const openLoginModal = () => {
     setLoginModal(true);
-  };
-  const openLogoutModal = () => {
-    setLogoutModal(true);
   };
 
   const closeLoginModal = () => {
     setLoginModal(false);
   };
+
   const closeLogoutModal = () => {
     setLogoutModal(false);
   };
 
-  const dispatch = useDispatch();
-  // console.log(page);
-  const colorMe = useSelector((state) => state.colorUs.color);
-  const changeColor = () => {
-    dispatch(changeColor("#ff4f4f"));
+  const handleLogout = () => {
+    dispatch(logout());
+    setAnchorElUser(null);
   };
-  useEffect(() => {}, []);
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,7 +71,7 @@ const NavItem = ({ page }) => {
   return (
     <div
       className={`fixed  w-full  left-0 z-30 justify-between md:flex hidden h-[78px] sm:pr-10 sm:pl-4 ${
-        isVisible
+        isVisible || page === "orders" || page === "cart"
           ? "	navHeader text-black border-[1px] border-slate-300	"
           : "text-white"
       }`}>
@@ -95,7 +88,8 @@ const NavItem = ({ page }) => {
               page === "address" ||
               page === "products" ||
               page === "privacy-policy" ||
-              page === "return-policy") &&
+              page === "return-policy" ||
+              page === "orders") &&
             "black",
         }}
         id="navigation"
@@ -103,44 +97,65 @@ const NavItem = ({ page }) => {
         <li>
           <Link href="/">Home</Link>
         </li>
-
         <li>
           <Link href="/product">Product</Link>
         </li>
-
         <li>
           <Link href="/shop">Shop</Link>
         </li>
-
         <li>
           <Link href="/about">About</Link>
         </li>
-
         <li>
           <Link href="/blog">Blog</Link>
         </li>
-
         <li>
           <Link href="/contact-us">Contact Us</Link>
         </li>
 
-        <li>
-          <Link className="flex" href="/cart">
-            <Badge badgeContent={cartItemsQuantity} color="primary">
-              <ShoppingCartIcon />
-            </Badge>
-          </Link>
-        </li>
         {!user.data ? (
           <li className="mr-1 cursor-pointer" onClick={openLoginModal}>
             Login
           </li>
         ) : (
-          <li>
-            <AccountCircleIcon onClick={openLogoutModal} />
-          </li>
-        )}
+          <>
+            <li>
+              <Link className="flex" href="/cart">
+                <Badge badgeContent={cartItemsQuantity} color="primary">
+                  <ShoppingCartIcon />
+                </Badge>
+              </Link>
+            </li>
 
+            <li className="cursor-pointer">
+              <AccountCircleIcon onClick={handleOpenUserMenu} />
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  // horizontal: "right",
+                }}
+                style={{ marginTop: 25 }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  // horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}>
+                <Link href="/orders">
+                  <MenuItem>
+                    <Typography textAlign="center">My Orders</Typography>
+                  </MenuItem>
+                </Link>
+                <MenuItem onClick={handleLogout}>
+                  <Typography textAlign="center">Logout</Typography>
+                </MenuItem>
+              </Menu>
+            </li>
+          </>
+        )}
         <Login isOpen={loginModal} closeLoginModal={closeLoginModal} />
         <Logout isOpen={logoutModal} closeLoginModal={closeLogoutModal} />
       </ul>

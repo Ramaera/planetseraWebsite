@@ -38,7 +38,7 @@ const NonvegTadka = () => {
                           <img
                             className="relative w-[100px] md:w-72"
                             loading="lazy"
-                            src="images/backgrounds/comingsoon.webp"
+                            src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
                             // width={"360px"}
                             alt="cooming soon"
                           />
@@ -50,20 +50,21 @@ const NonvegTadka = () => {
                       <div
                         className={`${
                           !item?.flipkart && !item?.amazon && " opacity-50"
-                        }  flex items-center justify-center `}>
+                        }  flex items-center justify-center `}
+                      >
                         {!item?.flipkart && !item?.amazon ? (
                           <img
                             className="relative"
                             loading="lazy"
-                            src={item?.masalaImg}
+                            src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
                             alt="..."
                           />
                         ) : (
-                          <Link href={`/products/${item.id}`}>
+                          <Link href={`/product/${item.id}`}>
                             <img
                               className="relative"
                               loading="lazy"
-                              src={item.masalaImg}
+                              src={`https://planetseraapi.planetsera.com/get-images/${product?.productImageUrl}`}
                               // width={"360px"}
                               alt={item.masalaName}
                               title={`Buy Planetsera ${item.masalaName}`}
@@ -78,7 +79,7 @@ const NonvegTadka = () => {
                           {item?.masalaName}
                         </h3>
                       ) : (
-                        <Link href={`/products/${item.id}`}>
+                        <Link href={`/product/${item.id}`}>
                           <h3 className="text-center font-['Montserrat'] text-[#1E1E1E] text-[13.5px] sm:text-lg">
                             {item?.masalaName}
                           </h3>
@@ -96,7 +97,7 @@ const NonvegTadka = () => {
                       />
                     ) : (
                       <BuynowBtn
-                        link={`/products/${item?.id}`}
+                        link={`/product/${item?.id}`}
                         text={"Buy Now"}
                         sectionClass="responsiveBtn"
                       />

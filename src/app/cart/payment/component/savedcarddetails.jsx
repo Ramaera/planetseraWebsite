@@ -35,8 +35,7 @@ export const savedcarddetails = () => {
           onClick={() => handleClick(index)}
           className={`flex w-full border-2 justify-between my-8 ${
             selectedButton === index ? "border-red-500" : "border-gray-500"
-          }`}
-        >
+          }`}>
           <div className=" ">
             <div className="flex   justify-center font-normal	text-sm	py-1	 px-5 rounded-2xl">
               <div className="text-base  ">
@@ -46,8 +45,7 @@ export const savedcarddetails = () => {
 
               <div
                 style={{ color: "#2F302F" }}
-                className=" sm:font-normal text-xs sm:text-base flex items-center	"
-              >
+                className=" sm:font-normal text-xs sm:text-base flex items-center	">
                 <LiaCcVisa
                   color="#090ded"
                   className="sm:w-12 sm:h-8 w-8  h-8 ml-2 items-center flex"
@@ -58,8 +56,7 @@ export const savedcarddetails = () => {
           <div className="text-xs sm:text-base sm:w-2/12 w-5/12 mt-3	">
             <button
               className="Cart-remove"
-              onClick={() => dispatch(removePayment(item))}
-            >
+              onClick={() => dispatch(removePayment(item))}>
               Remove
             </button>
           </div>

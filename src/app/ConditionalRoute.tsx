@@ -6,6 +6,7 @@ import * as React from "react";
 import { usePathname } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { setOrUpdateUser } from "@/state/slice/userSlice";
+
 const ConditionalRoute = ({ children }) => {
   const [isLoading, setLoading] = useState(true);
   const [isAuthenticated, setAuthenticated] = useState(false);
@@ -14,6 +15,7 @@ const ConditionalRoute = ({ children }) => {
   const pathname = usePathname();
   const userResp = useQuery(GetUser);
   const dispatch = useDispatch();
+
   const loadUser = async () => {
     try {
       const resp = await userResp.refetch();
@@ -30,7 +32,7 @@ const ConditionalRoute = ({ children }) => {
     return null;
   };
   const handleRoutes = async () => {
-    if (!isAuthenticated && pathname.toLowerCase() === "/cart/shippingdetail") {
+    if (!isAuthenticated && pathname.toLowerCase() === "/cart/checkout") {
       router.replace("/register");
     } else if (isAuthenticated && pathname.toLowerCase() == "/register") {
       router.replace("/");

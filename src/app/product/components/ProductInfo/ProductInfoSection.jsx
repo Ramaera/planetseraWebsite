@@ -25,7 +25,8 @@ const ProductInfoSection = () => {
             id="slider-2-1"
             style={{
               background: "linear-gradient(to right, #C9D2B3, #94a274)",
-            }}>
+            }}
+          >
             <div className="contentZoom">
               <h2 className="headingZoom">Sabji Masala</h2>
               <h3 className="titleZoom ">
@@ -35,7 +36,7 @@ const ProductInfoSection = () => {
               </h3>
 
               <Link
-                href={`/products/sabji-masala`}
+                href={`/product/sabji-masala`}
                 // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 <button className="buttonZoomView scale-105">View</button>
@@ -68,7 +69,8 @@ const ProductInfoSection = () => {
             style={{
               background: "linear-gradient(to right, #B79891, #94716B)",
               zIndex: "1",
-            }}>
+            }}
+          >
             <div className="contentZoom">
               <h2 className="headingZoom">Garam Masala</h2>
               <h3 className="titleZoom ">
@@ -78,7 +80,7 @@ const ProductInfoSection = () => {
               </h3>
 
               <Link
-                href={`/products/garam-masala`}
+                href={`/product/garam-masala`}
                 // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 <button className="buttonZoomView scale-105">View</button>
@@ -110,7 +112,8 @@ const ProductInfoSection = () => {
             style={{
               background: "linear-gradient(to right, #CDB1B1, #C59F9F)",
               zIndex: "1",
-            }}>
+            }}
+          >
             <div className="contentZoom">
               <h2 className="headingZoom">Red Chilli Powder</h2>
               <h3 className="titleZoom ">
@@ -120,7 +123,7 @@ const ProductInfoSection = () => {
               </h3>
 
               <Link
-                href={`/products/red-chilli-powder`}
+                href={`/product/red-chilli-powder`}
                 // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 <button className="buttonZoomView scale-105">View</button>
@@ -152,7 +155,8 @@ const ProductInfoSection = () => {
             id="slider-2-4"
             style={{
               background: "linear-gradient(to right, #E4B980, #E2B87F)",
-            }}>
+            }}
+          >
             <div className="contentZoom">
               <h2 className="headingZoom">Cumin Powder</h2>
               <h3 className="titleZoom ">
@@ -162,7 +166,7 @@ const ProductInfoSection = () => {
               </h3>
 
               <Link
-                href={`/products/cumin-powder`}
+                href={`/product/cumin-powder`}
                 // onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               >
                 <button className="buttonZoomView scale-105">View</button>

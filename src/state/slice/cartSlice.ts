@@ -7,33 +7,54 @@ const cartSlice = createSlice({
     items: [],
   },
   reducers: {
-    addToCart: (state, action) => {
-      const { id, quantity, image, name, price } = action.payload;
+    storeInCart: (state, action) => {
+      const { id, productVariantId, qty, name } = action.payload;
+      state.items.push({ id, productVariantId, qty, name });
+    },
 
-      const existingProduct = state.items.find((item) => item.id === id);
+    addToCart: (state, action) => {
+      const { id, productVariantId, qty, name } = action.payload;
+
+      const existingProduct = state.items.find(
+        (item) => item.productVariantId === productVariantId
+      );
 
       if (existingProduct) {
-        existingProduct.quantity += quantity;
+        existingProduct.qty += qty;
       } else {
-        state.items.push({ id, quantity, image, name, price });
+        state.items.push({ id, productVariantId, qty, name });
       }
     },
 
     removeFromCart: (state, action) => {
-      const { id } = action.payload;
-      state.items = state.items.filter((item) => item.id !== id);
+      const { productVariantId } = action.payload;
+      state.items = state.items.filter(
+        (item) => item.productVariantId !== productVariantId
+      );
     },
 
     incrementQuantity: (state, action) => {
-      const { index } = action.payload;
-      state.items[index].quantity += 1;
+      const { productVariantId } = action.payload;
+      const existingItem = state.items.find(
+        (item) => item.productVariantId === productVariantId
+      );
+      if (existingItem) {
+        existingItem.qty += 1;
+      }
     },
 
     decrementQuantity: (state, action) => {
-      const { index } = action.payload;
-      if (state.items[index].quantity > 1) {
-        state.items[index].quantity -= 1;
+      const { productVariantId } = action.payload;
+      const existingItem = state.items.find(
+        (item) => item.productVariantId === productVariantId
+      );
+      if (existingItem && existingItem.qty > 1) {
+        existingItem.qty -= 1;
       }
+    },
+
+    clearCart(state) {
+      state.items = [];
     },
   },
 });
@@ -43,5 +64,7 @@ export const {
   removeFromCart,
   incrementQuantity,
   decrementQuantity,
+  clearCart,
+  storeInCart,
 } = cartSlice.actions;
 export default cartSlice.reducer;

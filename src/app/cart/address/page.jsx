@@ -12,12 +12,17 @@ import AddIcon from "@mui/icons-material/Add";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import IndianStatesDropdown from "../component/statesdropdownlist";
 import "react-toastify/dist/ReactToastify.css";
+import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { saveAddress } from "@/state/slice/addressSlice";
+import { ADD_ADDRESS } from "@/apollo/queries";
+import { useMutation } from "@apollo/client";
 
 const address = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [addAddress] = useMutation(ADD_ADDRESS);
+  const user = useSelector((state) => state?.user);
   const dispatch = useDispatch();
 
   // Function to toggle visibility
@@ -50,7 +55,7 @@ const address = () => {
     setFormData(initialFormData);
   };
 
-  const handleSaveAndDeliverClick = () => {
+  const handleSaveAndDeliverClick = async () => {
     if (
       formData.name &&
       formData.mobile &&
@@ -59,7 +64,21 @@ const address = () => {
       formData.pinCode &&
       formData.address
     ) {
-      dispatch(saveAddress(formData));
+      const resp = await addAddress({
+        variables: {
+          name: formData.name,
+          mobileNumber: formData.mobile,
+          buyerId: user?.data?.buyer?.id,
+
+          address: [
+            { city: formData.city },
+            { pinCode: formData.pinCode },
+            { address: formData.address },
+          ],
+        },
+      });
+      console.log("formData", formData, "resp", resp.data.addAddress);
+      dispatch(saveAddress(resp?.data?.addAddress));
     } else {
       alert("Please fill in all required fields");
     }

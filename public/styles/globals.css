@@ -813,10 +813,10 @@
     /* display: flex;
     flex-direction: column;
     align-items: center; */
-    padding-top: 4rem;
+    padding-top: 2rem;
   }
   #mobilenavigation li {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
   }
 
   #mobilenavigation li a {

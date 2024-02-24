@@ -26,15 +26,12 @@ const page = () => {
             </div>
             <div
               style={{ color: "#8D92A7" }}
-              className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	"
-            >
-              Thank you for your order! Your order is being processed and will
-              be completed within 3-6 hours. You will receive an email
-              confirmation when your order is completed.
+              className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	">
+              Thank you for your order! Your order is being processed.
             </div>
             <div className="flex justify-center rounded-2xl Cartbgcolor w-52	h-14 mt-10 items-center	 py-3">
-              <Link href="/shop" className="text-white">
-                Continue Shopping
+              <Link href="/orders" className="text-white">
+                View Orders
               </Link>
             </div>
           </div>

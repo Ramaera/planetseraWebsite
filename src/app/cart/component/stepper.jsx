@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useSelector, useDispatch } from "react-redux";
 
-const steps = ["Address ", "Shipping ", "Payment "];
+const steps = ["Address ", "Payment "];
 
 export default function HorizontalLinearStepper() {
   const router = useRouter();
@@ -39,6 +39,9 @@ export default function HorizontalLinearStepper() {
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => {
+      if (activeStep === 0) {
+        router.push("/cart");
+      }
       // Reset custom component on going back
       setCustomComponentIndex(prevActiveStep - 1);
       return prevActiveStep - 1;
@@ -58,10 +61,10 @@ export default function HorizontalLinearStepper() {
     case 0:
       customComponent = <Address />;
       break;
+    // case 1:
+    //   customComponent = <Shipping />;
+    //   break;
     case 1:
-      customComponent = <Shipping />;
-      break;
-    case 2:
       customComponent = <Payment />;
       break;
     // Add more cases for additional custom components if needed
@@ -111,7 +114,7 @@ export default function HorizontalLinearStepper() {
             <Button
               variant="outlined"
               color="inherit"
-              disabled={activeStep === 0}
+              // disabled={activeStep === 0}
               onClick={handleBack}
               sx={{ mr: 1 }}>
               Back

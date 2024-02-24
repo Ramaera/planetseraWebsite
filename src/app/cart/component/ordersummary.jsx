@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import LocalOfferIcon from "@mui/icons-material/LocalOffer";
-import InputAdornment from "@mui/material/InputAdornment";
 import { usePathname, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import Login from "@/components/Login";
+import { useQuery } from "@apollo/client";
+import { Get_All_Products } from "@/apollo/queries";
 
 // import Address from "../address";
 
@@ -15,7 +15,7 @@ const ordersummary = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
   const CartData = useSelector((state) => state.cart.items);
   const [discount, setDiscount] = useState(56);
-  const [shipping, setShipping] = useState(30);
+  const [shipping, setShipping] = useState(100);
   const [couponAmount, setCouponAmount] = useState(20);
   const user = useSelector((state) => state?.user);
   const [registered, setRegistered] = useState(true);
@@ -24,51 +24,70 @@ const ordersummary = () => {
     setLoginModal(true);
   };
 
+  console.log("CartData---", CartData);
+
   const closeLoginModal = () => {
     setLoginModal(false);
   };
-  const getData = () => {
-    return useSelector((state) => state?.user);
-  };
-  // useEffect(() => {
-  //   const user = getData();
-  // }, []);
+
+  const allProductsQuery = useQuery(Get_All_Products);
+  const allProducts =
+    allProductsQuery.data?.allProducts.flatMap(
+      (list) => list?.ProductsVariant
+    ) || [];
 
   const calculatePrice = () => {
-    return CartData.reduce(
-      (total, item) => total + item.price * item.quantity,
+    return allProducts.reduce(
+      (total, prod) =>
+        prod.price *
+          (CartData.find((item) => item.productVariantId === prod.id)?.qty ||
+            0) +
+        total,
       0
     );
   };
 
   const calculateTotalPrice = () => {
     const totalPrice = calculatePrice();
-    // const discountedPrice = totalPrice - discount;
-    const totalPriceWithShipping = totalPrice + shipping;
-    // const totalPriceAfterCoupon = totalPriceWithShipping - couponAmount;
 
-    // return totalPriceAfterCoupon;
-    return totalPriceWithShipping;
+    if (totalPrice >= 200) {
+      const totalPriceWithShipping = totalPrice + 50;
+      return totalPriceWithShipping;
+    } else {
+      const totalPriceWithShipping = totalPrice + 100;
+      return totalPriceWithShipping;
+    }
   };
+
+  useEffect(() => {
+    if (calculatePrice() >= 200) {
+      setShipping(50);
+    } else {
+      setShipping(100);
+    }
+  }, [calculatePrice]);
 
   return (
     <>
       <div className="font-mont sm:w-1/4 pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
-          className="border py-9 px-6 shadow-xl"
-        >
+          className="border py-9 px-6 shadow-xl">
           <p className="text-2xl  ">Order Summary</p>
-          <div className="flex justify-between   mt-5 ">
+
+          <div className="flex justify-between flex-col   mt-5 ">
             Items
             <div>
-              {CartData.map((item, index) => (
-                <>
+              {CartData.map((item, index) => {
+                const product = allProducts.find(
+                  (prod) => prod.id === item.productVariantId
+                );
+                return (
                   <div className="flex">
-                    {item?.name} × {item?.quantity}
+                    {item?.name} {product?.weight}g × {item?.qty}
                   </div>
-                </>
-              ))}
+                );
+              })}
             </div>
           </div>
           {/* <div className="flex  justify-between mt-5 ">
@@ -122,7 +141,7 @@ const ordersummary = () => {
               /> */}
               {user.data ? (
                 <>
-                  <Link href="/cart/shippingDetail" className="text-white">
+                  <Link href="/cart/checkout" className="text-white">
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor  py-3">
                       Proceed To Checkout
                     </div>
@@ -133,8 +152,7 @@ const ordersummary = () => {
                   <div
                     onClick={openLoginModal}
                     className="text-white"
-                    style={{ color: colorMe, fontWeight: "bold" }}
-                  >
+                    style={{ color: colorMe, fontWeight: "bold" }}>
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
                       Proceed To Checkout
                     </div>
