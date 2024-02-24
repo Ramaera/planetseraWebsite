@@ -24,7 +24,7 @@ const ordersummary = () => {
     setLoginModal(true);
   };
 
-  console.log("CartData---", CartData);
+  // console.log("CartData---", CartData);
 
   const closeLoginModal = () => {
     setLoginModal(false);
