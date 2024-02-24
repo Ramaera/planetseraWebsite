@@ -30,8 +30,8 @@ const page = () => {
               Thank you for your order! Your order is being processed.
             </div>
             <div className="flex justify-center rounded-2xl Cartbgcolor w-52	h-14 mt-10 items-center	 py-3">
-              <Link href="/shop" className="text-white">
-                Continue Shopping
+              <Link href="/orders" className="text-white">
+                View Orders
               </Link>
             </div>
           </div>

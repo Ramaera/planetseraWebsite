@@ -11,11 +11,9 @@ import disableScroll from "disable-scroll";
 import Login from "../Login";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
-import { useQuery } from "@apollo/client";
-import { Get_VIEW_CART } from "@/apollo/queries";
 
-usePathname;
 const NavigationMobile = ({ page }) => {
+  const dispatch = useDispatch();
   const router = useRouter();
   const currentRoute = usePathname();
 
@@ -28,8 +26,6 @@ const NavigationMobile = ({ page }) => {
     (total, item) => total + item?.qty,
     0
   );
-
-  const dispatch = useDispatch();
 
   const changeColor = () => {
     dispatch(changeColor("#ff4f4f"));
@@ -52,6 +48,10 @@ const NavigationMobile = ({ page }) => {
   useEffect(() => {
     showMenu ? disableScroll.on() : disableScroll.off();
   }, [showMenu]);
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <div className="container">
@@ -180,39 +180,58 @@ const NavigationMobile = ({ page }) => {
                   Contact Us
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/cart"
-                  passHref
-                  className="px-4 py-2 flex w-full rounded-md"
-                  style={{
-                    color: currentRoute === "/cart" && colorMe,
-                    fontWeight: currentRoute === "/cart" && 600,
-                    alignItems: "center",
-                  }}>
-                  Cart
-                  <Badge badgeContent={cartItemsQuantity} color="primary">
-                    <ShoppingCartIcon sx={{ marginLeft: 1 }} />
-                  </Badge>
-                </Link>
-              </li>
-              {Object.keys(user).length === 0 && (
+
+              {!user.data ? (
                 <li>
                   <Link
                     onClick={openLoginModal}
                     href=""
                     passHref
-                    cursor-pointer
-                    className="px-4 py-2 flex w-full rounded-md "
+                    className="px-4 py-2 flex w-full rounded-md"
                     style={{
-                      color: currentRoute === "/login" && colorMe,
-                      fontWeight: currentRoute === "/login" && 600,
+                      color: currentRoute === "/login" ? colorMe : undefined,
+                      fontWeight: currentRoute === "/login" ? 600 : undefined,
                     }}>
                     Login
                   </Link>
                 </li>
+              ) : (
+                <>
+                  <li>
+                    <Link
+                      href="/cart"
+                      passHref
+                      className="px-4 py-2 flex w-full rounded-md"
+                      style={{
+                        color: currentRoute === "/cart" ? colorMe : undefined,
+                        fontWeight: currentRoute === "/cart" ? 600 : undefined,
+                        alignItems: "center",
+                      }}>
+                      Cart
+                      <Badge badgeContent={cartItemsQuantity} color="primary">
+                        <ShoppingCartIcon sx={{ marginLeft: 1 }} />
+                      </Badge>
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      onClick={handleLogout}
+                      href=""
+                      passHref
+                      className="px-4 py-2 flex w-full rounded-md"
+                      style={{
+                        color: currentRoute === "/logout" ? colorMe : undefined,
+                        fontWeight:
+                          currentRoute === "/logout" ? 600 : undefined,
+                      }}>
+                      Logout
+                    </Link>
+                  </li>
+                </>
               )}
 
+              {/* <Logout isOpen={logoutModal} closeLoginModal={closeLogoutModal} /> */}
               <Login isOpen={loginModal} closeLoginModal={closeLoginModal} />
             </ul>
           </div>

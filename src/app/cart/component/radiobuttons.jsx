@@ -48,9 +48,9 @@ export default function ControlledRadioButtonsGroup() {
     }
   };
 
-  useEffect(() => {
-    addressesData.refetch();
-  }, [handleRemoveAddress]);
+  // useEffect(() => {
+  //   addressesData.refetch();
+  // }, [handleRemoveAddress]);
 
   return (
     <FormControl className="w-full">

@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import Login from "@/components/Login";
 import { useQuery } from "@apollo/client";
-import { Get_VIEW_CART, Get_All_Products } from "@/apollo/queries";
+import { Get_All_Products } from "@/apollo/queries";
 
 // import Address from "../address";
 

@@ -13,34 +13,35 @@ import { clearCart, storeInCart } from "@/state/slice/cartSlice";
 
 const Login = ({ isOpen, closeLoginModal }) => {
   const dispatch = useDispatch();
-  const CartData = useSelector((state) => state.cart.items);
   const user = useSelector((state) => state?.user);
+  const [active, setActive] = useState(false);
 
-  const [ViewCartData, { loading, data }] = useLazyQuery(Get_VIEW_CART, {
-    variables: { buyerId: user?.data?.buyer?.id },
-  });
+  const [ViewCartData, { loading, data, refetch }] = useLazyQuery(
+    Get_VIEW_CART,
+    {
+      variables: { buyerId: user?.data?.buyer?.id },
+    }
+  );
 
   useEffect(() => {
     ViewCartData();
-    if (data) {
-      console.log("second", data);
-      dispatch(clearCart());
+  }, [user]);
 
-      const updatedCartItems = data?.viewCart?.cartItem?.map((list) => ({
-        id: list?.id,
-        productVariantId: list?.productVariantId,
-        qty: list?.qty,
-        name: list?.name,
-      }));
-      updatedCartItems?.forEach((item) => {
-        dispatch(storeInCart(item));
-      });
-    }
-  }, [data]);
+  if (active && user && data) {
+    dispatch(clearCart());
 
-  console.log("ViewCartData", data);
-  const CartDataList = CartData.map((list) => list.quantity);
-  console.log("CartData", CartDataList);
+    const updatedCartItems = data?.viewCart?.cartItem?.map((list) => ({
+      id: list?.id,
+      productVariantId: list?.productVariantId,
+      qty: list?.qty,
+      name: list?.name,
+    }));
+    updatedCartItems?.forEach((item) => {
+      dispatch(storeInCart(item));
+    });
+
+    setActive(false);
+  }
 
   const colorMe = useSelector((state) => state.colorUs.color);
   const [hide, setHide] = useState(closeLoginModal);
@@ -90,7 +91,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
           localStorage.setItem(key, data[key]);
         }
         dispatch(setOrUpdateUser(data.user));
-
+        setActive(true);
         closeLoginModal();
         router.refresh();
       } catch (err) {

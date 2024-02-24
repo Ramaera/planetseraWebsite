@@ -9,8 +9,10 @@ import BuynowBtn from "@/components/BuynowBtn";
 import { CREATE_ORDER, DELETE_CART } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/navigation";
+import { clearCart } from "@/state/slice/cartSlice";
 
 const page = () => {
+  const dispatch = useDispatch();
   const router = useRouter();
   const addressesData = useSelector((state) => state.address);
   const user = useSelector((state) => state?.user);
@@ -18,6 +20,8 @@ const page = () => {
   const [shipping, setShipping] = useState(100);
   const [createOrder] = useMutation(CREATE_ORDER);
   const [deleteCart] = useMutation(DELETE_CART);
+
+  const CartData = useSelector((state) => state.cart.items);
 
   const ViewCartData = useQuery(Get_VIEW_CART, {
     variables: {
@@ -36,9 +40,8 @@ const page = () => {
     return allProducts.reduce(
       (total, prod) =>
         prod.price *
-          (ViewCartData?.data?.viewCart?.cartItem.find(
-            (item) => item.productVariantId === prod.id
-          )?.qty || 0) +
+          (CartData.find((item) => item.productVariantId === prod.id)?.qty ||
+            0) +
         total,
       0
     );
@@ -117,7 +120,10 @@ const page = () => {
           cartId: CartId,
         },
       });
-      handleOrderPlaced();
+
+      await dispatch(clearCart());
+
+      await handleOrderPlaced();
     } catch (err) {
       console.log("err", err.message);
     }

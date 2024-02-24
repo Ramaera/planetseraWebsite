@@ -250,6 +250,7 @@ query AllOrders ($buyerId: String!) {
       ShippingCost
       orderAmount
       status
+      orderDate
       address {
           addresId
           address

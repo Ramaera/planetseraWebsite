@@ -15,19 +15,13 @@ import {
   removeFromCart,
   incrementQuantity,
   decrementQuantity,
-  clearCart,
-  storeInCart,
 } from "@/state/slice/cartSlice";
 import BuynowBtn from "@/components/BuynowBtn";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useQuery } from "@apollo/client";
 import { CART_OPEARTION } from "@/apollo/queries";
 import { ToastContainer, toast } from "react-toastify";
-import {
-  Get_All_Products,
-  Get_VIEW_CART,
-  REMOVE_ITEM_CART,
-} from "@/apollo/queries";
+import { Get_All_Products, REMOVE_ITEM_CART } from "@/apollo/queries";
 import { useMutation, useLazyQuery } from "@apollo/client";
 
 const Page = () => {
