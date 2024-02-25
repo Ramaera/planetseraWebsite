@@ -7,12 +7,14 @@ import { Get_All_Products } from "@/apollo/queries";
 import { useQuery } from "@apollo/client";
 
 const Faq = () => {
-  const allProducts = useQuery(Get_All_Products);
+  const { loading, data, error } = useQuery(Get_All_Products);
   const { id } = useParams();
-  const faqDataFilter = allProducts?.data?.allProducts.find(
+  if (loading) {
+    <p>Loading....</p>;
+  }
+  const faqDataFilter = data?.allProducts.find(
     (prod) => prod.productUrl === id
   );
-  console.log("faqDataFilter", faqDataFilter.metaData);
 
   const [openIndex, setOpenIndex] = useState(null);
 

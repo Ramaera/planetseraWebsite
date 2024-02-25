@@ -43,14 +43,24 @@ mutation createPlanetseraReward (
 export const LOGIN = gql(`
 mutation Login( $email: String!, $password: String!) {
   login(data: { email: $email, password: $password }) {
-      accessToken
-      refreshToken
-      user{
-        name
-        email
-        buyer {
-          id
-        }
+    accessToken
+        refreshToken
+        user {
+            createdAt
+            email
+            id
+            name
+            role
+            updatedAt
+            buyer {
+                id
+                userId
+                Cart {
+                    buyerId
+                    id
+                }
+            }
+        
       }
   }
 }
@@ -62,8 +72,13 @@ query GetUser {
    email
    name
    buyer {
-    id
-   }
+                id
+                userId
+                Cart {
+                    buyerId
+                    id
+                }
+            }
   }
 }`);
 
@@ -166,6 +181,28 @@ mutation CartOpeartion ($cartItemId: String!, $operation: String!, $qty: Int! ) 
 }
 `);
 
+export const CREATE_PAYMENT_DATA = gql(`
+mutation CreatePaymentData($buyerId:String!, $orderId:Int!,$paymentId:String!) {
+    createPaymentData(data: { buyerId: $buyerId, orderId: $orderId, paymentId: $paymentId }) {
+      buyerId
+        dateOfPayment
+        orderId
+        paymentId
+    }
+}
+`);
+
+export const FIND_TRANSACTION_ID = gql(`
+query FindPaymentData($merchantTransactionId:String!) {
+    findPaymentData(merchantTransactionId: $merchantTransactionId) {
+        buyerId
+        dateOfPayment
+        orderId
+        paymentId
+    }
+}
+`);
+
 export const ADD_ADDRESS = gql(`
 mutation AddAddress($buyerId:String!, $mobileNumber:String!,$name:String,$address:[JSONObject!]!) {
     addAddress(
@@ -216,6 +253,7 @@ export const CREATE_ORDER = gql(`
       }
     ) {
       newOrder {
+        id
         buyerId
         orderDate
         address {

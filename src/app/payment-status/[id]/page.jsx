@@ -8,10 +8,12 @@ import "@/public/styles/cart.css";
 import { useParams } from "next/navigation";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { useQuery, useMutation } from "@apollo/client";
+import { useQuery, useLazyQuery, useMutation } from "@apollo/client";
 import {
   Get_VIEW_CART,
   Get_All_Products,
+  CREATE_PAYMENT_DATA,
+  FIND_TRANSACTION_ID,
   CREATE_ORDER,
   DELETE_CART,
 } from "@/apollo/queries";
@@ -19,34 +21,44 @@ import { useRouter } from "next/navigation";
 import { clearCart } from "@/state/slice/cartSlice";
 
 const page = () => {
-  const dispatch = useDispatch();
-  const router = useRouter();
-
-  const addressesData = useSelector((state) => state.address);
+  const [merchantTransactionId, setMerchantTransactionId] = useState();
+  const [shipping, setShipping] = useState(100);
+  const [resStatus, setResStatus] = useState();
+  const [loading, setLoading] = useState(true);
   const user = useSelector((state) => state?.user);
 
-  const [shipping, setShipping] = useState(100);
+  console.log("00", user.data.buyer.Cart[0].id);
+  const addressesData = useSelector((state) => state.address);
+  const CartData = useSelector((state) => state.cart.items);
   const [createOrder] = useMutation(CREATE_ORDER);
   const [deleteCart] = useMutation(DELETE_CART);
-
-  const CartData = useSelector((state) => state.cart.items);
+  const [createPaymentData] = useMutation(CREATE_PAYMENT_DATA);
 
   const ViewCartData = useQuery(Get_VIEW_CART, {
     variables: {
       buyerId: user?.data?.buyer?.id,
     },
   });
-
   const allProductsQuery = useQuery(Get_All_Products);
+  const BuyerId = user?.data?.buyer?.id;
+  console.log(BuyerId);
+
+  const CartId = user.data.buyer.Cart[0].id;
+
+  const AddressId = addressesData?.selectedAddress;
+
+  const { id } = useParams();
+
+  const [FindTransactionId] = useLazyQuery(FIND_TRANSACTION_ID, {
+    variables: {
+      merchantTransactionId,
+    },
+  });
 
   const allProducts =
     allProductsQuery.data?.allProducts.flatMap(
       (list) => list?.ProductsVariant
     ) || [];
-
-  const { id } = useParams();
-  const [resStatus, setResStatus] = useState();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
@@ -54,49 +66,74 @@ const page = () => {
     }, 3000);
   }, []);
 
+  // useEffect(() => {
+  //   FindTransactionId();
+  // }, [merchantTransactionId]);
+
+  const dispatch = useDispatch();
+  const router = useRouter();
+
   const checkStatus = async (merchantTransactionId) => {
-    console.log("merchantTransactionId", merchantTransactionId);
+    const transactionIdFound = await FindTransactionId();
+    console.log(transactionIdFound.data);
+    if (transactionIdFound.data) {
+      return;
+    }
+
     try {
+      console.log("12");
       const response = await axios.get(
         `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`
       );
+      console.log("res", response);
       setResStatus(response?.data);
 
+      console.log(response.data);
       if (response?.data?.success) {
-        handleCreateOrder();
+        const data = await handleCreateOrder();
+        const paymentData = await createPaymentData({
+          variables: {
+            buyerId: BuyerId,
+            orderId: data?.data?.createOrder.newOrder.id,
+            paymentId: merchantTransactionId,
+          },
+        });
       }
-      console.log("response", response);
     } catch (err) {
       console.log("err", err.message);
     }
   };
 
-  const checkStatusWithInterval = async (merchantTransactionId) => {
-    const maxTimeout = 15 * 60 * 1000; // Timeout after 15 minutes
-    let timeout = 0;
-    const intervals = [
-      1 * 1000, // First check after 20-25 seconds
-      3 * 1000, // Then every 3 seconds for 30 seconds
-      6 * 1000, // Then every 6 seconds for 60 seconds
-      10 * 1000, // Then every 10 seconds for 60 seconds
-      30 * 1000, // Then every 30 seconds for 60 seconds
-      60 * 1000, // Then every 1 minute until timeout
-    ];
+  // const checkStatusWithInterval = async (merchantTransactionId) => {
+  //   setMerchantTransactionId(merchantTransactionId);
 
-    for (const interval of intervals) {
-      timeout += interval;
-      await new Promise((resolve) => setTimeout(resolve, interval));
-      const status = await checkStatus(merchantTransactionId);
-      console.log("status interval", status);
-      if (status.success === true || timeout >= maxTimeout) {
-        return status;
-      }
-    }
-    return { success: false, message: "Payment status check timeout" };
-  };
+  //   const maxTimeout = 15 * 60 * 1000; // Timeout after 15 minutes
+  //   let timeout = 0;
+  //   const intervals = [
+  //     1 * 1000, // First check after 20-25 seconds
+  //     3 * 1000, // Then every 3 seconds for 30 seconds
+  //     6 * 1000, // Then every 6 seconds for 60 seconds
+  //     10 * 1000, // Then every 10 seconds for 60 seconds
+  //     30 * 1000, // Then every 30 seconds for 60 seconds
+  //     60 * 1000, // Then every 1 minute until timeout
+  //   ];
+
+  //   for (const interval of intervals) {
+  //     timeout += interval;
+  //     await new Promise((resolve) => setTimeout(resolve, interval));
+  //     const status = await checkStatus(merchantTransactionId);
+  //     console.log("status interval", status);
+  //     if (status.success === true || timeout >= maxTimeout) {
+  //       return status;
+  //     }
+  //   }
+  //   return { success: false, message: "Payment status check timeout" };
+  // };
 
   useEffect(() => {
-    checkStatusWithInterval(id);
+    setMerchantTransactionId(id);
+
+    checkStatus(id);
   }, []);
 
   const calculatePrice = () => {
@@ -130,22 +167,24 @@ const page = () => {
     }
   }, [calculatePrice]);
 
-  const BuyerId = user?.data?.buyer?.id;
-  const CartId = ViewCartData?.data?.viewCart?.id;
-  const AddressId = addressesData?.selectedAddress;
-
   const handleCreateOrder = async () => {
     try {
+      console.log(AddressId, shipping, BuyerId, CartId);
       const resp = await createOrder({
         variables: {
-          AddressId: parseInt(AddressId),
+          AddressId: parseInt("9"),
           ShippingCost: shipping,
           buyerId: BuyerId,
           cartId: CartId,
           orderAmount: calculateTotalPrice(),
         },
       });
-      handleDeleteCart();
+
+      console.log("resp", resp.data?.createOrder.newOrder.id);
+
+      await handleDeleteCart();
+
+      return resp;
     } catch (err) {
       console.log("err", err.message);
     }
@@ -197,7 +236,8 @@ const page = () => {
               </div>
               <div
                 style={{ color: "#8D92A7" }}
-                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	">
+                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	"
+              >
                 {resStatus?.success
                   ? "To check your order status"
                   : "Kindly Pay"}
