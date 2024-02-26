@@ -14,8 +14,9 @@ const ConditionalRoute = ({ children }) => {
   const router = useRouter();
   const pathname = usePathname();
   const userResp = useQuery(GetUser);
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
+  const Role = userResp?.data?.me?.role;
   const loadUser = async () => {
     try {
       const resp = await userResp.refetch();
@@ -35,6 +36,12 @@ const ConditionalRoute = ({ children }) => {
     if (!isAuthenticated && pathname.toLowerCase() === "/cart/checkout") {
       router.replace("/register");
     } else if (isAuthenticated && pathname.toLowerCase() == "/register") {
+      router.replace("/");
+    } else if (
+      isAuthenticated &&
+      Role !== "ADMIN" &&
+      pathname.toLowerCase() == "/received-order"
+    ) {
       router.replace("/");
     }
     setAuthFinished(true);
