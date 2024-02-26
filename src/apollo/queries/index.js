@@ -21,24 +21,33 @@ mutation createUs (
 }`);
 
 export const CREATE_REWARD = gql(`
-mutation createPlanetseraReward (
-      $email: String!
-      $name: String!,
-      $password: String!,
-     $phone: String!,
-     $rewardCode: String!,
-){createPlanetseraReward(
-  createPlanetseraRewardInput: {
-      name: $name
-      email: $email
-      password: $password
-      phone: $phone
-      rewardCode: $rewardCode
-    }) 
-    {
+mutation CreateRewardCode ( $rewardCode : String!, $userId :  String! ) {
+  createRewardCode(data: { rewardCode:  $rewardCode , userId: $userId }) {
       rewardCode
-    }
-}`);
+  }
+}
+`);
+
+export const SIGNUP = gql(`
+mutation Signup(  $name: String!, $email: String!, $mobileNumber: String!, $password: String!) {
+  signup(data: {  name: $name, email: $email, mobileNumber: $mobileNumber, password: $password}) {
+      accessToken
+      refreshToken
+      user {
+          createdAt
+          email
+          id
+          name
+          role
+          updatedAt
+          buyer {
+              id
+              userId
+          }
+      }
+  }
+}
+`);
 
 export const LOGIN = gql(`
 mutation Login( $email: String!, $password: String!) {

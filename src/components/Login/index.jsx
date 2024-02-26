@@ -10,11 +10,15 @@ import { useRouter } from "next/navigation";
 import { setOrUpdateUser } from "@/state/slice/userSlice";
 import { Get_VIEW_CART } from "@/apollo/queries";
 import { clearCart, storeInCart } from "@/state/slice/cartSlice";
+import { usePathname } from "next/navigation";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const Login = ({ isOpen, closeLoginModal }) => {
+  const pathname = usePathname();
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.user);
   const [active, setActive] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const [ViewCartData, { loading, data, refetch }] = useLazyQuery(
     Get_VIEW_CART,
@@ -95,6 +99,9 @@ const Login = ({ isOpen, closeLoginModal }) => {
         setActive(true);
         closeLoginModal();
         router.refresh();
+        if (pathname.toLowerCase() == "/register") {
+          router.replace("/");
+        }
       } catch (err) {
         toast.error(err.message);
         // toast.error(err.message);
@@ -129,15 +136,13 @@ const Login = ({ isOpen, closeLoginModal }) => {
       <div className="flex items-center justify-center min-h-screen m-auto w-[90%] sm:w-full overflow-y-auto max-h-[60%] h-auto">
         <div
           className="fixed inset-0 bg-gray-600 opacity-75"
-          onClick={closeLoginModal}
-        ></div>
+          onClick={closeLoginModal}></div>
         <div className="relative bg-white rounded-lg max-w-md w-full overflow-y-auto">
           <div className="relative p-8 sm:p-10 rounded-b-lg sm:rounded-r-lg">
             <IconButton
               aria-label="close"
               onClick={closeLoginModal}
-              className="absolute top-2 right-2 "
-            >
+              className="absolute top-2 right-2 ">
               <CancelIcon sx={{ color: "lightGrey", fontSize: 30 }} />
             </IconButton>
             <h2 className="text-2xl sm:text-4xl font-bold text-slate-800 text-center">
@@ -160,9 +165,10 @@ const Login = ({ isOpen, closeLoginModal }) => {
                   required
                 />
               </div>
-              <div>
+
+              <div className="relative">
                 <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   id="password"
                   className="w-full rounded-md px-4 py-2 border border-slate-300 text-black"
                   placeholder="Password"
@@ -170,6 +176,12 @@ const Login = ({ isOpen, closeLoginModal }) => {
                   onChange={handleInputChange}
                   required
                 />
+                <button
+                  type="button"
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center focus:outline-none"
+                  onClick={() => setShowPassword(!showPassword)}>
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
+                </button>
               </div>
 
               <button
@@ -182,8 +194,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
                     colorMe + "80"
                   })`,
                 }}
-                className="text-white rounded-lg py-2 px-4 w-full font-semibold sm:text-xl"
-              >
+                className="text-white rounded-lg py-2 px-4 w-full font-semibold sm:text-xl">
                 Log In
               </button>
             </form>
@@ -191,8 +202,7 @@ const Login = ({ isOpen, closeLoginModal }) => {
               If not a User?{" "}
               <Link
                 href={"/register"}
-                style={{ color: colorMe, fontWeight: "bold" }}
-              >
+                style={{ color: colorMe, fontWeight: "bold" }}>
                 Register Now
               </Link>
             </p>

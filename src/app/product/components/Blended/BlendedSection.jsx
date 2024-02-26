@@ -64,7 +64,7 @@ const BlendedSection = () => {
         })}
       </div>
 
-      <div className="basis-12/12 absolute blendedMenuImg w-48 md:w-[52vh] mt-[-65vh] 2xl:mt-[-55vh] 2xl:w-96">
+      <div className="basis-12/12 hidden sm:block absolute  blendedMenuImg w-48 md:w-[52vh] mt-[-65vh] 2xl:mt-[-55vh] 2xl:w-96">
         <img
           alt="masala"
           loading="lazy"
