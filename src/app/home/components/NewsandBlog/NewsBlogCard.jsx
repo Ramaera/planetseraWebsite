@@ -20,8 +20,7 @@ const NewsBlogCard = () => {
             <>
               <div
                 key={index}
-                className={`m-2 sm:w-[30%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3 group cursor-pointer`}
-              >
+                className={`m-2 sm:w-[30%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3 group cursor-pointer`}>
                 <div className="flex rounded-xl w-full relative overflow-hidden">
                   <Link href={`/blog/${item.id}`}>
                     <img
@@ -38,7 +37,7 @@ const NewsBlogCard = () => {
                     <h5 className="font-[Montserrat] text-[13.5px] font-semibold sm:text-xl 2xl:text-2xl">
                       {item?.blogName}
                     </h5>
-                    {console.log(item.blogHeading)}
+                    {/* {console.log(item.blogHeading)} */}
                     <p>{item?.blogHeading} . . . .</p>
 
                     <h6 className="mt-2 text-gray-600 font-semibold">

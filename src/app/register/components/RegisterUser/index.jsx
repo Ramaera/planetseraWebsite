@@ -68,7 +68,7 @@ const index = () => {
             password: password,
           },
         });
-        console.log("resp", resp);
+        // console.log("resp", resp);
         if (resp.data) {
           router.replace("/");
         }

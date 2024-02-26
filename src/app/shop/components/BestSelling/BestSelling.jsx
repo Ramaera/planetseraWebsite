@@ -15,7 +15,7 @@ const BestSelling = () => {
     }
   });
 
-  console.log("BestSellingData", BestSellingData);
+  // console.log("BestSellingData", BestSellingData);
 
   return (
     <>

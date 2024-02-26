@@ -24,7 +24,7 @@ const Home = () => {
       if (accessToken) {
         try {
           const data = await fetchData();
-          console.log("fetchData", data);
+          // console.log("fetchData", data);
           // setDataProduct(data);
         } catch (error) {
           // Handle error

@@ -23,7 +23,7 @@ const OrderDetails = () => {
   );
   if (!specificOrder) return;
 
-  console.log("specificOrder", specificOrder);
+  // console.log("specificOrder", specificOrder);
 
   const allProducts =
     allProductsQuery.data?.allProducts.flatMap(

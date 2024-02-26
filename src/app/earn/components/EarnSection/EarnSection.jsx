@@ -67,7 +67,7 @@ const EarnSection = () => {
       clearForm();
       // router.refresh();
     } catch (err) {
-      console.log("err--", err.message);
+      console.log("err", err.message);
     }
   };
 
