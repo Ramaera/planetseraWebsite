@@ -18,11 +18,6 @@ const addressSlice = createSlice({
   },
   reducers: {
     saveAddress: (state, action) => {
-      // // const random_id = Math.floor(Math.random() * 100000);
-      // state.allAddresses.push({ ...action.payload, id: random_id });
-      // if (!state.selectedAddress) state.selectedAddress = random_id;
-      // console.log("action",action.payload);
-
       const { addresId } = action.payload;
       state.allAddresses.push(action.payload);
       if (!state.selectedAddress) state.selectedAddress = addresId;

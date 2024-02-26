@@ -65,11 +65,9 @@ const page = () => {
 
   const checkStatus = async (merchantTransactionId) => {
     try {
-      console.log("12");
       const response = await axios.get(
         `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`
       );
-      console.log("13");
       setResStatus(response?.data);
       const transactionIdFound = await FindTransactionId();
       if (transactionIdFound.data) {
@@ -77,7 +75,6 @@ const page = () => {
       }
       if (response?.data?.success) {
         const data = await handleCreateOrder();
-        console.log("data-->>", data);
         const paymentData = await createPaymentData({
           variables: {
             buyerId: BuyerId,
@@ -90,33 +87,6 @@ const page = () => {
       console.log("err", err.message);
     }
   };
-
-  // const checkStatusWithInterval = async (merchantTransactionId) => {
-  //   setMerchantTransactionId(merchantTransactionId);
-
-  //   const maxTimeout = 15 * 60 * 1000; // Timeout after 15 minutes
-  //   let timeout = 0;
-  //   const intervals = [
-  //     1 * 1000, // First check after 20-25 seconds
-  //     3 * 1000, // Then every 3 seconds for 30 seconds
-  //     6 * 1000, // Then every 6 seconds for 60 seconds
-  //     10 * 1000, // Then every 10 seconds for 60 seconds
-  //     30 * 1000, // Then every 30 seconds for 60 seconds
-  //     60 * 1000, // Then every 1 minute until timeout
-  //   ];
-
-  //   for (const interval of intervals) {
-  //     timeout += interval;
-  //     await new Promise((resolve) => setTimeout(resolve, interval));
-  //     const status = await checkStatus(merchantTransactionId);
-  //     console.log("status interval", status);
-  //     if (status.success === true || timeout >= maxTimeout) {
-  //       return status;
-  //     }
-  //   }
-  //   return { success: false, message: "Payment status check timeout" };
-  // };
-
   useEffect(() => {
     setMerchantTransactionId(id);
 
@@ -156,7 +126,6 @@ const page = () => {
 
   const handleCreateOrder = async () => {
     try {
-      console.log("B", BuyerId, CartId);
       const resp = await createOrder({
         variables: {
           AddressId: parseInt("9"),
@@ -168,7 +137,6 @@ const page = () => {
       });
 
       await handleDeleteCart();
-      console.log("resp", resp);
       return resp;
     } catch (err) {
       console.log("err", err.message);

@@ -8,7 +8,6 @@ const shipmentSlice = createSlice({
   },
   reducers: {
     selectShipment: (state, action) => {
-      // console.log("selecting...",)
       state.shippingMethod = action.payload;
     },
   },

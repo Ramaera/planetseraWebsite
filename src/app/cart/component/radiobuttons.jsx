@@ -60,13 +60,14 @@ export default function ControlledRadioButtonsGroup() {
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"
         value={selectedAddressId}
-        onChange={handleChange}>
+        onChange={handleChange}
+      >
         <div className="w-full">
           {addressesData?.data?.getBuyerAddress?.map((_address) => (
-            // console.log("aaaaa", _address),
             <div
               className="flex w-full justify-between my-8"
-              key={_address?.addresId}>
+              key={_address?.addresId}
+            >
               <div className="sm:w-8/12  ">
                 <FormControlLabel
                   value={_address?.addresId}
@@ -84,7 +85,8 @@ export default function ControlledRadioButtonsGroup() {
 
                 <div
                   style={{ color: "#2F302F" }}
-                  className="px-8 sm:font-normal text-xs sm:text-base	">
+                  className="px-8 sm:font-normal text-xs sm:text-base	"
+                >
                   <p>
                     {_address?.address[0]?.city} {_address?.address[1]?.pincode}{" "}
                     {_address?.address[2]?.address}
@@ -96,7 +98,8 @@ export default function ControlledRadioButtonsGroup() {
                 {/* Edit | */}
                 <button
                   className="Cart-remove"
-                  onClick={() => handleRemoveAddress(_address)}>
+                  onClick={() => handleRemoveAddress(_address)}
+                >
                   Remove
                 </button>
               </div>

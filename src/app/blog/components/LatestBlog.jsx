@@ -42,7 +42,8 @@ const LatestBlog = () => {
                 <>
                   <div
                     key={index}
-                    className={`m-2 sm:w-[47%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-2 sm:p-3 `}>
+                    className={`m-2 sm:w-[47%]  justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-2 sm:p-3 `}
+                  >
                     <div className="flex items-center  justify-center rounded-xl  w-full">
                       <Link href={`/blog/${item.id}`}>
                         <img
@@ -60,7 +61,6 @@ const LatestBlog = () => {
                           {item?.blogName}
                         </h5>
                       </Link>
-                      {/* {console.log("itemblogDetail", item.blogDetail)} */}
                       <p>{item?.blogHeading} . . .</p>
                       <Link href={`/blog/${item.id}`}>
                         <h6 className="mt-2 text-gray-600 font-semibold">
@@ -78,13 +78,15 @@ const LatestBlog = () => {
         {displayCount < LatestBlogData.length && (
           <div
             ref={contentRef}
-            className="text-center w-full mb-6 sm:mb-6 sm:mt-4">
+            className="text-center w-full mb-6 sm:mb-6 sm:mt-4"
+          >
             <button
               style={{
                 background: ` ${colorMe}`,
               }}
               className="py-3 px-6 text-white rounded-md hover:font-medium"
-              onClick={loadMore}>
+              onClick={loadMore}
+            >
               Load More
             </button>
           </div>

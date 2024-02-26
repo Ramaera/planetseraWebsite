@@ -14,9 +14,6 @@ const BestSelling = () => {
       return prod;
     }
   });
-
-  // console.log("BestSellingData", BestSellingData);
-
   return (
     <>
       <div className="border-t mx-16 xl:mt-6 2xl:mt-10 2xl:mx-20"></div>

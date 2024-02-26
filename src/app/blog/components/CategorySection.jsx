@@ -10,7 +10,6 @@ const CategorySection = () => {
   const { id } = useParams();
   const colorMe = useSelector((state) => state.colorUs.color);
   const [displayCount, setDisplayCount] = useState(4);
-  // console.log("selectedCategory", selected);
   const CategorySectionData = BlogData.filter((list) => list.category === id);
   const contentRef = useRef();
   const isClient = typeof window !== "undefined";
@@ -77,13 +76,15 @@ const CategorySection = () => {
         {displayCount < CategorySectionData.length && (
           <div
             ref={contentRef}
-            className="text-center w-full mb-6 sm:mb-6 sm:mt-4">
+            className="text-center w-full mb-6 sm:mb-6 sm:mt-4"
+          >
             <button
               style={{
                 background: ` ${colorMe}`,
               }}
               className={`py-3 px-6 text-white rounded-md hover:font-medium`}
-              onClick={loadMore}>
+              onClick={loadMore}
+            >
               Load More
             </button>
           </div>

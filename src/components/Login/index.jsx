@@ -91,7 +91,6 @@ const Login = ({ isOpen, closeLoginModal }) => {
         });
 
         const data = resp.data.login;
-        // console.log("data", data.user);
         for (let key of Object.keys(data)) {
           localStorage.setItem(key, data[key]);
         }

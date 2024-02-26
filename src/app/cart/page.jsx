@@ -68,7 +68,6 @@ const Page = () => {
   };
 
   const handleIncrementQuantity = async (index, itemId, productVariantId) => {
-    // console.log("clicl", CartData, itemId);
     try {
       const resp = await CartOpeartion({
         variables: {
@@ -77,7 +76,7 @@ const Page = () => {
           qty: 1,
         },
       });
-      // console.log("resp", resp);
+
       dispatch(incrementQuantity({ productVariantId }));
     } catch (err) {
       console.log("errdd", err.message);
@@ -85,7 +84,6 @@ const Page = () => {
   };
 
   const handleDecrementQuantity = async (index, itemId, productVariantId) => {
-    // console.log("clicked", itemId);
     try {
       const resp = await CartOpeartion({
         variables: {
@@ -94,7 +92,7 @@ const Page = () => {
           qty: 1,
         },
       });
-      // console.log("resp", resp);
+
       dispatch(decrementQuantity({ productVariantId }));
     } catch (err) {
       console.log("err", err.message);
@@ -122,7 +120,6 @@ const Page = () => {
                 const product = allProducts.find(
                   (prod) => prod.id === item.productVariantId
                 );
-                // console.log("product", product);
                 return (
                   <div className="flex sm:px-10 py-5    border-b-2 ">
                     <div className="">
