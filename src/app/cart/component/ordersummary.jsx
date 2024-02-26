@@ -5,12 +5,14 @@ import { useSelector } from "react-redux";
 import Login from "@/components/Login";
 import { useQuery } from "@apollo/client";
 import { Get_All_Products } from "@/apollo/queries";
-
+import { cartTotalValue, shippingValue } from "@/state/slice/cartSlice";
+import { useDispatch } from "react-redux";
 // import Address from "../address";
 
 import TextField from "@mui/material/TextField";
 import Link from "next/link";
 const ordersummary = () => {
+  const dispatch = useDispatch();
   const currentRoute = usePathname();
   const colorMe = useSelector((state) => state.colorUs.color);
   const CartData = useSelector((state) => state.cart.items);
@@ -37,7 +39,7 @@ const ordersummary = () => {
     ) || [];
 
   const calculatePrice = () => {
-    return allProducts.reduce(
+    const totalValue = allProducts.reduce(
       (total, prod) =>
         prod.price *
           (CartData.find((item) => item.productVariantId === prod.id)?.qty ||
@@ -45,6 +47,9 @@ const ordersummary = () => {
         total,
       0
     );
+
+    dispatch(cartTotalValue(totalValue));
+    return totalValue;
   };
 
   const calculateTotalPrice = () => {
@@ -62,8 +67,10 @@ const ordersummary = () => {
   useEffect(() => {
     if (calculatePrice() >= 200) {
       setShipping(50);
+      dispatch(shippingValue(50));
     } else {
       setShipping(100);
+      dispatch(shippingValue(100));
     }
   }, [calculatePrice]);
 

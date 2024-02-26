@@ -25,13 +25,16 @@ import Box from "@mui/material/Box";
 
 const page = () => {
   const [merchantTransactionId, setMerchantTransactionId] = useState();
-  const [shipping, setShipping] = useState(100);
+
   const [resStatus, setResStatus] = useState();
   const [loading, setLoading] = useState(true);
   const user = useSelector((state) => state?.user);
 
   const addressesData = useSelector((state) => state.address);
   const CartData = useSelector((state) => state.cart.items);
+  const cartTotalValue = useSelector((state) => state.cart.cartTotalValue);
+  const shippingValue = useSelector((state) => state.cart.shippingValue);
+
   const [createOrder] = useMutation(CREATE_ORDER);
   const [deleteCart] = useMutation(DELETE_CART);
   const [createPaymentData] = useMutation(CREATE_PAYMENT_DATA);
@@ -40,7 +43,8 @@ const page = () => {
       buyerId: user?.data?.buyer?.id,
     },
   });
-  const allProductsQuery = useQuery(Get_All_Products);
+  const { data, loading: LoadingData } = useQuery(Get_All_Products);
+
   const BuyerId = user?.data?.buyer?.id;
   const CartId = user?.data?.buyer?.Cart[0]?.id;
   const AddressId = addressesData?.selectedAddress;
@@ -51,10 +55,9 @@ const page = () => {
     },
   });
 
-  const allProducts =
-    allProductsQuery.data?.allProducts.flatMap(
-      (list) => list?.ProductsVariant
-    ) || [];
+  const allProducts = data?.allProducts.flatMap(
+    (list) => list?.ProductsVariant
+  );
 
   useEffect(() => {
     setTimeout(() => {
@@ -66,12 +69,12 @@ const page = () => {
   const router = useRouter();
 
   const checkStatus = async (merchantTransactionId) => {
-    console.log("merchantTransactionId", merchantTransactionId);
+    // console.log("merchantTransactionId", merchantTransactionId);
     try {
       const response = await axios.get(
-        `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`
+        `https://nvg1b95j-6770.inc1.devtunnels.ms/api/v1/status/${merchantTransactionId}`
       );
-      console.log("response", response);
+      // console.log("response", response);
       setResStatus(response?.data);
       const transactionIdFound = await FindTransactionId();
       if (transactionIdFound.data) {
@@ -105,9 +108,9 @@ const page = () => {
   }, []);
 
   const checkStatusWithInterval = async (merchantTransactionId) => {
-    console.log("enter1");
+    // console.log("enter1");
     const maxTimeout = 5 * 60 * 1000; // Timeout after 5 minutes
-    console.log("enter2");
+    // console.log("enter2");
     let timeout = 0;
     const intervals = [
       1 * 1000, // First check after 20-25 seconds
@@ -131,46 +134,17 @@ const page = () => {
     return { success: false, message: "Payment status check timeout" };
   };
 
-  const calculatePrice = () => {
-    return allProducts.reduce(
-      (total, prod) =>
-        prod.price *
-          (CartData.find((item) => item.productVariantId === prod.id)?.qty ||
-            0) +
-        total,
-      0
-    );
-  };
-
-  const calculateTotalPrice = () => {
-    const totalPrice = calculatePrice();
-
-    if (totalPrice >= 200) {
-      const totalPriceWithShipping = totalPrice + 50;
-      return totalPriceWithShipping;
-    } else {
-      const totalPriceWithShipping = totalPrice + 100;
-      return totalPriceWithShipping;
-    }
-  };
-
-  useEffect(() => {
-    if (calculatePrice() >= 200) {
-      setShipping(50);
-    } else {
-      setShipping(100);
-    }
-  }, [calculatePrice]);
+  const calculateTotalPrice = cartTotalValue + shippingValue;
 
   const handleCreateOrder = async () => {
     try {
       const resp = await createOrder({
         variables: {
-          AddressId: parseInt("9"),
-          ShippingCost: shipping,
+          AddressId: parseInt(AddressId),
+          ShippingCost: shippingValue,
           buyerId: BuyerId,
           cartId: CartId,
-          orderAmount: calculateTotalPrice(),
+          orderAmount: calculateTotalPrice,
         },
       });
 
@@ -200,6 +174,10 @@ const page = () => {
   const handleOrderPlaced = () => {
     router.push("/orderPlaced");
   };
+
+  if (LoadingData) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <>
