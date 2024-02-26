@@ -76,8 +76,7 @@ const NavItem = ({ page }) => {
         isVisible || page === "orders" || page === "cart"
           ? "	navHeader text-black border-[1px] border-slate-300	"
           : "text-white"
-      }`}
-    >
+      }`}>
       <Link className={"scale-[0.6] mb-8 sm:mt-[-0.6rem]"} href="/">
         <img className="" src="/images/logo/logo.webp" alt="logo" />
       </Link>
@@ -96,8 +95,7 @@ const NavItem = ({ page }) => {
             "black",
         }}
         id="navigation"
-        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}
-      >
+        className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}>
         <li>
           <Link href="/">Home</Link>
         </li>
@@ -147,15 +145,13 @@ const NavItem = ({ page }) => {
                   // horizontal: "right",
                 }}
                 open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
+                onClose={handleCloseUserMenu}>
                 <div className="px-4">
                   <Typography
                     fontWeight="600"
-                    textAlign="center"
-                    className="text-gray-500 "
-                  >
-                    {user?.data?.name}
+                    textAlign="left"
+                    className="text-gray-400 ">
+                    Hi, {user?.data?.name}
                   </Typography>
                 </div>
                 <Link href="/orders">

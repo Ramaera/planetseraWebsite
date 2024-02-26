@@ -4,16 +4,18 @@ import Confetti from "react-confetti";
 import { SIGNUP } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 import toast, { Toaster } from "react-hot-toast";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "@mui/material";
 import "react-toastify/dist/ReactToastify.css";
 import Login from "@/components/Login";
 import { useRouter } from "next/navigation";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { setOrUpdateUser } from "@/state/slice/userSlice";
 
 const index = () => {
   const router = useRouter();
   const colorMe = useSelector((state) => state.colorUs.color);
+  const dispatch = useDispatch();
 
   const [createSignup] = useMutation(SIGNUP);
   const [userName, setUserName] = useState("");
@@ -68,8 +70,15 @@ const index = () => {
             password: password,
           },
         });
-        // console.log("resp", resp);
-        if (resp.data) {
+
+        const data = resp?.data?.signup;
+
+        for (let key of Object.keys(data)) {
+          localStorage.setItem(key, data[key]);
+        }
+        dispatch(setOrUpdateUser(data?.user));
+        console.log("resp", resp);
+        if (data) {
           router.replace("/");
         }
       } catch (err) {

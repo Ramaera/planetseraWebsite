@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import Stepper from "../component/stepper";
@@ -10,8 +10,19 @@ import TextField from "@mui/material/TextField";
 import { client } from "@/apollo";
 import AddIcon from "@mui/icons-material/Add";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
+import { useRouter } from "next/navigation";
+import { useSelector, useDispatch } from "react-redux";
 
 const Checkout = () => {
+  const router = useRouter();
+  const CartData = useSelector((state) => state.cart.items);
+
+  useEffect(() => {
+    if (CartData.length <= 0) {
+      router.replace("/cart");
+    }
+  }, [CartData]);
+
   return (
     <>
       <div className="navMobile ">

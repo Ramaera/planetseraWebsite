@@ -78,17 +78,26 @@ mutation Login( $email: String!, $password: String!) {
 export const GetUser = gql(`
 query GetUser {
   me {
-   email
-   name
-   role
-   buyer {
+    createdAt
+    email
+    id
+    name
+    role
+    updatedAt
+    buyer {
+        id
+        userId
+        Cart {
+            buyerId
+            id
+            cartItem {
                 id
-                userId
-                Cart {
-                    buyerId
-                    id
-                }
+                name
+                productVariantId
+                qty
             }
+        }
+    }
   }
 }`);
 

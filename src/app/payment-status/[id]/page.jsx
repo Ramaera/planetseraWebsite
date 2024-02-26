@@ -20,6 +20,8 @@ import {
 import { useRouter } from "next/navigation";
 import { clearCart } from "@/state/slice/cartSlice";
 import { CoPresentOutlined } from "@mui/icons-material";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const page = () => {
   const [merchantTransactionId, setMerchantTransactionId] = useState();
@@ -64,16 +66,21 @@ const page = () => {
   const router = useRouter();
 
   const checkStatus = async (merchantTransactionId) => {
+    console.log("merchantTransactionId", merchantTransactionId);
     try {
       const response = await axios.get(
-        `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`
+        `https://nvg1b95j-6770.inc1.devtunnels.ms/api/v1/status/${merchantTransactionId}`
       );
+      console.log("response", response);
       setResStatus(response?.data);
       const transactionIdFound = await FindTransactionId();
       if (transactionIdFound.data) {
         return;
       }
-      if (response?.data?.success) {
+      if (
+        response?.data?.success &&
+        response?.data?.code === "PAYMENT_SUCCESS"
+      ) {
         const data = await handleCreateOrder();
         const paymentData = await createPaymentData({
           variables: {
@@ -83,6 +90,10 @@ const page = () => {
           },
         });
       }
+
+      // else if (response?.data?.code === "TRANSACTION_NOT_FOUND") {
+      // }
+      return response?.data;
     } catch (err) {
       console.log("err", err.message);
     }
@@ -90,8 +101,35 @@ const page = () => {
   useEffect(() => {
     setMerchantTransactionId(id);
 
-    checkStatus(id);
+    checkStatusWithInterval(id);
   }, []);
+
+  const checkStatusWithInterval = async (merchantTransactionId) => {
+    console.log("enter1");
+    const maxTimeout = 5 * 60 * 1000; // Timeout after 5 minutes
+    console.log("enter2");
+    let timeout = 0;
+    const intervals = [
+      1 * 1000, // First check after 20-25 seconds
+      3 * 1000, // Then every 3 seconds for 30 seconds
+      6 * 1000, // Then every 6 seconds for 60 seconds
+      10 * 1000, // Then every 10 seconds for 60 seconds
+      30 * 1000, // Then every 30 seconds for 60 seconds
+      60 * 1000, // Then every 1 minute until timeout
+    ];
+    for (const interval of intervals) {
+      timeout += interval;
+
+      await new Promise((resolve) => setTimeout(resolve, interval));
+
+      const status = await checkStatus(merchantTransactionId);
+      // console.log("status interval", status);
+      if (status.code === "PAYMENT_SUCCESS" || timeout >= maxTimeout) {
+        return status;
+      }
+    }
+    return { success: false, message: "Payment status check timeout" };
+  };
 
   const calculatePrice = () => {
     return allProducts.reduce(
@@ -165,7 +203,13 @@ const page = () => {
 
   return (
     <>
-      {!loading ? (
+      {resStatus?.code === "PAYMENT_PENDING" ? (
+        <div className="h-screen flex-col flex justify-center items-center">
+          <CircularProgress />
+          <br />
+          <div>Your payment not verified yet!</div>
+        </div>
+      ) : (
         <div className="font-mont h-screen">
           <div className="navMobile ">
             <NavigationMobile page={"cart"} />
@@ -178,25 +222,24 @@ const page = () => {
             </div>
             <div className="w-1/2 flex items-center flex-col justify-center">
               <div className="flex justify-center	">
-                {resStatus?.success && (
+                {resStatus?.code === "PAYMENT_SUCCESS" && (
                   <img src="/images/cartImages/ticks.png" alt="" />
                 )}
               </div>
               <div className="sm:text-3xl flex justify-center font-mont	pt-5 font-semibold	">
-                {resStatus?.success
+                {resStatus?.code === "PAYMENT_SUCCESS"
                   ? "We have received your payment"
                   : "Your payment failed"}
               </div>
               <div
                 style={{ color: "#8D92A7" }}
-                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	"
-              >
-                {resStatus?.success
+                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	">
+                {resStatus?.code === "PAYMENT_SUCCESS"
                   ? "To check your order status"
                   : "Kindly Pay"}
               </div>
               <div className="flex justify-center rounded-2xl Cartbgcolor w-52	h-14 mt-10 items-center	 py-3">
-                {resStatus?.success ? (
+                {resStatus?.code === "PAYMENT_SUCCESS" ? (
                   <Link href="/orders" className="text-white">
                     Click here
                   </Link>
@@ -212,8 +255,6 @@ const page = () => {
             </div>
           </div>
         </div>
-      ) : (
-        <div className="h-screen">Loading......</div>
       )}
     </>
   );

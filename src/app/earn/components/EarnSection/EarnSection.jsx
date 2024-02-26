@@ -53,7 +53,7 @@ const EarnSection = () => {
       setConfetti(false);
     }, "3400");
   };
-
+  console.log("user", user);
   const submitHandler = async (e) => {
     e.preventDefault();
     try {

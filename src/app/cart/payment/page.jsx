@@ -81,10 +81,10 @@ const page = () => {
     axios
       .post("https://planetseraapi.planetsera.com/api/pay", postData)
       .then((response) => {
-        window.open(
-          response.data,
-          "_blank",
-          "resizable=yes, scrollbars=yes, titlebar=yes, width=900, height=800, top=10, left=10"
+        window.location.replace(
+          response.data
+          // "_blank",
+          // "resizable=yes, scrollbars=yes, titlebar=yes, width=900, height=800, top=10, left=10"
         );
       })
 
@@ -95,12 +95,7 @@ const page = () => {
   return (
     <>
       <div className="font-mont">
-        <p style={{ color: "#2F302F" }} className="text-xl mt-5 text-center">
-          {/* Payment Method */}
-          Coming Soon
-        </p>
-
-        {/* <BuynowBtn onClick={payOnline} link="#" text={"Pay Online"} /> */}
+        <BuynowBtn onClick={payOnline} link="#" text={"Pay Now"} />
       </div>
     </>
   );
