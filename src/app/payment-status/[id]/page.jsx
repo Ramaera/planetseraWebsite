@@ -19,6 +19,7 @@ import {
 } from "@/apollo/queries";
 import { useRouter } from "next/navigation";
 import { clearCart } from "@/state/slice/cartSlice";
+import { CoPresentOutlined } from "@mui/icons-material";
 
 const page = () => {
   const [merchantTransactionId, setMerchantTransactionId] = useState();
@@ -27,13 +28,11 @@ const page = () => {
   const [loading, setLoading] = useState(true);
   const user = useSelector((state) => state?.user);
 
-  console.log("00", user.data.buyer.Cart[0].id);
   const addressesData = useSelector((state) => state.address);
   const CartData = useSelector((state) => state.cart.items);
   const [createOrder] = useMutation(CREATE_ORDER);
   const [deleteCart] = useMutation(DELETE_CART);
   const [createPaymentData] = useMutation(CREATE_PAYMENT_DATA);
-
   const ViewCartData = useQuery(Get_VIEW_CART, {
     variables: {
       buyerId: user?.data?.buyer?.id,
@@ -41,14 +40,9 @@ const page = () => {
   });
   const allProductsQuery = useQuery(Get_All_Products);
   const BuyerId = user?.data?.buyer?.id;
-  console.log(BuyerId);
-
-  const CartId = user.data.buyer.Cart[0].id;
-
+  const CartId = user?.data?.buyer?.Cart[0]?.id;
   const AddressId = addressesData?.selectedAddress;
-
   const { id } = useParams();
-
   const [FindTransactionId] = useLazyQuery(FIND_TRANSACTION_ID, {
     variables: {
       merchantTransactionId,
@@ -66,35 +60,28 @@ const page = () => {
     }, 3000);
   }, []);
 
-  // useEffect(() => {
-  //   FindTransactionId();
-  // }, [merchantTransactionId]);
-
   const dispatch = useDispatch();
   const router = useRouter();
 
   const checkStatus = async (merchantTransactionId) => {
-    const transactionIdFound = await FindTransactionId();
-    console.log(transactionIdFound.data);
-    if (transactionIdFound.data) {
-      return;
-    }
-
     try {
       console.log("12");
       const response = await axios.get(
         `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`
       );
-      console.log("res", response);
+      console.log("13");
       setResStatus(response?.data);
-
-      console.log(response.data);
+      const transactionIdFound = await FindTransactionId();
+      if (transactionIdFound.data) {
+        return;
+      }
       if (response?.data?.success) {
         const data = await handleCreateOrder();
+        console.log("data-->>", data);
         const paymentData = await createPaymentData({
           variables: {
             buyerId: BuyerId,
-            orderId: data?.data?.createOrder.newOrder.id,
+            orderId: data?.data?.createOrder?.newOrder?.id,
             paymentId: merchantTransactionId,
           },
         });
@@ -169,7 +156,7 @@ const page = () => {
 
   const handleCreateOrder = async () => {
     try {
-      console.log(AddressId, shipping, BuyerId, CartId);
+      console.log("B", BuyerId, CartId);
       const resp = await createOrder({
         variables: {
           AddressId: parseInt("9"),
@@ -180,10 +167,8 @@ const page = () => {
         },
       });
 
-      console.log("resp", resp.data?.createOrder.newOrder.id);
-
       await handleDeleteCart();
-
+      console.log("resp", resp);
       return resp;
     } catch (err) {
       console.log("err", err.message);
