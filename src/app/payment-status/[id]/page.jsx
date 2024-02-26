@@ -175,17 +175,17 @@ const page = () => {
     router.push("/orderPlaced");
   };
 
-  if (LoadingData) {
-    return <p>Loading...</p>;
-  }
+  // if (LoadingData) {
+  //   return <p>Loading...</p>;
+  // }
 
   return (
     <>
-      {resStatus?.code === "PAYMENT_PENDING" ? (
+      {LoadingData || loading || resStatus?.code === "PAYMENT_PENDING" ? (
         <div className="h-screen flex-col flex justify-center items-center">
           <CircularProgress />
           <br />
-          <div>Your payment not verified yet!</div>
+          <div>Kindly wait, we are verifying your payment!</div>
         </div>
       ) : (
         <div className="font-mont h-screen">
