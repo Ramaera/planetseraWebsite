@@ -811,6 +811,63 @@ const MetaDatablogs = () => {
             <meta name="twitter:image" content="/images/blog/defaultblog.png" />
           </>
         )}
+        {/*-----------------------timeless-garam-masala-recipes--------------------------------------------------- */}
+        {currentRoute === "/blog/timeless-garam-masala-recipes" && (
+          <>
+            <title>
+              Time-Tested Garam Masala Recipes Passed Down from Grandma's
+              Kitchen
+            </title>
+            <meta name="text" content="planetsera" />
+            <meta
+              name="title"
+              content="Time-Tested Garam Masala Recipes Passed Down from Grandma's Kitchen"
+            />
+            <meta
+              name="description"
+              content="Try one of our traditional Garam Masala dishes for inspiration from Grandma's cooking. Create extraordinary dinners that unite generations by discovering original flavors. Experience home-cooked warmth in every meal. Give your kitchen a heritage scent."
+            />
+            <meta name="keywords" content="" />
+            <meta name="robots" content="index,  follow" />
+            <link rel="canonical" href="/blog/timeless-garam-masala-recipes" />
+            <meta
+              property="og:url"
+              content="/blog/timeless-garam-masala-recipes"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:title"
+              content="Time-Tested Garam Masala Recipes Passed Down from Grandma's Kitchen"
+            />
+            <meta
+              property="og:description"
+              content="Try one of our traditional Garam Masala dishes for inspiration from Grandma's cooking. Create extraordinary dinners that unite generations by discovering original flavors. Experience home-cooked warmth in every meal. Give your kitchen a heritage scent."
+            />
+            <meta
+              name="og_site_name"
+              property="og:site_name"
+              content="planetsera.com"
+            />
+            <meta property="og:image" content="/images/blog/defaultblog.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="627" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:domain" content="planetsera.com" />
+            <meta
+              property="twitter:url"
+              content="/blog/timeless-garam-masala-recipes"
+            />
+            <meta
+              name="twitter:title"
+              content="Time-Tested Garam Masala Recipes Passed Down from Grandma's Kitchen"
+            />
+            <meta
+              name="twitter:description"
+              content="Try one of our traditional Garam Masala dishes for inspiration from Grandma's cooking. Create extraordinary dinners that unite generations by discovering original flavors. Experience home-cooked warmth in every meal. Give your kitchen a heritage scent."
+            />
+            <meta name="twitter:image" content="/images/blog/defaultblog.png" />
+          </>
+        )}
       </Head>
     </>
   );
