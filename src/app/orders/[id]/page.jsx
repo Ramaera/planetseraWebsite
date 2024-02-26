@@ -43,7 +43,7 @@ const OrderDetails = () => {
         <div className=" max-w-6xl mx-auto  mt-12 sm:mt-20  ">
           <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-8">
             {" "}
-            Order Detail
+            Order Details
           </h1>
           <div className="grid sm:grid-cols-4 gap-4">
             <div className="sm:col-span-3">

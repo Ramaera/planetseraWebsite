@@ -8,6 +8,7 @@ import { ALL_ORDERS, Get_All_Products } from "@/apollo/queries";
 import { useSelector, useDispatch } from "react-redux";
 import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const Orders = () => {
   const user = useSelector((state) => state?.user);
@@ -34,61 +35,77 @@ const Orders = () => {
     <>
       <NavItem page={"orders"} className="pb-40" />
       <NavigationMobile page={"orders"} />
-      <div className="flex flex-col items-center justify-center mx-auto  min-h-screen w-full p-4 sm:p-6  bg-gray-100 ">
+      <div className="flex flex-col items-center  mx-auto  min-h-screen w-full p-4 sm:p-6  bg-gray-100 ">
         <div className="mt-12 sm:mt-20  p-2 sm:p-4 w-full  max-w-4xl ">
-          <h1 className="text-3xl font-bold mb-4">My Order</h1>
-
-          {allordersList?.map((list) => (
-            <div className="w-full bg-white shadow-md rounded-lg overflow-hidden mb-4">
-              <p className="text-lg font-semibold px-4 pt-4">
-                Order Id: {list?.id}
-              </p>
-
-              <div className="p-4">
-                {list?.orderItems?.map((item) => {
-                  const product = allProducts.find(
-                    (prod) => prod.id === item?.productVariantId
-                  );
-
-                  return (
-                    <div className="flex items-center my-3">
-                      <img
-                        src={`https://planetseraapi.planetsera.com/get-images/${product?.imageUrl[0]}`}
-                        alt="PlanetsEra Spices"
-                        className="w-20 h-24  mr-4"
-                      />
-
-                      <div className="flex flex-col sm:flex-row justify-between w-full">
-                        <p className="sm:text-lg font-semibold sm:w-60 sm:ml-4">
-                          {item?.name}
-                        </p>
-                        <p className="text-gray-600">{product?.weight}g</p>
-                        <p className="text-gray-600 sm:mr-4">
-                          Qty: {item?.qty} | Price: {product?.price}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
+          <h1 className="text-3xl font-bold mb-4">My Orders</h1>
+          {allordersList?.length === 0 ? (
+            <div className="flex h-[650px] justify-center items-center flex-col ">
+              <div className="sm:text-4xl font-semibold">
+                You have not placed any order yet.
               </div>
-              <div className="p-4 bg-gray-100 flex justify-between items-center">
-                <div>
-                  <p className="">Status: {list.status}</p>
-                </div>
-                {/* <Link href={`/orders/${list.id}`}> */}
+              <ShoppingCartOutlinedIcon className="h-20 w-20" />
+              <div className="  ">
                 <BuynowBtn
-                  // onClick={payOnline}
-                  link={`/orders/${list.id}`}
-                  text={" Order Info"}
-                  sectionClass="responsiveBtn"
+                  text="Order Now"
+                  className="text-green-800"
+                  href="/shop"
+                  link="/shop"
                 />
-                {/* <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 min-w-fit">
-                    Order Info
-                  </button> */}
-                {/* </Link> */}
               </div>
             </div>
-          ))}
+          ) : (
+            allordersList?.map((list) => (
+              <div className="w-full bg-white shadow-md rounded-lg overflow-hidden mb-4">
+                <p className="text-lg font-semibold px-4 pt-4">
+                  Order Id: {list?.id}
+                </p>
+
+                <div className="p-4">
+                  {list?.orderItems?.map((item) => {
+                    const product = allProducts.find(
+                      (prod) => prod.id === item?.productVariantId
+                    );
+
+                    return (
+                      <div className="flex items-center my-3">
+                        <img
+                          src={`https://planetseraapi.planetsera.com/get-images/${product?.imageUrl[0]}`}
+                          alt="PlanetsEra Spices"
+                          className="w-20 h-24  mr-4"
+                        />
+
+                        <div className="flex flex-col sm:flex-row justify-between w-full">
+                          <p className="sm:text-lg font-semibold sm:w-60 sm:ml-4">
+                            {item?.name}
+                          </p>
+                          <p className="text-gray-600">{product?.weight}g</p>
+                          <p className="text-gray-600 sm:mr-4">
+                            Qty: {item?.qty} | Price: {product?.price}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="p-4 bg-gray-100 flex justify-between items-center">
+                  <div>
+                    <p className="">Status: {list.status}</p>
+                  </div>
+                  {/* <Link href={`/orders/${list.id}`}> */}
+                  <BuynowBtn
+                    // onClick={payOnline}
+                    link={`/orders/${list.id}`}
+                    text={" Order Info"}
+                    sectionClass="responsiveBtn"
+                  />
+                  {/* <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 min-w-fit">
+                    Order Info
+                  </button> */}
+                  {/* </Link> */}
+                </div>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </>

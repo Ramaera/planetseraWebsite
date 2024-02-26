@@ -71,6 +71,7 @@ query GetUser {
   me {
    email
    name
+   role
    buyer {
                 id
                 userId
@@ -304,4 +305,41 @@ query AllOrders ($buyerId: String!) {
       }
   }
 }
+`);
+export const GET_ALL_ORDERS = gql(`
+query GetallOrders {
+  getallOrders {
+      ShippingCost
+      id
+      orderAmount
+      orderDate
+      status
+      address {
+          addresId
+          address
+          buyerId
+          mobileNumber
+          name
+      }
+      orderItems {
+          id
+          name
+          productVariantId
+          qty
+      }
+      Buyer {
+        user {
+            name
+        }
+    }
+      Payment {
+        buyerId
+        dateOfPayment
+        orderId
+        paymentId
+    }
+  }
+}
+
+
 `);
