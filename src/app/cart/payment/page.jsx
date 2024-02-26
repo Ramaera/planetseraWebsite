@@ -91,54 +91,7 @@ const page = () => {
       .catch((error) => {
         console.error("Error occurred while processing payment:", error);
       });
-
-    checkStatusWithInterval();
   };
-
-  // const checkStatus = async (merchantTransactionId) => {
-  //   console.log("merchantTransactionId", merchantTransactionId);
-  //   try {
-  //     const response = await axios.get(
-  //       `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`
-  //     );
-
-  //     if (response?.data?.success) {
-  //       router.push("/orderPlaced");
-  //     }
-  //     console.log("response---", response?.data?.success);
-  //   } catch (err) {
-  //     console.log("err", err.message);
-  //   }
-  // };
-
-  // const checkStatusWithInterval = async (merchantTransactionId) => {
-  //   const maxTimeout = 15 * 60 * 1000; // Timeout after 15 minutes
-  //   let timeout = 0;
-  //   const intervals = [
-  //     25 * 1000, // First check after 20-25 seconds
-  //     3 * 1000, // Then every 3 seconds for 30 seconds
-  //     6 * 1000, // Then every 6 seconds for 60 seconds
-  //     10 * 1000, // Then every 10 seconds for 60 seconds
-  //     30 * 1000, // Then every 30 seconds for 60 seconds
-  //     60 * 1000, // Then every 1 minute until timeout
-  //   ];
-
-  //   for (const interval of intervals) {
-  //     timeout += interval;
-  //     await new Promise((resolve) => setTimeout(resolve, interval));
-  //     const status = await checkStatus(merchantTransactionId);
-  //     console.log("status interval", status);
-  //     if (status.success === true || timeout >= maxTimeout) {
-  //       return status;
-  //     }
-  //   }
-  //   return { success: false, message: "Payment status check timeout" };
-  // };
-
-  // useEffect(() => {
-  //   checkStatus();
-  // }, []);
-
   return (
     <>
       <div className="font-mont">

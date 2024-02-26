@@ -77,7 +77,6 @@ const address = () => {
           ],
         },
       });
-      // console.log("formData", formData, "resp", resp.data.addAddress);
       dispatch(saveAddress(resp?.data?.addAddress));
     } else {
       alert("Please fill in all required fields");
@@ -153,12 +152,14 @@ const address = () => {
                   value={formData.address}
                   onChange={handleInputChange}
                   name="address"
-                  required></TextField>
+                  required
+                ></TextField>
 
                 <div className="flex justify-center pt-5 mt-5">
                   <button
                     onClick={handleSaveAndDeliverClick}
-                    className="w-1/2 py-3 rounded-2xl Cartbgcolor">
+                    className="w-1/2 py-3 rounded-2xl Cartbgcolor"
+                  >
                     Save And Deliver Here
                   </button>
                 </div>

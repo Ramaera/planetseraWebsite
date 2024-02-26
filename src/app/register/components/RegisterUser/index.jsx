@@ -35,8 +35,6 @@ const index = () => {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-
-    // console.log(userName, email, number, code, password);
     {
       createPlanetseraReward({
         variables: {

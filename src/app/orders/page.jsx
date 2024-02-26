@@ -18,8 +18,6 @@ const Orders = () => {
   });
 
   const allordersList = allOrders?.data?.allOrders;
-  // console.log("allOrders", allOrders?.data?.allOrders);
-
   const allProductsQuery = useQuery(Get_All_Products);
 
   const allProducts =

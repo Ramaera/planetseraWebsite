@@ -22,9 +22,6 @@ const OrderDetails = () => {
     (list) => list.id === id
   );
   if (!specificOrder) return;
-
-  console.log("specificOrder", specificOrder);
-
   const allProducts =
     allProductsQuery.data?.allProducts.flatMap(
       (list) => list?.ProductsVariant
@@ -62,7 +59,6 @@ const OrderDetails = () => {
                   const product = allProducts.find(
                     (prod) => prod.id === item?.productVariantId
                   );
-                  // console.log("product", product);
                   return (
                     <div className="">
                       <div className="flex  items-center sm:justify-between mt-1 mb-2">

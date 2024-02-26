@@ -12,7 +12,6 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setOrUpdateUser: (state, action) => {
-      console.log("action.payload", action.payload);
       state.data = action.payload;
     },
     logout: (state) => {

@@ -20,11 +20,10 @@ const Home = () => {
   // const [dataProduct, setDataProduct] = useState([]);
   useEffect(() => {
     const fetchDataAndNavigate = async () => {
-      const accessToken = await AsyncStorage.getItem("accessToken");
+      const accessToken = await localStorage.getItem("accessToken");
       if (accessToken) {
         try {
           const data = await fetchData();
-          console.log("fetchData", data);
           // setDataProduct(data);
         } catch (error) {
           // Handle error
