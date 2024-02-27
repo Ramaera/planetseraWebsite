@@ -25,6 +25,9 @@ export default function HorizontalLinearStepper() {
   const shipmentData = useSelector((state) => state.shipment);
   const paymentData = useSelector((state) => state.payment);
   const [isDisable, setIsDisable] = React.useState(false);
+  const selectedAddressId = useSelector(
+    (state) => state?.address?.selectedAddress
+  );
 
   const [activeStep, setActiveStep] = React.useState(0);
   const [customComponentIndex, setCustomComponentIndex] = React.useState(0);
@@ -75,6 +78,16 @@ export default function HorizontalLinearStepper() {
       customComponent = null;
   }
 
+  const disableHandle = () => {
+    if (!selectedAddressId) {
+      setIsDisable(true);
+    }
+  };
+
+  React.useEffect(() => {
+    disableHandle();
+  }, [selectedAddressId]);
+
   return (
     <div className="w-full ">
       <div className="flex">
@@ -87,7 +100,8 @@ export default function HorizontalLinearStepper() {
                   : index === activeStep
                   ? "text-gray-900"
                   : "text-gray-300"
-              } sm:pr-10 px-1 sm:text-3xl text-xl flex sm:flex-none sm:font-medium`}>
+              } sm:pr-10 px-1 sm:text-3xl text-xl flex sm:flex-none sm:font-medium`}
+            >
               {label}
               {index < steps.length - 1 && (
                 <ArrowForwardIosIcon className="sm:ml-16 sm:mt-2 mt-1 ml-2 " />
@@ -113,13 +127,15 @@ export default function HorizontalLinearStepper() {
               pt: 3,
               width: "100%",
               // pl: 4,
-            }}>
+            }}
+          >
             <Button
               variant="outlined"
               color="inherit"
               // disabled={activeStep === 0}
               onClick={handleBack}
-              sx={{ mr: 1 }}>
+              sx={{ mr: 1 }}
+            >
               Back
             </Button>
             <Box sx={{ flex: "1 1 auto" }} />
@@ -151,16 +167,14 @@ export default function HorizontalLinearStepper() {
         />
       )} */}
       <div className="w-full flex justify-center">
-        {activeStep !== steps.length - 1 && (
+        {selectedAddressId && activeStep !== steps.length - 1 && (
           <button
             className="buynow-button flex flex-wrap gap-4 text-center justify-center"
             style={{
               boxShadow: `2px 4px 5px -2px ${colorMe}`,
-              background: isDisable
-                ? "grey"
-                : `linear-gradient(72.44deg, ${colorMe} 0%, ${
-                    colorMe + "85"
-                  } 100%)`,
+              background: `linear-gradient(72.44deg, ${colorMe} 0%, ${
+                colorMe + "85"
+              } 100%)`,
 
               fontWeight: 400,
               fontSize: "18px",
@@ -169,7 +183,7 @@ export default function HorizontalLinearStepper() {
               padding: "2px",
             }}
             onClick={handleNextPage}
-            disabled={disableHandle}>
+          >
             {activeStep !== steps.length - 1 && "Proceed"}
           </button>
         )}
