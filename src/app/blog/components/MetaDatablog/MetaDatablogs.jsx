@@ -868,6 +868,66 @@ const MetaDatablogs = () => {
             <meta name="twitter:image" content="/images/blog/defaultblog.png" />
           </>
         )}
+        {/*-----------------------health-benefits-of-black-pepper--------------------------------------------------- */}
+
+        {currentRoute === "/blog/health-benefits-of-black-pepper" && (
+          <>
+            <title>
+              Exploring the Unknown Health Advantages of Black Pepper Powder
+            </title>
+            <meta name="text" content="planetsera" />
+            <meta
+              name="title"
+              content="Exploring the Unknown Health Advantages of Black Pepper Powder"
+            />
+            <meta
+              name="description"
+              content="Black pepper powder, also known as kali mirch powder, has surprising health benefits beyond its use as a kitchen staple. From digestion to immunity, this blog explores its wellness benefits."
+            />
+            <meta name="keywords" content="" />
+            <meta name="robots" content="index,  follow" />
+            <link
+              rel="canonical"
+              href="/blog/health-benefits-of-black-pepper"
+            />
+            <meta
+              property="og:url"
+              content="/blog/health-benefits-of-black-pepper"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:title"
+              content="Exploring the Unknown Health Advantages of Black Pepper Powder"
+            />
+            <meta
+              property="og:description"
+              content="Black pepper powder, also known as kali mirch powder, has surprising health benefits beyond its use as a kitchen staple. From digestion to immunity, this blog explores its wellness benefits."
+            />
+            <meta
+              name="og_site_name"
+              property="og:site_name"
+              content="planetsera.com"
+            />
+            <meta property="og:image" content="/images/blog/defaultblog.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="627" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:domain" content="planetsera.com" />
+            <meta
+              property="twitter:url"
+              content="/blog/health-benefits-of-black-pepper"
+            />
+            <meta
+              name="twitter:title"
+              content="Exploring the Unknown Health Advantages of Black Pepper Powder"
+            />
+            <meta
+              name="twitter:description"
+              content="Black pepper powder, also known as kali mirch powder, has surprising health benefits beyond its use as a kitchen staple. From digestion to immunity, this blog explores its wellness benefits.."
+            />
+            <meta name="twitter:image" content="/images/blog/defaultblog.png" />
+          </>
+        )}
       </Head>
     </>
   );

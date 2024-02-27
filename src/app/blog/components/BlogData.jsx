@@ -84,7 +84,7 @@ const BlogData = [
         blogListAbout: (
           <>
             <p className="text-xl font-semibold mt-3 ml-5 ">
-              *1. Antioxidant Power of{" "}
+              1. Antioxidant Power of{" "}
               <Link
                 className="text-red-500"
                 href="/products/black-pepper-powder"
@@ -101,81 +101,50 @@ const BlogData = [
                 flavorful way to fortify your body's natural defenses.
               </p>
             </p>
-          </>
-        ),
-      },
-      {
-        blogList: <>Making Garam Masala from Scratch:</>,
-        blogListAbout: (
-          <>
-            <p className="text-base font-semibold mt-3 ml-5">
-              While it may be convenient to buy garam masala from the store,
-              there's something special about making it from scratch. Here's a
-              simple recipe to create your own homemade garam masala:
-            </p>
-            <p className="text-xl font-semibold mt-3 ml-5">
-              Ingredients:
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Whole Black Pepper and Respiratory Health:
               <p className="text-base font-normal  mt-2 ml-5">
-                2 tablespoons cardamom pods
-              </p>
-              <p className="text-base font-normal  mt-2 ml-5">
-                1 cinnamon stick
-              </p>
-              <p className="text-base font-normal  mt-2 ml-5">
-                1 tablespoon cloves
-              </p>
-              <p className="text-base font-normal  mt-2 ml-5">
-                2 tablespoons cumin seeds
-              </p>
-              <p className="text-base font-normal  mt-2 ml-5">
-                2 tablespoons coriander seeds
-              </p>
-              <p className="text-base font-normal  mt-2 ml-5">
-                1 tablespoon black peppercorns
+                In traditional medicine, whole black pepper has been associated
+                with respiratory health. The spice's warming properties are
+                believed to help alleviate respiratory congestion and promote
+                clearer airways. Incorporating whole black pepper into herbal
+                teas or savory dishes can offer respiratory support, especially
+                during seasonal changes.
               </p>
             </p>
           </>
         ),
       },
       {
-        blogList: <> Instructions:</>,
-      },
-
-      {
-        blogList: "Heat a skillet over medium heat and add all the spices.",
+        blogList:
+          "Section 3: The Power of Piperine - Black Pepper's Active Compound        ",
         blogListAbout: (
           <>
-            <p className="text-xl font-semibold  mt-2 ml-5">
-              Gently toast the spices for a few minutes until they become
-              fragrant, stirring occasionally to avoid burning.
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Enhanced Nutrient Absorption with Piperine:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Piperine, the active compound in black pepper, is a bioenhancer
+                that improves nutrient absorption. When paired with other foods
+                or supplements, piperine enhances the bioavailability of
+                nutrients like curcumin from{" "}
+                <Link className="text-red-500" href="/products/turmeric-powder">
+                  turmeric
+                </Link>
+                . This synergistic effect makes black pepper powder a valuable
+                ally in maximizing the benefits of a varied and nutrient-rich
+                diet.
+              </p>
             </p>
-            <p className="text-base font-normal  mt-2 ml-5">
-              1: Remove the spices from the heat and let them cool completely.
-            </p>
-            <p className="text-base font-normal  mt-2 ml-5">
-              2: Once cooled, transfer the spices to a spice grinder or mortar
-              and pestle.
-            </p>
-            <p className="text-base font-normal  mt-2 ml-5">
-              3: Grind the spices until you achieve a fine powder consistency.
-            </p>
-            <p className="text-base font-normal  mt-2 ml-5">
-              4: Store the garam masala in an airtight container in a cool, dark
-              place for up to six months.
-            </p>
-            <p className="text-base font-normal  mt-2 ml-5">
-              5: Using Garam Masala in Recipes:
-            </p>
-
-            <p className="text-base font-normal  mt-2 ml-5">
-              Garam masala can be used in a variety of Indian dishes to enhance
-              their flavors. It is often added towards the end of cooking or
-              sprinkled on top as a finishing touch. Traditional recipes like
-              Butter Chicken, Chana Masala, and Biryani all rely on the distinct
-              flavors of garam masala to create a truly authentic taste.
-              However, don't limit yourself to just Indian cuisine. Garam masala
-              can also be used in fusion dishes to add a unique twist to your
-              culinary creations.
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Potential Anti-Inflammatory Effects:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Piperine's potential anti-inflammatory effects have been
+                explored in research studies. Chronic inflammation is associated
+                with various health conditions, and the inclusion of black
+                pepper in the diet may contribute to managing inflammation.
+                While more research is needed, these findings suggest that black
+                pepper's benefits extend beyond its role as a mere spice.
+              </p>
             </p>
           </>
         ),
@@ -183,35 +152,111 @@ const BlogData = [
       {
         blogList: (
           <>
-            Convenience of Buying{" "}
-            <Link href="/products/garam-masala" className="text-red-500">
-              Garam Masala
+            Section 4: Whole{" "}
+            <Link className="text-red-500" href="/products/black-pepper-powder">
+              {" "}
+              Black Pepper Powder
             </Link>{" "}
-            Online:
+            and Cognitive Function{" "}
           </>
         ),
         blogListAbout: (
           <>
-            <p>
-              If you prefer the convenience of buying garam masala instead of
-              making it from scratch, there are several options available
-              online. Planetsera offers a high-quality garam masala that
-              captures the essence of traditional Indian flavors. Their garam
-              masala is carefully crafted using premium ingredients and expert
-              techniques, ensuring a rich and aromatic blend that will elevate
-              your culinary creations. With just a few clicks, you can have
-              authentic garam masala delivered right to your doorstep.
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Brain Health and Piperine:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Piperine's neuroprotective properties have led to investigations
+                into its potential role in supporting cognitive function. While
+                research is ongoing, some studies suggest that piperine may have
+                positive effects on memory and brain health. Including whole
+                black pepper in your diet may be a simple and flavorful way to
+                contribute to cognitive well-being.
+              </p>
             </p>
-            <p className="text-base font-normal  mt-2">
-              Garam masala is a time-honored spice blend that adds depth,
-              warmth, and complexity to Indian cuisine. By understanding the
-              essential garam masala ingredients, learning how to make it from
-              scratch, and discovering the convenience of buying garam masala
-              online, such as the exceptional Planetsera garam masala, you can
-              embark on a culinary journey that pays tribute to the flavors
-              passed down from generation to generation. So, step into your
-              kitchen, embrace the aromatic spices, and recreate the magic of
-              Grandma's kitchen with timeless garam masala recipes.
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Whole Black Pepper in Ayurveda:
+              <p className="text-base font-normal  mt-2 ml-5">
+                In Ayurveda, the traditional system of natural healing, whole
+                black pepper is revered for its impact on the Vata dosha.
+                Ayurvedic practitioners often recommend black pepper to balance
+                Vata, associated with air and space elements. This balancing act
+                is believed to support mental clarity and overall well-being.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Section 5: From Kitchen to Medicine - Black Pepper in Traditional Healing",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Black Pepper in Ayurvedic Formulations:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Ayurvedic medicine frequently incorporates black pepper in
+                formulations known as churnas. These mixtures, combining black
+                pepper with other herbs and spices, are crafted to address
+                specific health concerns. From digestive issues to respiratory
+                ailments, black pepper's inclusion in traditional formulations
+                showcases its versatile healing potential.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Whole Black Pepper Rituals:
+              <p className="text-base font-normal  mt-2 ml-5">
+                In some cultures, whole black pepper is used in rituals and
+                traditional practices. The spice's symbolic significance is tied
+                to purification and protection. Incorporating whole black pepper
+                into rituals may extend beyond culinary applications, tapping
+                into the spice's historical role in cultural and spiritual
+                contexts.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Section 6: Ground Black Pepper in Everyday Cooking          ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Flavor Enhancement in Ground Black Pepper:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Ground black pepper, the more common form in everyday cooking,
+                is a versatile spice that enhances the flavor of a wide range of
+                dishes. From soups to salads and main courses, the addition of
+                ground black pepper not only elevates taste but also brings
+                potential health benefits to each meal.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Culinary Creativity with Kali Mirch Powder:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Embrace the culinary creativity that kali mirch powder offers.
+                Experiment with incorporating ground black pepper into both
+                savory and sweet dishes. From desserts to marinades, the spice's
+                warm and pungent flavor profile can add depth and complexity to
+                a variety of culinary creations.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Embracing the Wholeness of Black Pepper          ",
+        blogListAbout: (
+          <>
+            <p className="text-base mt-3 ml-5 ">
+              In conclusion, black pepper transcends its role as a mere spice,
+              revealing a depth of health benefits that extends beyond the spice
+              rack. Whether in the form of whole black pepper or ground black
+              pepper powder, this spice has been a companion in traditional
+              healing, culinary creativity, and potential wellness support. As
+              you savor the flavor of black pepper in your dishes, appreciate
+              the hidden health gems that make this spice a valuable and
+              holistic addition to your everyday life.
             </p>
           </>
         ),
