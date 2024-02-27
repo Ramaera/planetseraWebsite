@@ -120,9 +120,6 @@ const address = () => {
                     required
                   />
                 </div>
-                {/* <div className="mt-5 sm:w-full border-2 p-2 rounded-md">
-                  <IndianStatesDropdown />
-                </div> */}
 
                 <div className="flex justify-between mt-5">
                   <input
