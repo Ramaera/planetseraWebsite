@@ -10,10 +10,19 @@ import { Container, Hidden, Typography } from "@mui/material";
 import { GET_ALL_ORDERS } from "@/apollo/queries";
 import { useQuery } from "@apollo/client";
 import { useSelector, useDispatch } from "react-redux";
+import NavItem from "@/components/Navigation/NavItem";
+import NavigationMobile from "@/components/Navigation/NavigationMobile";
+import { Get_All_Products } from "@/apollo/queries";
 
 const ReceivedOrder = () => {
   const [status, setStatus] = useState("fghjk");
   const merchantTransactionId = "YOUR_MERCHANT_TRANSACTION_ID";
+  const allProductsQuery = useQuery(Get_All_Products);
+
+  const allProducts =
+    allProductsQuery.data?.allProducts.flatMap(
+      (list) => list?.ProductsVariant
+    ) || [];
 
   useEffect(() => {
     const fetchStatus = async () => {
@@ -22,7 +31,7 @@ const ReceivedOrder = () => {
           `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`
         );
         const data = await response.json();
-        setStatus(data.status);
+        setStatus(Success);
       } catch (error) {
         console.error("Error fetching status:", error);
       }
@@ -37,8 +46,13 @@ const ReceivedOrder = () => {
   //   console.log("allOrders", allOrders.data.allOrders);
   return (
     <div>
-      <Container maxWidth={false} sx={{ mt: 2 }}>
-        <Typography variant="h4" sx={{ my: 2 }}>
+      <div className="navMobile ">
+        <NavigationMobile page={"received-order"} />
+      </div>
+
+      <NavItem page={"received-order"} />
+      <Container maxWidth={false} sx={{ padding: 5 }}>
+        <Typography variant="h4" sx={{ mt: 7 }}>
           Received Orders
         </Typography>
 
@@ -46,13 +60,16 @@ const ReceivedOrder = () => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Name </TableCell>
-                <TableCell>Address</TableCell>
-                <TableCell>Order Items</TableCell>
-                <TableCell>Order Date</TableCell>
-                <TableCell>Payment Transaction Id</TableCell>
-                <TableCell>Payment Status</TableCell>
-                <TableCell>Order Status</TableCell>
+                <TableCell className="font-semibold">Name </TableCell>
+                <TableCell className="font-semibold">Address</TableCell>
+                <TableCell className="font-semibold">Order Items</TableCell>
+                <TableCell className="font-semibold">Order Date</TableCell>
+                <TableCell className="font-semibold">Order Amount</TableCell>
+                <TableCell className="font-semibold">
+                  Payment Transaction Id
+                </TableCell>
+                <TableCell className="font-semibold">Payment Status</TableCell>
+                <TableCell className="font-semibold">Order Status</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -72,18 +89,25 @@ const ReceivedOrder = () => {
                   </TableCell>
                   <TableCell>
                     {" "}
-                    {user?.orderItems?.map((item) => (
-                      <div className="flex" key={item.id}>
-                        <div className="flex">
-                          {item?.name} - Qty: {item?.qty}
+                    {user?.orderItems?.map((item) => {
+                      const particularProduct = allProducts.find(
+                        (prod) => prod.id === item.productVariantId
+                      );
+                      return (
+                        <div className="" key={item.id}>
+                          <div className="flex">
+                            {item?.name} - {particularProduct.weight}g
+                          </div>
+                          <div>Qty: {item?.qty} </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </TableCell>
 
                   <TableCell>{user?.orderDate.slice(0, 10)}</TableCell>
+                  <TableCell> ₹ {user?.orderAmount}</TableCell>
                   <TableCell>{user?.Payment[0]?.paymentId}</TableCell>
-                  <TableCell>{status}</TableCell>
+                  <TableCell>Success</TableCell>
                   <TableCell>{user?.status}</TableCell>
                 </TableRow>
               ))}

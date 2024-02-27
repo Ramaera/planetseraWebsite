@@ -85,6 +85,7 @@ const NavItem = ({ page }) => {
         style={{
           color:
             (page === "blog" ||
+              page === "received-order" ||
               page === "shop" ||
               page === "cart" ||
               page === "about" ||
