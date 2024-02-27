@@ -25,6 +25,10 @@ import { Get_All_Products, REMOVE_ITEM_CART } from "@/apollo/queries";
 import { useMutation, useLazyQuery } from "@apollo/client";
 
 const Page = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const dispatch = useDispatch();
   const [CartOpeartion] = useMutation(CART_OPEARTION);
   const [removeItemCart] = useMutation(REMOVE_ITEM_CART);
@@ -52,7 +56,7 @@ const Page = () => {
 
       dispatch(removeFromCart({ productVariantId }));
 
-      toast.success("Product removed from your cart", {
+      toast.error("Product removed from your cart", {
         position: "top-center",
         autoClose: 2500,
         hideProgressBar: false,

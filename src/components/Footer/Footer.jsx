@@ -276,7 +276,7 @@ const Footer = () => {
           <hr className="my-4 border-gray-200 sm:mx-auto lg:my-2" />
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className="text-sm text-white sm:text-center font-medium ">
-              © 2023 Planetsera . All Rights Reserved.
+              © 2024 Planetsera . All Rights Reserved.
             </span>
             <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
               <a

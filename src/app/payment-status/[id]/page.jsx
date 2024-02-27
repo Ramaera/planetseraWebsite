@@ -72,7 +72,7 @@ const page = () => {
     // console.log("merchantTransactionId", merchantTransactionId);
     try {
       const response = await axios.get(
-        `https://nvg1b95j-6770.inc1.devtunnels.ms/api/v1/status/${merchantTransactionId}`
+        `planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`
       );
       // console.log("response", response);
       setResStatus(response?.data);
