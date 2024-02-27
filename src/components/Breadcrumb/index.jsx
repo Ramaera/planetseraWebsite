@@ -53,8 +53,7 @@ const Breadcrumb = ({ homeElement, separator, capitalizeLinks }) => {
               <React.Fragment key={index}>
                 <li
                   className="hover:underline mx-1 font-semibold text-xs sm:text-base"
-                  style={itemClasses}
-                >
+                  style={itemClasses}>
                   <Link href={href}>{itemLink}</Link>
                 </li>
 

@@ -690,6 +690,7 @@ const MetaDatablogs = () => {
             <meta name="twitter:image" content="/images/blog/blog-11.png" />
           </>
         )}
+        {/*-----------------------art-of-seasoning-with-sabji-masala--------------------------------------------------- */}
 
         {currentRoute === "/blog/art-of-seasoning-with-sabji-masala" && (
           <>
@@ -730,7 +731,7 @@ const MetaDatablogs = () => {
               property="og:site_name"
               content="planetsera.com"
             />
-            <meta property="og:image" content="/images/blog/blog-12.png" />
+            <meta property="og:image" content="/images/blog/defaultblog.png" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="627" />
             <meta name="twitter:card" content="summary_large_image" />
@@ -747,7 +748,184 @@ const MetaDatablogs = () => {
               name="twitter:description"
               content="Discover the magical journey from garden to table as we explore the art of seasoning with sabji masala. Unlock the secrets of affordable sabji masala powder and elevate your vegetable dishes with this aromatic spice blend."
             />
-            <meta name="twitter:image" content="/images/blog/blog-12.png" />
+            <meta name="twitter:image" content="/images/blog/defaultblog.png" />
+          </>
+        )}
+        {/*-----------------------ultimate-guide-to-using-sabji-masala--------------------------------------------------- */}
+        {currentRoute === "/blog/ultimate-guide-to-using-sabji-masala" && (
+          <>
+            <title>
+              A Comprehensive Guide to Unleashing the Flavors of Sabji Masala
+              Powder
+            </title>
+            <meta name="text" content="planetsera" />
+            <meta
+              name="title"
+              content="A Comprehensive Guide to Unleashing the Flavors of Sabji Masala Powder"
+            />
+            <meta
+              name="description"
+              content="With our complete sabji masala powder guide, turn vegetable meals into gourmet wonders. Learn how to season with inexpensive sabji masala and improve your cooking with the right spices. Maximize veggie masala powder for delicious cooking."
+            />
+            <meta name="keywords" content="" />
+            <meta name="robots" content="index,  follow" />
+            <link
+              rel="canonical"
+              href="/blog/ultimate-guide-to-using-sabji-masala"
+            />
+            <meta
+              property="og:url"
+              content="/blog/ultimate-guide-to-using-sabji-masala"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:title"
+              content="A Comprehensive Guide to Unleashing the Flavors of Sabji Masala Powder"
+            />
+            <meta
+              property="og:description"
+              content="With our complete sabji masala powder guide, turn vegetable meals into gourmet wonders. Learn how to season with inexpensive sabji masala and improve your cooking with the right spices. Maximize veggie masala powder for delicious cooking."
+            />
+            <meta
+              name="og_site_name"
+              property="og:site_name"
+              content="planetsera.com"
+            />
+            <meta property="og:image" content="/images/blog/defaultblog.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="627" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:domain" content="planetsera.com" />
+            <meta
+              property="twitter:url"
+              content="/blog/ultimate-guide-to-using-sabji-masala"
+            />
+            <meta
+              name="twitter:title"
+              content="A Comprehensive Guide to Unleashing the Flavors of Sabji Masala Powder"
+            />
+            <meta
+              name="twitter:description"
+              content="With our complete sabji masala powder guide, turn vegetable meals into gourmet wonders. Learn how to season with inexpensive sabji masala and improve your cooking with the right spices. Maximize veggie masala powder for delicious cooking."
+            />
+            <meta name="twitter:image" content="/images/blog/defaultblog.png" />
+          </>
+        )}
+        {/*-----------------------timeless-garam-masala-recipes--------------------------------------------------- */}
+        {currentRoute === "/blog/timeless-garam-masala-recipes" && (
+          <>
+            <title>
+              Time-Tested Garam Masala Recipes Passed Down from Grandma's
+              Kitchen
+            </title>
+            <meta name="text" content="planetsera" />
+            <meta
+              name="title"
+              content="Time-Tested Garam Masala Recipes Passed Down from Grandma's Kitchen"
+            />
+            <meta
+              name="description"
+              content="Try one of our traditional Garam Masala dishes for inspiration from Grandma's cooking. Create extraordinary dinners that unite generations by discovering original flavors. Experience home-cooked warmth in every meal. Give your kitchen a heritage scent."
+            />
+            <meta name="keywords" content="" />
+            <meta name="robots" content="index,  follow" />
+            <link rel="canonical" href="/blog/timeless-garam-masala-recipes" />
+            <meta
+              property="og:url"
+              content="/blog/timeless-garam-masala-recipes"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:title"
+              content="Time-Tested Garam Masala Recipes Passed Down from Grandma's Kitchen"
+            />
+            <meta
+              property="og:description"
+              content="Try one of our traditional Garam Masala dishes for inspiration from Grandma's cooking. Create extraordinary dinners that unite generations by discovering original flavors. Experience home-cooked warmth in every meal. Give your kitchen a heritage scent."
+            />
+            <meta
+              name="og_site_name"
+              property="og:site_name"
+              content="planetsera.com"
+            />
+            <meta property="og:image" content="/images/blog/defaultblog.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="627" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:domain" content="planetsera.com" />
+            <meta
+              property="twitter:url"
+              content="/blog/timeless-garam-masala-recipes"
+            />
+            <meta
+              name="twitter:title"
+              content="Time-Tested Garam Masala Recipes Passed Down from Grandma's Kitchen"
+            />
+            <meta
+              name="twitter:description"
+              content="Try one of our traditional Garam Masala dishes for inspiration from Grandma's cooking. Create extraordinary dinners that unite generations by discovering original flavors. Experience home-cooked warmth in every meal. Give your kitchen a heritage scent."
+            />
+            <meta name="twitter:image" content="/images/blog/defaultblog.png" />
+          </>
+        )}
+        {/*-----------------------health-benefits-of-black-pepper--------------------------------------------------- */}
+
+        {currentRoute === "/blog/health-benefits-of-black-pepper" && (
+          <>
+            <title>
+              Exploring the Unknown Health Advantages of Black Pepper Powder
+            </title>
+            <meta name="text" content="planetsera" />
+            <meta
+              name="title"
+              content="Exploring the Unknown Health Advantages of Black Pepper Powder"
+            />
+            <meta
+              name="description"
+              content="Black pepper powder, also known as kali mirch powder, has surprising health benefits beyond its use as a kitchen staple. From digestion to immunity, this blog explores its wellness benefits."
+            />
+            <meta name="keywords" content="" />
+            <meta name="robots" content="index,  follow" />
+            <link
+              rel="canonical"
+              href="/blog/health-benefits-of-black-pepper"
+            />
+            <meta
+              property="og:url"
+              content="/blog/health-benefits-of-black-pepper"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:title"
+              content="Exploring the Unknown Health Advantages of Black Pepper Powder"
+            />
+            <meta
+              property="og:description"
+              content="Black pepper powder, also known as kali mirch powder, has surprising health benefits beyond its use as a kitchen staple. From digestion to immunity, this blog explores its wellness benefits."
+            />
+            <meta
+              name="og_site_name"
+              property="og:site_name"
+              content="planetsera.com"
+            />
+            <meta property="og:image" content="/images/blog/defaultblog.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="627" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:domain" content="planetsera.com" />
+            <meta
+              property="twitter:url"
+              content="/blog/health-benefits-of-black-pepper"
+            />
+            <meta
+              name="twitter:title"
+              content="Exploring the Unknown Health Advantages of Black Pepper Powder"
+            />
+            <meta
+              name="twitter:description"
+              content="Black pepper powder, also known as kali mirch powder, has surprising health benefits beyond its use as a kitchen staple. From digestion to immunity, this blog explores its wellness benefits.."
+            />
+            <meta name="twitter:image" content="/images/blog/defaultblog.png" />
           </>
         )}
       </Head>
