@@ -143,20 +143,22 @@ const address = () => {
                     required
                   />
                 </div>
-                <TextField
-                  placeholder="Full Address"
-                  className="mt-5 w-full rounded-md"
-                  value={formData.address}
-                  onChange={handleInputChange}
-                  name="address"
-                  required
-                ></TextField>
+                <div className="mt-5">
+                  <textarea
+                    cols="50"
+                    className="border-2 p-1 px-3 rounded-md w-full"
+                    placeholder="Full Address"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    name="address"
+                    required
+                  />
+                </div>
 
                 <div className="flex justify-center pt-5 mt-5">
                   <button
                     onClick={handleSaveAndDeliverClick}
-                    className="w-1/2 py-3 rounded-2xl Cartbgcolor"
-                  >
+                    className="w-1/2 py-3 rounded-2xl Cartbgcolor">
                     Save And Deliver Here
                   </button>
                 </div>

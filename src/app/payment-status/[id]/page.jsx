@@ -71,9 +71,9 @@ const page = () => {
   const checkStatus = async (merchantTransactionId) => {
     // console.log("merchantTransactionId", merchantTransactionId);
     try {
-      const response = await axios.get(
-        `planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`
-      );
+      const url = `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`;
+      // console.log("url", url);
+      const response = await axios.get(url);
       // console.log("response", response);
       setResStatus(response?.data);
       const transactionIdFound = await FindTransactionId();
@@ -124,7 +124,7 @@ const page = () => {
       timeout += interval;
 
       await new Promise((resolve) => setTimeout(resolve, interval));
-
+      // console.log("merchantTransactionId123", merchantTransactionId);
       const status = await checkStatus(merchantTransactionId);
       // console.log("status interval", status);
       if (status.code === "PAYMENT_SUCCESS" || timeout >= maxTimeout) {
