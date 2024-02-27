@@ -211,10 +211,11 @@ const page = () => {
               </div>
               <div
                 style={{ color: "#8D92A7" }}
-                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	">
+                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	"
+              >
                 {resStatus?.code === "PAYMENT_SUCCESS"
                   ? "To check your order status"
-                  : "Kindly Pay"}
+                  : "If Amount is Debited From Your Account, Kindly Mail Us At support@ramaera.com With Your Transaction Details"}
               </div>
               <div className="flex justify-center rounded-2xl Cartbgcolor w-52	h-14 mt-10 items-center	 py-3">
                 {resStatus?.code === "PAYMENT_SUCCESS" ? (
