@@ -77,7 +77,7 @@ const index = () => {
           localStorage.setItem(key, data[key]);
         }
         dispatch(setOrUpdateUser(data?.user));
-        console.log("resp", resp);
+
         if (data) {
           router.replace("/");
         }

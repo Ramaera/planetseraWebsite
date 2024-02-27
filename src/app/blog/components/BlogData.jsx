@@ -19,7 +19,7 @@ const BlogData = [
       {
         blogList: (
           <>
-            <Link className="text-red-500" href="/products/black-pepper-powder">
+            <Link className="text-red-500" href="/product/black-pepper-powder">
               Black Pepper Powder's
             </Link>{" "}
             Hidden Health Gems
@@ -30,7 +30,7 @@ const BlogData = [
             Black pepper, commonly found in spice racks worldwide, is renowned
             for its bold flavor and ability to enhance dishes. However, beyond
             its culinary appeal,{" "}
-            <Link className="text-red-500" href="/products/black-pepper-powder">
+            <Link className="text-red-500" href="/product/black-pepper-powder">
               black pepper powder
             </Link>
             , or kali mirch powder, harbors a treasure trove of health benefits.
@@ -87,8 +87,7 @@ const BlogData = [
               1. Antioxidant Power of{" "}
               <Link
                 className="text-red-500"
-                href="/products/black-pepper-powder"
-              >
+                href="/product/black-pepper-powder">
                 {" "}
                 Black Pepper Powder:
               </Link>{" "}
@@ -127,7 +126,7 @@ const BlogData = [
                 that improves nutrient absorption. When paired with other foods
                 or supplements, piperine enhances the bioavailability of
                 nutrients like curcumin from{" "}
-                <Link className="text-red-500" href="/products/turmeric-powder">
+                <Link className="text-red-500" href="/product/turmeric-powder">
                   turmeric
                 </Link>
                 . This synergistic effect makes black pepper powder a valuable
@@ -153,7 +152,7 @@ const BlogData = [
         blogList: (
           <>
             Section 4: Whole{" "}
-            <Link className="text-red-500" href="/products/black-pepper-powder">
+            <Link className="text-red-500" href="/product/black-pepper-powder">
               {" "}
               Black Pepper Powder
             </Link>{" "}
@@ -278,7 +277,7 @@ const BlogData = [
         evoke a sense of nostalgia, it's the aroma of spices wafting through the
         kitchen. And when it comes to Indian cuisine, one spice blend that holds
         a special place in every household is{" "}
-        <Link className="text-red-500" href="/products/garam-masala">
+        <Link className="text-red-500" href="/product/garam-masala">
           Garam Masala
         </Link>{" "}
         . Passed down through generations, garam masala is a quintessential part
@@ -294,7 +293,7 @@ const BlogData = [
         blogList: (
           <>
             What is{" "}
-            <Link className="text-red-500" href="/products/garam-masala">
+            <Link className="text-red-500" href="/product/garam-masala">
               Garam Masala
             </Link>{" "}
           </>
@@ -352,7 +351,7 @@ const BlogData = [
               </p>
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
-              <Link href="/products/cumin-powder" className="text-red-500">
+              <Link href="/product/cumin-powder" className="text-red-500">
                 Cumin :
               </Link>
               <p className="text-base font-normal  mt-2 ml-5">
@@ -361,7 +360,7 @@ const BlogData = [
               </p>
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
-              <Link href="/products/coriander-powder" className="text-red-500">
+              <Link href="/product/coriander-powder" className="text-red-500">
                 Coriander :
               </Link>
               <p className="text-base font-normal  mt-2 ml-5">
@@ -371,9 +370,8 @@ const BlogData = [
             </p>
             <p className="text-xl font-semibold mt-3 ml-5">
               <Link
-                href="/products/black-pepper-powder"
-                className="text-red-500"
-              >
+                href="/product/black-pepper-powder"
+                className="text-red-500">
                 Black peppercorns :
               </Link>
               <p className="text-base font-normal  mt-2 ml-5">
@@ -464,7 +462,7 @@ const BlogData = [
         blogList: (
           <>
             Convenience of Buying{" "}
-            <Link href="/products/garam-masala" className="text-red-500">
+            <Link href="/product/garam-masala" className="text-red-500">
               Garam Masala
             </Link>{" "}
             Online:
@@ -516,7 +514,7 @@ const BlogData = [
         blogList: (
           <>
             The Magic of{" "}
-            <Link href="/products/sabji-masala" className="text-red-500">
+            <Link href="/product/sabji-masala" className="text-red-500">
               Sabji Masala
             </Link>
           </>
@@ -608,7 +606,7 @@ const BlogData = [
               2. Aromatic Stir-fries:
               <p className="text-base font-normal  mt-2 ml-5">
                 Enhance the aroma of your stir-fried vegetables by incorporating{" "}
-                <Link href="/products/sabji-masala" className="text-red-500">
+                <Link href="/product/sabji-masala" className="text-red-500">
                   Sabji Masala
                 </Link>
                 . Sauté your favorite veggies in a pan with a sprinkle of
@@ -653,7 +651,7 @@ const BlogData = [
           <>
             {" "}
             Affordable{" "}
-            <Link href="/products/sabji-masala" className="text-red-500">
+            <Link href="/product/sabji-masala" className="text-red-500">
               Sabji Masala
             </Link>{" "}
             Flavor without Compromise{" "}
@@ -690,7 +688,7 @@ const BlogData = [
         blogList: (
           <>
             Incorporating{" "}
-            <Link href="/products/sabji-masala" className="text-red-500">
+            <Link href="/product/sabji-masala" className="text-red-500">
               Sabji Masala
             </Link>{" "}
             in Global Cuisine: Fusion Delights{" "}
@@ -753,7 +751,7 @@ const BlogData = [
         blogList: (
           <>
             Conclusion: Elevating Every Bite with{" "}
-            <Link href="/products/sabji-masala" className="text-red-500">
+            <Link href="/product/sabji-masala" className="text-red-500">
               Sabji Masala
             </Link>{" "}
           </>
@@ -799,7 +797,7 @@ const BlogData = [
         blogList: (
           <>
             The Garden's Bounty and the Aroma of{" "}
-            <Link href="/products/sabji-masala" className="text-red-500">
+            <Link href="/product/sabji-masala" className="text-red-500">
               Sabji Masala
             </Link>
           </>
@@ -878,7 +876,7 @@ const BlogData = [
                 Achieving the perfect balance of spices is an art form in
                 itself. Sabji masala brings together the warmth of coriander,
                 the earthiness of{" "}
-                <Link href="/products/cumin-powder" className="text-red-500">
+                <Link href="/product/cumin-powder" className="text-red-500">
                   cumin
                 </Link>
                 , the vibrancy of turmeric, and the gentle heat of chili in a
@@ -1003,7 +1001,7 @@ const BlogData = [
         In the realm of wellness, few ingredients have captured the spotlight
         quite like turmeric. Known for its vibrant color and potent health
         benefits, turmeric powder, or{" "}
-        <Link href="/products/turmeric-powder" className="text-red-500">
+        <Link href="/product/turmeric-powder" className="text-red-500">
           haldi powder
         </Link>
         , has become a staple in many households. Today, we'll explore the
@@ -1028,7 +1026,7 @@ const BlogData = [
         blogList: (
           <>
             Organic{" "}
-            <Link href="/products/turmeric-powder" className="text-red-500">
+            <Link href="/product/turmeric-powder" className="text-red-500">
               Turmeric Powder
             </Link>
             : Purity Unleashed{" "}
@@ -1221,7 +1219,7 @@ const BlogData = [
         blogList: (
           <>
             Choosing the Right Organic{" "}
-            <Link href="/products/turmeric-powder" className="text-red-500">
+            <Link href="/product/turmeric-powder" className="text-red-500">
               Haldi Powder
             </Link>
             : Tips for Quality and Flavor{" "}
@@ -1243,7 +1241,7 @@ const BlogData = [
             <p>
               As we delve into the world of DIY turmeric-based drinks, it
               becomes clear that the golden elixirs crafted from organic{" "}
-              <Link href="/products/turmeric-powder" className="text-red-500">
+              <Link href="/product/turmeric-powder" className="text-red-500">
                 haldi powder
               </Link>{" "}
               offer not only a delightful sensory experience but also a myriad
@@ -1289,7 +1287,7 @@ const BlogData = [
         enhancer; it's also a powerhouse when it comes to the nutritional value
         it provides. In this piece, we will discuss the health benefits of black
         pepper as well as its nutritional worth.{" "}
-        <Link href="/products/black-pepper-powder" className="text-red-500">
+        <Link href="/product/black-pepper-powder" className="text-red-500">
           Black Pepper{" "}
         </Link>{" "}
         has been shown to have a number of positive effects on health.What
@@ -1307,7 +1305,7 @@ const BlogData = [
           <>
             {" "}
             Nutritional Value of{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               Black Pepper{" "}
             </Link>
           </>
@@ -1340,7 +1338,7 @@ const BlogData = [
           <>
             Because it encourages the generation of hydrochloric acid in the
             stomach,{" "}
-            <Link href="/products/black-pepper-powder" className="text-red-500">
+            <Link href="/product/black-pepper-powder" className="text-red-500">
               Black Pepper{" "}
             </Link>{" "}
             can assist in the improvement of digestive function. This makes the
@@ -1377,10 +1375,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Piperine, which is found in{" "}
-            <Link
-              href="/products/black-pepper-powder"
-              className="text-red-500 "
-            >
+            <Link href="/product/black-pepper-powder" className="text-red-500 ">
               Black Pepper{" "}
             </Link>{" "}
             , is an organic component that possesses high antioxidant
@@ -1437,7 +1432,7 @@ const BlogData = [
         wide variety of cuisines. It has a flavour that is all its own, as well
         as a harsh and pungent scent that can give any dish an extra kick.
         However, were you aware that{" "}
-        <Link href="/products/black-pepper-powder" className="text-red-500">
+        <Link href="/product/black-pepper-powder" className="text-red-500">
           black pepper
         </Link>{" "}
         also has many positive effects on one's health? In this article, we will
@@ -1575,7 +1570,7 @@ const BlogData = [
         blogListAbout: (
           <>
             The Indian spice mixture known as{" "}
-            <Link href="/products/garam-masala" className="text-red-500">
+            <Link href="/product/garam-masala" className="text-red-500">
               garam masala{" "}
             </Link>{" "}
             is a common ingredient in Indian cuisine. Cumin, coriander,
@@ -1592,7 +1587,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Including{" "}
-            <Link href="/products/red-chilli-powder" className="text-red-500">
+            <Link href="/product/red-chilli-powder" className="text-red-500">
               chilli powder{" "}
             </Link>{" "}
             in your foods is an excellent way to give them an extra kick. It is
@@ -1642,7 +1637,7 @@ const BlogData = [
               Adding flavour to your dishes with Mexican seasoning is an
               excellent way to do it. It is a mixture of many spices, including
               cumin, garlic powder,{" "}
-              <Link href="/products/red-chilli-powder" className="text-red-500">
+              <Link href="/product/red-chilli-powder" className="text-red-500">
                 chilli powder
               </Link>{" "}
               , oregano, and paprika, among others. Because it does not contain

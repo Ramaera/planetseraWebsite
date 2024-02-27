@@ -43,7 +43,6 @@ const ReceivedOrder = () => {
 
   const allOrders = useQuery(GET_ALL_ORDERS);
 
-  //   console.log("allOrders", allOrders.data.allOrders);
   return (
     <div>
       <div className="navMobile ">
@@ -77,7 +76,6 @@ const ReceivedOrder = () => {
                 <TableRow key={index}>
                   <TableCell>{user?.Buyer?.user?.name}</TableCell>
 
-                  {console.log("addddddd", user.address.mobileNumber)}
                   <TableCell>
                     <div>{user?.address?.name}</div>
                     <div className="flex">

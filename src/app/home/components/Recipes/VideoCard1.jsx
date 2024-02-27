@@ -1,11 +1,10 @@
-import bookmark from "@assets/bookmark.webp"
-import share from "@assets/share.webp"
-import like from "@assets/like.webp"
-import comment from "@assets/comment.webp"
-import playBtn from "@assets/Play.webp"
+import bookmark from "@assets/bookmark.webp";
+import share from "@assets/share.webp";
+import like from "@assets/like.webp";
+import comment from "@assets/comment.webp";
+import playBtn from "@assets/Play.webp";
 
 const VideoCard1 = ({ item }) => {
-  //console.log(item)
   return (
     <div
       className="video-card-1 bg-center bg-cover"
@@ -13,8 +12,7 @@ const VideoCard1 = ({ item }) => {
         backgroundImage: `linear-gradient( 0deg,
         rgba(0, 0, 0, 0.5),
         rgba(0, 0, 0, 0.5)), url(${item.bgImg})`,
-      }}
-    >
+      }}>
       <div className="chef-section">
         <div className="chef-info flex justify-around items-center mt-4">
           <div className="flex justify-around items-center w-[50%]">
@@ -55,7 +53,7 @@ const VideoCard1 = ({ item }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default VideoCard1
+export default VideoCard1;

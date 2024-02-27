@@ -18,7 +18,7 @@ import Login from "../Login";
 const NavItem = ({ page }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state?.user);
-  // console.log("user", );
+
   const CartData = useSelector((state) => state.cart.items);
   const cartItemsQuantity = CartData.reduce(
     (total, item) => total + item?.qty,
