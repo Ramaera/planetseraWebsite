@@ -9,8 +9,10 @@ import { useSelector, useDispatch } from "react-redux";
 import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { useRouter } from "next/navigation";
 
 const Orders = () => {
+  const router = useRouter();
   const user = useSelector((state) => state?.user);
   const allOrders = useQuery(ALL_ORDERS, {
     variables: {
@@ -29,6 +31,13 @@ const Orders = () => {
   useEffect(() => {
     allOrders.refetch();
   }, [user]);
+
+  useEffect(() => {
+    if (!user?.data) {
+      router.replace("/");
+    }
+  }, [user]);
+
   return (
     <>
       <NavItem page={"orders"} className="pb-40" />

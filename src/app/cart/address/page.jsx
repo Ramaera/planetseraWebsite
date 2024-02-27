@@ -88,14 +88,13 @@ const address = () => {
     <>
       <div>
         <div className="font-mont w-full">
-          <div className="w-full sm:p-10 px-3 py-5">
-            <RadioButton />
+          <div className="pt-10 pb-4">
+            <button onClick={toggleVisibility}>
+              <p className="Cart-remove">+ Add New Address</p>
+            </button>
           </div>
 
-          <button onClick={toggleVisibility}>
-            <p className="Cart-remove">+ Add New Address</p>
-          </button>
-          <div className="py-10  px-3">
+          <div className="px-3">
             {isVisible && (
               <div className="w-full">
                 <div className="flex justify-between">
@@ -155,15 +154,19 @@ const address = () => {
                   />
                 </div>
 
-                <div className="flex justify-center pt-5 mt-5">
+                <div className="flex justify-center mt-5">
                   <button
                     onClick={handleSaveAndDeliverClick}
                     className="w-1/2 py-3 rounded-2xl Cartbgcolor">
-                    Save And Deliver Here
+                    Save Address
                   </button>
                 </div>
               </div>
             )}
+          </div>
+
+          <div className="w-full sm:py-2 px-3 py-1">
+            <RadioButton />
           </div>
         </div>
       </div>

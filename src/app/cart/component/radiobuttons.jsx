@@ -60,15 +60,13 @@ export default function ControlledRadioButtonsGroup() {
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"
         value={selectedAddressId}
-        onChange={handleChange}
-      >
+        onChange={handleChange}>
         <div className="w-full">
           {addressesData?.data?.getBuyerAddress?.map((_address) => (
             <div
-              className="flex w-full justify-between my-8"
-              key={_address?.addresId}
-            >
-              <div className="sm:w-8/12  ">
+              className="flex w-full justify-between my-2 sm:my-8"
+              key={_address?.addresId}>
+              <div className="w-full sm:w-8/12  ">
                 <FormControlLabel
                   value={_address?.addresId}
                   control={
@@ -85,8 +83,7 @@ export default function ControlledRadioButtonsGroup() {
 
                 <div
                   style={{ color: "#2F302F" }}
-                  className="px-8 sm:font-normal text-xs sm:text-base	"
-                >
+                  className="px-8 sm:font-normal text-xs sm:text-base	">
                   <p>
                     {_address?.address[0]?.city} {_address?.address[1]?.pincode}{" "}
                     {_address?.address[2]?.address}
@@ -94,15 +91,13 @@ export default function ControlledRadioButtonsGroup() {
                   <p>Contact :- {_address.mobileNumber}</p>
                 </div>
               </div>
-              <div className="text-xs sm:text-base sm:w-2/12 w-5/12 mt-3	">
-                {/* Edit | */}
+              {/* <div className="text-xs sm:text-base sm:w-2/12 w-5/12 mt-3	">
                 <button
                   className="Cart-remove"
-                  onClick={() => handleRemoveAddress(_address)}
-                >
+                  onClick={() => handleRemoveAddress(_address)}>
                   Remove
                 </button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

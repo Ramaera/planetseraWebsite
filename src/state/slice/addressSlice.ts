@@ -38,7 +38,7 @@ const addressSlice = createSlice({
 export const { saveAddress, removeAddress, selectAddress } =
   addressSlice.actions;
 export default addressSlice.reducer;
-// import { createSlice } from "@reduxjs/toolkit";
+
 // import { AddressType } from "../types/address";
 
 // export type AddressState = {

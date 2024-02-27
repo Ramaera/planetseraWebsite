@@ -14,14 +14,17 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useSelector, useDispatch } from "react-redux";
+import BuynowBtn from "@/components/BuynowBtn";
 
 const steps = ["Address ", "Payment "];
 
 export default function HorizontalLinearStepper() {
   const router = useRouter();
+  const colorMe = useSelector((state) => state.colorUs.color);
   const addressesData = useSelector((state) => state.address);
   const shipmentData = useSelector((state) => state.shipment);
   const paymentData = useSelector((state) => state.payment);
+  const [isDisable, setIsDisable] = React.useState(false);
 
   const [activeStep, setActiveStep] = React.useState(0);
   const [customComponentIndex, setCustomComponentIndex] = React.useState(0);
@@ -120,7 +123,7 @@ export default function HorizontalLinearStepper() {
               Back
             </Button>
             <Box sx={{ flex: "1 1 auto" }} />
-            <Button
+            {/* <Button
               variant="outlined"
               onClick={handleNextPage}
               disabled={
@@ -130,11 +133,47 @@ export default function HorizontalLinearStepper() {
                 // paymentData.selectedPayment == null
               }>
               {activeStep === steps.length - 1 ? "Finish" : "Proceed"}
-            </Button>
+            </Button> */}
           </Box>
         </React.Fragment>
       )}
       {customComponent}
+
+      {/* {activeStep !== steps.length - 1 && (
+        <BuynowBtn
+          onClick={handleNextPage}
+          link="#"
+          text={"Proceed"}
+          disabled={
+            addressesData.selectedAddress == null ||
+            activeStep === steps.length - 1
+          }
+        />
+      )} */}
+      <div className="w-full flex justify-center">
+        {activeStep !== steps.length - 1 && (
+          <button
+            className="buynow-button flex flex-wrap gap-4 text-center justify-center"
+            style={{
+              boxShadow: `2px 4px 5px -2px ${colorMe}`,
+              background: isDisable
+                ? "grey"
+                : `linear-gradient(72.44deg, ${colorMe} 0%, ${
+                    colorMe + "85"
+                  } 100%)`,
+
+              fontWeight: 400,
+              fontSize: "18px",
+              width: " 148px",
+              height: "48px",
+              padding: "2px",
+            }}
+            onClick={handleNextPage}
+            disabled={disableHandle}>
+            {activeStep !== steps.length - 1 && "Proceed"}
+          </button>
+        )}
+      </div>
     </div>
   );
 }
