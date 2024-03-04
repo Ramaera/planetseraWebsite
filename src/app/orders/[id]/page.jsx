@@ -50,6 +50,7 @@ const OrderDetails = () => {
     }
   }, [user]);
 
+  // if (!specificOrder) return router.replace("/orders");
   return (
     <>
       <NavItem page={"orders"} className="pb-40" />

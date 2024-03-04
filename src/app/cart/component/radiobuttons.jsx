@@ -42,7 +42,7 @@ export default function ControlledRadioButtonsGroup() {
         },
       });
 
-      // dispatch(removeAddress(address));
+      dispatch(removeAddress(address?.addresId));
     } catch (err) {
       console.log("err", err.message);
     }
@@ -91,13 +91,13 @@ export default function ControlledRadioButtonsGroup() {
                   <p>Contact :- {_address.mobileNumber}</p>
                 </div>
               </div>
-              {/* <div className="text-xs sm:text-base sm:w-2/12 w-5/12 mt-3	">
+              <div className="text-xs sm:text-base sm:w-2/12 w-5/12 mt-3	">
                 <button
                   className="Cart-remove"
                   onClick={() => handleRemoveAddress(_address)}>
                   Remove
                 </button>
-              </div> */}
+              </div>
             </div>
           ))}
         </div>

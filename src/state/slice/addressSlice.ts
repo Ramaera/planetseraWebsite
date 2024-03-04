@@ -22,13 +22,15 @@ const addressSlice = createSlice({
       state.allAddresses.push(action.payload);
       if (!state.selectedAddress) state.selectedAddress = addresId;
     },
+
     removeAddress: (state, action) => {
       state.allAddresses = state.allAddresses.filter(
-        (item) => item.id != action.payload.id
+        (item) => item.id !== action.payload
       );
-      if (state.selectedAddress == action.payload.id)
+      if (state.selectedAddress === action.payload)
         state.selectedAddress = null;
     },
+
     selectAddress: (state, action) => {
       state.selectedAddress = action.payload;
     },
