@@ -50,7 +50,7 @@ const ReceivedOrder = () => {
       </div>
 
       <NavItem page={"received-order"} />
-      <Container maxWidth={false} sx={{ padding: 5 }}>
+      <Container maxWidth={false} sx={{ padding: 5 }} className="min-h-screen">
         <Typography variant="h4" sx={{ mt: 7 }}>
           Received Orders
         </Typography>
@@ -94,7 +94,7 @@ const ReceivedOrder = () => {
                       return (
                         <div className="" key={item.id}>
                           <div className="flex">
-                            {item?.name} - {particularProduct.weight}g
+                            {item?.name} - {particularProduct?.weight}g
                           </div>
                           <div>Qty: {item?.qty} </div>
                         </div>

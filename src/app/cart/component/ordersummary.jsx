@@ -74,7 +74,7 @@ const ordersummary = () => {
 
   return (
     <>
-      <div className="font-mont sm:w-1/4 pt-10   ">
+      <div className="font-mont sm:w-1/4 sm:min-w-[275px] pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
           className="border py-9 px-6 shadow-xl">
