@@ -25,6 +25,7 @@ import { Get_All_Products, REMOVE_ITEM_CART } from "@/apollo/queries";
 import { useMutation, useLazyQuery } from "@apollo/client";
 
 const Page = () => {
+  const Stock = 3;
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -72,6 +73,21 @@ const Page = () => {
   };
 
   const handleIncrementQuantity = async (index, itemId, productVariantId) => {
+    const currentItem = CartData.find((item) => item?.id === itemId);
+
+    if (currentItem.qty + 1 > Stock) {
+      toast.error("Quantity cannot be more than available stock", {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      return;
+    }
     try {
       const resp = await CartOpeartion({
         variables: {
@@ -155,8 +171,7 @@ const Page = () => {
                                 item?.id,
                                 item.productVariantId
                               )
-                            }
-                          >
+                            }>
                             <HorizontalRuleIcon className="w-5 h-5" />
                           </button>
 
@@ -169,8 +184,7 @@ const Page = () => {
                                 item?.id,
                                 item.productVariantId
                               )
-                            }
-                          >
+                            }>
                             <AddIcon />
                           </button>
                         </div>
@@ -182,8 +196,7 @@ const Page = () => {
                                 item.productVariantId
                               )
                             }
-                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base"
-                          >
+                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
                             Remove
                           </button>
                           <ToastContainer />

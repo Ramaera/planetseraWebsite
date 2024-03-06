@@ -25,6 +25,7 @@ import { Get_BUYER } from "@/apollo/queries";
 import Login from "@/components/Login";
 
 const ProductDetailsInfo = () => {
+  const Stock = 3;
   const user = useSelector((state) => state?.user);
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
@@ -65,41 +66,10 @@ const ProductDetailsInfo = () => {
   };
 
   const handleAddToCart = async () => {
-    if (user?.data) {
-      try {
-        const resp = await addToCartServer({
-          variables: {
-            buyerId: user?.data?.buyer?.id,
-            name: specificProduct?.title,
-            qty: quantity,
-            productVariantId: specificVariant?.id,
-          },
-        });
-
-        if (resp) {
-          dispatch(clearCart());
-          const updatedCartItems = resp.data?.createCart?.cartItem?.map(
-            (list) => ({
-              id: list?.id,
-              productVariantId: list?.productVariantId,
-              qty: list?.qty,
-              name: list?.name,
-            })
-          );
-          updatedCartItems?.forEach((item) => {
-            dispatch(storeInCart(item));
-          });
-        }
-
-        // dispatch(
-        //   addToCart({
-        //     productVariantId: specificVariant?.id,
-        //     qty: quantity,
-        //     name: specificProduct.title,
-        //   })
-        // );
-
-        toast.success("Product Added To Your Cart", {
+    if (quantity > Stock) {
+      toast.error(
+        "Oops! You can't add more quantity than the available stock",
+        {
           position: "top-center",
           autoClose: 2500,
           hideProgressBar: false,
@@ -108,12 +78,59 @@ const ProductDetailsInfo = () => {
           draggable: true,
           progress: undefined,
           theme: "light",
-        });
-      } catch (err) {
-        console.log("err", err.message);
-      }
+        }
+      );
     } else {
-      openLoginModal();
+      if (user?.data) {
+        try {
+          const resp = await addToCartServer({
+            variables: {
+              buyerId: user?.data?.buyer?.id,
+              name: specificProduct?.title,
+              qty: quantity,
+              productVariantId: specificVariant?.id,
+            },
+          });
+
+          if (resp) {
+            dispatch(clearCart());
+            const updatedCartItems = resp.data?.createCart?.cartItem?.map(
+              (list) => ({
+                id: list?.id,
+                productVariantId: list?.productVariantId,
+                qty: list?.qty,
+                name: list?.name,
+              })
+            );
+            updatedCartItems?.forEach((item) => {
+              dispatch(storeInCart(item));
+            });
+          }
+
+          // dispatch(
+          //   addToCart({
+          //     productVariantId: specificVariant?.id,
+          //     qty: quantity,
+          //     name: specificProduct.title,
+          //   })
+          // );
+
+          toast.success("Product Added To Your Cart", {
+            position: "top-center",
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        } catch (err) {
+          console.log("err", err.message);
+        }
+      } else {
+        openLoginModal();
+      }
     }
   };
 
@@ -233,15 +250,39 @@ const ProductDetailsInfo = () => {
                     </button>
                   </div>
 
-                  <BuynowBtn
-                    onClick={handleAddToCart}
-                    link="#"
-                    text={"Add to Cart"}
-                    width={"150px"}
-                    padding={"20px"}
-                  />
+                  {Stock > 0 ? (
+                    <BuynowBtn
+                      onClick={handleAddToCart}
+                      link="#"
+                      text={"Add to Cart"}
+                      width={"150px"}
+                      padding={"20px"}
+                    />
+                  ) : (
+                    <div
+                      className={`mt-2 sm:mt-4 mb-2 flex flex-wrap gap-4 text-center justify-center `}>
+                      <button
+                        className="buynow-button flex flex-wrap gap-4 text-center justify-center"
+                        disabled
+                        style={{
+                          boxShadow: `2px 4px 5px -2px grey`,
+                          background: `linear-gradient(72.44deg, grey 0%, rgba(128, 128, 128, 0.85) 100%)`,
+
+                          fontWeight: 400,
+                          fontSize: "18px",
+                          width: " 148px",
+                          height: "48px",
+                          padding: "2px",
+                        }}>
+                        Out Of Stock
+                      </button>
+                    </div>
+                  )}
                   <ToastContainer />
                 </div>
+                <h6>
+                  {Stock > 0 ? `Available Stock : ${Stock}` : "Out Of Stock"}
+                </h6>
                 <p className="mt-6 font-base text-md text-slate-500">
                   You can also buy from here
                 </p>
