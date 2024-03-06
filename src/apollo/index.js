@@ -11,7 +11,7 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 const httpLink = createHttpLink({
-  uri: process.env.NEXT_PUBLIC_API_URL,
+  uri: process.env.NEXT_PUBLIC_SERVER_URL,
 });
 let ACCESSTOKEN;
 const getApolloClient = () => {

@@ -358,6 +358,70 @@ query GetallOrders {
     }
   }
 }
-
-
 `);
+
+export const CREATE_PRODUCT = gql(`
+mutation CreateProduct  (
+   $Amazon : Boolean!,
+   $Flipkart : Boolean!,
+   $ProductsVariant : [String],
+   $category : [String!],
+   $description : String!,
+  $metaData :[String],
+   $productImageUrl : String!,
+   $productUrl : String!,
+   $title : String!,
+   $type : String!
+  ) 
+  {
+  createProduct(
+      input: {
+          Amazon: $Amazon
+          Flipkart:  $Flipkart
+          ProductsVariant: $ProductsVariant
+          category: $category
+          description:  $description
+          metaData: $metaData
+          productImageUrl: $productImageUrl
+          productUrl: $productUrl
+          title: $title
+          type: $type
+      }
+  ) {
+      Amazon
+      Flipkart
+      category
+      description
+      id
+      productImageUrl
+      productUrl
+      title
+      type
+      ProductsVariant {
+          id
+          imageUrl
+          price
+          stock
+          weight
+      }
+  }
+}
+`);
+
+// $metaData: [{ $amazon50: String!,
+//   $amazon100: String!,
+//   $amazon500: String!,
+//   $bgColor: String!,
+//   $colored: String!,
+//   $colored2: String!,
+//   $faqs: [{ answer: String!, question: String! }],
+//   $flipkart50: String!,
+//   $flipkart100: String!,
+//   $flipkart500: String!,
+//   $healthBenefits: String!,
+//   $inactiveBtn: String!,
+//   $inactiveBtn2: String!,
+//   $ingredients: String!,
+//   $productBg: String!,
+//   $usage: String!
+//  }],

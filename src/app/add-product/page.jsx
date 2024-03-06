@@ -2,35 +2,44 @@
 import React, { useState } from "react";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
+import { CREATE_PRODUCT } from "@/apollo/queries";
+import { useMutation } from "@apollo/client";
+import handleImageUpload from "@/utils/upload";
 
 const AddProduct = () => {
+  const [createProduct] = useMutation(CREATE_PRODUCT);
+
   const [product, setProduct] = useState({
-    name: "",
-    price: "",
-    stock: "",
-    description: "",
-    usage: "",
-    ingredients: "",
-    healthBenefits: "",
-    weight: "",
+    name: "red",
+    price: "200",
+    stock: "3",
+    description: "desccrrip",
+    usage: "uudaaffa",
+    ingredients: "insddss",
+    healthBenefits: "heasdladac",
+    weight: "100",
     category: "",
-    images: [],
-    productUrl: "",
+    productUrl: "red-ccc",
     productType: "",
     isAvailableOnAmazon: false,
     isAvailableOnFlipkart: false,
-    flipkart50gLink: "",
-    flipkart100gLink: "",
-    flipkart500gLink: "",
-    amazon50gLink: "",
-    amazon100gLink: "",
-    amazon500gLink: "",
-    backgroundColor: "",
-    colored1: "",
-    colored2: "",
-    inactiveBtnColor1: "",
-    inactiveBtnColor2: "",
-    faqs: [{ question: "", answer: "" }],
+    flipkart50gLink: "gfhgjhkjlk",
+    flipkart100gLink: "hgjhbkj",
+    flipkart500gLink: "hjhbkjnl",
+    amazon50gLink: "jhk",
+    amazon100gLink: "jh",
+    amazon500gLink: "hkj",
+    backgroundColor: "hj",
+    colored1: "ghjh",
+    colored2: "gjhk",
+    inactiveBtnColor1: "hbkjn",
+    inactiveBtnColor2: "fghgvjhbk",
+    faqs: [{ question: "gfchgvjhb", answer: "hgjvhbkj" }],
+    backgroundImage: "",
+    frontImage: "",
+    productImage1: "",
+    productImage2: "",
+    productImage3: "",
   });
 
   const handleChange = (e, index) => {
@@ -39,9 +48,8 @@ const AddProduct = () => {
     if (type === "checkbox" || type === "radio") {
       setProduct({ ...product, [name]: value === "true" });
     } else if (name.includes("faq")) {
-      // If the name includes "faq", it's a FAQ field
       const faqs = [...product.faqs];
-      faqs[index][name.split("-")[1]] = value; // Extract the field name from the input name
+      faqs[index][name.split("-")[1]] = value;
       setProduct({ ...product, faqs });
     } else {
       setProduct({ ...product, [name]: value });
@@ -61,13 +69,69 @@ const AddProduct = () => {
     setProduct({ ...product, faqs });
   };
 
-  const handleImageChange = (e) => {
-    const images = Array.from(e.target.files);
-    setProduct({ ...product, images: [...product.images, ...images] });
+  const handleImageChange = async (e, imageType) => {
+    const imageFile = e.target.files[0];
+    const imgUrl = await handleImageUpload(imageFile);
+    setProduct({ ...product, [imageType]: imgUrl });
+  };
+
+  const handleCreateProduct = async (e) => {
+    e.preventDefault();
+    console.log("enter");
+    try {
+      console.log("second");
+      const resp = await createProduct({
+        variables: {
+          Amazon: product?.isAvailableOnAmazon,
+          Flipkart: product?.isAvailableOnFlipkart,
+          ProductsVariant: [
+            {
+              imageUrl: [
+                product?.productImage1,
+                product?.productImage2,
+                product?.productImage3,
+              ],
+              price: product?.price,
+              stock: product?.price,
+              weight: product?.weight,
+            },
+          ],
+          category: product?.category,
+          description: product?.description,
+          metaData: [
+            {
+              amazon50: product?.amazon50gLink,
+              amazon100: product?.amazon100gLink,
+              amazon500: product?.amazon500gLink,
+              bgColor: product?.backgroundColor,
+              colored: product?.colored1,
+              colored2: product?.colored2,
+              faqs: product?.faqs,
+              flipkart50: product?.flipkart50gLink,
+              flipkart100: product?.flipkart100gLink,
+              flipkart500: product?.flipkart500gLink,
+              healthBenefits: product?.healthBenefits,
+              inactiveBtn: product?.inactiveBtnColor1,
+              inactiveBtn2: product?.inactiveBtnColor2,
+              ingredients: product?.ingredients,
+              productBg: product?.backgroundImage,
+              usage: product?.usage,
+            },
+          ],
+          productImageUrl: product?.frontImage,
+          productUrl: product?.productUrl,
+          title: product?.name,
+          type: product?.type,
+        },
+      });
+      console.log("resp", resp);
+    } catch (err) {
+      console.log("err", err.message);
+    }
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(product);
+    console.log("product", product);
   };
 
   return (
@@ -79,7 +143,7 @@ const AddProduct = () => {
 
       <div className="px-10 pt-24 max-w-5xl mx-auto">
         <h2 className="text-5xl font-bold mb-4">Add Product</h2>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleCreateProduct}>
           <div className="bg-slate-100 p-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="mb-4">
@@ -166,7 +230,7 @@ const AddProduct = () => {
                 <input
                   type="file"
                   name="backgroundImage"
-                  onChange={handleImageChange}
+                  onChange={(e) => handleImageChange(e, "backgroundImage")}
                   className="w-full border rounded px-4 py-2"
                 />
               </div>
@@ -175,18 +239,35 @@ const AddProduct = () => {
                 <input
                   type="file"
                   name="frontImage"
-                  onChange={handleImageChange}
+                  onChange={(e) => handleImageChange(e, "frontImage")}
                   className="w-full border rounded px-4 py-2"
                 />
               </div>
               <div className="mb-4">
-                <label className="block mb-1">Product All Image</label>
+                <label className="block mb-1">Product Image 1</label>
                 <input
                   type="file"
-                  name="allImages"
-                  onChange={handleImageChange}
+                  name="productImage1"
+                  onChange={(e) => handleImageChange(e, "productImage1")}
                   className="w-full border rounded px-4 py-2"
-                  multiple
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block mb-1">Product Image 2</label>
+                <input
+                  type="file"
+                  name="productImage2"
+                  onChange={(e) => handleImageChange(e, "productImage2")}
+                  className="w-full border rounded px-4 py-2"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block mb-1">Product Image 3</label>
+                <input
+                  type="file"
+                  name="productImage3"
+                  onChange={(e) => handleImageChange(e, "productImage3")}
+                  className="w-full border rounded px-4 py-2"
                 />
               </div>
               <div className="mb-4">
