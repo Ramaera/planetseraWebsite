@@ -10,7 +10,7 @@ const AddProduct = () => {
   const [createProduct] = useMutation(CREATE_PRODUCT);
 
   const [product, setProduct] = useState({
-    name: "red",
+    name: "Red Chilli",
     price: "200",
     stock: "3",
     description: "desccrrip",
@@ -19,7 +19,7 @@ const AddProduct = () => {
     healthBenefits: "heasdladac",
     weight: "100",
     category: [],
-    productUrl: "red-ccc",
+    productUrl: "",
     productType: "",
     isAvailableOnAmazon: false,
     isAvailableOnFlipkart: false,
@@ -71,17 +71,25 @@ const AddProduct = () => {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e, index) => {
     const { name, value, type } = e.target;
+    let updatedProduct = { ...product };
+
     if (type === "checkbox" || type === "radio") {
-      setProduct({ ...product, [name]: value === "true" });
+      updatedProduct[name] = value === "true";
     } else if (name === "question" || name === "answer") {
-      const faqs = [...product.faqs];
+      const faqs = [...updatedProduct.faqs];
       faqs[index][name] = value;
-      setProduct({ ...product, faqs });
+      updatedProduct.faqs = faqs;
     } else {
-      setProduct({ ...product, [name]: value });
+      updatedProduct[name] = value;
+
+      if (name === "name") {
+        updatedProduct.productUrl = value.toLowerCase().replace(/\s+/g, "-");
+      }
     }
+
+    setProduct(updatedProduct);
   };
 
   const handleAddFAQ = () => {
@@ -100,56 +108,62 @@ const AddProduct = () => {
   const handleImageChange = async (e, imageType) => {
     const imageFile = e.target.files[0];
     const imgUrl = await handleImageUpload(imageFile);
-    setProduct({ ...product, [imageType]: imgUrl });
+
+    let imageName;
+    if (imageType === "backgroundImage") {
+      imageName = `allProduct/${product.name.replace(
+        /\s+/g,
+        ""
+      )}Bg.${imageFile.name.split(".").pop()}`;
+    } else {
+      imageName = `allProduct/${product.name.replace(
+        /\s+/g,
+        ""
+      )}.${imageFile.name.split(".").pop()}`;
+    }
+
+    setProduct({ ...product, [imageType]: imageName });
   };
 
   const handleCreateProduct = async (e) => {
     e.preventDefault();
-    console.log("enter");
     try {
-      console.log("second");
       const resp = await createProduct({
         variables: {
           Amazon: product?.isAvailableOnAmazon,
           Flipkart: product?.isAvailableOnFlipkart,
-          ProductsVariant: [
-            {
-              imageUrl: [
-                product?.productImage1,
-                product?.productImage2,
-                product?.productImage3,
-              ],
-              price: product?.price,
-              stock: product?.price,
-              weight: product?.weight,
-            },
-          ],
           category: product?.category,
           description: product?.description,
-          metaData: [
-            {
-              amazon50: product?.amazon50gLink,
-              amazon100: product?.amazon100gLink,
-              amazon500: product?.amazon500gLink,
-              bgColor: product?.backgroundColor,
-              colored: product?.colored1,
-              colored2: product?.colored2,
-              faqs: product?.faqs,
-              flipkart50: product?.flipkart50gLink,
-              flipkart100: product?.flipkart100gLink,
-              flipkart500: product?.flipkart500gLink,
-              healthBenefits: product?.healthBenefits,
-              inactiveBtn: product?.inactiveBtnColor1,
-              inactiveBtn2: product?.inactiveBtnColor2,
-              ingredients: product?.ingredients,
-              productBg: product?.backgroundImage,
-              usage: product?.usage,
-            },
-          ],
           productImageUrl: product?.frontImage,
           productUrl: product?.productUrl,
           title: product?.name,
-          type: product?.type,
+          type: product?.productType,
+          // imageUrl: [
+          //   product?.productImage1,
+          //   product?.productImage2,
+          //   product?.productImage3,
+          // ],
+          // price: parseFloat(product?.price),
+          // stock: parseInt(product?.stock),
+          // weight: parseInt(product?.weight),
+          metaData: {
+            amazon50: product?.amazon50gLink,
+            amazon100: product?.amazon100gLink,
+            amazon500: product?.amazon500gLink,
+            bgColor: product?.backgroundColor,
+            colored: product?.colored1,
+            colored2: product?.colored2,
+            faqs: product?.faqs,
+            flipkart50: product?.flipkart50gLink,
+            flipkart100: product?.flipkart100gLink,
+            flipkart500: product?.flipkart500gLink,
+            healthBenefits: product?.healthBenefits,
+            inactiveBtn: product?.inactiveBtnColor1,
+            inactiveBtn2: product?.inactiveBtnColor2,
+            ingredients: product?.ingredients,
+            productBg: product?.backgroundImage,
+            usage: product?.usage,
+          },
         },
       });
       console.log("resp", resp);
@@ -170,7 +184,7 @@ const AddProduct = () => {
       <NavItem page={"cart"} />
 
       <div className="px-10 pt-24 max-w-5xl mx-auto">
-        <h2 className="text-5xl font-bold mb-4">Add Product</h2>
+        <h2 className="text-4xl font-bold mb-4">Add New Product</h2>
         <form onSubmit={handleCreateProduct}>
           <div className="bg-slate-100 p-4">
             <div className="grid grid-cols-2 gap-4">
@@ -190,7 +204,7 @@ const AddProduct = () => {
                   type="text"
                   name="productUrl"
                   value={product.productUrl}
-                  onChange={handleChange}
+                  // onChange={handleChange}
                   className="w-full border rounded px-4 py-2"
                 />
               </div>
@@ -236,81 +250,6 @@ const AddProduct = () => {
               </div>
 
               <div className="mb-4">
-                <label className="block mb-1">Weight</label>
-                <input
-                  type="number"
-                  name="weight"
-                  value={product.weight}
-                  onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-1">Price</label>
-                <input
-                  type="number"
-                  name="price"
-                  value={product.price}
-                  onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-1">Stock</label>
-                <input
-                  type="number"
-                  name="stock"
-                  value={product.stock}
-                  onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-1">Product Background Image</label>
-                <input
-                  type="file"
-                  name="backgroundImage"
-                  onChange={(e) => handleImageChange(e, "backgroundImage")}
-                  className="w-full border rounded px-4 py-2"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-1">Product Front Image</label>
-                <input
-                  type="file"
-                  name="frontImage"
-                  onChange={(e) => handleImageChange(e, "frontImage")}
-                  className="w-full border rounded px-4 py-2"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-1">Product Image 1</label>
-                <input
-                  type="file"
-                  name="productImage1"
-                  onChange={(e) => handleImageChange(e, "productImage1")}
-                  className="w-full border rounded px-4 py-2"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-1">Product Image 2</label>
-                <input
-                  type="file"
-                  name="productImage2"
-                  onChange={(e) => handleImageChange(e, "productImage2")}
-                  className="w-full border rounded px-4 py-2"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block mb-1">Product Image 3</label>
-                <input
-                  type="file"
-                  name="productImage3"
-                  onChange={(e) => handleImageChange(e, "productImage3")}
-                  className="w-full border rounded px-4 py-2"
-                />
-              </div>
-              <div className="mb-4">
                 <label className="block mb-1">Description</label>
                 <textarea
                   name="description"
@@ -341,6 +280,24 @@ const AddProduct = () => {
                   value={product.healthBenefits}
                   onChange={handleChange}
                   className="w-full border rounded px-4 py-2"></textarea>
+              </div>
+              <div className="mb-4">
+                <label className="block mb-1">Product Background Image</label>
+                <input
+                  type="file"
+                  name="backgroundImage"
+                  onChange={(e) => handleImageChange(e, "backgroundImage")}
+                  className="w-full border rounded px-4 py-2"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block mb-1">Product Front Image</label>
+                <input
+                  type="file"
+                  name="frontImage"
+                  onChange={(e) => handleImageChange(e, "frontImage")}
+                  className="w-full border rounded px-4 py-2"
+                />
               </div>
             </div>
           </div>
@@ -553,7 +510,8 @@ const AddProduct = () => {
                     name="answer"
                     value={faq.answer}
                     onChange={(e) => handleChange(e, index)}
-                    className="w-full border rounded px-4 py-2"></textarea>
+                    className="w-full border rounded px-4 py-2"
+                  />
                 </div>
                 {index > 0 && (
                   <div className="mb-4">

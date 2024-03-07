@@ -361,33 +361,79 @@ query GetallOrders {
 `);
 
 export const CREATE_PRODUCT = gql(`
-mutation CreateProduct  (
-   $Amazon : Boolean!,
-   $Flipkart : Boolean!,
-   $ProductsVariant : [String],
-   $category : [String!],
-   $description : String!,
-  $metaData :[String],
-   $productImageUrl : String!,
-   $productUrl : String!,
-   $title : String!,
-   $type : String!
-  ) 
-  {
+mutation CreateProduct (
+  $Amazon: Boolean!,
+  $Flipkart: Boolean!,
+  $category: [String!]!,
+  $description: String!,
+  $productImageUrl: String!,
+  $productUrl: String!,
+  $title: String!,
+  $type: String!,
+  $metaData: [JSONObject!],
+  ) {
   createProduct(
       input: {
-          Amazon: $Amazon
-          Flipkart:  $Flipkart
-          ProductsVariant: $ProductsVariant
-          category: $category
-          description:  $description
-          metaData: $metaData
-          productImageUrl: $productImageUrl
-          productUrl: $productUrl
-          title: $title
-          type: $type
+        Amazon: $Amazon,
+        Flipkart: $Flipkart,
+        category: $category,
+        description: $description,
+        productImageUrl: $productImageUrl,
+        productUrl: $productUrl,
+        title: $title,
+        type: $type,
+        metaData: $metaData
       }
   ) {
+    newProduct {
+      Amazon
+      Flipkart
+      category
+      description
+      id
+      metaData
+      productImageUrl
+      productUrl
+      title
+      type
+  }
+  }
+}
+`);
+
+export const CREATE_PRODUCT_WITH_VARIANTS = gql(`
+  mutation CreateProductWithVariants(
+    $Amazon: Boolean!,
+    $Flipkart: Boolean!,
+    $category: [String!]!,
+    $description: String!,
+    $productImageUrl: String!,
+    $productUrl: String!,
+    $title: String!,
+    $type: String!,
+    $imageUrl: [String!]!,
+    $price: Float!,
+    $stock: Int!,
+    $weight: Int!
+  ) {
+    createProductWithVariants(
+      input: {
+        Amazon: $Amazon,
+        Flipkart: $Flipkart,
+        category: $category,
+        description: $description,
+        productImageUrl: $productImageUrl,
+        productUrl: $productUrl,
+        title: $title,
+        type: $type
+      },
+      variantInputs: {
+        imageUrl: $imageUrl,
+        price: $price,
+        stock: $stock,
+        weight: $weight
+      }
+    ) {
       Amazon
       Flipkart
       category
@@ -397,31 +443,6 @@ mutation CreateProduct  (
       productUrl
       title
       type
-      ProductsVariant {
-          id
-          imageUrl
-          price
-          stock
-          weight
-      }
+    }
   }
-}
 `);
-
-// $metaData: [{ $amazon50: String!,
-//   $amazon100: String!,
-//   $amazon500: String!,
-//   $bgColor: String!,
-//   $colored: String!,
-//   $colored2: String!,
-//   $faqs: [{ answer: String!, question: String! }],
-//   $flipkart50: String!,
-//   $flipkart100: String!,
-//   $flipkart500: String!,
-//   $healthBenefits: String!,
-//   $inactiveBtn: String!,
-//   $inactiveBtn2: String!,
-//   $ingredients: String!,
-//   $productBg: String!,
-//   $usage: String!
-//  }],
