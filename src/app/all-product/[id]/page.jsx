@@ -5,35 +5,50 @@ import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import { CREATE_PRODUCT } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 import handleImageUpload from "@/utils/upload";
+import { Get_All_Products } from "@/apollo/queries";
+import { useParams } from "next/navigation";
+import { useQuery } from "@apollo/client";
 
-const AddProduct = () => {
-  const [createProduct] = useMutation(CREATE_PRODUCT);
-  const [getImageFile, setImageFile] = useState([]);
+const page = () => {
+  const { id } = useParams();
+  const { loading, data, error } = useQuery(Get_All_Products);
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  const specificProduct = data?.allProducts.find(
+    (prod) => prod.productUrl === id
+  );
+
+  console.log("specificProduct", specificProduct);
+  //   const [createProduct] = useMutation(CREATE_PRODUCT);
+
   const [product, setProduct] = useState({
-    name: "Red Chilli",
-    price: "200",
-    stock: "3",
-    description: "desccrrip",
-    usage: "uudaaffa",
-    ingredients: "insddss",
-    healthBenefits: "heasdladac",
-    weight: "100",
+    name: "",
+    price: "",
+    stock: "",
+    description: "",
+    usage: "",
+    ingredients: "",
+    healthBenefits: "",
+    weight: "",
     category: [],
     productUrl: "",
     productType: "",
-    isAvailableOnAmazon: false,
-    isAvailableOnFlipkart: false,
-    flipkart50gLink: "gfhgjhkjlk",
-    flipkart100gLink: "hgjhbkj",
-    flipkart500gLink: "hjhbkjnl",
-    amazon50gLink: "jhk",
-    amazon100gLink: "jh",
-    amazon500gLink: "hkj",
-    backgroundColor: "hj",
-    colored1: "ghjh",
-    colored2: "gjhk",
-    inactiveBtnColor1: "hbkjn",
-    inactiveBtnColor2: "fghgvjhbk",
+    isAvailableOnAmazon: "",
+    isAvailableOnFlipkart: "",
+    flipkart50gLink: "",
+    flipkart100gLink: "",
+    flipkart500gLink: "",
+    amazon50gLink: "",
+    amazon100gLink: "",
+    amazon500gLink: "",
+    backgroundColor: "",
+    colored1: "",
+    colored2: "",
+    inactiveBtnColor1: "",
+    inactiveBtnColor2: "",
     faqs: [{ question: "", answer: "" }],
     backgroundImage: "",
     frontImage: "",
@@ -105,21 +120,9 @@ const AddProduct = () => {
     setProduct({ ...product, faqs });
   };
 
-  const handleUpload = async (product) => {
-    const file = new File(getImageFile, product?.name);
-    const imgUrl = await handleImageUpload(file);
-    console.log("imgUrl", imgUrl);
-  };
-
-  const handleImageChange = async (e, imageType, product) => {
-    setImageFile([...getImageFile, e.target.files[0]]);
-    handleUpload(product);
-    // e.target.files[0].name = "owais";
-    // const imageFile = e.target.files[0];
-
-    console.log("imageFile", imageFile);
-
-    // const imgUrl = await handleImageUpload(imageFile);
+  const handleImageChange = async (e, imageType) => {
+    const imageFile = e.target.files[0];
+    const imgUrl = await handleImageUpload(imageFile);
 
     let imageName;
     if (imageType === "backgroundImage") {
@@ -137,52 +140,52 @@ const AddProduct = () => {
     setProduct({ ...product, [imageType]: imageName });
   };
 
-  const handleCreateProduct = async (e) => {
-    e.preventDefault();
-    try {
-      const resp = await createProduct({
-        variables: {
-          Amazon: product?.isAvailableOnAmazon,
-          Flipkart: product?.isAvailableOnFlipkart,
-          category: product?.category,
-          description: product?.description,
-          productImageUrl: product?.frontImage,
-          productUrl: product?.productUrl,
-          title: product?.name,
-          type: product?.productType,
-          // imageUrl: [
-          //   product?.productImage1,
-          //   product?.productImage2,
-          //   product?.productImage3,
-          // ],
-          // price: parseFloat(product?.price),
-          // stock: parseInt(product?.stock),
-          // weight: parseInt(product?.weight),
-          metaData: {
-            amazon50: product?.amazon50gLink,
-            amazon100: product?.amazon100gLink,
-            amazon500: product?.amazon500gLink,
-            bgColor: product?.backgroundColor,
-            colored: product?.colored1,
-            colored2: product?.colored2,
-            faqs: product?.faqs,
-            flipkart50: product?.flipkart50gLink,
-            flipkart100: product?.flipkart100gLink,
-            flipkart500: product?.flipkart500gLink,
-            healthBenefits: product?.healthBenefits,
-            inactiveBtn: product?.inactiveBtnColor1,
-            inactiveBtn2: product?.inactiveBtnColor2,
-            ingredients: product?.ingredients,
-            productBg: product?.backgroundImage,
-            usage: product?.usage,
-          },
-        },
-      });
-      console.log("resp", resp);
-    } catch (err) {
-      console.log("err", err.message);
-    }
-  };
+  //   const handleCreateProduct = async (e) => {
+  //     e.preventDefault();
+  //     try {
+  //       const resp = await createProduct({
+  //         variables: {
+  //           Amazon: product?.isAvailableOnAmazon,
+  //           Flipkart: product?.isAvailableOnFlipkart,
+  //           category: product?.category,
+  //           description: product?.description,
+  //           productImageUrl: product?.frontImage,
+  //           productUrl: product?.productUrl,
+  //           title: product?.name,
+  //           type: product?.productType,
+  //           // imageUrl: [
+  //           //   product?.productImage1,
+  //           //   product?.productImage2,
+  //           //   product?.productImage3,
+  //           // ],
+  //           // price: parseFloat(product?.price),
+  //           // stock: parseInt(product?.stock),
+  //           // weight: parseInt(product?.weight),
+  //           metaData: {
+  //             amazon50: product?.amazon50gLink,
+  //             amazon100: product?.amazon100gLink,
+  //             amazon500: product?.amazon500gLink,
+  //             bgColor: product?.backgroundColor,
+  //             colored: product?.colored1,
+  //             colored2: product?.colored2,
+  //             faqs: product?.faqs,
+  //             flipkart50: product?.flipkart50gLink,
+  //             flipkart100: product?.flipkart100gLink,
+  //             flipkart500: product?.flipkart500gLink,
+  //             healthBenefits: product?.healthBenefits,
+  //             inactiveBtn: product?.inactiveBtnColor1,
+  //             inactiveBtn2: product?.inactiveBtnColor2,
+  //             ingredients: product?.ingredients,
+  //             productBg: product?.backgroundImage,
+  //             usage: product?.usage,
+  //           },
+  //         },
+  //       });
+  //       console.log("resp", resp);
+  //     } catch (err) {
+  //       console.log("err", err.message);
+  //     }
+  //   };
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("product", product);
@@ -298,9 +301,7 @@ const AddProduct = () => {
                 <input
                   type="file"
                   name="backgroundImage"
-                  onChange={(e) =>
-                    handleImageChange(e, "backgroundImage", product)
-                  }
+                  onChange={(e) => handleImageChange(e, "backgroundImage")}
                   className="w-full border rounded px-4 py-2"
                 />
               </div>
@@ -309,7 +310,7 @@ const AddProduct = () => {
                 <input
                   type="file"
                   name="frontImage"
-                  onChange={(e) => handleImageChange(e, "frontImage", product)}
+                  onChange={(e) => handleImageChange(e, "frontImage")}
                   className="w-full border rounded px-4 py-2"
                 />
               </div>
@@ -561,4 +562,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default page;
