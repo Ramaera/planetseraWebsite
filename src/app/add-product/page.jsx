@@ -18,7 +18,7 @@ const AddProduct = () => {
     ingredients: "insddss",
     healthBenefits: "heasdladac",
     weight: "100",
-    category: "",
+    category: [],
     productUrl: "red-ccc",
     productType: "",
     isAvailableOnAmazon: false,
@@ -34,7 +34,7 @@ const AddProduct = () => {
     colored2: "gjhk",
     inactiveBtnColor1: "hbkjn",
     inactiveBtnColor2: "fghgvjhbk",
-    faqs: [{ question: "gfchgvjhb", answer: "hgjvhbkj" }],
+    faqs: [{ question: "", answer: "" }],
     backgroundImage: "",
     frontImage: "",
     productImage1: "",
@@ -42,14 +42,42 @@ const AddProduct = () => {
     productImage3: "",
   });
 
-  const handleChange = (e, index) => {
-    const { name, value, type } = e.target;
+  const options = [
+    "Coming Soon",
+    "Mouth Watering",
+    "Kitchen Spices",
+    "Weekend Ka Tadka",
+    "Upcoming Products",
+    "Best Seller",
+  ];
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleSelectOption = (option) => {
+    if (product.category.includes(option)) {
+      setProduct({
+        ...product,
+        category: product.category.filter((item) => item !== option),
+      });
+    } else {
+      setProduct({
+        ...product,
+        category: [...product.category, option],
+      });
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value, type } = e.target;
     if (type === "checkbox" || type === "radio") {
       setProduct({ ...product, [name]: value === "true" });
-    } else if (name.includes("faq")) {
+    } else if (name === "question" || name === "answer") {
       const faqs = [...product.faqs];
-      faqs[index][name.split("-")[1]] = value;
+      faqs[index][name] = value;
       setProduct({ ...product, faqs });
     } else {
       setProduct({ ...product, [name]: value });
@@ -178,21 +206,33 @@ const AddProduct = () => {
                   <option value="ground">Ground</option>
                 </select>
               </div>
-              <div className="mb-4">
+              <div className="mb-4 relative">
                 <label className="block mb-1">Product Category</label>
-                <select
-                  name="category"
-                  value={product.category}
-                  onChange={handleChange}
-                  className="w-full border rounded px-4 py-2">
-                  <option value="">Select Product Category</option>
-                  <option value="Coming Soon">Coming Soon</option>
-                  <option value="Mouth Watering">Mouth Watering</option>
-                  <option value="Kitchen Spices">Kitchen Spices</option>
-                  <option value="Weekend Ka Tadka">Weekend Ka Tadka</option>
-                  <option value="Upcoming Products">Upcoming Products</option>
-                  <option value="Best Seller">Best Seller</option>
-                </select>
+                <div className="relative">
+                  <div
+                    className="w-full border rounded px-4 py-2 cursor-pointer bg-white"
+                    onClick={toggleDropdown}>
+                    {product.category.length === 0
+                      ? "Select Product Category"
+                      : product.category.join(", ")}
+                  </div>
+                  {isOpen && (
+                    <div className="absolute bg-white border rounded mt-1 w-full shadow-md">
+                      {options.map((option, index) => (
+                        <div
+                          key={index}
+                          className={`px-4 py-2 cursor-pointer ${
+                            product.category.includes(option)
+                              ? "bg-gray-200"
+                              : ""
+                          }`}
+                          onClick={() => handleSelectOption(option)}>
+                          {option}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
 
               <div className="mb-4">
