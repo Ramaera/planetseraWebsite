@@ -10,30 +10,30 @@ const AddProduct = () => {
   const [createProduct] = useMutation(CREATE_PRODUCT);
   const [getImageFile, setImageFile] = useState([]);
   const [product, setProduct] = useState({
-    name: "Red Chilli",
-    price: "200",
-    stock: "3",
-    description: "desccrrip",
-    usage: "uudaaffa",
-    ingredients: "insddss",
-    healthBenefits: "heasdladac",
-    weight: "100",
+    name: "",
+    price: "",
+    stock: "",
+    description: "",
+    usage: "",
+    ingredients: "",
+    healthBenefits: "",
+    weight: "",
     category: [],
     productUrl: "",
     productType: "",
     isAvailableOnAmazon: false,
     isAvailableOnFlipkart: false,
-    flipkart50gLink: "gfhgjhkjlk",
-    flipkart100gLink: "hgjhbkj",
-    flipkart500gLink: "hjhbkjnl",
-    amazon50gLink: "jhk",
-    amazon100gLink: "jh",
-    amazon500gLink: "hkj",
-    backgroundColor: "hj",
-    colored1: "ghjh",
-    colored2: "gjhk",
-    inactiveBtnColor1: "hbkjn",
-    inactiveBtnColor2: "fghgvjhbk",
+    flipkart50gLink: "",
+    flipkart100gLink: "",
+    flipkart500gLink: "",
+    amazon50gLink: "",
+    amazon100gLink: "",
+    amazon500gLink: "",
+    backgroundColor: "",
+    colored1: "",
+    colored2: "",
+    inactiveBtnColor1: "",
+    inactiveBtnColor2: "",
     faqs: [{ question: "", answer: "" }],
     backgroundImage: "",
     frontImage: "",
@@ -107,35 +107,34 @@ const AddProduct = () => {
     setProduct({ ...product, faqs });
   };
 
-  const handleUpload = async (product) => {
-    const file = new File(getImageFile, product?.name);
+  const handleUpload = async (productName, file) => {
     const imgUrl = await handleImageUpload(file);
-    console.log("imgUrl", imgUrl, file);
   };
 
   const handleImageChange = async (e, imageType, product) => {
-    setImageFile([...getImageFile, e.target.files[0]]);
-    handleUpload(product);
-    // e.target.files[0].name = "owais";
     const imageFile = e.target.files[0];
 
-    // console.log("imageFile", imageFile);
+    // Extract the original file extension
+    const fileExtension = imageFile.name.split(".").pop();
 
-    // const imgUrl = await handleImageUpload(imageFile);
-
-    let imageName;
+    // Determine the product name and append "Bg" if needed
+    let productName = product?.name?.replace(/\s/g, "");
     if (imageType === "backgroundImage") {
-      imageName = `allProductsImg/${product.name.replace(
-        /\s+/g,
-        ""
-      )}Bg.${imageFile.name.split(".").pop()}`;
-    } else {
-      imageName = `allProductsImg/${product.name.replace(
-        /\s+/g,
-        ""
-      )}.${imageFile.name.split(".").pop()}`;
+      productName += "Bg";
     }
 
+    // Construct a new File object with the desired name and the original extension
+    const file = new File([imageFile], `${productName}.${fileExtension}`, {
+      type: imageFile.type,
+    });
+
+    // Call handleUpload function with the appropriate arguments
+    handleUpload(productName, file);
+
+    // Construct the image name for display or storage
+    const imageName = `allProductsImg/${productName}.${fileExtension}`;
+
+    // Update the product state with the new image name
     setProduct({ ...product, [imageType]: imageName });
   };
 
