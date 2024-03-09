@@ -401,48 +401,36 @@ mutation CreateProduct (
 }
 `);
 
-export const CREATE_PRODUCT_WITH_VARIANTS = gql(`
-  mutation CreateProductWithVariants(
-    $Amazon: Boolean!,
-    $Flipkart: Boolean!,
-    $category: [String!]!,
-    $description: String!,
-    $productImageUrl: String!,
-    $productUrl: String!,
-    $title: String!,
-    $type: String!,
-    $imageUrl: [String!]!,
-    $price: Float!,
-    $stock: Int!,
-    $weight: Int!
+export const UPDATE_PRODUCT_VARIANTS = gql(`
+mutation UpdateProductVariant($id: Int!, $imageUrl: [String!]!, $price: Float!, $stock: Int!, $weight: String!) {
+  updateProductVariant(
+      data: { id: $id, imageUrl: $imageUrl, price: $price, stock:$stock, weight: $weight }
   ) {
-    createProductWithVariants(
-      input: {
-        Amazon: $Amazon,
-        Flipkart: $Flipkart,
-        category: $category,
-        description: $description,
-        productImageUrl: $productImageUrl,
-        productUrl: $productUrl,
-        title: $title,
-        type: $type
-      },
-      variantInputs: {
-        imageUrl: $imageUrl,
-        price: $price,
-        stock: $stock,
-        weight: $weight
-      }
-    ) {
-      Amazon
-      Flipkart
-      category
-      description
       id
-      productImageUrl
-      productUrl
-      title
-      type
-    }
+      imageUrl
+      price
+      stock
+      weight
   }
+}
+`);
+
+export const CREATE_PRODUCT_VARIANTS = gql(`
+
+mutation CreateProductVariant(
+  $imageUrl: [String!]!,
+   $price: Float!,
+    $productId: String!,
+     $stock: Int!,
+      $weight: String!) {
+  createProductVariant(
+      CreateProductVariantInput: { imageUrl: $imageUrl, price: $price, productId: $productId, stock: $stock, weight: $weight }
+  ) {
+      id
+      imageUrl
+      price
+      stock
+      weight
+  }
+}
 `);

@@ -36,7 +36,14 @@ const page = () => {
                 <TableCell className="font-semibold">Image</TableCell>
                 <TableCell className="font-semibold">Type</TableCell>
                 <TableCell className="font-semibold">Category</TableCell>
-                <TableCell className="font-semibold">View Details</TableCell>
+                <TableCell className="font-semibold">
+                  {" "}
+                  Product Details
+                </TableCell>
+                <TableCell className="font-semibold">
+                  {" "}
+                  Variant Details
+                </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -57,7 +64,14 @@ const page = () => {
                   <TableCell>
                     <Link href={`/all-product/${item.productUrl}`}>
                       <button className="bg-blue-500 text-white px-4 py-2 rounded">
-                        View
+                        View Product
+                      </button>
+                    </Link>
+                  </TableCell>
+                  <TableCell>
+                    <Link href={`/all-product/variants/${item.productUrl}`}>
+                      <button className="bg-blue-500 text-white px-4 py-2 rounded">
+                        View Variant
                       </button>
                     </Link>
                   </TableCell>
