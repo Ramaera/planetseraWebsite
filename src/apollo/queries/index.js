@@ -446,3 +446,44 @@ export const CREATE_PRODUCT_WITH_VARIANTS = gql(`
     }
   }
 `);
+
+export const UPDATE_PRODUCT_DETAILS = gql(`
+mutation UpdateProductDetails(
+  $id: String!, 
+  $Amazon: Boolean!,
+  $Flipkart: Boolean!,
+  $category: [String!]!,
+  $description: String!,
+  $productImageUrl: String!,
+  $productUrl: String!,
+  $title: String!,
+  $type: String!,
+  $metaData: [JSONObject!],
+) {
+  updateProductDetails(
+      data: {
+          Amazon: $Amazon
+          Flipkart: $Flipkart
+          category: $category
+          description: $description
+          id:  $id
+          metaData: $metaData
+          productImageUrl: $productImageUrl
+          productUrl:  $productUrl
+          title:  $title
+          type: $type
+      }
+  ) {
+      Amazon
+      Flipkart
+      category
+      description
+      id
+      metaData
+      productImageUrl
+      productUrl
+      title
+      type
+  }
+}
+`);
