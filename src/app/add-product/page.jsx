@@ -58,15 +58,17 @@ const AddProduct = () => {
   };
 
   const handleSelectOption = (option) => {
-    if (product.category.includes(option)) {
+    const filterOption = option.replace(/\s/g, "");
+
+    if (product.category.includes(filterOption)) {
       setProduct({
         ...product,
-        category: product.category.filter((item) => item !== option),
+        category: product.category.filter((item) => item !== filterOption),
       });
     } else {
       setProduct({
         ...product,
-        category: [...product.category, option],
+        category: [...product.category, filterOption],
       });
     }
   };
@@ -108,27 +110,27 @@ const AddProduct = () => {
   const handleUpload = async (product) => {
     const file = new File(getImageFile, product?.name);
     const imgUrl = await handleImageUpload(file);
-    console.log("imgUrl", imgUrl);
+    console.log("imgUrl", imgUrl, file);
   };
 
   const handleImageChange = async (e, imageType, product) => {
     setImageFile([...getImageFile, e.target.files[0]]);
     handleUpload(product);
     // e.target.files[0].name = "owais";
-    // const imageFile = e.target.files[0];
+    const imageFile = e.target.files[0];
 
-    console.log("imageFile", imageFile);
+    // console.log("imageFile", imageFile);
 
     // const imgUrl = await handleImageUpload(imageFile);
 
     let imageName;
     if (imageType === "backgroundImage") {
-      imageName = `allProduct/${product.name.replace(
+      imageName = `allProductsImg/${product.name.replace(
         /\s+/g,
         ""
       )}Bg.${imageFile.name.split(".").pop()}`;
     } else {
-      imageName = `allProduct/${product.name.replace(
+      imageName = `allProductsImg/${product.name.replace(
         /\s+/g,
         ""
       )}.${imageFile.name.split(".").pop()}`;
@@ -183,6 +185,8 @@ const AddProduct = () => {
       console.log("err", err.message);
     }
   };
+
+  console.log("product?.backgroundImage", product?.backgroundImage);
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("product", product);
@@ -229,7 +233,7 @@ const AddProduct = () => {
                   className="w-full border rounded px-4 py-2">
                   <option value="">Select Product Type</option>
                   <option value="blended">Blended</option>
-                  <option value="ground">Ground</option>
+                  <option value="grounded">Grounded</option>
                 </select>
               </div>
               <div className="mb-4 relative">
