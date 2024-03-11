@@ -402,7 +402,12 @@ mutation CreateProduct (
 `);
 
 export const UPDATE_PRODUCT_VARIANTS = gql(`
-mutation UpdateProductVariant($id: Int!, $imageUrl: [String!]!, $price: Float!, $stock: Int!, $weight: String!) {
+mutation UpdateProductVariant(
+  $id: Int!,
+  $imageUrl:[String!]!,
+  $price: Float!,
+  $stock: Int!,
+  $weight: String!) {
   updateProductVariant(
       data: { id: $id, imageUrl: $imageUrl, price: $price, stock:$stock, weight: $weight }
   ) {

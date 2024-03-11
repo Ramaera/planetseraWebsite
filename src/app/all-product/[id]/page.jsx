@@ -6,10 +6,11 @@ import { UPDATE_PRODUCT_DETAILS } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 import handleImageUpload from "@/utils/upload";
 import { Get_All_Products } from "@/apollo/queries";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useQuery } from "@apollo/client";
 
 const page = () => {
+  const route = useRouter();
   const { id } = useParams();
   const { loading, data, error } = useQuery(Get_All_Products);
 
@@ -17,12 +18,6 @@ const page = () => {
     (prod) => prod.productUrl === id
   );
 
-  console.log(
-    "specificProduct",
-    specificProduct,
-    "abc",
-    specificProduct?.metaData[0]?.flipkart500
-  );
   const [updateProductDetails] = useMutation(UPDATE_PRODUCT_DETAILS);
 
   const [product, setProduct] = useState({
@@ -52,6 +47,8 @@ const page = () => {
     frontImage: specificProduct?.productImageUrl,
   });
 
+  console.log("product?.category", product?.category);
+
   const options = [
     "Coming Soon",
     "Mouth Watering",
@@ -69,12 +66,19 @@ const page = () => {
 
   const handleSelectOption = (option) => {
     const filterOption = option.trim();
+    const filterOptionWithoutSpaces = filterOption.replace(/\s+/g, "");
     // Check if the option already exists in the category
-    const existsIndex = product.category.findIndex(
-      (item) => item.trim() === filterOption
-    );
-    // If it exists, remove it
+    const existsIndex = product.category.findIndex((item) => {
+      const itemWithoutSpaces = item.trim().replace(/\s+/g, "");
+      return (
+        itemWithoutSpaces.toLowerCase() ===
+          filterOptionWithoutSpaces.toLowerCase() ||
+        item.toLowerCase() === filterOption.toLowerCase()
+      );
+    });
+
     if (existsIndex !== -1) {
+      // If it exists, remove it
       const updatedCategory = [...product.category];
       updatedCategory.splice(existsIndex, 1);
       setProduct({
@@ -82,11 +86,13 @@ const page = () => {
         category: updatedCategory,
       });
     } else {
-      // Otherwise, add it
-      setProduct({
-        ...product,
-        category: [...product.category, filterOption],
-      });
+      // Add it only if it's not in specificProduct?.category
+      if (!specificProduct?.category.includes(option)) {
+        setProduct({
+          ...product,
+          category: [...product.category, filterOption],
+        });
+      }
     }
   };
 
@@ -98,7 +104,7 @@ const page = () => {
       updatedProduct[name] = value === "true";
     } else if (name === "question" || name === "answer") {
       const faqs = [...updatedProduct.faqs];
-      faqs[index][name] = value;
+      faqs[index] = { ...faqs[index], [name]: value };
       updatedProduct.faqs = faqs;
     } else {
       updatedProduct[name] = value;
@@ -182,7 +188,10 @@ const page = () => {
           },
         },
       });
-      console.log("resp", resp);
+      if (resp.data) {
+        route.push("/all-product");
+      }
+      // console.log("resp", resp);
     } catch (err) {
       console.log("err", err.message);
     }
@@ -244,7 +253,9 @@ const page = () => {
                     onClick={toggleDropdown}>
                     {product?.category?.length === 0
                       ? "Select Product Category"
-                      : product?.category?.join(", ")}
+                      : product?.category
+                          ?.map((cat) => cat.replace(/([A-Z])/g, " $1").trim())
+                          .join(", ")}
                   </div>
                   {isOpen && (
                     <div className="absolute bg-white border rounded mt-1 w-full shadow-md">
@@ -252,7 +263,11 @@ const page = () => {
                         <div
                           key={index}
                           className={`px-4 py-2 cursor-pointer ${
-                            product?.category?.includes(option)
+                            product?.category
+                              ?.map((cat) =>
+                                cat.replace(/([A-Z])/g, " $1").trim()
+                              )
+                              ?.includes(option)
                               ? "bg-gray-200"
                               : ""
                           }`}
@@ -524,7 +539,7 @@ const page = () => {
           {/*  Product FAQ */}
           <h5 className="text-2xl">Product FAQ's</h5>
           <div className="bg-slate-100 p-4 mt-2 mb-4">
-            {product.faqs.map((faq, index) => (
+            {product?.faqs.map((faq, index) => (
               <div key={index} className="grid grid-cols-2 gap-4">
                 <div className="mb-4">
                   <label className="block mb-1">Question</label>
@@ -565,11 +580,11 @@ const page = () => {
               </button>
             </div>
           </div>
-          <div className="col-span-2">
+          <div className="col-span-2 my-3">
             <button
               type="submit"
               className="bg-blue-500 text-white px-4 py-2 rounded">
-              Update Product
+              Update Product Detail
             </button>
           </div>
         </form>
