@@ -16,9 +16,13 @@ import { useSelector, useDispatch } from "react-redux";
 const Checkout = () => {
   const router = useRouter();
   const CartData = useSelector((state) => state.cart.items);
+  const cartTotalValue = useSelector((state) => state.cart.cartTotalValue);
+  const shippingValue = useSelector((state) => state.cart.shippingValue);
+  const totalOrderAmount = cartTotalValue + shippingValue;
+  console.log("CartData", totalOrderAmount);
 
   useEffect(() => {
-    if (CartData.length <= 0) {
+    if (CartData.length <= 0 || cartTotalValue < 500) {
       router.replace("/cart");
     }
   }, [CartData]);
