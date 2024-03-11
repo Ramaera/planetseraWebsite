@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 const Dashboard = ({ userRole }) => {
   const router = useRouter();
   const user = useQuery(GetUser);
-  const Role = user.data.me.role;
+  const Role = user?.data?.me?.role;
   console.log("Role", Role);
 
   const isAdmin = Role === "ADMIN";

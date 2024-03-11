@@ -14,8 +14,13 @@ import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import Link from "next/link";
 
 const page = ({}) => {
-  const allProducts = useQuery(Get_All_Products);
-  console.log("allProducts", allProducts);
+  const { loading, error, data, refetch } = useQuery(Get_All_Products);
+  const allProducts = data?.allProducts;
+
+  useEffect(() => {
+    refetch();
+  }, [data]);
+
   return (
     <div>
       <div className="navMobile ">
@@ -44,7 +49,7 @@ const page = ({}) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {allProducts?.data?.allProducts?.map((item, index) => (
+              {allProducts?.map((item, index) => (
                 <TableRow key={index}>
                   <TableCell>{item?.title}</TableCell>
                   <TableCell>
