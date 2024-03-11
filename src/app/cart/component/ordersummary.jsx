@@ -7,6 +7,8 @@ import { useQuery } from "@apollo/client";
 import { Get_All_Products } from "@/apollo/queries";
 import { cartTotalValue, shippingValue } from "@/state/slice/cartSlice";
 import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+
 // import Address from "../address";
 
 import TextField from "@mui/material/TextField";
@@ -22,6 +24,8 @@ const ordersummary = () => {
   const user = useSelector((state) => state?.user);
   const [registered, setRegistered] = useState(true);
   const [loginModal, setLoginModal] = useState(false);
+  const [checkoutEnabled, setCheckoutEnabled] = useState(false);
+
   const openLoginModal = () => {
     setLoginModal(true);
   };
@@ -72,12 +76,38 @@ const ordersummary = () => {
     }
   }, [calculatePrice]);
 
+  useEffect(() => {
+    if (calculatePrice() >= 500) {
+      setCheckoutEnabled(true);
+    } else {
+      setCheckoutEnabled(false);
+    }
+  }, [calculatePrice]);
+
+  const handleProceedToCheckout = () => {
+    if (!checkoutEnabled) {
+      toast.error("Order Amount should be greater than ₹500.", {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      // Proceed to Checkout logic here
+    }
+  };
+
   return (
     <>
       <div className="font-mont sm:w-1/4 sm:min-w-[275px] pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
-          className="border py-9 px-6 shadow-xl">
+          className="border py-9 px-6 shadow-xl"
+        >
           <p className="text-2xl  ">Order Summary</p>
 
           <div className="flex justify-between flex-col   mt-5 ">
@@ -119,45 +149,32 @@ const ordersummary = () => {
 
           {currentRoute === "/cart" && (
             <>
-              {/* <TextField
-                className="py-2"
-                variant="standard"
-                placeholder="Coupon Code"
-                sx={{
-                  width: "100%",
-                  border: 0,
-                  borderWidth: 0,
-                  boxSizing: "inherit",
-                  borderWidth: 1,
-                  height: "3rem",
-                  paddingLeft: 3,
-                  borderColor: "#E2E2E2",
-                  borderRadius: 9999,
-                  marginTop: 3,
-                }}
-                InputProps={{
-                  disableUnderline: "true",
-                  endAdornment: (
-                    <InputAdornment className="mr-3" position="end">
-                      <LocalOfferIcon />
-                    </InputAdornment>
-                  ),
-                }}
-              /> */}
               {user.data ? (
                 <>
-                  <Link href="/cart/checkout" className="text-white">
-                    <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor  py-3">
-                      Proceed To Checkout
-                    </div>
-                  </Link>
+                  {checkoutEnabled ? (
+                    <Link href="/cart/checkout" className="text-white">
+                      <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor  py-3">
+                        Proceed To Checkout
+                      </div>
+                    </Link>
+                  ) : (
+                    <Link href="/cart" className="text-white">
+                      <button
+                        onClick={handleProceedToCheckout}
+                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3"
+                      >
+                        Proceed To Checkout
+                      </button>
+                    </Link>
+                  )}
                 </>
               ) : (
                 <>
                   <div
                     onClick={openLoginModal}
                     className="text-white"
-                    style={{ color: colorMe, fontWeight: "bold" }}>
+                    style={{ color: colorMe, fontWeight: "bold" }}
+                  >
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
                       Proceed To Checkout
                     </div>
