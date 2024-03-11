@@ -11,9 +11,10 @@ const BestSelling = () => {
   const allProducts = useQuery(Get_All_Products);
   const BestSellingData = allProducts?.data?.allProducts.filter((prod) => {
     if (prod?.category?.includes("BestSelling")) {
-      return prod;
+      return prod.isActive;
     }
   });
+  console.log("BestSellingData", BestSellingData);
   return (
     <>
       <div className="border-t mx-16 xl:mt-6 2xl:mt-10 2xl:mx-20"></div>
@@ -33,7 +34,8 @@ const BestSelling = () => {
                     style={{
                       background: item?.metaData[0]?.bgColor,
                     }}
-                    className="flex items-center  justify-center rounded-xl p-4 w-full">
+                    className="flex items-center  justify-center rounded-xl p-4 w-full"
+                  >
                     {!item?.Flipkart && !item?.Amazon ? (
                       <div className=" absolute z-10  m-2 justify-items-center flex items-center">
                         <img
@@ -51,7 +53,8 @@ const BestSelling = () => {
                     <div
                       className={`${
                         !item?.Flipkart && !item?.Amazon && " opacity-50"
-                      }  flex items-center justify-center `}>
+                      }  flex items-center justify-center `}
+                    >
                       {!item?.Flipkart && !item?.Amazon ? (
                         <img
                           className="relative w-48 2xl:w-64"

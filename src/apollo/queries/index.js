@@ -110,6 +110,7 @@ query AllProducts {
       metaData
       title
       category
+      isActive
       Amazon
       Flipkart
       productImageUrl

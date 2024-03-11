@@ -6,7 +6,7 @@ import Link from "next/link";
 const NonvegTadka = () => {
   const NonvegTadkaData = ShopData.map((prod) => {
     if (prod.category === "NonvegTadka") {
-      return prod;
+      return prod.isActive;
     }
   });
 

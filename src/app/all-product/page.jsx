@@ -12,10 +12,21 @@ import { Get_All_Products } from "@/apollo/queries";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { GetUser } from "@/apollo/queries";
 
 const page = ({}) => {
   const { loading, error, data, refetch } = useQuery(Get_All_Products);
   const allProducts = data?.allProducts;
+  const router = useRouter();
+  const user = useQuery(GetUser);
+  const Role = user?.data?.me?.role;
+  console.log("Role", Role);
+
+  const isAdmin = Role === "ADMIN";
+  if (!isAdmin) {
+    router.push("/");
+  }
 
   useEffect(() => {
     refetch();
@@ -80,10 +91,11 @@ const page = ({}) => {
                               stock: list?.stock,
                               imageUrl: list?.imageUrl,
                             },
-                          }}>
+                          }}
+                        >
                           {/* <Link
                           href={`/all-product/variants/${list.id}/${list.weight}/${list?.price}/${list.stock}`}> */}
-                          <button className="bg-blue-500 text-white px-4 py-2 rounded">
+                          <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                             Edit Variant Details
                           </button>
                         </Link>
@@ -92,14 +104,14 @@ const page = ({}) => {
                   </TableCell>
                   <TableCell>
                     <Link href={`/all-product/${item.productUrl}`}>
-                      <button className="bg-blue-500 text-white px-4 py-2 rounded">
+                      <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                         Edit / View Product Details
                       </button>
                     </Link>
                   </TableCell>
                   <TableCell>
                     <Link href={`/all-product/addVariant/${item.productUrl}`}>
-                      <button className="bg-blue-500 text-white px-4 py-2 rounded">
+                      <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                         Add Variant
                       </button>
                     </Link>

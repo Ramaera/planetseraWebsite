@@ -82,6 +82,20 @@ const AddVariant = () => {
   console.log("pecificProduct?.id", specificProduct?.id);
   const handleCreateProductVariant = async (e) => {
     e.preventDefault();
+    const { price, stock } = product;
+
+    // Check if any of the required fields are blank
+    if (!price || !stock) {
+      alert("Please fill in all required fields (Price and Stock).");
+      return;
+    }
+
+    // Check if stock is greater than or equal to 1
+    if (parseInt(stock) < 1) {
+      alert("Stock must be greater than or equal to 1.");
+      return;
+    }
+
     console.log("product", product);
     try {
       const resp = await createProductVariants({
@@ -92,8 +106,8 @@ const AddVariant = () => {
             product?.backImage,
             product?.contentImage,
           ],
-          price: parseFloat(product?.price),
-          stock: parseInt(product?.stock),
+          price: parseFloat(price),
+          stock: parseInt(stock),
           weight: product?.weight,
         },
       });
@@ -101,7 +115,6 @@ const AddVariant = () => {
       if (resp.data) {
         route.push("/all-product");
       }
-      // console.log("resp", resp);
     } catch (err) {
       console.log("err", err.message);
     }
@@ -200,7 +213,8 @@ const AddVariant = () => {
             <button
               type="submit"
               onClick={handleCreateProductVariant}
-              className="bg-blue-500 text-white px-4 py-2 rounded">
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
               Add New Variant
             </button>
           </div>
