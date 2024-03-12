@@ -96,7 +96,7 @@ const page = ({}) => {
                           {/* <Link
                           href={`/all-product/variants/${list.id}/${list.weight}/${list?.price}/${list.stock}`}> */}
                           <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
-                            Edit Variant Details
+                            Update Variant Details
                           </button>
                         </Link>
                       </div>
@@ -105,7 +105,7 @@ const page = ({}) => {
                   <TableCell>
                     <Link href={`/all-product/${item.productUrl}`}>
                       <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
-                        Edit / View Product Details
+                        Update / View Product Details
                       </button>
                     </Link>
                   </TableCell>

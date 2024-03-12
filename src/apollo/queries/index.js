@@ -122,7 +122,7 @@ query AllProducts {
           price
           stock
           weight
-          
+          isVariantActive
       }
   }
 }
@@ -406,11 +406,12 @@ export const UPDATE_PRODUCT_VARIANTS = gql(`
 mutation UpdateProductVariant(
   $id: Int!,
   $imageUrl:[String!]!,
+  $isVariantActive:Boolean!
   $price: Float!,
   $stock: Int!,
   $weight: String!) {
   updateProductVariant(
-      data: { id: $id, imageUrl: $imageUrl, price: $price, stock:$stock, weight: $weight }
+      data: { id: $id, imageUrl: $imageUrl,isVariantActive:$isVariantActive price: $price, stock:$stock, weight: $weight }
   ) {
       id
       imageUrl
@@ -445,6 +446,7 @@ export const UPDATE_PRODUCT_DETAILS = gql(`
 mutation UpdateProductDetails(
   $id: String!, 
   $Amazon: Boolean!,
+  $isActive:Boolean!,
   $Flipkart: Boolean!,
   $category: [String!]!,
   $description: String!,
@@ -457,6 +459,7 @@ mutation UpdateProductDetails(
   updateProductDetails(
       data: {
           Amazon: $Amazon
+          isActive:$isActive
           Flipkart: $Flipkart
           category: $category
           description: $description

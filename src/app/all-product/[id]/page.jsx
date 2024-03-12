@@ -45,6 +45,7 @@ const page = () => {
     faqs: specificProduct?.metaData[0]?.faqs || [{ question: "", answer: "" }],
     backgroundImage: specificProduct?.metaData[0]?.productBg,
     frontImage: specificProduct?.productImageUrl,
+    isActive: specificProduct?.isActive === "true",
   });
 
   console.log("product?.category", product?.category);
@@ -107,7 +108,8 @@ const page = () => {
       faqs[index] = { ...faqs[index], [name]: value };
       updatedProduct.faqs = faqs;
     } else {
-      updatedProduct[name] = value;
+      // Apply the condition for "isVariantActive" name
+      updatedProduct[name] = name === "isActive" ? value === "true" : value;
 
       if (name === "name") {
         updatedProduct.productUrl = value.toLowerCase().replace(/\s+/g, "-");
@@ -168,6 +170,7 @@ const page = () => {
           productUrl: product?.productUrl,
           title: product?.name,
           type: product?.productType,
+          isActive: product?.isActive,
           metaData: {
             amazon50: product?.amazon50gLink,
             amazon100: product?.amazon100gLink,
@@ -209,7 +212,21 @@ const page = () => {
       <NavItem page={"cart"} />
 
       <div className="px-10 pt-24 max-w-5xl mx-auto">
-        <h2 className="text-4xl font-bold mb-4">Update Product</h2>
+        <div className="flex justify-between">
+          <h2 className="text-4xl font-bold mb-4">Update Product</h2>
+          <div className="mb-2">
+            <label className="block mb-1 font-semibold">Activate Product</label>
+            <select
+              name="isActive"
+              value={product.isActive}
+              onChange={handleChange}
+              className="w-full border rounded px-4 py-2"
+            >
+              <option value="true">Active</option>
+              <option value="false">Inactive</option>
+            </select>
+          </div>
+        </div>
         <form onSubmit={handleUpdateProductDetails}>
           <div className="bg-slate-100 p-4">
             <div className="grid grid-cols-2 gap-4">
@@ -239,7 +256,8 @@ const page = () => {
                   name="productType"
                   value={product.productType}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2">
+                  className="w-full border rounded px-4 py-2"
+                >
                   <option value="">Select Product Type</option>
                   <option value="blended">Blended</option>
                   <option value="grounded">Grounded</option>
@@ -250,7 +268,8 @@ const page = () => {
                 <div className="relative">
                   <div
                     className="w-full border rounded px-4 py-2 cursor-pointer bg-white"
-                    onClick={toggleDropdown}>
+                    onClick={toggleDropdown}
+                  >
                     {product?.category?.length === 0
                       ? "Select Product Category"
                       : product?.category
@@ -271,7 +290,8 @@ const page = () => {
                               ? "bg-gray-200"
                               : ""
                           }`}
-                          onClick={() => handleSelectOption(option)}>
+                          onClick={() => handleSelectOption(option)}
+                        >
                           {option}
                         </div>
                       ))}
@@ -286,7 +306,8 @@ const page = () => {
                   name="description"
                   value={product.description}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"></textarea>
+                  className="w-full border rounded px-4 py-2"
+                ></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Usage</label>
@@ -294,7 +315,8 @@ const page = () => {
                   name="usage"
                   value={product.usage}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"></textarea>
+                  className="w-full border rounded px-4 py-2"
+                ></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Ingredients</label>
@@ -302,7 +324,8 @@ const page = () => {
                   name="ingredients"
                   value={product.ingredients}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"></textarea>
+                  className="w-full border rounded px-4 py-2"
+                ></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Health benefits</label>
@@ -310,7 +333,8 @@ const page = () => {
                   name="healthBenefits"
                   value={product.healthBenefits}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"></textarea>
+                  className="w-full border rounded px-4 py-2"
+                ></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Product Background Image</label>
@@ -564,7 +588,8 @@ const page = () => {
                     <button
                       type="button"
                       onClick={() => handleRemoveFAQ(index)}
-                      className="bg-red-500 text-white px-4 py-2 rounded">
+                      className="bg-red-500 text-white px-4 py-2 rounded"
+                    >
                       Remove
                     </button>
                   </div>
@@ -575,7 +600,8 @@ const page = () => {
               <button
                 type="button"
                 onClick={handleAddFAQ}
-                className="bg-green-500 text-white px-4 py-2 rounded">
+                className="bg-green-500 text-white px-4 py-2 rounded"
+              >
                 Add More FAQ
               </button>
             </div>
@@ -583,7 +609,8 @@ const page = () => {
           <div className="col-span-2 my-3">
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded">
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
               Update Product Detail
             </button>
           </div>
