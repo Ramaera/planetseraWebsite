@@ -51,6 +51,7 @@ const ProductDetailsInfo = () => {
   const specificProduct = data?.allProducts.find(
     (prod) => prod.productUrl === id
   );
+  console.log("specificProduct", specificProduct);
 
   // const [defaultSelectedButton, setDefaultSelectedButton] = useState(50);
   // const [activeImg, setActiveImage] = useState(specificProduct?.ProductMasala);
@@ -221,9 +222,11 @@ const ProductDetailsInfo = () => {
                   <div>
                     {specificProduct?.ProductsVariant?.length > 0 &&
                       [...specificProduct?.ProductsVariant]
-                        ?.sort(compareWeight)
+                        .filter((variantData) => variantData.isVariantActive) // Filter out inactive variants
+                        .sort(compareWeight)
                         .map((variantData) => (
                           <button
+                            key={variantData.weight} // Adding a unique key for each button
                             style={
                               selectedButton === variantData.weight
                                 ? {

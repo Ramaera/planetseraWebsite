@@ -2,12 +2,10 @@
 import React, { useState } from "react";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
-import { Get_All_Products } from "@/apollo/queries";
 import { useMutation, useQuery } from "@apollo/client";
 import { useParams, useRouter } from "next/navigation";
 import { UPDATE_PRODUCT_VARIANTS } from "@/apollo/queries";
-import AddVariant from "../../addVariant/[id]/page";
-import Link from "next/link";
+
 import handleImageUpload from "@/utils/upload";
 
 const Page = ({ searchParams }) => {
@@ -22,13 +20,15 @@ const Page = ({ searchParams }) => {
     mainImage: searchParams?.imageUrl[0] || "",
     backImage: searchParams?.imageUrl[1] || "",
     contentImage: searchParams?.imageUrl[2] || "",
+    isVariantActive: searchParams.isVariantActive === "true",
   });
 
-  const handleChange = (e, index) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    const updatedProduct = { ...product };
-    updatedProduct[name] = value;
-    setProduct(updatedProduct);
+    setProduct((prevProduct) => ({
+      ...prevProduct,
+      [name]: name === "isVariantActive" ? value === "true" : value,
+    }));
   };
 
   const handleUpload = async (productName, file) => {
@@ -83,6 +83,7 @@ const Page = ({ searchParams }) => {
           price: parseFloat(product?.price),
           stock: parseInt(product?.stock),
           weight: product?.weight,
+          isVariantActive: product?.isVariantActive,
         },
       });
 
@@ -103,7 +104,22 @@ const Page = ({ searchParams }) => {
       <NavItem page={"cart"} />
 
       <div className="px-10 pt-24 max-w-5xl mx-auto w-full h-screen">
-        <h2 className="text-4xl font-bold mb-4">Edit Variant Details</h2>
+        <div className="flex justify-between">
+          <h2 className="text-4xl font-bold mb-4">Update Variant Details</h2>
+          <div className="">
+            <label className="block mb-1 font-semibold">Activate Variant</label>
+            <select
+              name="isVariantActive"
+              value={product.isVariantActive}
+              onChange={handleChange}
+              className="w-full border rounded px-4 py-2"
+            >
+              <option value="true">Active</option>
+              <option value="false">Inactive</option>
+            </select>
+          </div>
+        </div>
+
         <div className="bg-slate-100 p-4 mt-5 ">
           <div className="grid grid-cols-2 gap-4">
             <div className="mb-4">
@@ -203,7 +219,8 @@ const Page = ({ searchParams }) => {
             <button
               type="submit"
               onClick={handleCreateProductVariant}
-              className="bg-blue-500 text-white px-4 py-2 rounded">
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
               Update Variant Detail
             </button>
           </div>
