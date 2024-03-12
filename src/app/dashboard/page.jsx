@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import DashboardLayout from "./dashboardLyout/dashboardLayout";
+import DashboardMain from "./dashboardMain/dashboardMain";
 import { useQuery } from "@apollo/client";
 import { GetUser } from "@/apollo/queries";
 import { useRouter } from "next/navigation";
@@ -18,7 +18,7 @@ const Dashboard = ({ userRole }) => {
 
   return (
     <>
-      <DashboardLayout />
+      <DashboardMain />
     </>
   );
 };

@@ -34,17 +34,12 @@ const page = ({}) => {
 
   return (
     <div>
-      <div className="navMobile ">
-        <NavigationMobile page={"received-order"} />
-      </div>
-
-      <NavItem page={"received-order"} />
-      <Container maxWidth={false} sx={{ padding: 5 }} className="min-h-screen">
+      <Container sx={{ padding: 5 }} className="min-h-screen ">
         <Typography variant="h4" sx={{ mt: 7 }}>
           All Product
         </Typography>
-
-        <TableContainer>
+        {/* <div > */}
+        <TableContainer style={{ overflowX: "auto", borderWidth: 2 }}>
           <Table>
             <TableHead>
               <TableRow>
@@ -76,13 +71,13 @@ const page = ({}) => {
                   {/* <TableCell>{item.category}</TableCell> */}
                   <TableCell>
                     {item?.ProductsVariant?.map((list) => (
-                      <div className="flex gap-1 my-1 items-center justify-between">
+                      <div className="flex gap-1 my-1 items-center justify-between min-w-[400px]">
                         <p>Weight: {list.weight}g</p>
                         <p>Price: {list.price}</p>
                         <p>Stock: {list.stock}</p>
                         <Link
                           href={{
-                            pathname: `/all-product/variants/${list.id}`,
+                            pathname: `/dashboard/all-product/variants/${list.id}`,
                             query: {
                               title: item?.title,
                               id: list?.id,
@@ -91,10 +86,7 @@ const page = ({}) => {
                               stock: list?.stock,
                               imageUrl: list?.imageUrl,
                             },
-                          }}
-                        >
-                          {/* <Link
-                          href={`/all-product/variants/${list.id}/${list.weight}/${list?.price}/${list.stock}`}> */}
+                          }}>
                           <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                             Edit Variant Details
                           </button>
@@ -103,14 +95,15 @@ const page = ({}) => {
                     ))}
                   </TableCell>
                   <TableCell>
-                    <Link href={`/all-product/${item.productUrl}`}>
+                    <Link href={`/dashboard/all-product/${item.productUrl}`}>
                       <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                         Edit / View Product Details
                       </button>
                     </Link>
                   </TableCell>
                   <TableCell>
-                    <Link href={`/all-product/addVariant/${item.productUrl}`}>
+                    <Link
+                      href={`/dashboard/all-product/addVariant/${item.productUrl}`}>
                       <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                         Add Variant
                       </button>
@@ -121,6 +114,7 @@ const page = ({}) => {
             </TableBody>
           </Table>
         </TableContainer>
+        {/* </div> */}
       </Container>
     </div>
   );
