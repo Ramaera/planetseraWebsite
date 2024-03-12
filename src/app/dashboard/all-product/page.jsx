@@ -77,7 +77,7 @@ const page = ({}) => {
                         <p>Stock: {list.stock}</p>
                         <Link
                           href={{
-                            pathname: `/dashboard/all-product/variants/${list.id}`,
+                            pathname: `/dashboard/all-product/variants/${list?.id}`,
                             query: {
                               title: item?.title,
                               id: list?.id,
