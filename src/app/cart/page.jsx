@@ -40,13 +40,13 @@ const Page = () => {
       (list) => list?.ProductsVariant
     ) || [];
 
-  console.log("allProducts", allProducts);
+  // console.log("allProducts", allProducts);
 
   const CartData = useSelector((state) => state.cart.items);
 
   const specificProduct = allProducts.find((prod) => prod.id === CartData?.id);
 
-  console.log("specificProduct", specificProduct);
+  // console.log("specificProduct", specificProduct);
 
   const cartItemsQuantity = CartData.reduce(
     (total, item) => total + item?.qty,
@@ -83,7 +83,7 @@ const Page = () => {
     const productInCart = allProducts.find(
       (prod) => prod.id === currentItem.productVariantId
     );
-    console.log("productInCart", productInCart);
+    // console.log("productInCart", productInCart);
 
     if (currentItem.qty + 1 > productInCart?.stock) {
       toast.error("Quantity cannot be more than available stock", {

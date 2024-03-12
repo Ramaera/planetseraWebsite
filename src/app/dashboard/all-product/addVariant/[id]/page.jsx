@@ -79,7 +79,7 @@ const AddVariant = () => {
     setProduct({ ...product, [imageType]: imageName });
   };
 
-  console.log("pecificProduct?.id", specificProduct?.id);
+  // console.log("pecificProduct?.id", specificProduct?.id);
   const handleCreateProductVariant = async (e) => {
     e.preventDefault();
     const { price, stock } = product;

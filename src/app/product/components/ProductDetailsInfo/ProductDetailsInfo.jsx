@@ -28,7 +28,7 @@ const ProductDetailsInfo = () => {
   // const Stock = 3;
   const user = useSelector((state) => state?.user);
   const CartData = useSelector((state) => state.cart.items);
-  console.log("CartData", CartData);
+  // console.log("CartData", CartData);
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const [addToCartServer] = useMutation(Add_To_Cart);
@@ -51,7 +51,7 @@ const ProductDetailsInfo = () => {
   const specificProduct = data?.allProducts.find(
     (prod) => prod.productUrl === id
   );
-  console.log("specificProduct", specificProduct);
+  // console.log("specificProduct", specificProduct);
 
   // const [defaultSelectedButton, setDefaultSelectedButton] = useState(50);
   // const [activeImg, setActiveImage] = useState(specificProduct?.ProductMasala);

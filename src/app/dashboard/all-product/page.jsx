@@ -21,7 +21,7 @@ const page = ({}) => {
   const router = useRouter();
   const user = useQuery(GetUser);
   const Role = user?.data?.me?.role;
-  console.log("Role", Role);
+  // console.log("Role", Role);
 
   const isAdmin = Role === "ADMIN";
   if (!isAdmin) {
@@ -86,7 +86,8 @@ const page = ({}) => {
                               stock: list?.stock,
                               imageUrl: list?.imageUrl,
                             },
-                          }}>
+                          }}
+                        >
                           <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                             Update Variant Details
                           </button>
@@ -103,7 +104,8 @@ const page = ({}) => {
                   </TableCell>
                   <TableCell>
                     <Link
-                      href={`/dashboard/all-product/addVariant/${item.productUrl}`}>
+                      href={`/dashboard/all-product/addVariant/${item.productUrl}`}
+                    >
                       <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                         Add Variant
                       </button>

@@ -13,7 +13,7 @@ const AddProduct = () => {
   const router = useRouter();
   const user = useQuery(GetUser);
   const Role = user?.data?.me?.role;
-  console.log("Role", Role);
+  // console.log("Role", Role);
 
   const isAdmin = Role === "ADMIN";
   if (!isAdmin) {
@@ -192,7 +192,7 @@ const AddProduct = () => {
     }
   };
 
-  console.log("product?.backgroundImage", product?.backgroundImage);
+  // console.log("product?.backgroundImage", product?.backgroundImage);
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("product", product);
@@ -236,7 +236,8 @@ const AddProduct = () => {
                   name="productType"
                   value={product.productType}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2">
+                  className="w-full border rounded px-4 py-2"
+                >
                   <option value="">Select Product Type</option>
                   <option value="blended">Blended</option>
                   <option value="grounded">Grounded</option>
@@ -247,7 +248,8 @@ const AddProduct = () => {
                 <div className="relative">
                   <div
                     className="w-full border rounded px-4 py-2 cursor-pointer bg-white"
-                    onClick={toggleDropdown}>
+                    onClick={toggleDropdown}
+                  >
                     {product.category.length === 0
                       ? "Select Product Category"
                       : product.category.join(", ")}
@@ -262,7 +264,8 @@ const AddProduct = () => {
                               ? "bg-gray-200"
                               : ""
                           }`}
-                          onClick={() => handleSelectOption(option)}>
+                          onClick={() => handleSelectOption(option)}
+                        >
                           {option}
                         </div>
                       ))}
@@ -277,7 +280,8 @@ const AddProduct = () => {
                   name="description"
                   value={product.description}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"></textarea>
+                  className="w-full border rounded px-4 py-2"
+                ></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Usage</label>
@@ -285,7 +289,8 @@ const AddProduct = () => {
                   name="usage"
                   value={product.usage}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"></textarea>
+                  className="w-full border rounded px-4 py-2"
+                ></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Ingredients</label>
@@ -293,7 +298,8 @@ const AddProduct = () => {
                   name="ingredients"
                   value={product.ingredients}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"></textarea>
+                  className="w-full border rounded px-4 py-2"
+                ></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Health benefits</label>
@@ -301,7 +307,8 @@ const AddProduct = () => {
                   name="healthBenefits"
                   value={product.healthBenefits}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"></textarea>
+                  className="w-full border rounded px-4 py-2"
+                ></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Product Background Image</label>
@@ -542,7 +549,8 @@ const AddProduct = () => {
                     <button
                       type="button"
                       onClick={() => handleRemoveFAQ(index)}
-                      className="bg-red-500 text-white px-4 py-2 rounded">
+                      className="bg-red-500 text-white px-4 py-2 rounded"
+                    >
                       Remove
                     </button>
                   </div>
@@ -553,7 +561,8 @@ const AddProduct = () => {
               <button
                 type="button"
                 onClick={handleAddFAQ}
-                className="bg-green-500 text-white px-4 py-2 rounded">
+                className="bg-green-500 text-white px-4 py-2 rounded"
+              >
                 Add More FAQ
               </button>
             </div>
@@ -561,7 +570,8 @@ const AddProduct = () => {
           <div className="col-span-2 my-3">
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded">
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
               Add Product
             </button>
           </div>

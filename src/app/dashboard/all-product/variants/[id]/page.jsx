@@ -70,7 +70,7 @@ const Page = ({ searchParams }) => {
 
   const handleCreateProductVariant = async (e) => {
     e.preventDefault();
-    console.log("product", product);
+    // console.log("product", product);
     try {
       const resp = await updateProductVariants({
         variables: {
@@ -112,7 +112,8 @@ const Page = ({ searchParams }) => {
               name="isVariantActive"
               value={product.isVariantActive}
               onChange={handleChange}
-              className="w-full border rounded px-4 py-2">
+              className="w-full border rounded px-4 py-2"
+            >
               <option value="true">Active</option>
               <option value="false">Inactive</option>
             </select>
@@ -218,7 +219,8 @@ const Page = ({ searchParams }) => {
             <button
               type="submit"
               onClick={handleCreateProductVariant}
-              className="bg-blue-500 text-white px-4 py-2 rounded">
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
               Update Variant Detail
             </button>
           </div>

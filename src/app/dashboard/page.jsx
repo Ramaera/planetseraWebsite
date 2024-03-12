@@ -5,11 +5,11 @@ import { useQuery } from "@apollo/client";
 import { GetUser } from "@/apollo/queries";
 import { useRouter } from "next/navigation";
 
-const Dashboard = ({ userRole }) => {
+const Dashboard = () => {
   const router = useRouter();
   const user = useQuery(GetUser);
   const Role = user?.data?.me?.role;
-  console.log("Role", Role);
+  // console.log("Role", Role);
 
   const isAdmin = Role === "ADMIN";
   if (!isAdmin) {

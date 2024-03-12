@@ -19,7 +19,7 @@ const Checkout = () => {
   const cartTotalValue = useSelector((state) => state.cart.cartTotalValue);
   const shippingValue = useSelector((state) => state.cart.shippingValue);
   const totalOrderAmount = cartTotalValue + shippingValue;
-  console.log("CartData", totalOrderAmount);
+  // console.log("CartData", totalOrderAmount);
 
   useEffect(() => {
     if (CartData.length <= 0 || cartTotalValue < 500) {
