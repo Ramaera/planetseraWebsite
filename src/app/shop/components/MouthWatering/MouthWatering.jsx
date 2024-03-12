@@ -41,8 +41,7 @@ const MouthWatering = () => {
                       style={{
                         background: item?.metaData[0]?.bgColor,
                       }}
-                      className="relative flex items-center  justify-center rounded-xl p-4 w-full"
-                    >
+                      className="relative flex items-center  justify-center rounded-xl p-4 w-full">
                       {!item?.Flipkart && !item?.Amazon ? (
                         <div className="top-0 absolute z-10  justify-items-center flex items-center">
                           <img
@@ -60,8 +59,7 @@ const MouthWatering = () => {
                       <div
                         className={`${
                           !item?.Flipkart && !item?.Amazon && " opacity-50"
-                        }  flex items-center justify-center `}
-                      >
+                        }  flex items-center justify-center `}>
                         {!item?.Flipkart && !item?.Amazon ? (
                           <img
                             className="relative w-48 2xl:w-64"

@@ -45,18 +45,15 @@ const page = () => {
     faqs: specificProduct?.metaData[0]?.faqs || [{ question: "", answer: "" }],
     backgroundImage: specificProduct?.metaData[0]?.productBg,
     frontImage: specificProduct?.productImageUrl,
-    isActive: specificProduct?.isActive === "true",
+    isActive: specificProduct?.isActive,
   });
-
-  console.log("product?.category", product?.category);
 
   const options = [
     "Coming Soon",
     "Mouth Watering",
     "Kitchen Spices",
-    "Weekend Ka Tadka",
-    "Upcoming Products",
-    "Best Seller",
+    "Weekand Tadka",
+    "Best Selling",
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -68,6 +65,7 @@ const page = () => {
   const handleSelectOption = (option) => {
     const filterOption = option.trim();
     const filterOptionWithoutSpaces = filterOption.replace(/\s+/g, "");
+
     // Check if the option already exists in the category
     const existsIndex = product.category.findIndex((item) => {
       const itemWithoutSpaces = item.trim().replace(/\s+/g, "");
@@ -88,12 +86,11 @@ const page = () => {
       });
     } else {
       // Add it only if it's not in specificProduct?.category
-      if (!specificProduct?.category.includes(option)) {
-        setProduct({
-          ...product,
-          category: [...product.category, filterOption],
-        });
-      }
+      const updatedCategory = [...product.category, filterOptionWithoutSpaces];
+      setProduct({
+        ...product,
+        category: updatedCategory,
+      });
     }
   };
 
@@ -192,7 +189,7 @@ const page = () => {
         },
       });
       if (resp.data) {
-        route.push("/all-product");
+        route.push("/dashboard/all-product");
       }
       // console.log("resp", resp);
     } catch (err) {
@@ -220,8 +217,7 @@ const page = () => {
               name="isActive"
               value={product.isActive}
               onChange={handleChange}
-              className="w-full border rounded px-4 py-2"
-            >
+              className="w-full border rounded px-4 py-2">
               <option value="true">Active</option>
               <option value="false">Inactive</option>
             </select>
@@ -256,8 +252,7 @@ const page = () => {
                   name="productType"
                   value={product.productType}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"
-                >
+                  className="w-full border rounded px-4 py-2">
                   <option value="">Select Product Type</option>
                   <option value="blended">Blended</option>
                   <option value="grounded">Grounded</option>
@@ -268,14 +263,20 @@ const page = () => {
                 <div className="relative">
                   <div
                     className="w-full border rounded px-4 py-2 cursor-pointer bg-white"
-                    onClick={toggleDropdown}
-                  >
-                    {product?.category?.length === 0
-                      ? "Select Product Category"
-                      : product?.category
-                          ?.map((cat) => cat.replace(/([A-Z])/g, " $1").trim())
-                          .join(", ")}
+                    onClick={toggleDropdown}>
+                    {product?.category?.length === 0 ? (
+                      "Select Product Category"
+                    ) : (
+                      <>
+                        {product?.category?.map((cat) => (
+                          <div key={cat}>
+                            {cat.replace(/([A-Z])/g, " $1").trim()}
+                          </div>
+                        ))}
+                      </>
+                    )}
                   </div>
+
                   {isOpen && (
                     <div className="absolute bg-white border rounded mt-1 w-full shadow-md">
                       {options.map((option, index) => (
@@ -290,8 +291,7 @@ const page = () => {
                               ? "bg-gray-200"
                               : ""
                           }`}
-                          onClick={() => handleSelectOption(option)}
-                        >
+                          onClick={() => handleSelectOption(option)}>
                           {option}
                         </div>
                       ))}
@@ -306,8 +306,7 @@ const page = () => {
                   name="description"
                   value={product.description}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"
-                ></textarea>
+                  className="w-full border rounded px-4 py-2"></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Usage</label>
@@ -315,8 +314,7 @@ const page = () => {
                   name="usage"
                   value={product.usage}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"
-                ></textarea>
+                  className="w-full border rounded px-4 py-2"></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Ingredients</label>
@@ -324,8 +322,7 @@ const page = () => {
                   name="ingredients"
                   value={product.ingredients}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"
-                ></textarea>
+                  className="w-full border rounded px-4 py-2"></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Health benefits</label>
@@ -333,8 +330,7 @@ const page = () => {
                   name="healthBenefits"
                   value={product.healthBenefits}
                   onChange={handleChange}
-                  className="w-full border rounded px-4 py-2"
-                ></textarea>
+                  className="w-full border rounded px-4 py-2"></textarea>
               </div>
               <div className="mb-4">
                 <label className="block mb-1">Product Background Image</label>
@@ -588,8 +584,7 @@ const page = () => {
                     <button
                       type="button"
                       onClick={() => handleRemoveFAQ(index)}
-                      className="bg-red-500 text-white px-4 py-2 rounded"
-                    >
+                      className="bg-red-500 text-white px-4 py-2 rounded">
                       Remove
                     </button>
                   </div>
@@ -600,8 +595,7 @@ const page = () => {
               <button
                 type="button"
                 onClick={handleAddFAQ}
-                className="bg-green-500 text-white px-4 py-2 rounded"
-              >
+                className="bg-green-500 text-white px-4 py-2 rounded">
                 Add More FAQ
               </button>
             </div>
@@ -609,8 +603,7 @@ const page = () => {
           <div className="col-span-2 my-3">
             <button
               type="submit"
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-            >
+              className="bg-blue-500 text-white px-4 py-2 rounded">
               Update Product Detail
             </button>
           </div>

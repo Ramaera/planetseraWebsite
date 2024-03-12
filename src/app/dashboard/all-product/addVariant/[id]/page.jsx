@@ -113,7 +113,7 @@ const AddVariant = () => {
       });
 
       if (resp.data) {
-        route.push("/all-product");
+        route.push("/dashboard/all-product");
       }
     } catch (err) {
       console.log("err", err.message);
@@ -213,8 +213,7 @@ const AddVariant = () => {
             <button
               type="submit"
               onClick={handleCreateProductVariant}
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-            >
+              className="bg-blue-500 text-white px-4 py-2 rounded">
               Add New Variant
             </button>
           </div>
