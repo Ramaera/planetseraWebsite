@@ -14,10 +14,12 @@ const RelatedProducts = () => {
         {allProducts?.data?.allProducts?.map((product) => {
           if (
             product.category.includes("ComingSoon") ||
-            currentRoute === `/product/${product.productUrl}`
+            currentRoute === `/product/${product.productUrl}` ||
+            product.isActive === false
           ) {
             return null;
           }
+
           return (
             <div className="w-2/4 md:w-1/4 p-1 md:p-5" key={product.id}>
               <div className="border-gray-200 border-[1px] rounded-xl p-2 sm:px-4 sm:pt-4 pb-1 2xl:px-8 2xl:pt-8">

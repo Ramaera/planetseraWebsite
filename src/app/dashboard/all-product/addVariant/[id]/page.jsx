@@ -89,6 +89,10 @@ const AddVariant = () => {
       alert("Please fill in all required fields (Price and Stock).");
       return;
     }
+    if (price < 0) {
+      alert("Price cannot be negative.");
+      return;
+    }
 
     // Check if stock is greater than or equal to 1
     if (parseInt(stock) < 1) {
@@ -213,7 +217,8 @@ const AddVariant = () => {
             <button
               type="submit"
               onClick={handleCreateProductVariant}
-              className="bg-blue-500 text-white px-4 py-2 rounded">
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
               Add New Variant
             </button>
           </div>

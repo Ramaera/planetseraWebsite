@@ -25,7 +25,7 @@ import { Get_BUYER } from "@/apollo/queries";
 import Login from "@/components/Login";
 
 const ProductDetailsInfo = () => {
-  const Stock = 3;
+  // const Stock = 3;
   const user = useSelector((state) => state?.user);
   const CartData = useSelector((state) => state.cart.items);
   console.log("CartData", CartData);
@@ -69,7 +69,7 @@ const ProductDetailsInfo = () => {
   };
 
   const handleAddToCart = async () => {
-    if (quantity > Stock) {
+    if (quantity > specificVariant?.stock) {
       toast.error(
         "Oops! You can't add more quantity than the available stock",
         {
@@ -269,7 +269,7 @@ const ProductDetailsInfo = () => {
                     </button>
                   </div>
 
-                  {Stock > 0 ? (
+                  {specificVariant?.stock > 0 ? (
                     <BuynowBtn
                       onClick={handleAddToCart}
                       link="#"
@@ -302,7 +302,11 @@ const ProductDetailsInfo = () => {
                   <ToastContainer />
                 </div>
                 <h6>
-                  {Stock > 0 ? `Available Stock : ${Stock}` : "Out Of Stock"}
+                  <h6>
+                    {specificVariant && specificVariant.stock > 0
+                      ? `Available Stock : ${specificVariant.stock}`
+                      : "Out Of Stock"}
+                  </h6>
                 </h6>
                 <p className="mt-6 font-base text-md text-slate-500">
                   You can also buy from here

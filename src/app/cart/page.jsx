@@ -36,11 +36,17 @@ const Page = () => {
   const allProductsQuery = useQuery(Get_All_Products);
   const user = useSelector((state) => state?.user);
   const allProducts =
-    allProductsQuery.data?.allProducts.flatMap(
+    allProductsQuery?.data?.allProducts.flatMap(
       (list) => list?.ProductsVariant
     ) || [];
 
+  console.log("allProducts", allProducts);
+
   const CartData = useSelector((state) => state.cart.items);
+
+  const specificProduct = allProducts.find((prod) => prod.id === CartData?.id);
+
+  console.log("specificProduct", specificProduct);
 
   const cartItemsQuantity = CartData.reduce(
     (total, item) => total + item?.qty,
@@ -74,8 +80,12 @@ const Page = () => {
 
   const handleIncrementQuantity = async (index, itemId, productVariantId) => {
     const currentItem = CartData.find((item) => item?.id === itemId);
+    const productInCart = allProducts.find(
+      (prod) => prod.id === currentItem.productVariantId
+    );
+    console.log("productInCart", productInCart);
 
-    if (currentItem.qty + 1 > Stock) {
+    if (currentItem.qty + 1 > productInCart?.stock) {
       toast.error("Quantity cannot be more than available stock", {
         position: "top-center",
         autoClose: 2500,
@@ -171,7 +181,8 @@ const Page = () => {
                                 item?.id,
                                 item.productVariantId
                               )
-                            }>
+                            }
+                          >
                             <HorizontalRuleIcon className="w-5 h-5" />
                           </button>
 
@@ -184,7 +195,8 @@ const Page = () => {
                                 item?.id,
                                 item.productVariantId
                               )
-                            }>
+                            }
+                          >
                             <AddIcon />
                           </button>
                         </div>
@@ -196,7 +208,8 @@ const Page = () => {
                                 item.productVariantId
                               )
                             }
-                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
+                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base"
+                          >
                             Remove
                           </button>
                           <ToastContainer />
