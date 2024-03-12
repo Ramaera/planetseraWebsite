@@ -9,7 +9,7 @@ import { UPDATE_PRODUCT_VARIANTS } from "@/apollo/queries";
 import handleImageUpload from "@/utils/upload";
 
 const Page = ({ searchParams }) => {
-  console.log("--", searchParams);
+  console.log("--", searchParams.id);
   const route = useRouter();
   const [updateProductVariants] = useMutation(UPDATE_PRODUCT_VARIANTS);
 
@@ -75,7 +75,7 @@ const Page = ({ searchParams }) => {
     try {
       const resp = await updateProductVariants({
         variables: {
-          id: parseInt(searchParams?.id),
+          id: parseInt(await searchParams?.id),
           imageUrl: [
             product?.mainImage,
             product?.backImage,
