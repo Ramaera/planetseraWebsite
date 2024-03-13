@@ -20,14 +20,15 @@ const Page = ({ searchParams }) => {
     mainImage: searchParams?.imageUrl[0] || "",
     backImage: searchParams?.imageUrl[1] || "",
     contentImage: searchParams?.imageUrl[2] || "",
-    isVariantActive: searchParams.isVariantActive === "true",
+    isVariantActive: searchParams?.isVariantActive,
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(name, value);
     setProduct((prevProduct) => ({
       ...prevProduct,
-      [name]: name === "isVariantActive" ? value === "true" : value,
+      [name]: value,
     }));
   };
 
@@ -68,7 +69,7 @@ const Page = ({ searchParams }) => {
     setProduct({ ...product, [imageType]: imageName });
   };
 
-  const handleCreateProductVariant = async (e) => {
+  const handleUpdateProductVariant = async (e) => {
     e.preventDefault();
     // console.log("product", product);
     try {
@@ -110,7 +111,7 @@ const Page = ({ searchParams }) => {
             <label className="block mb-1 font-semibold">Activate Variant</label>
             <select
               name="isVariantActive"
-              value={product.isVariantActive}
+              value={product?.isVariantActive}
               onChange={handleChange}
               className="w-full border rounded px-4 py-2"
             >
@@ -218,7 +219,7 @@ const Page = ({ searchParams }) => {
           <div className="col-span-2">
             <button
               type="submit"
-              onClick={handleCreateProductVariant}
+              onClick={handleUpdateProductVariant}
               className="bg-blue-500 text-white px-4 py-2 rounded"
             >
               Update Variant Detail

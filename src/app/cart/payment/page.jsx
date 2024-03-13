@@ -9,13 +9,14 @@ import BuynowBtn from "@/components/BuynowBtn";
 import { CREATE_ORDER, DELETE_CART } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/navigation";
-import { clearCart } from "@/state/slice/cartSlice";
-
+import { getDiscountedAmount } from "@/state/slice/cartSlice";
 const page = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const addressesData = useSelector((state) => state.address);
   const user = useSelector((state) => state?.user);
+  const discount = useSelector((state) => state.cart.getDiscountedAmount);
+  const TotalValue = useSelector((state) => state.cart.cartTotalValue);
 
   const [shipping, setShipping] = useState(100);
   const [createOrder] = useMutation(CREATE_ORDER);
@@ -28,6 +29,8 @@ const page = () => {
       buyerId: user?.data?.buyer?.id,
     },
   });
+
+  // console.log("getDiscountedAmount", discount);
 
   const allProductsQuery = useQuery(Get_All_Products);
 
@@ -43,12 +46,15 @@ const page = () => {
           (CartData.find((item) => item.productVariantId === prod.id)?.qty ||
             0) +
         total,
+
       0
     );
   };
 
+  console.log("calculatePrice", calculatePrice());
+
   const calculateTotalPrice = () => {
-    const totalPrice = calculatePrice();
+    const totalPrice = calculatePrice() - discount;
 
     if (totalPrice >= 200) {
       const totalPriceWithShipping = totalPrice + 50;
@@ -58,6 +64,7 @@ const page = () => {
       return totalPriceWithShipping;
     }
   };
+  console.log("calculateTotalPrice", calculateTotalPrice());
 
   const BuyerId = user?.data?.buyer?.id;
   const BuyerEmail = user?.data?.email;

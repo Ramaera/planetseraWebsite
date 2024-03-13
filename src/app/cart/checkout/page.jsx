@@ -12,14 +12,12 @@ import AddIcon from "@mui/icons-material/Add";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import { useRouter } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
+import { ToastContainer } from "react-toastify";
 
 const Checkout = () => {
   const router = useRouter();
   const CartData = useSelector((state) => state.cart.items);
   const cartTotalValue = useSelector((state) => state.cart.cartTotalValue);
-  const shippingValue = useSelector((state) => state.cart.shippingValue);
-  const totalOrderAmount = cartTotalValue + shippingValue;
-  // console.log("CartData", totalOrderAmount);
 
   useEffect(() => {
     if (CartData.length <= 0 || cartTotalValue < 500) {
@@ -46,6 +44,7 @@ const Checkout = () => {
             <Ordersummary />
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   );
