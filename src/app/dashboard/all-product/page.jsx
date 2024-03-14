@@ -74,6 +74,7 @@ const page = ({}) => {
                   <TableCell>
                     {item?.ProductsVariant?.map((list) => (
                       <div className="flex gap-1 my-1 items-center justify-between min-w-[400px]">
+                        {/* {console.log("list", list)} */}
                         <p>Weight: {list.weight}g</p>
                         <p>Price: {list.price}</p>
                         <p>Stock: {list.stock}</p>
@@ -86,10 +87,12 @@ const page = ({}) => {
                               price: list?.price,
                               weight: list?.weight,
                               stock: list?.stock,
-                              imageUrl: list?.imageUrl,
+                              imageUrl_1: list?.imageUrl[0],
+                              imageUrl_2: list?.imageUrl[1],
+                              imageUrl_3: list?.imageUrl[2],
+                              isVariantActive: list?.isVariantActive,
                             },
-                          }}
-                        >
+                          }}>
                           <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                             Update Variant Details
                           </button>
@@ -106,8 +109,7 @@ const page = ({}) => {
                   </TableCell>
                   <TableCell>
                     <Link
-                      href={`/dashboard/all-product/addVariant/${item.productUrl}`}
-                    >
+                      href={`/dashboard/all-product/addVariant/${item.productUrl}`}>
                       <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                         Add Variant
                       </button>

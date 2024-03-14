@@ -5,23 +5,34 @@ import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import { useMutation, useQuery } from "@apollo/client";
 import { useParams, useRouter } from "next/navigation";
 import { UPDATE_PRODUCT_VARIANTS } from "@/apollo/queries";
+import { useSearchParams } from "next/navigation";
 
 import handleImageUpload from "@/utils/upload";
 
-const Page = ({ searchParams }) => {
-  console.log("--", searchParams.id);
+const Page = () => {
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
+  const title = searchParams.get("title");
+  const price = searchParams.get("price");
+  const stock = searchParams.get("stock");
+  const weight = searchParams.get("weight");
+  const imageUrl_1 = searchParams.get("imageUrl_1");
+  const imageUrl_2 = searchParams.get("imageUrl_2");
+  const imageUrl_3 = searchParams.get("imageUrl_3");
+  const isVariantActive = searchParams.get("isVariantActive");
+
   const route = useRouter();
   const [updateProductVariants] = useMutation(UPDATE_PRODUCT_VARIANTS);
 
   const [product, setProduct] = useState({
-    name: searchParams?.title,
-    price: searchParams?.price,
-    stock: searchParams?.stock,
-    weight: searchParams.weight,
-    mainImage: searchParams?.imageUrl[0] || "",
-    backImage: searchParams?.imageUrl[1] || "",
-    contentImage: searchParams?.imageUrl[2] || "",
-    isVariantActive: searchParams.isVariantActive === "true",
+    name: title,
+    price: price,
+    stock: stock,
+    weight: weight,
+    mainImage: imageUrl_1 || "",
+    backImage: imageUrl_2 || "",
+    contentImage: imageUrl_3 || "",
+    isVariantActive: isVariantActive === "true",
   });
 
   const handleChange = (e) => {
@@ -75,7 +86,7 @@ const Page = ({ searchParams }) => {
     try {
       const resp = await updateProductVariants({
         variables: {
-          id: parseInt(await searchParams?.id),
+          id: parseInt(await id),
           imageUrl: [
             product?.mainImage,
             product?.backImage,
@@ -113,8 +124,7 @@ const Page = ({ searchParams }) => {
               name="isVariantActive"
               value={product.isVariantActive}
               onChange={handleChange}
-              className="w-full border rounded px-4 py-2"
-            >
+              className="w-full border rounded px-4 py-2">
               <option value="true">Active</option>
               <option value="false">Inactive</option>
             </select>
@@ -220,8 +230,7 @@ const Page = ({ searchParams }) => {
             <button
               type="submit"
               onClick={handleCreateProductVariant}
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-            >
+              className="bg-blue-500 text-white px-4 py-2 rounded">
               Update Variant Detail
             </button>
           </div>
