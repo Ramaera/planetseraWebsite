@@ -74,7 +74,6 @@ const page = ({}) => {
                   <TableCell>
                     {item?.ProductsVariant?.map((list) => (
                       <div className="flex gap-1 my-1 items-center justify-between min-w-[400px]">
-                        {/* {console.log("list", list)} */}
                         <p>Weight: {list.weight}g</p>
                         <p>Price: {list.price}</p>
                         <p>Stock: {list.stock}</p>
