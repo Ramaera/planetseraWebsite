@@ -304,7 +304,11 @@ const ProductDetailsInfo = () => {
                 <h6>
                   <h6>
                     {specificVariant && specificVariant.stock > 0
-                      ? `Available Stock : ${specificVariant.stock}`
+                      ? `Available Stock : ${
+                          specificVariant.stock > 50
+                            ? "50+"
+                            : specificVariant.stock
+                        }`
                       : "Out Of Stock"}
                   </h6>
                 </h6>

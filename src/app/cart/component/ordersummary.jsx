@@ -5,12 +5,14 @@ import { useSelector } from "react-redux";
 import Login from "@/components/Login";
 import { useQuery } from "@apollo/client";
 import { Get_All_Products } from "@/apollo/queries";
-import { cartTotalValue, shippingValue } from "@/state/slice/cartSlice";
+import {
+  cartTotalValue,
+  shippingValue,
+  getDiscountedAmount,
+} from "@/state/slice/cartSlice";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
-
-// import Address from "../address";
-
+import axios from "axios";
 import TextField from "@mui/material/TextField";
 import Link from "next/link";
 const ordersummary = () => {
@@ -18,22 +20,19 @@ const ordersummary = () => {
   const currentRoute = usePathname();
   const colorMe = useSelector((state) => state.colorUs.color);
   const CartData = useSelector((state) => state.cart.items);
-  const [discount, setDiscount] = useState(56);
+  const [discount, setDiscount] = useState(null);
   const [shipping, setShipping] = useState(100);
-  const [couponAmount, setCouponAmount] = useState(20);
   const user = useSelector((state) => state?.user);
-  const [registered, setRegistered] = useState(true);
   const [loginModal, setLoginModal] = useState(false);
   const [checkoutEnabled, setCheckoutEnabled] = useState(false);
+  const [couponCode, setCouponCode] = useState("");
 
   const openLoginModal = () => {
     setLoginModal(true);
   };
-
   const closeLoginModal = () => {
     setLoginModal(false);
   };
-
   const allProductsQuery = useQuery(Get_All_Products);
   const allProducts =
     allProductsQuery.data?.allProducts.flatMap(
@@ -54,20 +53,85 @@ const ordersummary = () => {
     return totalValue;
   };
 
-  const calculateTotalPrice = () => {
-    const totalPrice = calculatePrice();
+  const handleApplyCoupon = () => {
+    const postData = {
+      Reff_Code: couponCode,
+    };
+    const options = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    axios
+      .post("https://api.ramaera.com/api/KYC", postData, options)
+      .then((res) => {
+        const valid = res?.data[0]?.AC_Status === "Active";
+        if (valid) {
+          const discountedAmount = calculatePrice() * 0.3;
+          setDiscount(discountedAmount);
+          dispatch(getDiscountedAmount(discountedAmount));
+          toast.success("Coupon applied successfully!", {
+            position: "top-center",
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        } else {
+          setDiscount(0);
+          toast.error("Invalid coupon code. Discount not applied.", {
+            position: "top-center",
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+      })
+      .catch((err) => {
+        console.error("Error applying coupon:", err);
+        setDiscount(0);
+        toast.error("Error applying coupon. Please try again later.", {
+          position: "top-center",
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      });
+  };
 
-    if (totalPrice >= 200) {
-      const totalPriceWithShipping = totalPrice + 50;
-      return totalPriceWithShipping;
-    } else {
-      const totalPriceWithShipping = totalPrice + 100;
-      return totalPriceWithShipping;
-    }
+  const calculateTotalPrice = () => {
+    const priceAfterDiscount = calculatePrice() - discount;
+    const totalPrice =
+      priceAfterDiscount >= 200
+        ? priceAfterDiscount + 50
+        : priceAfterDiscount + 100;
+    return totalPrice;
   };
 
   useEffect(() => {
-    if (calculatePrice() >= 200) {
+    return () => {
+      dispatch(getDiscountedAmount(0));
+    };
+  }, []);
+
+  useEffect(() => {
+    const price = calculatePrice() - discount;
+
+    if (price === 0) {
+      setShipping(0);
+      dispatch(shippingValue(0));
+    } else if (price >= 200) {
       setShipping(50);
       dispatch(shippingValue(50));
     } else {
@@ -82,7 +146,7 @@ const ordersummary = () => {
     } else {
       setCheckoutEnabled(false);
     }
-  }, [calculatePrice]);
+  }, [calculatePrice, discount]);
 
   const handleProceedToCheckout = () => {
     if (!checkoutEnabled) {
@@ -125,27 +189,40 @@ const ordersummary = () => {
               })}
             </div>
           </div>
-          {/* <div className="flex  justify-between mt-5 ">
-            Items <p>{cartItems.item?.masalaName}</p>
-          </div> */}
+
           <div className="flex  justify-between mt-5 ">
             Price <span>₹ {calculatePrice()}</span>
           </div>
-          {/* <div className="flex  justify-between mt-5">
-            Discount <span>- ₹{discount}</span>
-          </div> */}
+          {currentRoute === "/cart/checkout" && (
+            <div className="mb-4">
+              <label className="block mt-2 mb-1">Apply Coupon</label>
+              <div className="flex">
+                <TextField
+                  value={couponCode}
+                  onChange={(e) => setCouponCode(e.target.value)}
+                  className="w-full border rounded pr-2 "
+                  placeholder="Enter coupon code"
+                />
+                <button
+                  onClick={handleApplyCoupon}
+                  className="Cartbgcolor text-white rounded px-2 h-14 w-32 "
+                >
+                  Apply
+                </button>
+              </div>
+              <div className="flex  justify-between mt-5 ">
+                Discounted Price <span>₹ {Math.round(discount)}</span>
+              </div>
+            </div>
+          )}
+
           <div className="flex  justify-between mt-5">
             Shipping <span className="Cart-remove">+ ₹{shipping}</span>
           </div>
-          {/* <div className="flex  justify-between mt-5 border-b-2 pb-5">
-            Coupon Applied <span>- ₹{couponAmount}</span>
-          </div> */}
+
           <div className="flex  justify-between mt-5">
-            Total <span>₹ {calculateTotalPrice()}</span>
+            Total <span>₹ {Math.round(calculateTotalPrice())}</span>
           </div>
-          {/* <div className="flex  justify-between mt-5">
-            Estimated Delivery By <span>In 5 Days</span>
-          </div> */}
 
           {currentRoute === "/cart" && (
             <>

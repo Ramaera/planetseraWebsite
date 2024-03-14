@@ -37,9 +37,10 @@ const Page = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(name, value);
     setProduct((prevProduct) => ({
       ...prevProduct,
-      [name]: name === "isVariantActive" ? value === "true" : value,
+      [name]: value,
     }));
   };
 
@@ -80,7 +81,7 @@ const Page = () => {
     setProduct({ ...product, [imageType]: imageName });
   };
 
-  const handleCreateProductVariant = async (e) => {
+  const handleUpdateProductVariant = async (e) => {
     e.preventDefault();
     // console.log("product", product);
     try {
@@ -122,7 +123,7 @@ const Page = () => {
             <label className="block mb-1 font-semibold">Activate Variant</label>
             <select
               name="isVariantActive"
-              value={product.isVariantActive}
+              value={product?.isVariantActive}
               onChange={handleChange}
               className="w-full border rounded px-4 py-2">
               <option value="true">Active</option>
@@ -229,7 +230,7 @@ const Page = () => {
           <div className="col-span-2">
             <button
               type="submit"
-              onClick={handleCreateProductVariant}
+              onClick={handleUpdateProductVariant}
               className="bg-blue-500 text-white px-4 py-2 rounded">
               Update Variant Detail
             </button>

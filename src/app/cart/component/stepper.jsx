@@ -139,33 +139,11 @@ export default function HorizontalLinearStepper() {
               Back
             </Button>
             <Box sx={{ flex: "1 1 auto" }} />
-            {/* <Button
-              variant="outlined"
-              onClick={handleNextPage}
-              disabled={
-                addressesData.selectedAddress == null ||
-                activeStep === steps.length - 1
-                // shipmentData.shippingMethod == null ||
-                // paymentData.selectedPayment == null
-              }>
-              {activeStep === steps.length - 1 ? "Finish" : "Proceed"}
-            </Button> */}
           </Box>
         </React.Fragment>
       )}
       {customComponent}
 
-      {/* {activeStep !== steps.length - 1 && (
-        <BuynowBtn
-          onClick={handleNextPage}
-          link="#"
-          text={"Proceed"}
-          disabled={
-            addressesData.selectedAddress == null ||
-            activeStep === steps.length - 1
-          }
-        />
-      )} */}
       <div className="w-full flex justify-center">
         {selectedAddressId && activeStep !== steps.length - 1 && (
           <button
