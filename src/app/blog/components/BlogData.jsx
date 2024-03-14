@@ -2,14 +2,812 @@
 import Link from "next/link";
 const BlogData = [
   // --------------  RecentBlog  -------------------------------------------------------------------
+  {
+    id: "black-pepper-powder-in-everyday-recipes",
+    category: "MouthWatering",
+    categoryName: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "6-March-2024",
+    blogImg: "/images/blog/defaultblog.png",
+    blogName:
+      "Cooking with Confidence: A Guide to Using Black Pepper Powder in Everyday Recipes      ",
 
+    blogDetail: (
+      <>
+        Black pepper powder (kali mirch powder) is a staple ingredient in
+        kitchens around the world. Not only does it add a touch of heat and
+        complexity to dishes, but it also boasts numerous health benefits. In
+        this guide, we will explore the various ways you can incorporate black
+        pepper powder into your everyday recipes, be it as whole black pepper or
+        ground black pepper. By the end, you will have the knowledge and
+        confidence to experiment with this versatile spice and take your
+        culinary skills to new heights.
+      </>
+    ),
+
+    blogDescription: [
+      {
+        blogList: (
+          <>
+            <div className="">
+              {" "}
+              The History and Origins of{" "}
+              <Link
+                className="text-red-500"
+                href="/products/black-pepper-powder"
+              >
+                Black Pepper:
+              </Link>
+            </div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            Before we dive into the uses of black pepper powder, let's explore
+            its fascinating history. Black pepper has been prized for centuries
+            and was once considered a luxury spice. Originating from the Malabar
+            Coast of India, black pepper made its way to Europe, where it became
+            highly valued and sought after. Today, it is widely cultivated and
+            used in cuisines all over the world.
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            <div className="">Understanding Black Pepper Powder:</div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            Black pepper powder is made by grinding dried black peppercorns. The
+            process of grinding releases the spice's essential oils,
+            intensifying its flavor and aroma. It is available in both fine and
+            coarse varieties, allowing you to choose the texture that best suits
+            your recipe.
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            <div className="">Health Benefits of Black Pepper:</div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            Aside from its culinary uses, black pepper powder offers numerous
+            health benefits. It contains a compound called piperine, which has
+            been found to have antioxidant and anti-inflammatory properties.
+            Additionally, black pepper aids in digestion, boosts metabolism, and
+            may even have cancer-fighting properties. Incorporating black pepper
+            powder into your recipes is a simple way to enhance both flavor and
+            wellness.
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            <div className="">Using Whole Black Pepper:</div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            <div>
+              Whole black pepper refers to the peppercorns before they are
+              ground into powder. Utilizing whole black pepper in your cooking
+              allows you to experience a more robust and fresher flavor. Here
+              are some creative ways to incorporate whole{" "}
+              <Link
+                className="text-red-500"
+                href="/products/black-pepper-powder"
+              >
+                black pepper:
+              </Link>
+            </div>
+            <div>
+              <p className="font-semibold mt-5">
+                Infuse oils:{" "}
+                <span className="font-normal">
+                  Add a few whole black peppercorns to a bottle of olive oil or
+                  vegetable oil to infuse it with a subtle peppery flavor. This
+                  infused oil can be used in dressings, marinades, and sautés.
+                </span>
+              </p>
+            </div>
+            <div>
+              <p className="font-semibold mt-5">
+                Pickling:{" "}
+                <span className="font-normal">
+                  Add a few whole black peppercorns to your pickling brine to
+                  impart a gentle heat and complexity to your pickles.
+                </span>
+              </p>
+            </div>
+            <div>
+              <p className="font-semibold mt-5">
+                Flavorful broths and stocks:{" "}
+                <span className="font-normal">
+                  Toss some whole black peppercorns into your homemade broths
+                  and stocks to enhance their depth of flavor.
+                </span>
+              </p>
+            </div>
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            <div className="">
+              Utilizing Ground{" "}
+              <Link
+                className="text-red-500"
+                href="/products/black-pepper-powder"
+              >
+                Black Pepper Powder:
+              </Link>
+            </div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            <div>
+              Ground black pepper powder is the most commonly used form of black
+              pepper in cooking. Its fine texture makes it easy to incorporate
+              into a wide range of recipes. Here are some ways to use ground
+              black pepper powder:
+            </div>
+            <div>
+              <p className="font-semibold mt-5">
+                Seasoning meats and vegetables:{" "}
+                <span className="font-normal">
+                  Sprinkle ground black pepper over grilled meats, roasted
+                  vegetables, or even scrambled eggs for an added kick of
+                  flavor.
+                </span>
+              </p>
+            </div>
+            <div>
+              <p className="font-semibold mt-5">
+                Spice blends and rubs:{" "}
+                <span className="font-normal">
+                  Combine ground black pepper with other spices and herbs to
+                  create your own unique spice blends and rubs for meats or
+                  vegetables.
+                </span>
+              </p>
+            </div>
+            <div>
+              <p className="font-semibold mt-5">
+                Sauces and dressings:{" "}
+                <span className="font-normal">
+                  Incorporate ground black pepper into your homemade sauces and
+                  dressings to give them a subtle heat and complexity.
+                </span>
+              </p>
+            </div>
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            <div className="">
+              Tips for Storing{" "}
+              <Link
+                className="text-red-500"
+                href="/products/black-pepper-powder"
+              >
+                Black Pepper Powder:
+              </Link>
+            </div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            <div>
+              To ensure the longevity of your black pepper powder's freshness
+              and flavor, consider these tips:
+            </div>
+            <div>
+              <p className="font-semibold mt-5">
+                Store in airtight containers:{" "}
+                <span className="font-normal">
+                  Transfer your black pepper powder to airtight containers to
+                  protect it from moisture and light.
+                </span>
+              </p>
+            </div>
+            <div>
+              <p className="font-semibold mt-5">
+                Keep away from heat:{" "}
+                <span className="font-normal">
+                  Store your black pepper powder in a cool, dry place, away from
+                  direct sunlight and heat sources.
+                </span>
+              </p>
+            </div>
+            <div>
+              <p className=" mt-5">
+                Black pepper powder is a versatile spice that can elevate the
+                flavor of any dish. Whether you prefer the robustness of whole
+                black pepper or the convenience of ground black pepper powder,
+                incorporating this spice into your everyday recipes will enhance
+                your culinary creations. Experiment with different dishes, spice
+                blends, and marinades to discover the endless possibilities that
+                black pepper powder offers. Embrace cooking with confidence and
+                let black pepper powder be your secret ingredient to culinary
+                success.
+              </p>
+            </div>
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    id: "garam-masala-in-non-traditional-dishes",
+    category: "MouthWatering",
+    categoryName: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "28-Feb-2024",
+    blogImg: "/images/blog/defaultblog.png",
+    blogName:
+      "Global Fusion: Creative Ways to Use Garam Masala in Non-Traditional Dishes      ",
+
+    blogDetail: <></>,
+
+    blogDescription: [
+      {
+        blogList: (
+          <>
+            <div className="">Garam Masala's Global Adventure</div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            Garam masala, a traditional Indian spice blend, has long been
+            revered for its warm, aromatic flavors. While it's a staple in
+            Indian cuisine, its versatility extends beyond traditional dishes.
+            In this culinary exploration, we'll embark on a global fusion
+            journey, discovering creative ways to use{" "}
+            <Link className="text-red-500" href="/products/garam-masala">
+              garam masala
+            </Link>{" "}
+            in non-traditional recipes. From understanding the garam masala
+            ingredients to exploring unique masala spices, we'll delve into the
+            art of fusion cooking. Additionally, we'll explore the convenience
+            of sourcing garam masala online, with a focus on the quality
+            assurance provided by Planetsera garam masala.
+          </>
+        ),
+      },
+
+      {
+        blogList: (
+          <>
+            {" "}
+            <div>
+              Section 1: Deconstructing{" "}
+              <Link className="text-red-500" href="/products/garam-masala">
+                Garam Masala
+              </Link>{" "}
+              Ingredients
+            </div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. The Essence of Garam Masala:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Garam masala typically consists of a blend of warm spices,
+                including cinnamon, cardamom, cloves,{" "}
+                <Link className="text-red-500" href="/products/cumin-powder">
+                  cumin
+                </Link>
+                , and{" "}
+                <Link
+                  className="text-red-500"
+                  href="/products/coriander-powder"
+                >
+                  coriander.
+                </Link>{" "}
+                Understanding the balance and synergy between these garam masala
+                ingredients is crucial for unlocking its full flavor potential.
+                The aromatic combination adds depth and complexity to dishes,
+                making it a perfect candidate for culinary experimentation.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Customizing Garam Masala:
+              <p className="text-base font-normal  mt-2 ml-5">
+                The beauty of{" "}
+                <Link className="text-red-500" href="/products/garam-masala">
+                  garam masala.
+                </Link>{" "}
+                lies in its adaptability. Adventurous cooks can experiment with
+                customizing the blend to suit personal preferences. Whether it's
+                adjusting the ratios of spices or introducing unique masala
+                spices, the ability to personalize garam masala opens doors to
+                an array of global flavor profiles.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Section 2: Fusion Cooking with Garam Masala        ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Mediterranean Magic: Garam Masala Hummus:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Infuse the classic Mediterranean dip with the warmth of garam
+                masala. Blend chickpeas, olive oil, tahini, and a generous pinch
+                of garam masala for a unique twist on traditional hummus. The
+                masala spices add an unexpected layer of flavor, creating a
+                fusion experience that delights the palate.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Asian-Inspired Garam Masala Stir-Fry:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Transform a simple stir-fry into a global sensation by
+                incorporating garam masala. Sauté your favorite vegetables and
+                protein with a dash of garam masala for an aromatic infusion.
+                The blend of garam masala ingredients enhances the umami flavors
+                of soy sauce and creates a harmonious balance in Asian-inspired
+                stir-fries.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            {" "}
+            <div>
+              Section 3:{" "}
+              <Link href="/products/garam-masala" className="text-red-500">
+                Garam Masala
+              </Link>{" "}
+              Spices Meet Mexican Cuisine
+            </div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Spicy Garam Masala Tacos:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Give traditional tacos an unexpected twist by seasoning your
+                protein with a blend of garam masala spices. The warm notes of
+                cinnamon and cardamom complement the savory elements of Mexican
+                cuisine, creating a fusion experience that marries the best of
+                both worlds.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Garam Masala Guacamole:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Elevate your guacamole game by incorporating garam masala. Mash
+                ripe avocados and add garam masala, lime juice, and diced
+                tomatoes for a unique take on this classic dip. The aromatic
+                blend of garam masala ingredients transforms the familiar into a
+                globally inspired delight.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Section 4: Convenience of Garam Masala Online        ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Explore the World with Garam Masala:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Embrace the convenience of sourcing garam masala online to
+                explore a world of flavors from the comfort of your kitchen.
+                Online platforms provide access to high-quality garam masala
+                blends, ensuring that you can embark on your global fusion
+                journey with confidence.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Quality Assurance with{" "}
+              <Link href="https://www.planetsera.com" className="text-red-500">
+                Planetsera
+              </Link>{" "}
+              Garam Masala:
+              <p className="text-base font-normal  mt-2 ml-5">
+                When choosing garam masala online, quality assurance is
+                paramount. Planetsera garam masala stands as a testament to
+                excellence, offering a meticulously crafted blend of garam
+                masala ingredients. The brand's commitment to quality ensures
+                that each pinch of garam masala contributes to the success of
+                your culinary creations.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Section 5: Unexpected Sweet Treats with Garam Masala          ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Garam Masala Apple Pie:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Infuse the comforting aroma of garam masala into your favorite
+                dessert by adding it to apple pie filling. The warmth of the
+                spices complements the sweetness of the apples, creating a
+                delightful and unexpected twist on a classic American treat.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Garam Masala Chocolate Truffles:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Elevate your chocolate truffles with the aromatic richness of
+                garam masala. Blend garam masala spices into melted chocolate
+                before shaping into truffles. The resulting combination of sweet
+                and spicy creates an indulgent treat that surprises the taste
+                buds.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Section 6: Garam Masala in Global Grains and Pastas          ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Moroccan-Inspired Garam Masala Couscous:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Take couscous on a journey to Morocco by incorporating garam
+                masala into the cooking process. The blend of garam masala
+                ingredients adds depth to the couscous, creating a side dish
+                that beautifully complements Moroccan-inspired main courses.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Italian Fusion: Garam Masala Pasta Sauce:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Give your favorite pasta sauce a global makeover by infusing it
+                with garam masala. Sauté onions, garlic, and tomatoes with a
+                pinch of garam masala for a flavorful sauce that transcends
+                culinary boundaries. Serve over your preferred pasta for a
+                fusion dish that delights the senses.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            {" "}
+            <div>
+              A
+              <Link href="/products/garam-msala" className="text-red-500">
+                Garam Masala
+              </Link>{" "}
+              Culinary Adventure
+            </div>{" "}
+          </>
+        ),
+        blogListAbout: (
+          <>
+            <p className="text-base mt-3 ml-5 ">
+              In conclusion, garam masala's global fusion potential knows no
+              bounds. From inventive applications in Mediterranean and Asian
+              cuisines to unexpected twists in Mexican and American classics,
+              the versatility of garam masala spices transforms every dish into
+              a culinary adventure. The convenience of sourcing garam masala
+              online, coupled with the quality assurance of Planetsera garam
+              masala, makes it easier than ever to embark on a journey around
+              the world through your kitchen.
+            </p>
+            <p className="text-base mt-3 ml-5 ">
+              Embrace the unexpected, experiment with garam masala in
+              non-traditional dishes, and let your culinary creativity soar.
+              With garam masala as your global companion, each meal becomes an
+              opportunity to celebrate the rich tapestry of flavors from diverse
+              culinary traditions.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    id: "health-benefits-of-red-chilli-powder",
+    category: "MouthWatering",
+    categoryName: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "24-Feb-2024",
+    blogImg: "/images/blog/blog-16.png",
+    blogName:
+      "The Health Benefits of Red Chilli Powder: More Than Just Spice      ",
+
+    blogDetail: <></>,
+
+    blogDescription: [
+      {
+        blogList: (
+          <>
+            <div className="">Beyond the Spice Rack</div>{" "}
+          </>
+        ),
+        blogListAbout: (
+          <>
+            Red chilli powder, or{" "}
+            <Link className="text-red-500" href="/products/red-chilli-powder">
+              lal mirch powder
+            </Link>{" "}
+            , is often celebrated for its fiery flavor and culinary versatility,
+            but its significance extends beyond the spice rack. In this
+            exploration, we delve into the health benefits of red chilli powder,
+            uncovering the nutritional magic within every sprinkle. From
+            metabolic boosts to immune support, the journey into the wellness
+            realm of red chilli powder offers a holistic perspective on this
+            beloved spice. Let's unravel the health secrets and quality
+            assurance of Planetsera chili powder, transcending its role as a
+            mere culinary enhancer.
+          </>
+        ),
+      },
+
+      {
+        blogList: (
+          <>
+            {" "}
+            <div>
+              Section 1: The Nutrient Profile of{" "}
+              <Link className="text-red-500" href="/products/red-chilli-powder">
+                Red Chilli Powder
+              </Link>{" "}
+            </div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Vitamin C Boost:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Red chilli powder is a surprising source of vitamin C, a
+                powerful antioxidant known for its immune-boosting properties.
+                Just a small amount of lal mirch powder can contribute
+                significantly to your daily vitamin C intake, supporting overall
+                health and resilience.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Capsaicin Content:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Capsaicin, the compound responsible for the heat in red chilli
+                powder, is a key player in its health benefits. This natural
+                compound has been studied for its potential to boost metabolism,
+                aid weight management, and provide pain relief. Capsaicin is
+                also known for its anti-inflammatory properties, making red
+                chilli powder a valuable addition to an anti-inflammatory diet.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Section 2: Metabolism Boost and Weight Management        ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Thermogenic Effects:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Capsaicin's thermogenic effects stimulate the body's metabolism,
+                leading to an increase in calorie burning. Including red chilli
+                powder in your meals may contribute to a temporary boost in
+                metabolic rate, potentially aiding in weight management when
+                combined with a balanced diet and regular exercise.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Appetite Suppression:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Research suggests that capsaicin may have appetite-suppressant
+                effects, helping to control food intake and promote satiety.
+                This can be particularly beneficial for those looking to manage
+                their weight by curbing cravings and reducing overall calorie
+                consumption.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Section 3: Cardiovascular Health          ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Blood Pressure Regulation:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Capsaicin has shown promise in promoting cardiovascular health
+                by helping to regulate blood pressure. Studies indicate that it
+                may support the widening of blood vessels, improving blood flow
+                and reducing the risk of hypertension. Including{" "}
+                <Link
+                  className="text-red-500"
+                  href="/products/red-chilli-powder"
+                >
+                  red chilli powder
+                </Link>{" "}
+                in your diet, in moderation, may contribute to heart health.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Cholesterol Management:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Research suggests that capsaicin may have a positive impact on
+                cholesterol levels. It may help lower levels of LDL (bad)
+                cholesterol while promoting an increase in HDL (good)
+                cholesterol. These cholesterol-balancing effects are essential
+                for maintaining cardiovascular health.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Section 4: Anti-Inflammatory and Pain Relief Properties",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Natural Anti-Inflammatory:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Capsaicin's anti-inflammatory properties make red chilli powder
+                a potential ally in managing inflammatory conditions. Including
+                this spice in your diet may contribute to reducing inflammation
+                throughout the body, offering relief for conditions such as
+                arthritis and other inflammatory disorders.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Topical Pain Relief:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Beyond culinary use, capsaicin is often used topically in pain
+                relief creams. The application of capsaicin-containing products
+                has been associated with alleviating pain from conditions like
+                arthritis, muscle aches, and nerve pain. While the topical
+                application is different from consuming red chilli powder, it
+                highlights the potential pain-relieving properties of capsaicin.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Section 5: Immune Support and Antioxidant Benefits          ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Immune-Boosting Vitamin C:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Red chilli powder's vitamin C content plays a crucial role in
+                supporting the immune system. Vitamin C is known for its ability
+                to enhance the production and function of white blood cells,
+                strengthening the body's defense against infections and
+                illnesses.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Antioxidant Defense:
+              <p className="text-base font-normal  mt-2 ml-5">
+                The antioxidants present in red chilli powder, including vitamin
+                C and capsaicin, contribute to its overall antioxidant profile.
+                Antioxidants help neutralize free radicals, reducing oxidative
+                stress in the body and protecting cells from damage. This
+                antioxidant defense is vital for maintaining overall health and
+                well-being.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Section 6: Quality Assurance with Planetsera Chili Powder          ",
+        blogListAbout: (
+          <>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              1. Premium Spice Quality:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Planetsera chili powder stands as a symbol of quality assurance
+                in the world of spices. The brand's commitment to delivering a
+                premium product ensures that you not only experience the fiery
+                flavor of red chilli powder but also reap the nutritional
+                benefits it offers. Quality control measures guarantee the
+                consistency and purity of Planetsera chili powder, making it a
+                reliable choice for both culinary and health-conscious
+                consumers.
+              </p>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5 ">
+              2. Traceability and Transparency:
+              <p className="text-base font-normal  mt-2 ml-5">
+                Planetsera prioritizes traceability and transparency in its
+                sourcing and production processes. Knowing the origin of your
+                spices provides assurance of quality and ethical practices.
+                Planetsera's commitment to transparency ensures that you can
+                trust the chili powder in your hands—from the spice rack to the
+                table.
+              </p>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            {" "}
+            <div>
+              Embracing{" "}
+              <Link href="/products/red-chilli-powder" className="text-red-400">
+                Red Chilli Powder
+              </Link>{" "}
+              for Holistic Wellness
+            </div>{" "}
+          </>
+        ),
+        blogListAbout: (
+          <>
+            <p className="text-base mt-3 ml-5 ">
+              In conclusion, red chilli powder emerges not only as a culinary
+              hero but also as a potent ally in promoting holistic wellness.
+              From its metabolism-boosting properties to immune support,
+              anti-inflammatory benefits, and more, red chilli powder unveils a
+              spectrum of health advantages. Planetsera chili powder further
+              elevates the experience by offering quality assurance and
+              transparency in its production processes.
+            </p>
+            <p className="text-base mt-3 ml-5 ">
+              As you reach for that vibrant red jar of lal mirch powder,
+              remember that its impact goes beyond the spice it imparts to your
+              dishes—it's a flavorful companion on your journey to well-being.
+              Embrace the nutritional magic of red chilli powder, savor its
+              heat, and let it become a cornerstone of your path to a healthier
+              and spicier lifestyle.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
   {
     id: "health-benefits-of-black-pepper",
     category: "MouthWatering",
     categoryName: "BestSelling",
     type: "RecentBlog",
     blogDate: "16-Feb-2024",
-    blogImg: "/images/blog/defaultblog.png",
+    blogImg: "/images/blog/blog-15.png",
     blogName:
       "Beyond the Spice Rack: The Health Benefits of Black Pepper Powder You Didn't Know About",
 
@@ -268,7 +1066,7 @@ const BlogData = [
     categoryName: "BestSelling",
     type: "RecentBlog",
     blogDate: "12-Feb-2024",
-    blogImg: "/images/blog/defaultblog.png",
+    blogImg: "/images/blog/blog-14.png",
     blogName: "From Grandma's Kitchen to Yours: Timeless Garam Masala Recipes",
 
     blogDetail: (
@@ -503,7 +1301,7 @@ const BlogData = [
     categoryName: "BestSelling",
     type: "RecentBlog",
     blogDate: "08-Feb-2024",
-    blogImg: "/images/blog/defaultblog.png",
+    blogImg: "/images/blog/blog-13.png",
     blogName:
       "Elevate Your Vegetable Dishes: The Ultimate Guide to Using Sabji Masala",
 
