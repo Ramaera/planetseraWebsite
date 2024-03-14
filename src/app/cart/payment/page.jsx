@@ -81,7 +81,7 @@ const page = () => {
   const payOnline = () => {
     const postData = {
       buyer_id: BuyerId,
-      price: calculateTotalPrice(),
+      price: Math.round(calculateTotalPrice()),
       name: BuyerName,
       email: BuyerEmail,
     };

@@ -195,17 +195,17 @@ const ordersummary = () => {
           </div>
           {currentRoute === "/cart/checkout" && (
             <div className="mb-4">
-              <label className="block mb-1">Apply Coupon</label>
+              <label className="block mt-2 mb-1">Apply Coupon</label>
               <div className="flex">
                 <TextField
                   value={couponCode}
                   onChange={(e) => setCouponCode(e.target.value)}
-                  className="w-full border rounded px-4 py-2"
+                  className="w-full border rounded pr-2 "
                   placeholder="Enter coupon code"
                 />
                 <button
                   onClick={handleApplyCoupon}
-                  className="Cartbgcolor text-white rounded px-2 h-10 w-32 mt-4"
+                  className="Cartbgcolor text-white rounded px-2 h-14 w-32 "
                 >
                   Apply
                 </button>
