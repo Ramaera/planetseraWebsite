@@ -791,7 +791,7 @@ const MetaDatablogs = () => {
               property="og:site_name"
               content="planetsera.com"
             />
-            <meta property="og:image" content="/images/blog/defaultblog.png" />
+            <meta property="og:image" content="/images/blog/blog-13.png" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="627" />
             <meta name="twitter:card" content="summary_large_image" />
@@ -808,7 +808,7 @@ const MetaDatablogs = () => {
               name="twitter:description"
               content="With our complete sabji masala powder guide, turn vegetable meals into gourmet wonders. Learn how to season with inexpensive sabji masala and improve your cooking with the right spices. Maximize veggie masala powder for delicious cooking."
             />
-            <meta name="twitter:image" content="/images/blog/defaultblog.png" />
+            <meta name="twitter:image" content="/images/blog/blog-13.png" />
           </>
         )}
         {/*-----------------------timeless-garam-masala-recipes--------------------------------------------------- */}
@@ -848,7 +848,7 @@ const MetaDatablogs = () => {
               property="og:site_name"
               content="planetsera.com"
             />
-            <meta property="og:image" content="/images/blog/defaultblog.png" />
+            <meta property="og:image" content="/images/blog/blog-14.png" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="627" />
             <meta name="twitter:card" content="summary_large_image" />
@@ -865,7 +865,7 @@ const MetaDatablogs = () => {
               name="twitter:description"
               content="Try one of our traditional Garam Masala dishes for inspiration from Grandma's cooking. Create extraordinary dinners that unite generations by discovering original flavors. Experience home-cooked warmth in every meal. Give your kitchen a heritage scent."
             />
-            <meta name="twitter:image" content="/images/blog/defaultblog.png" />
+            <meta name="twitter:image" content="/images/blog/blog-14.png" />
           </>
         )}
         {/*-----------------------health-benefits-of-black-pepper--------------------------------------------------- */}
@@ -908,7 +908,7 @@ const MetaDatablogs = () => {
               property="og:site_name"
               content="planetsera.com"
             />
-            <meta property="og:image" content="/images/blog/defaultblog.png" />
+            <meta property="og:image" content="/images/blog/blog-15.png" />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="627" />
             <meta name="twitter:card" content="summary_large_image" />
@@ -925,7 +925,186 @@ const MetaDatablogs = () => {
               name="twitter:description"
               content="Black pepper powder, also known as kali mirch powder, has surprising health benefits beyond its use as a kitchen staple. From digestion to immunity, this blog explores its wellness benefits.."
             />
-            <meta name="twitter:image" content="/images/blog/defaultblog.png" />
+            <meta name="twitter:image" content="/images/blog/blog-15.png" />
+          </>
+        )}
+        {/*-----------------------health-benefits-of-red-chilli-powder--------------------------------------------------- */}
+
+        {currentRoute === "/blog/health-benefits-of-red-chilli-powder" && (
+          <>
+            <title>
+              Red chili powder's health benefits: the nutritional magic beyond
+              spice
+            </title>
+            <meta name="text" content="planetsera" />
+            <meta
+              name="title"
+              content="Red chili powder's health benefits: the nutritional magic beyond spice"
+            />
+            <meta
+              name="description"
+              content="Explore the many health benefits of red chilli powder, also known as lal mirch powder, from metabolism boost to immune support. Discover Planetsera chili powder's quality assurance and embrace its holistic goodness beyond its fiery flavor."
+            />
+            <meta name="keywords" content="" />
+            <meta name="robots" content="index,  follow" />
+            <link
+              rel="canonical"
+              href="/blog/health-benefits-of-red-chilli-powder"
+            />
+            <meta
+              property="og:url"
+              content="/blog/health-benefits-of-red-chilli-powder"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:title"
+              content="Red chili powder's health benefits: the nutritional magic beyond spice"
+            />
+            <meta
+              property="og:description"
+              content="Explore the many health benefits of red chilli powder, also known as lal mirch powder, from metabolism boost to immune support. Discover Planetsera chili powder's quality assurance and embrace its holistic goodness beyond its fier flavor."
+            />
+            <meta
+              name="og_site_name"
+              property="og:site_name"
+              content="planetsera.com"
+            />
+            <meta property="og:image" content="blog-16.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="627" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:domain" content="planetsera.com" />
+            <meta
+              property="twitter:url"
+              content="/blog/health-benefits-of-red-chilli-powder"
+            />
+            <meta
+              name="twitter:title"
+              content="Red chili powder's health benefits: the nutritional magic beyond spice"
+            />
+            <meta
+              name="twitter:description"
+              content="Explore the many health benefits of red chilli powder, also known as lal mirch powder, from metabolism boost to immune support. Discover Planetsera chili powder's quality assurance and embrace its holistic goodness beyond its fiery flavor."
+            />
+            <meta name="twitter:image" content="blog-16.png" />
+          </>
+        )}
+        {/*-----------------------garam-masala-in-non-traditional-dishes--------------------------------------------------- */}
+
+        {currentRoute === "/blog/garam-masala-in-non-traditional-dishes" && (
+          <>
+            <title>
+              Global Fusion: Better Cooking with Garam Masala and Alternate
+              Dishes
+            </title>
+            <meta name="text" content="planetsera" />
+            <meta
+              name="title"
+              content="Global Fusion: Better Cooking with Garam Masala and Alternate Dishes"
+            />
+            <meta
+              name="description"
+              content="Explore the art of fusion cooking with garam masala ingredients and unique masala spices. Source garam masala online, including Planetsera's quality assurance, and bring a taste of the world to your kitchen."
+            />
+            <meta name="keywords" content="" />
+            <meta name="robots" content="index,  follow" />
+            <link
+              rel="canonical"
+              href="/blog/garam-masala-in-non-traditional-dishes"
+            />
+            <meta
+              property="og:url"
+              content="/blog/garam-masala-in-non-traditional-dishes"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:title"
+              content="Global Fusion: Better Cooking with Garam Masala and Alternate Dishes"
+            />
+            <meta
+              property="og:description"
+              content="Explore the art of fusion cooking with garam masala ingredients and unique masala spices. Source garam masala online, including Planetsera's quality assurance, and bring a taste of the world to your kitchen."
+            />
+            <meta
+              name="og_site_name"
+              property="og:site_name"
+              content="planetsera.com"
+            />
+            <meta property="og:image" content="defaultblog.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="627" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:domain" content="planetsera.com" />
+            <meta
+              property="twitter:url"
+              content="/blog/garam-masala-in-non-traditional-dishes"
+            />
+            <meta
+              name="twitter:title"
+              content="Global Fusion: Better Cooking with Garam Masala and Alternate Dishes"
+            />
+            <meta
+              name="twitter:description"
+              content="Explore the art of fusion cooking with garam masala ingredients and unique masala spices. Source garam masala online, including Planetsera's quality assurance, and bring a taste of the world to your kitchen."
+            />
+            <meta name="twitter:image" content="defaultblog.png" />
+          </>
+        )}
+
+        {currentRoute === "/blog/black-pepper-powder-in-everyday-recipes" && (
+          <>
+            <title>
+              Cooking with Confidence Using Black Pepper Powder: Mastering
+              Flavor
+            </title>
+            <meta name="text" content="planetsera" />
+            <meta
+              name="title"
+              content="Cooking with Confidence Using Black Pepper Powder: Mastering Flavor"
+            />
+            <meta
+              name="description"
+              content="Learn about culinary confidence as we explore black pepper powder's versatility. Our guide will help you improve everyday recipes and create unforgettable meals. Black pepper adds robust flavor to cooking!"
+            />
+            <meta name="keywords" content="" />
+            <meta name="robots" content="index,  follow" />
+            <link
+              rel="canonical"
+              href="/blog/black-pepper-powder-in-everyday-recipes"
+            />
+            <meta
+              property="og:url"
+              content="/blog/black-pepper-powder-in-everyday-recipes"
+            />
+            <meta property="og:type" content="website" />
+            <meta
+              property="og:title"
+              content="Cooking with Confidence Using Black Pepper Powder: Mastering Flavor"
+            />
+            <meta
+              property="og:description"
+              content="Learn about culinary confidence as we explore black pepper powder's versatility. Our guide will help you improve everyday recipes and create unforgettable meals. Black pepper adds robust flavor to cooking!"
+            />
+            <meta
+              name="og_site_name"
+              property="og:site_name"
+              content="planetsera.com"
+            />
+            <meta property="og:image" content="Blog image url" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="627" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta property="twitter:domain" content="planetsera.com" />
+            <meta
+              property="twitter:url"
+              content="/blog/black-pepper-powder-in-everyday-recipes"
+            />
+            <meta name="twitter:title" content="" />
+            <meta
+              name="twitter:description"
+              content="Learn about culinary confidence as we explore black pepper powder's versatility. Our guide will help you improve everyday recipes and create unforgettable meals. Black pepper adds robust flavor to cooking!"
+            />
+            <meta name="twitter:image" content="Blog image url" />
           </>
         )}
       </Head>
