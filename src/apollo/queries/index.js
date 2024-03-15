@@ -129,13 +129,14 @@ query AllProducts {
 `);
 
 export const Add_To_Cart = gql(`
-mutation CreateCart ($buyerId: String!, $name : String!,  $qty: Int!, $productVariantId : Int! ) {
+mutation CreateCart ($buyerId: String!, $name : String!,  $qty: Int!, $productVariantId : Int! $weight:String! ) {
   createCart(
       createCartInput: {
           buyerId: $buyerId,
           name: $name,
           productVariantId: $productVariantId ,
           qty: $qty
+          weight: $weight
       }
   ) {
       buyerId
@@ -145,6 +146,7 @@ mutation CreateCart ($buyerId: String!, $name : String!,  $qty: Int!, $productVa
           name
           productVariantId
           qty
+          weight
       }
   }
 }

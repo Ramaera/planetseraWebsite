@@ -26,6 +26,7 @@ const ordersummary = () => {
   const [loginModal, setLoginModal] = useState(false);
   const [checkoutEnabled, setCheckoutEnabled] = useState(false);
   const [couponCode, setCouponCode] = useState("");
+  const FreightCharge = useSelector((state) => state.shipment.freightCharge);
 
   const openLoginModal = () => {
     setLoginModal(true);
@@ -112,10 +113,7 @@ const ordersummary = () => {
 
   const calculateTotalPrice = () => {
     const priceAfterDiscount = calculatePrice() - discount;
-    const totalPrice =
-      priceAfterDiscount >= 200
-        ? priceAfterDiscount + 50
-        : priceAfterDiscount + 100;
+    const totalPrice = priceAfterDiscount + FreightCharge;
     return totalPrice;
   };
 
@@ -124,21 +122,6 @@ const ordersummary = () => {
       dispatch(getDiscountedAmount(0));
     };
   }, []);
-
-  useEffect(() => {
-    const price = calculatePrice() - discount;
-
-    if (price === 0) {
-      setShipping(0);
-      dispatch(shippingValue(0));
-    } else if (price >= 200) {
-      setShipping(50);
-      dispatch(shippingValue(50));
-    } else {
-      setShipping(100);
-      dispatch(shippingValue(100));
-    }
-  }, [calculatePrice]);
 
   useEffect(() => {
     if (calculatePrice() >= 500) {
@@ -213,16 +196,14 @@ const ordersummary = () => {
               <div className="flex  justify-between mt-5 ">
                 Discounted Price <span>₹ {Math.round(discount)}</span>
               </div>
+              <div className="flex  justify-between mt-5">
+                Shipping <span className="Cart-remove">+ ₹{FreightCharge}</span>
+              </div>
+              <div className="flex  justify-between mt-5">
+                Total <span>₹ {Math.round(calculateTotalPrice())}</span>
+              </div>
             </div>
           )}
-
-          <div className="flex  justify-between mt-5">
-            Shipping <span className="Cart-remove">+ ₹{shipping}</span>
-          </div>
-
-          <div className="flex  justify-between mt-5">
-            Total <span>₹ {Math.round(calculateTotalPrice())}</span>
-          </div>
 
           {currentRoute === "/cart" && (
             <>

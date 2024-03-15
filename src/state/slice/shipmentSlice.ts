@@ -1,17 +1,16 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const shipmentSlice = createSlice({
   name: "shipment",
   initialState: {
-    shippingMethod: null,
-    shippingCost: null,
+    freightCharge: null,
   },
   reducers: {
-    selectShipment: (state, action) => {
-      state.shippingMethod = action.payload;
+    setFreightCharge: (state, action) => {
+      state.freightCharge = action.payload;
     },
   },
 });
 
-export const { selectShipment } = shipmentSlice.actions;
+export const { setFreightCharge } = shipmentSlice.actions;
 export default shipmentSlice.reducer;

@@ -12,8 +12,8 @@ const cartSlice = createSlice({
   
   reducers: {
     storeInCart: (state, action) => {
-      const { id, productVariantId, qty, name } = action.payload;
-      state.items.push({ id, productVariantId, qty, name });
+      const { id, productVariantId, qty, name, weight } = action.payload;
+      state.items.push({ id, productVariantId, qty, name,weight });
     },
 
     addToCart: (state, action) => {

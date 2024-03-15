@@ -51,24 +51,21 @@ const ProductDetailsInfo = () => {
   const specificProduct = data?.allProducts.find(
     (prod) => prod.productUrl === id
   );
-  // console.log("specificProduct", specificProduct);
 
-  // const [defaultSelectedButton, setDefaultSelectedButton] = useState(50);
-  // const [activeImg, setActiveImage] = useState(specificProduct?.ProductMasala);
-  // const [selectedMainImage, setSelectedMainImage] = useState(
-  //   specificProduct?.ProductMasala
-  // );
   if (!specificProduct) return notFound();
 
   const specificVariant = specificProduct?.ProductsVariant?.find(
     (variant) => variant.weight === selectedButton
   );
 
+  console.log("specificVariant", specificVariant?.weight);
+
   const handleSelectedButton = (variantWeight) => {
     setSelectedButton(variantWeight);
   };
 
   const handleAddToCart = async () => {
+    console.log("enter");
     if (quantity > specificVariant?.stock) {
       toast.error(
         "Oops! You can't add more quantity than the available stock",
@@ -110,6 +107,7 @@ const ProductDetailsInfo = () => {
                 name: specificProduct?.title,
                 qty: quantity,
                 productVariantId: specificVariant?.id,
+                weight: specificVariant?.weight.toString(),
               },
             });
 
@@ -121,6 +119,7 @@ const ProductDetailsInfo = () => {
                   productVariantId: list?.productVariantId,
                   qty: list?.qty,
                   name: list?.name,
+                  weight: list?.weight,
                 })
               );
               updatedCartItems?.forEach((item) => {
@@ -303,13 +302,18 @@ const ProductDetailsInfo = () => {
                 </div>
                 <h6>
                   <h6>
-                    {specificVariant && specificVariant.stock > 0
-                      ? `Available Stock : ${
-                          specificVariant.stock > 50
+                    {specificVariant && specificVariant.stock > 0 ? (
+                      <>
+                        <div style={{ color: "green" }}>
+                          Available Stock :{" "}
+                          {specificVariant.stock > 50
                             ? "50+"
-                            : specificVariant.stock
-                        }`
-                      : "Out Of Stock"}
+                            : specificVariant.stock}
+                        </div>
+                      </>
+                    ) : (
+                      <div className="text-red-600">Out Of Stock</div>
+                    )}
                   </h6>
                 </h6>
                 <p className="mt-6 font-base text-md text-slate-500">
