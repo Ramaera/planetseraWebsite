@@ -7,17 +7,17 @@ const cartSlice = createSlice({
     items: [],
     cartTotalValue: 0,
     shippingValue: 0,
-    getDiscountedAmount:0
+    getDiscountedAmount: 0,
   },
-  
+
   reducers: {
     storeInCart: (state, action) => {
       const { id, productVariantId, qty, name, weight } = action.payload;
-      state.items.push({ id, productVariantId, qty, name,weight });
+      state.items.push({ id, productVariantId, qty, name, weight });
     },
 
     addToCart: (state, action) => {
-      const { id, productVariantId, qty, name } = action.payload;
+      const { id, productVariantId, qty, name, weight } = action.payload;
 
       const existingProduct = state.items.find(
         (item) => item.productVariantId === productVariantId
@@ -26,7 +26,7 @@ const cartSlice = createSlice({
       if (existingProduct) {
         existingProduct.qty += qty;
       } else {
-        state.items.push({ id, productVariantId, qty, name });
+        state.items.push({ id, productVariantId, qty, name, weight });
       }
     },
 
@@ -83,6 +83,6 @@ export const {
   storeInCart,
   cartTotalValue,
   shippingValue,
-  getDiscountedAmount
+  getDiscountedAmount,
 } = cartSlice.actions;
 export default cartSlice.reducer;

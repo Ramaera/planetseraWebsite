@@ -39,10 +39,9 @@ export default function ControlledRadioButtonsGroup() {
     dispatch(selectAddress(selectedAddressId)); // Update selected address in Redux
     await fetchFreightCharge(selectedAddressId); // Fetch freight charge for the selected address
   };
-
   useEffect(() => {
-    handleChange();
-  }, []);
+    fetchFreightCharge(selectedAddressId);
+  }, [handleChange, selectedAddressId]);
 
   const handleRemoveAddress = async (address) => {
     try {
@@ -75,7 +74,6 @@ export default function ControlledRadioButtonsGroup() {
     return totalWeightInKgs;
   };
 
-  console.log("weight", calculateTotalWeightInKgs());
   const fetchFreightCharge = async (selectedAddressId) => {
     const selectedAddress = addressesData?.data?.getBuyerAddress.find(
       (address) => address?.addresId === selectedAddressId
@@ -83,6 +81,7 @@ export default function ControlledRadioButtonsGroup() {
     const deliveryPincode = selectedAddress?.address[1]?.pinCode;
 
     const totalWeight = calculateTotalWeightInKgs();
+
     const queryParams = {
       pickup_postcode: 844101,
       delivery_postcode: deliveryPincode,
