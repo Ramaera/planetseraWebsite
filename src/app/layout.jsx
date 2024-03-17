@@ -17,6 +17,8 @@ import Script from "next/script";
 import Footer from "@/components/Footer/Footer";
 import ConditionalRoute from "./ConditionalRoute";
 import ScrollToTopButton from "@/components/ScrollTop";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -60,7 +62,11 @@ export default function RootLayout({ children }) {
         >
           <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-              <ConditionalRoute>{children}</ConditionalRoute>
+              <ConditionalRoute>
+                {children}
+                <Analytics />
+                <SpeedInsights />
+              </ConditionalRoute>
               <Footer />
             </PersistGate>
             <ScrollToTopButton />
