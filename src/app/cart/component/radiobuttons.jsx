@@ -40,6 +40,10 @@ export default function ControlledRadioButtonsGroup() {
     await fetchFreightCharge(selectedAddressId); // Fetch freight charge for the selected address
   };
 
+  useEffect(() => {
+    handleChange();
+  }, []);
+
   const handleRemoveAddress = async (address) => {
     try {
       const resp = await removeAddressList({
@@ -71,6 +75,7 @@ export default function ControlledRadioButtonsGroup() {
     return totalWeightInKgs;
   };
 
+  console.log("weight", calculateTotalWeightInKgs());
   const fetchFreightCharge = async (selectedAddressId) => {
     const selectedAddress = addressesData?.data?.getBuyerAddress.find(
       (address) => address?.addresId === selectedAddressId
@@ -110,12 +115,7 @@ export default function ControlledRadioButtonsGroup() {
             minFreightCharge = freightCharge;
           }
         });
-        console.log(
-          "freight Charge",
-          minFreightCharge,
-          courierCompanies,
-          response
-        );
+
         setFreightCharge(minFreightCharge);
 
         dispatch(setFreightCharge(minFreightCharge));
