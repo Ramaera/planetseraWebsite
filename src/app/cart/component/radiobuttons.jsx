@@ -110,7 +110,14 @@ export default function ControlledRadioButtonsGroup() {
             minFreightCharge = freightCharge;
           }
         });
+        console.log(
+          "freight Charge",
+          minFreightCharge,
+          courierCompanies,
+          response
+        );
         setFreightCharge(minFreightCharge);
+
         dispatch(setFreightCharge(minFreightCharge));
       }
     } catch (error) {
