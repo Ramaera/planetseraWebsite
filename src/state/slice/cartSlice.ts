@@ -25,6 +25,7 @@ const cartSlice = createSlice({
 
       if (existingProduct) {
         existingProduct.qty += qty;
+        existingProduct.weight += weight;
       } else {
         state.items.push({ id, productVariantId, qty, name, weight });
       }

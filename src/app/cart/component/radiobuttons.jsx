@@ -64,11 +64,13 @@ export default function ControlledRadioButtonsGroup() {
   // console.log("freightCharge", FreightCharge);
 
   const calculateTotalWeightInKgs = () => {
+    console.log("00", CartData);
     const totalWeightInGrams = CartData.reduce((totalWeight, item) => {
       const weightInInt = parseInt(item.weight);
       const productWeight = weightInInt * item.qty;
       return totalWeight + productWeight;
     }, 0);
+    console.log("--->>", totalWeightInGrams);
 
     const totalWeightInKgs = totalWeightInGrams / 1000;
     return totalWeightInKgs;
@@ -81,6 +83,7 @@ export default function ControlledRadioButtonsGroup() {
     const deliveryPincode = selectedAddress?.address[1]?.pinCode;
 
     const totalWeight = calculateTotalWeightInKgs();
+    console.log("totalWeight", totalWeight);
 
     const queryParams = {
       pickup_postcode: 844101,
@@ -100,8 +103,6 @@ export default function ControlledRadioButtonsGroup() {
           },
         }
       );
-
-      // console.log("response", response);
       const courierCompanies =
         response?.data?.data?.available_courier_companies;
 
