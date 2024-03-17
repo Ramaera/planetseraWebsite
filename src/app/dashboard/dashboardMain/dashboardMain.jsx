@@ -8,8 +8,6 @@ import { GET_ALL_ORDERS } from "@/apollo/queries";
 const DashboardLayout = () => {
   const allProducts = useQuery(Get_All_Products);
   const allOrders = useQuery(GET_ALL_ORDERS);
-  console.log(allOrders.data.getallOrders);
-
   return (
     <>
       <div className="flex w-full justify-center pt-32  h-screen">
@@ -30,7 +28,7 @@ const DashboardLayout = () => {
           <Link href="/received-order">
             <div className="bg-yellow-500  p-4 w-48 h-48  rounded-full font-semibold text-2xl flex flex-col items-center justify-center">
               <h1 className="text-white text-center">No Of Orders</h1>
-              <p>{allOrders.data.getallOrders.length}</p>
+              <p>{allOrders?.data?.getallOrders.length}</p>
             </div>
           </Link>
         </div>
