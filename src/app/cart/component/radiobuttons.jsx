@@ -79,7 +79,7 @@ export default function ControlledRadioButtonsGroup() {
 
     const totalWeight = calculateTotalWeightInKgs();
     const queryParams = {
-      pickup_postcode: 201301,
+      pickup_postcode: 844101,
       delivery_postcode: deliveryPincode,
       weight: totalWeight,
       cod: 0,

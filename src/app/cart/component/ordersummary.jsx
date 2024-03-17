@@ -27,6 +27,7 @@ const ordersummary = () => {
   const [checkoutEnabled, setCheckoutEnabled] = useState(false);
   const [couponCode, setCouponCode] = useState("");
   const FreightCharge = useSelector((state) => state.shipment.freightCharge);
+  const [subscriberKyc, setSubscriberKyc] = useState(null); // State to hold subscriber.kyc value
 
   const openLoginModal = () => {
     setLoginModal(true);
@@ -55,22 +56,27 @@ const ordersummary = () => {
   };
 
   const handleApplyCoupon = () => {
-    const postData = {
-      Reff_Code: couponCode,
-    };
-    const options = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
     axios
-      .post("https://api.ramaera.com/api/KYC", postData, options)
+      .get("https://kycramaerabackend.ramaera.com/allSubscribers")
       .then((res) => {
-        const valid = res?.data[0]?.AC_Status === "Active";
-        if (valid) {
+        const subscribers = res?.data;
+        // console.log("couponCode", couponCode);
+
+        const subscriber = subscribers
+          .map(
+            (subscriber) =>
+              subscriber.pw_id === couponCode.toUpperCase() &&
+              subscriber.kyc === "APPROVED"
+          )
+          .filter(Boolean);
+
+        console.log("subscribers", subscriber?.kyc);
+
+        if (subscriber.includes(true)) {
           const discountedAmount = calculatePrice() * 0.3;
           setDiscount(discountedAmount);
           dispatch(getDiscountedAmount(discountedAmount));
+          setSubscriberKyc("APPROVED");
           toast.success("Coupon applied successfully!", {
             position: "top-center",
             autoClose: 2500,
@@ -83,6 +89,7 @@ const ordersummary = () => {
           });
         } else {
           setDiscount(0);
+          setSubscriberKyc("NOT APPROVED");
           toast.error("Invalid coupon code. Discount not applied.", {
             position: "top-center",
             autoClose: 2500,
@@ -98,6 +105,7 @@ const ordersummary = () => {
       .catch((err) => {
         console.error("Error applying coupon:", err);
         setDiscount(0);
+        setSubscriberKyc(null); // Reset subscriber.kyc value
         toast.error("Error applying coupon. Please try again later.", {
           position: "top-center",
           autoClose: 2500,
@@ -178,7 +186,9 @@ const ordersummary = () => {
           </div>
           {currentRoute === "/cart/checkout" && (
             <div className="mb-4">
-              <label className="block mt-2 mb-1">Apply Coupon</label>
+              <label className="block mt-2 mb-1">
+                Enter PWID to avail (30% Discount)
+              </label>
               <div className="flex">
                 <TextField
                   value={couponCode}
@@ -193,11 +203,26 @@ const ordersummary = () => {
                   Apply
                 </button>
               </div>
+              <div className="flex justify-between mt-5">
+                Discount Status :{" "}
+                <span
+                  className={
+                    subscriberKyc === "APPROVED"
+                      ? "text-green-500"
+                      : "text-red-500"
+                  }
+                >
+                  {subscriberKyc}
+                </span>
+              </div>
               <div className="flex  justify-between mt-5 ">
                 Discounted Price <span>₹ {Math.round(discount)}</span>
               </div>
               <div className="flex  justify-between mt-5">
-                Shipping <span className="Cart-remove">+ ₹{FreightCharge}</span>
+                Shipping{" "}
+                <span className="Cart-remove">
+                  + ₹{Math.round(FreightCharge)}
+                </span>
               </div>
               <div className="flex  justify-between mt-5">
                 Total <span>₹ {Math.round(calculateTotalPrice())}</span>
