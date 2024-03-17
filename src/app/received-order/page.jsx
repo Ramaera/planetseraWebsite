@@ -42,6 +42,7 @@ const ReceivedOrder = () => {
   const user = useSelector((state) => state?.user);
 
   const allOrders = useQuery(GET_ALL_ORDERS);
+  console.log("allOrder", allOrders);
 
   return (
     <div>

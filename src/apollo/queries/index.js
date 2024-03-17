@@ -348,11 +348,7 @@ query GetallOrders {
           productVariantId
           qty
       }
-      Buyer {
-        user {
-            name
-        }
-    }
+   
       Payment {
         buyerId
         dateOfPayment
