@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Typography } from "@material-ui/core";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
@@ -8,7 +8,9 @@ import { useQuery } from "@apollo/client";
 import { ALL_ORDERS, Get_All_Products } from "@/apollo/queries";
 import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
-
+import Link from "next/link";
+import "@/public/styles/cart.css";
+import axios from "axios";
 const OrderDetails = () => {
   const router = useRouter();
   const user = useSelector((state) => state?.user);
@@ -29,28 +31,40 @@ const OrderDetails = () => {
       (list) => list?.ProductsVariant
     ) || [];
 
-  // const addressComplte=()=>{
-  //   specificOrder?.address?.address?.map((list)=>())
-
-  // }
-
-  // const expectedDeliveryDate = (date) => {
-  //   let currentDate = new Date(date);
-  //   // Add 7 days to the current date
-  //   currentDate.setDate(currentDate.getDate() + 7);
-  //   // Format the new date as YYYY-MM-DD
-  //   let newDate = currentDate?.slice(0, 10);
-  //   return newDate;
-  // };
-
-  console.log("user", user);
+  // console.log("user", user);
   useEffect(() => {
     if (!user?.data) {
       router.replace("/");
     }
   }, [user]);
 
-  // if (!specificOrder) return router.replace("/orders");
+  useEffect(() => {
+    if (specificOrder) {
+      fetchOrderTracking(specificOrder.order_id);
+    }
+  }, [specificOrder]);
+
+  const [trackingInfo, setTrackingInfo] = useState(null);
+
+  const fetchOrderTracking = async () => {
+    try {
+      const response = await axios.get(
+        `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=4889159931`,
+        {
+          headers: {
+            Authorization: ` ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      // console.log("response", response?.data[0]?.tracking_data?.track_url);
+      setTrackingInfo(response?.data[0]?.tracking_data?.track_url);
+    } catch (error) {
+      console.error("Error fetching tracking information:", error);
+    }
+  };
+
   return (
     <>
       <NavItem page={"orders"} className="pb-40" />
@@ -72,14 +86,6 @@ const OrderDetails = () => {
                   <Typography className="text-left text-slate-400   font-semibold pb-2">
                     Order Date : {specificOrder?.orderDate.slice(0, 10)}
                   </Typography>
-
-                  {/* <Typography className="text-left text-slate-400   font-semibold pb-2">
-                      Expected Delivery Date :{" "}
-                      {expectedDeliveryDate(
-                        specificOrder?.orderDate.slice(0, 10)
-                      )}
-                    </Typography> */}
-                  {/* </div> */}
                 </div>
 
                 {specificOrder?.orderItems?.map((item) => {
@@ -110,6 +116,25 @@ const OrderDetails = () => {
                   );
                 })}
               </div>
+              {specificOrder && (
+                <>
+                  <div className=" mt-2 font-semibold">
+                    Track Your Order Here:
+                  </div>
+                  <button
+                    onClick={fetchOrderTracking}
+                    className="flex justify-center rounded-2xl  Cartbgcolor cursor-pointer px-5  py-3"
+                  >
+                    Fetch Tracking Info
+                  </button>
+
+                  {trackingInfo && (
+                    <Link href={trackingInfo} className="text-red-400">
+                      {trackingInfo}
+                    </Link>
+                  )}
+                </>
+              )}
               <div className="bg-gray-100 rounded-lg p-4 mt-4">
                 <Typography className="text-left text-slate-400  font-semibold pb-2">
                   Shipping Details

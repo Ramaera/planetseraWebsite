@@ -75,13 +75,12 @@ export default function ControlledRadioButtonsGroup() {
     const totalWeightInKgs = totalWeightInGrams / 1000;
     return totalWeightInKgs;
   };
-
   const fetchFreightCharge = async (selectedAddressId) => {
     const selectedAddress = addressesData?.data?.getBuyerAddress.find(
       (address) => address?.addresId === selectedAddressId
     );
     const deliveryPincode = selectedAddress?.address[1]?.pinCode;
-
+    console.log("deliveryPincode", deliveryPincode);
     const totalWeight = calculateTotalWeightInKgs();
     // console.log("totalWeight", totalWeight);
 
@@ -103,6 +102,7 @@ export default function ControlledRadioButtonsGroup() {
           },
         }
       );
+      // console.log("response",response?.data?.data?.available_courier_companies);
       const courierCompanies =
         response?.data?.data?.available_courier_companies;
 
@@ -115,6 +115,7 @@ export default function ControlledRadioButtonsGroup() {
             minFreightCharge = freightCharge;
           }
         });
+        console.log("minFreightCharge", minFreightCharge);
 
         setFreightCharge(minFreightCharge);
 

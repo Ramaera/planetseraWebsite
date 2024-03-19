@@ -27,7 +27,7 @@ const ordersummary = () => {
   const [checkoutEnabled, setCheckoutEnabled] = useState(false);
   const [couponCode, setCouponCode] = useState("");
   const FreightCharge = useSelector((state) => state.shipment.freightCharge);
-  const [subscriberKyc, setSubscriberKyc] = useState(null); // State to hold subscriber.kyc value
+  const [subscriberKyc, setSubscriberKyc] = useState(null);
 
   const openLoginModal = () => {
     setLoginModal(true);

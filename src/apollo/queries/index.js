@@ -171,6 +171,7 @@ query ViewCart($buyerId: String!) {
       productVariantId
       name
       qty
+      weight
       
     }
   }
