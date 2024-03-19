@@ -354,6 +354,15 @@ query GetallOrders {
           orderId
           paymentId
       }
+      user {
+        createdAt
+        email
+        id
+        name
+        role
+        updatedAt
+    }
+    discountedAmount
   }
 }
 

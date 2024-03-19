@@ -13,8 +13,12 @@ import { useSelector, useDispatch } from "react-redux";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import { Get_All_Products } from "@/apollo/queries";
+import OrderProceed from "./ OrderProceed/page";
 
 const ReceivedOrder = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedOrder, setSelectedOrder] = useState(null);
+
   const [status, setStatus] = useState("fghjk");
   const merchantTransactionId = "YOUR_MERCHANT_TRANSACTION_ID";
   const allProductsQuery = useQuery(Get_All_Products);
@@ -43,6 +47,12 @@ const ReceivedOrder = () => {
 
   const allOrders = useQuery(GET_ALL_ORDERS);
 
+  console.log("allOrders", allOrders);
+  const handleOrderToProceed = (order) => {
+    setSelectedOrder(order);
+    setModalOpen(true);
+  };
+
   return (
     <div>
       <div className="navMobile ">
@@ -62,7 +72,9 @@ const ReceivedOrder = () => {
               <TableRow>
                 <TableCell className="font-semibold">Name </TableCell>
                 <TableCell className="font-semibold">Address</TableCell>
-                <TableCell className="font-semibold">Order Items</TableCell>
+                <TableCell className="font-semibold min-w-lg">
+                  Order Items
+                </TableCell>
                 <TableCell className="font-semibold">Order Date</TableCell>
                 <TableCell className="font-semibold">Order Amount</TableCell>
                 <TableCell className="font-semibold">
@@ -70,24 +82,25 @@ const ReceivedOrder = () => {
                 </TableCell>
                 <TableCell className="font-semibold">Payment Status</TableCell>
                 <TableCell className="font-semibold">Order Status</TableCell>
-                <TableCell className="font-semibold">Order Proceed</TableCell>
+                <TableCell className="font-semibold">Shipment </TableCell>
               </TableRow>
             </TableHead>
             <TableBody className="bg-slate-50">
               {allOrders?.data?.getallOrders?.map((user, index) => (
                 <TableRow key={index}>
-                  <TableCell>{user?.Buyer?.user?.name}</TableCell>
+                  <TableCell>{user?.user?.name}</TableCell>
 
                   <TableCell>
                     <div>{user?.address?.name}</div>
                     <div className="flex">
-                      {user.address.address[2].address}{" "}
-                      {user.address.address[0].city}{" "}
-                      {user.address.address[1].pinCode}
+                      {user?.address?.address[2].address}{" "}
+                      {user?.address?.address[0].city}{" "}
+                      {selectedOrder?.address.address[3].state}{" "}
+                      {user?.address?.address[1].pinCode}
                     </div>
-                    <div>+91 {user.address.mobileNumber}</div>
+                    <div>+91 {user?.address?.mobileNumber}</div>
                   </TableCell>
-                  <TableCell>
+                  <TableCell className="min-w-lg">
                     {" "}
                     {user?.orderItems?.map((item) => {
                       const particularProduct = allProducts.find(
@@ -110,8 +123,10 @@ const ReceivedOrder = () => {
                   <TableCell>Success</TableCell>
                   <TableCell>{user?.status}</TableCell>
                   <TableCell>
-                    <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
-                      Order To Proceed
+                    <button
+                      className="bg-red-400  text-white px-4 py-2 rounded-xl"
+                      onClick={() => handleOrderToProceed(user)}>
+                      Create Shipment
                     </button>
                   </TableCell>
                 </TableRow>
@@ -120,6 +135,12 @@ const ReceivedOrder = () => {
           </Table>
         </TableContainer>
       </Container>
+      <OrderProceed
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        selectedOrder={selectedOrder}
+        allProducts={allProducts}
+      />
     </div>
   );
 };
