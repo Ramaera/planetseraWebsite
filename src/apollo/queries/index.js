@@ -29,15 +29,17 @@ mutation CreateRewardCode ( $rewardCode : String!, $userId :  String! ) {
 `);
 
 export const SIGNUP = gql(`
-mutation Signup(  $name: String!, $email: String!, $mobileNumber: String!, $password: String!) {
-  signup(data: {  name: $name, email: $email, mobileNumber: $mobileNumber, password: $password}) {
+mutation Signup(  $name: String!, $email: String!,$agencyCode: String!, $mobileNumber: String!, $password: String!) {
+  signup(data: {  name: $name, email: $email, agencyCode: $agencyCode,mobileNumber: $mobileNumber, password: $password}) {
       accessToken
       refreshToken
       user {
           createdAt
           email
           id
+          agencyCode
           name
+          mobileNumber
           role
           updatedAt
           buyer {
@@ -59,6 +61,8 @@ mutation Login( $email: String!, $password: String!) {
             email
             id
             name
+            mobileNumber
+            agencyCode
             role
             updatedAt
             buyer {
@@ -83,6 +87,8 @@ query GetUser {
     id
     name
     role
+    mobileNumber
+    agencyCode
     updatedAt
     buyer {
         id
@@ -176,6 +182,21 @@ query ViewCart($buyerId: String!) {
     }
   }
 }
+`);
+
+export const UpdateAgencyCode = gql(`
+mutation UpdateUserAgencyCode($agencyCode:String!) {
+  updateUserAgencyCode(data: { agencyCode: $agencyCode }) {
+      agencyCode
+      createdAt
+      email
+      id
+      name
+      role
+      updatedAt
+  }
+}
+
 `);
 
 export const REMOVE_ITEM_CART = gql(`

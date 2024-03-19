@@ -22,6 +22,7 @@ const index = () => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
+  const [agencyCode, setAgencyCode] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const [loginModal, setLoginModal] = useState(false);
@@ -62,12 +63,14 @@ const index = () => {
     const isValid = validateForm();
     if (isValid) {
       try {
+        console.log("-", userName, email, number, agencyCode);
         const resp = await createSignup({
           variables: {
             name: userName,
             email: email,
             mobileNumber: number,
             password: password,
+            agencyCode: agencyCode,
           },
         });
 
@@ -92,10 +95,12 @@ const index = () => {
       <div className=" bg-white flex py-20 itens-center justify-center p-4 flex-col md:flex-row items-center text-center ">
         <form
           onSubmit={(e) => submitHandler(e)}
-          className="flex flex-col p-8 m-4 w-full md:w-1/3 bg-gray-200 rounded-2xl">
+          className="flex flex-col p-8 m-4 w-full md:w-1/3 bg-gray-200 rounded-2xl"
+        >
           {" "}
           <h1
-            className={` text-[${colorMe}] text-center text-2xl mb-4  font-medium	`}>
+            className={` text-[${colorMe}] text-center text-2xl mb-4  font-medium	`}
+          >
             Register Here
           </h1>
           <input
@@ -128,6 +133,16 @@ const index = () => {
             }}
             required
           />
+          <input
+            className="h-12  md:h-14 pl-4 w-full  md:my-3  my-2 p-2 md:mr-2 FontText rounded-lg"
+            type="agencyCode"
+            value={agencyCode}
+            placeholder="Agency Code"
+            onChange={(e) => {
+              setAgencyCode(e.target.value);
+            }}
+            required
+          />
           <div className="relative">
             <input
               className="h-12 placeholder:text-gray-300 md:h-14 pl-4 w-full md:my-3  my-2 p-2 md:mr-2 FontText rounded-lg"
@@ -142,7 +157,8 @@ const index = () => {
             <button
               type="button"
               className="absolute inset-y-0 right-0 pr-3 flex items-center focus:outline-none"
-              onClick={() => setShowPassword(!showPassword)}>
+              onClick={() => setShowPassword(!showPassword)}
+            >
               {showPassword ? <Visibility /> : <VisibilityOff />}
             </button>
           </div>
@@ -150,14 +166,16 @@ const index = () => {
             <button
               // type="submit"
               style={{ background: colorMe, color: "white" }}
-              className="mt-4 p-4 h-[56px] border-solid border border-white rounded-3xl	">
+              className="mt-4 p-4 h-[56px] border-solid border border-white rounded-3xl	"
+            >
               Complete your Registration
             </button>
             <p className="mt-2">
               Already A User ?{" "}
               <span
                 className="text-orange-600 curosr-pointer"
-                onClick={openLoginModal}>
+                onClick={openLoginModal}
+              >
                 {" "}
                 Click Here For Login
               </span>

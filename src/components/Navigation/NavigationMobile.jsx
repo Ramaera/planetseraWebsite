@@ -103,7 +103,8 @@ const NavigationMobile = ({ page }) => {
           <div id="mobilenavigation">
             <ul
               className="px-8 py-4 mx-4  "
-              style={{ borderColor: `${colorMe}` }}>
+              style={{ borderColor: `${colorMe}` }}
+            >
               <li>
                 <Link
                   href="/"
@@ -113,7 +114,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/" && colorMe,
                     fontWeight: currentRoute === "/" && 600,
-                  }}>
+                  }}
+                >
                   Home
                 </Link>
               </li>
@@ -125,7 +127,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/product" && colorMe,
                     fontWeight: currentRoute === "/product" && 600,
-                  }}>
+                  }}
+                >
                   Product
                 </Link>
               </li>
@@ -138,7 +141,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/shop" && colorMe,
                     fontWeight: currentRoute === "/shop" && 600,
-                  }}>
+                  }}
+                >
                   Shop
                 </Link>
               </li>
@@ -151,7 +155,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/about" && colorMe,
                     fontWeight: currentRoute === "/about" && 600,
-                  }}>
+                  }}
+                >
                   About
                 </Link>
               </li>
@@ -164,7 +169,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/blog" && colorMe,
                     fontWeight: currentRoute === "/blog" && 600,
-                  }}>
+                  }}
+                >
                   Blog
                 </Link>
               </li>
@@ -177,7 +183,8 @@ const NavigationMobile = ({ page }) => {
                   style={{
                     color: currentRoute === "/contact-us" && colorMe,
                     fontWeight: currentRoute === "/contact-us" && 600,
-                  }}>
+                  }}
+                >
                   Contact Us
                 </Link>
               </li>
@@ -192,7 +199,8 @@ const NavigationMobile = ({ page }) => {
                     style={{
                       color: currentRoute === "/login" ? colorMe : undefined,
                       fontWeight: currentRoute === "/login" ? 600 : undefined,
-                    }}>
+                    }}
+                  >
                     Login
                   </Link>
                 </li>
@@ -207,7 +215,8 @@ const NavigationMobile = ({ page }) => {
                         color: currentRoute === "/cart" ? colorMe : undefined,
                         fontWeight: currentRoute === "/cart" ? 600 : undefined,
                         alignItems: "center",
-                      }}>
+                      }}
+                    >
                       Cart
                       <Badge badgeContent={cartItemsQuantity} color="primary">
                         <ShoppingCartIcon sx={{ marginLeft: 1 }} />
@@ -224,8 +233,24 @@ const NavigationMobile = ({ page }) => {
                         fontWeight:
                           currentRoute === "/orders" ? 600 : undefined,
                         alignItems: "center",
-                      }}>
+                      }}
+                    >
                       My Orders
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/profile"
+                      passHref
+                      className="px-4 py-2 flex w-full rounded-md"
+                      style={{
+                        color: currentRoute === "/orders" ? colorMe : undefined,
+                        fontWeight:
+                          currentRoute === "/orders" ? 600 : undefined,
+                        alignItems: "center",
+                      }}
+                    >
+                      My Profile
                     </Link>
                   </li>
 
@@ -239,7 +264,8 @@ const NavigationMobile = ({ page }) => {
                         color: currentRoute === "/logout" ? colorMe : undefined,
                         fontWeight:
                           currentRoute === "/logout" ? 600 : undefined,
-                      }}>
+                      }}
+                    >
                       Logout
                     </Link>
                   </li>
