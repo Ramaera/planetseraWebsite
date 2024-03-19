@@ -139,7 +139,7 @@ const OrderProceed = ({ open, onClose, selectedOrder, allProducts }) => {
           console.error("Error occurred while processing payment:", error);
         });
 
-      //   onClose();
+      onClose();
     }
   };
 
