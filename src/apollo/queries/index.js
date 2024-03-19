@@ -348,19 +348,15 @@ query GetallOrders {
           productVariantId
           qty
       }
-      Buyer {
-        user {
-            name
-        }
-    }
       Payment {
-        buyerId
-        dateOfPayment
-        orderId
-        paymentId
-    }
+          buyerId
+          dateOfPayment
+          orderId
+          paymentId
+      }
   }
 }
+
 `);
 
 export const CREATE_PRODUCT = gql(`

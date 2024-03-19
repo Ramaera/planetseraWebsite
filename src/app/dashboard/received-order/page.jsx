@@ -51,13 +51,14 @@ const ReceivedOrder = () => {
 
       <NavItem page={"received-order"} />
       <Container maxWidth={false} sx={{ padding: 5 }} className="min-h-screen">
-        <Typography variant="h4" sx={{ mt: 7 }}>
+        <Typography variant="h5" sx={{ mt: 7 }}>
           Received Orders
         </Typography>
 
-        <TableContainer>
+        <TableContainer
+          style={{ overflowX: "auto", borderWidth: 3, borderRadius: 10 }}>
           <Table>
-            <TableHead>
+            <TableHead className="bg-slate-300">
               <TableRow>
                 <TableCell className="font-semibold">Name </TableCell>
                 <TableCell className="font-semibold">Address</TableCell>
@@ -69,9 +70,10 @@ const ReceivedOrder = () => {
                 </TableCell>
                 <TableCell className="font-semibold">Payment Status</TableCell>
                 <TableCell className="font-semibold">Order Status</TableCell>
+                <TableCell className="font-semibold">Order Proceed</TableCell>
               </TableRow>
             </TableHead>
-            <TableBody>
+            <TableBody className="bg-slate-50">
               {allOrders?.data?.getallOrders?.map((user, index) => (
                 <TableRow key={index}>
                   <TableCell>{user?.Buyer?.user?.name}</TableCell>
@@ -107,6 +109,11 @@ const ReceivedOrder = () => {
                   <TableCell>{user?.Payment[0]?.paymentId}</TableCell>
                   <TableCell>Success</TableCell>
                   <TableCell>{user?.status}</TableCell>
+                  <TableCell>
+                    <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
+                      Order To Proceed
+                    </button>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>

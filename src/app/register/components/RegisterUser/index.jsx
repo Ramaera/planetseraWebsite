@@ -23,6 +23,8 @@ const index = () => {
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const [loginModal, setLoginModal] = useState(false);
 
@@ -54,6 +56,17 @@ const index = () => {
       toast.error("Password contains at least 8 characters!");
       return;
     }
+
+    if (!confirmPassword) {
+      toast.error("Enter Confirm Password!");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      toast.error("Passwords didn’t match");
+      return;
+    }
+
     return true;
   };
 
@@ -144,6 +157,24 @@ const index = () => {
               className="absolute inset-y-0 right-0 pr-3 flex items-center focus:outline-none"
               onClick={() => setShowPassword(!showPassword)}>
               {showPassword ? <Visibility /> : <VisibilityOff />}
+            </button>
+          </div>
+          <div className="relative">
+            <input
+              className="h-12 placeholder:text-gray-300 md:h-14 pl-4 w-full md:my-3  my-2 p-2 md:mr-2 FontText rounded-lg"
+              type={showConfirmPassword ? "text" : "password"}
+              value={confirmPassword}
+              placeholder="Confirm Password"
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+              }}
+              required
+            />
+            <button
+              type="button"
+              className="absolute inset-y-0 right-0 pr-3 flex items-center focus:outline-none"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+              {showConfirmPassword ? <Visibility /> : <VisibilityOff />}
             </button>
           </div>
           <div>

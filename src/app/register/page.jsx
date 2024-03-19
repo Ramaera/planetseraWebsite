@@ -6,8 +6,8 @@ import RegisterUser from "@/app/register/components/RegisterUser";
 const Register = () => {
   return (
     <div>
-      <NavItem page={"products"} />
-      <NavigationMobile page={"products"} />
+      <NavItem page={"orders"} />
+      <NavigationMobile page={"orders"} />
       <RegisterUser />
     </div>
   );

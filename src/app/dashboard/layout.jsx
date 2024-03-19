@@ -6,6 +6,7 @@ import Link from "next/link";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
 import CategoryIcon from "@mui/icons-material/Category";
+import ViewListIcon from "@mui/icons-material/ViewList";
 import { usePathname, useRouter } from "next/navigation";
 
 export default function DashboardLayout({ children }) {
@@ -63,6 +64,20 @@ export default function DashboardLayout({ children }) {
                   <CategoryIcon />
                   <span class="flex-1 ms-3  whitespace-nowrap">
                     View All Products
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/dashboard/received-order"
+                  class={`flex items-center p-2 text-gray-900 rounded-lg group ${
+                    currentRoute.startsWith("/dashboard/received-order")
+                      ? "bg-slate-300"
+                      : "hover:bg-gray-300"
+                  }`}>
+                  <ViewListIcon />
+                  <span class="flex-1 ms-3  whitespace-nowrap">
+                    View All Orders
                   </span>
                 </Link>
               </li>
