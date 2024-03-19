@@ -172,9 +172,20 @@ const ordersummary = () => {
                 const product = allProducts.find(
                   (prod) => prod.id === item.productVariantId
                 );
+                {
+                  console.log("item", item);
+                }
                 return (
-                  <div className="flex">
-                    {item?.name} {product?.weight}g × {item?.qty}
+                  <div className="flex justify-between">
+                    <div>
+                      {" "}
+                      {item?.name} {product?.weight}g
+                    </div>
+
+                    <div>
+                      {item?.qty} X {product?.price} = ₹{" "}
+                      {item?.qty * product?.price}
+                    </div>
                   </div>
                 );
               })}
@@ -182,7 +193,7 @@ const ordersummary = () => {
           </div>
 
           <div className="flex  justify-between mt-5 ">
-            Price <span>₹ {calculatePrice()}</span>
+            Total Amount <span>₹ {calculatePrice()}</span>
           </div>
           {currentRoute === "/cart/checkout" && (
             <div className="mb-4">

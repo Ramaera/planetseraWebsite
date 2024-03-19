@@ -70,7 +70,7 @@ export default function ControlledRadioButtonsGroup() {
       const productWeight = weightInInt * item.qty;
       return totalWeight + productWeight;
     }, 0);
-    console.log("--->>", totalWeightInGrams);
+    // console.log("--->>", totalWeightInGrams);
 
     const totalWeightInKgs = totalWeightInGrams / 1000;
     return totalWeightInKgs;
@@ -83,7 +83,7 @@ export default function ControlledRadioButtonsGroup() {
     const deliveryPincode = selectedAddress?.address[1]?.pinCode;
 
     const totalWeight = calculateTotalWeightInKgs();
-    console.log("totalWeight", totalWeight);
+    // console.log("totalWeight", totalWeight);
 
     const queryParams = {
       pickup_postcode: 844101,
@@ -141,6 +141,8 @@ export default function ControlledRadioButtonsGroup() {
               className="flex w-full justify-between my-2 sm:my-8"
               key={_address?.addresId}
             >
+              {console.log("_address", _address)}
+
               <div className="w-full sm:w-8/12  ">
                 <FormControlLabel
                   value={_address?.addresId}
@@ -161,7 +163,8 @@ export default function ControlledRadioButtonsGroup() {
                   className="px-8 sm:font-normal text-xs sm:text-base	"
                 >
                   <p>
-                    {_address?.address[0]?.city} {_address?.address[1]?.pincode}{" "}
+                    {_address?.address[0]?.city} {_address?.address[3]?.state}{" "}
+                    {_address?.address[1]?.pinCode}{" "}
                     {_address?.address[2]?.address}
                   </p>
                   <p>Contact :- {_address.mobileNumber}</p>

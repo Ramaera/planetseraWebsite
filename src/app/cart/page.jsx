@@ -217,7 +217,8 @@ const Page = () => {
                       </div>
                     </div>
                     <div className="sm:flex hidden sm:w-full sm:justify-end text-xs sm:text-base  ">
-                      ₹ {product?.price} × {item?.qty}
+                      ₹ {product?.price} × {item?.qty} = ₹{" "}
+                      {product?.price * item?.qty}
                     </div>
                   </div>
                 );
