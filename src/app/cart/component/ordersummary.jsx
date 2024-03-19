@@ -7,8 +7,8 @@ import { useQuery } from "@apollo/client";
 import { Get_All_Products } from "@/apollo/queries";
 import {
   cartTotalValue,
-  shippingValue,
   getDiscountedAmount,
+  discountCode,
 } from "@/state/slice/cartSlice";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
@@ -21,11 +21,9 @@ const ordersummary = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
   const CartData = useSelector((state) => state.cart.items);
   const [discount, setDiscount] = useState(null);
-  const [shipping, setShipping] = useState(100);
   const user = useSelector((state) => state?.user);
   const [loginModal, setLoginModal] = useState(false);
   const [checkoutEnabled, setCheckoutEnabled] = useState(false);
-  const [couponCode, setCouponCode] = useState("");
   const FreightCharge = useSelector((state) => state.shipment.freightCharge);
   const [subscriberKyc, setSubscriberKyc] = useState(null); // State to hold subscriber.kyc value
 
@@ -36,6 +34,7 @@ const ordersummary = () => {
     setLoginModal(false);
   };
   const allProductsQuery = useQuery(Get_All_Products);
+
   const allProducts =
     allProductsQuery.data?.allProducts.flatMap(
       (list) => list?.ProductsVariant
@@ -54,13 +53,13 @@ const ordersummary = () => {
     dispatch(cartTotalValue(totalValue));
     return totalValue;
   };
+  const [couponCode, setCouponCode] = useState("");
 
   const handleApplyCoupon = () => {
     axios
       .get("https://kycramaerabackend.ramaera.com/allSubscribers")
       .then((res) => {
         const subscribers = res?.data;
-        // console.log("couponCode", couponCode);
 
         const subscriber = subscribers
           .map(
@@ -70,12 +69,14 @@ const ordersummary = () => {
           )
           .filter(Boolean);
 
-        console.log("subscribers", subscriber?.kyc);
+        // console.log("subscribers", subscriber?.kyc);
 
         if (subscriber.includes(true)) {
           const discountedAmount = calculatePrice() * 0.3;
           setDiscount(discountedAmount);
           dispatch(getDiscountedAmount(discountedAmount));
+          dispatch(discountCode(couponCode));
+
           setSubscriberKyc("APPROVED");
           toast.success("Coupon applied successfully!", {
             position: "top-center",

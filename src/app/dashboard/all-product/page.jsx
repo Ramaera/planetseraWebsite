@@ -19,7 +19,7 @@ const page = ({}) => {
   const { loading, error, data, refetch } = useQuery(Get_All_Products);
   const allProducts = data?.allProducts;
 
-  console.log("all", allProducts);
+  // console.log("all", allProducts);
   const router = useRouter();
   const user = useQuery(GetUser);
   const Role = user?.data?.me?.role;
@@ -91,7 +91,8 @@ const page = ({}) => {
                               imageUrl_3: list?.imageUrl[2],
                               isVariantActive: list?.isVariantActive,
                             },
-                          }}>
+                          }}
+                        >
                           <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                             Update Variant Details
                           </button>
@@ -108,7 +109,8 @@ const page = ({}) => {
                   </TableCell>
                   <TableCell>
                     <Link
-                      href={`/dashboard/all-product/addVariant/${item.productUrl}`}>
+                      href={`/dashboard/all-product/addVariant/${item.productUrl}`}
+                    >
                       <button className="bg-red-400  text-white px-4 py-2 rounded-xl">
                         Add Variant
                       </button>

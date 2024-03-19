@@ -58,14 +58,14 @@ const ProductDetailsInfo = () => {
     (variant) => variant.weight === selectedButton
   );
 
-  console.log("specificVariant", specificVariant?.weight);
+  // console.log("specificVariant", specificVariant?.weight);
 
   const handleSelectedButton = (variantWeight) => {
     setSelectedButton(variantWeight);
   };
 
   const handleAddToCart = async () => {
-    console.log("enter");
+    // console.log("enter");
     if (quantity > specificVariant?.stock) {
       toast.error(
         "Oops! You can't add more quantity than the available stock",

@@ -195,7 +195,7 @@ const AddProduct = () => {
   // console.log("product?.backgroundImage", product?.backgroundImage);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("product", product);
+    // console.log("product", product);
   };
 
   return (

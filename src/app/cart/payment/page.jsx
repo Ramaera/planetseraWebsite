@@ -52,26 +52,18 @@ const page = () => {
     );
   };
 
-  console.log("calculatePrice", calculatePrice());
+  // console.log("calculatePrice", calculatePrice());
 
   const calculateTotalPrice = () => {
     const priceAfterDiscount = calculatePrice() - discount;
     const totalPrice = priceAfterDiscount + FreightCharge;
     return totalPrice;
   };
-  console.log("calculateTotalPrice", calculateTotalPrice());
+  // console.log("calculateTotalPrice", calculateTotalPrice());
 
   const BuyerId = user?.data?.buyer?.id;
   const BuyerEmail = user?.data?.email;
   const BuyerName = user?.data?.name;
-
-  useEffect(() => {
-    if (calculatePrice() >= 200) {
-      setShipping(50);
-    } else {
-      setShipping(100);
-    }
-  }, [calculatePrice]);
 
   const payOnline = () => {
     const postData = {

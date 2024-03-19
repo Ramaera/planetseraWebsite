@@ -100,7 +100,7 @@ const AddVariant = () => {
       return;
     }
 
-    console.log("product", product);
+    // console.log("product", product);
     try {
       const resp = await createProductVariants({
         variables: {
@@ -124,7 +124,7 @@ const AddVariant = () => {
     }
   };
 
-  console.log("product.weight", typeof product.weight);
+  // console.log("product.weight", typeof product.weight);
   return (
     <>
       <div className="navMobile ">

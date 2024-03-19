@@ -43,7 +43,7 @@ const OrderDetails = () => {
   //   return newDate;
   // };
 
-  console.log("user", user);
+  // console.log("user", user);
   useEffect(() => {
     if (!user?.data) {
       router.replace("/");

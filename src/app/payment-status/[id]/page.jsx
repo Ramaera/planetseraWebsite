@@ -16,9 +16,10 @@ import {
   FIND_TRANSACTION_ID,
   CREATE_ORDER,
   DELETE_CART,
+  SAVE_DISCOUNT_DETAILS,
 } from "@/apollo/queries";
 import { useRouter } from "next/navigation";
-import { clearCart } from "@/state/slice/cartSlice";
+import { clearCart, discountCodeClear } from "@/state/slice/cartSlice";
 import { CoPresentOutlined } from "@mui/icons-material";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
@@ -34,10 +35,18 @@ const page = () => {
   const CartData = useSelector((state) => state.cart.items);
   const cartTotalValue = useSelector((state) => state.cart.cartTotalValue);
   const shippingValue = useSelector((state) => state.cart.shippingValue);
+  const FreightCharge = useSelector((state) => state.shipment.freightCharge);
+  const discountCode = useSelector((state) => state.cart.discountCode);
+  const discountedAmount = useSelector(
+    (state) => state.cart.getDiscountedAmount
+  );
+
+  // console.log("discountCode", discountCode);
 
   const [createOrder] = useMutation(CREATE_ORDER);
   const [deleteCart] = useMutation(DELETE_CART);
   const [createPaymentData] = useMutation(CREATE_PAYMENT_DATA);
+
   const ViewCartData = useQuery(Get_VIEW_CART, {
     variables: {
       buyerId: user?.data?.buyer?.id,
@@ -48,6 +57,8 @@ const page = () => {
   const BuyerId = user?.data?.buyer?.id;
   const CartId = user?.data?.buyer?.Cart[0]?.id;
   const AddressId = addressesData?.selectedAddress;
+
+  // console.log("AddressId", CartId);
   const { id } = useParams();
   const [FindTransactionId] = useLazyQuery(FIND_TRANSACTION_ID, {
     variables: {
@@ -74,7 +85,6 @@ const page = () => {
       const url = `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`;
       // console.log("url", url);
       const response = await axios.get(url);
-      // console.log("response", response);
       setResStatus(response?.data);
       const transactionIdFound = await FindTransactionId();
       if (transactionIdFound.data) {
@@ -85,6 +95,8 @@ const page = () => {
         response?.data?.code === "PAYMENT_SUCCESS"
       ) {
         const data = await handleCreateOrder();
+        // console.log("orderid", data);
+
         const paymentData = await createPaymentData({
           variables: {
             buyerId: BuyerId,
@@ -94,8 +106,6 @@ const page = () => {
         });
       }
 
-      // else if (response?.data?.code === "TRANSACTION_NOT_FOUND") {
-      // }
       return response?.data;
     } catch (err) {
       console.log("err", err.message);
@@ -127,28 +137,37 @@ const page = () => {
       // console.log("merchantTransactionId123", merchantTransactionId);
       const status = await checkStatus(merchantTransactionId);
       // console.log("status interval", status);
-      if (status.code === "PAYMENT_SUCCESS" || timeout >= maxTimeout) {
+      if (status?.code === "PAYMENT_SUCCESS" || timeout >= maxTimeout) {
         return status;
       }
     }
     return { success: false, message: "Payment status check timeout" };
   };
 
-  const calculateTotalPrice = cartTotalValue + shippingValue;
+  // const calculateTotalPrice = cartTotalValue + FreightCharge;
+  const calculateTotalPrice = () => {
+    const priceAfterDiscount = cartTotalValue - discountedAmount;
+    const totalPrice = priceAfterDiscount + FreightCharge;
+    return totalPrice;
+  };
 
   const handleCreateOrder = async () => {
     try {
+      // console.log("hi", FreightCharge, discountCode, discountedAmount);
       const resp = await createOrder({
         variables: {
           AddressId: parseInt(AddressId),
-          ShippingCost: shippingValue,
+          ShippingCost: Math.round(FreightCharge),
           buyerId: BuyerId,
           cartId: CartId,
-          orderAmount: calculateTotalPrice,
+          orderAmount: Math.round(parseInt(calculateTotalPrice())),
+          discountCode: discountCode ? discountCode : "Not Applied",
+          discountedAmount: Math.round(discountedAmount),
         },
       });
-
+      // console.log("after");
       await handleDeleteCart();
+      // console.log("done");
       return resp;
     } catch (err) {
       console.log("err", err.message);
@@ -164,6 +183,7 @@ const page = () => {
       });
 
       await dispatch(clearCart());
+      await dispatch(discountCodeClear());
 
       // await handleOrderPlaced();
     } catch (err) {

@@ -37,7 +37,7 @@ const Page = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
+    // console.log(name, value);
     setProduct((prevProduct) => ({
       ...prevProduct,
       [name]: value,
@@ -125,7 +125,8 @@ const Page = () => {
               name="isVariantActive"
               value={product?.isVariantActive}
               onChange={handleChange}
-              className="w-full border rounded px-4 py-2">
+              className="w-full border rounded px-4 py-2"
+            >
               <option value="true">Active</option>
               <option value="false">Inactive</option>
             </select>
@@ -231,7 +232,8 @@ const Page = () => {
             <button
               type="submit"
               onClick={handleUpdateProductVariant}
-              className="bg-blue-500 text-white px-4 py-2 rounded">
+              className="bg-blue-500 text-white px-4 py-2 rounded"
+            >
               Update Variant Detail
             </button>
           </div>
