@@ -42,7 +42,6 @@ const ReceivedOrder = () => {
   const user = useSelector((state) => state?.user);
 
   const allOrders = useQuery(GET_ALL_ORDERS);
-  console.log("allOrder", allOrders);
 
   return (
     <div>
@@ -80,11 +79,11 @@ const ReceivedOrder = () => {
                   <TableCell>
                     <div>{user?.address?.name}</div>
                     <div className="flex">
-                      {user.address.address[2].address}{" "}
-                      {user.address.address[0].city}{" "}
-                      {user.address.address[1].pinCode}
+                      {user?.address?.address[2].address}{" "}
+                      {user.address?.address[0].city}{" "}
+                      {user.address?.address[1].pinCode}
                     </div>
-                    <div>+91 {user.address.mobileNumber}</div>
+                    <div>+91 {user.address?.mobileNumber}</div>
                   </TableCell>
                   <TableCell>
                     {" "}

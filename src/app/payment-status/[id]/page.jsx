@@ -19,19 +19,51 @@ import {
   SAVE_DISCOUNT_DETAILS,
 } from "@/apollo/queries";
 import { useRouter } from "next/navigation";
-import { clearCart, discountCodeClear } from "@/state/slice/cartSlice";
+import {
+  clearCart,
+  discountCodeClear,
+  discountedPercentage,
+} from "@/state/slice/cartSlice";
 import { CoPresentOutlined } from "@mui/icons-material";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
+import { GET_ALL_ADDRESS } from "@/apollo/queries";
 
 const page = () => {
+  const user = useSelector((state) => state?.user);
+  const addressesData = useSelector((state) => state.address);
+  const AddressId = addressesData?.selectedAddress;
+
+  const { data: AllAddressData, loading: AddressLoading } = useQuery(
+    GET_ALL_ADDRESS,
+    {
+      variables: {
+        buyerId: user?.data?.buyer?.id,
+      },
+    }
+  );
+
+  const selectedAddressData = AllAddressData?.getBuyerAddress?.filter(
+    (list) => list?.addresId == AddressId
+  );
+
+  const metaDataAddress = selectedAddressData?.map((list) => list?.address);
+  const metaDataName = selectedAddressData?.map((list) => list?.name);
+  const metaDataMobile = selectedAddressData?.map((list) => list?.mobileNumber);
+
+  const [loadingFinised, setLoadingFinised] = useState(false);
+  useEffect(() => {
+    if (metaDataAddress && metaDataName && metaDataMobile) {
+      setLoadingFinised(true);
+    }
+  }, []);
+  // console.log("chh", metaDataAddress, metaDataName, metaDataMobile);
+
   const [merchantTransactionId, setMerchantTransactionId] = useState();
 
   const [resStatus, setResStatus] = useState();
   const [loading, setLoading] = useState(true);
-  const user = useSelector((state) => state?.user);
 
-  const addressesData = useSelector((state) => state.address);
   const CartData = useSelector((state) => state.cart.items);
   const cartTotalValue = useSelector((state) => state.cart.cartTotalValue);
   // const shippingValue = useSelector((state) => state.cart.shippingValue);
@@ -54,7 +86,7 @@ const page = () => {
 
   const BuyerId = user?.data?.buyer?.id;
   const CartId = user?.data?.buyer?.Cart[0]?.id;
-  const AddressId = addressesData?.selectedAddress;
+
   const { id } = useParams();
   const [FindTransactionId] = useLazyQuery(FIND_TRANSACTION_ID, {
     variables: {
@@ -147,6 +179,15 @@ const page = () => {
     return totalPrice;
   };
 
+  // const metaData = [];
+  // metaData.push(
+  //   { address: metaDataAddress },
+  //   { mobileNumber: metaDataMobile },
+  //   { name: metaDataName }
+  // );
+
+  // console.log("metaData", metaData);
+
   const handleCreateOrder = async () => {
     try {
       const resp = await createOrder({
@@ -158,6 +199,11 @@ const page = () => {
           orderAmount: Math.round(parseInt(calculateTotalPrice())),
           discountCode: discountCode ? discountCode : "Not Applied",
           discountedAmount: Math.round(discount),
+          metaData: [
+            { address: metaDataAddress },
+            { mobileNumber: metaDataMobile },
+            { name: metaDataName },
+          ],
         },
       });
 
@@ -178,6 +224,7 @@ const page = () => {
 
       await dispatch(clearCart());
       await dispatch(discountCodeClear());
+      await dispatch(discountedPercentage("10%"));
 
       // await handleOrderPlaced();
     } catch (err) {
@@ -195,7 +242,10 @@ const page = () => {
 
   return (
     <>
-      {LoadingData || loading || resStatus?.code === "PAYMENT_PENDING" ? (
+      {loadingFinised ||
+      LoadingData ||
+      loading ||
+      resStatus?.code === "PAYMENT_PENDING" ? (
         <div className="h-screen flex-col flex justify-center items-center">
           <CircularProgress />
           <br />

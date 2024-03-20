@@ -288,6 +288,8 @@ export const CREATE_ORDER = gql(`
     $orderAmount: Float!
     $discountCode: String
     $discountedAmount: Int
+    $metaData: [JSONObject!]
+
   ) {
     createOrder(
       CreateOrder: {
@@ -298,6 +300,7 @@ export const CREATE_ORDER = gql(`
         orderAmount: $orderAmount
         discountCode:$discountCode
         discountedAmount:$discountedAmount
+        metaData:$metaData
       }
     ) {
       newOrder {
