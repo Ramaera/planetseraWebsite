@@ -16,9 +16,10 @@ import {
   FIND_TRANSACTION_ID,
   CREATE_ORDER,
   DELETE_CART,
+  SAVE_DISCOUNT_DETAILS,
 } from "@/apollo/queries";
 import { useRouter } from "next/navigation";
-import { clearCart } from "@/state/slice/cartSlice";
+import { clearCart, discountCodeClear } from "@/state/slice/cartSlice";
 import { CoPresentOutlined } from "@mui/icons-material";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
@@ -33,7 +34,13 @@ const page = () => {
   const addressesData = useSelector((state) => state.address);
   const CartData = useSelector((state) => state.cart.items);
   const cartTotalValue = useSelector((state) => state.cart.cartTotalValue);
-  const shippingValue = useSelector((state) => state.cart.shippingValue);
+  // const shippingValue = useSelector((state) => state.cart.shippingValue);
+  const FreightCharge = useSelector((state) => state.shipment.freightCharge);
+  const discountCode = useSelector((state) => state.cart.discountCode);
+  const discount = useSelector((state) => state.cart.getDiscountedAmount);
+  const ShippingChargeRedux = useSelector(
+    (state) => state.shipment.shippingCharge
+  );
 
   const [createOrder] = useMutation(CREATE_ORDER);
   const [deleteCart] = useMutation(DELETE_CART);
@@ -127,24 +134,30 @@ const page = () => {
       // console.log("merchantTransactionId123", merchantTransactionId);
       const status = await checkStatus(merchantTransactionId);
       // console.log("status interval", status);
-      if (status.code === "PAYMENT_SUCCESS" || timeout >= maxTimeout) {
+      if (status?.code === "PAYMENT_SUCCESS" || timeout >= maxTimeout) {
         return status;
       }
     }
     return { success: false, message: "Payment status check timeout" };
   };
 
-  const calculateTotalPrice = cartTotalValue + shippingValue;
+  const calculateTotalPrice = () => {
+    const priceAfterDiscount = cartTotalValue - discount;
+    const totalPrice = priceAfterDiscount + ShippingChargeRedux;
+    return totalPrice;
+  };
 
   const handleCreateOrder = async () => {
     try {
       const resp = await createOrder({
         variables: {
           AddressId: parseInt(AddressId),
-          ShippingCost: shippingValue,
+          ShippingCost: ShippingChargeRedux,
           buyerId: BuyerId,
           cartId: CartId,
-          orderAmount: calculateTotalPrice,
+          orderAmount: Math.round(parseInt(calculateTotalPrice())),
+          discountCode: discountCode ? discountCode : "Not Applied",
+          discountedAmount: Math.round(discount),
         },
       });
 
@@ -164,6 +177,7 @@ const page = () => {
       });
 
       await dispatch(clearCart());
+      await dispatch(discountCodeClear());
 
       // await handleOrderPlaced();
     } catch (err) {
@@ -211,8 +225,7 @@ const page = () => {
               </div>
               <div
                 style={{ color: "#8D92A7" }}
-                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	"
-              >
+                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	">
                 {resStatus?.code === "PAYMENT_SUCCESS"
                   ? "To check your order status"
                   : "If Amount is Debited From Your Account, Kindly Mail Us At support@ramaera.com With Your Transaction Details"}

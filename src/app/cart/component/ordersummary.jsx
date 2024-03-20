@@ -10,6 +10,8 @@ import {
   shippingValue,
   getDiscountedAmount,
   discountedPercentage,
+  discountCode,
+  discountCodeClear,
 } from "@/state/slice/cartSlice";
 import {
   setFreightCharge,
@@ -26,13 +28,14 @@ const ordersummary = () => {
   const currentRoute = usePathname();
   const colorMe = useSelector((state) => state.colorUs.color);
   const CartData = useSelector((state) => state.cart.items);
+  const DiscountCodeRedux = useSelector((state) => state.cart.discountCode);
   const [discount, setDiscount] = useState(0);
   const [discountPercentage, setDiscountPercentage] = useState(0.1);
   const [shipping, setShipping] = useState(100);
   const user = useSelector((state) => state?.user);
   const [loginModal, setLoginModal] = useState(false);
   const [checkoutEnabled, setCheckoutEnabled] = useState(false);
-  const [couponCode, setCouponCode] = useState("");
+  const [couponCode, setCouponCode] = useState(DiscountCodeRedux || "");
   // const FreightCharge = useSelector((state) => state.shipment.freightCharge);
 
   const ShippingChargeRedux = useSelector(
@@ -47,7 +50,7 @@ const ordersummary = () => {
     (state) => state.cart.discountedPercentage
   );
 
-  console.log("DiscountedPercentageRedux", ShippingChargeRedux);
+  // console.log("DiscountCodeRedux", DiscountCodeRedux);
   const openLoginModal = () => {
     setLoginModal(true);
   };
@@ -110,6 +113,7 @@ const ordersummary = () => {
           // setDiscount(discountedAmount);
           // dispatch(getDiscountedAmount(discountedAmount));
           dispatch(discountedPercentage("30%"));
+          dispatch(discountCode(couponCode));
 
           // setSubscriberKyc("30%");
           toast.success("Coupon applied successfully!", {
@@ -123,6 +127,7 @@ const ordersummary = () => {
             theme: "light",
           });
         } else {
+          dispatch(discountCodeClear());
           dispatch(discountedPercentage("10%"));
           // const discountedAmount = calculatePrice() * 0.1;
           // setDiscount(discountedAmount);
