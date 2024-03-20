@@ -100,7 +100,6 @@ const address = () => {
   const clearForm = () => {
     setFormData(initialFormData);
   };
-  console.log("formData", formData);
   const handleSaveAndDeliverClick = async () => {
     if (
       formData.name &&

@@ -32,6 +32,7 @@ const addressSlice = createSlice({
     },
 
     selectAddress: (state, action) => {
+      console.log("here");
       state.selectedAddress = action.payload;
     },
   },

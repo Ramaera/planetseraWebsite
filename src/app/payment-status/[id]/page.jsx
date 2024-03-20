@@ -24,50 +24,26 @@ import {
   discountCodeClear,
   discountedPercentage,
 } from "@/state/slice/cartSlice";
-import { CoPresentOutlined } from "@mui/icons-material";
+
 import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
-import { GET_ALL_ADDRESS } from "@/apollo/queries";
 
 const page = () => {
   const user = useSelector((state) => state?.user);
   const addressesData = useSelector((state) => state.address);
   const AddressId = addressesData?.selectedAddress;
 
-  const { data: AllAddressData, loading: AddressLoading } = useQuery(
-    GET_ALL_ADDRESS,
-    {
-      variables: {
-        buyerId: user?.data?.buyer?.id,
-      },
-    }
-  );
-
-  const selectedAddressData = AllAddressData?.getBuyerAddress?.filter(
+  const selectedAddressData = addressesData?.allAddresses?.filter(
     (list) => list?.addresId == AddressId
   );
 
-  const metaDataAddress = selectedAddressData?.map((list) => list?.address);
+  const metaDataAddress = selectedAddressData.map((list) => list?.address);
   const metaDataName = selectedAddressData?.map((list) => list?.name);
   const metaDataMobile = selectedAddressData?.map((list) => list?.mobileNumber);
-
-  const [loadingFinised, setLoadingFinised] = useState(false);
-  useEffect(() => {
-    if (metaDataAddress && metaDataName && metaDataMobile) {
-      setLoadingFinised(true);
-    }
-  }, []);
-  // console.log("chh", metaDataAddress, metaDataName, metaDataMobile);
-
   const [merchantTransactionId, setMerchantTransactionId] = useState();
 
   const [resStatus, setResStatus] = useState();
   const [loading, setLoading] = useState(true);
-
-  const CartData = useSelector((state) => state.cart.items);
   const cartTotalValue = useSelector((state) => state.cart.cartTotalValue);
-  // const shippingValue = useSelector((state) => state.cart.shippingValue);
-  const FreightCharge = useSelector((state) => state.shipment.freightCharge);
   const discountCode = useSelector((state) => state.cart.discountCode);
   const discount = useSelector((state) => state.cart.getDiscountedAmount);
   const ShippingChargeRedux = useSelector(
@@ -77,11 +53,7 @@ const page = () => {
   const [createOrder] = useMutation(CREATE_ORDER);
   const [deleteCart] = useMutation(DELETE_CART);
   const [createPaymentData] = useMutation(CREATE_PAYMENT_DATA);
-  const ViewCartData = useQuery(Get_VIEW_CART, {
-    variables: {
-      buyerId: user?.data?.buyer?.id,
-    },
-  });
+
   const { data, loading: LoadingData } = useQuery(Get_All_Products);
 
   const BuyerId = user?.data?.buyer?.id;
@@ -94,9 +66,31 @@ const page = () => {
     },
   });
 
-  const allProducts = data?.allProducts.flatMap(
-    (list) => list?.ProductsVariant
-  );
+  const handleCreateOrder = async () => {
+    try {
+      const resp = await createOrder({
+        variables: {
+          AddressId: parseInt(AddressId),
+          ShippingCost: ShippingChargeRedux,
+          buyerId: BuyerId,
+          cartId: CartId,
+          orderAmount: Math.round(parseInt(calculateTotalPrice())),
+          discountCode: discountCode ? discountCode : "Not Applied",
+          discountedAmount: Math.round(discount),
+          metaData: [
+            { mobileNumber: metaDataMobile },
+            { name: metaDataName },
+            { address: metaDataAddress },
+          ],
+        },
+      });
+
+      await handleDeleteCart();
+      return resp;
+    } catch (err) {
+      console.log("err", err.message);
+    }
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -108,7 +102,6 @@ const page = () => {
   const router = useRouter();
 
   const checkStatus = async (merchantTransactionId) => {
-    // console.log("merchantTransactionId", merchantTransactionId);
     try {
       const url = `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`;
       // console.log("url", url);
@@ -142,12 +135,10 @@ const page = () => {
   };
   useEffect(() => {
     setMerchantTransactionId(id);
-
     checkStatusWithInterval(id);
   }, []);
 
   const checkStatusWithInterval = async (merchantTransactionId) => {
-    // console.log("enter1");
     const maxTimeout = 5 * 60 * 1000; // Timeout after 5 minutes
     // console.log("enter2");
     let timeout = 0;
@@ -179,41 +170,6 @@ const page = () => {
     return totalPrice;
   };
 
-  // const metaData = [];
-  // metaData.push(
-  //   { address: metaDataAddress },
-  //   { mobileNumber: metaDataMobile },
-  //   { name: metaDataName }
-  // );
-
-  // console.log("metaData", metaData);
-
-  const handleCreateOrder = async () => {
-    try {
-      const resp = await createOrder({
-        variables: {
-          AddressId: parseInt(AddressId),
-          ShippingCost: ShippingChargeRedux,
-          buyerId: BuyerId,
-          cartId: CartId,
-          orderAmount: Math.round(parseInt(calculateTotalPrice())),
-          discountCode: discountCode ? discountCode : "Not Applied",
-          discountedAmount: Math.round(discount),
-          metaData: [
-            { address: metaDataAddress },
-            { mobileNumber: metaDataMobile },
-            { name: metaDataName },
-          ],
-        },
-      });
-
-      await handleDeleteCart();
-      return resp;
-    } catch (err) {
-      console.log("err", err.message);
-    }
-  };
-
   const handleDeleteCart = async () => {
     try {
       const resp = await deleteCart({
@@ -242,10 +198,7 @@ const page = () => {
 
   return (
     <>
-      {loadingFinised ||
-      LoadingData ||
-      loading ||
-      resStatus?.code === "PAYMENT_PENDING" ? (
+      {LoadingData || loading || resStatus?.code === "PAYMENT_PENDING" ? (
         <div className="h-screen flex-col flex justify-center items-center">
           <CircularProgress />
           <br />
@@ -275,7 +228,8 @@ const page = () => {
               </div>
               <div
                 style={{ color: "#8D92A7" }}
-                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	">
+                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	"
+              >
                 {resStatus?.code === "PAYMENT_SUCCESS"
                   ? "To check your order status"
                   : "If Amount is Debited From Your Account, Kindly Mail Us At support@ramaera.com With Your Transaction Details"}
