@@ -85,7 +85,7 @@ const ReceivedOrder = () => {
                 <TableCell className="font-semibold">Shipment </TableCell>
               </TableRow>
             </TableHead>
-            <TableBody className="bg-slate-50">
+            <TableBody className="bg-slate-100">
               {allOrders?.data?.getallOrders?.map((user, index) => (
                 <TableRow key={index}>
                   <TableCell>{user?.user?.name}</TableCell>
@@ -95,12 +95,12 @@ const ReceivedOrder = () => {
                     <div className="flex">
                       {user?.address?.address[2].address}{" "}
                       {user?.address?.address[0].city}{" "}
-                      {selectedOrder?.address.address[3].state}{" "}
+                      {selectedOrder?.address.address[3]?.state}{" "}
                       {user?.address?.address[1].pinCode}
                     </div>
                     <div>+91 {user?.address?.mobileNumber}</div>
                   </TableCell>
-                  <TableCell className="min-w-lg">
+                  <TableCell className="min-w-[200px]">
                     {" "}
                     {user?.orderItems?.map((item) => {
                       const particularProduct = allProducts.find(
@@ -108,7 +108,7 @@ const ReceivedOrder = () => {
                       );
                       return (
                         <div className="" key={item.id}>
-                          <div className="flex">
+                          <div className="flex ">
                             {item?.name} - {particularProduct?.weight}g
                           </div>
                           <div>Qty: {item?.qty} </div>
@@ -117,7 +117,9 @@ const ReceivedOrder = () => {
                     })}
                   </TableCell>
 
-                  <TableCell>{user?.orderDate.slice(0, 10)}</TableCell>
+                  <TableCell className="min-w-[110px]">
+                    {user?.orderDate.slice(0, 10)}
+                  </TableCell>
                   <TableCell> ₹ {user?.orderAmount}</TableCell>
                   <TableCell>{user?.Payment[0]?.paymentId}</TableCell>
                   <TableCell>Success</TableCell>

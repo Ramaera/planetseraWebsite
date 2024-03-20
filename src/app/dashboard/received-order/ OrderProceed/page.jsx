@@ -77,7 +77,7 @@ const OrderProceed = ({ open, onClose, selectedOrder, allProducts }) => {
     selectedOrder?.ShippingCost,
     typeof orderItems,
     selectedOrder?.user?.email,
-    selectedOrder?.address.address[3].state,
+    selectedOrder?.address.address[3]?.state,
     selectedOrder?.discountedAmount,
     selectedOrder?.orderAmount
   );
@@ -154,44 +154,64 @@ const OrderProceed = ({ open, onClose, selectedOrder, allProducts }) => {
         alignItems: "center",
         justifyContent: "center",
       }}>
-      <div className="bg-slate-200 rounded-lg max-w-lg">
+      <div className="bg-slate-50 rounded-lg w-4/5	sm:w-[36rem] max-h-[90%] overflow-y-auto">
         <div>
-          <h3 className="text-center font-semibold text-lg border-b-2 border-black px-4 py-2">
+          <h3 className="text-center font-semibold text-xl border-b-2 border-black px-4 py-2">
             Order Details
           </h3>
-          <div className=" p-3 ">
+          <div className=" py-3 px-6 ">
             {selectedOrder && (
               <div>
-                <h5 className="font-semibold">Address Details:</h5>
+                <h5 className="font-semibold text-lg">Address Details:</h5>
                 <p>
                   {selectedOrder?.address?.name},{" "}
                   {selectedOrder?.address.address[2].address},{" "}
                   {selectedOrder?.address.address[0].city},{" "}
-                  {selectedOrder?.address.address[3].state}{" "}
+                  {selectedOrder?.address.address[3]?.state}{" "}
                   {selectedOrder?.address.address[1].pinCode}
                 </p>
 
-                <h5 className="font-semibold mt-1">Order Items:</h5>
-                {selectedOrder?.orderItems?.map((item, index) => (
-                  <div key={index}>
-                    <Typography variant="body2">
-                      {item?.name}{" "}
-                      {
-                        allProducts.find(
-                          (prod) => prod.id === item.productVariantId
-                        )?.weight
-                      }
-                      g : Qty {item?.qty}
-                    </Typography>
-                  </div>
-                ))}
+                <h5 className="font-semibold text-lg  mt-1">
+                  Order Product Details:
+                </h5>
+                <table style={{ borderCollapse: "collapse", width: "100%" }}>
+                  <thead>
+                    <tr>
+                      <th className="border border-gray-300 p-2 text-left">
+                        Product Name
+                      </th>
+                      <th className="border border-gray-300 p-2">Weight (g)</th>
+                      <th className="border border-gray-300 p-2">Quantity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {selectedOrder?.orderItems?.map((item, index) => (
+                      <tr key={index}>
+                        <td className="border border-gray-300 p-2">
+                          {item?.name}
+                        </td>
+                        <td className="border border-gray-300 p-2 text-center">
+                          {
+                            allProducts.find(
+                              (prod) => prod.id === item.productVariantId
+                            )?.weight
+                          }
+                          g
+                        </td>
+                        <td className="border border-gray-300 p-2 text-center">
+                          {item?.qty}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             )}
             <div>
-              <h5 className="font-semibold mt-1">
+              <h5 className="font-semibold text-lg mt-2">
                 Select and Fill Box Details:
               </h5>
-              <div className="flex gap-12 my-1">
+              <div className="flex gap-12 text-xl my-1">
                 <label htmlFor="box1">
                   <input
                     type="radio"
