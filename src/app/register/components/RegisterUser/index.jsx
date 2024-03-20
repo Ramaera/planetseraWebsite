@@ -141,7 +141,6 @@ const index = () => {
             onChange={(e) => {
               setAgencyCode(e.target.value);
             }}
-            required
           />
           <div className="relative">
             <input
