@@ -181,8 +181,7 @@ const Page = () => {
                                 item?.id,
                                 item.productVariantId
                               )
-                            }
-                          >
+                            }>
                             <HorizontalRuleIcon className="w-5 h-5" />
                           </button>
 
@@ -195,8 +194,7 @@ const Page = () => {
                                 item?.id,
                                 item.productVariantId
                               )
-                            }
-                          >
+                            }>
                             <AddIcon />
                           </button>
                         </div>
@@ -208,8 +206,7 @@ const Page = () => {
                                 item.productVariantId
                               )
                             }
-                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base"
-                          >
+                            className="pl-5 p-2 mt-6 Cart-remove text-xs sm:text-base">
                             Remove
                           </button>
                           <ToastContainer />

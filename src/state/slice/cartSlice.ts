@@ -8,6 +8,7 @@ const cartSlice = createSlice({
     cartTotalValue: 0,
     shippingValue: 0,
     getDiscountedAmount: 0,
+    discountedPercentage: "10%",
   },
 
   reducers: {
@@ -69,6 +70,11 @@ const cartSlice = createSlice({
     getDiscountedAmount: (state, action) => {
       state.getDiscountedAmount = action.payload;
     },
+
+    discountedPercentage: (state, action) => {
+      state.discountedPercentage = action.payload;
+    },
+
     shippingValue: (state, action) => {
       state.shippingValue = action.payload;
     },
@@ -85,5 +91,6 @@ export const {
   cartTotalValue,
   shippingValue,
   getDiscountedAmount,
+  discountedPercentage,
 } = cartSlice.actions;
 export default cartSlice.reducer;
