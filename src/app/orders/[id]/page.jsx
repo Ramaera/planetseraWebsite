@@ -44,12 +44,15 @@ const OrderDetails = () => {
     }
   }, [specificOrder]);
 
-  const [trackingInfo, setTrackingInfo] = useState(null);
+  const [trackingInfo, setTrackingInfo] = useState("");
+  const [orderStatus, setOrderStatus] = useState("PROCESSING");
+  const [etd, setEtd] = useState();
 
   const fetchOrderTracking = async () => {
     try {
+      // console.log("Fetching order tracking information...");
       const response = await axios.get(
-        `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=4889159931`,
+        `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=6718511330`,
         {
           headers: {
             Authorization: ` ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
@@ -58,8 +61,14 @@ const OrderDetails = () => {
         }
       );
 
-      // console.log("response", response?.data[0]?.tracking_data?.track_url);
-      setTrackingInfo(response?.data[0]?.tracking_data?.track_url);
+      setOrderStatus(
+        response?.data[0]?.tracking_data?.shipment_track[0].current_status
+      );
+      setEtd(response?.data[0]?.tracking_data?.etd);
+      console.log("resp", response);
+      const trackUrl = response?.data[0]?.tracking_data?.track_url;
+      // console.log("Tracking URL:", trackUrl);
+      setTrackingInfo(trackUrl);
     } catch (error) {
       console.error("Error fetching tracking information:", error);
     }
@@ -79,13 +88,21 @@ const OrderDetails = () => {
             <div className="sm:col-span-3">
               <div className="bg-gray-100 rounded-lg py-2 px-4">
                 <div className="flex justify-between">
-                  <Typography className="text-left text-slate-400   pb-2">
-                    Order Status <b>{specificOrder?.status}</b>
+                  <Typography className="text-left text-slate-400 pb-2">
+                    Order Status: <b>{orderStatus}</b>
                   </Typography>
-                  {/* <div className="flex flex-col"> */}
-                  <Typography className="text-left text-slate-400   font-semibold pb-2">
-                    Order Date : {specificOrder?.orderDate.slice(0, 10)}
-                  </Typography>
+                  <div>
+                    <Typography className="text-left text-slate-400   font-semibold pb-2">
+                      Order Date :{" "}
+                      <span className="text-black font font-semibold">
+                        {specificOrder?.orderDate
+                          .slice(0, 10)
+                          .split("-")
+                          .reverse()
+                          .join("-")}
+                      </span>
+                    </Typography>
+                  </div>
                 </div>
 
                 {specificOrder?.orderItems?.map((item) => {
@@ -117,23 +134,33 @@ const OrderDetails = () => {
                 })}
               </div>
               {specificOrder && (
-                <>
-                  <div className=" mt-2 font-semibold">
-                    Track Your Order Here:
-                  </div>
-                  <button
-                    onClick={fetchOrderTracking}
-                    className="flex justify-center rounded-2xl  Cartbgcolor cursor-pointer px-5  py-3"
-                  >
-                    Fetch Tracking Info
-                  </button>
-
-                  {trackingInfo && (
-                    <Link href={trackingInfo} className="text-red-400">
-                      {trackingInfo}
+                <div className="flex justify-between">
+                  <div>
+                    <div className=" mt-2 font-semibold">
+                      Track Your Order Here:
+                    </div>
+                    <Link href={trackingInfo}>
+                      <button className="flex justify-center rounded-2xl  Cartbgcolor cursor-pointer px-5  py-3">
+                        Track your Order
+                      </button>
                     </Link>
-                  )}
-                </>
+                  </div>
+                  <div>
+                    {orderStatus != "Delivered" && (
+                      <p className="font-semibold	">
+                        Expected Delivery Date:{" "}
+                        <span className="text-red-400">
+                          {etd
+                            ?.slice(0, 10)
+                            .slice(0, 10)
+                            .split("-")
+                            .reverse()
+                            .join("-")}
+                        </span>
+                      </p>
+                    )}
+                  </div>
+                </div>
               )}
               <div className="bg-gray-100 rounded-lg p-4 mt-4">
                 <Typography className="text-left text-slate-400  font-semibold pb-2">
