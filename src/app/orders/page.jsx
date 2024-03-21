@@ -4,12 +4,12 @@ import React, { useEffect } from "react";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
 import { useQuery } from "@apollo/client";
-import { ALL_ORDERS, Get_All_Products } from "@/apollo/queries";
 import { useSelector, useDispatch } from "react-redux";
 import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useRouter } from "next/navigation";
+import { ALL_ORDERS, Get_All_Products } from "@/apollo/queries";
 
 const Orders = () => {
   const router = useRouter();
@@ -19,6 +19,11 @@ const Orders = () => {
       buyerId: user?.data?.buyer?.id,
     },
   });
+  // const specificOrder = allOrders?.data?.allOrders.find(
+  //   (list) => list.id === id
+  // );
+
+  console.log("allOrders", allOrders);
 
   const allordersList = allOrders?.data?.allOrders;
   const allProductsQuery = useQuery(Get_All_Products);
@@ -63,9 +68,22 @@ const Orders = () => {
           ) : (
             allordersList?.map((list) => (
               <div className="w-full bg-white shadow-md rounded-lg overflow-hidden mb-4">
-                <p className="text-lg font-semibold px-4 pt-4">
-                  Order Id: {list?.id}
-                </p>
+                <div className="flex justify-between">
+                  <p className="text-lg font-semibold px-4 pt-4">
+                    Order Date:{" "}
+                    {list?.orderDate
+                      ? list.orderDate.slice(8, 10) +
+                        "-" +
+                        list.orderDate.slice(5, 7) +
+                        "-" +
+                        list.orderDate.slice(0, 4)
+                      : null}
+                  </p>
+
+                  <p className="text-lg font-semibold px-4 pt-4">
+                    Order Amount: ₹ {list?.orderAmount}
+                  </p>
+                </div>
 
                 <div className="p-4">
                   {list?.orderItems?.map((item) => {
@@ -87,7 +105,7 @@ const Orders = () => {
                           </p>
                           <p className="text-gray-600">{product?.weight}g</p>
                           <p className="text-gray-600 sm:mr-4">
-                            Qty: {item?.qty} | Price: {product?.price}
+                            Qty: {item?.qty} | Price: ₹ {product?.price}
                           </p>
                         </div>
                       </div>
@@ -98,17 +116,12 @@ const Orders = () => {
                   <div>
                     <p className="">Status: {list.status}</p>
                   </div>
-                  {/* <Link href={`/orders/${list.id}`}> */}
                   <BuynowBtn
                     // onClick={payOnline}
                     link={`/orders/${list.id}`}
                     text={" Order Info"}
                     sectionClass="responsiveBtn"
                   />
-                  {/* <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 min-w-fit">
-                    Order Info
-                  </button> */}
-                  {/* </Link> */}
                 </div>
               </div>
             ))

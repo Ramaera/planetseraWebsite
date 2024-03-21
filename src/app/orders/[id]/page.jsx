@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Typography } from "@material-ui/core";
 import NavItem from "@/components/Navigation/NavItem";
 import NavigationMobile from "@/components/Navigation/NavigationMobile";
@@ -8,7 +8,9 @@ import { useQuery } from "@apollo/client";
 import { ALL_ORDERS, Get_All_Products } from "@/apollo/queries";
 import { useSelector, useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
-
+import Link from "next/link";
+import "@/public/styles/cart.css";
+import axios from "axios";
 const OrderDetails = () => {
   const router = useRouter();
   const user = useSelector((state) => state?.user);
@@ -18,7 +20,6 @@ const OrderDetails = () => {
       buyerId: user?.data?.buyer?.id,
     },
   });
-
   const { id } = useParams();
   const specificOrder = allOrders?.data?.allOrders.find(
     (list) => list.id === id
@@ -28,29 +29,44 @@ const OrderDetails = () => {
     allProductsQuery.data?.allProducts.flatMap(
       (list) => list?.ProductsVariant
     ) || [];
-
-  // const addressComplte=()=>{
-  //   specificOrder?.address?.address?.map((list)=>())
-
-  // }
-
-  // const expectedDeliveryDate = (date) => {
-  //   let currentDate = new Date(date);
-  //   // Add 7 days to the current date
-  //   currentDate.setDate(currentDate.getDate() + 7);
-  //   // Format the new date as YYYY-MM-DD
-  //   let newDate = currentDate?.slice(0, 10);
-  //   return newDate;
-  // };
-
-  console.log("user", user);
+  // console.log("user", user);
   useEffect(() => {
     if (!user?.data) {
       router.replace("/");
     }
   }, [user]);
-
-  // if (!specificOrder) return router.replace("/orders");
+  useEffect(() => {
+    if (specificOrder) {
+      fetchOrderTracking(specificOrder.order_id);
+    }
+  }, [specificOrder]);
+  const [trackingInfo, setTrackingInfo] = useState("");
+  const [orderStatus, setOrderStatus] = useState("PROCESSING");
+  const [etd, setEtd] = useState();
+  const fetchOrderTracking = async () => {
+    try {
+      // console.log("Fetching order tracking information...");
+      const response = await axios.get(
+        `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=6718511330`,
+        {
+          headers: {
+            Authorization: ` ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      setOrderStatus(
+        response?.data[0]?.tracking_data?.shipment_track[0].current_status
+      );
+      setEtd(response?.data[0]?.tracking_data?.etd);
+      console.log("resp", response);
+      const trackUrl = response?.data[0]?.tracking_data?.track_url;
+      // console.log("Tracking URL:", trackUrl);
+      setTrackingInfo(trackUrl);
+    } catch (error) {
+      console.error("Error fetching tracking information:", error);
+    }
+  };
   return (
     <>
       <NavItem page={"orders"} className="pb-40" />
@@ -65,23 +81,22 @@ const OrderDetails = () => {
             <div className="sm:col-span-3">
               <div className="bg-gray-100 rounded-lg py-2 px-4">
                 <div className="flex justify-between">
-                  <Typography className="text-left text-slate-400   pb-2">
-                    Order Status <b>{specificOrder?.status}</b>
+                  <Typography className="text-left text-slate-400 pb-2">
+                    Order Status: <b>{orderStatus}</b>
                   </Typography>
-                  {/* <div className="flex flex-col"> */}
-                  <Typography className="text-left text-slate-400   font-semibold pb-2">
-                    Order Date : {specificOrder?.orderDate.slice(0, 10)}
-                  </Typography>
-
-                  {/* <Typography className="text-left text-slate-400   font-semibold pb-2">
-                      Expected Delivery Date :{" "}
-                      {expectedDeliveryDate(
-                        specificOrder?.orderDate.slice(0, 10)
-                      )}
-                    </Typography> */}
-                  {/* </div> */}
+                  <div>
+                    <Typography className="text-left text-slate-400   font-semibold pb-2">
+                      Order Date :{" "}
+                      <span className="text-black font font-semibold">
+                        {specificOrder?.orderDate
+                          .slice(0, 10)
+                          .split("-")
+                          .reverse()
+                          .join("-")}
+                      </span>
+                    </Typography>
+                  </div>
                 </div>
-
                 {specificOrder?.orderItems?.map((item) => {
                   const product = allProducts.find(
                     (prod) => prod.id === item?.productVariantId
@@ -98,7 +113,6 @@ const OrderDetails = () => {
                           <div className="text-gray-900  sm:w-60 sm:ml-4">
                             <b>{item?.name} </b>{" "}
                           </div>
-
                           <p className="text-gray-600 ">{product?.weight}g</p>
                           <p className="text-gray-600 sm:mr-4 text-left sm:w-36">
                             {item?.qty} X ₹ {product?.price}=
@@ -110,6 +124,35 @@ const OrderDetails = () => {
                   );
                 })}
               </div>
+              {specificOrder && (
+                <div className="flex justify-between">
+                  <div>
+                    <div className=" mt-2 font-semibold">
+                      Track Your Order Here:
+                    </div>
+                    <Link href={trackingInfo}>
+                      <button className="flex justify-center rounded-2xl  Cartbgcolor cursor-pointer px-5  py-3">
+                        Track your Order
+                      </button>
+                    </Link>
+                  </div>
+                  <div>
+                    {orderStatus != "Delivered" && (
+                      <p className="font-semibold ">
+                        Expected Delivery Date:{" "}
+                        <span className="text-red-400">
+                          {etd
+                            ?.slice(0, 10)
+                            .slice(0, 10)
+                            .split("-")
+                            .reverse()
+                            .join("-")}
+                        </span>
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
               <div className="bg-gray-100 rounded-lg p-4 mt-4">
                 <Typography className="text-left text-slate-400  font-semibold pb-2">
                   Shipping Details
@@ -166,12 +209,11 @@ const OrderDetails = () => {
                     <span>₹ 0</span>
                   </div>
                 </div>
-
                 <div className="flex justify-between mt-4 border-t-2 border-gray-400 pt-4">
                   <p className="font-semibold"> Amount Paid:</p>
                   <span>₹ {specificOrder?.orderAmount}</span>
                 </div>
-                {/* 
+                {/*
                 <button className="bg-gradient-to-r from-red-500 to-slate-500 text-white w-full py-2 rounded-md mt-4">
                   Amount Paid
                 </button> */}
@@ -183,5 +225,4 @@ const OrderDetails = () => {
     </>
   );
 };
-
 export default OrderDetails;

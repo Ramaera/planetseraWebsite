@@ -12,6 +12,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Index = ({ stock, onClick, itemlist }) => {
+  console.log("itemlist", itemlist);
   const cartItems = useSelector((state) => state.cart.items);
   const [show, setShow] = useState(false);
   const dispatch = useDispatch();
@@ -37,10 +38,12 @@ const Index = ({ stock, onClick, itemlist }) => {
     <>
       {!show ? (
         <div
-          className={`${"hover:scale-105 transition-transform  border-[#000000] border-2  rounded-[50px] flex p-1 cursor-pointer "} relative h-[50px]`}>
+          className={`${"hover:scale-105 transition-transform  border-[#000000] border-2  rounded-[50px] flex p-1 cursor-pointer "} relative h-[50px]`}
+        >
           <div
             className="bg-black rounded-[50px]  flex w-[130px]"
-            onClick={() => handleAddToCart(itemlist)}>
+            onClick={() => handleAddToCart(itemlist)}
+          >
             <img
               width={"35%"}
               className="p-1"
@@ -58,7 +61,8 @@ const Index = ({ stock, onClick, itemlist }) => {
 
           {!stock && (
             <h4
-              className={` font-sans font-bold absolute top-0 -z-10  text-sm  text-center w-full h-full flex items-center justify-center`}>
+              className={` font-sans font-bold absolute top-0 -z-10  text-sm  text-center w-full h-full flex items-center justify-center`}
+            >
               Coming Soon
             </h4>
           )}

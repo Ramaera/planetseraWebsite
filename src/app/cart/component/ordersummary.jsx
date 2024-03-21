@@ -267,7 +267,7 @@ const ordersummary = () => {
                     value={couponCode}
                     onChange={(e) => setCouponCode(e.target.value)}
                     className="w-full border rounded pr-2 "
-                    placeholder="Enter coupon code"
+                    placeholder="Enter PWID"
                   />
                   <button
                     onClick={handleApplyCoupon}
