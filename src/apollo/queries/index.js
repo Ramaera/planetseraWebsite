@@ -290,6 +290,7 @@ export const CREATE_ORDER = gql(`
     $discountCode: String
     $discountedAmount: Int
     $metaData: [JSONObject!]
+    $userId: String!
 
   ) {
     createOrder(
@@ -302,6 +303,7 @@ export const CREATE_ORDER = gql(`
         discountCode:$discountCode
         discountedAmount:$discountedAmount
         metaData:$metaData
+        userId:$userId
       }
     ) {
       newOrder {
@@ -343,6 +345,7 @@ query AllOrders ($buyerId: String!) {
       orderAmount
       status
       orderDate
+      metaData
       address {
           addresId
           address
@@ -395,6 +398,7 @@ query GetallOrders {
         updatedAt
     }
     discountedAmount
+    metaData
   }
 }
 
@@ -531,6 +535,26 @@ mutation SaveDiscountDetails($discountAmount:Int! $discountCode:String!) {
   ) {
       discountAmount
       discountCode
+  }
+}
+`);
+
+export const SHIPROCKET_DETAILS = gql(`
+mutation ShipRocketDetails ($orderId:Int! $shiprocket_OrderId:Int! $shiprocket_ShipmentId:Int! $shiprocket_status:String! $shiprocket_status_code:Int!) {
+  shipRocketDetails(
+      ShipRocketDetails: {
+          orderId: $orderId
+          shiprocket_OrderId: $shiprocket_OrderId
+          shiprocket_ShipmentId: $shiprocket_ShipmentId
+          shiprocket_status: $shiprocket_status
+          shiprocket_status_code: $shiprocket_status_code
+      }
+  ) {
+      orderId
+      shiprocket_OrderId
+      shiprocket_ShipmentId
+      shiprocket_status
+      shiprocket_status_code
   }
 }
 `);

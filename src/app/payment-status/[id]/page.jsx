@@ -77,6 +77,7 @@ const page = () => {
           orderAmount: Math.round(parseInt(calculateTotalPrice())),
           discountCode: discountCode ? discountCode : "Not Applied",
           discountedAmount: Math.round(discount),
+          userId: user?.data?.id,
           metaData: [
             { mobileNumber: metaDataMobile },
             { name: metaDataName },
@@ -228,8 +229,7 @@ const page = () => {
               </div>
               <div
                 style={{ color: "#8D92A7" }}
-                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	"
-              >
+                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	">
                 {resStatus?.code === "PAYMENT_SUCCESS"
                   ? "To check your order status"
                   : "If Amount is Debited From Your Account, Kindly Mail Us At support@ramaera.com With Your Transaction Details"}

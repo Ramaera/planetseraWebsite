@@ -100,15 +100,49 @@ const address = () => {
   const clearForm = () => {
     setFormData(initialFormData);
   };
+
+  const validateForm = () => {
+    if (!formData.name) {
+      toast.error("Enter Name!");
+      return;
+    }
+
+    if (!formData.mobile) {
+      toast.error("Enter Mobile!");
+      return;
+    }
+
+    if (formData.mobile.length !== 10) {
+      toast.error("Mobile No. Should be 10 digit!");
+      return;
+    }
+
+    if (!formData.city) {
+      toast.error("Enter City!");
+      return;
+    }
+
+    if (!formData.state) {
+      toast.error("Enter State!");
+      return;
+    }
+
+    if (!formData.pinCode) {
+      toast.error("Enter Pin Code!");
+      return;
+    }
+
+    if (!formData.address) {
+      toast.error("Enter Address!");
+      return;
+    }
+
+    return true;
+  };
+
   const handleSaveAndDeliverClick = async () => {
-    if (
-      formData.name &&
-      formData.mobile &&
-      formData.state &&
-      formData.city &&
-      formData.pinCode &&
-      formData.address
-    ) {
+    const isValid = validateForm();
+    if (isValid) {
       const resp = await addAddress({
         variables: {
           name: formData.name,
@@ -124,10 +158,8 @@ const address = () => {
         },
       });
       dispatch(saveAddress(resp?.data?.addAddress));
-    } else {
-      alert("Please fill in all required fields");
+      clearForm();
     }
-    clearForm();
   };
 
   return (
@@ -184,8 +216,7 @@ const address = () => {
                     onChange={handleStateChange}
                     className="border-2 p-1 px-3 rounded-md w-full"
                     name="state"
-                    required
-                  >
+                    required>
                     <option value="">Select State</option>
                     {statesInIndia.map((state, index) => (
                       <option key={index} value={state}>
@@ -221,8 +252,7 @@ const address = () => {
                 <div className="flex justify-center mt-5">
                   <button
                     onClick={handleSaveAndDeliverClick}
-                    className="w-1/2 py-3 rounded-2xl Cartbgcolor"
-                  >
+                    className="w-1/2 py-3 rounded-2xl Cartbgcolor">
                     Save Address
                   </button>
                 </div>

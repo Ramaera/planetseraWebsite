@@ -116,19 +116,26 @@ const OrderDetails = () => {
                 </Typography>
                 <div className="">
                   <div className="flex items-center font-semibold">
-                    <span className="mr-1">{specificOrder?.address?.name}</span>{" "}
+                    <span className="mr-1">
+                      {specificOrder?.metaData?.map((list) => list?.name)}
+                    </span>{" "}
                     |
                     <span className="ml-1">
-                      {specificOrder?.address?.mobileNumber}{" "}
+                      {specificOrder?.metaData?.map(
+                        (list) => list?.mobileNumber
+                      )}{" "}
                     </span>
                   </div>
 
-                  <div className="flex flex- w-full gap-2">
-                    <p>{specificOrder?.address?.address[2].address}</p>
-                    <br />
-                    <p>{specificOrder?.address?.address[0]?.city}</p>
-                    <p>{specificOrder?.address?.address[1]?.pinCode}</p>
-                  </div>
+                  {specificOrder?.metaData?.map((list) =>
+                    list?.address?.map((add) => (
+                      <div className="flex flex- w-full gap-2">
+                        <p>{add[2]?.address}</p>,<p>{add[0]?.city}</p>
+                        <p>{add[3]?.state}</p>
+                        <p>{add[1]?.pinCode}</p>
+                      </div>
+                    ))
+                  )}
                 </div>
               </div>
             </div>

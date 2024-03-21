@@ -90,7 +90,24 @@ const ReceivedOrder = () => {
                 <TableRow key={index}>
                   <TableCell>{user?.user?.name}</TableCell>
 
-                  <TableCell>
+                  <TableCell className="min-w-[180px]">
+                    <div>{user?.metaData?.map((list) => list?.name)}</div>
+                    {user?.metaData?.map((list) =>
+                      list?.address?.map((add) => (
+                        <div className="flex">
+                          {add[2]?.address}, {add[0]?.city}, {add[3]?.state}{" "}
+                          {add[1]?.pinCode}
+                        </div>
+                      ))
+                    )}
+                    <div>
+                      +91 {user?.metaData?.map((list) => list?.mobileNumber)}
+                    </div>
+                  </TableCell>
+
+                  {/*
+                   
+                  <TableCell className="min-w-[180px]">
                     <div>{user?.address?.name}</div>
                     <div className="flex">
                       {user?.address?.address[2].address}{" "}
@@ -99,7 +116,7 @@ const ReceivedOrder = () => {
                       {user?.address?.address[1].pinCode}
                     </div>
                     <div>+91 {user?.address?.mobileNumber}</div>
-                  </TableCell>
+                  </TableCell> */}
                   <TableCell className="min-w-[200px]">
                     {" "}
                     {user?.orderItems?.map((item) => {
