@@ -20,6 +20,67 @@ import { ADD_ADDRESS } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 
 const address = () => {
+  const statesInIndia = [
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
+    "Andaman and Nicobar Islands",
+    "Chandigarh",
+    "Dadra and Nagar Haveli and Daman and Diu",
+    "Delhi",
+    "Lakshadweep",
+    "Puducherry",
+  ];
+  // const [selectedState, setSelectedState] = useState("");
+
+  const initialFormData = {
+    name: "",
+    mobile: "",
+    state: "",
+    city: "",
+    pinCode: "",
+    address: "",
+  };
+  const [formData, setFormData] = useState({
+    name: "",
+    mobile: "",
+    state: "",
+    city: "",
+    pinCode: "",
+    address: "",
+  });
+  const handleStateChange = (e) => {
+    setFormData({
+      ...formData,
+      state: e.target.value,
+    });
+  };
+
   const [isVisible, setIsVisible] = useState(false);
   const [addAddress] = useMutation(ADD_ADDRESS);
   const user = useSelector((state) => state?.user);
@@ -29,22 +90,7 @@ const address = () => {
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
   };
-  const initialFormData = {
-    name: "",
-    mobile: "",
-    // state: "",
-    city: "",
-    pinCode: "",
-    address: "",
-  };
-  const [formData, setFormData] = useState({
-    name: "",
-    mobile: "",
-    // state: "",
-    city: "",
-    pinCode: "",
-    address: "",
-  });
+
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -54,12 +100,11 @@ const address = () => {
   const clearForm = () => {
     setFormData(initialFormData);
   };
-
   const handleSaveAndDeliverClick = async () => {
     if (
       formData.name &&
       formData.mobile &&
-      // formData.state &&
+      formData.state &&
       formData.city &&
       formData.pinCode &&
       formData.address
@@ -74,6 +119,7 @@ const address = () => {
             { city: formData.city },
             { pinCode: formData.pinCode },
             { address: formData.address },
+            { state: formData.state },
           ],
         },
       });
@@ -131,6 +177,24 @@ const address = () => {
                     required
                   />
                 </div>
+
+                <div className="mt-5">
+                  <select
+                    value={formData.state}
+                    onChange={handleStateChange}
+                    className="border-2 p-1 px-3 rounded-md w-full"
+                    name="state"
+                    required
+                  >
+                    <option value="">Select State</option>
+                    {statesInIndia.map((state, index) => (
+                      <option key={index} value={state}>
+                        {state}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
                 <div className="mt-5">
                   <input
                     className="border-2 p-1 px-3 rounded-md w-full"

@@ -300,8 +300,8 @@ const ProductDetailsInfo = () => {
                   )}
                   <ToastContainer />
                 </div>
-                <h6>
-                  <h6>
+                <div className="flex">
+                  <div>
                     {specificVariant && specificVariant.stock > 0 ? (
                       <>
                         <div style={{ color: "green" }}>
@@ -314,8 +314,13 @@ const ProductDetailsInfo = () => {
                     ) : (
                       <div className="text-red-600">Out Of Stock</div>
                     )}
-                  </h6>
-                </h6>
+                  </div>
+                  {specificVariant && specificVariant.stock > 0 && (
+                    <div className="ml-5">
+                      Total Price: ₹{specificVariant.price * quantity}
+                    </div>
+                  )}
+                </div>
                 <p className="mt-6 font-base text-md text-slate-500">
                   You can also buy from here
                 </p>

@@ -29,15 +29,17 @@ mutation CreateRewardCode ( $rewardCode : String!, $userId :  String! ) {
 `);
 
 export const SIGNUP = gql(`
-mutation Signup(  $name: String!, $email: String!, $mobileNumber: String!, $password: String!) {
-  signup(data: {  name: $name, email: $email, mobileNumber: $mobileNumber, password: $password}) {
+mutation Signup(  $name: String!, $email: String!,$agencyCode: String!, $mobileNumber: String!, $password: String!) {
+  signup(data: {  name: $name, email: $email, agencyCode: $agencyCode,mobileNumber: $mobileNumber, password: $password}) {
       accessToken
       refreshToken
       user {
           createdAt
           email
           id
+          agencyCode
           name
+          mobileNumber
           role
           updatedAt
           buyer {
@@ -59,6 +61,8 @@ mutation Login( $email: String!, $password: String!) {
             email
             id
             name
+            mobileNumber
+            agencyCode
             role
             updatedAt
             buyer {
@@ -83,6 +87,8 @@ query GetUser {
     id
     name
     role
+    mobileNumber
+    agencyCode
     updatedAt
     buyer {
         id
@@ -171,10 +177,26 @@ query ViewCart($buyerId: String!) {
       productVariantId
       name
       qty
+      weight
       
     }
   }
 }
+`);
+
+export const UpdateAgencyCode = gql(`
+mutation UpdateUserAgencyCode($agencyCode:String!) {
+  updateUserAgencyCode(data: { agencyCode: $agencyCode }) {
+      agencyCode
+      createdAt
+      email
+      id
+      name
+      role
+      updatedAt
+  }
+}
+
 `);
 
 export const REMOVE_ITEM_CART = gql(`
@@ -235,6 +257,7 @@ mutation AddAddress($buyerId:String!, $mobileNumber:String!,$name:String,$addres
             name: $name
         }
     ) {
+        addresId
         address
         buyerId
         mobileNumber
@@ -264,6 +287,10 @@ export const CREATE_ORDER = gql(`
     $buyerId: String!
     $cartId: String!
     $orderAmount: Float!
+    $discountCode: String
+    $discountedAmount: Int
+    $metaData: [JSONObject!]
+
   ) {
     createOrder(
       CreateOrder: {
@@ -272,12 +299,17 @@ export const CREATE_ORDER = gql(`
         buyerId: $buyerId
         cartId: $cartId
         orderAmount: $orderAmount
+        discountCode:$discountCode
+        discountedAmount:$discountedAmount
+        metaData:$metaData
       }
     ) {
       newOrder {
         id
         buyerId
         orderDate
+        discountCode
+        discountedAmount
         address {
             addresId
             address
@@ -488,6 +520,17 @@ mutation UpdateProductDetails(
       productUrl
       title
       type
+  }
+}
+`);
+
+export const SAVE_DISCOUNT_DETAILS = gql(`
+mutation SaveDiscountDetails($discountAmount:Int! $discountCode:String!) {
+  saveDiscountDetails(
+      data: { discountAmount: $discountAmount, discountCode: $discountCode }
+  ) {
+      discountAmount
+      discountCode
   }
 }
 `);

@@ -37,8 +37,11 @@ export default function ControlledRadioButtonsGroup() {
   const handleChange = async (event) => {
     const selectedAddressId = event.target.value; // Get the selected address ID
     dispatch(selectAddress(selectedAddressId)); // Update selected address in Redux
-    await fetchFreightCharge(selectedAddressId); // Fetch freight charge for the selected address
+    // await fetchFreightCharge(selectedAddressId); // Fetch freight charge for the selected address
   };
+  // useEffect(() => {
+  //   fetchFreightCharge(selectedAddressId);
+  // }, [handleChange, selectedAddressId]);
 
   const handleRemoveAddress = async (address) => {
     try {
@@ -61,62 +64,67 @@ export default function ControlledRadioButtonsGroup() {
   // console.log("freightCharge", FreightCharge);
 
   const calculateTotalWeightInKgs = () => {
+    console.log("00", CartData);
     const totalWeightInGrams = CartData.reduce((totalWeight, item) => {
       const weightInInt = parseInt(item.weight);
       const productWeight = weightInInt * item.qty;
       return totalWeight + productWeight;
     }, 0);
+    // console.log("--->>", totalWeightInGrams);
 
     const totalWeightInKgs = totalWeightInGrams / 1000;
     return totalWeightInKgs;
   };
 
-  const fetchFreightCharge = async (selectedAddressId) => {
-    const selectedAddress = addressesData?.data?.getBuyerAddress.find(
-      (address) => address?.addresId === selectedAddressId
-    );
-    const deliveryPincode = selectedAddress?.address[1]?.pinCode;
+  // const fetchFreightCharge = async (selectedAddressId) => {
+  //   const selectedAddress = addressesData?.data?.getBuyerAddress.find(
+  //     (address) => address?.addresId === selectedAddressId
+  //   );
+  //   const deliveryPincode = selectedAddress?.address[1]?.pinCode;
 
-    const totalWeight = calculateTotalWeightInKgs();
-    const queryParams = {
-      pickup_postcode: 844101,
-      delivery_postcode: deliveryPincode,
-      weight: totalWeight,
-      cod: 0,
-    };
+  //   const totalWeight = calculateTotalWeightInKgs();
+  //   // console.log("totalWeight", totalWeight);
 
-    try {
-      const response = await axios.get(
-        "https://apiv2.shiprocket.in/v1/external/courier/serviceability/",
-        {
-          params: queryParams,
-          headers: {
-            Authorization: ` ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
+  //   const queryParams = {
+  //     pickup_postcode: 844101,
+  //     delivery_postcode: deliveryPincode,
+  //     weight: totalWeight,
+  //     cod: 0,
+  //   };
 
-      // console.log("response", response);
-      const courierCompanies =
-        response?.data?.data?.available_courier_companies;
+  //   try {
+  //     const response = await axios.get(
+  //       "https://apiv2.shiprocket.in/v1/external/courier/serviceability/",
+  //       {
+  //         params: queryParams,
+  //         headers: {
+  //           Authorization: ` ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
+  //     console.log("01", response);
+  //     const courierCompanies =
+  //       response?.data?.data?.available_courier_companies;
 
-      if (courierCompanies && courierCompanies.length > 0) {
-        let minFreightCharge = Infinity;
+  //     if (courierCompanies && courierCompanies.length > 0) {
+  //       let minFreightCharge = Infinity;
 
-        courierCompanies.forEach((company) => {
-          const freightCharge = company?.freight_charge;
-          if (freightCharge && freightCharge < minFreightCharge) {
-            minFreightCharge = freightCharge;
-          }
-        });
-        setFreightCharge(minFreightCharge);
-        dispatch(setFreightCharge(minFreightCharge));
-      }
-    } catch (error) {
-      console.error("Error fetching freight charge:", error);
-    }
-  };
+  //       courierCompanies.forEach((company) => {
+  //         const freightCharge = company?.freight_charge;
+  //         if (freightCharge && freightCharge < minFreightCharge) {
+  //           minFreightCharge = freightCharge;
+  //         }
+  //       });
+
+  //       setFreightCharge(minFreightCharge);
+
+  //       dispatch(setFreightCharge(minFreightCharge));
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching freight charge:", error);
+  //   }
+  // };
 
   return (
     <FormControl className="w-full">
@@ -126,14 +134,14 @@ export default function ControlledRadioButtonsGroup() {
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"
         value={selectedAddressId}
-        onChange={handleChange}
-      >
+        onChange={handleChange}>
         <div className="w-full">
           {addressesData?.data?.getBuyerAddress?.map((_address) => (
             <div
               className="flex w-full justify-between my-2 sm:my-8"
-              key={_address?.addresId}
-            >
+              key={_address?.addresId}>
+              {console.log("_address", _address)}
+
               <div className="w-full sm:w-8/12  ">
                 <FormControlLabel
                   value={_address?.addresId}
@@ -151,10 +159,10 @@ export default function ControlledRadioButtonsGroup() {
 
                 <div
                   style={{ color: "#2F302F" }}
-                  className="px-8 sm:font-normal text-xs sm:text-base	"
-                >
+                  className="px-8 sm:font-normal text-xs sm:text-base	">
                   <p>
-                    {_address?.address[0]?.city} {_address?.address[1]?.pincode}{" "}
+                    {_address?.address[0]?.city} {_address?.address[3]?.state}{" "}
+                    {_address?.address[1]?.pinCode}{" "}
                     {_address?.address[2]?.address}
                   </p>
                   <p>Contact :- {_address.mobileNumber}</p>
@@ -163,8 +171,7 @@ export default function ControlledRadioButtonsGroup() {
               <div className="text-xs sm:text-base sm:w-2/12 w-5/12 mt-3	">
                 <button
                   className="Cart-remove"
-                  onClick={() => handleRemoveAddress(_address)}
-                >
+                  onClick={() => handleRemoveAddress(_address)}>
                   Remove
                 </button>
               </div>

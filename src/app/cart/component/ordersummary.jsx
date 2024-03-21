@@ -9,9 +9,17 @@ import {
   cartTotalValue,
   shippingValue,
   getDiscountedAmount,
+  discountedPercentage,
+  discountCode,
+  discountCodeClear,
 } from "@/state/slice/cartSlice";
+import {
+  setFreightCharge,
+  setShippingCharge,
+} from "@/state/slice/shipmentSlice";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
 import Link from "next/link";
@@ -20,15 +28,29 @@ const ordersummary = () => {
   const currentRoute = usePathname();
   const colorMe = useSelector((state) => state.colorUs.color);
   const CartData = useSelector((state) => state.cart.items);
-  const [discount, setDiscount] = useState(null);
+  const DiscountCodeRedux = useSelector((state) => state.cart.discountCode);
+  const [discount, setDiscount] = useState(0);
+  const [discountPercentage, setDiscountPercentage] = useState(0.1);
   const [shipping, setShipping] = useState(100);
   const user = useSelector((state) => state?.user);
   const [loginModal, setLoginModal] = useState(false);
   const [checkoutEnabled, setCheckoutEnabled] = useState(false);
-  const [couponCode, setCouponCode] = useState("");
-  const FreightCharge = useSelector((state) => state.shipment.freightCharge);
-  const [subscriberKyc, setSubscriberKyc] = useState(null); // State to hold subscriber.kyc value
+  const [couponCode, setCouponCode] = useState(DiscountCodeRedux || "");
+  // const FreightCharge = useSelector((state) => state.shipment.freightCharge);
 
+  const ShippingChargeRedux = useSelector(
+    (state) => state.shipment.shippingCharge
+  );
+
+  const discountAmountRedux = useSelector(
+    (state) => state.cart.getDiscountedAmount
+  );
+
+  const DiscountedPercentageRedux = useSelector(
+    (state) => state.cart.discountedPercentage
+  );
+
+  // console.log("DiscountCodeRedux", DiscountCodeRedux);
   const openLoginModal = () => {
     setLoginModal(true);
   };
@@ -52,8 +74,22 @@ const ordersummary = () => {
     );
 
     dispatch(cartTotalValue(totalValue));
+    // const discountedAmount = totalValue * discount;
+    // setDiscount(discountedAmount);
     return totalValue;
   };
+
+  useEffect(() => {
+    if (DiscountedPercentageRedux === "30%") {
+      const discountedAmount = calculatePrice() * 0.3;
+      setDiscount(discountedAmount);
+      dispatch(getDiscountedAmount(discountedAmount));
+    } else if (DiscountedPercentageRedux === "10%") {
+      const discountedAmount = calculatePrice() * 0.1;
+      setDiscount(discountedAmount);
+      dispatch(getDiscountedAmount(discountedAmount));
+    }
+  }, [calculatePrice, DiscountedPercentageRedux]);
 
   const handleApplyCoupon = () => {
     axios
@@ -73,10 +109,13 @@ const ordersummary = () => {
         console.log("subscribers", subscriber?.kyc);
 
         if (subscriber.includes(true)) {
-          const discountedAmount = calculatePrice() * 0.3;
-          setDiscount(discountedAmount);
-          dispatch(getDiscountedAmount(discountedAmount));
-          setSubscriberKyc("APPROVED");
+          // const discountedAmount = calculatePrice() * 0.3;
+          // setDiscount(discountedAmount);
+          // dispatch(getDiscountedAmount(discountedAmount));
+          dispatch(discountedPercentage("30%"));
+          dispatch(discountCode(couponCode));
+
+          // setSubscriberKyc("30%");
           toast.success("Coupon applied successfully!", {
             position: "top-center",
             autoClose: 2500,
@@ -88,9 +127,13 @@ const ordersummary = () => {
             theme: "light",
           });
         } else {
-          setDiscount(0);
-          setSubscriberKyc("NOT APPROVED");
-          toast.error("Invalid coupon code. Discount not applied.", {
+          dispatch(discountCodeClear());
+          dispatch(discountedPercentage("10%"));
+          // const discountedAmount = calculatePrice() * 0.1;
+          // setDiscount(discountedAmount);
+          // dispatch(getDiscountedAmount(discountedAmount));
+          // setSubscriberKyc("10%");
+          toast.error("Invalid PWID, 30% Discount not applied.", {
             position: "top-center",
             autoClose: 2500,
             hideProgressBar: false,
@@ -104,8 +147,8 @@ const ordersummary = () => {
       })
       .catch((err) => {
         console.error("Error applying coupon:", err);
-        setDiscount(0);
-        setSubscriberKyc(null); // Reset subscriber.kyc value
+        // setDiscount(0);
+        // setSubscriberKyc(null); // Reset subscriber.kyc value
         toast.error("Error applying coupon. Please try again later.", {
           position: "top-center",
           autoClose: 2500,
@@ -119,29 +162,47 @@ const ordersummary = () => {
       });
   };
 
+  const subTotalPrice = () => {
+    const priceAfterDiscount = calculatePrice() - discount;
+    priceAfterDiscount;
+    return priceAfterDiscount;
+  };
+
   const calculateTotalPrice = () => {
     const priceAfterDiscount = calculatePrice() - discount;
-    const totalPrice = priceAfterDiscount + FreightCharge;
+    const totalPrice = priceAfterDiscount + ShippingChargeRedux;
     return totalPrice;
   };
 
-  useEffect(() => {
-    return () => {
-      dispatch(getDiscountedAmount(0));
-    };
-  }, []);
+  // useEffect(() => {
+  //   return () => {
+  //     dispatch(getDiscountedAmount(0));
+  //   };
+  // }, []);
 
   useEffect(() => {
-    if (calculatePrice() >= 500) {
+    if (subTotalPrice() >= 500) {
       setCheckoutEnabled(true);
     } else {
       setCheckoutEnabled(false);
     }
-  }, [calculatePrice, discount]);
+  }, [subTotalPrice, discount]);
+
+  useEffect(() => {
+    if (subTotalPrice() <= 3000) {
+      dispatch(setShippingCharge(100));
+    } else if (subTotalPrice() >= 3001 && subTotalPrice() <= 10000) {
+      dispatch(setShippingCharge(200));
+    } else if (subTotalPrice() >= 10001 && subTotalPrice() <= 15000) {
+      dispatch(setShippingCharge(250));
+    } else if (subTotalPrice() >= 15001) {
+      dispatch(setShippingCharge(0));
+    }
+  }, [subTotalPrice, discount]);
 
   const handleProceedToCheckout = () => {
     if (!checkoutEnabled) {
-      toast.error("Order Amount should be greater than ₹500.", {
+      toast.error("Order Sub Total Amount, should be greater than ₹500.", {
         position: "top-center",
         autoClose: 2500,
         hideProgressBar: false,
@@ -158,11 +219,10 @@ const ordersummary = () => {
 
   return (
     <>
-      <div className="font-mont sm:w-1/4 sm:min-w-[275px] pt-10   ">
+      <div className="font-mont sm:w-1/4 sm:min-w-[380px] pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
-          className="border py-9 px-6 shadow-xl"
-        >
+          className="border py-9 px-6 shadow-xl">
           <p className="text-2xl  ">Order Summary</p>
 
           <div className="flex justify-between flex-col   mt-5 ">
@@ -172,63 +232,74 @@ const ordersummary = () => {
                 const product = allProducts.find(
                   (prod) => prod.id === item.productVariantId
                 );
+                {
+                  console.log("item", item);
+                }
                 return (
-                  <div className="flex">
-                    {item?.name} {product?.weight}g × {item?.qty}
+                  <div className="flex justify-between">
+                    <div>
+                      {" "}
+                      {item?.name} {product?.weight}g
+                    </div>
+
+                    <div>
+                      {item?.qty} X {product?.price} = ₹{" "}
+                      {item?.qty * product?.price}
+                    </div>
                   </div>
                 );
               })}
             </div>
           </div>
 
-          <div className="flex  justify-between mt-5 ">
-            Price <span>₹ {calculatePrice()}</span>
-          </div>
-          {currentRoute === "/cart/checkout" && (
-            <div className="mb-4">
-              <label className="block mt-2 mb-1">
-                Enter PWID to avail (30% Discount)
-              </label>
-              <div className="flex">
-                <TextField
-                  value={couponCode}
-                  onChange={(e) => setCouponCode(e.target.value)}
-                  className="w-full border rounded pr-2 "
-                  placeholder="Enter coupon code"
-                />
-                <button
-                  onClick={handleApplyCoupon}
-                  className="Cartbgcolor text-white rounded px-2 h-14 w-32 "
-                >
-                  Apply
-                </button>
-              </div>
-              <div className="flex justify-between mt-5">
-                Discount Status :{" "}
-                <span
-                  className={
-                    subscriberKyc === "APPROVED"
-                      ? "text-green-500"
-                      : "text-red-500"
-                  }
-                >
-                  {subscriberKyc}
-                </span>
-              </div>
-              <div className="flex  justify-between mt-5 ">
-                Discounted Price <span>₹ {Math.round(discount)}</span>
-              </div>
-              <div className="flex  justify-between mt-5">
-                Shipping{" "}
-                <span className="Cart-remove">
-                  + ₹{Math.round(FreightCharge)}
-                </span>
-              </div>
-              <div className="flex  justify-between mt-5">
-                Total <span>₹ {Math.round(calculateTotalPrice())}</span>
-              </div>
+          {/* <div className="flex  justify-between mt-5 ">
+            Total Amount  <span>₹ {calculatePrice()}</span> //calaculate product total
+          </div> */}
+          {/* {currentRoute === "/cart/checkout" && ( */}
+          <div className="mb-4">
+            {currentRoute === "/cart" && (
+              <>
+                <label className="block mt-2 mb-1">
+                  Enter PWID to avail (30% Discount)
+                </label>
+                <div className="flex">
+                  <TextField
+                    value={couponCode}
+                    onChange={(e) => setCouponCode(e.target.value)}
+                    className="w-full border rounded pr-2 "
+                    placeholder="Enter coupon code"
+                  />
+                  <button
+                    onClick={handleApplyCoupon}
+                    className="Cartbgcolor text-white rounded px-2 h-14 w-32 ">
+                    Apply
+                  </button>
+                </div>
+              </>
+            )}
+            <div className="flex justify-between mt-5">
+              Discount (%) Apply :{" "}
+              <span className={"text-green-500"}>
+                {DiscountedPercentageRedux}
+              </span>
             </div>
-          )}
+            <div className="flex  justify-between mt-5 ">
+              Discounted Price <span>₹ {Math.round(discountAmountRedux)}</span>
+            </div>
+            <div className="flex  justify-between mt-5">
+              Sub Total Amount <span>₹ {Math.round(subTotalPrice())}</span>
+            </div>
+            <div className="flex  justify-between mt-5">
+              Shipping{" "}
+              <span className="Cart-remove">
+                + ₹{Math.round(ShippingChargeRedux)}
+              </span>
+            </div>
+            <div className="flex  justify-between mt-5">
+              Total Amount <span>₹ {Math.round(calculateTotalPrice())}</span>
+            </div>
+          </div>
+          {/* )} */}
 
           {currentRoute === "/cart" && (
             <>
@@ -244,8 +315,7 @@ const ordersummary = () => {
                     <Link href="/cart" className="text-white">
                       <button
                         onClick={handleProceedToCheckout}
-                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3"
-                      >
+                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3">
                         Proceed To Checkout
                       </button>
                     </Link>
@@ -256,8 +326,7 @@ const ordersummary = () => {
                   <div
                     onClick={openLoginModal}
                     className="text-white"
-                    style={{ color: colorMe, fontWeight: "bold" }}
-                  >
+                    style={{ color: colorMe, fontWeight: "bold" }}>
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
                       Proceed To Checkout
                     </div>
@@ -271,6 +340,7 @@ const ordersummary = () => {
             </>
           )}
         </div>
+        <ToastContainer />
       </div>
     </>
   );

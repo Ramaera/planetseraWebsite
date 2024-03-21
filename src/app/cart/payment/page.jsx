@@ -33,7 +33,10 @@ const page = () => {
   // console.log("getDiscountedAmount", discount);
 
   const allProductsQuery = useQuery(Get_All_Products);
-  const FreightCharge = useSelector((state) => state.shipment.freightCharge);
+  const ShippingChargeRedux = useSelector(
+    (state) => state.shipment.shippingCharge
+  );
+  // const FreightCharge = useSelector((state) => state.shipment.freightCharge);
 
   const allProducts =
     allProductsQuery.data?.allProducts.flatMap(
@@ -56,9 +59,10 @@ const page = () => {
 
   const calculateTotalPrice = () => {
     const priceAfterDiscount = calculatePrice() - discount;
-    const totalPrice = priceAfterDiscount + FreightCharge;
+    const totalPrice = priceAfterDiscount + ShippingChargeRedux;
     return totalPrice;
   };
+
   console.log("calculateTotalPrice", calculateTotalPrice());
 
   const BuyerId = user?.data?.buyer?.id;

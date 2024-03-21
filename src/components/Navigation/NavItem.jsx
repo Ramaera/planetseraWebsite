@@ -84,7 +84,7 @@ const NavItem = ({ page }) => {
         style={{
           color:
             (page === "blog" ||
-              page === "received-order" ||
+              // page === "received-order" ||
               page === "shop" ||
               page === "cart" ||
               page === "about" ||
@@ -158,6 +158,11 @@ const NavItem = ({ page }) => {
                 <Link href="/orders">
                   <MenuItem>
                     <Typography textAlign="center">My Orders</Typography>
+                  </MenuItem>
+                </Link>
+                <Link href="/profile">
+                  <MenuItem>
+                    <Typography textAlign="center">My Profile</Typography>
                   </MenuItem>
                 </Link>
                 <MenuItem onClick={handleLogout}>

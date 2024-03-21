@@ -16,38 +16,49 @@ import {
   FIND_TRANSACTION_ID,
   CREATE_ORDER,
   DELETE_CART,
+  SAVE_DISCOUNT_DETAILS,
 } from "@/apollo/queries";
 import { useRouter } from "next/navigation";
-import { clearCart } from "@/state/slice/cartSlice";
-import { CoPresentOutlined } from "@mui/icons-material";
+import {
+  clearCart,
+  discountCodeClear,
+  discountedPercentage,
+} from "@/state/slice/cartSlice";
+
 import CircularProgress from "@mui/material/CircularProgress";
-import Box from "@mui/material/Box";
 
 const page = () => {
+  const user = useSelector((state) => state?.user);
+  const addressesData = useSelector((state) => state.address);
+  const AddressId = addressesData?.selectedAddress;
+
+  const selectedAddressData = addressesData?.allAddresses?.filter(
+    (list) => list?.addresId == AddressId
+  );
+
+  const metaDataAddress = selectedAddressData.map((list) => list?.address);
+  const metaDataName = selectedAddressData?.map((list) => list?.name);
+  const metaDataMobile = selectedAddressData?.map((list) => list?.mobileNumber);
   const [merchantTransactionId, setMerchantTransactionId] = useState();
 
   const [resStatus, setResStatus] = useState();
   const [loading, setLoading] = useState(true);
-  const user = useSelector((state) => state?.user);
-
-  const addressesData = useSelector((state) => state.address);
-  const CartData = useSelector((state) => state.cart.items);
   const cartTotalValue = useSelector((state) => state.cart.cartTotalValue);
-  const shippingValue = useSelector((state) => state.cart.shippingValue);
+  const discountCode = useSelector((state) => state.cart.discountCode);
+  const discount = useSelector((state) => state.cart.getDiscountedAmount);
+  const ShippingChargeRedux = useSelector(
+    (state) => state.shipment.shippingCharge
+  );
 
   const [createOrder] = useMutation(CREATE_ORDER);
   const [deleteCart] = useMutation(DELETE_CART);
   const [createPaymentData] = useMutation(CREATE_PAYMENT_DATA);
-  const ViewCartData = useQuery(Get_VIEW_CART, {
-    variables: {
-      buyerId: user?.data?.buyer?.id,
-    },
-  });
+
   const { data, loading: LoadingData } = useQuery(Get_All_Products);
 
   const BuyerId = user?.data?.buyer?.id;
   const CartId = user?.data?.buyer?.Cart[0]?.id;
-  const AddressId = addressesData?.selectedAddress;
+
   const { id } = useParams();
   const [FindTransactionId] = useLazyQuery(FIND_TRANSACTION_ID, {
     variables: {
@@ -55,9 +66,31 @@ const page = () => {
     },
   });
 
-  const allProducts = data?.allProducts.flatMap(
-    (list) => list?.ProductsVariant
-  );
+  const handleCreateOrder = async () => {
+    try {
+      const resp = await createOrder({
+        variables: {
+          AddressId: parseInt(AddressId),
+          ShippingCost: ShippingChargeRedux,
+          buyerId: BuyerId,
+          cartId: CartId,
+          orderAmount: Math.round(parseInt(calculateTotalPrice())),
+          discountCode: discountCode ? discountCode : "Not Applied",
+          discountedAmount: Math.round(discount),
+          metaData: [
+            { mobileNumber: metaDataMobile },
+            { name: metaDataName },
+            { address: metaDataAddress },
+          ],
+        },
+      });
+
+      await handleDeleteCart();
+      return resp;
+    } catch (err) {
+      console.log("err", err.message);
+    }
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -69,7 +102,6 @@ const page = () => {
   const router = useRouter();
 
   const checkStatus = async (merchantTransactionId) => {
-    // console.log("merchantTransactionId", merchantTransactionId);
     try {
       const url = `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`;
       // console.log("url", url);
@@ -103,12 +135,10 @@ const page = () => {
   };
   useEffect(() => {
     setMerchantTransactionId(id);
-
     checkStatusWithInterval(id);
   }, []);
 
   const checkStatusWithInterval = async (merchantTransactionId) => {
-    // console.log("enter1");
     const maxTimeout = 5 * 60 * 1000; // Timeout after 5 minutes
     // console.log("enter2");
     let timeout = 0;
@@ -127,32 +157,17 @@ const page = () => {
       // console.log("merchantTransactionId123", merchantTransactionId);
       const status = await checkStatus(merchantTransactionId);
       // console.log("status interval", status);
-      if (status.code === "PAYMENT_SUCCESS" || timeout >= maxTimeout) {
+      if (status?.code === "PAYMENT_SUCCESS" || timeout >= maxTimeout) {
         return status;
       }
     }
     return { success: false, message: "Payment status check timeout" };
   };
 
-  const calculateTotalPrice = cartTotalValue + shippingValue;
-
-  const handleCreateOrder = async () => {
-    try {
-      const resp = await createOrder({
-        variables: {
-          AddressId: parseInt(AddressId),
-          ShippingCost: shippingValue,
-          buyerId: BuyerId,
-          cartId: CartId,
-          orderAmount: calculateTotalPrice,
-        },
-      });
-
-      await handleDeleteCart();
-      return resp;
-    } catch (err) {
-      console.log("err", err.message);
-    }
+  const calculateTotalPrice = () => {
+    const priceAfterDiscount = cartTotalValue - discount;
+    const totalPrice = priceAfterDiscount + ShippingChargeRedux;
+    return totalPrice;
   };
 
   const handleDeleteCart = async () => {
@@ -164,6 +179,8 @@ const page = () => {
       });
 
       await dispatch(clearCart());
+      await dispatch(discountCodeClear());
+      await dispatch(discountedPercentage("10%"));
 
       // await handleOrderPlaced();
     } catch (err) {

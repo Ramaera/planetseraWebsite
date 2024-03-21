@@ -56,10 +56,10 @@ const ReceivedOrder = () => {
   return (
     <div>
       <div className="navMobile ">
-        <NavigationMobile page={"received-order"} />
+        <NavigationMobile page={"cart"} />
       </div>
 
-      <NavItem page={"received-order"} />
+      <NavItem page={"cart"} />
       <Container maxWidth={false} sx={{ padding: 5 }} className="min-h-screen">
         <Typography variant="h5" sx={{ mt: 7 }}>
           Received Orders

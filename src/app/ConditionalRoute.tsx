@@ -33,14 +33,17 @@ const ConditionalRoute = ({ children }) => {
     return null;
   };
   const handleRoutes = async () => {
-    if (!isAuthenticated && pathname.toLowerCase() === "/cart/checkout") {
+    if (
+      (!isAuthenticated && pathname.toLowerCase() == "/cart/checkout") ||
+      (!isAuthenticated && pathname.toLowerCase() == "/profile")
+    ) {
       router.replace("/register");
     } else if (isAuthenticated && pathname.toLowerCase() == "/register") {
       router.replace("/");
     } else if (
       isAuthenticated &&
       Role !== "ADMIN" &&
-      pathname.toLowerCase() == "/received-order"
+      pathname.toLowerCase() == "/dashboard/received-order"
     ) {
       router.replace("/");
     }
