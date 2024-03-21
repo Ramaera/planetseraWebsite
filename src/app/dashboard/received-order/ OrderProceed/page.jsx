@@ -87,10 +87,12 @@ const OrderProceed = ({ open, onClose, selectedOrder, allProducts }) => {
       const postData = {
         order_id: selectedOrder?.id,
         order_date: selectedOrder?.orderDate.slice(0, 10),
-        pickup_location: "Hajipur",
+        pickup_location: "work",
         billing_customer_name: selectedOrder?.address?.name,
         billing_city: selectedOrder?.address.address[0].city,
         billing_pincode: parseInt(selectedOrder?.address.address[1].pinCode),
+        billing_address: selectedOrder?.address.address[2].address,
+        billing_last_name: "",
         billing_state: selectedOrder?.address.address[3].state,
         billing_country: "India",
         billing_email: selectedOrder?.user?.email,

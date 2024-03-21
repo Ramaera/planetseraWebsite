@@ -85,7 +85,7 @@ const ReceivedOrder = () => {
                 <TableCell className="font-semibold">Shipment </TableCell>
               </TableRow>
             </TableHead>
-            <TableBody className="bg-slate-100">
+            <TableBody className="bg-slate-50">
               {allOrders?.data?.getallOrders?.map((user, index) => (
                 <TableRow key={index}>
                   <TableCell>{user?.user?.name}</TableCell>

@@ -37,13 +37,14 @@ const page = ({}) => {
   return (
     <div>
       <Container sx={{ padding: 5 }} className="min-h-screen ">
-        <Typography variant="h4" sx={{ mt: 7 }}>
+        <Typography variant="h5" sx={{ mt: 7 }}>
           All Product
         </Typography>
         {/* <div > */}
-        <TableContainer style={{ overflowX: "auto", borderWidth: 2 }}>
+        <TableContainer
+          style={{ overflowX: "auto", borderWidth: 3, borderRadius: 10 }}>
           <Table>
-            <TableHead>
+            <TableHead className="bg-slate-300">
               <TableRow>
                 <TableCell className="font-semibold">Name </TableCell>
                 <TableCell className="font-semibold">Image</TableCell>
@@ -56,7 +57,7 @@ const page = ({}) => {
                 <TableCell className="font-semibold">Add Variant </TableCell>
               </TableRow>
             </TableHead>
-            <TableBody>
+            <TableBody className="bg-slate-50">
               {allProducts?.map((item, index) => (
                 <TableRow key={index}>
                   <TableCell>{item?.title}</TableCell>
