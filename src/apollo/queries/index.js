@@ -397,6 +397,13 @@ query GetallOrders {
         role
         updatedAt
     }
+    shipRocketDetails {
+      orderId
+      shiprocket_OrderId
+      shiprocket_ShipmentId
+      shiprocket_status
+      shiprocket_status_code
+  }
     discountedAmount
     metaData
   }

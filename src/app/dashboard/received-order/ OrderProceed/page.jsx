@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Typography, Modal } from "@mui/material";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
@@ -8,13 +8,26 @@ import "react-toastify/dist/ReactToastify.css";
 import { SHIPROCKET_DETAILS } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 
-const OrderProceed = ({ open, onClose, selectedOrder, allProducts }) => {
+const OrderProceed = ({
+  open,
+  onClose,
+  selectedOrder,
+  allProducts,
+  openshipmentPickupOpen,
+  onCloseShipmentPickupOpen,
+  onOpenShipmentpIckup,
+  isShipmentId,
+  onPressIsShipmentId,
+  refetchAllOrders,
+}) => {
   const [shiprocketDetails] = useMutation(SHIPROCKET_DETAILS);
   const [length, setLength] = useState("");
   const [height, setHeight] = useState("");
   const [breadth, setBreadth] = useState("");
   const [weight, setWeight] = useState("");
   const [boxType, setBoxType] = useState("");
+
+  const [shipmentId, setShipmentId] = useState(null);
 
   const handleBoxTypeChange = (e) => {
     const selectedBoxType = e.target.value;
@@ -95,11 +108,19 @@ const OrderProceed = ({ open, onClose, selectedOrder, allProducts }) => {
     ?.flatMap((list) => list?.mobileNumber)
     .filter((mobileNumber) => mobileNumber)[0];
 
+  useEffect(() => {
+    const shipmentIdFilter = selectedOrder?.shipRocketDetails
+      ?.flatMap((list) => list?.shiprocket_ShipmentId)
+      .filter((shiprocket) => shiprocket)[0];
+    setShipmentId(shipmentIdFilter);
+  }, []);
+
   //   const pincode = parseInt(selectedOrder?.address.address[1].pinCode);
   console.log(
     "selectedOrder",
-    mobileNumberFilter,
-    typeof mobileNumberFilter
+    shipmentId
+    // mobileNumberFilter,
+    // typeof mobileNumberFilter
     //   // mobileNumberFilter,
     //   // nameFilter,
     //   // cityFilter,
@@ -180,6 +201,11 @@ const OrderProceed = ({ open, onClose, selectedOrder, allProducts }) => {
             const data = response.data;
             // console.log("123");
             await handleShiprocketDetails(data);
+            if (data) {
+              setShipmentId(data?.shipment_id);
+            }
+            refetchAllOrders();
+            onOpenShipmentpIckup();
             toast.success("Shipment Created");
             // console.log("done", data);
           }
@@ -190,6 +216,39 @@ const OrderProceed = ({ open, onClose, selectedOrder, allProducts }) => {
         });
 
       onClose();
+    }
+  };
+
+  const handleShipmentPickup = async () => {
+    console.log("shipmentId eee");
+    if (shipmentId) {
+      console.log("shipmentId", shipmentId);
+      const postData = {
+        shipment_id: shipmentId,
+      };
+      try {
+        const response = await axios.post(
+          "https://apiv2.shiprocket.in/v1/external/courier/assign/awb",
+          postData,
+          {
+            headers: {
+              Authorization: `Bearer ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (response?.data) {
+          console.log("response?.data", response?.data);
+        }
+      } catch (error) {
+        console.error(
+          "Error occurred while processing shipment pickup:",
+          error
+        );
+        toast.error(error?.response?.data?.message || "An error occurred");
+      }
+
+      onCloseShipmentPickupOpen();
     }
   };
 
@@ -212,179 +271,261 @@ const OrderProceed = ({ open, onClose, selectedOrder, allProducts }) => {
   };
 
   return (
-    <Modal
-      open={open}
-      onClose={onClose}
-      aria-labelledby="modal-title"
-      aria-describedby="modal-description"
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}>
-      <div className="bg-slate-50 rounded-lg w-4/5	sm:w-[36rem] max-h-[90%] overflow-y-auto">
-        <div>
-          <h3 className="text-center font-semibold text-xl border-b-2 border-black px-4 py-2">
-            Order Details
-          </h3>
-          <div className=" py-3 px-6 ">
-            {selectedOrder && (
-              <div>
-                <h5 className="font-semibold text-lg">Address Details:</h5>
-                <p>
-                  {nameFilter}, {addressFilter}, {cityFilter}, {stateFilter}{" "}
-                  {pinCodeFilter}
-                </p>
+    <>
+      <Modal
+        open={open}
+        onClose={onClose}
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}>
+        <div className="bg-slate-50 rounded-lg w-4/5	sm:w-[36rem] max-h-[90%] overflow-y-auto">
+          <div>
+            <h3 className="text-center font-semibold text-xl border-b-2 border-black px-4 py-2">
+              Order Details
+            </h3>
+            <div className=" py-3 px-6 ">
+              {selectedOrder && (
+                <div>
+                  <h5 className="font-semibold text-lg">Address Details:</h5>
+                  <p>
+                    {nameFilter}, {addressFilter}, {cityFilter}, {stateFilter}{" "}
+                    {pinCodeFilter}
+                  </p>
 
-                <h5 className="font-semibold text-lg  mt-1">
-                  Order Product Details:
-                </h5>
-                <table style={{ borderCollapse: "collapse", width: "100%" }}>
-                  <thead>
-                    <tr>
-                      <th className="border border-gray-300 p-2 text-left">
-                        Product Name
-                      </th>
-                      <th className="border border-gray-300 p-2">Weight (g)</th>
-                      <th className="border border-gray-300 p-2">Quantity</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {selectedOrder?.orderItems?.map((item, index) => (
-                      <tr key={index}>
-                        <td className="border border-gray-300 p-2">
-                          {item?.name}
-                        </td>
-                        <td className="border border-gray-300 p-2 text-center">
-                          {
-                            allProducts.find(
-                              (prod) => prod.id === item.productVariantId
-                            )?.weight
-                          }
-                          g
-                        </td>
-                        <td className="border border-gray-300 p-2 text-center">
-                          {item?.qty}
-                        </td>
+                  <h5 className="font-semibold text-lg  mt-1">
+                    Order Product Details:
+                  </h5>
+                  <table style={{ borderCollapse: "collapse", width: "100%" }}>
+                    <thead>
+                      <tr>
+                        <th className="border border-gray-300 p-2 text-left">
+                          Product Name
+                        </th>
+                        <th className="border border-gray-300 p-2">
+                          Weight (g)
+                        </th>
+                        <th className="border border-gray-300 p-2">Quantity</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-            <div>
-              <h5 className="font-semibold text-lg mt-2">
-                Select Box Details:
-              </h5>
-              <div className="flex flex-col text-xl my-1">
-                <label htmlFor="box1">
-                  <input
-                    type="radio"
-                    id="box1"
-                    name="boxType"
-                    value="box1"
-                    checked={boxType === "box1"}
-                    onChange={handleBoxTypeChange}
-                  />{" "}
-                  Box 1
-                </label>
-                <div className="flex text-base gap-4 px-4 text-slate-500 mb-2">
-                  <p>Length (in cm): 23</p>
-                  <p>Breadth (in cm): 16.5</p>
-                  <p>Height (in cm): 9.5</p>
-                </div>
-
-                <label htmlFor="box2">
-                  <input
-                    type="radio"
-                    id="box2"
-                    name="boxType"
-                    value="box2"
-                    checked={boxType === "box2"}
-                    onChange={handleBoxTypeChange}
-                  />{" "}
-                  Box 2
-                </label>
-                <div className="flex text-base gap-4 px-4 text-slate-500 mb-2">
-                  <p>Length (in cm): 25.5</p>
-                  <p>Breadth (in cm): 20.5</p>
-                  <p>Height (in cm): 10.5</p>
-                </div>
-                <label htmlFor="other">
-                  <input
-                    type="radio"
-                    id="other"
-                    name="boxType"
-                    value="other"
-                    checked={boxType === "other"}
-                    onChange={handleBoxTypeChange}
-                  />{" "}
-                  Other
-                </label>
-              </div>
-              {boxType === "other" && (
-                <div className="flex flex-row text-base">
-                  <div className="ml-4">
-                    <label htmlFor="length">Length (in cm): </label>
-                    <input
-                      className="w-28 px-1 rounded-md border"
-                      type="number"
-                      placeholder="Length"
-                      value={length}
-                      onChange={(e) => setLength(e.target.value)}
-                      disabled={boxType === "box1" || boxType === "box2"}
-                    />
-                  </div>
-                  <div className="">
-                    <label htmlFor="length">Breadth (in cm): </label>
-                    <input
-                      className="w-28 px-1 rounded-md border"
-                      type="number"
-                      placeholder="Breadth"
-                      value={breadth}
-                      onChange={(e) => setBreadth(e.target.value)}
-                      disabled={boxType === "box1" || boxType === "box2"}
-                    />
-                  </div>
-                  <div className="">
-                    <label htmlFor="length">Height (in cm): </label>
-                    <input
-                      className="w-28 px-1 rounded-md border"
-                      type="number"
-                      placeholder="Height"
-                      value={height}
-                      onChange={(e) => setHeight(e.target.value)}
-                      disabled={boxType === "box1" || boxType === "box2"}
-                    />
-                  </div>
+                    </thead>
+                    <tbody>
+                      {selectedOrder?.orderItems?.map((item, index) => (
+                        <tr key={index}>
+                          <td className="border border-gray-300 p-2">
+                            {item?.name}
+                          </td>
+                          <td className="border border-gray-300 p-2 text-center">
+                            {
+                              allProducts.find(
+                                (prod) => prod.id === item.productVariantId
+                              )?.weight
+                            }
+                            g
+                          </td>
+                          <td className="border border-gray-300 p-2 text-center">
+                            {item?.qty}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               )}
-            </div>
-            <div>
-              <h5 className="font-semibold text-lg mt-2">Enter Box Weight:</h5>
-              <div className="m-1">
-                <label htmlFor="length">Weight (in kg): </label>
-                <input
-                  className="w-28 px-1 rounded-md border"
-                  type="number"
-                  placeholder="Weight"
-                  value={weight}
-                  onChange={(e) => setWeight(e.target.value)}
-                />
+              <div>
+                <h5 className="font-semibold text-lg mt-2">
+                  Select Box Details:
+                </h5>
+                <div className="flex flex-col text-xl my-1">
+                  <label htmlFor="box1">
+                    <input
+                      type="radio"
+                      id="box1"
+                      name="boxType"
+                      value="box1"
+                      checked={boxType === "box1"}
+                      onChange={handleBoxTypeChange}
+                    />{" "}
+                    Box 1
+                  </label>
+                  <div className="flex text-base gap-4 px-4 text-slate-500 mb-2">
+                    <p>Length (in cm): 23</p>
+                    <p>Breadth (in cm): 16.5</p>
+                    <p>Height (in cm): 9.5</p>
+                  </div>
+
+                  <label htmlFor="box2">
+                    <input
+                      type="radio"
+                      id="box2"
+                      name="boxType"
+                      value="box2"
+                      checked={boxType === "box2"}
+                      onChange={handleBoxTypeChange}
+                    />{" "}
+                    Box 2
+                  </label>
+                  <div className="flex text-base gap-4 px-4 text-slate-500 mb-2">
+                    <p>Length (in cm): 25.5</p>
+                    <p>Breadth (in cm): 20.5</p>
+                    <p>Height (in cm): 10.5</p>
+                  </div>
+                  <label htmlFor="other">
+                    <input
+                      type="radio"
+                      id="other"
+                      name="boxType"
+                      value="other"
+                      checked={boxType === "other"}
+                      onChange={handleBoxTypeChange}
+                    />{" "}
+                    Other
+                  </label>
+                </div>
+                {boxType === "other" && (
+                  <div className="flex flex-row text-base">
+                    <div className="ml-4">
+                      <label htmlFor="length">Length (in cm): </label>
+                      <input
+                        className="w-28 px-1 rounded-md border"
+                        type="number"
+                        placeholder="Length"
+                        value={length}
+                        onChange={(e) => setLength(e.target.value)}
+                        disabled={boxType === "box1" || boxType === "box2"}
+                      />
+                    </div>
+                    <div className="">
+                      <label htmlFor="length">Breadth (in cm): </label>
+                      <input
+                        className="w-28 px-1 rounded-md border"
+                        type="number"
+                        placeholder="Breadth"
+                        value={breadth}
+                        onChange={(e) => setBreadth(e.target.value)}
+                        disabled={boxType === "box1" || boxType === "box2"}
+                      />
+                    </div>
+                    <div className="">
+                      <label htmlFor="length">Height (in cm): </label>
+                      <input
+                        className="w-28 px-1 rounded-md border"
+                        type="number"
+                        placeholder="Height"
+                        value={height}
+                        onChange={(e) => setHeight(e.target.value)}
+                        disabled={boxType === "box1" || boxType === "box2"}
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div>
+                <h5 className="font-semibold text-lg mt-2">
+                  Enter Box Weight:
+                </h5>
+                <div className="m-1">
+                  <label htmlFor="length">Weight (in kg): </label>
+                  <input
+                    className="w-28 px-1 rounded-md border"
+                    type="number"
+                    placeholder="Weight"
+                    value={weight}
+                    onChange={(e) => setWeight(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <button
+                  className="bg-red-400  text-white px-4 py-2 rounded-xl mt-4"
+                  onClick={handleSubmit}>
+                  Submit
+                </button>
               </div>
             </div>
-            <div className="flex justify-center">
-              <button
-                className="bg-red-400  text-white px-4 py-2 rounded-xl mt-4"
-                onClick={handleSubmit}>
-                Submit
-              </button>
+          </div>
+          <Toaster />
+        </div>
+      </Modal>
+
+      <Modal
+        open={openshipmentPickupOpen}
+        onClose={onCloseShipmentPickupOpen}
+        aria-labelledby="modal-title"
+        aria-describedby="modal-description"
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}>
+        <div className="bg-slate-50 rounded-lg w-4/5	sm:w-[36rem] max-h-[90%] overflow-y-auto">
+          <div>
+            <h3 className="text-center font-semibold text-xl border-b-2 border-black px-4 py-2">
+              Shipment Order Details
+            </h3>
+            <div className=" py-3 px-6 ">
+              {selectedOrder && (
+                <div>
+                  <h5 className="font-semibold text-lg">Address Details:</h5>
+                  <p>
+                    {nameFilter}, {addressFilter}, {cityFilter}, {stateFilter}{" "}
+                    {pinCodeFilter}
+                  </p>
+
+                  <h5 className="font-semibold text-lg  mt-1">
+                    Order Product Details:
+                  </h5>
+                  <table style={{ borderCollapse: "collapse", width: "100%" }}>
+                    <thead>
+                      <tr>
+                        <th className="border border-gray-300 p-2 text-left">
+                          Product Name
+                        </th>
+                        <th className="border border-gray-300 p-2">
+                          Weight (g)
+                        </th>
+                        <th className="border border-gray-300 p-2">Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {selectedOrder?.orderItems?.map((item, index) => (
+                        <tr key={index}>
+                          <td className="border border-gray-300 p-2">
+                            {item?.name}
+                          </td>
+                          <td className="border border-gray-300 p-2 text-center">
+                            {
+                              allProducts.find(
+                                (prod) => prod.id === item.productVariantId
+                              )?.weight
+                            }
+                            g
+                          </td>
+                          <td className="border border-gray-300 p-2 text-center">
+                            {item?.qty}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
+              <div className="flex justify-center">
+                <button
+                  className="bg-red-400  text-white px-4 py-2 rounded-xl mt-4"
+                  onClick={handleShipmentPickup}>
+                  Confirm
+                </button>
+              </div>
             </div>
           </div>
+          <Toaster />
         </div>
-        <Toaster />
-      </div>
-    </Modal>
+      </Modal>
+    </>
   );
 };
 

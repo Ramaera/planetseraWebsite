@@ -17,6 +17,8 @@ import OrderProceed from "./ OrderProceed/page";
 
 const ReceivedOrder = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [shipmentPickupOpen, setShipmentPickupOpen] = useState(false);
+
   const [selectedOrder, setSelectedOrder] = useState(null);
 
   const [status, setStatus] = useState("fghjk");
@@ -45,12 +47,17 @@ const ReceivedOrder = () => {
   }, [merchantTransactionId]);
   const user = useSelector((state) => state?.user);
 
-  const allOrders = useQuery(GET_ALL_ORDERS);
+  const { data: allOrders, refetch: refetchAllOrders } =
+    useQuery(GET_ALL_ORDERS);
 
-  console.log("allOrders", allOrders);
   const handleOrderToProceed = (order) => {
     setSelectedOrder(order);
     setModalOpen(true);
+  };
+
+  const handleShipmentPickup = (order) => {
+    setSelectedOrder(order);
+    setShipmentPickupOpen(true);
   };
 
   return (
@@ -83,10 +90,11 @@ const ReceivedOrder = () => {
                 <TableCell className="font-semibold">Payment Status</TableCell>
                 <TableCell className="font-semibold">Order Status</TableCell>
                 <TableCell className="font-semibold">Shipment </TableCell>
+                <TableCell className="font-semibold">Shipment Pickup</TableCell>
               </TableRow>
             </TableHead>
             <TableBody className="bg-slate-50">
-              {allOrders?.data?.getallOrders?.map((user, index) => (
+              {allOrders?.getallOrders?.map((user, index) => (
                 <TableRow key={index}>
                   <TableCell>{user?.user?.name}</TableCell>
 
@@ -143,9 +151,27 @@ const ReceivedOrder = () => {
                   <TableCell>{user?.status}</TableCell>
                   <TableCell>
                     <button
-                      className="bg-red-400  text-white px-4 py-2 rounded-xl"
+                      className={`${
+                        user?.shipRocketDetails
+                          ?.flatMap((list) => list?.shiprocket_ShipmentId)
+                          .filter((shiprocket) => shiprocket)[0]
+                          ? "bg-gray-400"
+                          : "bg-red-400"
+                      }  text-white px-4 py-2 rounded-xl`}
+                      disabled={
+                        user?.shipRocketDetails
+                          ?.flatMap((list) => list?.shiprocket_ShipmentId)
+                          .filter((shiprocket) => shiprocket)[0]
+                      }
                       onClick={() => handleOrderToProceed(user)}>
                       Create Shipment
+                    </button>
+                  </TableCell>
+                  <TableCell>
+                    <button
+                      className="bg-red-400  text-white px-4 py-2 rounded-xl"
+                      onClick={() => handleShipmentPickup(user)}>
+                      Shipment Pickup
                     </button>
                   </TableCell>
                 </TableRow>
@@ -159,6 +185,10 @@ const ReceivedOrder = () => {
         onClose={() => setModalOpen(false)}
         selectedOrder={selectedOrder}
         allProducts={allProducts}
+        openshipmentPickupOpen={shipmentPickupOpen}
+        onOpenShipmentpIckup={() => setShipmentPickupOpen(true)}
+        onCloseShipmentPickupOpen={() => setShipmentPickupOpen(false)}
+        refetchAllOrders={refetchAllOrders}
       />
     </div>
   );
