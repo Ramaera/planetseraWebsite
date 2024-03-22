@@ -47,10 +47,10 @@ const OrderDetails = () => {
     try {
       // console.log("Fetching order tracking information...");
       const response = await axios.get(
-        `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=6718511330`,
+        `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=4889159931`,
         {
           headers: {
-            Authorization: ` ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
             "Content-Type": "application/json",
           },
         }
@@ -137,19 +137,19 @@ const OrderDetails = () => {
                     </Link>
                   </div>
                   <div>
-                    {orderStatus != "Delivered" && (
-                      <p className="font-semibold ">
-                        Expected Delivery Date:{" "}
-                        <span className="text-red-400">
-                          {etd
-                            ?.slice(0, 10)
-                            .slice(0, 10)
-                            .split("-")
-                            .reverse()
-                            .join("-")}
-                        </span>
-                      </p>
-                    )}
+                    {/* {orderStatus != "Delivered" && ( */}
+                    <p className="font-semibold ">
+                      Expected Delivery Date:{" "}
+                      <span className="text-red-400">
+                        {etd
+                          ?.slice(0, 10)
+                          .slice(0, 10)
+                          .split("-")
+                          .reverse()
+                          .join("-")}
+                      </span>
+                    </p>
+                    {/* )} */}
                   </div>
                 </div>
               )}
@@ -169,7 +169,6 @@ const OrderDetails = () => {
                       )}{" "}
                     </span>
                   </div>
-
                   {specificOrder?.metaData?.map((list) =>
                     list?.address?.map((add) => (
                       <div className="flex flex- w-full gap-2">
@@ -192,7 +191,6 @@ const OrderDetails = () => {
                     <p>Payment Status:</p>
                     <span className="text-green-500">Success</span>
                   </div>
-
                   <div className="flex justify-between mt-4">
                     <p>Subtotal:</p>
                     <span>

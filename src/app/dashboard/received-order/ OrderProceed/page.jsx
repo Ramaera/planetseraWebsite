@@ -40,6 +40,14 @@ const OrderProceed = ({
       setLength(25.5);
       setBreadth(20.5);
       setHeight(10.5);
+    } else if (selectedBoxType === "box3") {
+      setLength(25);
+      setBreadth(20);
+      setHeight(16);
+    } else if (selectedBoxType === "box4") {
+      setLength(30);
+      setBreadth(21);
+      setHeight(21);
     } else {
       setLength("");
       setBreadth("");
@@ -115,33 +123,7 @@ const OrderProceed = ({
     setShipmentId(shipmentIdFilter);
   }, []);
 
-  //   const pincode = parseInt(selectedOrder?.address.address[1].pinCode);
-  console.log(
-    "selectedOrder",
-    shipmentId
-    // mobileNumberFilter,
-    // typeof mobileNumberFilter
-    //   // mobileNumberFilter,
-    //   // nameFilter,
-    //   // cityFilter,
-    //   // pinCodeFilter,
-    //   // addressFilter,
-    //   // stateFilter
-    //   // selectedOrder,
-    //   // selectedOrder?.id,
-    //   // selectedOrder?.orderDate.slice(0, 10),
-    //   // selectedOrder?.address.address[0].city,
-    //   // selectedOrder?.address?.name,
-    //   // parseInt(selectedOrder?.address.address[1].pinCode),
-    //   // parseInt(selectedOrder?.address?.mobileNumber),
-    //   // selectedOrder?.address.address[2].address,
-    //   // selectedOrder?.ShippingCost,
-    //   // typeof orderItems,
-    // selectedOrder
-    //   // selectedOrder?.address.address[3]?.state,
-    //   // selectedOrder?.discountedAmount,
-    //   // selectedOrder?.orderAmount
-  );
+  console.log("selectedOrder", shipmentId);
 
   const handleSubmit = () => {
     const isValid = validateForm();
@@ -168,14 +150,7 @@ const OrderProceed = ({
         shipping_state: stateFilter,
         shipping_phone: parseInt(mobileNumberFilter),
         order_items: orderItems,
-        //   [
-        //     {
-        //       name: "Kunai",
-        //       sku: "chakra123",
-        //       units: 10,
-        //       selling_price: "900",
-        //     },
-        //   ],
+
         payment_method: "Prepaid",
         shipping_charges: selectedOrder?.ShippingCost,
         total_discount: selectedOrder?.discountedAmount,
@@ -227,7 +202,7 @@ const OrderProceed = ({
         shipment_id: shipmentId,
       };
       try {
-        const response = await axios.post(
+        const resShiprocket = await axios.post(
           "https://apiv2.shiprocket.in/v1/external/courier/assign/awb",
           postData,
           {
@@ -237,8 +212,11 @@ const OrderProceed = ({
             },
           }
         );
-        if (response?.data) {
-          console.log("response?.data", response?.data);
+        if (resShiprocket?.data) {
+          console.log(
+            "resShiprocket?.data",
+            resShiprocket?.data?.response?.data
+          );
         }
       } catch (error) {
         console.error(
@@ -372,6 +350,41 @@ const OrderProceed = ({
                     <p>Breadth (in cm): 20.5</p>
                     <p>Height (in cm): 10.5</p>
                   </div>
+
+                  <label htmlFor="box3">
+                    <input
+                      type="radio"
+                      id="box3"
+                      name="boxType"
+                      value="box3"
+                      checked={boxType === "box3"}
+                      onChange={handleBoxTypeChange}
+                    />{" "}
+                    Box 3
+                  </label>
+                  <div className="flex text-base gap-4 px-4 text-slate-500 mb-2">
+                    <p>Length (in cm): 25</p>
+                    <p>Breadth (in cm): 20</p>
+                    <p>Height (in cm): 16</p>
+                  </div>
+
+                  <label htmlFor="box4">
+                    <input
+                      type="radio"
+                      id="box4"
+                      name="boxType"
+                      value="box4"
+                      checked={boxType === "box4"}
+                      onChange={handleBoxTypeChange}
+                    />{" "}
+                    Box 4
+                  </label>
+                  <div className="flex text-base gap-4 px-4 text-slate-500 mb-2">
+                    <p>Length (in cm): 30</p>
+                    <p>Breadth (in cm): 21</p>
+                    <p>Height (in cm): 21</p>
+                  </div>
+
                   <label htmlFor="other">
                     <input
                       type="radio"
@@ -394,7 +407,6 @@ const OrderProceed = ({
                         placeholder="Length"
                         value={length}
                         onChange={(e) => setLength(e.target.value)}
-                        disabled={boxType === "box1" || boxType === "box2"}
                       />
                     </div>
                     <div className="">
@@ -405,7 +417,6 @@ const OrderProceed = ({
                         placeholder="Breadth"
                         value={breadth}
                         onChange={(e) => setBreadth(e.target.value)}
-                        disabled={boxType === "box1" || boxType === "box2"}
                       />
                     </div>
                     <div className="">
@@ -416,7 +427,6 @@ const OrderProceed = ({
                         placeholder="Height"
                         value={height}
                         onChange={(e) => setHeight(e.target.value)}
-                        disabled={boxType === "box1" || boxType === "box2"}
                       />
                     </div>
                   </div>

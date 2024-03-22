@@ -113,18 +113,6 @@ const ReceivedOrder = () => {
                     </div>
                   </TableCell>
 
-                  {/*
-                   
-                  <TableCell className="min-w-[180px]">
-                    <div>{user?.address?.name}</div>
-                    <div className="flex">
-                      {user?.address?.address[2].address}{" "}
-                      {user?.address?.address[0].city}{" "}
-                      {selectedOrder?.address.address[3]?.state}{" "}
-                      {user?.address?.address[1].pinCode}
-                    </div>
-                    <div>+91 {user?.address?.mobileNumber}</div>
-                  </TableCell> */}
                   <TableCell className="min-w-[200px]">
                     {" "}
                     {user?.orderItems?.map((item) => {
@@ -149,7 +137,7 @@ const ReceivedOrder = () => {
                   <TableCell>{user?.Payment[0]?.paymentId}</TableCell>
                   <TableCell>Success</TableCell>
                   <TableCell>{user?.status}</TableCell>
-                  <TableCell>
+                  <TableCell className="min-w-[150px]">
                     <button
                       className={`${
                         user?.shipRocketDetails
@@ -164,16 +152,20 @@ const ReceivedOrder = () => {
                           .filter((shiprocket) => shiprocket)[0]
                       }
                       onClick={() => handleOrderToProceed(user)}>
-                      Create Shipment
+                      Create Order To Shiprocket
                     </button>
                   </TableCell>
-                  <TableCell>
-                    <button
-                      className="bg-red-400  text-white px-4 py-2 rounded-xl"
-                      onClick={() => handleShipmentPickup(user)}>
-                      Shipment Pickup
-                    </button>
-                  </TableCell>
+                  {user?.shipRocketDetails
+                    ?.flatMap((list) => list?.shiprocket_ShipmentId)
+                    .filter((shiprocket) => shiprocket)[0] && (
+                    <TableCell>
+                      <button
+                        className="bg-red-400  text-white px-4 py-2 rounded-xl"
+                        onClick={() => handleShipmentPickup(user)}>
+                        Shipment Pickup
+                      </button>
+                    </TableCell>
+                  )}
                 </TableRow>
               ))}
             </TableBody>
