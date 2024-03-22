@@ -5,7 +5,10 @@ import { Container, Typography, Modal } from "@mui/material";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
-import { SHIPROCKET_DETAILS } from "@/apollo/queries";
+import {
+  SHIPROCKET_DETAILS,
+  UPDTAE_SHIPROCKET_DETAILS,
+} from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 
 const OrderProceed = ({
@@ -21,6 +24,7 @@ const OrderProceed = ({
   refetchAllOrders,
 }) => {
   const [shiprocketDetails] = useMutation(SHIPROCKET_DETAILS);
+  const [updateShiprocketDetails] = useMutation(UPDTAE_SHIPROCKET_DETAILS);
   const [length, setLength] = useState("");
   const [height, setHeight] = useState("");
   const [breadth, setBreadth] = useState("");
@@ -123,7 +127,7 @@ const OrderProceed = ({
     setShipmentId(shipmentIdFilter);
   }, []);
 
-  console.log("selectedOrder", shipmentId);
+  // console.log("selectedOrder", shipmentId);
 
   const handleSubmit = () => {
     const isValid = validateForm();
@@ -150,7 +154,6 @@ const OrderProceed = ({
         shipping_state: stateFilter,
         shipping_phone: parseInt(mobileNumberFilter),
         order_items: orderItems,
-
         payment_method: "Prepaid",
         shipping_charges: selectedOrder?.ShippingCost,
         total_discount: selectedOrder?.discountedAmount,
@@ -195,7 +198,7 @@ const OrderProceed = ({
   };
 
   const handleShipmentPickup = async () => {
-    console.log("shipmentId eee");
+    // console.log("shipmentId eee");
     if (shipmentId) {
       console.log("shipmentId", shipmentId);
       const postData = {
@@ -213,6 +216,8 @@ const OrderProceed = ({
           }
         );
         if (resShiprocket?.data) {
+          const data = resShiprocket?.data?.response?.data;
+          await handleUpdateShiprocketDetails(data);
           console.log(
             "resShiprocket?.data",
             resShiprocket?.data?.response?.data
@@ -240,6 +245,24 @@ const OrderProceed = ({
           shiprocket_ShipmentId: data?.shipment_id,
           shiprocket_status: data?.status,
           shiprocket_status_code: data?.status_code,
+        },
+      });
+      // console.log("resp", resp);
+    } catch (err) {
+      console.log("err", err.message);
+    }
+  };
+
+  const shiprocketId = selectedOrder?.shipRocketDetails[0]?.id;
+  console.log("shiprocketId", shiprocketId);
+
+  const handleUpdateShiprocketDetails = async (data) => {
+    // console.log("enter", data);
+    try {
+      const resp = await updateShiprocketDetails({
+        variables: {
+          id: shiprocketId,
+          metaData: [{ shipmentPickupData: data }],
         },
       });
       // console.log("resp", resp);

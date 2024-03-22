@@ -398,6 +398,8 @@ query GetallOrders {
         updatedAt
     }
     shipRocketDetails {
+      id
+      metaData
       orderId
       shiprocket_OrderId
       shiprocket_ShipmentId
@@ -557,6 +559,20 @@ mutation ShipRocketDetails ($orderId:Int! $shiprocket_OrderId:Int! $shiprocket_S
           shiprocket_status_code: $shiprocket_status_code
       }
   ) {
+      orderId
+      shiprocket_OrderId
+      shiprocket_ShipmentId
+      shiprocket_status
+      shiprocket_status_code
+  }
+}
+`);
+
+export const UPDTAE_SHIPROCKET_DETAILS = gql(`
+mutation UpdateShipRocketDetails ($id:String!  $metaData: [JSONObject!]) {
+  updateShipRocketDetails(data: { id: $id, metaData: $metaData }) {
+      id
+      metaData
       orderId
       shiprocket_OrderId
       shiprocket_ShipmentId
