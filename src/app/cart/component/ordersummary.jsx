@@ -174,12 +174,15 @@ const ordersummary = () => {
     return totalPrice;
   };
 
-  // useEffect(() => {
-  //   return () => {
-  //     dispatch(getDiscountedAmount(0));
-  //   };
-  // }, []);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleInputField = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleChange = (e) => {
+    setCouponCode(e.target.value);
+  };
   useEffect(() => {
     if (subTotalPrice() >= 500) {
       setCheckoutEnabled(true);
@@ -222,7 +225,8 @@ const ordersummary = () => {
       <div className="font-mont sm:w-1/4 sm:min-w-[380px] pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
-          className="border py-9 px-6 shadow-xl">
+          className="border py-9 px-6 shadow-xl"
+        >
           <p className="text-2xl  ">Order Summary</p>
 
           <div className="flex justify-between flex-col   mt-5 ">
@@ -271,9 +275,29 @@ const ordersummary = () => {
                   />
                   <button
                     onClick={handleApplyCoupon}
-                    className="Cartbgcolor text-white rounded px-2 h-14 w-32 ">
+                    className="Cartbgcolor text-white rounded px-2 h-14 w-32 "
+                  >
                     Apply
                   </button>
+                </div>
+                <div className="mt-5">
+                  <span
+                    onClick={toggleInputField}
+                    className="cursor-pointer font-semibold text-red-400 underline"
+                  >
+                    Add MyMart MyCard Coupon code
+                  </span>
+                  {isOpen && (
+                    <div>
+                      <TextField
+                        type="text"
+                        placeholder="Enter MyMart MyCard Code"
+                        value={couponCode}
+                        onChange={handleChange}
+                        className="w-full border rounded pr-2 pt-5 "
+                      />
+                    </div>
+                  )}
                 </div>
               </>
             )}
@@ -315,7 +339,8 @@ const ordersummary = () => {
                     <Link href="/cart" className="text-white">
                       <button
                         onClick={handleProceedToCheckout}
-                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3">
+                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3"
+                      >
                         Proceed To Checkout
                       </button>
                     </Link>
@@ -326,7 +351,8 @@ const ordersummary = () => {
                   <div
                     onClick={openLoginModal}
                     className="text-white"
-                    style={{ color: colorMe, fontWeight: "bold" }}>
+                    style={{ color: colorMe, fontWeight: "bold" }}
+                  >
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
                       Proceed To Checkout
                     </div>

@@ -24,6 +24,7 @@ const OrderDetails = () => {
   const specificOrder = allOrders?.data?.allOrders.find(
     (list) => list.id === id
   );
+
   // if (!specificOrder) return;
   const allProducts =
     allProductsQuery.data?.allProducts.flatMap(
@@ -43,11 +44,14 @@ const OrderDetails = () => {
   const [trackingInfo, setTrackingInfo] = useState("");
   const [orderStatus, setOrderStatus] = useState("PROCESSING");
   const [etd, setEtd] = useState();
+  const Order_Id = specificOrder?.shipRocketDetails[0]?.shiprocket_OrderId;
+  console.log("specificOrder", Order_Id);
+
   const fetchOrderTracking = async () => {
     try {
       // console.log("Fetching order tracking information...");
       const response = await axios.get(
-        `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=6718511330`,
+        `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=${Order_Id}`,
         {
           headers: {
             Authorization: ` ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
@@ -137,19 +141,19 @@ const OrderDetails = () => {
                     </Link>
                   </div>
                   <div>
-                    {orderStatus != "Delivered" && (
-                      <p className="font-semibold ">
-                        Expected Delivery Date:{" "}
-                        <span className="text-red-400">
-                          {etd
-                            ?.slice(0, 10)
-                            .slice(0, 10)
-                            .split("-")
-                            .reverse()
-                            .join("-")}
-                        </span>
-                      </p>
-                    )}
+                    {/* {orderStatus != "Delivered" && ( */}
+                    <p className="font-semibold ">
+                      Expected Delivery Date:{" "}
+                      <span className="text-red-400">
+                        {etd
+                          ?.slice(0, 10)
+                          .slice(0, 10)
+                          .split("-")
+                          .reverse()
+                          .join("-")}
+                      </span>
+                    </p>
+                    {/* )} */}
                   </div>
                 </div>
               )}
