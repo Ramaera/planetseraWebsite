@@ -74,6 +74,22 @@ const page = () => {
     },
   });
 
+  // const sendSlackNotification = async (message) => {
+  //   console.log("inside", message);
+  //   try {
+  //     const webhookUrl =
+  //       "https://hooks.slack.com/services/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";
+  //     await axios.post(webhookUrl, { text: message });
+  //     console.log("Slack notification sent successfully.");
+  //   } catch (error) {
+  //     console.error("Error sending Slack notification:", error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   sendSlackNotification("hiiii");
+  // }, []);
+
   const handleCreateOrder = async () => {
     try {
       const resp = await createOrder({
@@ -97,6 +113,10 @@ const page = () => {
       });
       await handleDetectedAmountFromMyCard();
       await handleDeleteCart();
+      // const message = `New order received!\nCustomer Name: ${metaDataName}\nTotal Amount:`;
+      // await sendSlackNotification(message);
+      console.log("done");
+
       return resp;
     } catch (err) {
       console.log("err", err.message);
@@ -259,7 +279,8 @@ const page = () => {
               </div>
               <div
                 style={{ color: "#8D92A7" }}
-                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	">
+                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	"
+              >
                 {resStatus?.code === "PAYMENT_SUCCESS"
                   ? "To check your order status"
                   : "If Amount is Debited From Your Account, Kindly Mail Us At support@ramaera.com With Your Transaction Details"}
