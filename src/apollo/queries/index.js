@@ -359,6 +359,13 @@ query AllOrders ($buyerId: String!) {
           name
 
       }
+      shipRocketDetails {
+        orderId
+        shiprocket_OrderId
+        shiprocket_ShipmentId
+        shiprocket_status
+        shiprocket_status_code
+    }
   }
 }
 `);

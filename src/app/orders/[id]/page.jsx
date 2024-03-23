@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import "@/public/styles/cart.css";
 import axios from "axios";
+
 const OrderDetails = () => {
   const router = useRouter();
   const user = useSelector((state) => state?.user);
@@ -24,6 +25,7 @@ const OrderDetails = () => {
   const specificOrder = allOrders?.data?.allOrders.find(
     (list) => list.id === id
   );
+
   // if (!specificOrder) return;
   const allProducts =
     allProductsQuery.data?.allProducts.flatMap(
@@ -43,11 +45,14 @@ const OrderDetails = () => {
   const [trackingInfo, setTrackingInfo] = useState("");
   const [orderStatus, setOrderStatus] = useState("PROCESSING");
   const [etd, setEtd] = useState();
+  const Order_Id = specificOrder?.shipRocketDetails[0]?.shiprocket_OrderId;
+  // console.log("specificOrder", Order_Id);
+
   const fetchOrderTracking = async () => {
     try {
       // console.log("Fetching order tracking information...");
       const response = await axios.get(
-        `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=4889159931`,
+        `https://apiv2.shiprocket.in/v1/external/courier/track?order_id=${Order_Id}`,
         {
           headers: {
             Authorization: `Bearer ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
@@ -59,7 +64,7 @@ const OrderDetails = () => {
         response?.data[0]?.tracking_data?.shipment_track[0].current_status
       );
       setEtd(response?.data[0]?.tracking_data?.etd);
-      console.log("resp", response);
+      // console.log("resp", response);
       const trackUrl = response?.data[0]?.tracking_data?.track_url;
       // console.log("Tracking URL:", trackUrl);
       setTrackingInfo(trackUrl);
@@ -67,6 +72,8 @@ const OrderDetails = () => {
       console.error("Error fetching tracking information:", error);
     }
   };
+
+  console.log("orderStatus", orderStatus);
   return (
     <>
       <NavItem page={"orders"} className="pb-40" />
@@ -82,7 +89,7 @@ const OrderDetails = () => {
               <div className="bg-gray-100 rounded-lg py-2 px-4">
                 <div className="flex justify-between">
                   <Typography className="text-left text-slate-400 pb-2">
-                    Order Status: <b>{orderStatus}</b>
+                    Order Status: <b>{orderStatus || "PROCESSING"}</b>
                   </Typography>
                   <div>
                     <Typography className="text-left text-slate-400   font-semibold pb-2">
@@ -124,7 +131,7 @@ const OrderDetails = () => {
                   );
                 })}
               </div>
-              {specificOrder && (
+              {specificOrder && Order_Id && trackingInfo && (
                 <div className="flex justify-between">
                   <div>
                     <div className=" mt-2 font-semibold">
@@ -137,7 +144,6 @@ const OrderDetails = () => {
                     </Link>
                   </div>
                   <div>
-                    {/* {orderStatus != "Delivered" && ( */}
                     <p className="font-semibold ">
                       Expected Delivery Date:{" "}
                       <span className="text-red-400">
@@ -149,7 +155,6 @@ const OrderDetails = () => {
                           .join("-")}
                       </span>
                     </p>
-                    {/* )} */}
                   </div>
                 </div>
               )}
