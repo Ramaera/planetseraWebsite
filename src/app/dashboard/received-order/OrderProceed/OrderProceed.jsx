@@ -11,7 +11,7 @@ import {
 } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 
-const OrderProceed = ({
+const OrderProceed = (
   open,
   onClose,
   selectedOrder,
@@ -21,8 +21,8 @@ const OrderProceed = ({
   onOpenShipmentpIckup,
   isShipmentId,
   onPressIsShipmentId,
-  refetchAllOrders,
-}) => {
+  refetchAllOrders
+) => {
   const [shiprocketDetails] = useMutation(SHIPROCKET_DETAILS);
   const [updateShiprocketDetails] = useMutation(UPDTAE_SHIPROCKET_DETAILS);
   const [length, setLength] = useState("");
@@ -184,13 +184,15 @@ const OrderProceed = ({
             }
             refetchAllOrders();
             onOpenShipmentpIckup();
-            toast.success("Shipment Created");
+            toast.success("Shipment Order Created", { duration: 4000 });
             // console.log("done", data);
           }
         })
         .catch((error) => {
-          console.error("Error occurred while processing payment:", error);
-          toast.error(error?.response?.data?.message);
+          console.error("Error:", error);
+          toast.error(error?.response?.data?.message || "An error occurred", {
+            duration: 4000,
+          });
         });
 
       onClose();
@@ -228,7 +230,9 @@ const OrderProceed = ({
           "Error occurred while processing shipment pickup:",
           error
         );
-        toast.error(error?.response?.data?.message || "An error occurred");
+        toast.error(error?.response?.data?.message || "An error occurred", {
+          duration: 4000,
+        });
       }
 
       onCloseShipmentPickupOpen();

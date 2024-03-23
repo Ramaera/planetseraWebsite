@@ -12,7 +12,7 @@ const Dashboard = () => {
   // console.log("Role", Role);
 
   const isAdmin = Role === "ADMIN";
-  if (!isAdmin) {
+  if (!Role === "ADMIN") {
     router.push("/");
   }
 
