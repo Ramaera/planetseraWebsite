@@ -23,12 +23,20 @@ import {
   clearCart,
   discountCodeClear,
   discountedPercentage,
+  clearMyCardMyMartCoupon,
 } from "@/state/slice/cartSlice";
 
 import CircularProgress from "@mui/material/CircularProgress";
 
 const page = () => {
   const user = useSelector((state) => state?.user);
+  const MyCardCouponCodeRedux = useSelector(
+    (state) => state.cart.myCardMyMartCouponCode
+  );
+  const MyCardCouponAmountRedux = useSelector(
+    (state) => state.cart.myCardMyMartCouponAmount
+  );
+
   const addressesData = useSelector((state) => state.address);
   const AddressId = addressesData?.selectedAddress;
 
@@ -82,10 +90,12 @@ const page = () => {
             { mobileNumber: metaDataMobile },
             { name: metaDataName },
             { address: metaDataAddress },
+            { myMartMyCardCoupon: MyCardCouponCodeRedux },
+            { myMartMyCardAmount: MyCardCouponAmountRedux },
           ],
         },
       });
-
+      await handleDetectedAmountFromMyCard();
       await handleDeleteCart();
       return resp;
     } catch (err) {
@@ -187,6 +197,24 @@ const page = () => {
     } catch (err) {
       console.log("err", err.message);
     }
+  };
+
+  const handleDetectedAmountFromMyCard = () => {
+    const postData = {
+      coupounCode: MyCardCouponCodeRedux,
+    };
+    axios
+      .post(
+        "https://l83w6jqz-6768.inc1.devtunnels.ms/verify/applyCoupounCode",
+        postData
+      )
+      .then((response) => {
+        if (response?.data) dispatch(clearMyCardMyMartCoupon());
+      })
+
+      .catch((error) => {
+        console.error("Error occurred while processing myMart myCard:", error);
+      });
   };
 
   const handleOrderPlaced = () => {

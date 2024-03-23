@@ -10,6 +10,8 @@ const cartSlice = createSlice({
     getDiscountedAmount: 0,
     discountedPercentage: "10%",
     discountCode: null,
+    myCardMyMartCouponCode: null,
+    myCardMyMartCouponAmount: 0,
   },
 
   reducers: {
@@ -86,6 +88,16 @@ const cartSlice = createSlice({
     discountCodeClear(state) {
       state.discountCode = null;
     },
+    setMyCardMyMartCouponCode(state, action) {
+      state.myCardMyMartCouponCode = action.payload;
+    },
+    setMyCardMyMartCouponAmount(state, action) {
+      state.myCardMyMartCouponAmount = action.payload;
+    },
+    clearMyCardMyMartCoupon(state) {
+      state.myCardMyMartCouponCode = null;
+      state.myCardMyMartCouponAmount = 0;
+    },
   },
 });
 
@@ -102,5 +114,8 @@ export const {
   getDiscountedAmount,
   discountedPercentage,
   discountCode,
+  setMyCardMyMartCouponCode,
+  setMyCardMyMartCouponAmount,
+  clearMyCardMyMartCoupon,
 } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -11,7 +11,7 @@ import {
 } from "@/apollo/queries";
 import { useMutation } from "@apollo/client";
 
-const OrderProceed = (
+const OrderProceed = ({
   open,
   onClose,
   selectedOrder,
@@ -21,8 +21,8 @@ const OrderProceed = (
   onOpenShipmentpIckup,
   isShipmentId,
   onPressIsShipmentId,
-  refetchAllOrders
-) => {
+  refetchAllOrders,
+}) => {
   const [shiprocketDetails] = useMutation(SHIPROCKET_DETAILS);
   const [updateShiprocketDetails] = useMutation(UPDTAE_SHIPROCKET_DETAILS);
   const [length, setLength] = useState("");

@@ -295,63 +295,73 @@ const ReceivedOrder = () => {
                   <TableCell className="min-w-[150px]">
                     <button
                       className={`${
-                        getShiprocketShipmentId(user)
+                        getShiprocketShipmentId(user) ||
+                        user?.status != "PROCESSING"
                           ? "bg-gray-400"
                           : "bg-red-400"
                       }  text-white px-4 py-2 rounded-xl`}
-                      disabled={getShiprocketShipmentId(user)}
+                      disabled={
+                        getShiprocketShipmentId(user) ||
+                        user?.status != "PROCESSING"
+                      }
                       onClick={() => handleOrderToProceed(user)}>
                       Create Order To Shiprocket
                     </button>
                   </TableCell>
-                  {getShiprocketShipmentId(user) && (
-                    <TableCell>
+
+                  <TableCell>
+                    {getShiprocketShipmentId(user) && (
                       <button
                         className="bg-red-400  text-white px-4 py-2 rounded-xl"
                         onClick={() => handleShipmentPickup(user)}>
                         Shipment Pickup
                       </button>
-                    </TableCell>
-                  )}
+                    )}
+                  </TableCell>
+
                   <TableCell className="min-w-[180px]">
                     {/* <GenerateButton
                       shipmentId={getShiprocketShipmentId(user)}
                       orderIds={getShiprocketOrderId(user)}
                     /> */}
-                    <Link href={manifestUrl}>
-                      <button
-                        className="bg-red-400  text-white px-4 py-2 rounded-xl"
-                        // onClick={() =>
-                        //   handleGenerateManifest(
-                        //     getShiprocketShipmentId(user),
-                        //     getShiprocketOrderId(user)
-                        //   )
-                        // }
-                      >
-                        Generate Manifest
-                      </button>
-                    </Link>
-                    <Link href={labelUrl}>
-                      <button
-                        className="bg-red-400  text-white px-4 py-2 rounded-xl my-1"
-                        // onClick={(e) =>
-                        //   handleGenerateLabel(getShiprocketShipmentId(user))
-                        // }
-                      >
-                        Generate Label
-                      </button>
-                    </Link>
+                    {getShiprocketShipmentId(user) && (
+                      <>
+                        <Link href={manifestUrl}>
+                          <button
+                            className="bg-red-400  text-white px-4 py-2 rounded-xl"
+                            // onClick={() =>
+                            //   handleGenerateManifest(
+                            //     getShiprocketShipmentId(user),
+                            //     getShiprocketOrderId(user)
+                            //   )
+                            // }
+                          >
+                            Generate Manifest
+                          </button>
+                        </Link>
+                        <Link href={labelUrl}>
+                          <button
+                            className="bg-red-400  text-white px-4 py-2 rounded-xl my-1"
+                            // onClick={(e) =>
+                            //   handleGenerateLabel(getShiprocketShipmentId(user))
+                            // }
+                          >
+                            Generate Label
+                          </button>
+                        </Link>
 
-                    <Link href={invoiceUrl}>
-                      <button
-                        className="bg-red-400  text-white px-4 py-2 rounded-xl"
-                        // onClick={() =>
-                        //   handleGenerateInvoice(getShiprocketOrderId(user))
-                        // }
-                      >
-                        Generate Invoice
-                      </button>
-                    </Link>
+                        <Link href={invoiceUrl}>
+                          <button
+                            className="bg-red-400  text-white px-4 py-2 rounded-xl"
+                            // onClick={() =>
+                            //   handleGenerateInvoice(getShiprocketOrderId(user))
+                            // }
+                          >
+                            Generate Invoice
+                          </button>
+                        </Link>
+                      </>
+                    )}
                   </TableCell>
                 </TableRow>
               ))}
