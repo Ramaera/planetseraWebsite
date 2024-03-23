@@ -54,12 +54,13 @@ const page = () => {
     if (myCardCouponCode) {
       axios
         .get(
-          `https://l83w6jqz-6768.inc1.devtunnels.ms/verify/${myCardCouponCode}`
+          // `https://l83w6jqz-6768.inc1.devtunnels.ms/verify/${myCardCouponCode}`
+          `${process.env.NEXT_PUBLIC_MYMARTMYCARD_URL}/verify/${myCardCouponCode}`
         )
         .then((res) => {
           if (res.data) {
             const myCardCouponCodeAmt = res.data?.discountAmount;
-            console.log("H75P8O", myCardCouponCodeAmt);
+            // console.log("myCardCouponCodeAmt", myCardCouponCodeAmt);
             toast.success("MyMart MyCard Coupon applied successfully!", {
               position: "top-center",
               autoClose: 2500,

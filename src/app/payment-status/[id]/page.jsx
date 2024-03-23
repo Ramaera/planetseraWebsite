@@ -204,8 +204,10 @@ const page = () => {
       coupounCode: MyCardCouponCodeRedux,
     };
     axios
+
       .post(
-        "https://l83w6jqz-6768.inc1.devtunnels.ms/verify/applyCoupounCode",
+        // "https://l83w6jqz-6768.inc1.devtunnels.ms/verify/applyCoupounCode",
+        `${process.env.NEXT_PUBLIC_MYMARTMYCARD_URL}/verify/applyCoupounCode`,
         postData
       )
       .then((response) => {
