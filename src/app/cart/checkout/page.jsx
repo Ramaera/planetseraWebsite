@@ -13,6 +13,7 @@ import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import { useRouter } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer } from "react-toastify";
+import { Get_All_Products, REMOVE_ITEM_CART } from "@/apollo/queries";
 
 const Checkout = () => {
   const router = useRouter();

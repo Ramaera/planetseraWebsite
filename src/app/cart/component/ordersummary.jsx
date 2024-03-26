@@ -26,7 +26,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
 import Link from "next/link";
-const ordersummary = ({ allProducts }) => {
+const ordersummary = () => {
   const dispatch = useDispatch();
   const currentRoute = usePathname();
   const colorMe = useSelector((state) => state.colorUs.color);
@@ -49,7 +49,11 @@ const ordersummary = ({ allProducts }) => {
   const [myCardCouponCode, setMyCardCouponCode] = useState(
     MyCardCouponCodeRedux || ""
   );
-
+  const allProductsQuery = useQuery(Get_All_Products);
+  const allProducts =
+    allProductsQuery?.data?.allProducts.flatMap(
+      (list) => list?.ProductsVariant
+    ) || [];
   // const FreightCharge = useSelector((state) => state.shipment.freightCharge);
 
   const ShippingChargeRedux = useSelector(
@@ -242,12 +246,10 @@ const ordersummary = ({ allProducts }) => {
             Items
             <div>
               {CartData.map((item, index) => {
-                const product = allProducts.find(
+                const product = allProducts?.find(
                   (prod) => prod.id === item.productVariantId
                 );
-                {
-                  console.log("item", item);
-                }
+
                 return (
                   <div className="flex justify-between">
                     <div>

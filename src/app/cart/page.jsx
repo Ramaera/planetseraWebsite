@@ -33,8 +33,9 @@ const Page = () => {
   const dispatch = useDispatch();
   const [CartOpeartion] = useMutation(CART_OPEARTION);
   const [removeItemCart] = useMutation(REMOVE_ITEM_CART);
-  const allProductsQuery = useQuery(Get_All_Products);
+
   const user = useSelector((state) => state?.user);
+  const allProductsQuery = useQuery(Get_All_Products);
   const allProducts =
     allProductsQuery?.data?.allProducts.flatMap(
       (list) => list?.ProductsVariant
@@ -226,7 +227,7 @@ const Page = () => {
             </div>
           </div>
 
-          <Ordersummary allProducts={allProducts} />
+          <Ordersummary />
         </div>
       ) : (
         <div className="h-screen flex justify-center items-center flex-col ">
