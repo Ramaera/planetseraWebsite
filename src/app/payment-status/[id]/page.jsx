@@ -74,22 +74,21 @@ const page = () => {
     },
   });
 
-  // const sendSlackNotification = async (message) => {
-  //   console.log("inside", message);
-  //   try {
-  //     const webhookUrl =
-  //       "https://hooks.slack.com/services/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";
-  //     await axios.post(webhookUrl, { text: message });
-  //     console.log("Slack notification sent successfully.");
-  //   } catch (error) {
-  //     console.error("Error sending Slack notification:", error);
-  //   }
-  // };
+  const OnPaymentPageLoaded = async () => {
+    await fetch(process.env.NEXT_PUBLIC_SLACK_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: JSON.stringify({
+        text: `User ${user.name} has made Payment of Amount & Checking Status of His payment `,
+      }),
+    });
+  };
 
-  // useEffect(() => {
-  //   sendSlackNotification("hiiii");
-  // }, []);
-
+  useEffect(() => {
+    OnPaymentPageLoaded();
+  }, []);
   const handleCreateOrder = async () => {
     try {
       const resp = await createOrder({
@@ -112,9 +111,25 @@ const page = () => {
         },
       });
       await handleDetectedAmountFromMyCard();
+
+      try {
+        await fetch(process.env.NEXT_PUBLIC_SLACK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: JSON.stringify({
+            text: `User ${
+              user.data.name
+            } has Placed and Order , Here Are The Details \nOrder Amount: ${Math.round(
+              parseInt(calculateTotalPrice())
+            )}\n DeliveryAddressDetails\nName:${metaDataName} \nMobileNumber:${metaDataMobile} \n Address:${metaDataAddress} `,
+          }),
+        });
+      } catch (err) {
+        console.log("error in slack message", err);
+      }
       await handleDeleteCart();
-      // const message = `New order received!\nCustomer Name: ${metaDataName}\nTotal Amount:`;
-      // await sendSlackNotification(message);
       console.log("done");
 
       return resp;
