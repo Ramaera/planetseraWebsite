@@ -1,5 +1,5 @@
 import "@/public/styles/masalaGallery.css";
-// import Slider from "infinite-react-carousel";
+import Slider from "infinite-react-carousel";
 import BuynowBtn from "@/components/BuynowBtn";
 import Link from "next/link";
 import { useQuery } from "@apollo/client";
