@@ -405,8 +405,7 @@ query GetallOrders {
         updatedAt
     }
     shipRocketDetails {
-      id
-      metaData
+      
       orderId
       shiprocket_OrderId
       shiprocket_ShipmentId
