@@ -32,6 +32,7 @@
     "disable-scroll": "^0.6.0",
     "dotenv": "^16.3.1",
     "graphql": "^16.8.0",
+    "infinite-react-carousel": "^1.2.11",
     "next": "13.4.13",
     "postcss": "8.4.27",
     "razorpay": "^2.9.2",
