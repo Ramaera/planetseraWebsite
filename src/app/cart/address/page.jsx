@@ -47,6 +47,7 @@ const address = () => {
     "Telangana",
     "Tripura",
     "Uttar Pradesh",
+    "Jammu And Kashmir",
     "Uttarakhand",
     "West Bengal",
     "Andaman and Nicobar Islands",
@@ -216,7 +217,8 @@ const address = () => {
                     onChange={handleStateChange}
                     className="border-2 p-1 px-3 rounded-md w-full"
                     name="state"
-                    required>
+                    required
+                  >
                     <option value="">Select State</option>
                     {statesInIndia.map((state, index) => (
                       <option key={index} value={state}>
@@ -252,7 +254,8 @@ const address = () => {
                 <div className="flex justify-center mt-5">
                   <button
                     onClick={handleSaveAndDeliverClick}
-                    className="w-1/2 py-3 rounded-2xl Cartbgcolor">
+                    className="w-1/2 py-3 rounded-2xl Cartbgcolor"
+                  >
                     Save Address
                   </button>
                 </div>

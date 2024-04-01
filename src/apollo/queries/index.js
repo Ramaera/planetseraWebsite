@@ -265,7 +265,25 @@ mutation AddAddress($buyerId:String!, $mobileNumber:String!,$name:String,$addres
     }
 }
 
+`);
 
+export const UPDATE_ADDRESS = gql(`
+
+mutation UpdateAddress($AddresId:Int!, $address:[JSONObject!]!, $mobileNumber:String!, $name:String!) {
+  updateAddress(
+      data: {
+          AddresId: $AddresId
+          address: $address
+          mobileNumber: $mobileNumber
+          name: $name
+      }
+  ) {
+      addresId
+      address
+      mobileNumber
+      name
+  }
+}
 `);
 
 export const GET_ALL_ADDRESS = gql(`

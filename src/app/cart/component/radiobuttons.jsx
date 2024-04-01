@@ -8,19 +8,17 @@ import FormLabel from "@mui/material/FormLabel";
 import { Box } from "@mui/material";
 import "@/public/styles/cart.css";
 import "@/public/styles/globals.css";
-import { Montserrat } from "next/font/google";
 import { useSelector, useDispatch } from "react-redux";
 import { removeAddress, selectAddress } from "@/state/slice/addressSlice";
 import { setFreightCharge } from "@/state/slice/shipmentSlice";
 import { GET_ALL_ADDRESS, REMOVE_ADDRESS } from "@/apollo/queries";
-import { useQuery } from "@apollo/client";
-import { useMutation } from "@apollo/client";
-import axios from "axios";
+import { useQuery, useMutation } from "@apollo/client";
+import { UPDATE_ADDRESS } from "@/apollo/queries";
 
 export default function ControlledRadioButtonsGroup() {
   const user = useSelector((state) => state?.user);
   const [removeAddressList] = useMutation(REMOVE_ADDRESS);
-  // const [freightCharge, setFreightCharge] = useState(null);
+  const [updateAddress] = useMutation(UPDATE_ADDRESS);
 
   const selectedAddressId = useSelector(
     (state) => state?.address?.selectedAddress
@@ -31,21 +29,61 @@ export default function ControlledRadioButtonsGroup() {
     },
   });
   const CartData = useSelector((state) => state.cart.items);
-
   const dispatch = useDispatch();
 
-  const handleChange = async (event) => {
-    const selectedAddressId = event.target.value; // Get the selected address ID
-    dispatch(selectAddress(selectedAddressId)); // Update selected address in Redux
-    // await fetchFreightCharge(selectedAddressId); // Fetch freight charge for the selected address
+  const [editAddressId, setEditAddressId] = useState(null);
+  const [editedAddress, setEditedAddress] = useState({});
+
+  const handleEditAddress = (address) => {
+    setEditAddressId(address.addresId);
+    setEditedAddress({
+      ...address,
+      name: address.name,
+      city: address?.address[0]?.city,
+      state: address?.address[3]?.state,
+      pinCode: address?.address[1]?.pinCode,
+      addressLine: address?.address[2]?.address,
+      mobileNumber: address.mobileNumber,
+    });
   };
-  // useEffect(() => {
-  //   fetchFreightCharge(selectedAddressId);
-  // }, [handleChange, selectedAddressId]);
+  // console.log("editedAddress?.addresId", editedAddress?.addresId);
+  const handleSubmitUpdateAddress = async () => {
+    try {
+      const resp = await updateAddress({
+        variables: {
+          AddresId: parseInt(editedAddress?.addresId),
+          address: {
+            city: editedAddress.city,
+            pinCode: editedAddress.pinCode,
+            address: editedAddress.addressLine,
+            state: editedAddress.state,
+          },
+          mobileNumber: editedAddress.mobileNumber,
+          name: editedAddress.name,
+        },
+      });
+
+      setEditAddressId(null);
+      setEditedAddress({});
+
+      addressesData.refetch();
+    } catch (err) {
+      console.log("err", err.message);
+    }
+  };
+
+  useEffect(() => {
+    addressesData.refetch();
+  }, [removeAddressList, handleEditAddress]);
+
+  const handleChange = async (event) => {
+    const selectedAddressId = event.target.value;
+    dispatch(selectAddress(selectedAddressId));
+  };
 
   const handleRemoveAddress = async (address) => {
     try {
-      const resp = await removeAddressList({
+      await removeAddressList({
         variables: {
           AddressId: parseInt(address?.addresId),
         },
@@ -57,75 +95,6 @@ export default function ControlledRadioButtonsGroup() {
     }
   };
 
-  useEffect(() => {
-    addressesData.refetch();
-  }, [handleRemoveAddress]);
-
-  // console.log("freightCharge", FreightCharge);
-
-  const calculateTotalWeightInKgs = () => {
-    console.log("00", CartData);
-    const totalWeightInGrams = CartData.reduce((totalWeight, item) => {
-      const weightInInt = parseInt(item.weight);
-      const productWeight = weightInInt * item.qty;
-      return totalWeight + productWeight;
-    }, 0);
-    // console.log("--->>", totalWeightInGrams);
-
-    const totalWeightInKgs = totalWeightInGrams / 1000;
-    return totalWeightInKgs;
-  };
-
-  // const fetchFreightCharge = async (selectedAddressId) => {
-  //   const selectedAddress = addressesData?.data?.getBuyerAddress.find(
-  //     (address) => address?.addresId === selectedAddressId
-  //   );
-  //   const deliveryPincode = selectedAddress?.address[1]?.pinCode;
-
-  //   const totalWeight = calculateTotalWeightInKgs();
-  //   // console.log("totalWeight", totalWeight);
-
-  //   const queryParams = {
-  //     pickup_postcode: 844101,
-  //     delivery_postcode: deliveryPincode,
-  //     weight: totalWeight,
-  //     cod: 0,
-  //   };
-
-  //   try {
-  //     const response = await axios.get(
-  //       "https://apiv2.shiprocket.in/v1/external/courier/serviceability/",
-  //       {
-  //         params: queryParams,
-  //         headers: {
-  //           Authorization: ` ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
-  //           "Content-Type": "application/json",
-  //         },
-  //       }
-  //     );
-  //     console.log("01", response);
-  //     const courierCompanies =
-  //       response?.data?.data?.available_courier_companies;
-
-  //     if (courierCompanies && courierCompanies.length > 0) {
-  //       let minFreightCharge = Infinity;
-
-  //       courierCompanies.forEach((company) => {
-  //         const freightCharge = company?.freight_charge;
-  //         if (freightCharge && freightCharge < minFreightCharge) {
-  //           minFreightCharge = freightCharge;
-  //         }
-  //       });
-
-  //       setFreightCharge(minFreightCharge);
-
-  //       dispatch(setFreightCharge(minFreightCharge));
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching freight charge:", error);
-  //   }
-  // };
-
   return (
     <FormControl className="w-full">
       <FormLabel id="demo-controlled-radio-buttons-group"></FormLabel>
@@ -134,32 +103,24 @@ export default function ControlledRadioButtonsGroup() {
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"
         value={selectedAddressId}
-        onChange={handleChange}>
-        <div className="w-full">
+        onChange={handleChange}
+      >
+        <div className="w-full space-y-4">
           {addressesData?.data?.getBuyerAddress?.map((_address) => (
             <div
-              className="flex w-full justify-between my-2 sm:my-8"
-              key={_address?.addresId}>
-              {console.log("_address", _address)}
-
-              <div className="w-full sm:w-8/12  ">
+              className="flex flex-col sm:flex-row items-start justify-between border-b pb-2 sm:pb-4"
+              key={_address?.addresId}
+            >
+              <div className="w-full sm:w-8/12">
                 <FormControlLabel
                   value={_address?.addresId}
-                  control={
-                    <Radio
-                      sx={{
-                        "&, &.Mui-checked": {
-                          color: "#FE7171",
-                        },
-                      }}
-                    />
-                  }
+                  control={<Radio color="primary" />}
                   label={<Box className="responsive-box">{_address.name}</Box>}
                 />
-
                 <div
                   style={{ color: "#2F302F" }}
-                  className="px-8 sm:font-normal text-xs sm:text-base	">
+                  className="px-8 sm:font-normal text-xs sm:text-base"
+                >
                   <p>
                     {_address?.address[0]?.city} {_address?.address[3]?.state}{" "}
                     {_address?.address[1]?.pinCode}{" "}
@@ -168,16 +129,122 @@ export default function ControlledRadioButtonsGroup() {
                   <p>Contact :- {_address.mobileNumber}</p>
                 </div>
               </div>
-              <div className="text-xs sm:text-base sm:w-2/12 w-5/12 mt-3	">
+              <div className="flex space-x-2 mt-3 sm:w-2/12 w-full">
                 <button
-                  className="Cart-remove"
-                  onClick={() => handleRemoveAddress(_address)}>
+                  className="Cart-remove bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600"
+                  onClick={() => handleRemoveAddress(_address)}
+                >
                   Remove
+                </button>
+                <button
+                  className="Cart-remove bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600"
+                  onClick={() => handleEditAddress(_address)}
+                >
+                  Edit
                 </button>
               </div>
             </div>
           ))}
         </div>
+
+        {editAddressId && (
+          <div className="mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className=" ">
+                <div>Name:</div>{" "}
+                <input
+                  type="text"
+                  value={editedAddress.name || ""}
+                  onChange={(e) =>
+                    setEditedAddress({ ...editedAddress, name: e.target.value })
+                  }
+                  placeholder="Name"
+                  className="input-field w-full border-2  px-2  "
+                />
+              </div>
+              <div className="">
+                <div>City:</div>{" "}
+                <input
+                  type="text"
+                  value={editedAddress.city || ""}
+                  onChange={(e) =>
+                    setEditedAddress({ ...editedAddress, city: e.target.value })
+                  }
+                  placeholder="City"
+                  className=" border-2  px-2 w-full input-field"
+                />
+              </div>
+              <div className="">
+                <div>State:</div>{" "}
+                <input
+                  type="text"
+                  value={editedAddress.state || ""}
+                  onChange={(e) =>
+                    setEditedAddress({
+                      ...editedAddress,
+                      state: e.target.value,
+                    })
+                  }
+                  placeholder="State"
+                  className="input-field border-2  px-2 w-full"
+                />
+              </div>
+              <div className="">
+                <div>Pincode:</div>{" "}
+                <input
+                  type="text"
+                  value={editedAddress.pinCode || ""}
+                  onChange={(e) =>
+                    setEditedAddress({
+                      ...editedAddress,
+                      pinCode: e.target.value,
+                    })
+                  }
+                  placeholder="Pin Code"
+                  className="input-field border-2  px-2 w-full"
+                />
+              </div>
+              <div className="">
+                <div>Address Line:</div>{" "}
+                <input
+                  type="text"
+                  value={editedAddress.addressLine || ""}
+                  onChange={(e) =>
+                    setEditedAddress({
+                      ...editedAddress,
+                      addressLine: e.target.value,
+                    })
+                  }
+                  placeholder="Address Line"
+                  className="input-field border-2  px-2 w-full"
+                />
+              </div>
+              <div className="">
+                <div>mobile Number:</div>{" "}
+                <input
+                  type="text"
+                  value={editedAddress.mobileNumber || ""}
+                  onChange={(e) =>
+                    setEditedAddress({
+                      ...editedAddress,
+                      mobileNumber: e.target.value,
+                    })
+                  }
+                  placeholder="Mobile Number"
+                  className="input-field border-2  px-2 w-full"
+                />
+              </div>
+            </div>
+            <div className="flex justify-center mt-4">
+              <button
+                className="bg-red-400 text-white px-4 py-2 rounded hover:bg-red-500"
+                onClick={handleSubmitUpdateAddress}
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        )}
       </RadioGroup>
     </FormControl>
   );
