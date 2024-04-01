@@ -32,12 +32,12 @@ const Page = () => {
     mainImage: imageUrl_1 || "",
     backImage: imageUrl_2 || "",
     contentImage: imageUrl_3 || "",
-    isVariantActive: isVariantActive === "true",
+    isVariantActive: isVariantActive,
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
+    // console.log(name, value);
     setProduct((prevProduct) => ({
       ...prevProduct,
       [name]: value,
@@ -56,8 +56,12 @@ const Page = () => {
 
     // Determine the product name and append "Bg" if needed
     let productName = product?.name?.replace(/\s/g, "");
-    if (imageType === "mainImage" && product.weight === "500") {
-      productName += "-500";
+    if (
+      imageType === "mainImage" &&
+      product?.weight !== "50" &&
+      product?.weight !== "100"
+    ) {
+      productName += "-" + product?.weight;
     }
     if (imageType === "backImage") {
       productName += "-Back-" + product?.weight;
@@ -72,7 +76,7 @@ const Page = () => {
     });
 
     // Call handleUpload function with the appropriate arguments
-    handleUpload(productName, file);
+    await handleUpload(productName, file);
 
     // Construct the image name for display or storage
     const imageName = `allProductsImg/${productName}.${fileExtension}`;
@@ -85,6 +89,7 @@ const Page = () => {
     e.preventDefault();
     // console.log("product", product);
     try {
+      const isVariantActiveBoolean = product.isVariantActive === "true";
       const resp = await updateProductVariants({
         variables: {
           id: parseInt(await id),
@@ -96,7 +101,7 @@ const Page = () => {
           price: parseFloat(product?.price),
           stock: parseInt(product?.stock),
           weight: product?.weight,
-          isVariantActive: product?.isVariantActive,
+          isVariantActive: isVariantActiveBoolean,
         },
       });
 

@@ -126,10 +126,12 @@ const OrderProceed = ({
       .filter((shiprocket) => shiprocket)[0];
     setShipmentId(shipmentIdFilter);
   }, []);
+  const subTotal =
+    selectedOrder?.orderAmount +
+    selectedOrder?.discountedAmount -
+    selectedOrder?.ShippingCost;
 
-  // console.log("selectedOrder", shipmentId);
-
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const isValid = validateForm();
     if (isValid) {
       const postData = {
@@ -157,14 +159,15 @@ const OrderProceed = ({
         payment_method: "Prepaid",
         shipping_charges: selectedOrder?.ShippingCost,
         total_discount: selectedOrder?.discountedAmount,
-        sub_total: selectedOrder?.orderAmount,
+        sub_total: subTotal,
         length: length,
         breadth: breadth,
         height: height,
         weight: weight,
       };
-      axios
-        .post(
+
+      try {
+        const response = await axios.post(
           "https://apiv2.shiprocket.in/v1/external/orders/create/adhoc",
           postData,
           {
@@ -173,34 +176,33 @@ const OrderProceed = ({
               "Content-Type": "application/json",
             },
           }
-        )
-        .then(async (response) => {
-          if (response?.data) {
-            const data = response.data;
-            // console.log("123");
-            await handleShiprocketDetails(data);
-            if (data) {
-              setShipmentId(data?.shipment_id);
-            }
-            refetchAllOrders();
-            onOpenShipmentpIckup();
-            toast.success("Shipment Order Created", { duration: 4000 });
-            // console.log("done", data);
+        );
+
+        if (response?.data) {
+          const data = response.data;
+          // Handling response data
+          await handleShiprocketDetails(data);
+          if (data) {
+            setShipmentId(data?.shipment_id);
           }
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-          toast.error(error?.response?.data?.message || "An error occurred", {
-            duration: 4000,
-          });
+          refetchAllOrders();
+          onOpenShipmentpIckup();
+          toast.success("Shipment Order Created", { duration: 4000 });
+          console.log("done", data);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        toast.error(error?.response?.data?.message || "An error occurred", {
+          duration: 4000,
         });
+      }
 
       onClose();
     }
   };
 
   const handleShipmentPickup = async () => {
-    // console.log("shipmentId eee");
+    console.log("shipmentId eee");
     if (shipmentId) {
       console.log("shipmentId", shipmentId);
       const postData = {
@@ -224,6 +226,7 @@ const OrderProceed = ({
             "resShiprocket?.data",
             resShiprocket?.data?.response?.data
           );
+          toast.success("Shipment Pickup Created", { duration: 4000 });
         }
       } catch (error) {
         console.error(
@@ -240,7 +243,15 @@ const OrderProceed = ({
   };
 
   const handleShiprocketDetails = async (data) => {
-    // console.log("enter", data);
+    console.log(
+      "enter",
+      data,
+      parseInt(selectedOrder?.id),
+      data?.order_id,
+      data?.shipment_id,
+      data?.status,
+      data?.status_code
+    );
     try {
       const resp = await shiprocketDetails({
         variables: {
@@ -249,9 +260,10 @@ const OrderProceed = ({
           shiprocket_ShipmentId: data?.shipment_id,
           shiprocket_status: data?.status,
           shiprocket_status_code: data?.status_code,
+          metaData: [],
         },
       });
-      // console.log("resp", resp);
+      console.log("resp", resp);
     } catch (err) {
       console.log("err", err.message);
     }
@@ -261,7 +273,7 @@ const OrderProceed = ({
   console.log("shiprocketId", shiprocketId);
 
   const handleUpdateShiprocketDetails = async (data) => {
-    // console.log("enter", data);
+    console.log("enter", shiprocketId, data);
     try {
       const resp = await updateShiprocketDetails({
         variables: {
@@ -269,7 +281,7 @@ const OrderProceed = ({
           metaData: [{ shipmentPickupData: data }],
         },
       });
-      // console.log("resp", resp);
+      console.log("resp", resp);
     } catch (err) {
       console.log("err", err.message);
     }

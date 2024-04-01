@@ -81,7 +81,7 @@ const page = () => {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: JSON.stringify({
-        text: `User ${user.name} has made Payment of Amount & Checking Status of His payment `,
+        text: `User ${user.data.name} has made Payment of Amount & Checking Status of His payment `,
       }),
     });
   };
@@ -123,7 +123,13 @@ const page = () => {
               user.data.name
             } has Placed and Order , Here Are The Details \nOrder Amount: ${Math.round(
               parseInt(calculateTotalPrice())
-            )}\n DeliveryAddressDetails\nName:${metaDataName} \nMobileNumber:${metaDataMobile} \n Address:${metaDataAddress} `,
+            )}\n DeliveryAddressDetails\nName:${
+              metaDataName[0]
+            } \nMobileNumber:${metaDataMobile[0]} \n Address:${
+              (metaDataAddress[0][2]?.address,
+              metaDataAddress[0][0]?.city,
+              metaDataAddress[0][1]?.pincode)
+            } `,
           }),
         });
       } catch (err) {
@@ -294,8 +300,7 @@ const page = () => {
               </div>
               <div
                 style={{ color: "#8D92A7" }}
-                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	"
-              >
+                className="mx-auto text-center pt-5 font-semibold text-sm sm:text-base	">
                 {resStatus?.code === "PAYMENT_SUCCESS"
                   ? "To check your order status"
                   : "If Amount is Debited From Your Account, Kindly Mail Us At support@ramaera.com With Your Transaction Details"}

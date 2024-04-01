@@ -555,7 +555,7 @@ mutation SaveDiscountDetails($discountAmount:Int! $discountCode:String!) {
 `);
 
 export const SHIPROCKET_DETAILS = gql(`
-mutation ShipRocketDetails ($orderId:Int! $shiprocket_OrderId:Int! $shiprocket_ShipmentId:Int! $shiprocket_status:String! $shiprocket_status_code:Int!) {
+mutation ShipRocketDetails ($orderId:Int! $shiprocket_OrderId:Int! $shiprocket_ShipmentId:Int! $shiprocket_status:String! $shiprocket_status_code:Int! $metaData:[JSONObject!]!) {
   shipRocketDetails(
       ShipRocketDetails: {
           orderId: $orderId
@@ -563,6 +563,7 @@ mutation ShipRocketDetails ($orderId:Int! $shiprocket_OrderId:Int! $shiprocket_S
           shiprocket_ShipmentId: $shiprocket_ShipmentId
           shiprocket_status: $shiprocket_status
           shiprocket_status_code: $shiprocket_status_code
+          metaData: $metaData
       }
   ) {
       orderId

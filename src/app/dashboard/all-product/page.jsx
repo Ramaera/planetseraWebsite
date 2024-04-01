@@ -19,7 +19,7 @@ const page = ({}) => {
   const { loading, error, data, refetch } = useQuery(Get_All_Products);
   const allProducts = data?.allProducts;
 
-  console.log("all", allProducts);
+  // console.log("all", allProducts);
   const router = useRouter();
   const user = useQuery(GetUser);
   const Role = user?.data?.me?.role;

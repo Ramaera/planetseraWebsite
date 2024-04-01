@@ -100,6 +100,10 @@ const ordersummary = () => {
       const discountedAmount = calculatePrice() * 0.1;
       setDiscount(discountedAmount);
       dispatch(getDiscountedAmount(discountedAmount));
+    } else {
+      const discountedAmount = calculatePrice() * 0.1;
+      setDiscount(discountedAmount);
+      dispatch(getDiscountedAmount(discountedAmount));
     }
   }, [calculatePrice, DiscountedPercentageRedux]);
 
@@ -238,8 +242,7 @@ const ordersummary = () => {
       <div className="font-mont sm:w-1/4 sm:min-w-[380px] pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
-          className="border py-9 px-6 shadow-xl"
-        >
+          className="border py-9 px-6 shadow-xl">
           <p className="text-2xl  ">Order Summary</p>
 
           <div className="flex justify-between flex-col   mt-5 ">
@@ -287,8 +290,7 @@ const ordersummary = () => {
                   />
                   <button
                     onClick={handleApplyCoupon}
-                    className="Cartbgcolor text-white rounded px-2 h-10 w-28 "
-                  >
+                    className="Cartbgcolor text-white rounded px-2 h-10 w-28 ">
                     Apply
                   </button>
                 </div>
@@ -341,8 +343,7 @@ const ordersummary = () => {
                     <Link href="/cart" className="text-white">
                       <button
                         onClick={handleProceedToCheckout}
-                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3"
-                      >
+                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3">
                         Proceed To Checkout
                       </button>
                     </Link>
@@ -353,8 +354,7 @@ const ordersummary = () => {
                   <div
                     onClick={openLoginModal}
                     className="text-white"
-                    style={{ color: colorMe, fontWeight: "bold" }}
-                  >
+                    style={{ color: colorMe, fontWeight: "bold" }}>
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
                       Proceed To Checkout
                     </div>

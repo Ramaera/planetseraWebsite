@@ -54,8 +54,12 @@ const AddVariant = () => {
 
     // Determine the product name and append "Bg" if needed
     let productName = product?.name?.replace(/\s/g, "");
-    if (imageType === "mainImage" && product.weight === "500") {
-      productName += "-500";
+    if (
+      imageType === "mainImage" &&
+      product?.weight !== "50" &&
+      product?.weight !== "100"
+    ) {
+      productName += "-" + product.weight;
     }
     if (imageType === "backImage") {
       productName += "-Back-" + product?.weight;
@@ -70,7 +74,7 @@ const AddVariant = () => {
     });
 
     // Call handleUpload function with the appropriate arguments
-    handleUpload(productName, file);
+    await handleUpload(productName, file);
 
     // Construct the image name for display or storage
     const imageName = `allProductsImg/${productName}.${fileExtension}`;
@@ -100,7 +104,7 @@ const AddVariant = () => {
       return;
     }
 
-    console.log("product", product);
+    // console.log("product", product);
     try {
       const resp = await createProductVariants({
         variables: {
@@ -124,7 +128,7 @@ const AddVariant = () => {
     }
   };
 
-  console.log("product.weight", typeof product.weight);
+  // console.log("product.weight", typeof product.weight);
   return (
     <>
       <div className="navMobile ">
@@ -217,8 +221,7 @@ const AddVariant = () => {
             <button
               type="submit"
               onClick={handleCreateProductVariant}
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-            >
+              className="bg-blue-500 text-white px-4 py-2 rounded">
               Add New Variant
             </button>
           </div>

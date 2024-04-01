@@ -30,6 +30,10 @@ const KitchenSpices = () => {
         <div className="flex w-full" id="shop">
           <div className="flex  justify-evenly p-2 md:p-6 flex-wrap w-full ">
             {KitchenSpicesData?.map((item) => {
+              const hasTrue = item?.ProductsVariant?.some(
+                (list) => list?.isVariantActive === true
+              );
+
               if (!item) {
                 return;
               }
@@ -40,9 +44,8 @@ const KitchenSpices = () => {
                       style={{
                         background: item?.metaData[0]?.bgColor,
                       }}
-                      className="relative flex items-center  justify-center rounded-xl p-4 w-full"
-                    >
-                      {!item?.Flipkart && !item?.Amazon ? (
+                      className="relative flex items-center  justify-center rounded-xl p-4 w-full">
+                      {!hasTrue ? (
                         <div className="top-0 absolute z-10  justify-items-center flex items-center">
                           <img
                             className="relative "
@@ -58,10 +61,9 @@ const KitchenSpices = () => {
 
                       <div
                         className={`${
-                          !item?.Flipkart && !item?.Amazon && "opacity-50"
-                        }  flex items-center justify-center `}
-                      >
-                        {!item?.Flipkart && !item?.Amazon ? (
+                          !hasTrue && "opacity-50"
+                        }  flex items-center justify-center `}>
+                        {!hasTrue ? (
                           <img
                             className="relative w-48 2xl:w-64"
                             loading="lazy"
@@ -84,7 +86,7 @@ const KitchenSpices = () => {
                       </div>
                     </div>
                     <div className="mt-2 mb-[-10px]">
-                      {!item?.Flipkart && !item?.Amazon ? (
+                      {!hasTrue ? (
                         <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                           {item?.title}
                         </h5>
@@ -97,7 +99,7 @@ const KitchenSpices = () => {
                       )}
                     </div>
 
-                    {!item?.Flipkart && !item?.Amazon && item?.category ? (
+                    {!hasTrue && item?.category ? (
                       <BuynowBtn
                         text={"Coming soon"}
                         link=""
