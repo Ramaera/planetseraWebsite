@@ -27,93 +27,99 @@ const BestSelling = () => {
         </div>
         <div className="flex w-full" id="shop">
           <div className="flex  justify-evenly p-2 md:p-6 flex-wrap w-full">
-            {BestSellingData?.map((item) => (
-              <>
-                <div className=" m-2 w-[45%] md:w-[22%] justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
-                  <div
-                    style={{
-                      background: item?.metaData[0]?.bgColor,
-                    }}
-                    className="flex items-center  justify-center rounded-xl p-4 w-full"
-                  >
-                    {!item?.Flipkart && !item?.Amazon ? (
-                      <div className=" absolute z-10  m-2 justify-items-center flex items-center">
-                        <img
-                          className="relative w-[100px] md:w-72"
-                          loading="lazy"
-                          src="images/backgrounds/comingsoon.webp"
-                          // width={"360px"}
-                          alt="coming soon"
-                        />
-                      </div>
-                    ) : (
-                      ""
-                    )}
-
+            {BestSellingData?.map((item) => {
+              const hasTrue = item?.ProductsVariant?.some(
+                (list) => list?.isVariantActive === true
+              );
+              if (!item) {
+                return;
+              }
+              return (
+                <>
+                  <div className=" m-2 w-[45%] md:w-[22%] justify-items-center flex items-center flex-col border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
                     <div
-                      className={`${
-                        !item?.Flipkart && !item?.Amazon && " opacity-50"
-                      }  flex items-center justify-center `}
-                    >
-                      {!item?.Flipkart && !item?.Amazon ? (
-                        <img
-                          className="relative w-48 2xl:w-64"
-                          loading="lazy"
-                          src={`https://planetseraapi.planetsera.com/get-images/${item?.productImageUrl}`}
-                          alt="Planetsera Spices"
-                          title={item.title}
-                        />
+                      style={{
+                        background: item?.metaData[0]?.bgColor,
+                      }}
+                      className="flex items-center  justify-center rounded-xl p-4 w-full">
+                      {!hasTrue ? (
+                        <div className=" absolute z-10  m-2 justify-items-center flex items-center">
+                          <img
+                            className="relative w-[100px] md:w-72"
+                            loading="lazy"
+                            src="images/backgrounds/comingsoon.webp"
+                            // width={"360px"}
+                            alt="coming soon"
+                          />
+                        </div>
                       ) : (
-                        <Link href={`/product/${item.productUrl}`}>
+                        ""
+                      )}
+
+                      <div
+                        className={`${
+                          !hasTrue && " opacity-50"
+                        }  flex items-center justify-center `}>
+                        {!hasTrue ? (
                           <img
                             className="relative w-48 2xl:w-64"
                             loading="lazy"
                             src={`https://planetseraapi.planetsera.com/get-images/${item?.productImageUrl}`}
-                            // width={"360px"}
                             alt="Planetsera Spices"
                             title={item.title}
                           />
-                        </Link>
-                      )}
+                        ) : (
+                          <Link href={`/product/${item.productUrl}`}>
+                            <img
+                              className="relative w-48 2xl:w-64"
+                              loading="lazy"
+                              src={`https://planetseraapi.planetsera.com/get-images/${item?.productImageUrl}`}
+                              // width={"360px"}
+                              alt="Planetsera Spices"
+                              title={item.title}
+                            />
+                          </Link>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                  <div className="mt-2 mb-[-10px]">
-                    {!item?.Flipkart && !item?.Amazon ? (
-                      <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
-                        {item?.title}
-                      </h5>
-                    ) : (
-                      <Link href={`/product/${item.productUrl}`}>
+                    <div className="mt-2 mb-[-10px]">
+                      {!hasTrue ? (
                         <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
                           {item?.title}
                         </h5>
-                      </Link>
+                      ) : (
+                        <Link href={`/product/${item.productUrl}`}>
+                          <h5 className="text-center font-[Montserrat] text-[13.5px] sm:text-xl 2xl:text-2xl">
+                            {item?.title}
+                          </h5>
+                        </Link>
+                      )}
+                    </div>
+
+                    {!hasTrue && item?.category ? (
+                      <BuynowBtn
+                        text={"Coming soon"}
+                        link=""
+                        opacity={0.5}
+                        width={"143px"}
+                        padding={"20px"}
+                        height={"30px"}
+                        size={"15px"}
+                        sectionClass="responsiveBtn"
+                      />
+                    ) : (
+                      <BuynowBtn
+                        link={`/product/${item?.productUrl}`}
+                        text={"Buy Now"}
+                        width={"130px"}
+                        height={"40px"}
+                        sectionClass="relatedResponsiveBtn"
+                      />
                     )}
                   </div>
-
-                  {!item?.Flipkart && !item?.Amazon && item?.category ? (
-                    <BuynowBtn
-                      text={"Coming soon"}
-                      link=""
-                      opacity={0.5}
-                      width={"143px"}
-                      padding={"20px"}
-                      height={"30px"}
-                      size={"15px"}
-                      sectionClass="responsiveBtn"
-                    />
-                  ) : (
-                    <BuynowBtn
-                      link={`/product/${item?.productUrl}`}
-                      text={"Buy Now"}
-                      width={"130px"}
-                      height={"40px"}
-                      sectionClass="relatedResponsiveBtn"
-                    />
-                  )}
-                </div>
-              </>
-            ))}
+                </>
+              );
+            })}
           </div>
         </div>
       </div>

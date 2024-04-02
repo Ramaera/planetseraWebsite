@@ -1,6 +1,6 @@
 "use client";
 import Icon from "./Icon";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import BuyIcons from "@/components/BuyIcons";
 import RelatedPtoductData from "../RelatedProducts/RelatedProductData";
@@ -32,7 +32,7 @@ const ProductDetailsInfo = () => {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const [addToCartServer] = useMutation(Add_To_Cart);
-  const [selectedButton, setSelectedButton] = useState(50);
+  const [selectedButton, setSelectedButton] = useState(null);
   const [loginModal, setLoginModal] = useState(false);
 
   const openLoginModal = () => {
@@ -54,11 +54,17 @@ const ProductDetailsInfo = () => {
 
   if (!specificProduct) return notFound();
 
+  if (specificProduct && !selectedButton) {
+    setSelectedButton(
+      specificProduct?.ProductsVariant?.find(
+        (variant) => variant?.isVariantActive === true
+      )?.weight
+    );
+  }
+
   const specificVariant = specificProduct?.ProductsVariant?.find(
     (variant) => variant.weight === selectedButton
   );
-
-  console.log("specificVariant", specificVariant?.weight);
 
   const handleSelectedButton = (variantWeight) => {
     setSelectedButton(variantWeight);
@@ -192,16 +198,14 @@ const ProductDetailsInfo = () => {
                   style={{
                     color: specificProduct?.metaData[0]?.colored,
                   }}
-                  className={`md:text-[2.5rem] xl:text-[3rem] text-[1.8rem] sm:tracking-widest font-[500] font-Montserrat mt-8 sm:mt-0`}
-                >
+                  className={`md:text-[2.5rem] xl:text-[3rem] text-[1.8rem] sm:tracking-widest font-[500] font-Montserrat mt-8 sm:mt-0`}>
                   {specificProduct?.title}
                 </h1>
                 <div
                   style={{
                     backgroundColor: specificProduct?.metaData[0]?.colored,
                   }}
-                  className={`absolute  w-36 h-[2px] ml-1 mt-[-2px] sm:mt-[-8px]`}
-                ></div>
+                  className={`absolute  w-36 h-[2px] ml-1 mt-[-2px] sm:mt-[-8px]`}></div>
                 <p className="leading-[2rem] text-slate-600 text-lg font-Montserrat mt-1">
                   {specificProduct?.description}
                 </p>
@@ -244,8 +248,7 @@ const ProductDetailsInfo = () => {
                             onClick={() =>
                               setSelectedButton(variantData.weight)
                             }
-                            className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]"
-                          >
+                            className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]">
                             {variantData.weight} g
                           </button>
                         ))}
@@ -278,8 +281,7 @@ const ProductDetailsInfo = () => {
                     />
                   ) : (
                     <div
-                      className={`mt-2 sm:mt-4 mb-2 flex flex-wrap gap-4 text-center justify-center `}
-                    >
+                      className={`mt-2 sm:mt-4 mb-2 flex flex-wrap gap-4 text-center justify-center `}>
                       <button
                         className="buynow-button flex flex-wrap gap-4 text-center justify-center"
                         disabled
@@ -292,8 +294,7 @@ const ProductDetailsInfo = () => {
                           width: " 148px",
                           height: "48px",
                           padding: "2px",
-                        }}
-                      >
+                        }}>
                         Out Of Stock
                       </button>
                     </div>
@@ -355,19 +356,20 @@ const ProductDetailsInfo = () => {
                     "sabji-masala"
                       ? " md:top-[30rem] 2xl:top-[26rem] "
                       : " md:top-[32rem] 2xl:top-[22rem]"
-                  } top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9] `}
-                >
-                  <img
-                    src={`https://planetseraapi.planetsera.com/get-images/${specificProduct?.metaData[0]?.productBg}`}
-                    alt="Product Back Info"
-                    // title="product bg"
-                    className={`absolute  right-0 ${
-                      specificProduct?.productUrl === "garam-masala" ||
-                      "sabji-masala"
-                        ? "max-w-[70px] sm:max-w-[180px] 2xl:max-w-full  max-h-96"
-                        : "max-w-[100px] sm:max-w-[180px] 2xl:max-w-full  max-h-96"
-                    }  `}
-                  />
+                  } top-auto md:mt-auto mt-[-140px] transform md:w-[18.5rem] w-[10rem] z-[-9] `}>
+                  {specificProduct?.metaData[0]?.productBg && (
+                    <img
+                      src={`https://planetseraapi.planetsera.com/get-images/${specificProduct?.metaData[0]?.productBg}`}
+                      alt="Product Back Info"
+                      // title="product bg"
+                      className={`absolute  right-0 ${
+                        specificProduct?.productUrl === "garam-masala" ||
+                        "sabji-masala"
+                          ? "max-w-[70px] sm:max-w-[180px] 2xl:max-w-full  max-h-96"
+                          : "max-w-[100px] sm:max-w-[180px] 2xl:max-w-full  max-h-96"
+                      }  `}
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -380,8 +382,7 @@ const ProductDetailsInfo = () => {
                 style={{
                   color: item?.colored,
                 }}
-                className={`text-[1.65rem] 2xl:text-3xl font-Montserrat`}
-              >
+                className={`text-[1.65rem] 2xl:text-3xl font-Montserrat`}>
                 Usage
               </h3>
 
@@ -389,8 +390,7 @@ const ProductDetailsInfo = () => {
                 style={{
                   backgroundColor: item?.colored,
                 }}
-                className={`absolute  w-16 h-[2px] ml-1 mt-[-2px]`}
-              ></div>
+                className={`absolute  w-16 h-[2px] ml-1 mt-[-2px]`}></div>
               <p className="leading-[1.8rem] text-slate-600 text-[16px] 2xl:text-lg  my-1 font-Montserrat">
                 {item?.usage}
               </p>
@@ -400,16 +400,14 @@ const ProductDetailsInfo = () => {
                 style={{
                   color: item?.colored,
                 }}
-                className={`text-[1.65rem] 2xl:text-3xl  font-Montserrat`}
-              >
+                className={`text-[1.65rem] 2xl:text-3xl  font-Montserrat`}>
                 Ingredients
               </h3>
               <div
                 style={{
                   backgroundColor: item?.colored,
                 }}
-                className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-0`}
-              ></div>
+                className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-0`}></div>
               <p className="leading-[1.8rem] text-slate-600 text-[16px] 2xl:text-lg  my-1 font-Montserrat">
                 {item?.ingredients}
               </p>
@@ -420,16 +418,14 @@ const ProductDetailsInfo = () => {
                   style={{
                     color: item?.colored,
                   }}
-                  className={`text-[1.65rem] 2xl:text-3xl font-Montserrat`}
-                >
+                  className={`text-[1.65rem] 2xl:text-3xl font-Montserrat`}>
                   Health benefits
                 </h3>
                 <div
                   style={{
                     backgroundColor: item?.colored,
                   }}
-                  className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-[-5px] sm:mt-0`}
-                ></div>
+                  className={`absolute  w-[8.5vw] h-[2px] ml-1 mt-[-5px] sm:mt-0`}></div>
               </div>
 
               <p className="leading-[1.8rem] text-slate-600 text-[16px] 2xl:text-lg font-Montserrat my-1 ">
@@ -443,16 +439,14 @@ const ProductDetailsInfo = () => {
           style={{
             color: specificProduct?.metaData[0]?.colored,
           }}
-          className={` text-4xl  leading-[2.5rem] font-Montserrat md:mt-4`}
-        >
+          className={` text-4xl  leading-[2.5rem] font-Montserrat md:mt-4`}>
           Related Products
         </h4>
         <div
           style={{
             backgroundColor: specificProduct?.metaData[0]?.colored,
           }}
-          className={`absolute  w-[8.5vw] h-[2px] ml-1`}
-        ></div>
+          className={`absolute  w-[8.5vw] h-[2px] ml-1`}></div>
       </div>
       <Login isOpen={loginModal} closeLoginModal={closeLoginModal} />
     </>

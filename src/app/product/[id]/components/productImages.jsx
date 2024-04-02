@@ -42,7 +42,7 @@ const ProductImages = ({
               }}>
               <img
                 src={`https://planetseraapi.planetsera.com/get-images/${img}`}
-                className="w-10 sm:w-full"
+                className="w-10 sm:w-full min-h-[50px] min-w-[50px]"
                 alt="Spices Front"
               />
             </div>
