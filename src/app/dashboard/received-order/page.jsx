@@ -322,11 +322,11 @@ const ReceivedOrder = () => {
                   </TableCell>
 
                   <TableCell className="min-w-[180px]">
-                    {/* <GenerateButton
+                    <GenerateButton
                       shipmentId={getShiprocketShipmentId(user)}
                       orderIds={getShiprocketOrderId(user)}
-                    /> */}
-                    {getShiprocketShipmentId(user) && (
+                    />
+                    {/* {getShiprocketShipmentId(user) && (
                       <>
                         <Link href={manifestUrl}>
                           <button
@@ -363,7 +363,7 @@ const ReceivedOrder = () => {
                           </button>
                         </Link>
                       </>
-                    )}
+                    )} */}
                   </TableCell>
                 </TableRow>
               ))}

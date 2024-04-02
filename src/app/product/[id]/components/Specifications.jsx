@@ -20,7 +20,11 @@ const Specifications = ({ selectedButton, specificProduct }) => {
           <div className="border-r-2"></div>
           <div className="my-1 p-0 flex flex-col items-center  justify-center">
             <p className="lg:mr-2">Packaging type </p>
-            <p className="font-normal">Zipper Pouch</p>
+            <p className="font-normal">
+              {selectedButton === 6 || selectedButton === 8
+                ? "Pouch"
+                : "Zipper Pouch"}
+            </p>
           </div>
           <div className="border-r-2"></div>
           <div className="my-1 p-0 flex flex-col items-center justify-center">

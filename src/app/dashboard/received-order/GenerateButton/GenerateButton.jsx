@@ -4,7 +4,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 
-const GenerateButton = (shipmentId, orderIds) => {
+const GenerateButton = ({ shipmentId, orderIds }) => {
   const handleGenerateManifest = async () => {
     if (shipmentId) {
       console.log("shipmentId----", shipmentId);
@@ -25,11 +25,11 @@ const GenerateButton = (shipmentId, orderIds) => {
         if (res?.data) {
           await handlePrintManifest(orderIds);
           const data = res?.data;
-          console.log("GenerateManifest", data);
+          // console.log("GenerateManifest", data);
         }
       } catch (error) {
-        console.error("Error GenerateManifest:", error);
-        toast.error(error?.message || "An error occurred");
+        console.error("Error GenerateManifest:", error?.message);
+        toast.error(error?.response?.data?.message || "An error occurred");
       }
     }
   };
@@ -53,12 +53,8 @@ const GenerateButton = (shipmentId, orderIds) => {
         );
         if (res?.data) {
           const data = res?.data?.manifest_url;
-          const manifestUrl = URL.createObjectURL(
-            new Blob([data], { type: "application/pdf" })
-          );
-          window.open(manifestUrl);
-          //   setManifestUrl(data);
-          console.log("PrintManifest", data);
+          window.open(data, "_blank");
+          console.log("PrintManifest", res?.data);
         }
       } catch (error) {
         console.error("Error PrintManifest:", error);
@@ -87,12 +83,9 @@ const GenerateButton = (shipmentId, orderIds) => {
         if (res?.data) {
           toast.success("Downloaded Label");
           const data = res?.data?.label_url;
-          const labelUrl = URL.createObjectURL(
-            new Blob([data], { type: "application/pdf" })
-          );
-          window.open(labelUrl);
+          window.open(data, "_blank");
           //   setLabelUrl(data);
-          console.log("res?.data", data);
+          // console.log("res?.data", data);
         }
         return "success";
       } catch (error) {
@@ -122,12 +115,10 @@ const GenerateButton = (shipmentId, orderIds) => {
         if (res?.data) {
           toast.success("Downloaded Invoice");
           const data = res?.data?.invoice_url;
-          const invoiceUrl = URL.createObjectURL(
-            new Blob([data], { type: "application/pdf" })
-          );
-          window.open(invoiceUrl);
+          window.open(data, "_blank");
+          // window.open(data);
           //   setInvoiceUrl(data);
-          console.log("res?.data", data);
+          console.log("res?.data invoice", data);
         }
       } catch (error) {
         console.error("Error:", error);
