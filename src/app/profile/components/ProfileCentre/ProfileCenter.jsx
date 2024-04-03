@@ -39,24 +39,24 @@ const ProfileCentre = () => {
     }
   };
 
-  const sendSlackNotification = async (message) => {
-    console.log("inside", message);
-    try {
-      const webhookUrl =
-        "https://hooks.slack.com/services/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";
-      await axios.post(webhookUrl, { text: message });
-      console.log("Slack notification sent successfully.");
-    } catch (error) {
-      console.error("Error sending Slack notification:", error);
-    }
-  };
+  // const sendSlackNotification = async (message) => {
+  //   console.log("inside", message);
+  //   try {
+  //     const webhookUrl =
+  //       "https://hooks.slack.com/services/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";
+  //     await axios.post(webhookUrl, { text: message });
+  //     console.log("Slack notification sent successfully.");
+  //   } catch (error) {
+  //     console.error("Error sending Slack notification:", error);
+  //   }
+  // };
 
   const message = `Hello`;
   // await sendSlackNotification(message);
 
-  useEffect(() => {
-    sendSlackNotification(message);
-  }, []);
+  // useEffect(() => {
+  //   sendSlackNotification(message);
+  // }, []);
   return (
     <div
       style={{
@@ -64,8 +64,8 @@ const ProfileCentre = () => {
       }}
       className="img_pad bg-cover bg-fixed mt-40 flex flex-col-reverse md:flex-row"
     >
-      <Button onClick={() => sendSlackNotification(message)}>Click Here</Button>
-      {/* <div className="contact_width">
+      {/* <Button onClick={() => sendSlackNotification(message)}>Click Here</Button> */}
+      <div className="contact_width">
         <div className="contact_height rounded-xl bg-white p-2 md:p-8 md:m-4 ">
           <div className="md:text-4xl my-1 xl:my-4 HeadText py-2 md:py-0 contact_heading">
             {" "}
@@ -157,7 +157,7 @@ const ProfileCentre = () => {
             <div className="text-white md:p-4 p-1 infoText">0120-4152818</div>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* <div className=" flex flex-col gap-[0px] md:pl-2">
         <h2
           className="text-white md:font-bold  tracking-widest  md:px-0 pl-2 py-16 mb-0  md:py-10 md:pt-1 md:pb-12 h-2 min-h-0 md:min-h-0 contact_information
