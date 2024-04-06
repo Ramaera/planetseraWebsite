@@ -248,7 +248,7 @@ const ProductDetailsInfo = () => {
                             onClick={() =>
                               setSelectedButton(variantData.weight)
                             }
-                            className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[90px] md:mr-6 mr-3  md:text-[1.5rem] text-[1.1rem]">
+                            className="border-[1.2px] rounded-[10px] md:h-[44px] h-[40px] md:w-[124px] w-[70px] mx-1 md:mr-4  md:text-[1.5rem] text-[1.1rem]">
                             {variantData.weight} g
                           </button>
                         ))}
