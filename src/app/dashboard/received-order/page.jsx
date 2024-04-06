@@ -25,13 +25,8 @@ const ReceivedOrder = () => {
   const router = useRouter;
   const [modalOpen, setModalOpen] = useState(false);
   const [shipmentPickupOpen, setShipmentPickupOpen] = useState(false);
-  const [invoiceUrl, setInvoiceUrl] = useState("");
-  const [manifestUrl, setManifestUrl] = useState("");
-  const [labelUrl, setLabelUrl] = useState("");
   const [selectedOrder, setSelectedOrder] = useState(null);
 
-  const [status, setStatus] = useState("fghjk");
-  const merchantTransactionId = "YOUR_MERCHANT_TRANSACTION_ID";
   const allProductsQuery = useQuery(Get_All_Products);
 
   const allProducts =
@@ -39,27 +34,8 @@ const ReceivedOrder = () => {
       (list) => list?.ProductsVariant
     ) || [];
 
-  // useEffect(() => {
-  //   const fetchStatus = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         `https://planetseraapi.planetsera.com/api/v1/status/${merchantTransactionId}`
-  //       );
-  //       const data = await response.json();
-  //       setStatus(Success);
-  //     } catch (error) {
-  //       console.error("Error fetching status:", error);
-  //     }
-  //   };
-
-  //   fetchStatus();
-  // }, [merchantTransactionId]);
-  const user = useSelector((state) => state?.user);
-
   const { data: allOrders, refetch: refetchAllOrders } =
     useQuery(GET_ALL_ORDERS);
-
-  console.log("allOrders", allOrders);
 
   const handleOrderToProceed = (order) => {
     setSelectedOrder(order);
@@ -71,15 +47,6 @@ const ReceivedOrder = () => {
     setShipmentPickupOpen(true);
   };
 
-  useEffect(() => {
-    handleGenerateManifest(
-      getShiprocketShipmentId(user),
-      getShiprocketOrderId(user)
-    );
-    handleGenerateLabel(getShiprocketShipmentId(user));
-    handleGenerateInvoice(getShiprocketOrderId(user));
-  }, [user]);
-
   const getShiprocketShipmentId = (user) => {
     return user?.shipRocketDetails
       ?.flatMap((list) => list?.shiprocket_ShipmentId)
@@ -90,126 +57,6 @@ const ReceivedOrder = () => {
     return user?.shipRocketDetails
       ?.flatMap((list) => list?.shiprocket_OrderId)
       .filter((shiprocket) => shiprocket)[0];
-  };
-
-  const handleGenerateManifest = async (shipmentId, orderIds) => {
-    if (shipmentId) {
-      console.log("shipmentId----", shipmentId);
-      const postData = {
-        shipment_id: [shipmentId],
-      };
-      try {
-        await axios
-          .post(
-            "https://apiv2.shiprocket.in/v1/external/manifests/generate",
-            postData,
-            {
-              headers: {
-                Authorization: `Bearer ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
-                "Content-Type": "application/json",
-              },
-            }
-          )
-          .then(handlePrintManifest(orderIds));
-        // if (res?.data) {
-        //   await handlePrintManifest(orderIds);
-        //   const data = res?.data;
-        //   console.log("GenerateManifest", data);
-        // }
-      } catch (error) {
-        console.error("Error GenerateManifest:", error);
-        toast.error(error?.message || "An error occurred");
-      }
-    }
-  };
-
-  const handlePrintManifest = async (orderIds) => {
-    if (orderIds) {
-      console.log("orderIds---", orderIds);
-      const postData = {
-        order_ids: [orderIds],
-      };
-      try {
-        const res = await axios.post(
-          "https://apiv2.shiprocket.in/v1/external/manifests/print",
-          postData,
-          {
-            headers: {
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        if (res?.data) {
-          const data = res?.data?.manifest_url;
-          setManifestUrl(data);
-          console.log("PrintManifest", data);
-        }
-      } catch (error) {
-        console.error("Error PrintManifest:", error);
-      }
-    }
-  };
-
-  const handleGenerateLabel = async (shipmentId) => {
-    if (shipmentId) {
-      console.log("shipmentId", shipmentId);
-      const postData = {
-        shipment_id: [shipmentId],
-      };
-      try {
-        const res = await axios.post(
-          "https://apiv2.shiprocket.in/v1/external/courier/generate/label",
-          postData,
-          {
-            headers: {
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        if (res?.data) {
-          toast.success("Downloaded Label");
-          const data = res?.data?.label_url;
-          setLabelUrl(data);
-          console.log("res?.data", data);
-        }
-        return "success";
-      } catch (error) {
-        console.error("Error:", error);
-        toast.error(error?.message || "An error occurred");
-      }
-    }
-  };
-
-  const handleGenerateInvoice = async (orderIds) => {
-    if (orderIds) {
-      console.log("orderIds", orderIds);
-      const postData = {
-        ids: [orderIds],
-      };
-      try {
-        const res = await axios.post(
-          "https://apiv2.shiprocket.in/v1/external/orders/print/invoice",
-          postData,
-          {
-            headers: {
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        if (res?.data) {
-          toast.success("Downloaded Invoice");
-          const data = res?.data?.invoice_url;
-          setInvoiceUrl(data);
-          console.log("res?.data", data);
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        toast.error(error?.message || "An error occurred");
-      }
-    }
   };
 
   return (
@@ -321,49 +168,13 @@ const ReceivedOrder = () => {
                     )}
                   </TableCell>
 
-                  <TableCell className="min-w-[180px]">
-                    <GenerateButton
-                      shipmentId={getShiprocketShipmentId(user)}
-                      orderIds={getShiprocketOrderId(user)}
-                    />
-                    {/* {getShiprocketShipmentId(user) && (
-                      <>
-                        <Link href={manifestUrl}>
-                          <button
-                            className="bg-red-400  text-white px-4 py-2 rounded-xl"
-                            // onClick={() =>
-                            //   handleGenerateManifest(
-                            //     getShiprocketShipmentId(user),
-                            //     getShiprocketOrderId(user)
-                            //   )
-                            // }
-                          >
-                            Generate Manifest
-                          </button>
-                        </Link>
-                        <Link href={labelUrl}>
-                          <button
-                            className="bg-red-400  text-white px-4 py-2 rounded-xl my-1"
-                            // onClick={(e) =>
-                            //   handleGenerateLabel(getShiprocketShipmentId(user))
-                            // }
-                          >
-                            Generate Label
-                          </button>
-                        </Link>
-
-                        <Link href={invoiceUrl}>
-                          <button
-                            className="bg-red-400  text-white px-4 py-2 rounded-xl"
-                            // onClick={() =>
-                            //   handleGenerateInvoice(getShiprocketOrderId(user))
-                            // }
-                          >
-                            Generate Invoice
-                          </button>
-                        </Link>
-                      </>
-                    )} */}
+                  <TableCell className="min-w-[200px]">
+                    {getShiprocketShipmentId(user) && (
+                      <GenerateButton
+                        shipmentId={getShiprocketShipmentId(user)}
+                        orderIds={getShiprocketOrderId(user)}
+                      />
+                    )}
                   </TableCell>
                 </TableRow>
               ))}

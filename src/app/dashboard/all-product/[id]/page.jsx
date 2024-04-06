@@ -129,23 +129,37 @@ const page = () => {
     setProduct({ ...product, faqs });
   };
 
-  const handleImageChange = async (e, imageType) => {
-    const imageFile = e.target.files[0];
-    const imgUrl = await handleImageUpload(imageFile);
+  const handleUpload = async (productName, file) => {
+    const imgUrl = await handleImageUpload(file);
+    // console.log("imgUrl", imgUrl);
+  };
 
-    let imageName;
+  const handleImageChange = async (e, imageType, product) => {
+    const imageFile = e.target.files[0];
+
+    // Extract the original file extension
+    const fileExtension = imageFile.name.split(".").pop();
+
+    // Determine the product name and append "Bg" if needed
+    let productName = product?.name?.replace(/\s/g, "");
+
     if (imageType === "backgroundImage") {
-      imageName = `allProductsImg/${product.name.replace(
-        /\s+/g,
-        ""
-      )}Bg.${imageFile.name.split(".").pop()}`;
-    } else {
-      imageName = `allProductsImg/${product.name.replace(
-        /\s+/g,
-        ""
-      )}.${imageFile.name.split(".").pop()}`;
+      productName += "Bg";
     }
 
+    // Construct a new File object with the desired name and the original extension
+    const file = new File([imageFile], `${productName}.${fileExtension}`, {
+      type: imageFile.type,
+    });
+
+    // Call handleUpload function with the appropriate arguments
+    await handleUpload(productName, file);
+
+    // Construct the image name for display or storage
+    const imageName = `allProductsImg/${productName}.${fileExtension}`;
+
+    // console.log("imageName", imageName);
+    // Update the product state with the new image name
     setProduct({ ...product, [imageType]: imageName });
   };
 
@@ -338,7 +352,9 @@ const page = () => {
                   type="file"
                   accept="image/*"
                   name="backgroundImage"
-                  onChange={(e) => handleImageChange(e, "backgroundImage")}
+                  onChange={(e) =>
+                    handleImageChange(e, "backgroundImage", product)
+                  }
                   className="w-full border rounded px-4 py-2"
                 />
                 {product.backgroundImage && (
@@ -354,7 +370,7 @@ const page = () => {
                 <input
                   type="file"
                   name="frontImage"
-                  onChange={(e) => handleImageChange(e, "frontImage")}
+                  onChange={(e) => handleImageChange(e, "frontImage", product)}
                   className="w-full border rounded px-4 py-2"
                 />
                 {product.frontImage && (
