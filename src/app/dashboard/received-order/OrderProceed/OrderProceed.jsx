@@ -131,6 +131,10 @@ const OrderProceed = ({
     selectedOrder?.discountedAmount -
     selectedOrder?.ShippingCost;
 
+  const allTotalDiscount =
+    selectedOrder?.discountedAmount +
+    selectedOrder?.metaData[4]?.myMartMyCardAmount;
+
   const handleSubmit = async () => {
     const isValid = validateForm();
     if (isValid) {
@@ -158,7 +162,7 @@ const OrderProceed = ({
         order_items: orderItems,
         payment_method: "Prepaid",
         shipping_charges: selectedOrder?.ShippingCost,
-        total_discount: selectedOrder?.discountedAmount,
+        total_discount: allTotalDiscount,
         sub_total: subTotal,
         length: length,
         breadth: breadth,
