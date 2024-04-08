@@ -11,6 +11,8 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import axios from "axios";
+import { useQuery } from "@apollo/client";
+import { ALL_ORDERS, Get_All_Products } from "@/apollo/queries";
 
 const ProfileCentre = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
@@ -25,6 +27,15 @@ const ProfileCentre = () => {
   const [formEmail, setFormEmail] = useState(user?.data?.email);
   const [mobileNumber, setMobileNumber] = useState(user?.data?.mobileNumber);
   const [agencyCode, setAgencyCode] = useState(user?.data?.agencyCode);
+  const [isTableVisible, setIsTableVisible] = useState(false);
+  const allOrders = useQuery(ALL_ORDERS, {
+    variables: {
+      buyerId: user?.data?.buyer?.id,
+    },
+  });
+  const allordersList = allOrders?.data?.allOrders;
+
+  // console.log("allordersList", allordersList);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,8 +46,12 @@ const ProfileCentre = () => {
         },
       });
       setAgencyCode(resp?.data?.updateUserAgencyCode?.agencyCode);
+
       toast.success("Agency Code Applied");
     }
+  };
+  const handleTableClick = () => {
+    setIsTableVisible(!isTableVisible);
   };
 
   // const sendSlackNotification = async (message) => {
@@ -66,13 +81,12 @@ const ProfileCentre = () => {
     >
       {/* <Button onClick={() => sendSlackNotification(message)}>Click Here</Button> */}
       <div className="contact_width">
-        <div className="contact_height rounded-xl bg-white p-2 md:p-8 md:m-4 ">
+        <div className="contact_height  rounded-xl bg-white p-2 md:p-8 md:m-4 ">
           <div className="md:text-4xl my-1 xl:my-4 HeadText py-2 md:py-0 contact_heading">
             {" "}
             My Profile
           </div>
-          <form onSubmit={(e) => handleSubmit(e)}>
-            <ToastContainer />
+          <div>
             <input
               className="h-14 pl-4 w-full xl:w-[48%] xl:my-4  my-2 p-2 FontText"
               type="text"
@@ -116,23 +130,80 @@ const ProfileCentre = () => {
               }}
               required
             />
+            <div className="flex justify-between">
+              <button
+                style={{
+                  backgroundImage: `linear-gradient(to right, ${colorMe}, ${
+                    colorMe + "80"
+                  })`,
+                  color: "white",
+                  textShadow: `0 4px 4px ${colorMe}`,
+                  boxShadow: `2px 4px 7px -2px ${colorMe}`,
+                }}
+                onClick={handleSubmit}
+                className=" xl:w-36 w-[25vh] h-12 hover:scale-105 transition-all hover:text-white hover:bg-black bg-white FontText my-8"
+              >
+                Update Agency Code
+              </button>
+              <button
+                style={{
+                  backgroundImage: `linear-gradient(to right, ${colorMe}, ${
+                    colorMe + "80"
+                  })`,
+                  color: "white",
+                  textShadow: `0 4px 4px ${colorMe}`,
+                  boxShadow: `2px 4px 7px -2px ${colorMe}`,
+                }}
+                onClick={handleTableClick}
+                className=" xl:w-36 w-[25vh] h-12 hover:scale-105 transition-all hover:text-white hover:bg-black bg-white FontText my-8 "
+              >
+                View Applied Coupon Code
+              </button>
+            </div>
+          </div>
 
-            <button
-              style={{
-                backgroundImage: `linear-gradient(to right, ${colorMe}, ${
-                  colorMe + "80"
-                })`,
-                color: "white",
-                textShadow: `0 4px 4px ${colorMe}`,
-                boxShadow: `2px 4px 7px -2px ${colorMe}`,
-              }}
-              type="submit"
-              className=" xl:w-36 w-[25vh] h-12 hover:scale-105 transition-all hover:text-white hover:bg-black bg-white FontText my-8"
-            >
-              Update Agency Code
-            </button>
-          </form>
+          {isTableVisible && (
+            <div className="w-full mt-8">
+              <table className="w-full border-collapse border border-gray-300">
+                <thead className="bg-gray-200">
+                  <tr>
+                    <th className="border border-gray-300 px-4 py-2">S.no</th>
+                    <th className="border border-gray-300 px-4 py-2">Date</th>
+                    <th className="border border-gray-300 px-4 py-2">
+                      Applied Code
+                    </th>
+                    <th className="border border-gray-300 px-4 py-2">
+                      Discounted Amount
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {allordersList?.map((list, index) => (
+                    <tr key={index} className="bg-white text-center">
+                      <td className="border border-gray-300 px-4 py-2">
+                        {index + 1}
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        {list?.orderDate
+                          ?.slice(0, 10)
+                          .split("-")
+                          .reverse()
+                          .join("-")}
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        {list?.metaData?.[3]?.myMartMyCardCoupon}
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        {list?.metaData?.[4]?.myMartMyCardAmount}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </div>
+
         <div className=" md:hidden mt-8">
           <div className="flex">
             <div className="  md:p-[-3vh] p-3 md:pl-0  hover:scale-105">
@@ -220,6 +291,7 @@ const ProfileCentre = () => {
           </div>
         </div>
       </div> */}
+      <ToastContainer />
     </div>
   );
 };

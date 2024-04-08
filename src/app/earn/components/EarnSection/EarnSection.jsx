@@ -21,7 +21,7 @@ const EarnSection = () => {
   const [code, setCode] = useState("");
 
   const [loginModal, setLoginModal] = useState(false);
-  console.log(user.data.name);
+
   const openLoginModal = () => {
     setLoginModal(true);
   };
