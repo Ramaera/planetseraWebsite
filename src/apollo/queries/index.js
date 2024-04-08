@@ -28,6 +28,14 @@ mutation CreateRewardCode ( $rewardCode : String!, $userId :  String! ) {
 }
 `);
 
+export const VIEW_APPLIED_REWARD_CODE = gql(`
+query GetRewardCode($userId: String!) {
+  getRewardCode(userId: $userId) {
+      rewardCode
+  }
+}
+`);
+
 export const SIGNUP = gql(`
 mutation Signup(  $name: String!, $email: String!,$agencyCode: String!, $mobileNumber: String!, $password: String!) {
   signup(data: {  name: $name, email: $email, agencyCode: $agencyCode,mobileNumber: $mobileNumber, password: $password}) {

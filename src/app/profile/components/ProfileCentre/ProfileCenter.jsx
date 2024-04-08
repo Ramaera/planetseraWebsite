@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import axios from "axios";
 import { useQuery } from "@apollo/client";
-import { ALL_ORDERS, Get_All_Products } from "@/apollo/queries";
+import { VIEW_APPLIED_REWARD_CODE } from "../../../../apollo/queries";
 
 const ProfileCentre = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
@@ -22,20 +22,21 @@ const ProfileCentre = () => {
   const callimage = "/images/backgrounds/Call.webp";
 
   const user = useSelector((state) => state?.user);
+  console.log("user", user?.data?.id);
   const [updateAgencyCode] = useMutation(UpdateAgencyCode);
   const [formName, setFormName] = useState(user?.data?.name);
   const [formEmail, setFormEmail] = useState(user?.data?.email);
   const [mobileNumber, setMobileNumber] = useState(user?.data?.mobileNumber);
   const [agencyCode, setAgencyCode] = useState(user?.data?.agencyCode);
   const [isTableVisible, setIsTableVisible] = useState(false);
-  const allOrders = useQuery(ALL_ORDERS, {
+  const viewAllAppliedRewardCode = useQuery(VIEW_APPLIED_REWARD_CODE, {
     variables: {
-      buyerId: user?.data?.buyer?.id,
+      userId: user?.data?.id,
     },
   });
-  const allordersList = allOrders?.data?.allOrders;
 
-  // console.log("allordersList", allordersList);
+  const viewAllAppliedRewardCodeList =
+    viewAllAppliedRewardCode?.data?.getRewardCode;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -163,38 +164,42 @@ const ProfileCentre = () => {
           </div>
 
           {isTableVisible && (
-            <div className="w-full mt-8">
-              <table className="w-full border-collapse border border-gray-300">
+            <div className="w-full mt-8 overflow-x-auto">
+              <table className="w-full min-w-max border-collapse border border-gray-300">
                 <thead className="bg-gray-200">
                   <tr>
-                    <th className="border border-gray-300 px-4 py-2">S.no</th>
-                    <th className="border border-gray-300 px-4 py-2">Date</th>
-                    <th className="border border-gray-300 px-4 py-2">
+                    <th className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
+                      S.no
+                    </th>
+                    <th className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
+                      Date
+                    </th>
+                    <th className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
                       Applied Code
                     </th>
-                    <th className="border border-gray-300 px-4 py-2">
+                    <th className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
                       Discounted Amount
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {allordersList?.map((list, index) => (
+                  {viewAllAppliedRewardCodeList?.map((list, index) => (
                     <tr key={index} className="bg-white text-center">
-                      <td className="border border-gray-300 px-4 py-2">
+                      <td className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
                         {index + 1}
                       </td>
-                      <td className="border border-gray-300 px-4 py-2">
+                      {/* <td className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
                         {list?.orderDate
                           ?.slice(0, 10)
                           .split("-")
                           .reverse()
                           .join("-")}
                       </td>
-                      <td className="border border-gray-300 px-4 py-2">
+                      <td className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
                         {list?.metaData?.[3]?.myMartMyCardCoupon}
-                      </td>
-                      <td className="border border-gray-300 px-4 py-2">
-                        {list?.metaData?.[4]?.myMartMyCardAmount}
+                      </td> */}
+                      <td className="border border-gray-300 px-2 py-2 md:px-4 md:py-2">
+                        {list?.rewardCode}
                       </td>
                     </tr>
                   ))}
