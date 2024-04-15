@@ -2,16 +2,13 @@
 import "@/public/styles/globals.css";
 import { Inter, Montserrat } from "next/font/google";
 import { Provider } from "react-redux";
-// import { store } from "@/state/store";
 import { persistor, store } from "@/state/store";
 import { PersistGate } from "redux-persist/integration/react";
-
 import { client } from "@/apollo";
 import { ApolloProvider } from "@apollo/client";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-const inter = Inter({ subsets: ["latin"] });
 import Head from "next/head";
 import Script from "next/script";
 import Footer from "@/components/Footer/Footer";
@@ -20,6 +17,7 @@ import ScrollToTopButton from "@/components/ScrollTop";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--montserrat",
@@ -58,18 +56,17 @@ export default function RootLayout({ children }) {
         </Script>
 
         <body
-          className={`${inter.className} ${montserrat.variable} font-Montserrat`}
-        >
+          className={`${inter.className} ${montserrat.variable} font-Montserrat`}>
           <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
               <ConditionalRoute>
                 {children}
                 <Analytics />
                 <SpeedInsights />
+                <Footer />
+                <ScrollToTopButton />
               </ConditionalRoute>
-              <Footer />
             </PersistGate>
-            <ScrollToTopButton />
           </Provider>
         </body>
       </ApolloProvider>
