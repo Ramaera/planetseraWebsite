@@ -109,7 +109,7 @@ button[type="submit"] {
 }
 
 .contact_height {
-  height: 673px;
+  /* min-height: 650px; */
 }
 
 .img_pad {
@@ -144,6 +144,6 @@ button[type="submit"] {
     color: #292e36;
   }
   .img_pad {
-    padding: 2rem;
+    padding: 1rem;
   }
 }

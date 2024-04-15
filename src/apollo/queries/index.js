@@ -32,6 +32,7 @@ export const VIEW_APPLIED_REWARD_CODE = gql(`
 query GetRewardCode($userId: String!) {
   getRewardCode(userId: $userId) {
       rewardCode
+      createdAt
   }
 }
 `);

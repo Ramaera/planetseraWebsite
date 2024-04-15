@@ -9,10 +9,8 @@ const Dashboard = () => {
   const router = useRouter();
   const user = useQuery(GetUser);
   const Role = user?.data?.me?.role;
-  // console.log("Role", Role);
 
-  const isAdmin = Role === "ADMIN";
-  if (!Role === "ADMIN") {
+  if (Role !== "ADMIN") {
     router.push("/");
   }
 
