@@ -3,12 +3,678 @@ import Link from "next/link";
 const BlogData = [
   // --------------  RecentBlog  -------------------------------------------------------------------
   {
+    id: "red-chilli-powder-in-international-dishes",
+    category: "MouthWatering",
+    categoryName: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "24-March-2024",
+    blogImg: "/images/blog/blog-17.png",
+    blogName:
+      "Exploring Global Cuisine: Red Chilli Powder in International Dishes      ",
+
+    blogDetail: <></>,
+
+    blogDescription: [
+      {
+        blogList: <></>,
+        blogListAbout: (
+          <>
+            Red chilli powder, also known as lal mirch powder, is a popular and
+            versatile spice that adds heat, flavor, and vibrant color to dishes.
+            While commonly associated with Indian cuisine, red chilli powder has
+            also found its way into various international dishes, adding a spicy
+            kick and enhancing the overall taste. In this blog post, we will
+            explore the role of red chilli powder in different global cuisines
+            and discover how it contributes to their unique flavors.
+          </>
+        ),
+      },
+
+      {
+        blogList: (
+          <>
+            The Versatility of{" "}
+            <Link className="text-red-500" href="/products/red-chilli-powder">
+              Red Chilli Powder
+            </Link>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            Red chilli powder is derived from dried and ground red chillies,
+            which are known for their spiciness. It is widely used in Indian
+            cooking to add heat and depth of flavor to curries, stews, and other
+            dishes. However, its popularity extends beyond Indian cuisine,
+            making its way into the culinary traditions of several countries
+            around the world. Let's take a closer look at how red chilli powder
+            is used in different international dishes.
+          </>
+        ),
+      },
+      {
+        blogList: <>Mexican Cuisine: Adding Heat and Complexity</>,
+        blogListAbout: (
+          <>
+            Mexican cuisine is renowned for its bold and vibrant flavors, and
+            <Link className="text-red-500" href="/products/red-chilli-powder">
+              red chilli powder
+            </Link>{" "}
+            plays a crucial role in achieving this. From salsas to enchiladas,
+            red chilli powder adds a fiery kick to Mexican dishes. It is an
+            essential ingredient in traditional Mexican spice blends like chili
+            powder and adobo seasoning. Red chilli powder not only provides heat
+            but also enhances the complexity and depth of flavors in Mexican
+            dishes, making them irresistibly delicious.
+          </>
+        ),
+      },
+
+      {
+        blogList: "Thai Cuisine: Balancing Spiciness and Aromatics ",
+        blogListAbout: (
+          <>
+            Thai cuisine is known for its harmonious balance of flavors,
+            including sweet, sour, salty, and spicy. Red chilli powder, or prik
+            pon in Thai, is used in various Thai dishes to add a spicy element.
+            It is a key ingredient in popular Thai dishes like Tom Yum soup and
+            Pad Thai. In Thai cuisine, red chilli powder is often combined with
+            aromatic ingredients like lemongrass, galangal, and kaffir lime
+            leaves to create a well-rounded and flavorful dish.
+          </>
+        ),
+      },
+      {
+        blogList: "Chinese Cuisine: Adding Heat and Vibrancy        ",
+        blogListAbout: (
+          <>
+            Red chilli powder is an integral part of several Chinese dishes,
+            particularly those from the Szechuan and Hunan regions. It brings a
+            fiery heat and vibrant red color to dishes like Kung Pao chicken and
+            Mapo tofu. Chinese cuisine often balances the spiciness of red
+            chilli powder with other flavors like soy sauce, ginger, and garlic,
+            creating a harmonious blend of tastes that is both bold and
+            satisfying.
+          </>
+        ),
+      },
+      {
+        blogList: "Middle Eastern Cuisine: Adding Warmth and Depth        ",
+        blogListAbout: (
+          <>
+            In Middle Eastern cuisine,{" "}
+            <Link className="text-red-500" href="/products/red-chilli-powder">
+              red chilli powder
+            </Link>{" "}
+            is used to add warmth and depth to dishes. It is commonly found in
+            spice blends like Ras el Hanout and Harissa, which are used in
+            Moroccan and Tunisian cuisines, respectively. Red chilli powder is
+            also used in dishes like Shawarma and Kebabs, where it adds a touch
+            of spiciness and a beautiful reddish hue. It complements the
+            aromatic spices commonly found in Middle Eastern cooking, creating a
+            delightful fusion of flavors.
+          </>
+        ),
+      },
+
+      {
+        blogList: "European Cuisine: Embracing Spice        ",
+        blogListAbout: (
+          <>
+            <p>
+              While European cuisine is not typically associated with spiciness,
+              red chilli powder has gradually made its way into certain European
+              dishes, adding a touch of heat and piquancy. For example, Spanish
+              cuisine features dishes like Patatas Bravas and Chorizo, which
+              incorporate red chilli powder to infuse a spicy kick. In Italian
+              cuisine, red chilli flakes are a popular addition to pasta dishes,
+              bringing a fiery and flavorful element to the meal.
+            </p>
+            <p className="mt-5">
+              <Link className="text-red-500" href="/products/red-chilli-powder">
+                red chilli powder
+              </Link>{" "}
+              , with its fiery heat and vibrant flavor, has become a global
+              sensation, finding its place in various cuisines around the world.
+              Whether you're exploring the bold flavors of Mexican cuisine,
+              indulging in the aromatic dishes of Thai cuisine, or savoring the
+              warmth of Middle Eastern delicacies, red chilli powder adds a
+              unique touch to each dish. So, the next time you're experimenting
+              with international flavors in your kitchen, don't forget to
+              incorporate the versatile and aromatic red chilli powder, such as
+              Planetsera chili powder, to elevate your culinary creations to new
+              heights of taste and spice.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    id: "health-benefits-of-sabji-masala-in-your-diet",
+    category: "MouthWatering",
+    categoryName: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "18-March-2024",
+    blogImg: "/images/blog/blog-21.png",
+    blogName:
+      "Spice Up Your Life: Health Benefits of Sabji Masala in Your Diet",
+
+    blogDetail: <></>,
+
+    blogDescription: [
+      {
+        blogList: (
+          <>
+            <div className="">Introduction</div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            <Link className="text-red-500" href="/products/sabji-masala">
+              Sabji masala
+            </Link>{" "}
+            , is a fragrant and flavorful spice blend that can transform any
+            vegetable dish into a culinary delight. This aromatic blend of
+            spices not only adds a burst of flavor to your meals but also comes
+            with a host of health benefits. In this blog post, we will explore
+            the incredible health benefits of incorporating sabji masala into
+            your diet and how affordable sabji masala can spice up your life.
+          </>
+        ),
+      },
+
+      {
+        blogList: (
+          <>
+            {" "}
+            <div>1. Aids Digestion</div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            One of the primary benefits of sabji masala is its ability to aid
+            digestion. The combination of spices in sabji masala, such as cumin,
+            coriander, and turmeric, helps stimulate the digestive system,
+            promoting better digestion and nutrient absorption. These spices
+            have carminative properties that can alleviate bloating, gas, and
+            indigestion, making them a valuable addition to your diet.
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            {" "}
+            <div>2. Boosts Immunity</div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            Many of the spices used in{" "}
+            <Link className="text-red-500" href="/products/sabji-masala">
+              sabji masala,
+            </Link>{" "}
+            , such as turmeric, ginger, and garlic, are known for their
+            immune-boosting properties. Turmeric, in particular, contains
+            curcumin, a powerful compound with anti-inflammatory and antioxidant
+            effects. Including sabji masala in your meals can help strengthen
+            your immune system and protect your body against common illnesses.
+          </>
+        ),
+      },
+
+      {
+        blogList: "3. Provides Antioxidants        ",
+        blogListAbout: (
+          <>
+            Sabji masala is a rich source of antioxidants, thanks to the spices
+            it contains. Antioxidants protect your body against free radicals,
+            which are unstable molecules that can damage cells and contribute to
+            chronic diseases. Spices like cinnamon, cloves, and cardamom found
+            in sabji masala are packed with antioxidants that help combat
+            oxidative stress and promote overall well-being.
+          </>
+        ),
+      },
+      {
+        blogList: "4. Manages Blood Sugar Levels        ",
+        blogListAbout: (
+          <>
+            For individuals with diabetes or those looking to manage their blood
+            sugar levels, sabji masala can be a valuable addition to their diet.
+            Several spices in sabji masala, including fenugreek, cinnamon, and
+            cumin, have been shown to help regulate blood sugar levels.
+            Incorporating sabji masala into your meals can help control blood
+            sugar spikes and improve insulin sensitivity.
+          </>
+        ),
+      },
+      {
+        blogList: "5. Enhances Nutrient Intake        ",
+        blogListAbout: (
+          <>
+            By adding sabji masala to your vegetable dishes, you not only
+            enhance the taste but also increase the nutrient content of your
+            meals. Many of the spices in sabji masala, such as turmeric,
+            coriander, and cumin, are rich in vitamins, minerals, and
+            phytonutrients. These spices can boost the nutritional value of your
+            vegetables, making them even more beneficial for your health.
+          </>
+        ),
+      },
+
+      {
+        blogList: "6. Supports Weight Management          ",
+        blogListAbout: (
+          <>
+            The combination of spices in{" "}
+            <Link className="text-red-500" href="/products/sabji-masala">
+              sabji masala
+            </Link>{" "}
+            can aid in weight management. Spices like black pepper, ginger, and
+            fenugreek have been shown to boost metabolism, suppress appetite,
+            and enhance fat burning. By incorporating sabji masala into your
+            meals, you can add flavor to your dishes without relying on
+            excessive salt, oil, or unhealthy condiments, making it easier to
+            maintain a healthy weight.
+          </>
+        ),
+      },
+      {
+        blogList: "7. Adds Flavor and Variety to Meals          ",
+        blogListAbout: (
+          <>
+            <p>
+              One of the most appealing aspects of sabji masala is its ability
+              to add a burst of flavor and aroma to your meals. The combination
+              of spices creates a unique and tantalizing taste that can elevate
+              even the simplest vegetable dish. By using sabji masala, you can
+              experiment with different flavors and enjoy a wider variety of
+              vegetable-based meals, making healthy eating more enjoyable and
+              sustainable.
+            </p>
+            <p className="mt-5">
+              Incorporating sabji masala into your diet can not only enhance the
+              taste of your vegetable dishes but also provide numerous health
+              benefits. From aiding digestion and boosting immunity to managing
+              blood sugar levels and supporting weight management, sabji masala
+              is a flavorful way to improve your overall well-being. With
+              affordable sabji masala readily available, there's no reason not
+              to spice up your life and reap the many rewards of this delicious
+              and nutritious spice blend. So go ahead, explore the world of
+              sabji masala and embark on a culinary journey that is both healthy
+              and flavorful.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+  {
+    id: "turmeric-powder-recipes-for-every-meal",
+    category: "MouthWatering",
+    categoryName: "BestSelling",
+    type: "RecentBlog",
+    blogDate: "12-March-2024",
+    blogImg: "/images/blog/blog-20.png",
+    blogName:
+      "Cooking with Color: Vibrant Turmeric Powder Recipes for Every Meal",
+
+    blogDetail: (
+      <>
+        In the world of culinary delights, few ingredients bring both vibrancy
+        and health benefits to the table quite like{" "}
+        <Link href="/products/turmeric-powder" className="text-red-500">
+          turmeric powder
+        </Link>
+        , also known as haldi powder. Beyond its stunning golden hue, turmeric
+        offers a rich array of flavors and a plethora of health advantages.
+        Today, we invite you to embark on a journey of culinary creativity with
+        a collection of vibrant turmeric powder recipes suitable for every meal
+        of the day.
+      </>
+    ),
+    blogDescription: [
+      {
+        blogList: "Breakfast Brilliance: Golden Turmeric Smoothie Bowl        ",
+        blogListAbout: (
+          <>
+            <p>
+              Start your day on a golden note with a nutritious and visually
+              stunning turmeric smoothie bowl. Packed with antioxidants and
+              anti-inflammatory properties, this breakfast bowl is a feast for
+              the senses.
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Ingredients:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>1 frozen banana</li>
+                <li>1/2 cup frozen mango chunks</li>
+                <li>1/2 teaspoon organic turmeric powder</li>
+                <li>1/2 teaspoon grated fresh ginger</li>
+                <li> 1 cup almond milk </li>
+
+                <li>
+                  Toppings: sliced kiwi, granola, chia seeds, and a drizzle of
+                  honey
+                </li>
+              </ul>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Instructions:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>
+                  Blend the frozen banana, mango chunks, turmeric powder, fresh
+                  ginger, and almond milk until smooth.
+                </li>
+                <li>Pour the smoothie into a bowl.</li>
+                <li>
+                  Top with sliced kiwi, granola, chia seeds, and a drizzle of
+                  honey.
+                </li>
+                <li>
+                  Enjoy a breakfast bowl that not only delights your taste buds
+                  but also kickstarts your day with a burst of color and
+                  nutrition.
+                </li>
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Lunchtime Delight: Turmeric Chickpea Salad",
+        blogListAbout: (
+          <>
+            <p>
+              Add a splash of color to your midday meal with a zesty turmeric
+              chickpea salad. This protein-packed dish is not only flavorful but
+              also showcases the versatility of turmeric in savory recipes.
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Ingredients:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>1 can chickpeas, drained and rinsed</li>
+                <li>1 teaspoon organic haldi powder</li>
+                <li>1 teaspoon cumin</li>
+                <li>1 tablespoon olive oil</li>
+                <li>Salt and pepper to taste</li>
+                <li>
+                  Mixed greens, cherry tomatoes, cucumber, and feta for the
+                  salad
+                </li>
+              </ul>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Instructions:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>Preheat the oven to 400°F (200°C).</li>
+                <li>
+                  In a bowl, toss the chickpeas with turmeric powder, cumin,
+                  olive oil, salt, and pepper.
+                </li>
+                <li>
+                  Spread the seasoned chickpeas on a baking sheet and roast for
+                  20-25 minutes or until golden and crispy.
+                </li>
+                <li>
+                  Assemble the salad with mixed greens, cherry tomatoes,
+                  cucumber, and feta.
+                </li>
+                <li>Top with the turmeric-roasted chickpeas.</li>
+                <li>
+                  Drizzle with your favorite dressing and enjoy a hearty,
+                  colorful lunch.
+                </li>
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Lunchtime Delight: Turmeric Chickpea Salad",
+        blogListAbout: (
+          <>
+            <p>
+              Add a splash of color to your midday meal with a zesty turmeric
+              chickpea salad. This protein-packed dish is not only flavorful but
+              also showcases the versatility of turmeric in savory recipes.
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Ingredients:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>1 can chickpeas, drained and rinsed</li>
+                <li>1 teaspoon organic haldi powder</li>
+                <li>1 teaspoon cumin</li>
+                <li>1 tablespoon olive oil</li>
+                <li>Salt and pepper to taste</li>
+                <li>
+                  Mixed greens, cherry tomatoes, cucumber, and feta for the
+                  salad
+                </li>
+              </ul>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Instructions:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>Preheat the oven to 400°F (200°C).</li>
+                <li>
+                  In a bowl, toss the chickpeas with turmeric powder, cumin,
+                  olive oil, salt, and pepper.
+                </li>
+                <li>
+                  Spread the seasoned chickpeas on a baking sheet and roast for
+                  20-25 minutes or until golden and crispy.
+                </li>
+                <li>
+                  Assemble the salad with mixed greens, cherry tomatoes,
+                  cucumber, and feta.
+                </li>
+                <li>Top with the turmeric-roasted chickpeas.</li>
+                <li>
+                  Drizzle with your favorite dressing and enjoy a hearty,
+                  colorful lunch.
+                </li>
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Afternoon Pick-Me-Up: Turmeric Chai Latte",
+        blogListAbout: (
+          <>
+            <p>
+              Give your afternoon a warm and soothing twist with a homemade
+              turmeric chai latte. This aromatic beverage combines the rich
+              flavors of traditional chai with the golden goodness of turmeric.
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Ingredients:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>1 cup water</li>
+                <li>1 black tea bag</li>
+                <li>1/2 teaspoon organic turmeric powder</li>
+                <li>1/4 teaspoon ground cinnamon</li>
+                <li>1/4 teaspoon ground ginger</li>
+                <li>1 cup milk (dairy or plant-based)</li>
+                <li>Honey or sweetener of choice to taste</li>
+              </ul>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Instructions:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>Bring water to a boil and steep the black tea bag.</li>
+                <li>
+                  In a separate saucepan, heat the milk with turmeric powder,
+                  cinnamon, and ground ginger.
+                </li>
+                <li>Once heated, froth the milk using a whisk or frother.</li>
+                <li>Combine the steeped tea with the spiced milk.</li>
+                <li>
+                  Sweeten to taste with honey or your preferred sweetener.
+                </li>
+                <li>
+                  Pour into a mug, savor the comforting aroma, and relax with
+                  your golden chai latte.
+                </li>
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: "Dinner Extravaganza: Turmeric Spiced Roasted Vegetables",
+        blogListAbout: (
+          <>
+            <p>
+              Elevate your evening meal with a colorful array of turmeric-spiced
+              roasted vegetables. This savory dish not only delights the palate
+              but also showcases the transformative power of turmeric in savory
+              cooking.
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Ingredients:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>
+                  Assorted vegetables (carrots, bell peppers, zucchini, cherry
+                  tomatoes, etc.)
+                </li>
+                <li>2 tablespoons olive oil</li>
+                <li>1 teaspoon organic haldi powder</li>
+                <li>1 teaspoon cumin</li>
+                <li>Salt and pepper to taste</li>
+                <li>Fresh herbs for garnish (parsley, cilantro, or mint)</li>
+              </ul>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Instructions:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>Preheat the oven to 425°F (220°C).</li>
+                <li>Cut the vegetables into bite-sized pieces.</li>
+                <li>
+                  In a bowl, toss the vegetables with olive oil, turmeric
+                  powder, cumin, salt, and pepper.
+                </li>
+                <li>
+                  Spread the seasoned vegetables on a baking sheet in a single
+                  layer.
+                </li>
+                <li>
+                  Roast in the oven for 25-30 minutes or until the vegetables
+                  are tender and golden brown.
+                </li>
+                <li>
+                  Garnish with fresh herbs and serve alongside your favorite
+                  protein for a visually striking and delicious dinner.
+                </li>
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList:
+          "Sweet Finale: Turmeric-infused Mango Lassi Popsicles        ",
+        blogListAbout: (
+          <>
+            <p>
+              Wrap up your culinary journey with a sweet and refreshing
+              turmeric-infused mango lassi popsicle. This dessert is a
+              delightful blend of tropical flavors and the golden warmth of
+              turmeric.
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Ingredients:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>1 cup ripe mango chunks</li>
+                <li>1 cup yogurt (dairy or plant-based)</li>
+                <li>1/2 teaspoon organic turmeric powder</li>
+                <li>2 tablespoons honey or agave syrup</li>
+              </ul>
+            </p>
+            <p className="text-xl font-semibold mt-3 ml-5">
+              • <span>Instructions:</span>
+              <ul className="text-base font-normal  mt-2 ml-5">
+                <li>
+                  Blend the ripe mango chunks, yogurt, turmeric powder, and
+                  honey until smooth.
+                </li>
+                <li>Pour the mixture into popsicle molds.</li>
+                <li>Freeze for at least 4-6 hours or until fully set.</li>
+                <li>
+                  Indulge in these vibrant and creamy mango lassi popsicles for
+                  a sweet finale to your turmeric-inspired culinary adventure.
+                </li>
+              </ul>
+            </p>
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            <div className="">
+              {" "}
+              Choosing Quality A Flavorful Journey{" "}
+              <Link className="text-red-500" href="/products/turmeric-powder">
+                Turmeric Powder{" "}
+              </Link>
+              : A Flavorful Journey
+            </div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            When embarking on a culinary journey with turmeric, the choice of
+            turmeric powder plays a pivotal role in the flavor and vibrancy of
+            your dishes. Opt for high-quality organic haldi powder from
+            reputable sources to ensure the purity and richness of the spice.
+            Look for certifications that guarantee the absence of additives and
+            pesticides.
+          </>
+        ),
+      },
+      {
+        blogList: (
+          <>
+            <div className="">A Feast for the Senses and Well-Being</div>
+          </>
+        ),
+        blogListAbout: (
+          <>
+            <p>
+              Cooking with color takes on a whole new meaning with the addition
+              of vibrant turmeric powder to your culinary repertoire. From
+              golden smoothie bowls to savory roasted vegetables and sweet mango
+              lassi popsicles, these recipes not only showcase the versatility
+              of turmeric but also invite you to savor the benefits of this
+              golden spice.
+            </p>
+            <p className="mt-5">
+              As you embrace the palette of wellness with organic{" "}
+              <Link className="text-red-500" href="/products/turmeric-powder">
+                haldi powder{" "}
+              </Link>
+              , let the richness of turmeric powder benefits enhance not only
+              the flavor but also the nutritional value of your meals. Whether
+              you're a seasoned chef or a culinary enthusiast, cooking with
+              turmeric adds a touch of vibrancy and health-conscious flair to
+              every dish. Cheers to the golden spice and the colorful journey of
+              well-being it brings to your table!
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+  {
     id: "black-pepper-powder-in-everyday-recipes",
     category: "MouthWatering",
     categoryName: "BestSelling",
     type: "RecentBlog",
     blogDate: "6-March-2024",
-    blogImg: "/images/blog/defaultblog.png",
+    blogImg: "/images/blog/blog-19.png",
     blogName:
       "Cooking with Confidence: A Guide to Using Black Pepper Powder in Everyday Recipes      ",
 
@@ -253,7 +919,7 @@ const BlogData = [
     categoryName: "BestSelling",
     type: "RecentBlog",
     blogDate: "28-Feb-2024",
-    blogImg: "/images/blog/defaultblog.png",
+    blogImg: "/images/blog/blog-18.png",
     blogName:
       "Global Fusion: Creative Ways to Use Garam Masala in Non-Traditional Dishes      ",
 
