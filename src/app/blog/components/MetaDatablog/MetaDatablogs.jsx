@@ -1041,6 +1041,7 @@ const MetaDatablogs = () => {
           <meta name="twitter:image" content="defaultblog.png" />
         </>
       )}
+      {/*-----------------------black-pepper-powder-in-everyday-recipes--------------------------------------------------- */}
 
       {currentRoute === "/blog/black-pepper-powder-in-everyday-recipes" && (
         <>
@@ -1097,6 +1098,8 @@ const MetaDatablogs = () => {
           <meta name="twitter:image" content="Blog image url" />
         </>
       )}
+      {/*-----------------------turmeric-powder-recipes-for-every-meal--------------------------------------------------- */}
+
       {currentRoute === "/blog/turmeric-powder-recipes-for-every-meal" && (
         <>
           <title>
@@ -1156,7 +1159,9 @@ const MetaDatablogs = () => {
           <meta name="twitter:image" content="defaultblog.png" />
         </>
       )}
-      {currentRoute === "blog/garam-masala-in-non-traditional-dishes" && (
+      {/*-----------------------health-benefits-of-sabji-masala-in-your-diet--------------------------------------------------- */}
+      {currentRoute ===
+        "/blog/health-benefits-of-sabji-masala-in-your-diet" && (
         <>
           <title>
             Spice Up Your Life: Health Benefits of Sabji Masala in Your Diet |
@@ -1175,11 +1180,11 @@ const MetaDatablogs = () => {
           <meta name="robots" content="index,  follow" />
           <link
             rel="canonical"
-            href="blog/garam-masala-in-non-traditional-dishes"
+            href="blog/health-benefits-of-sabji-masala-in-your-diet"
           />
           <meta
             property="og:url"
-            content="blog/garam-masala-in-non-traditional-dishes"
+            content="blog/health-benefits-of-sabji-masala-in-your-diet"
           />
           <meta property="og:type" content="website" />
           <meta
@@ -1202,7 +1207,7 @@ const MetaDatablogs = () => {
           <meta property="twitter:domain" content="planetsera.com" />
           <meta
             property="twitter:url"
-            content="blog/garam-masala-in-non-traditional-dishes"
+            content="blog/health-benefits-of-sabji-masala-in-your-diet"
           />
           <meta
             name="twitter:title"
@@ -1215,8 +1220,8 @@ const MetaDatablogs = () => {
           <meta name="twitter:image" content="defaultblog.png" />
         </>
       )}
-
-      {currentRoute === "blog/red-chilli-powder-in-international-dishes" && (
+      {/*-----------------------red-chilli-powder-in-international-dishes--------------------------------------------------- */}
+      {currentRoute === "/blog/red-chilli-powder-in-international-dishes" && (
         <>
           <title>
             Red Chilli Powder in Worldwide Cuisine: a Guide to Liven Up Your

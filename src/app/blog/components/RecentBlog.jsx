@@ -20,7 +20,7 @@ const RecentBlog = () => {
 
         <div className="flex w-full" id="shop">
           <div className="flex  justify-evenly py-2 flex-wrap w-full">
-            {RecentBlogData.map((item) => {
+            {RecentBlogData.slice(0, 5).map((item) => {
               if (!item) {
                 return;
               }
@@ -44,7 +44,8 @@ const RecentBlog = () => {
                         style={{
                           background: `${colorMe}`,
                           opacity: 0.9,
-                        }}>
+                        }}
+                      >
                         {item?.blogDate}
                       </span>
                       <Link href={`/blog/${item.id}`}>

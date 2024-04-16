@@ -1551,7 +1551,8 @@ const BlogData = [
               1. Antioxidant Power of{" "}
               <Link
                 className="text-red-500"
-                href="/product/black-pepper-powder">
+                href="/product/black-pepper-powder"
+              >
                 {" "}
                 Black Pepper Powder:
               </Link>{" "}
@@ -1835,7 +1836,8 @@ const BlogData = [
             <p className="text-xl font-semibold mt-3 ml-5">
               <Link
                 href="/product/black-pepper-powder"
-                className="text-red-500">
+                className="text-red-500"
+              >
                 Black peppercorns :
               </Link>
               <p className="text-base font-normal  mt-2 ml-5">
