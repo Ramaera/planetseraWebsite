@@ -1041,6 +1041,7 @@ const MetaDatablogs = () => {
           <meta name="twitter:image" content="defaultblog.png" />
         </>
       )}
+      {/*-----------------------black-pepper-powder-in-everyday-recipes--------------------------------------------------- */}
 
       {currentRoute === "/blog/black-pepper-powder-in-everyday-recipes" && (
         <>
@@ -1095,6 +1096,188 @@ const MetaDatablogs = () => {
             content="Learn about culinary confidence as we explore black pepper powder's versatility. Our guide will help you improve everyday recipes and create unforgettable meals. Black pepper adds robust flavor to cooking!"
           />
           <meta name="twitter:image" content="Blog image url" />
+        </>
+      )}
+      {/*-----------------------turmeric-powder-recipes-for-every-meal--------------------------------------------------- */}
+
+      {currentRoute === "/blog/turmeric-powder-recipes-for-every-meal" && (
+        <>
+          <title>
+            Colorful Natural Haldi Powder Recipes using Vibrant Turmeric Powder
+            | Planetsera.com
+          </title>
+          <meta name="text" content="planetsera" />
+          <meta
+            name="title"
+            content="Colorful Natural Haldi Powder Recipes using Vibrant Turmeric Powder | Planetsera.com"
+          />
+          <meta
+            name="description"
+            content="These beautiful turmeric powder dishes will delight your taste buds and improve your health. Learn about organic haldi powder and turmeric's many uses, from golden mornings to vivid meals. Use the golden spice to cook deliciously and healthily."
+          />
+          <meta name="keywords" content="" />
+          <meta name="robots" content="index,  follow" />
+          <link
+            rel="canonical"
+            href="/blog/turmeric-powder-recipes-for-every-meal"
+          />
+          <meta
+            property="og:url"
+            content="/blog/turmeric-powder-recipes-for-every-meal"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Colorful Natural Haldi Powder Recipes using Vibrant Turmeric Powder | Planetsera.com"
+          />
+          <meta
+            property="og:description"
+            content="These beautiful turmeric powder dishes will delight your taste buds and improve your health. Learn about organic haldi powder and turmeric's many uses, from golden mornings to vivid meals. Use the golden spice to cook deliciously and healthily."
+          />
+          <meta
+            name="og_site_name"
+            property="og:site_name"
+            content="planetsera.com"
+          />
+          <meta property="og:image" content="defaultblog.png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="627" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="planetsera.com" />
+          <meta
+            property="twitter:url"
+            content="/blog/turmeric-powder-recipes-for-every-meal"
+          />
+          <meta
+            name="twitter:title"
+            content="Colorful Natural Haldi Powder Recipes using Vibrant Turmeric Powder | Planetsera.com"
+          />
+          <meta
+            name="twitter:description"
+            content="These beautiful turmeric powder dishes will delight your taste buds and improve your health. Learn about organic haldi powder and turmeric's many uses, from golden mornings to vivid meals. Use the golden spice to cook deliciously and healthily."
+          />
+          <meta name="twitter:image" content="defaultblog.png" />
+        </>
+      )}
+      {/*-----------------------health-benefits-of-sabji-masala-in-your-diet--------------------------------------------------- */}
+      {currentRoute ===
+        "/blog/health-benefits-of-sabji-masala-in-your-diet" && (
+        <>
+          <title>
+            Spice Up Your Life: Health Benefits of Sabji Masala in Your Diet |
+            planetsera
+          </title>
+          <meta name="text" content="planetsera" />
+          <meta
+            name="title"
+            content="Spice Up Your Life: Health Benefits of Sabji Masala in Your Diet | planetsera"
+          />
+          <meta
+            name="description"
+            content="Read the many health benefits of eating sabji masala, a delicious spice blend. Discover how sabji masala powder can improve vegetable taste and health. Find cheap sabji masala for a tasty and healthy meal."
+          />
+          <meta name="keywords" content="" />
+          <meta name="robots" content="index,  follow" />
+          <link
+            rel="canonical"
+            href="blog/health-benefits-of-sabji-masala-in-your-diet"
+          />
+          <meta
+            property="og:url"
+            content="blog/health-benefits-of-sabji-masala-in-your-diet"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Spice Up Your Life: Health Benefits of Sabji Masala in Your Diet | planetsera"
+          />
+          <meta
+            property="og:description"
+            content="Read the many health benefits of eating sabji masala, a delicious spice blend. Discover how sabji masala powder can improve vegetable taste and health. Find cheap sabji masala for a tasty and healthy meal."
+          />
+          <meta
+            name="og_site_name"
+            property="og:site_name"
+            content="planetsera.com"
+          />
+          <meta property="og:image" content="defaultblog.png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="627" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="planetsera.com" />
+          <meta
+            property="twitter:url"
+            content="blog/health-benefits-of-sabji-masala-in-your-diet"
+          />
+          <meta
+            name="twitter:title"
+            content="Spice Up Your Life: Health Benefits of Sabji Masala in Your Diet | planetsera"
+          />
+          <meta
+            name="twitter:description"
+            content="Read the many health benefits of eating sabji masala, a delicious spice blend. Discover how sabji masala powder can improve vegetable taste and health. Find cheap sabji masala for a tasty and healthy meal."
+          />
+          <meta name="twitter:image" content="defaultblog.png" />
+        </>
+      )}
+      {/*-----------------------red-chilli-powder-in-international-dishes--------------------------------------------------- */}
+      {currentRoute === "/blog/red-chilli-powder-in-international-dishes" && (
+        <>
+          <title>
+            Red Chilli Powder in Worldwide Cuisine: a Guide to Liven Up Your
+            Smell
+          </title>
+          <meta name="text" content="planetsera" />
+          <meta
+            name="title"
+            content="Red Chilli Powder in Worldwide Cuisine: a Guide to Liven Up Your Smell"
+          />
+          <meta
+            name="description"
+            content="Explore the varied uses of red chilli powder in global cuisine. Discover how this spice creates unique tastes in everywhere cuisines from spicy curries to exciting blends."
+          />
+          <meta name="keywords" content="" />
+          <meta name="robots" content="index,  follow" />
+          <link
+            rel="canonical"
+            href="blog/red-chilli-powder-in-international-dishes"
+          />
+          <meta
+            property="og:url"
+            content="blog/red-chilli-powder-in-international-dishes"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Red Chilli Powder in Worldwide Cuisine: a Guide to Liven Up Your Smell"
+          />
+          <meta
+            property="og:description"
+            content="Explore the varied uses of red chilli powder in global cuisine. Discover how this spice creates unique tastes in everywhere cuisines from spicy curries to exciting blends."
+          />
+          <meta
+            name="og_site_name"
+            property="og:site_name"
+            content="planetsera.com"
+          />
+          <meta property="og:image" content="defaultblog.png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="627" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="planetsera.com" />
+          <meta
+            property="twitter:url"
+            content="blog/red-chilli-powder-in-international-dishes"
+          />
+          <meta
+            name="twitter:title"
+            content="Red Chilli Powder in Worldwide Cuisine: a Guide to Liven Up Your Smell"
+          />
+          <meta
+            name="twitter:description"
+            content="Explore the varied uses of red chilli powder in global cuisine. Discover how this spice creates unique tastes in everywhere cuisines from spicy curries to exciting blends."
+          />
+          <meta name="twitter:image" content="defaultblog.png" />
         </>
       )}
     </>

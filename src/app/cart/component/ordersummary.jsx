@@ -242,7 +242,8 @@ const ordersummary = () => {
       <div className="font-mont sm:w-1/4 sm:min-w-[380px] pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
-          className="border py-9 px-6 shadow-xl">
+          className="border py-9 px-6 shadow-xl"
+        >
           <p className="text-2xl  ">Order Summary</p>
 
           <div className="flex justify-between flex-col   mt-5 ">
@@ -275,7 +276,7 @@ const ordersummary = () => {
           </div> */}
           {/* {currentRoute === "/cart/checkout" && ( */}
           <div className="mb-4">
-            {currentRoute === "/cart" && (
+            {/* {currentRoute === "/cart" && (
               <>
                 <label className="block mt-2 mb-1">
                   Enter PWID to avail (30% Discount)
@@ -295,7 +296,7 @@ const ordersummary = () => {
                   </button>
                 </div>
               </>
-            )}
+            )} */}
             {MyCardCouponAmountRedux > 0 && (
               <div className="flex justify-between mt-5">
                 MyMart MyCard Discounted Price :{" "}
@@ -343,7 +344,8 @@ const ordersummary = () => {
                     <Link href="/cart" className="text-white">
                       <button
                         onClick={handleProceedToCheckout}
-                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3">
+                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3"
+                      >
                         Proceed To Checkout
                       </button>
                     </Link>
@@ -354,7 +356,8 @@ const ordersummary = () => {
                   <div
                     onClick={openLoginModal}
                     className="text-white"
-                    style={{ color: colorMe, fontWeight: "bold" }}>
+                    style={{ color: colorMe, fontWeight: "bold" }}
+                  >
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
                       Proceed To Checkout
                     </div>

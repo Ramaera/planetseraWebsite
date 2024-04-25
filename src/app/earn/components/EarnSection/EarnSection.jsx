@@ -93,8 +93,7 @@ const EarnSection = () => {
 
             <form
               onSubmit={(e) => submitHandler(e)}
-              className="ml-auto  bg-white h-full md:w-1/3 w-full rounded-3xl p-4 flex justify-center items-center  flex-col rounded-t-sm md:rounded-t-3xl border-red-500 border-2 	"
-            >
+              className="ml-auto  bg-white h-full md:w-1/3 w-full rounded-3xl p-4 flex justify-center items-center  flex-col rounded-t-sm md:rounded-t-3xl border-red-500 border-2 	">
               <label htmlFor="reward" className="text-xl my-2 text-left">
                 Please Enter Reward Code
               </label>
@@ -116,8 +115,7 @@ const EarnSection = () => {
                   background: colorMe,
                   color: "white",
                 }}
-                className="mt-4 p-4 rounded-lg"
-              >
+                className="mt-4 p-4 rounded-lg">
                 Submit
               </button>
 
@@ -128,8 +126,7 @@ const EarnSection = () => {
                   background: "grey",
                   color: "white",
                 }}
-                className="mt-4 p-4 rounded-lg"
-              >
+                className="mt-4 p-4 rounded-lg">
                 Cancel
               </button>
             </form>
