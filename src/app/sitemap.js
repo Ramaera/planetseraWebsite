@@ -5,8 +5,8 @@ const URL = "https://www.planetsera.com";
 
 export default async function sitemap() {
   const allProducts = await axios.get(
-    "http://localhost:6770/rest-get-all-products/allProducts",
-    // "http://planetseraapi.planetsera.com/rest-get-all-products/allProducts",
+    // "http://localhost:6770/rest-get-all-products/allProducts",
+    "http://planetseraapi.planetsera.com/rest-get-all-products/allProducts",
 
     {
       headers: {
