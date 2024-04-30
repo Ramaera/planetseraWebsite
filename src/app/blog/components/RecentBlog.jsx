@@ -10,6 +10,7 @@ const RecentBlog = () => {
       return list;
     }
   });
+  // console.log("RecentBlogData", RecentBlogData);
 
   return (
     <>
@@ -20,13 +21,16 @@ const RecentBlog = () => {
 
         <div className="flex w-full" id="shop">
           <div className="flex  justify-evenly py-2 flex-wrap w-full">
-            {RecentBlogData.map((item) => {
+            {RecentBlogData.slice(0, 5).map((item) => {
               if (!item) {
                 return;
               }
               return (
                 <>
-                  <div className="my-2 justify-items-center flex items-center flex-row border-gray-200 border-[1px] rounded-xl px-[8px] py-2 w-full">
+                  <div
+                    key={item.id}
+                    className="my-2 justify-items-center flex items-center flex-row border-gray-200 border-[1px] rounded-xl px-[8px] py-2 w-full"
+                  >
                     <div className=" flex items-center justify-center  w-1/2">
                       <Link href={`/blog/${item.id}`}>
                         <img
@@ -44,7 +48,8 @@ const RecentBlog = () => {
                         style={{
                           background: `${colorMe}`,
                           opacity: 0.9,
-                        }}>
+                        }}
+                      >
                         {item?.blogDate}
                       </span>
                       <Link href={`/blog/${item.id}`}>
