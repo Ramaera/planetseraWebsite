@@ -10,6 +10,7 @@ const RecentBlog = () => {
       return list;
     }
   });
+  // console.log("RecentBlogData", RecentBlogData);
 
   return (
     <>
@@ -26,7 +27,10 @@ const RecentBlog = () => {
               }
               return (
                 <>
-                  <div className="my-2 justify-items-center flex items-center flex-row border-gray-200 border-[1px] rounded-xl px-[8px] py-2 w-full">
+                  <div
+                    key={item.id}
+                    className="my-2 justify-items-center flex items-center flex-row border-gray-200 border-[1px] rounded-xl px-[8px] py-2 w-full"
+                  >
                     <div className=" flex items-center justify-center  w-1/2">
                       <Link href={`/blog/${item.id}`}>
                         <img

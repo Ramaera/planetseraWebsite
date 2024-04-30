@@ -961,7 +961,7 @@ const MetaDatablogs = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="blog-16.png" />
+          <meta property="og:image" content="/images/blog/blog-16.png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
           <meta name="twitter:card" content="summary_large_image" />
@@ -978,7 +978,7 @@ const MetaDatablogs = () => {
             name="twitter:description"
             content="Explore the many health benefits of red chilli powder, also known as lal mirch powder, from metabolism boost to immune support. Discover Planetsera chili powder's quality assurance and embrace its holistic goodness beyond its fiery flavor."
           />
-          <meta name="twitter:image" content="blog-16.png" />
+          <meta name="twitter:image" content="/images/blog/blog-16.png" />
         </>
       )}
       {/*-----------------------garam-masala-in-non-traditional-dishes--------------------------------------------------- */}
@@ -1021,7 +1021,7 @@ const MetaDatablogs = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="defaultblog.png" />
+          <meta property="og:image" content="/images/blog/blog-17.png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
           <meta name="twitter:card" content="summary_large_image" />
@@ -1038,7 +1038,7 @@ const MetaDatablogs = () => {
             name="twitter:description"
             content="Explore the art of fusion cooking with garam masala ingredients and unique masala spices. Source garam masala online, including Planetsera's quality assurance, and bring a taste of the world to your kitchen."
           />
-          <meta name="twitter:image" content="defaultblog.png" />
+          <meta name="twitter:image" content="/images/blog/blog-17.png" />
         </>
       )}
       {/*-----------------------black-pepper-powder-in-everyday-recipes--------------------------------------------------- */}
@@ -1081,7 +1081,7 @@ const MetaDatablogs = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="Blog image url" />
+          <meta property="og:image" content="/images/blog/blog-18.png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
           <meta name="twitter:card" content="summary_large_image" />
@@ -1095,7 +1095,7 @@ const MetaDatablogs = () => {
             name="twitter:description"
             content="Learn about culinary confidence as we explore black pepper powder's versatility. Our guide will help you improve everyday recipes and create unforgettable meals. Black pepper adds robust flavor to cooking!"
           />
-          <meta name="twitter:image" content="Blog image url" />
+          <meta name="twitter:image" content="/images/blog/blog-18.png" />
         </>
       )}
       {/*-----------------------turmeric-powder-recipes-for-every-meal--------------------------------------------------- */}
@@ -1139,7 +1139,7 @@ const MetaDatablogs = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="defaultblog.png" />
+          <meta property="og:image" content="/images/blog/blog-19.png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
           <meta name="twitter:card" content="summary_large_image" />
@@ -1156,10 +1156,9 @@ const MetaDatablogs = () => {
             name="twitter:description"
             content="These beautiful turmeric powder dishes will delight your taste buds and improve your health. Learn about organic haldi powder and turmeric's many uses, from golden mornings to vivid meals. Use the golden spice to cook deliciously and healthily."
           />
-          <meta name="twitter:image" content="defaultblog.png" />
+          <meta name="twitter:image" content="/images/blog/blog-19.png" />
         </>
       )}
-      {/*-----------------------health-benefits-of-sabji-masala-in-your-diet--------------------------------------------------- */}
       {currentRoute ===
         "/blog/health-benefits-of-sabji-masala-in-your-diet" && (
         <>
@@ -1200,7 +1199,7 @@ const MetaDatablogs = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="defaultblog.png" />
+          <meta property="og:image" content="/images/blog/blog-20.png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
           <meta name="twitter:card" content="summary_large_image" />
@@ -1217,10 +1216,10 @@ const MetaDatablogs = () => {
             name="twitter:description"
             content="Read the many health benefits of eating sabji masala, a delicious spice blend. Discover how sabji masala powder can improve vegetable taste and health. Find cheap sabji masala for a tasty and healthy meal."
           />
-          <meta name="twitter:image" content="defaultblog.png" />
+          <meta name="twitter:image" content="/images/blog/blog-20.png" />
         </>
       )}
-      {/*-----------------------red-chilli-powder-in-international-dishes--------------------------------------------------- */}
+
       {currentRoute === "/blog/red-chilli-powder-in-international-dishes" && (
         <>
           <title>
@@ -1260,7 +1259,7 @@ const MetaDatablogs = () => {
             property="og:site_name"
             content="planetsera.com"
           />
-          <meta property="og:image" content="defaultblog.png" />
+          <meta property="og:image" content="/images/blog/blog-21.png" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="627" />
           <meta name="twitter:card" content="summary_large_image" />
@@ -1277,7 +1276,184 @@ const MetaDatablogs = () => {
             name="twitter:description"
             content="Explore the varied uses of red chilli powder in global cuisine. Discover how this spice creates unique tastes in everywhere cuisines from spicy curries to exciting blends."
           />
-          <meta name="twitter:image" content="defaultblog.png" />
+          <meta name="twitter:image" content="/images/blog/blog-21.png" />
+        </>
+      )}
+
+      {currentRoute === "/blog/turmeric-in-traditional-medicine" && (
+        <>
+          <title>
+            Turmeric in Ayurvedic Medicine: A Deep Dive into holistic wellness
+          </title>
+          <meta name="text" content="planetsera" />
+          <meta
+            name="title"
+            content=" Learn traditional medicine's turmeric healing secrets. Explore the powerful impact of turmeric powder (haldi powder) in holistic health. Explore the health benefits of using natural turmeric powder for a balanced lifestyle."
+          />
+          <meta
+            name="description"
+            content="Learn traditional medicine's turmeric healing secrets. Explore the powerful impact of turmeric powder (haldi powder) in holistic health. Explore the health benefits of using natural turmeric powder for a balanced lifestyle."
+          />
+          <meta name="keywords" content="" />
+          <meta name="robots" content="index,  follow" />
+          <link rel="canonical" href="/blog/turmeric-in-traditional-medicine" />
+          <meta
+            property="og:url"
+            content="/blog/turmeric-in-traditional-medicine"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Turmeric in Ayurvedic Medicine: A Deep Dive into holistic wellness"
+          />
+          <meta
+            property="og:description"
+            content="Learn traditional medicine's turmeric healing secrets. Explore the powerful impact of turmeric powder (haldi powder) in holistic health. Explore the health benefits of using natural turmeric powder for a balanced lifestyle."
+          />
+          <meta
+            name="og_site_name"
+            property="og:site_name"
+            content="planetsera.com"
+          />
+          <meta property="og:image" content="/images/blog/blog-22.png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="627" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="planetsera.com" />
+          <meta
+            property="twitter:url"
+            content="/blog/turmeric-in-traditional-medicine"
+          />
+          <meta
+            name="twitter:title"
+            content="Turmeric in Ayurvedic Medicine: A Deep Dive into holistic wellness"
+          />
+          <meta
+            name="twitter:description"
+            content="Learn traditional medicine's turmeric healing secrets. Explore the powerful impact of turmeric powder (haldi powder) in holistic health. Explore the health benefits of using natural turmeric powder for a balanced lifestyle."
+          />
+          <meta name="twitter:image" content="/images/blog/blog-22.png" />
+        </>
+      )}
+
+      {currentRoute ===
+        "/blog/journey-through-flavorful-vegetarian-delights" && (
+        <>
+          <title>
+            Sabji Masala: A Culinary Journey of Flavorful Vegetarian Delights |
+            planetsera
+          </title>
+          <meta name="text" content="planetsera" />
+          <meta
+            name="title"
+            content="Sabji Masala: A Culinary Journey of Flavorful Vegetarian Delights | planetsera"
+          />
+          <meta
+            name="description"
+            content="Explore food with the Sabji Masala Tales. Sabji masala powder, a low-cost spice blend, makes ordinary veggies taste amazing. We'll discover the low price and flavor of veggie masala powder, making every vegetarian dish a treat in this culinary odyssey."
+          />
+          <meta name="keywords" content="" />
+          <meta name="robots" content="index,  follow" />
+          <link
+            rel="canonical"
+            href="/blog/journey-through-flavorful-vegetarian-delights"
+          />
+          <meta
+            property="og:url"
+            content="/blog/journey-through-flavorful-vegetarian-delights"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="Sabji Masala: A Culinary Journey of Flavorful Vegetarian Delights | planetsera"
+          />
+          <meta
+            property="og:description"
+            content="Explore food with the Sabji Masala Tales. Sabji masala powder, a low-cost spice blend, makes ordinary veggies taste amazing. We'll discover the low price and flavor of veggie masala powder, making every vegetarian dish a treat in this culinary odyssey."
+          />
+          <meta
+            name="og_site_name"
+            property="og:site_name"
+            content="planetsera.com"
+          />
+          <meta property="og:image" content="/images/blog/blog-23.png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="627" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="planetsera.com" />
+          <meta
+            property="twitter:url"
+            content="/blog/journey-through-flavorful-vegetarian-delights"
+          />
+          <meta
+            name="twitter:title"
+            content="Sabji Masala: A Culinary Journey of Flavorful Vegetarian Delights | planetsera"
+          />
+          <meta
+            name="twitter:description"
+            content="Explore food with the Sabji Masala Tales. Sabji masala powder, a low-cost spice blend, makes ordinary veggies taste amazing. We'll discover the low price and flavor of veggie masala powder, making every vegetarian dish a treat in this culinary odyssey."
+          />
+          <meta name="twitter:image" content="/images/blog/blog-23.png" />
+        </>
+      )}
+
+      {currentRoute === "/blog/guide-to-making-your-own-spice-blend" && (
+        <>
+          <title>
+            red chili Magic: Create Your Own Culinary Signature Red Chilli
+            Powder
+          </title>
+          <meta name="text" content="planetsera" />
+          <meta
+            name="title"
+            content="red chili Magic: Create Your Own Culinary Signature Red Chilli Powder"
+          />
+          <meta
+            name="description"
+            content="Make red chilli powder at home with our step-by-step guide. Explore lal mirch powder, excellent source, and Planetsera chili powder to enhance your recipes. Create your own spice blend to become a spice master."
+          />
+          <meta name="keywords" content="" />
+          <meta name="robots" content="index,  follow" />
+          <link
+            rel="canonical"
+            href="/blog/guide-to-making-your-own-spice-blend"
+          />
+          <meta
+            property="og:url"
+            content="/blog/guide-to-making-your-own-spice-blend"
+          />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:title"
+            content="red chili Magic: Create Your Own Culinary Signature Red Chilli Powder"
+          />
+          <meta
+            property="og:description"
+            content="Make red chilli powder at home with our step-by-step guide. Explore lal mirch powder, excellent source, and Planetsera chili powder to enhance your recipes. Create your own spice blend to become a spice master."
+          />
+          <meta
+            name="og_site_name"
+            property="og:site_name"
+            content="planetsera.com"
+          />
+          <meta property="og:image" content="/images/blog/blog-24.png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="627" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta property="twitter:domain" content="planetsera.com" />
+          <meta
+            property="twitter:url"
+            content="/blog/guide-to-making-your-own-spice-blend"
+          />
+          <meta
+            name="twitter:title"
+            content="red chili Magic: Create Your Own Culinary Signature Red Chilli Powder"
+          />
+          <meta
+            name="twitter:description"
+            content="Make red chilli powder at home with our step-by-step guide. Explore lal mirch powder, excellent source, and Planetsera chili powder to enhance your recipes. Create your own spice blend to become a spice master."
+          />
+          <meta name="twitter:image" content="/images/blog/blog-24.png" />
         </>
       )}
     </>
