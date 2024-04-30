@@ -18,13 +18,19 @@ export default async function sitemap() {
   //   console.log("allProducts-------->>>>>", allProducts.data);
   const products = allProducts.data.map((product) => ({
     url: `${URL}/product/${product?.productUrl}`,
-    lastModified: product.updatedAt.slice(0, 10),
+    lastModified: product.updatedAt,
   }));
 
-  const posts = BlogData.map((data) => ({
-    url: `${URL}/blog/${data.id}`,
-    lastModified: data.blogDate,
-  }));
+  const posts = BlogData.map((data) => {
+    const originalDate = new Date(data.blogDate);
+
+    const formattedDate = originalDate.toISOString();
+
+    return {
+      url: `${URL}/blog/${data.id}`,
+      lastModified: formattedDate,
+    };
+  });
 
   const routes = [
     "",
