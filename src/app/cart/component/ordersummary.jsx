@@ -122,12 +122,10 @@ const ordersummary = () => {
           )
           .filter(Boolean);
 
-        console.log("subscribers", subscriber?.kyc);
-
         if (subscriber.includes(true)) {
-          // const discountedAmount = calculatePrice() * 0.3;
-          // setDiscount(discountedAmount);
-          // dispatch(getDiscountedAmount(discountedAmount));
+          const discountedAmount = calculatePrice() * 0.3;
+          setDiscount(discountedAmount);
+          dispatch(getDiscountedAmount(discountedAmount));
           dispatch(discountedPercentage("30%"));
           dispatch(discountCode(couponCode));
 
@@ -276,7 +274,7 @@ const ordersummary = () => {
           </div> */}
           {/* {currentRoute === "/cart/checkout" && ( */}
           <div className="mb-4">
-            {/* {currentRoute === "/cart" && (
+            {currentRoute === "/cart" && (
               <>
                 <label className="block mt-2 mb-1">
                   Enter PWID to avail (30% Discount)
@@ -291,12 +289,13 @@ const ordersummary = () => {
                   />
                   <button
                     onClick={handleApplyCoupon}
-                    className="Cartbgcolor text-white rounded px-2 h-10 w-28 ">
+                    className="Cartbgcolor text-white rounded px-2 h-10 w-28 "
+                  >
                     Apply
                   </button>
                 </div>
               </>
-            )} */}
+            )}
             {MyCardCouponAmountRedux > 0 && (
               <div className="flex justify-between mt-5">
                 MyMart MyCard Discounted Price :{" "}
