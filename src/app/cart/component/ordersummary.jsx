@@ -85,11 +85,16 @@ const ordersummary = () => {
       0
     );
 
-    dispatch(cartTotalValue(totalValue));
+    // dispatch(cartTotalValue(totalValue));
     // const discountedAmount = totalValue * discount;
     // setDiscount(discountedAmount);
     return totalValue;
   };
+
+  useEffect(() => {
+    const totalValue = calculatePrice();
+    dispatch(cartTotalValue(totalValue));
+  }, [allProducts, CartData, dispatch]);
 
   useEffect(() => {
     if (DiscountedPercentageRedux === "30%") {
