@@ -35,36 +35,6 @@ const GenerateButton = ({ shipmentId, orderIds }) => {
     }
   };
 
-  const handlePrintManifest = async (orderIds, e) => {
-    e.preventDefault();
-    if (orderIds) {
-      // console.log("orderIds--->>", orderIds);
-      const postData = {
-        order_ids: [orderIds],
-      };
-      try {
-        const res = await axios.post(
-          "https://apiv2.shiprocket.in/v1/external/manifests/print",
-          postData,
-          {
-            headers: {
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        if (res?.data) {
-          toast.success("Downloaded Manifest");
-          const data = res?.data?.manifest_url;
-          window.open(data, "_blank");
-          // console.log("PrintManifest", res?.data);
-        }
-      } catch (error) {
-        console.error("Error PrintManifest:", error);
-      }
-    }
-  };
-
   const handleGenerateLabel = async (shipmentId, e) => {
     e.preventDefault();
     if (shipmentId) {
@@ -130,29 +100,64 @@ const GenerateButton = ({ shipmentId, orderIds }) => {
     }
   };
 
+  const handlePrintManifest = async (orderIds) => {
+    // e.preventDefault();
+    if (orderIds) {
+      // console.log("orderIds--->>", orderIds);
+      const postData = {
+        order_ids: [orderIds],
+      };
+      try {
+        const res = await axios.post(
+          "https://apiv2.shiprocket.in/v1/external/manifests/print",
+          postData,
+          {
+            headers: {
+              Authorization: `Bearer ${process.env.NEXT_PUBLIC_SHIPROCKET_TOKEN}`,
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (res?.data) {
+          toast.success("Downloaded Manifest");
+          const data = res?.data?.manifest_url;
+          window.open(data, "_blank");
+          console.log("PrintManifest", res);
+        }
+      } catch (error) {
+        console.error("Error PrintManifest:", error);
+        toast.error(error?.response?.data?.message || "An error occurred");
+      }
+    }
+  };
+
   return (
     <div>
       <button
         className="bg-red-400  text-white px-4 py-2 rounded-xl"
-        onClick={handleGenerateManifest}>
+        onClick={handleGenerateManifest}
+      >
         Generate Manifest
       </button>
 
       <button
         className="bg-red-400  text-white px-4 py-2 rounded-xl mt-1"
-        onClick={(e) => handlePrintManifest(shipmentId, e)}>
+        onClick={() => handlePrintManifest(orderIds)}
+      >
         Download Manifest
       </button>
 
       <button
         className="bg-red-400  text-white px-4 py-2 rounded-xl my-1"
-        onClick={(e) => handleGenerateLabel(shipmentId, e)}>
+        onClick={(e) => handleGenerateLabel(shipmentId, e)}
+      >
         Download Label
       </button>
 
       <button
         className="bg-red-400  text-white px-4 py-2 rounded-xl"
-        onClick={() => handleGenerateInvoice(orderIds)}>
+        onClick={() => handleGenerateInvoice(orderIds)}
+      >
         Download Invoice
       </button>
     </div>

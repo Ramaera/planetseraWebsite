@@ -72,7 +72,8 @@ const ReceivedOrder = () => {
         </Typography>
 
         <TableContainer
-          style={{ overflowX: "auto", borderWidth: 3, borderRadius: 10 }}>
+          style={{ overflowX: "auto", borderWidth: 3, borderRadius: 10 }}
+        >
           <Table>
             <TableHead className="bg-slate-300">
               <TableRow>
@@ -153,16 +154,27 @@ const ReceivedOrder = () => {
                         getShiprocketShipmentId(user) ||
                         user?.status != "PROCESSING"
                       }
-                      onClick={() => handleOrderToProceed(user)}>
+                      onClick={() => handleOrderToProceed(user)}
+                    >
                       Create Order To Shiprocket
                     </button>
                   </TableCell>
 
                   <TableCell>
-                    {getShiprocketShipmentId(user) && (
+                    {getShiprocketOrderId(user) && (
                       <button
-                        className="bg-red-400  text-white px-4 py-2 rounded-xl"
-                        onClick={() => handleShipmentPickup(user)}>
+                        className={`${
+                          getShiprocketShipmentId(user) ||
+                          user?.status != "PROCESSING"
+                            ? "bg-gray-400"
+                            : "bg-red-400"
+                        }  text-white px-4 py-2 rounded-xl`}
+                        onClick={() => handleShipmentPickup(user)}
+                        disabled={
+                          getShiprocketOrderId(user) ||
+                          user?.status != "PROCESSING"
+                        }
+                      >
                         Shipment Pickup
                       </button>
                     )}
