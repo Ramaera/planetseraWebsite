@@ -225,6 +225,21 @@ const NavigationMobile = ({ page }) => {
                   </li>
                   <li>
                     <Link
+                      onClick={handleLogout}
+                      href=""
+                      passHref
+                      className="px-4 py-2 flex w-full rounded-md"
+                      style={{
+                        color: currentRoute === "/logout" ? colorMe : undefined,
+                        fontWeight:
+                          currentRoute === "/logout" ? 600 : undefined,
+                      }}
+                    >
+                      Logout
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/orders"
                       passHref
                       className="px-4 py-2 flex w-full rounded-md"
@@ -254,21 +269,7 @@ const NavigationMobile = ({ page }) => {
                     </Link>
                   </li>
 
-                  <li>
-                    <Link
-                      onClick={handleLogout}
-                      href=""
-                      passHref
-                      className="px-4 py-2 flex w-full rounded-md"
-                      style={{
-                        color: currentRoute === "/logout" ? colorMe : undefined,
-                        fontWeight:
-                          currentRoute === "/logout" ? 600 : undefined,
-                      }}
-                    >
-                      Logout
-                    </Link>
-                  </li>
+               
                 </>
               )}
 
