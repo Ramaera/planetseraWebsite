@@ -218,7 +218,7 @@ const page = () => {
 
   const calculateTotalPrice = () => {
     const priceAfterDiscount = cartTotalValue - discount;
-    const totalPrice = priceAfterDiscount + ShippingChargeRedux;
+    const totalPrice = priceAfterDiscount ; // removed Shipping charge 
     return totalPrice;
   };
 

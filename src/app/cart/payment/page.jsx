@@ -133,13 +133,11 @@ const page = () => {
       0
     );
   };
-
-  console.log("calculatePrice", calculatePrice());
-
   const calculateTotalPrice = () => {
     const priceAfterDiscount = calculatePrice() - discount;
     const PriceAfterCardDiscount = priceAfterDiscount - MyCardCouponAmountRedux;
-    const totalPrice = PriceAfterCardDiscount + ShippingChargeRedux;
+    const totalPrice = PriceAfterCardDiscount 
+    // + ShippingChargeRedux;
     return totalPrice;
   };
 

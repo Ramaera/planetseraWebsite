@@ -41,7 +41,7 @@ const ordersummary = () => {
 
   const [discount, setDiscount] = useState(0);
   const [discountPercentage, setDiscountPercentage] = useState(0.1);
-  const [shipping, setShipping] = useState(100);
+  const [shipping, setShipping] = useState(0);
   const user = useSelector((state) => state?.user);
   const [loginModal, setLoginModal] = useState(false);
   const [checkoutEnabled, setCheckoutEnabled] = useState(false);
@@ -190,7 +190,8 @@ const ordersummary = () => {
   const calculateTotalPrice = () => {
     const priceAfterDiscount = calculatePrice() - discount;
     const PriceAfterCardDiscount = priceAfterDiscount - MyCardCouponAmountRedux;
-    const totalPrice = PriceAfterCardDiscount + ShippingChargeRedux;
+    const totalPrice = PriceAfterCardDiscount 
+    // + ShippingChargeRedux;
     return totalPrice;
   };
 
@@ -325,7 +326,8 @@ const ordersummary = () => {
             <div className="flex  justify-between mt-5">
               Shipping{" "}
               <span className="Cart-remove">
-                + ₹{Math.round(ShippingChargeRedux)}
+                Free Shipping
+                {/* + ₹{Math.round(ShippingChargeRedux)} */}
               </span>
             </div>
             <div className="flex  justify-between mt-5">
