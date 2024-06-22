@@ -54,9 +54,9 @@ const page = () => {
   const cartTotalValue = useSelector((state) => state.cart.cartTotalValue);
   const discountCode = useSelector((state) => state.cart.discountCode);
   const discount = useSelector((state) => state.cart.getDiscountedAmount);
-  const ShippingChargeRedux = useSelector(
-    (state) => state.shipment.shippingCharge
-  );
+  // const ShippingChargeRedux = useSelector(
+  //   (state) => state.shipment.shippingCharge
+  // );
 
   const [createOrder] = useMutation(CREATE_ORDER);
   const [deleteCart] = useMutation(DELETE_CART);
@@ -94,7 +94,7 @@ const page = () => {
       const resp = await createOrder({
         variables: {
           AddressId: parseInt(AddressId),
-          ShippingCost: ShippingChargeRedux,
+          ShippingCost: 0,
           buyerId: BuyerId,
           cartId: CartId,
           orderAmount: Math.round(parseInt(calculateTotalPrice())),
