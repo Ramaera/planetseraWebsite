@@ -113,9 +113,9 @@ const page = () => {
   const CartData = useSelector((state) => state.cart.items);
 
   const allProductsQuery = useQuery(Get_All_Products);
-  const ShippingChargeRedux = useSelector(
-    (state) => state.shipment.shippingCharge
-  );
+  // const ShippingChargeRedux = useSelector(
+  //   (state) => state.shipment.shippingCharge
+  // );
 
   const allProducts =
     allProductsQuery.data?.allProducts.flatMap(

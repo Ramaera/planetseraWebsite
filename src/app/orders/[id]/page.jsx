@@ -205,7 +205,7 @@ const OrderDetails = () => {
                   </div>
                   <div className="flex justify-between mt-4">
                     <p>Shipping Charges:</p>
-                    <span>₹ {specificOrder?.ShippingCost}</span>
+                    <span>₹ {specificOrder?.ShippingCost }</span>
                   </div>
                   <div className="flex justify-between mt-4">
                     <p>Others Charges:</p>

@@ -56,9 +56,9 @@ const ordersummary = () => {
     ) || [];
   // const FreightCharge = useSelector((state) => state.shipment.freightCharge);
 
-  const ShippingChargeRedux = useSelector(
-    (state) => state.shipment.shippingCharge
-  );
+  // const ShippingChargeRedux = useSelector(
+  //   (state) => state.shipment.shippingCharge
+  // );
 
   const discountAmountRedux = useSelector(
     (state) => state.cart.getDiscountedAmount
