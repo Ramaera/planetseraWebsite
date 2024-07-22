@@ -18,7 +18,7 @@ const BlogData = [
         blogList: (
           <>
             The Alchemy of DIY{" "}
-            <Link className="text-red-500" href="/products/red-chilli-powder">
+            <Link className="text-red-500" href="/product/red-chilli-powder">
               Red Chilli Powder
             </Link>{" "}
           </>
@@ -47,7 +47,7 @@ const BlogData = [
                 The foundation of a great{" "}
                 <Link
                   className="text-red-500"
-                  href="/products/red-chilli-powder"
+                  href="/product/red-chilli-powder"
                 >
                   red chilli powder
                 </Link>{" "}
@@ -112,7 +112,7 @@ const BlogData = [
                 The key to achieving a fine and uniform{" "}
                 <Link
                   className="text-red-500"
-                  href="/products/red-chilli-powder"
+                  href="/product/red-chilli-powder"
                 >
                   red chilli powder
                 </Link>{" "}
@@ -269,7 +269,7 @@ const BlogData = [
         blogListAbout: (
           <>
             In the vast tapestry of culinary adventures, the{" "}
-            <Link className="text-red-500" href="/products/sabji-masala">
+            <Link className="text-red-500" href="/product/sabji-masala">
               Sabji Masala
             </Link>{" "}
             Chronicles unfold as a captivating saga of vegetarian delights. As
@@ -312,7 +312,7 @@ const BlogData = [
                 delve into the Chronicles, we discover that this spice blend
                 brings the magic of rich flavors to the kitchen without taxing
                 your budget. Affordable{" "}
-                <Link className="text-red-500" href="/products/sabji-masala">
+                <Link className="text-red-500" href="/product/sabji-masala">
                   sabji masala
                 </Link>{" "}
                 ensures that the joy of culinary exploration is accessible to
@@ -367,7 +367,7 @@ const BlogData = [
         blogList: (
           <>
             Chapter 4: Global Fusion and{" "}
-            <Link className="text-red-500" href="/products/sabji-masala">
+            <Link className="text-red-500" href="/product/sabji-masala">
               Sabji Masala
             </Link>
           </>
@@ -481,7 +481,7 @@ const BlogData = [
           <>
             In the tapestry of traditional medicine, one golden spice has stood
             the test of time—
-            <Link className="text-red-500" href="/products/turmeric-powder">
+            <Link className="text-red-500" href="/product/turmeric-powder">
               turmeric
             </Link>
             . Revered for its vibrant color, distinct flavor, and a myriad of
@@ -570,7 +570,7 @@ const BlogData = [
         blogList: (
           <>
             Organic{" "}
-            <Link className="text-red-500" href="/products/turmeric-powder">
+            <Link className="text-red-500" href="/product/turmeric-powder">
               Turmeric Powder
             </Link>
             : Purity and Potency Unleashed
@@ -628,7 +628,7 @@ const BlogData = [
         blogList: (
           <>
             Choosing the Right Organic{" "}
-            <Link className="text-red-500" href="/products/turmeric-powder">
+            <Link className="text-red-500" href="/product/turmeric-powder">
               Haldi Powder:
             </Link>{" "}
             A Vital Consideration
@@ -742,7 +742,7 @@ const BlogData = [
         blogList: (
           <>
             The Versatility of{" "}
-            <Link className="text-red-500" href="/products/red-chilli-powder">
+            <Link className="text-red-500" href="/product/red-chilli-powder">
               Red Chilli Powder
             </Link>
           </>
@@ -764,7 +764,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Mexican cuisine is renowned for its bold and vibrant flavors, and
-            <Link className="text-red-500" href="/products/red-chilli-powder">
+            <Link className="text-red-500" href="/product/red-chilli-powder">
               red chilli powder
             </Link>{" "}
             plays a crucial role in achieving this. From salsas to enchiladas,
@@ -810,7 +810,7 @@ const BlogData = [
         blogListAbout: (
           <>
             In Middle Eastern cuisine,{" "}
-            <Link className="text-red-500" href="/products/red-chilli-powder">
+            <Link className="text-red-500" href="/product/red-chilli-powder">
               red chilli powder
             </Link>{" "}
             is used to add warmth and depth to dishes. It is commonly found in
@@ -838,7 +838,7 @@ const BlogData = [
               bringing a fiery and flavorful element to the meal.
             </p>
             <p className="mt-5">
-              <Link className="text-red-500" href="/products/red-chilli-powder">
+              <Link className="text-red-500" href="/product/red-chilli-powder">
                 red chilli powder
               </Link>{" "}
               , with its fiery heat and vibrant flavor, has become a global
@@ -878,7 +878,7 @@ const BlogData = [
         ),
         blogListAbout: (
           <>
-            <Link className="text-red-500" href="/products/sabji-masala">
+            <Link className="text-red-500" href="/product/sabji-masala">
               Sabji masala
             </Link>{" "}
             , is a fragrant and flavorful spice blend that can transform any
@@ -919,7 +919,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Many of the spices used in{" "}
-            <Link className="text-red-500" href="/products/sabji-masala">
+            <Link className="text-red-500" href="/product/sabji-masala">
               sabji masala,
             </Link>{" "}
             , such as turmeric, ginger, and garlic, are known for their
@@ -976,7 +976,7 @@ const BlogData = [
         blogListAbout: (
           <>
             The combination of spices in{" "}
-            <Link className="text-red-500" href="/products/sabji-masala">
+            <Link className="text-red-500" href="/product/sabji-masala">
               sabji masala
             </Link>{" "}
             can aid in weight management. Spices like black pepper, ginger, and
@@ -1032,7 +1032,7 @@ const BlogData = [
       <>
         In the world of culinary delights, few ingredients bring both vibrancy
         and health benefits to the table quite like{" "}
-        <Link href="/products/turmeric-powder" className="text-red-500">
+        <Link href="/product/turmeric-powder" className="text-red-500">
           turmeric powder
         </Link>
         , also known as haldi powder. Beyond its stunning golden hue, turmeric
@@ -1325,7 +1325,7 @@ const BlogData = [
             <div className="">
               {" "}
               Choosing Quality A Flavorful Journey{" "}
-              <Link className="text-red-500" href="/products/turmeric-powder">
+              <Link className="text-red-500" href="/product/turmeric-powder">
                 Turmeric Powder{" "}
               </Link>
               : A Flavorful Journey
@@ -1361,7 +1361,7 @@ const BlogData = [
             </p>
             <p className="mt-5">
               As you embrace the palette of wellness with organic{" "}
-              <Link className="text-red-500" href="/products/turmeric-powder">
+              <Link className="text-red-500" href="/product/turmeric-powder">
                 haldi powder{" "}
               </Link>
               , let the richness of turmeric powder benefits enhance not only
@@ -1408,7 +1408,7 @@ const BlogData = [
               The History and Origins of{" "}
               <Link
                 className="text-red-500"
-                href="/products/black-pepper-powder"
+                href="/product/black-pepper-powder"
               >
                 Black Pepper:
               </Link>
@@ -1475,7 +1475,7 @@ const BlogData = [
               are some creative ways to incorporate whole{" "}
               <Link
                 className="text-red-500"
-                href="/products/black-pepper-powder"
+                href="/product/black-pepper-powder"
               >
                 black pepper:
               </Link>
@@ -1518,7 +1518,7 @@ const BlogData = [
               Utilizing Ground{" "}
               <Link
                 className="text-red-500"
-                href="/products/black-pepper-powder"
+                href="/product/black-pepper-powder"
               >
                 Black Pepper Powder:
               </Link>
@@ -1572,7 +1572,7 @@ const BlogData = [
               Tips for Storing{" "}
               <Link
                 className="text-red-500"
-                href="/products/black-pepper-powder"
+                href="/product/black-pepper-powder"
               >
                 Black Pepper Powder:
               </Link>
@@ -1647,7 +1647,7 @@ const BlogData = [
             Indian cuisine, its versatility extends beyond traditional dishes.
             In this culinary exploration, we'll embark on a global fusion
             journey, discovering creative ways to use{" "}
-            <Link className="text-red-500" href="/products/garam-masala">
+            <Link className="text-red-500" href="/product/garam-masala">
               garam masala
             </Link>{" "}
             in non-traditional recipes. From understanding the garam masala
@@ -1665,7 +1665,7 @@ const BlogData = [
             {" "}
             <div>
               Section 1: Deconstructing{" "}
-              <Link className="text-red-500" href="/products/garam-masala">
+              <Link className="text-red-500" href="/product/garam-masala">
                 Garam Masala
               </Link>{" "}
               Ingredients
@@ -1679,14 +1679,11 @@ const BlogData = [
               <p className="text-base font-normal  mt-2 ml-5">
                 Garam masala typically consists of a blend of warm spices,
                 including cinnamon, cardamom, cloves,{" "}
-                <Link className="text-red-500" href="/products/cumin-powder">
+                <Link className="text-red-500" href="/product/cumin-powder">
                   cumin
                 </Link>
                 , and{" "}
-                <Link
-                  className="text-red-500"
-                  href="/products/coriander-powder"
-                >
+                <Link className="text-red-500" href="/product/coriander-powder">
                   coriander.
                 </Link>{" "}
                 Understanding the balance and synergy between these garam masala
@@ -1705,7 +1702,7 @@ const BlogData = [
               2. Customizing Garam Masala:
               <p className="text-base font-normal  mt-2 ml-5">
                 The beauty of{" "}
-                <Link className="text-red-500" href="/products/garam-masala">
+                <Link className="text-red-500" href="/product/garam-masala">
                   garam masala.
                 </Link>{" "}
                 lies in its adaptability. Adventurous cooks can experiment with
@@ -1752,7 +1749,7 @@ const BlogData = [
             {" "}
             <div>
               Section 3:{" "}
-              <Link href="/products/garam-masala" className="text-red-500">
+              <Link href="/product/garam-masala" className="text-red-500">
                 Garam Masala
               </Link>{" "}
               Spices Meet Mexican Cuisine
@@ -1876,7 +1873,7 @@ const BlogData = [
             {" "}
             <div>
               A
-              <Link href="/products/garam-msala" className="text-red-500">
+              <Link href="/product/garam-msala" className="text-red-500">
                 Garam Masala
               </Link>{" "}
               Culinary Adventure
@@ -1929,7 +1926,7 @@ const BlogData = [
         blogListAbout: (
           <>
             Red chilli powder, or{" "}
-            <Link className="text-red-500" href="/products/red-chilli-powder">
+            <Link className="text-red-500" href="/product/red-chilli-powder">
               lal mirch powder
             </Link>{" "}
             , is often celebrated for its fiery flavor and culinary versatility,
@@ -1951,7 +1948,7 @@ const BlogData = [
             {" "}
             <div>
               Section 1: The Nutrient Profile of{" "}
-              <Link className="text-red-500" href="/products/red-chilli-powder">
+              <Link className="text-red-500" href="/product/red-chilli-powder">
                 Red Chilli Powder
               </Link>{" "}
             </div>
@@ -2029,7 +2026,7 @@ const BlogData = [
                 and reducing the risk of hypertension. Including{" "}
                 <Link
                   className="text-red-500"
-                  href="/products/red-chilli-powder"
+                  href="/product/red-chilli-powder"
                 >
                   red chilli powder
                 </Link>{" "}
@@ -2144,7 +2141,7 @@ const BlogData = [
             {" "}
             <div>
               Embracing{" "}
-              <Link href="/products/red-chilli-powder" className="text-red-400">
+              <Link href="/product/red-chilli-powder" className="text-red-400">
                 Red Chilli Powder
               </Link>{" "}
               for Holistic Wellness
