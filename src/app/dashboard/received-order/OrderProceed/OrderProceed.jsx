@@ -124,8 +124,10 @@ const OrderProceed = ({
     const shipmentIdFilter = selectedOrder?.shipRocketDetails
       ?.flatMap((list) => list?.shiprocket_ShipmentId)
       .filter((shiprocket) => shiprocket)[0];
+
     setShipmentId(shipmentIdFilter);
   }, []);
+
   const subTotal =
     selectedOrder?.orderAmount +
     selectedOrder?.discountedAmount -
@@ -188,7 +190,7 @@ const OrderProceed = ({
           refetchAllOrders();
           onOpenShipmentpIckup();
           toast.success("Shipment Order Created", { duration: 4000 });
-          console.log("done", data);
+          // console.log("done", data);
         }
       } catch (error) {
         console.error("Error:", error);
@@ -202,9 +204,9 @@ const OrderProceed = ({
   };
 
   const handleShipmentPickup = async () => {
-    console.log("shipmentId eee");
+    // console.log("shipmentId eee");
     if (shipmentId) {
-      console.log("shipmentId", shipmentId);
+      // console.log("shipmentId", shipmentId);
       const postData = {
         shipment_id: shipmentId,
       };
@@ -222,10 +224,10 @@ const OrderProceed = ({
         if (resShiprocket?.data) {
           const data = resShiprocket?.data?.response?.data;
           await handleUpdateShiprocketDetails(data);
-          console.log(
-            "resShiprocket?.data",
-            resShiprocket?.data?.response?.data
-          );
+          // console.log(
+          //   "resShiprocket?.data",
+          //   resShiprocket?.data?.response?.data
+          // );
           toast.success("Shipment Pickup Created", { duration: 4000 });
         }
       } catch (error) {
@@ -243,15 +245,15 @@ const OrderProceed = ({
   };
 
   const handleShiprocketDetails = async (data) => {
-    console.log(
-      "enter",
-      data,
-      parseInt(selectedOrder?.id),
-      data?.order_id,
-      data?.shipment_id,
-      data?.status,
-      data?.status_code
-    );
+    // console.log(
+    //   "enter",
+    //   data,
+    //   parseInt(selectedOrder?.id),
+    //   data?.order_id,
+    //   data?.shipment_id,
+    //   data?.status,
+    //   data?.status_code
+    // );
     try {
       const resp = await shiprocketDetails({
         variables: {
@@ -263,17 +265,17 @@ const OrderProceed = ({
           metaData: [],
         },
       });
-      console.log("resp", resp);
+      // console.log("resp", resp);
     } catch (err) {
       console.log("err", err.message);
     }
   };
 
   const shiprocketId = selectedOrder?.shipRocketDetails[0]?.id;
-  console.log("shiprocketId", shiprocketId);
+  // console.log("shiprocketId", shiprocketId);
 
   const handleUpdateShiprocketDetails = async (data) => {
-    console.log("enter", shiprocketId, data);
+    // console.log("enter", shiprocketId, data);
     try {
       const resp = await updateShiprocketDetails({
         variables: {
@@ -281,7 +283,7 @@ const OrderProceed = ({
           metaData: [{ shipmentPickupData: data }],
         },
       });
-      console.log("resp", resp);
+      // console.log("resp", resp);
     } catch (err) {
       console.log("err", err.message);
     }
@@ -298,7 +300,8 @@ const OrderProceed = ({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-        }}>
+        }}
+      >
         <div className="bg-slate-50 rounded-lg w-4/5	sm:w-[36rem] max-h-[90%] overflow-y-auto">
           <div>
             <h3 className="text-center font-semibold text-xl border-b-2 border-black px-4 py-2">
@@ -489,7 +492,8 @@ const OrderProceed = ({
               <div className="flex justify-center">
                 <button
                   className="bg-red-400  text-white px-4 py-2 rounded-xl mt-4"
-                  onClick={handleSubmit}>
+                  onClick={handleSubmit}
+                >
                   Submit
                 </button>
               </div>
@@ -508,7 +512,8 @@ const OrderProceed = ({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-        }}>
+        }}
+      >
         <div className="bg-slate-50 rounded-lg w-4/5	sm:w-[36rem] max-h-[90%] overflow-y-auto">
           <div>
             <h3 className="text-center font-semibold text-xl border-b-2 border-black px-4 py-2">
@@ -565,7 +570,8 @@ const OrderProceed = ({
               <div className="flex justify-center">
                 <button
                   className="bg-red-400  text-white px-4 py-2 rounded-xl mt-4"
-                  onClick={handleShipmentPickup}>
+                  onClick={handleShipmentPickup}
+                >
                   Confirm Shipment Pickup
                 </button>
               </div>
