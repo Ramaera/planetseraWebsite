@@ -26,6 +26,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
 import Link from "next/link";
+import { isFestivalDay } from "@/utils/isFestivalDay";
 const ordersummary = () => {
   const dispatch = useDispatch();
   const currentRoute = usePathname();
@@ -91,6 +92,10 @@ const ordersummary = () => {
     return totalValue;
   };
 
+
+  const percentageDiscount=isFestivalDay?"50%":"10%"
+  const percentageValue=isFestivalDay?0.5:0.1
+
   useEffect(() => {
     const totalValue = calculatePrice();
     dispatch(cartTotalValue(totalValue));
@@ -101,12 +106,12 @@ const ordersummary = () => {
       const discountedAmount = calculatePrice() * 0.3;
       setDiscount(discountedAmount);
       dispatch(getDiscountedAmount(discountedAmount));
-    } else if (DiscountedPercentageRedux === "10%") {
-      const discountedAmount = calculatePrice() * 0.1;
+    } else if (DiscountedPercentageRedux === percentageDiscount) {
+      const discountedAmount = calculatePrice() * percentageValue;
       setDiscount(discountedAmount);
       dispatch(getDiscountedAmount(discountedAmount));
     } else {
-      const discountedAmount = calculatePrice() * 0.1;
+      const discountedAmount = calculatePrice() * percentageValue;
       setDiscount(discountedAmount);
       dispatch(getDiscountedAmount(discountedAmount));
     }
@@ -147,7 +152,7 @@ const ordersummary = () => {
           });
         } else {
           dispatch(discountCodeClear());
-          dispatch(discountedPercentage("10%"));
+          dispatch(discountedPercentage(percentageDiscount));
           // const discountedAmount = calculatePrice() * 0.1;
           // setDiscount(discountedAmount);
           // dispatch(getDiscountedAmount(discountedAmount));
@@ -280,7 +285,7 @@ const ordersummary = () => {
           </div> */}
           {/* {currentRoute === "/cart/checkout" && ( */}
           <div className="mb-4">
-            {currentRoute === "/cart" && (
+            {currentRoute === "/cart" && !isFestivalDay && (
               <>
                 <label className="block mt-2 mb-1">
                   Enter PWID to avail (30% Discount)
@@ -312,7 +317,7 @@ const ordersummary = () => {
             )}
 
             <div className="flex justify-between mt-5">
-              Discount (%) Apply :{" "}
+              Discount (%) Apply :{" "} {isFestivalDay?"Rakhi Special Discount":""}
               <span className={"text-green-500"}>
                 {DiscountedPercentageRedux}
               </span>

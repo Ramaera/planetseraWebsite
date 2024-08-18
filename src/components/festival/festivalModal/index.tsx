@@ -19,7 +19,7 @@ const FestivalModal = () => {
               X
             </button>
             <img
-              src="/images/festivalImg/HanumanJayanti.jpg"
+              src="/images/festivalImg/rakhiFestival.jpeg"
               alt="Festival Greetings"
               className="w-full border-2 border-black"
             />

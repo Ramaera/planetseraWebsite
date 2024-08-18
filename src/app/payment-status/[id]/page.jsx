@@ -27,6 +27,7 @@ import {
 } from "@/state/slice/cartSlice";
 
 import CircularProgress from "@mui/material/CircularProgress";
+import { isFestivalDay } from "@/utils/isFestivalDay";
 
 const page = () => {
   const user = useSelector((state) => state?.user);
@@ -232,7 +233,7 @@ const page = () => {
 
       await dispatch(clearCart());
       await dispatch(discountCodeClear());
-      await dispatch(discountedPercentage("10%"));
+      await dispatch(discountedPercentage(isFestivalDay?"50%":"10%"));
 
       // await handleOrderPlaced();
     } catch (err) {

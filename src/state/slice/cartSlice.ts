@@ -1,5 +1,6 @@
 // cartSlice.js
 import { createSlice } from "@reduxjs/toolkit";
+import { isFestivalDay } from "@/utils/isFestivalDay";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -8,7 +9,7 @@ const cartSlice = createSlice({
     cartTotalValue: 0,
     shippingValue: 0,
     getDiscountedAmount: 0,
-    discountedPercentage: "10%",
+    discountedPercentage: isFestivalDay?"50%":"10%",
     discountCode: null,
     myCardMyMartCouponCode: null,
     myCardMyMartCouponAmount: 0,
