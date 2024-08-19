@@ -4,8 +4,9 @@ import FestivalModal from "../festival/festivalModal";
 
 const LogoSection = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
-  const festivalDate = new Date("2024-08-18"); // Example: April 22, 2024
+  // Example: April 22, 2024
   const currentDate = new Date();
+  const festivalDate = new Date("2024-08-19"); 
 
   const isFestivalDay =
     currentDate.getDate() === festivalDate.getDate() &&
