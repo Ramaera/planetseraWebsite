@@ -54,6 +54,7 @@ const page = () => {
     "Kitchen Spices",
     "Weekand Tadka",
     "Best Selling",
+    "Others",
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -270,6 +271,7 @@ const page = () => {
                   <option value="">Select Product Type</option>
                   <option value="blended">Blended</option>
                   <option value="grounded">Grounded</option>
+                  <option value="atc">ATC Box</option>
                 </select>
               </div>
               <div className="mb-4 relative">

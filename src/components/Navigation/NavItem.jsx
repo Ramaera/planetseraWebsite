@@ -92,13 +92,17 @@ const NavItem = ({ page }) => {
               page === "products" ||
               page === "privacy-policy" ||
               page === "return-policy" ||
-              page === "orders") &&
+              page === "orders" ||
+              page === "shop-all") &&
             "black",
         }}
         id="navigation"
         className={`hidden md:flex  md:text-base xl:text-lg space-x-6  lg:float-right rounded-3xl`}>
         <li>
           <Link href="/">Home</Link>
+        </li>
+        <li>
+          <Link href="/shop-all">Shop All</Link>
         </li>
         <li>
           <Link href="/product">Product</Link>

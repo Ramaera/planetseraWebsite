@@ -30,6 +30,7 @@ const MasalaGallery = () => {
           {allProducts?.data?.allProducts?.map((items, index) => {
             if (
               !items.category.includes("ComingSoon") &&
+              !items.category.includes("Others") &&
               (items.title.includes("Sabji Masala") ||
                 items.title.includes("Chat Masala") ||
                 items.title.includes("Amchur Powder") ||
@@ -43,8 +44,7 @@ const MasalaGallery = () => {
                 <div key={index}>
                   <Link
                     href={`/product/${items.productUrl}`}
-                    className="flex items-center justify-center"
-                  >
+                    className="flex items-center justify-center">
                     <img
                       alt="sabji masala"
                       title="Selected Premium Sabji Masala"
@@ -77,6 +77,7 @@ const MasalaGallery = () => {
         {allProducts?.data?.allProducts.map((items) => {
           if (
             !items.category.includes("ComingSoon") &&
+            !items.category.includes("Others") &&
             (items.title.includes("Sabji Masala") ||
               items.title.includes("Chat Masala") ||
               items.title.includes("Amchur Powder") ||

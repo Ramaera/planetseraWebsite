@@ -61,6 +61,7 @@ const AddProduct = () => {
     "Kitchen Spices",
     "Weekand Tadka",
     "Best Selling",
+    "Others",
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -240,6 +241,7 @@ const AddProduct = () => {
                   <option value="">Select Product Type</option>
                   <option value="blended">Blended</option>
                   <option value="grounded">Grounded</option>
+                  <option value="atc">ATC Box</option>
                 </select>
               </div>
               <div className="mb-4 relative">
