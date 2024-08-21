@@ -41,14 +41,11 @@
   margin-top: -1px;
   color: #ff4f4f;
   font-size: 18px;
-  
 }
 
 .active-2 {
   background-color: #ffff;
 }
-
-
 
 .slider-Image {
   background-repeat: no-repeat;
@@ -72,7 +69,7 @@
 #search::placeholder {
   color: #ff4f4f;
   color: white;
-   
+
   font-size: 18px;
   margin-right: 22px;
 }
@@ -103,7 +100,7 @@
   background-clip: text;
   font-style: normal;
   font-weight: 600;
-  font-size: 81px;
+  /* font-size: 81px; */
   line-height: 81px;
   letter-spacing: 3px;
 }

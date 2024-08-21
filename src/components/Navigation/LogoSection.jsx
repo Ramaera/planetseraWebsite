@@ -19,7 +19,7 @@ const LogoSection = () => {
       <div className="basis-4/12 2xl:basis-6/12 md:pl-2 xl:pl-5 myPos mt-14">
         <div className="basis-4/12 h-[450px] flex md:h-[660px] flex-col justify-center w-full px-5 md:px-0">
           <h1
-            className="heading-text absolute top-28 scale-95 text-4xl my-10 md:my-12 xl:my-10 md:text-5xl xl:text-6xl md:leading-tight hidden md:block font-['Oriya MN']"
+            className="heading-text absolute top-28 scale-95 text-4xl my-10 md:my-12 xl:my-10 md:text-5xl xl:text-7xl md:leading-tight hidden md:block font-['Oriya MN']"
             style={{
               WebkitTextFillColor: "transparent",
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
@@ -39,7 +39,7 @@ const LogoSection = () => {
             Diverse blend of culture and taste
           </h3>
 
-          <p className="my-4 md:my-8 text-[16px] md:mt-24 w-full text-[#1e1e1e] md:pl-4 md:px-0 leading-[30px] font-normal">
+          <p className="my-4 md:my-8 text-[16px] md:mt-32 w-full text-[#1e1e1e] md:pl-4 md:px-0  leading-[30px] font-normal">
             We deliver the essence of authenticity to every kitchen as a leading
             supplier of spices. Our extensive selection, which includes tasty
             Mirch, zesty Dhaniya, and aromatic Haldi powders, is obtained from
