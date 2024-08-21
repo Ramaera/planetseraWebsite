@@ -144,7 +144,7 @@ const AtcBox = () => {
   return (
     <div className="mt-10">
       <div className="sm:text-left flex flex-col justify-center items-center">
-        <h4 className="text-[#1E1E1E] text-2xl sm:text-3xl font-['Montserrat'] font-bold text-center">
+        <h4 className="text-[#1E1E1E] text-2xl sm:text-4xl font-['Montserrat'] font-bold text-center">
           Our ATC Box Products
         </h4>
       </div>

@@ -166,14 +166,14 @@ const ZipperPouch = () => {
 
   return (
     <>
-      <div className="mt-14 sm:mt-10 xl:mt-2 2xl:mt-[-1rem]">
+      <div className="mt-4 sm:mt-[-2rem] xl:mt-8">
         <div className="sm:text-left flex flex-col justify-center items-center">
-          <h3
+          {/* <h3
             className="text-white p-6 w-full text-center text-2xl sm:text-3xl font-bold mb-4"
             style={{ background: colorMe }}>
             SHOP ALL VARIANTS OF OUR PRODUCTS
-          </h3>
-          <h4 className="text-[#1E1E1E] text-2xl sm:text-3xl font-['Montserrat'] font-bold text-center">
+          </h3> */}
+          <h4 className="text-[#1E1E1E] text-2xl sm:text-4xl font-['Montserrat'] font-bold text-center">
             Our Zipper Pouch Products
           </h4>
           <div className="flex space-x-4 mt-4 ">
@@ -204,69 +204,77 @@ const ZipperPouch = () => {
               return product.matchingVariants.map((variant) => (
                 <div
                   key={`${product.id}-${variant.weight}`}
-                  className="m-2 w-[45%] md:w-[22%] flex flex-col items-center border-gray-200 border-[1px] rounded-xl p-1 sm:p-3">
-                  <div
-                    style={{
-                      background: product?.metaData[0]?.bgColor,
-                    }}
-                    className="flex items-center justify-center rounded-xl p-4 w-full">
-                    <div className="flex items-center justify-center">
+                  className="m-2 w-[45%] md:w-[22%] flex flex-col items-center border-gray-200 border-[1px] rounded-xl p-1 sm:p-3 justify-between">
+                  <div>
+                    <div
+                      style={{
+                        background: product?.metaData[0]?.bgColor,
+                      }}
+                      className="flex items-center justify-center rounded-xl p-4 w-full">
+                      <div className="flex items-center justify-center">
+                        <Link href={`/product/${product.productUrl}`}>
+                          <img
+                            className="relative w-48 2xl:w-64"
+                            loading="lazy"
+                            src={`https://planetseraapi.planetsera.com/get-images/${variant?.imageUrl[0]}`}
+                            alt={product.title}
+                            title={product.title}
+                          />
+                        </Link>
+                      </div>
+                    </div>
+
+                    <div className="mt-2 text-center">
                       <Link href={`/product/${product.productUrl}`}>
-                        <img
-                          className="relative w-48 2xl:w-64"
-                          loading="lazy"
-                          src={`https://planetseraapi.planetsera.com/get-images/${variant?.imageUrl[0]}`}
-                          alt={product.title}
-                          title={product.title}
-                        />
+                        <h5 className="font-[Montserrat] text-[13px] sm:text-lg 2xl:text-2xl">
+                          {product?.title} ({variant.weight}g)
+                        </h5>
                       </Link>
                     </div>
                   </div>
+                  <div>
+                    <div className="mt-2 text-center">
+                      <h6 className="text-gray-700 sm:text-lg sm:font-semibold">
+                        Price: ₹{variant.price}
+                      </h6>
+                    </div>
 
-                  <div className="mt-2 text-center">
-                    <Link href={`/product/${product.productUrl}`}>
-                      <h5 className="font-[Montserrat] text-[13px] sm:text-lg 2xl:text-2xl">
-                        {product?.title} ({variant.weight}g)
+                    <div className="sm:h-12 h-[2.5rem] flex justify-between items-center text-xs sm:text-base mt-2 sm:mt-4 px-3 border-2 border-black rounded-3xl sm:w-36 w-[6.5rem]">
+                      <button
+                        onClick={() => handleDecrementQuantity(variant.id)}>
+                        <HorizontalRuleIcon className="w-5 h-5" />
+                      </button>
+                      <h5 className="font-medium text-md text-slate-500">
+                        {quantity[variant.id] || 1}
                       </h5>
-                    </Link>
-                    <h6 className="text-gray-700 sm:text-lg sm:font-semibold">
-                      Price: ₹{variant.price}
-                    </h6>
+                      <button
+                        onClick={() => handleIncrementQuantity(variant.id)}>
+                        <AddIcon />
+                      </button>
+                    </div>
+
+                    <BuynowBtn
+                      onClick={() => handleAddToCart(product, variant)}
+                      link="#"
+                      text={variant.stock > 0 ? "Add to Cart" : "Out Of Stock"}
+                      width={"150px"}
+                      opacity={variant.stock > 0 ? 1 : 0.5}
+                      disabled={variant.stock > 0 ? "" : "disabled"}
+                      padding={"10px"}
+                      sectionClass="responsiveBtn"
+                    />
+
+                    <p
+                      className={`text-sm semibold text-center ${
+                        variant.stock > 0 ? "text-green-500" : "text-red-500"
+                      }`}>
+                      {variant.stock > 0
+                        ? `In Stock: ${
+                            variant.stock > 50 ? "50+" : variant.stock
+                          }`
+                        : "Out of Stock"}
+                    </p>
                   </div>
-
-                  <div className="sm:h-12 h-[2.5rem] flex justify-between items-center text-xs sm:text-base mt-2 sm:mt-4 px-3 border-2 border-black rounded-3xl sm:w-36 w-[6.5rem]">
-                    <button onClick={() => handleDecrementQuantity(variant.id)}>
-                      <HorizontalRuleIcon className="w-5 h-5" />
-                    </button>
-                    <h5 className="font-medium text-md text-slate-500">
-                      {quantity[variant.id] || 1}
-                    </h5>
-                    <button onClick={() => handleIncrementQuantity(variant.id)}>
-                      <AddIcon />
-                    </button>
-                  </div>
-
-                  <BuynowBtn
-                    onClick={() => handleAddToCart(product, variant)}
-                    link="#"
-                    text={variant.stock > 0 ? "Add to Cart" : "Out Of Stock"}
-                    width={"150px"}
-                    opacity={variant.stock > 0 ? 1 : 0.5}
-                    disabled={variant.stock > 0 ? "" : "disabled"}
-                    padding={"10px"}
-                    sectionClass="responsiveBtn"
-                  />
-
-                  <p
-                    className={`text-sm semibold ${
-                      variant.stock > 0 ? "text-green-500" : "text-red-500"
-                    }`}>
-                    {variant.stock > 0
-                      ? `In Stock: ${
-                          variant.stock > 50 ? "50+" : variant.stock
-                        }`
-                      : "Out of Stock"}
-                  </p>
                 </div>
               ));
             })}

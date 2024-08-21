@@ -121,19 +121,6 @@ const NavigationMobile = ({ page }) => {
 
               <li>
                 <Link
-                  href="/shop"
-                  passHref
-                  className="px-4 py-2 flex w-full rounded-md"
-                  style={{
-                    color: currentRoute === "/shop-all" && colorMe,
-                    fontWeight: currentRoute === "/shop-all" && 600,
-                  }}>
-                  Shop All
-                </Link>
-              </li>
-
-              <li>
-                <Link
                   href="/product"
                   passHref
                   className="px-4 py-2 flex w-full rounded-md"
@@ -144,8 +131,20 @@ const NavigationMobile = ({ page }) => {
                   Product
                 </Link>
               </li>
-
               <li>
+                <Link
+                  href="/shop-all"
+                  passHref
+                  className="px-4 py-2 flex w-full rounded-md"
+                  style={{
+                    color: currentRoute === "/shop-all" && colorMe,
+                    fontWeight: currentRoute === "/shop-all" && 600,
+                  }}>
+                  Shop All
+                </Link>
+              </li>
+
+              {/* <li>
                 <Link
                   href="/shop"
                   passHref
@@ -156,7 +155,7 @@ const NavigationMobile = ({ page }) => {
                   }}>
                   Shop
                 </Link>
-              </li>
+              </li> */}
 
               <li>
                 <Link

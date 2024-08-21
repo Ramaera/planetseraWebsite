@@ -6,7 +6,7 @@ const LogoSection = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
   // Example: April 22, 2024
   const currentDate = new Date();
-  const festivalDate = new Date("2024-08-19"); 
+  const festivalDate = new Date("2024-08-19");
 
   const isFestivalDay =
     currentDate.getDate() === festivalDate.getDate() &&
@@ -25,8 +25,7 @@ const LogoSection = () => {
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
                 colorMe + "95"
               })`,
-            }}
-          >
+            }}>
             Diverse blend of
             <br />
             culture and taste
@@ -36,12 +35,11 @@ const LogoSection = () => {
             className="font-medium text-3xl tracking-widest mt-44 md:text-8xl text-white md:hidden font-['Oriya MN']"
             style={{
               color: colorMe,
-            }}
-          >
+            }}>
             Diverse blend of culture and taste
           </h3>
 
-          <p className="my-4 md:my-8 text-[16px] md:mt-24 w-full text-[#1e1e1e] md:pr-2 md:px-0 leading-[30px] font-normal">
+          <p className="my-4 md:my-8 text-[16px] md:mt-24 w-full text-[#1e1e1e] md:pl-4 md:px-0 leading-[30px] font-normal">
             We deliver the essence of authenticity to every kitchen as a leading
             supplier of spices. Our extensive selection, which includes tasty
             Mirch, zesty Dhaniya, and aromatic Haldi powders, is obtained from
@@ -59,8 +57,7 @@ const LogoSection = () => {
                 colorMe + "95"
               } 100%)`,
               fontWeight: "bold",
-            }}
-          >
+            }}>
             Explore More
           </Link>
         </div>

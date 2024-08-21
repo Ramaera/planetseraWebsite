@@ -13,7 +13,7 @@ const FooterTop = () => {
           <h2 className=" text-white font-semibold">Best Selling Spices</h2>
 
           <Link
-            href="/shop"
+            href="/shop-all"
             className="more-button hidden md:block py-4 hover:scale-105 "
             style={{
               boxShadow: `2px 4px 7px -2px ${colorMe}`,

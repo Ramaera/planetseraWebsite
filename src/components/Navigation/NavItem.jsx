@@ -102,13 +102,13 @@ const NavItem = ({ page }) => {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/shop-all">Shop All</Link>
-        </li>
-        <li>
           <Link href="/product">Product</Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="/shop">Shop</Link>
+        </li> */}
+        <li>
+          <Link href="/shop-all">Shop All</Link>
         </li>
         <li>
           <Link href="/about">About</Link>

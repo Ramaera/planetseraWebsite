@@ -21,7 +21,12 @@ const Specifications = ({ selectedButton, specificProduct }) => {
           <div className="my-1 p-0 flex flex-col items-center  justify-center">
             <p className="lg:mr-2">Packaging type </p>
             <p className="font-normal">
-              {selectedButton === 6 || selectedButton === 8
+              {selectedButton === 6 ||
+              selectedButton === 7 ||
+              selectedButton === 8 ||
+              selectedButton === 12 ||
+              selectedButton === 14 ||
+              selectedButton === 16
                 ? "Pouch"
                 : "Zipper Pouch"}
             </p>

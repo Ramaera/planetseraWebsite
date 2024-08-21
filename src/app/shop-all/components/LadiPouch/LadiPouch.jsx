@@ -168,9 +168,9 @@ const LadiPouch = () => {
 
   return (
     <>
-      <div className="mt-14 sm:mt-10 xl:mt-2 2xl:mt-[-1rem]">
+      <div className="mt-14 sm:mt-10 xl:mt-2 ">
         <div className="sm:text-left flex flex-col justify-center items-center">
-          <h4 className="text-[#1E1E1E] text-2xl sm:text-3xl font-['Montserrat'] font-bold text-center">
+          <h4 className="text-[#1E1E1E] text-2xl sm:text-4xl font-['Montserrat'] font-bold text-center">
             Our Ladi Pouch Products
           </h4>
           <div className="flex space-x-4 mt-4 flex-wrap justify-center ">

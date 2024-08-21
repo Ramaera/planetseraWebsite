@@ -60,8 +60,8 @@ const Orders = () => {
                 <BuynowBtn
                   text="Order Now"
                   className="text-green-800"
-                  href="/shop"
-                  link="/shop"
+                  href="/shop-all"
+                  link="/shop-all"
                 />
               </div>
             </div>
