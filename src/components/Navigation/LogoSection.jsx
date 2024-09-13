@@ -6,7 +6,7 @@ const LogoSection = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
   // Example: April 22, 2024
   const currentDate = new Date();
-  const festivalDate = new Date("2024-08-19");
+  const festivalDate = new Date("2024-09-16");
 
   const isFestivalDay =
     currentDate.getDate() === festivalDate.getDate() &&

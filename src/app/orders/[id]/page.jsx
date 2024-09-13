@@ -176,7 +176,7 @@ const OrderDetails = () => {
                   </div>
                   {specificOrder?.metaData?.map((list) =>
                     list?.address?.map((add) => (
-                      <div className="flex flex- w-full gap-2">
+                      <div className="flex flex- w-full gap-2 flex-wrap">
                         <p>{add[2]?.address}</p>,<p>{add[0]?.city}</p>
                         <p>{add[3]?.state}</p>
                         <p>{add[1]?.pinCode}</p>
@@ -205,7 +205,7 @@ const OrderDetails = () => {
                   </div>
                   <div className="flex justify-between mt-4">
                     <p>Shipping Charges:</p>
-                    <span>₹ {specificOrder?.ShippingCost }</span>
+                    <span>₹ {specificOrder?.ShippingCost}</span>
                   </div>
                   <div className="flex justify-between mt-4">
                     <p>Others Charges:</p>
