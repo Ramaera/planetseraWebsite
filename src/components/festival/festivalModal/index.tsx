@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const FestivalModal = () => {
+const FestivalModal = ({ festivalImg }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const closeModal = () => {
@@ -18,7 +18,8 @@ const FestivalModal = () => {
               X
             </button>
             <img
-              src="/images/festivalImg/milad-un-nabi.jpeg"
+              // src="/images/festivalImg/milad-un-nabi.jpeg"
+              src={festivalImg}
               alt="Festival Greetings"
               className="w-full border-2 border-black rounded-2xl"
             />

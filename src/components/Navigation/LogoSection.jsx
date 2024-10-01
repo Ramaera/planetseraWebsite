@@ -4,18 +4,43 @@ import FestivalModal from "../festival/festivalModal";
 
 const LogoSection = () => {
   const colorMe = useSelector((state) => state.colorUs.color);
-  // Example: April 22, 2024
-  const currentDate = new Date();
-  const festivalDate = new Date("2024-09-16");
 
-  const isFestivalDay =
-    currentDate.getDate() === festivalDate.getDate() &&
-    currentDate.getMonth() === festivalDate.getMonth() &&
-    currentDate.getFullYear() === festivalDate.getFullYear();
+  // const currentDate = new Date();
+  // const festivalDate = new Date("2024-10-02");
+
+  // const isFestivalDay =
+  //   currentDate.getDate() === festivalDate.getDate() &&
+  //   currentDate.getMonth() === festivalDate.getMonth() &&
+  //   currentDate.getFullYear() === festivalDate.getFullYear();
+
+  const currentDate = new Date();
+  const gandhiJayanti = new Date("2024-10-02");
+  const navratriStart = new Date("2024-10-03");
+  const navratriEnd = new Date("2024-10-11");
+
+  let isFestivalDay = false;
+  let festivalImg = "";
+
+  // Check if it's 2nd October (Gandhi Jayanti)
+  if (
+    currentDate.getDate() === gandhiJayanti.getDate() &&
+    currentDate.getMonth() === gandhiJayanti.getMonth() &&
+    currentDate.getFullYear() === gandhiJayanti.getFullYear()
+  ) {
+    isFestivalDay = true;
+    festivalImg = "/images/festivalImg/2ndOctober.jpeg";
+  }
+  // Check if it's between 3rd October and 11th October (Navratri)
+  else if (currentDate >= navratriStart && currentDate <= navratriEnd) {
+    isFestivalDay = true;
+    festivalImg = "/images/festivalImg/navratri.jpeg";
+  } else {
+    isFestivalDay = false;
+  }
 
   return (
     <>
-      {isFestivalDay && <FestivalModal />}
+      {isFestivalDay && <FestivalModal festivalImg={festivalImg} />}
       <div className="basis-4/12 2xl:basis-6/12 md:pl-2 xl:pl-5 myPos mt-14">
         <div className="basis-4/12 h-[450px] flex md:h-[660px] flex-col justify-center w-full px-5 md:px-0">
           <h1
