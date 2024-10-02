@@ -19,6 +19,7 @@ const LogoSection = () => {
   const navratriEnd = new Date("2024-10-11");
 
   let isFestivalDay = false;
+
   let festivalImg = "";
 
   // Check if it's 2nd October (Gandhi Jayanti)
@@ -50,7 +51,8 @@ const LogoSection = () => {
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
                 colorMe + "95"
               })`,
-            }}>
+            }}
+          >
             Diverse blend of
             <br />
             culture and taste
@@ -60,7 +62,8 @@ const LogoSection = () => {
             className="font-medium text-3xl tracking-widest mt-44 md:text-8xl text-white md:hidden font-['Oriya MN']"
             style={{
               color: colorMe,
-            }}>
+            }}
+          >
             Diverse blend of culture and taste
           </h3>
 
@@ -82,7 +85,8 @@ const LogoSection = () => {
                 colorMe + "95"
               } 100%)`,
               fontWeight: "bold",
-            }}>
+            }}
+          >
             Explore More
           </Link>
         </div>
