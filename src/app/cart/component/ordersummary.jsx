@@ -92,9 +92,8 @@ const ordersummary = () => {
     return totalValue;
   };
 
-
-  const percentageDiscount=isFestivalDay?"50%":"10%"
-  const percentageValue=isFestivalDay?0.5:0.1
+  const percentageDiscount = isFestivalDay ? "30%" : "10%";
+  const percentageValue = isFestivalDay ? 0.3 : 0.1;
 
   useEffect(() => {
     const totalValue = calculatePrice();
@@ -102,18 +101,36 @@ const ordersummary = () => {
   }, [allProducts, CartData, dispatch]);
 
   useEffect(() => {
-    if (DiscountedPercentageRedux === "30%") {
+    // advanceSubscriber normal
+    if (
+      !isFestivalDay &&
+      DiscountCodeRedux &&
+      DiscountedPercentageRedux === "30%"
+    ) {
       const discountedAmount = calculatePrice() * 0.3;
       setDiscount(discountedAmount);
       dispatch(getDiscountedAmount(discountedAmount));
+    }
+    // advanceSubscriber isfestival
+    else if (DiscountedPercentageRedux === "35%") {
+      if (isFestivalDay) {
+        const discountedAmount = calculatePrice() * 0.35;
+        setDiscount(discountedAmount);
+        dispatch(getDiscountedAmount(discountedAmount));
+        dispatch(discountedPercentage("35%"));
+      } else {
+        dispatch(discountedPercentage("10%"));
+      }
     } else if (DiscountedPercentageRedux === percentageDiscount) {
       const discountedAmount = calculatePrice() * percentageValue;
       setDiscount(discountedAmount);
       dispatch(getDiscountedAmount(discountedAmount));
+      dispatch(discountedPercentage(percentageDiscount));
     } else {
       const discountedAmount = calculatePrice() * percentageValue;
       setDiscount(discountedAmount);
       dispatch(getDiscountedAmount(discountedAmount));
+      dispatch(discountedPercentage(percentageDiscount));
     }
   }, [calculatePrice, DiscountedPercentageRedux]);
 
@@ -133,10 +150,12 @@ const ordersummary = () => {
           .filter(Boolean);
 
         if (subscriber.includes(true)) {
-          const discountedAmount = calculatePrice() * 0.3;
+          const calculatePercentage = isFestivalDay ? 0.35 : 0.3;
+          const calculateDiscount = isFestivalDay ? "35%" : "30%";
+          const discountedAmount = calculatePrice() * calculatePercentage;
           setDiscount(discountedAmount);
           dispatch(getDiscountedAmount(discountedAmount));
-          dispatch(discountedPercentage("30%"));
+          dispatch(discountedPercentage(calculateDiscount));
           dispatch(discountCode(couponCode));
 
           // setSubscriberKyc("30%");
@@ -157,7 +176,7 @@ const ordersummary = () => {
           // setDiscount(discountedAmount);
           // dispatch(getDiscountedAmount(discountedAmount));
           // setSubscriberKyc("10%");
-          toast.error("Invalid PWID, 30% Discount not applied.", {
+          toast.error(`Invalid PWID, Discount not applied.`, {
             position: "top-center",
             autoClose: 2500,
             hideProgressBar: false,
@@ -195,7 +214,7 @@ const ordersummary = () => {
   const calculateTotalPrice = () => {
     const priceAfterDiscount = calculatePrice() - discount;
     const PriceAfterCardDiscount = priceAfterDiscount - MyCardCouponAmountRedux;
-    const totalPrice = PriceAfterCardDiscount 
+    const totalPrice = PriceAfterCardDiscount;
     // + ShippingChargeRedux;
     return totalPrice;
   };
@@ -251,8 +270,7 @@ const ordersummary = () => {
       <div className="font-mont sm:w-1/4 sm:min-w-[380px] pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
-          className="border py-9 px-6 shadow-xl"
-        >
+          className="border py-9 px-6 shadow-xl">
           <p className="text-2xl  ">Order Summary</p>
 
           <div className="flex justify-between flex-col   mt-5 ">
@@ -285,10 +303,12 @@ const ordersummary = () => {
           </div> */}
           {/* {currentRoute === "/cart/checkout" && ( */}
           <div className="mb-4">
-            {currentRoute === "/cart" && !isFestivalDay && (
+            {/* {currentRoute === "/cart" && !isFestivalDay && ( */}
+            {currentRoute === "/cart" && (
               <>
                 <label className="block mt-2 mb-1">
-                  Enter PWID to avail (30% Discount)
+                  Enter PWID to avail ( {isFestivalDay ? "35%" : "30%"}{" "}
+                  Discount)
                 </label>
                 <div className="flex">
                   <TextField
@@ -300,8 +320,7 @@ const ordersummary = () => {
                   />
                   <button
                     onClick={handleApplyCoupon}
-                    className="Cartbgcolor text-white rounded px-2 h-10 w-28 "
-                  >
+                    className="Cartbgcolor text-white rounded px-2 h-10 w-28 ">
                     Apply
                   </button>
                 </div>
@@ -317,7 +336,8 @@ const ordersummary = () => {
             )}
 
             <div className="flex justify-between mt-5">
-              Discount (%) Apply :{" "} {isFestivalDay?"Rakhi Special Discount":""}
+              Discount (%) Apply :{" "}
+              {isFestivalDay ? "Navaratri Special Discount" : ""}
               <span className={"text-green-500"}>
                 {DiscountedPercentageRedux}
               </span>
@@ -355,8 +375,7 @@ const ordersummary = () => {
                     <Link href="/cart" className="text-white">
                       <button
                         onClick={handleProceedToCheckout}
-                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3"
-                      >
+                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3">
                         Proceed To Checkout
                       </button>
                     </Link>
@@ -367,8 +386,7 @@ const ordersummary = () => {
                   <div
                     onClick={openLoginModal}
                     className="text-white"
-                    style={{ color: colorMe, fontWeight: "bold" }}
-                  >
+                    style={{ color: colorMe, fontWeight: "bold" }}>
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
                       Proceed To Checkout
                     </div>

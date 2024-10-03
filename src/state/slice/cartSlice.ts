@@ -9,7 +9,7 @@ const cartSlice = createSlice({
     cartTotalValue: 0,
     shippingValue: 0,
     getDiscountedAmount: 0,
-    discountedPercentage: isFestivalDay?"50%":"10%",
+    discountedPercentage: isFestivalDay ? "30%" : "10%",
     discountCode: null,
     myCardMyMartCouponCode: null,
     myCardMyMartCouponAmount: 0,

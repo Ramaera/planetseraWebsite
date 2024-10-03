@@ -34,7 +34,7 @@ const LogoSection = () => {
   // Check if it's between 3rd October and 11th October (Navratri)
   else if (currentDate >= navratriStart && currentDate <= navratriEnd) {
     isFestivalDay = true;
-    festivalImg = "/images/festivalImg/navratri.jpeg";
+    festivalImg = "/images/festivalImg/navratri-offer.jpg";
   } else {
     isFestivalDay = false;
   }
@@ -51,8 +51,7 @@ const LogoSection = () => {
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
                 colorMe + "95"
               })`,
-            }}
-          >
+            }}>
             Diverse blend of
             <br />
             culture and taste
@@ -62,8 +61,7 @@ const LogoSection = () => {
             className="font-medium text-3xl tracking-widest mt-44 md:text-8xl text-white md:hidden font-['Oriya MN']"
             style={{
               color: colorMe,
-            }}
-          >
+            }}>
             Diverse blend of culture and taste
           </h3>
 
@@ -85,8 +83,7 @@ const LogoSection = () => {
                 colorMe + "95"
               } 100%)`,
               fontWeight: "bold",
-            }}
-          >
+            }}>
             Explore More
           </Link>
         </div>
