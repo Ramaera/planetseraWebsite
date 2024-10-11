@@ -14,22 +14,22 @@ const LogoSection = () => {
   //   currentDate.getFullYear() === festivalDate.getFullYear();
 
   const currentDate = new Date();
-  const gandhiJayanti = new Date("2024-10-02");
-  const navratriStart = new Date("2024-10-03");
-  const navratriEnd = new Date("2024-10-11");
+  const dussehra = new Date("2024-10-12");
+  const navratriStart = new Date("2024-10-03T00:00:00");
+  const navratriEnd = new Date("2024-10-11T23:59:59");
 
   let isFestivalDay = false;
 
   let festivalImg = "";
 
-  // Check if it's 2nd October (Gandhi Jayanti)
+  // Check if it's dussehra
   if (
-    currentDate.getDate() === gandhiJayanti.getDate() &&
-    currentDate.getMonth() === gandhiJayanti.getMonth() &&
-    currentDate.getFullYear() === gandhiJayanti.getFullYear()
+    currentDate.getDate() === dussehra.getDate() &&
+    currentDate.getMonth() === dussehra.getMonth() &&
+    currentDate.getFullYear() === dussehra.getFullYear()
   ) {
     isFestivalDay = true;
-    festivalImg = "/images/festivalImg/2ndOctober.jpeg";
+    festivalImg = "/images/festivalImg/dussehra.jpeg";
   }
   // Check if it's between 3rd October and 11th October (Navratri)
   else if (currentDate >= navratriStart && currentDate <= navratriEnd) {
