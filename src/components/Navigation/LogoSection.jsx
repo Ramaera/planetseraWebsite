@@ -22,7 +22,7 @@ const LogoSection = () => {
 
   let festivalImg = "";
 
-  // Check if it's dussehra
+  // Check if it' dussehra
   if (
     currentDate.getDate() === dussehra.getDate() &&
     currentDate.getMonth() === dussehra.getMonth() &&
