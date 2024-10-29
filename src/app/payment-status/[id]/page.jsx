@@ -219,7 +219,7 @@ const page = () => {
 
   const calculateTotalPrice = () => {
     const priceAfterDiscount = cartTotalValue - discount;
-    const totalPrice = priceAfterDiscount ; // removed Shipping charge 
+    const totalPrice = priceAfterDiscount; // removed Shipping charge
     return totalPrice;
   };
 
@@ -233,7 +233,7 @@ const page = () => {
 
       await dispatch(clearCart());
       await dispatch(discountCodeClear());
-      await dispatch(discountedPercentage(isFestivalDay?"50%":"10%"));
+      await dispatch(discountedPercentage(isFestivalDay ? "40%" : "10%"));
 
       // await handleOrderPlaced();
     } catch (err) {

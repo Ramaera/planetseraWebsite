@@ -136,7 +136,7 @@ const page = () => {
   const calculateTotalPrice = () => {
     const priceAfterDiscount = calculatePrice() - discount;
     const PriceAfterCardDiscount = priceAfterDiscount - MyCardCouponAmountRedux;
-    const totalPrice = PriceAfterCardDiscount 
+    const totalPrice = PriceAfterCardDiscount;
     // + ShippingChargeRedux;
     return totalPrice;
   };
@@ -180,7 +180,7 @@ const page = () => {
   };
 
   useEffect(() => {
-    if (subTotalPrice() >= 500) {
+    if (isFestivalDay ? subTotalPrice() >= 1000 : subTotalPrice() >= 500) {
       setCheckoutEnabled(true);
     } else {
       setCheckoutEnabled(false);
@@ -238,8 +238,8 @@ const page = () => {
             <div className=" py-3 px-6 ">
               <div>
                 <h5 className="font-semibold">
-                  Your order subtotal amount must be greater than ₹500 to
-                  proceed with Pay Now.
+                  Your order subtotal amount must be greater than $
+                  {isFestivalDay ? "₹1000" : "₹500"} to proceed with Pay Now.
                 </h5>
 
                 <h6 className=" mt-1">

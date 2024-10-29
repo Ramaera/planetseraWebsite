@@ -92,9 +92,8 @@ const ordersummary = () => {
     return totalValue;
   };
 
-
-  const percentageDiscount=isFestivalDay?"50%":"10%"
-  const percentageValue=isFestivalDay?0.5:0.1
+  const percentageDiscount = isFestivalDay ? "40%" : "10%";
+  const percentageValue = isFestivalDay ? 0.4 : 0.1;
 
   useEffect(() => {
     const totalValue = calculatePrice();
@@ -195,7 +194,7 @@ const ordersummary = () => {
   const calculateTotalPrice = () => {
     const priceAfterDiscount = calculatePrice() - discount;
     const PriceAfterCardDiscount = priceAfterDiscount - MyCardCouponAmountRedux;
-    const totalPrice = PriceAfterCardDiscount 
+    const totalPrice = PriceAfterCardDiscount;
     // + ShippingChargeRedux;
     return totalPrice;
   };
@@ -210,7 +209,7 @@ const ordersummary = () => {
     setCouponCode(e.target.value);
   };
   useEffect(() => {
-    if (subTotalPrice() >= 500) {
+    if (isFestivalDay ? subTotalPrice() >= 1000 : subTotalPrice() >= 500) {
       setCheckoutEnabled(true);
     } else {
       setCheckoutEnabled(false);
@@ -231,16 +230,21 @@ const ordersummary = () => {
 
   const handleProceedToCheckout = () => {
     if (!checkoutEnabled) {
-      toast.error("Order Sub Total Amount, should be greater than ₹500.", {
-        position: "top-center",
-        autoClose: 2500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.error(
+        `Order Sub Total Amount, should be greater than  ${
+          isFestivalDay ? "₹1000" : "₹500"
+        }.`,
+        {
+          position: "top-center",
+          autoClose: 2500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }
+      );
     } else {
       // Proceed to Checkout logic here
     }
@@ -251,8 +255,7 @@ const ordersummary = () => {
       <div className="font-mont sm:w-1/4 sm:min-w-[380px] pt-10   ">
         <div
           style={{ color: "#2F302F", borderRadius: "37px" }}
-          className="border py-9 px-6 shadow-xl"
-        >
+          className="border py-9 px-6 shadow-xl">
           <p className="text-2xl  ">Order Summary</p>
 
           <div className="flex justify-between flex-col   mt-5 ">
@@ -300,8 +303,7 @@ const ordersummary = () => {
                   />
                   <button
                     onClick={handleApplyCoupon}
-                    className="Cartbgcolor text-white rounded px-2 h-10 w-28 "
-                  >
+                    className="Cartbgcolor text-white rounded px-2 h-10 w-28 ">
                     Apply
                   </button>
                 </div>
@@ -316,10 +318,13 @@ const ordersummary = () => {
               </div>
             )}
 
-            <div className="flex justify-between mt-5">
-              Discount (%) Apply :{" "} {isFestivalDay?"Rakhi Special Discount":""}
+            <div className="flex justify-between items-center mt-5">
+              Discount (%) Apply :{" "}
+              <span className="text-sm text-yellow-500 md:font-semibold">
+                {isFestivalDay ? "Festival Discount" : ""}
+              </span>
               <span className={"text-green-500"}>
-                {DiscountedPercentageRedux}
+                {isFestivalDay ? "40%" : DiscountedPercentageRedux}
               </span>
             </div>
             <div className="flex  justify-between mt-5 ">
@@ -355,8 +360,7 @@ const ordersummary = () => {
                     <Link href="/cart" className="text-white">
                       <button
                         onClick={handleProceedToCheckout}
-                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3"
-                      >
+                        className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer w-full  py-3">
                         Proceed To Checkout
                       </button>
                     </Link>
@@ -367,8 +371,7 @@ const ordersummary = () => {
                   <div
                     onClick={openLoginModal}
                     className="text-white"
-                    style={{ color: colorMe, fontWeight: "bold" }}
-                  >
+                    style={{ color: colorMe, fontWeight: "bold" }}>
                     <div className="flex justify-center rounded-2xl mt-5 Cartbgcolor cursor-pointer  py-3">
                       Proceed To Checkout
                     </div>

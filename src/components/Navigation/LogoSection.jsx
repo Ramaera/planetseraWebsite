@@ -14,28 +14,27 @@ const LogoSection = () => {
   //   currentDate.getFullYear() === festivalDate.getFullYear();
 
   const currentDate = new Date();
-  const dussehra = new Date("2024-10-12");
-  const navratriStart = new Date("2024-10-03T00:00:00");
-  const navratriEnd = new Date("2024-10-11T23:59:59");
+  const danterasStart = new Date("2024-10-29T00:00:00");
+  const danterasEnd = new Date("2024-10-30T23:59:59");
+
+  const diwaliStart = new Date("2024-10-31T00:00:00");
+  const diwaliEnd = new Date("2024-11-03T23:59:59");
 
   let isFestivalDay = false;
-
   let festivalImg = "";
 
-  // Check if it' dussehra
-  if (
-    currentDate.getDate() === dussehra.getDate() &&
-    currentDate.getMonth() === dussehra.getMonth() &&
-    currentDate.getFullYear() === dussehra.getFullYear()
-  ) {
+  // Check if it's between 29th October and 30th October (Danteras)
+  if (currentDate >= danterasStart && currentDate <= danterasEnd) {
     isFestivalDay = true;
-    festivalImg = "/images/festivalImg/dussehra.jpeg";
+    festivalImg = "/images/festivalImg/danteras.jpeg";
   }
-  // Check if it's between 3rd October and 11th October (Navratri)
-  else if (currentDate >= navratriStart && currentDate <= navratriEnd) {
+  // Check if it's between 31st October and 3rd November (Diwali)
+  else if (currentDate >= diwaliStart && currentDate <= diwaliEnd) {
     isFestivalDay = true;
-    festivalImg = "/images/festivalImg/navratri.jpeg";
-  } else {
+    festivalImg = "/images/festivalImg/diwali.jpeg";
+  }
+  // If none of the festival days match
+  else {
     isFestivalDay = false;
   }
 
@@ -51,8 +50,7 @@ const LogoSection = () => {
               backgroundImage: `linear-gradient(to right, ${colorMe}, ${
                 colorMe + "95"
               })`,
-            }}
-          >
+            }}>
             Diverse blend of
             <br />
             culture and taste
@@ -62,8 +60,7 @@ const LogoSection = () => {
             className="font-medium text-3xl tracking-widest mt-44 md:text-8xl text-white md:hidden font-['Oriya MN']"
             style={{
               color: colorMe,
-            }}
-          >
+            }}>
             Diverse blend of culture and taste
           </h3>
 
@@ -85,8 +82,7 @@ const LogoSection = () => {
                 colorMe + "95"
               } 100%)`,
               fontWeight: "bold",
-            }}
-          >
+            }}>
             Explore More
           </Link>
         </div>
