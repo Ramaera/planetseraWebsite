@@ -16,6 +16,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Modal } from "@mui/material";
 import Link from "next/link";
+import { isFestivalDay } from "@/utils/isFestivalDay";
 
 const page = () => {
   const dispatch = useDispatch();
