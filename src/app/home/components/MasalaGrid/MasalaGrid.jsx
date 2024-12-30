@@ -29,6 +29,7 @@ function MasalaGrid() {
           {allProducts?.data?.allProducts.map((items) => {
             if (
               !items.category.includes("ComingSoon") &&
+              !items?.type.includes("atc") &&
               (items.title.includes("Red Chilli Powder") ||
                 items.title.includes("Black Pepper Powder") ||
                 items.title.includes("Turmeric Powder") ||
