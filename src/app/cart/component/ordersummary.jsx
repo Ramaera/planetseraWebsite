@@ -209,7 +209,8 @@ const ordersummary = () => {
     setCouponCode(e.target.value);
   };
   useEffect(() => {
-    if (isFestivalDay ? subTotalPrice() >= 1000 : subTotalPrice() >= 500) {
+    if (isFestivalDay ? subTotalPrice() >= 500 : subTotalPrice() >= 500) {
+      // if (isFestivalDay ? subTotalPrice() >= 1000 : subTotalPrice() >= 500) {
       setCheckoutEnabled(true);
     } else {
       setCheckoutEnabled(false);
@@ -232,7 +233,8 @@ const ordersummary = () => {
     if (!checkoutEnabled) {
       toast.error(
         `Order Sub Total Amount, should be greater than  ${
-          isFestivalDay ? "₹1000" : "₹500"
+          isFestivalDay ? "₹500" : "₹500"
+          // isFestivalDay ? "₹1000" : "₹500"
         }.`,
         {
           position: "top-center",

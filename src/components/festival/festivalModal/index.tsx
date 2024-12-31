@@ -11,7 +11,7 @@ const FestivalModal = ({ festivalImg }) => {
     <>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative w-11/12">
+          <div className="relative w-11/12 max-w-2xl">
             <button
               className="absolute top-2 right-2 py-1 px-2 sm:px-4 sm:py-2 font-bold text-white bg-black rounded-full"
               onClick={closeModal}>
@@ -21,7 +21,7 @@ const FestivalModal = ({ festivalImg }) => {
               // src="/images/festivalImg/milad-un-nabi.jpeg"
               src={festivalImg}
               alt="Festival Greetings"
-              className="w-full border-2 border-black rounded-2xl"
+              className="w-full border-2 border-black rounded-2xl  object-cover"
             />
           </div>
         </div>

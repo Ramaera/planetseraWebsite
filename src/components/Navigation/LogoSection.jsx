@@ -14,29 +14,44 @@ const LogoSection = () => {
   //   currentDate.getFullYear() === festivalDate.getFullYear();
 
   const currentDate = new Date();
-  const danterasStart = new Date("2024-10-29T00:00:00");
-  const danterasEnd = new Date("2024-10-30T23:59:59");
-
-  const diwaliStart = new Date("2024-10-31T00:00:00");
-  const diwaliEnd = new Date("2024-11-03T23:59:59");
+  const newYearStart = new Date("2024-01-01T00:00:00");
+  const newYearEnd = new Date("2024-01-01T23:59:59");
 
   let isFestivalDay = false;
   let festivalImg = "";
 
-  // Check if it's between 29th October and 30th October (Danteras)
-  if (currentDate >= danterasStart && currentDate <= danterasEnd) {
+  // Check if it's New Year's Day (1st January)
+  if (currentDate >= newYearStart && currentDate <= newYearEnd) {
     isFestivalDay = true;
-    festivalImg = "/images/festivalImg/danteras.jpeg";
-  }
-  // Check if it's between 31st October and 3rd November (Diwali)
-  else if (currentDate >= diwaliStart && currentDate <= diwaliEnd) {
-    isFestivalDay = true;
-    festivalImg = "/images/festivalImg/diwali.jpeg";
-  }
-  // If none of the festival days match
-  else {
+    festivalImg = "/images/festivalImg/NewYear2025.jpeg";
+  } else {
     isFestivalDay = false;
   }
+
+  // const currentDate = new Date();
+  // const danterasStart = new Date("2024-10-29T00:00:00");
+  // const danterasEnd = new Date("2024-10-30T23:59:59");
+
+  // const diwaliStart = new Date("2024-10-31T00:00:00");
+  // const diwaliEnd = new Date("2024-11-03T23:59:59");
+
+  // let isFestivalDay = false;
+  // let festivalImg = "";
+
+  // // Check if it's between 29th October and 30th October (Danteras)
+  // if (currentDate >= danterasStart && currentDate <= danterasEnd) {
+  //   isFestivalDay = true;
+  //   festivalImg = "/images/festivalImg/danteras.jpeg";
+  // }
+  // // Check if it's between 31st October and 3rd November (Diwali)
+  // else if (currentDate >= diwaliStart && currentDate <= diwaliEnd) {
+  //   isFestivalDay = true;
+  //   festivalImg = "/images/festivalImg/diwali.jpeg";
+  // }
+  // // If none of the festival days match
+  // else {
+  //   isFestivalDay = false;
+  // }
 
   return (
     <>

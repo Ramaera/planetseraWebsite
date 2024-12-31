@@ -181,7 +181,7 @@ const page = () => {
   };
 
   useEffect(() => {
-    if (isFestivalDay ? subTotalPrice() >= 1000 : subTotalPrice() >= 500) {
+    if (isFestivalDay ? subTotalPrice() >= 500 : subTotalPrice() >= 500) {
       setCheckoutEnabled(true);
     } else {
       setCheckoutEnabled(false);
@@ -240,7 +240,7 @@ const page = () => {
               <div>
                 <h5 className="font-semibold">
                   Your order subtotal amount must be greater than $
-                  {isFestivalDay ? "₹1000" : "₹500"} to proceed with Pay Now.
+                  {isFestivalDay ? "₹500" : "₹500"} to proceed with Pay Now.
                 </h5>
 
                 <h6 className=" mt-1">
