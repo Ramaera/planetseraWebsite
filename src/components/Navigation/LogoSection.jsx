@@ -14,8 +14,8 @@ const LogoSection = () => {
   //   currentDate.getFullYear() === festivalDate.getFullYear();
 
   const currentDate = new Date();
-  const newYearStart = new Date("2024-01-01T00:00:00");
-  const newYearEnd = new Date("2024-01-01T23:59:59");
+  const newYearStart = new Date("2025-01-01T00:00:00");
+  const newYearEnd = new Date("2025-01-01T23:59:59");
 
   let isFestivalDay = false;
   let festivalImg = "";
