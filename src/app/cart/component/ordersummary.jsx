@@ -101,8 +101,8 @@ const ordersummary = () => {
   }, [allProducts, CartData, dispatch]);
 
   useEffect(() => {
-    if (DiscountedPercentageRedux === "45%") {
-      const discountedAmount = calculatePrice() * 0.45;
+    if (DiscountedPercentageRedux === "30%") {
+      const discountedAmount = calculatePrice() * 0.3;
       setDiscount(discountedAmount);
       dispatch(getDiscountedAmount(discountedAmount));
     } else if (DiscountedPercentageRedux === percentageDiscount) {
@@ -132,10 +132,10 @@ const ordersummary = () => {
           .filter(Boolean);
 
         if (subscriber.includes(true)) {
-          const discountedAmount = calculatePrice() * 0.45;
+          const discountedAmount = calculatePrice() * 0.3;
           setDiscount(discountedAmount);
           dispatch(getDiscountedAmount(discountedAmount));
-          dispatch(discountedPercentage("45%"));
+          dispatch(discountedPercentage("30%"));
           dispatch(discountCode(couponCode));
 
           // setSubscriberKyc("30%");
@@ -156,7 +156,7 @@ const ordersummary = () => {
           // setDiscount(discountedAmount);
           // dispatch(getDiscountedAmount(discountedAmount));
           // setSubscriberKyc("10%");
-          toast.error("Invalid PWID, 45% Discount not applied.", {
+          toast.error("Invalid PWID, 30% Discount not applied.", {
             position: "top-center",
             autoClose: 2500,
             hideProgressBar: false,
@@ -293,7 +293,7 @@ const ordersummary = () => {
             {currentRoute === "/cart" && !isFestivalDay && (
               <>
                 <label className="block mt-2 mb-1">
-                  Enter PWID to avail (45% Discount)
+                  Enter PWID to avail (30% Discount)
                 </label>
                 <div className="flex">
                   <TextField
